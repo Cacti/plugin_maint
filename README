@@ -1,0 +1,33 @@
+/*******************************************************************************
+
+    Author ......... Jimmy Conner
+    Contact ........ jimmy@sqmail.org
+    Home Site ...... http://cactiusers.org
+    Purpose ........ Scheduled Maintenance planner
+
+*******************************************************************************/
+
+
+----[ Purpose
+
+	This plugin is for the scheduling of maintenace so that Thold / Webseer / Other plugins will not alert during that time period.
+
+----[ Installation
+
+	To install the plugin, please refer to the Plugin Installation Documentation
+
+----[ Possible Bugs?
+   
+	If you find a problem, let me know!!! http://cacti.net/bugs.php
+
+----[ Future Changes
+
+	Threshold Escalation
+	Add feature to run scripts or do other things besides email
+
+	Got any ideas or complaints, please e-mail me!
+
+----[ Changelog
+	--- 0.1 ---
+		 Initial Version
+
