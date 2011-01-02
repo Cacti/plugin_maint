@@ -328,7 +328,7 @@ function schedules() {
 
 	html_start_box('<strong>Scheduled Maintenance</strong>', '100%', $colors['header'], '3', 'center', 'maint.php?action=edit');
 
-	html_header_checkbox(array('Name', 'Type', 'Start', 'End', 'Internal', 'Active', 'Enabled'));
+	html_header_checkbox(array('Name', 'Type', 'Start', 'End', 'Interval', 'Active', 'Enabled'));
 	$yesno = array(0 => 'No', 1 => 'Yes', 'on' => 'Yes', 'off' => 'No');
 	$schedules = db_fetch_assoc('SELECT * FROM plugin_maint_schedules ORDER BY id');
 
