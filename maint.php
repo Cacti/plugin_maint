@@ -330,7 +330,7 @@ function schedules() {
 
 	html_header_checkbox(array('Name', 'Type', 'Start', 'End', 'Interval', 'Active', 'Enabled'));
 	$yesno = array(0 => 'No', 1 => 'Yes', 'on' => 'Yes', 'off' => 'No');
-	$schedules = db_fetch_assoc('SELECT * FROM plugin_maint_schedules ORDER BY id');
+	$schedules = db_fetch_assoc('SELECT * FROM plugin_maint_schedules ORDER BY name');
 
 	$types = array(1 => "Once", 2 => "Reoccurring");
 	$reoccurring = array(0 => "", 86400 => "Every Day", 604800 => "Every Week");
