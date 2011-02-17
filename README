@@ -28,6 +28,10 @@
 	Got any ideas or complaints, please e-mail me!
 
 ----[ Changelog
+	--- 0.2 ---
+		Order by Name by default
+		Don't check disabled schedules 
+
 	--- 0.1 ---
 		 Initial Version
 
