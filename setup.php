@@ -25,7 +25,7 @@
 
 function plugin_maint_version () {
 	return array( 'name' 		=> 'maint',
-			'version' 	=> '0.1',
+			'version' 	=> '0.2',
 			'longname'	=> 'Maintenance Scheduler',
 			'author'	=> 'Jimmy Conner',
 			'homepage'	=> 'http://cactiusers.org',
