@@ -30,7 +30,8 @@ include_once($config["base_path"] . '/plugins/maint/functions.php');
 
 
 $ds_actions = array(
-	1 => 'Delete'
+	1 => 'Update Time (Now + 1 Hour)',
+	2 => 'Delete'
 	);
 
 $action = '';
@@ -40,8 +41,11 @@ if (isset($_POST['action'])) {
 	$action = $_GET['action'];
 }
 
-if (isset($_POST['drp_action']) && $_POST['drp_action'] == 1) {
+if (isset($_POST['drp_action']) && $_POST['drp_action'] == 2) {
 	$action = 'delete';
+}
+if (isset($_POST['drp_action']) && $_POST['drp_action'] == 1) {
+	$action = 'update';
 }
 
 switch ($action) {
@@ -58,6 +62,9 @@ switch ($action) {
 	case 'delete':
 		schedule_delete();
 		break;
+	case 'update':
+		schedule_update();
+		break;
 	default:
 		include_once('./include/top_header.php');
 		schedules();
@@ -70,14 +77,29 @@ function schedule_delete() {
 		if (substr($t, 0,4) == 'chk_') {
 			$id = substr($t, 4);
 			input_validate_input_number($id);
-			db_fetch_assoc("delete from plugin_maint_schedules where id = $id LIMIT 1");
-			db_fetch_assoc("delete from plugin_maint_hosts where schedule = $id");
+			db_fetch_assoc("DELETE FROM plugin_maint_schedules WHERE id = $id LIMIT 1");
+			db_fetch_assoc("DELETE FROM plugin_maint_hosts WHERE schedule = $id");
 		}
 	}
 
 	Header('Location: maint.php');
 	exit;
 }
+
+function schedule_update() {
+	foreach($_POST as $t=>$v) {
+		if (substr($t, 0,4) == 'chk_') {
+			$id = substr($t, 4);
+			input_validate_input_number($id);
+			$stime = intval(time()/60)*60;
+			$etime = $stime + 3600;
+			db_fetch_assoc("UPDATE plugin_maint_schedules SET stime = $stime, etime = $etime WHERE id = $id LIMIT 1");
+		}
+	}
+	Header('Location: maint.php');
+	exit;
+}
+
 
 function schedule_save_edit() {
 	global $plugins;
@@ -117,10 +139,6 @@ function schedule_save_edit() {
 	if ($save['stime'] >= $save['etime']) {
 		raise_message(2);
 	}
-
-
-
-
 
 	if (!is_error_message()) {
 		$id = sql_save($save, 'plugin_maint_schedules');
@@ -172,9 +190,6 @@ function schedule_edit() {
 		$maint_item_data = array('id' => 0, 'name' => 'Scheduled Maintenance', 'enabled' => 'on', 'mtype' => 1, 'stime' => time(), 'etime' => time() + 3600, 'minterval' => 0);
 	}
 
-
-
-
 	$maint_types = array (1 => 'Once', 2 => 'Reoccurring');
 	$intervals = array(0 => '', 86400 => 'Every Day', 604800 => 'Every Week');
 
@@ -208,6 +223,14 @@ function schedule_edit() {
 			'description' => 'The type of Threshold that will be monitored.',
 			'value' => isset($maint_item_data['mtype']) ? $maint_item_data['mtype'] : ''
 		),
+		'minterval' => array(
+			'friendly_name' => 'Interval',
+			'method' => 'drop_array',
+			'array' => $intervals,
+			'default' => 86400,
+			'description' => 'This is the interval in which the start / end time will repeat.',
+			'value' => isset($maint_item_data['minterval']) ? $maint_item_data['minterval'] : '0'
+		),
 		'stime' => array(
 			'friendly_name' => 'Start Time',
 			'method' => 'textbox',
@@ -224,18 +247,6 @@ function schedule_edit() {
 			'description' => 'This is the date / time this schedule will end.',
 			'value' => isset($maint_item_data['etime']) ? date("F j, Y, G:i", $maint_item_data['etime']) : ''
 		),
-		'maint_header' => array(
-			'friendly_name' => 'Interval Settings',
-			'method' => 'spacer',
-		),
-		'minterval' => array(
-			'friendly_name' => 'Interval',
-			'method' => 'drop_array',
-			'array' => $intervals,
-			'default' => 86400,
-			'description' => 'This is the interval in which the start / end time will repeat.',
-			'value' => isset($maint_item_data['minterval']) ? $maint_item_data['minterval'] : '0'
-		),
 	);
 
 	if (api_plugin_is_enabled('thold')) {
@@ -250,7 +261,7 @@ function schedule_edit() {
 				$hosts[$h['id']] = $h['description'];
 			}
 		}
-		$sql = "SELECT host as id FROM plugin_maint_hosts WHERE type = 1 AND schedule = $id";
+		$sql = "SELECT host AS id FROM plugin_maint_hosts WHERE type = 1 AND schedule = $id";
 		$form_array['hosts'] = array(
 			"friendly_name" => "Hosts",
 			"method" => "drop_multi",
@@ -272,7 +283,7 @@ function schedule_edit() {
 				$hosts[$h['id']] = $h['url'];
 			}
 		}
-		$sql = "SELECT host as id FROM plugin_maint_hosts WHERE type = 2 AND schedule = $id";
+		$sql = "SELECT host AS id FROM plugin_maint_hosts WHERE type = 2 AND schedule = $id";
 		$form_array['webseer_hosts'] = array(
 			"friendly_name" => "URLs",
 			"method" => "drop_multi",
@@ -312,7 +323,6 @@ function schedule_edit() {
 	}
 
 	function maint_toggle_interval (status) {
-		document.getElementById('row_maint_header').style.display  = status;
 		document.getElementById('row_minterval').style.display  = status;
 	}
 
