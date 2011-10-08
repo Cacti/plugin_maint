@@ -24,14 +24,15 @@
 */
 
 function plugin_maint_version () {
-	return array( 'name' 		=> 'maint',
-			'version' 	=> '0.2',
-			'longname'	=> 'Maintenance Scheduler',
-			'author'	=> 'Jimmy Conner',
-			'homepage'	=> 'http://cactiusers.org',
-			'email'	=> 'jimmy@sqmail.org',
-			'url'		=> 'http://cactiusers.org/cacti/versions.php'
-			);
+	return array( 
+		'name' 		=> 'maint',
+		'version' 	=> '0.3',
+		'longname'	=> 'Maintenance Scheduler',
+		'author'	=> 'Jimmy Conner',
+		'homepage'	=> 'http://cactiusers.org',
+		'email'		=> 'jimmy@sqmail.org',
+		'url'		=> 'http://cactiusers.org/cacti/versions.php'
+		);
 }
 
 function plugin_maint_install () {
@@ -58,12 +59,13 @@ function maint_version () {
 
 function maint_config_arrays () {
 	global $menu;
-	$menu["Management"]['plugins/maint/maint.php'] = "Maintenance";
+	$menu["Management"]['plugins/maint/maint.php'] = "Maintenance Schedules";
 }
 
 function maint_draw_navigation_text ($nav) {
-	$nav["maint.php:"] = array("title" => "Scheduled Maintenance", "mapping" => "index.php:", "url" => "maint.php", "level" => "1");
-	$nav["maint.php:edit"] = array("title" => "Scheduled Maintenance", "mapping" => "index.php:", "url" => "maint.php", "level" => "1");
+	$nav["maint.php:"] = array("title" => "Maintenance Schedules", "mapping" => "index.php:", "url" => "maint.php", "level" => "1");
+	$nav["maint.php:edit"] = array("title" => "Maintenance Schedule (Edit)", "mapping" => "index.php:", "url" => "maint.php", "level" => "1");
+	$nav["maint.php:actions"] = array("title" => "Maintenance Schedules", "mapping" => "index.php:", "url" => "maint.php", "level" => "1");
 	return $nav;
 }
 
@@ -94,9 +96,3 @@ function maint_setup_database () {
 	$data['comment'] = 'Maintenance Schedules Hosts';
 	api_plugin_db_table_create ('maint', 'plugin_maint_hosts', $data);
 }
-
-
-
-
-
-

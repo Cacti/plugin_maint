@@ -31,6 +31,8 @@
 
 	--- 0.3 ---
 		Add dropdown for quick updating of the Scheduled Time
+		Add User Friendly Way of Associating/Disassociating Objects
+		Allow Plugins to Hook Maintenance Plugin
 
 	--- 0.2 ---
 		Order by Name by default
