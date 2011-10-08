@@ -1043,8 +1043,7 @@ function webseer_urls($header_label) {
 	/* form the 'where' clause for our main sql query */
 	if (strlen(get_request_var_request("filter"))) {
 		$sql_where = "WHERE ((u.url LIKE '%%" . get_request_var_request("filter") . "%%') 
-			OR (u.name LIKE '%%" . get_request_var_request("filter") . "%%') 
-			OR (u.location LIKE '%%" . get_request_var_request("filter") . "%%') 
+			OR (u.display_name LIKE '%%" . get_request_var_request("filter") . "%%') 
 			OR (u.ip LIKE '%%" . get_request_var_request("filter") . "%%'))";
 	}else{
 		$sql_where = '';
@@ -1053,7 +1052,7 @@ function webseer_urls($header_label) {
 	if (get_request_var_request("associated") == "false") {
 		/* Show all items */
 	} else {
-		$sql_where .= (strlen($sql_where) ? " AND ":"WHERE ") . " type=2 AND schedule=" . get_request_var_request('id');
+		$sql_where .= (strlen($sql_where) ? " AND ":"WHERE ") . " pmh.type=2 AND pmh.schedule=" . get_request_var_request('id');
 	}
 
 	/* print checkbox form for validation */
@@ -1068,7 +1067,7 @@ function webseer_urls($header_label) {
 		ON u.id=pmh.host
 		$sql_where");
 
-	$sql_query = "SELECT u.*, pmh.host AS associated 
+	$sql_query = "SELECT u.*, pmh.host AS associated, pmh.type AS maint_type
 		FROM plugin_webseer_urls AS u
 		LEFT JOIN plugin_maint_hosts AS pmh
 		ON u.id=pmh.host
@@ -1116,7 +1115,7 @@ function webseer_urls($header_label) {
 
 	print $nav;
 
-	$display_text = array("Description", "ID", "Associated Schedules", "Enabled" , "Location", "Hostname", "URL");
+	$display_text = array("Description", "ID", "Associated Schedules", "Enabled" , "Hostname", "URL");
 
 	html_header_checkbox($display_text);
 
@@ -1124,9 +1123,9 @@ function webseer_urls($header_label) {
 	if (sizeof($urls)) {
 		foreach ($urls as $url) {
 			form_alternate_row_color($colors["alternate"], $colors["light"], $i, 'line' . $url["id"]); $i++;
-			form_selectable_cell((strlen(get_request_var_request("filter")) ? preg_replace("/(" . preg_quote(get_request_var_request("filter")) . ")/i", "<span style='background-color: #F8D93D;'>\\1</span>", htmlspecialchars($url["name"])) : htmlspecialchars($url["name"])), $url["id"], 250);
+			form_selectable_cell((strlen(get_request_var_request("filter")) ? preg_replace("/(" . preg_quote(get_request_var_request("filter")) . ")/i", "<span style='background-color: #F8D93D;'>\\1</span>", htmlspecialchars($url["display_name"])) : htmlspecialchars($url["display_name"])), $url["id"], 250);
 			form_selectable_cell(round(($url["id"]), 2), $url["id"]);
-			if ($host['associated'] != '') {
+			if ($url['associated'] != '' && $url['maint_type'] == '2') {
 				form_selectable_cell('<span style="color:green;font-weight:bold;">Current List</span>', $url['id']);
 			}else{
 				if (sizeof($lists = db_fetch_assoc("SELECT name FROM plugin_maint_schedules INNER JOIN plugin_maint_hosts ON plugin_maint_schedules.id=plugin_maint_hosts.schedule WHERE type=2 AND host=" . $url['id']))) {
@@ -1140,10 +1139,12 @@ function webseer_urls($header_label) {
 				}
 			}
 			form_selectable_cell(($url['enabled'] == 'on' ? 'Enabled':'Disabled'), $url['id']);
-			form_selectable_cell((strlen(get_request_var_request("filter")) ? preg_replace("/(" . preg_quote(get_request_var_request("filter")) . ")/i", "<span style='background-color: #F8D93D;'>\\1</span>", htmlspecialchars($url["location"])) : htmlspecialchars($url["location"])), $url["id"]);
-			form_selectable_cell((strlen(get_request_var_request("filter")) ? preg_replace("/(" . preg_quote(get_request_var_request("filter")) . ")/i", "<span style='background-color: #F8D93D;'>\\1</span>", htmlspecialchars($url["ip"])) : htmlspecialchars($url["ip"])), $url["id"]);
+			if (empty($url['ip'])) {
+				$url['ip'] = 'USING DNS';
+			}
+			form_selectable_cell((strlen(get_request_var_request("filter")) ? preg_replace("/(" . preg_quote(get_request_var_request("filter")) . ")/i", "<span style='background-color: #F8D93D;'>\\1</span>", "<i>" . htmlspecialchars($url["ip"])) . "</i>" : "<i>" . htmlspecialchars($url["ip"]) . "</i>"), $url["id"]);
 			form_selectable_cell((strlen(get_request_var_request("filter")) ? preg_replace("/(" . preg_quote(get_request_var_request("filter")) . ")/i", "<span style='background-color: #F8D93D;'>\\1</span>", htmlspecialchars($url["url"])) : htmlspecialchars($url["url"])), $url["id"]);
-			form_checkbox_cell($url["name"], $url["id"]);
+			form_checkbox_cell($url["display_name"], $url["id"]);
 			form_end_row();
 		}
 
