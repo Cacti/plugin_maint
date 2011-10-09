@@ -146,35 +146,6 @@ function form_save() {
 			raise_message(2);
 		}
 	
-		if (!is_error_message()) {
-			$id = sql_save($save, 'plugin_maint_schedules');
-			if ($id) {
-				if (api_plugin_is_enabled('thold')) {
-					db_execute("DELETE FROM plugin_maint_hosts WHERE type=1 AND schedule=" . $id);
-					if (isset($_POST['hosts'])) {
-						foreach ($_POST['hosts'] as $i) {
-							input_validate_input_number($i);
-							db_execute("INSERT INTO plugin_maint_hosts (type, host, schedule) VALUES (1, $i, $id)");
-						}
-					}
-				}
-	
-				if (api_plugin_is_enabled('webseer') || in_array('webseer', $plugins)) {
-					db_execute("DELETE FROM plugin_maint_hosts WHERE type=2 AND schedule=" . $id);
-					if (isset($_POST['webseer_hosts'])) {
-						foreach ($_POST['webseer_hosts'] as $i) {
-							input_validate_input_number($i);
-							db_execute("INSERT INTO plugin_maint_hosts (type, host, schedule) VALUES (2, $i, $id)");
-						}
-					}
-				}
-	
-				raise_message(1);
-			} else {
-				raise_message(2);
-			}
-		}
-	
 		header('Location: maint.php?tab=general&action=edit&id=' . (empty($id) ? $_POST['id'] : $id));
 	}
 }
@@ -1051,6 +1022,8 @@ function webseer_urls($header_label) {
 
 	if (get_request_var_request("associated") == "false") {
 		/* Show all items */
+		$sql_where .= (strlen($sql_where) ? " AND ":"WHERE ") . " (pmh.type=2 OR pmh.type IS NULL)";
+		
 	} else {
 		$sql_where .= (strlen($sql_where) ? " AND ":"WHERE ") . " pmh.type=2 AND pmh.schedule=" . get_request_var_request('id');
 	}
