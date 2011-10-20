@@ -78,13 +78,11 @@ switch ($_REQUEST['action']) {
 }
 
 function schedule_delete() {
-	foreach($_POST as $t=>$v) {
-		if (substr($t, 0,4) == 'chk_') {
-			$id = substr($t, 4);
-			input_validate_input_number($id);
-			db_fetch_assoc("DELETE FROM plugin_maint_schedules WHERE id = $id LIMIT 1");
-			db_fetch_assoc("DELETE FROM plugin_maint_hosts WHERE schedule = $id");
-		}
+	$selected_items = unserialize(stripslashes($_POST["selected_items"]));
+	foreach($selected_items as $id) {
+		input_validate_input_number($id);
+		db_fetch_assoc("DELETE FROM plugin_maint_schedules WHERE id = $id LIMIT 1");
+		db_fetch_assoc("DELETE FROM plugin_maint_hosts WHERE schedule = $id");
 	}
 
 	Header('Location: maint.php');
@@ -92,14 +90,12 @@ function schedule_delete() {
 }
 
 function schedule_update() {
-	foreach($_POST as $t=>$v) {
-		if (substr($t, 0,4) == 'chk_') {
-			$id = substr($t, 4);
-			input_validate_input_number($id);
-			$stime = intval(time()/60)*60;
-			$etime = $stime + 3600;
-			db_fetch_assoc("UPDATE plugin_maint_schedules SET stime = $stime, etime = $etime WHERE id = $id LIMIT 1");
-		}
+	$selected_items = unserialize(stripslashes($_POST["selected_items"]));
+	foreach($selected_items as $id) {
+		input_validate_input_number($id);
+		$stime = intval(time()/60)*60;
+		$etime = $stime + 3600;
+		db_fetch_assoc("UPDATE plugin_maint_schedules SET stime = $stime, etime = $etime WHERE id = $id LIMIT 1");
 	}
 	Header('Location: maint.php');
 	exit;
@@ -145,8 +141,16 @@ function form_save() {
 		if ($save['stime'] >= $save['etime']) {
 			raise_message(2);
 		}
-	
+		if (!is_error_message()) {
+			$id = sql_save($save, 'plugin_maint_schedules');
+			if ($id) {
+				raise_message(1);
+			} else {
+				raise_message(2);
+			}
+		}
 		header('Location: maint.php?tab=general&action=edit&id=' . (empty($id) ? $_POST['id'] : $id));
+		exit;
 	}
 }
 
@@ -156,8 +160,6 @@ function form_actions() {
 	/* if we are to save this form, instead of display it */
 	if (isset($_POST["selected_items"])) {
 		if (isset($_POST["save_list"])) {
-			$selected_items = unserialize(stripslashes($_POST["selected_items"]));
-
 			if ($_POST["drp_action"] == "2") { /* delete */
 				schedule_delete();
 			}elseif ($_POST["drp_action"] == "1") { /* update */
