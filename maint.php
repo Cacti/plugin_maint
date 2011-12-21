@@ -708,8 +708,6 @@ function thold_hosts($header_label) {
 								FROM host_template AS ht
 								INNER JOIN host AS h
 								ON h.host_template_id=ht.id 
-								INNER JOIN thold_data AS td
-								ON h.id=td.host_id 
 								ORDER BY ht.name");
 
 							if (sizeof($host_templates) > 0) {
