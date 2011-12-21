@@ -47,7 +47,7 @@ $tabs = array(
 );
 
 if (api_plugin_is_enabled('thold')) {
-	$tabs["tholds"] = "Thresholds";
+	$tabs["hosts"] = "Devices";
 }
 
 if (api_plugin_is_enabled('webseer')) {
@@ -168,7 +168,7 @@ function form_actions() {
 
 			header("Location: maint.php");
 			exit;
-		}elseif (isset($_POST["save_tholds"])) {
+		}elseif (isset($_POST["save_hosts"])) {
 			$selected_items = unserialize(stripslashes($_POST["selected_items"]));
 			input_validate_input_number(get_request_var_post('id'));
 
@@ -190,7 +190,7 @@ function form_actions() {
 				}
 			}
 
-			header("Location: maint.php?action=edit&tab=tholds&id=" . get_request_var_request("id"));
+			header("Location: maint.php?action=edit&tab=hosts&id=" . get_request_var_request("id"));
 			exit;
 		}elseif (isset($_POST["save_webseer"])) {
 			$selected_items = unserialize(stripslashes($_POST["selected_items"]));
@@ -282,7 +282,7 @@ function form_actions() {
 		html_end_box();
 
 		include_once("./include/bottom_footer.php");
-	}elseif (isset($_POST["save_tholds"])) {
+	}elseif (isset($_POST["save_hosts"])) {
 		/* loop through each of the notification lists selected on the previous page and get more info about them */
 		while (list($var,$val) = each($_POST)) {
 			if (preg_match("/^chk_([0-9]+)$/", $var, $matches)) {
@@ -328,7 +328,7 @@ function form_actions() {
 				<td align='right' bgcolor='#eaeaea'>
 				<input type='hidden' name='action' value='actions'>
 				<input type='hidden' name='id' value='" . get_request_var_request('id') . "'>
-				<input type='hidden' name='save_tholds' value='1'>
+				<input type='hidden' name='save_hosts' value='1'>
 				<input type='hidden' name='selected_items' value='" . (isset($array) ? serialize($array) : '') . "'>
 				<input type='hidden' name='drp_action' value='" . $_POST["drp_action"] . "'>
 				$save_html
@@ -552,7 +552,7 @@ function schedule_edit() {
 		changemaintType ();
 		</script>
 		<?php
-	}elseif ($_REQUEST["tab"] == "tholds") {
+	}elseif ($_REQUEST["tab"] == "hosts") {
 		thold_hosts($header_label);
 	}elseif ($_REQUEST["tab"] == "webseer") {
 		webseer_urls($header_label);
@@ -625,6 +625,8 @@ function thold_hosts($header_label) {
 	input_validate_input_number(get_request_var_request("host_template_id"));
 	input_validate_input_number(get_request_var_request("rows"));
 	input_validate_input_number(get_request_var_request("page"));
+	input_validate_input_number(get_request_var_request("id"));
+
 	/* ==================================================== */
 
 	/* clean up search string */
@@ -669,7 +671,7 @@ function thold_hosts($header_label) {
 	<!--
 
 	function applyViewDeviceFilterChange(objForm) {
-		strURL = '?tab=tholds&action=edit&id=<?php print get_request_var_request('id');?>'
+		strURL = '?tab=hosts&action=edit&id=<?php print get_request_var_request('id');?>'
 		strURL = strURL + '&rows=' + objForm.rows.value;
 		strURL = strURL + '&host_template_id=' + objForm.host_template_id.value;
 		strURL = strURL + '&associated=' + objForm.associated.checked;
@@ -678,7 +680,7 @@ function thold_hosts($header_label) {
 	}
 
 	function clearViewDeviceFilterChange(objForm) {
-		strURL = '?tab=tholds&action=edit&id=<?php print get_request_var_request('id');?>&clearf=true'
+		strURL = '?tab=hosts&action=edit&id=<?php print get_request_var_request('id');?>&clearf=true'
 		document.location = strURL;
 	}
 
@@ -691,7 +693,7 @@ function thold_hosts($header_label) {
 	?>
 	<tr bgcolor="#<?php print $colors["panel"];?>">
 		<td>
-		<form name="form_devices" method="post" action="maint.php?action=edit&tab=tholds">
+		<form name="form_devices" method="post" action="maint.php?action=edit&tab=hosts">
 			<table cellpadding="0" cellspacing="0">
 				<tr>
 					<td nowrap style='white-space: nowrap;' width="50">
@@ -801,12 +803,18 @@ function thold_hosts($header_label) {
 	$host_graphs       = array_rekey(db_fetch_assoc("SELECT host_id, count(*) as graphs FROM graph_local GROUP BY host_id"), "host_id", "graphs");
 	$host_data_sources = array_rekey(db_fetch_assoc("SELECT host_id, count(*) as data_sources FROM data_local GROUP BY host_id"), "host_id", "data_sources");
 
-	$sql_query = "SELECT h.*, pmh.host AS associated 
-		FROM host AS h
-		INNER JOIN (SELECT DISTINCT host_id FROM thold_data) AS td 
-		ON h.id=td.host_id
-		LEFT JOIN plugin_maint_hosts AS pmh
-		ON h.id=pmh.host
+	//$sql_query = "SELECT h.*, pmh.host AS associated 
+	//	FROM host AS h
+	//	INNER JOIN (SELECT DISTINCT host_id FROM thold_data) AS td 
+	//	ON h.id=td.host_id
+	//	LEFT JOIN plugin_maint_hosts AS pmh
+	//	ON h.id=pmh.host
+	//	$sql_where 
+	//	LIMIT " . (get_request_var_request("rows")*(get_request_var_request("page")-1)) . "," . get_request_var_request("rows");
+
+	$sql_query = "SELECT h.*, (SELECT schedule FROM plugin_maint_hosts WHERE host = h.id AND schedule = " . get_request_var_request("id") . ") AS associated 
+		FROM host as h
+
 		$sql_where 
 		LIMIT " . (get_request_var_request("rows")*(get_request_var_request("page")-1)) . "," . get_request_var_request("rows");
 
@@ -823,13 +831,13 @@ function thold_hosts($header_label) {
 					<table width='100%' cellspacing='0' cellpadding='0' border='0'>
 						<tr>
 						<td align='left' class='textHeaderDark'>
-								<strong>&lt;&lt; "; if (get_request_var_request("page") > 1) { $nav .= "<a class='linkOverDark' href='" . htmlspecialchars("maint.php?tab=tholds&action=edit&id=" . get_request_var_request("id") . "&page=" . (get_request_var_request("page")-1)) . "'>"; } $nav .= "Previous"; if (get_request_var_request("page") > 1) { $nav .= "</a>"; } $nav .= "</strong>
+								<strong>&lt;&lt; "; if (get_request_var_request("page") > 1) { $nav .= "<a class='linkOverDark' href='" . htmlspecialchars("maint.php?tab=hosts&action=edit&id=" . get_request_var_request("id") . "&page=" . (get_request_var_request("page")-1)) . "'>"; } $nav .= "Previous"; if (get_request_var_request("page") > 1) { $nav .= "</a>"; } $nav .= "</strong>
 							</td>\n
 							<td align='center' class='textHeaderDark'>
 								Showing Rows " . ((get_request_var_request("rows")*(get_request_var_request("page")-1))+1) . " to " . ((($total_rows < read_config_option("num_rows_device")) || ($total_rows < (get_request_var_request("rows")*get_request_var_request("page")))) ? $total_rows : (get_request_var_request("rows")*get_request_var_request("page"))) . " of $total_rows [$url_page_select]
 							</td>\n
 							<td align='right' class='textHeaderDark'>
-										<strong>"; if ((get_request_var_request("page") * get_request_var_request("rows")) < $total_rows) { $nav .= "<a class='linkOverDark' href='" . htmlspecialchars("maint.php?tab=tholds&action=edit&id=" . get_request_var_request("id") . "&page=" . (get_request_var_request("page")+1)) . "'>"; } $nav .= "Next"; if ((get_request_var_request("page") * get_request_var_request("rows")) < $total_rows) { $nav .= "</a>"; } $nav .= " &gt;&gt;</strong>
+										<strong>"; if ((get_request_var_request("page") * get_request_var_request("rows")) < $total_rows) { $nav .= "<a class='linkOverDark' href='" . htmlspecialchars("maint.php?tab=hosts&action=edit&id=" . get_request_var_request("id") . "&page=" . (get_request_var_request("page")+1)) . "'>"; } $nav .= "Next"; if ((get_request_var_request("page") * get_request_var_request("rows")) < $total_rows) { $nav .= "</a>"; } $nav .= " &gt;&gt;</strong>
 							</td>\n
 						</tr>
 					</table>
@@ -862,17 +870,19 @@ function thold_hosts($header_label) {
 			form_selectable_cell((strlen(get_request_var_request("filter")) ? preg_replace("/(" . preg_quote(get_request_var_request("filter")) . ")/i", "<span style='background-color: #F8D93D;'>\\1</span>", htmlspecialchars($host["description"])) : htmlspecialchars($host["description"])), $host["id"], 250);
 			form_selectable_cell(round(($host["id"]), 2), $host["id"]);
 			if ($host['associated'] != '') {
-				form_selectable_cell('<span style="color:green;font-weight:bold;">Current List</span>', $host['id']);
-			}else{
-				if (sizeof($lists = db_fetch_assoc("SELECT name FROM plugin_maint_schedules INNER JOIN plugin_maint_hosts ON plugin_maint_schedules.id=plugin_maint_hosts.schedule WHERE type=1 AND host=" . $host['id']))) {
-					$names = '';
-					foreach($lists['name'] as $name) {
-						$names .= (strlen($names) ? ", ":"") . "<span style='color:purple;font-weight:bold;'>$name</span>";
-					}
-					form_selectable_cell($names, $host['id']);
-				}else{
-					form_selectable_cell('<span style="color:red;font-weight:bold;">No Schedules</span>', $host['id']);
+				$names = '<span style="color:green;font-weight:bold;">Current List</span>';
+			} else {
+				$names = '';
+			}
+			if (sizeof($lists = db_fetch_assoc("SELECT name FROM plugin_maint_schedules INNER JOIN plugin_maint_hosts ON plugin_maint_schedules.id=plugin_maint_hosts.schedule WHERE type=1 AND host=" . $host['id'] . " AND plugin_maint_schedules.id != " . get_request_var_request('id')))) {
+				foreach($lists as $name) {
+					$names .= (strlen($names) ? ", ":"") . "<span style='color:purple;font-weight:bold;'>" . $name['name'] . "</span>";
 				}
+			}
+			if ($names == '') {
+				form_selectable_cell('<span style="color:red;font-weight:bold;">No Schedules</span>', $host['id']);
+			} else {
+				form_selectable_cell($names, $host['id']);
 			}
 			form_selectable_cell((isset($host_graphs[$host["id"]]) ? $host_graphs[$host["id"]] : 0), $host["id"]);
 			form_selectable_cell((isset($host_data_sources[$host["id"]]) ? $host_data_sources[$host["id"]] : 0), $host["id"]);
@@ -890,7 +900,7 @@ function thold_hosts($header_label) {
 	html_end_box(false);
 
 	form_hidden_box("id", get_request_var_request("id"), "");
-	form_hidden_box("save_tholds", "1", "");
+	form_hidden_box("save_hosts", "1", "");
 
 	/* draw the dropdown containing a list of available actions for this form */
 	draw_actions_dropdown($assoc_actions);
