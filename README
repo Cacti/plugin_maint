@@ -29,6 +29,9 @@
 
 ----[ Changelog
 
+    --- 1.0 ---
+		Updates for Cacti 1.0
+
 	--- 0.3 ---
 		Add dropdown for quick updating of the Scheduled Time
 		Add User Friendly Way of Associating/Disassociating Objects

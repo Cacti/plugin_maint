@@ -2,7 +2,7 @@
 /*
  ex: set tabstop=4 shiftwidth=4 autoindent:
  +-------------------------------------------------------------------------+
- | Copyright (C) 2010 The Cacti Group                                      |
+ | Copyright (C) 2010-2016 The Cacti Group                                 |
  |                                                                         |
  | This program is free software; you can redistribute it and/or           |
  | modify it under the terms of the GNU General Public License             |
@@ -26,7 +26,7 @@
 function plugin_maint_version () {
 	return array( 
 		'name' 		=> 'maint',
-		'version' 	=> '0.3',
+		'version' 	=> '1.0',
 		'longname'	=> 'Maintenance Scheduler',
 		'author'	=> 'Jimmy Conner',
 		'homepage'	=> 'http://cactiusers.org',
@@ -39,6 +39,7 @@ function plugin_maint_install () {
 	api_plugin_register_hook('maint', 'config_arrays', 'maint_config_arrays', 'setup.php');
 	api_plugin_register_hook('maint', 'draw_navigation_text', 'maint_draw_navigation_text', 'setup.php');
 	api_plugin_register_realm('maint', 'maint.php', 'Maintenance Schedules', 1);
+
 	maint_setup_database ();
 }
 
@@ -59,13 +60,13 @@ function maint_version () {
 
 function maint_config_arrays () {
 	global $menu;
-	$menu["Management"]['plugins/maint/maint.php'] = "Maintenance Schedules";
+	$menu['Management']['plugins/maint/maint.php'] = 'Maintenance Schedules';
 }
 
 function maint_draw_navigation_text ($nav) {
-	$nav["maint.php:"] = array("title" => "Maintenance Schedules", "mapping" => "index.php:", "url" => "maint.php", "level" => "1");
-	$nav["maint.php:edit"] = array("title" => "Maintenance Schedule (Edit)", "mapping" => "index.php:", "url" => "maint.php", "level" => "1");
-	$nav["maint.php:actions"] = array("title" => "Maintenance Schedules", "mapping" => "index.php:", "url" => "maint.php", "level" => "1");
+	$nav['maint.php:'] = array('title' => 'Maintenance Schedules', 'mapping' => 'index.php:', 'url' => 'maint.php', 'level' => '1');
+	$nav['maint.php:edit'] = array('title' => '(edit)', 'mapping' => 'index.php:', 'url' => 'maint.php', 'level' => '2');
+	$nav['maint.php:actions'] = array('title' => '(actions)', 'mapping' => 'index.php:', 'url' => 'maint.php', 'level' => '2');
 	return $nav;
 }
 

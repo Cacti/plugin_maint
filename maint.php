@@ -2,7 +2,7 @@
 /*
  ex: set tabstop=4 shiftwidth=4 autoindent:
  +-------------------------------------------------------------------------+
- | Copyright (C) 2010 The Cacti Group                                      |
+ | Copyright (C) 2010-2016 The Cacti Group                                 |
  |                                                                         |
  | This program is free software; you can redistribute it and/or           |
  | modify it under the terms of the GNU General Public License             |
@@ -27,18 +27,34 @@ chdir('../../');
 include_once('./include/auth.php');
 include_once($config['base_path'] . '/plugins/maint/functions.php');
 
-define('MAX_DISPLAY_PAGES', 21);
-
 // Maint Schedule Actions
-$mactions = array(
+$actions = array(
 	1 => 'Update Time (Now + 1 Hour)',
 	2 => 'Delete'
-	);
+);
 
 // Host Maint Schedule Actions
 $assoc_actions = array(
 	1 => 'Associate',
 	2 => 'Disassociate'
+);
+
+$maint_types = array (
+	1 => 'One Time', 
+	2 => 'Reoccurring'
+);
+
+$maint_intervals = array(
+	0      => 'Not Defined', 
+	86400  => 'Every Day', 
+	604800 => 'Every Week'
+);
+
+$yesno = array(
+	0     => 'No', 
+	1     => 'Yes', 
+	'on'  => 'Yes', 
+	'off' => 'No'
 );
 
 // Present a tabbed interface
@@ -56,9 +72,9 @@ if (api_plugin_is_enabled('webseer')) {
 
 $tabs = api_plugin_hook_function('maint_tabs', $tabs);
 
-if (!isset($_REQUEST['action'])) $_REQUEST['action'] = '';
+set_default_action();
 
-switch ($_REQUEST['action']) {
+switch (get_request_var('action')) {
 	case 'save':
 		form_save();
 		break;
@@ -78,7 +94,7 @@ switch ($_REQUEST['action']) {
 }
 
 function schedule_delete() {
-	$selected_items = sanitize_unserialize_selected_items($_POST['selected_items']);
+	$selected_items = sanitize_unserialize_selected_items(get_nfilter_request_var('selected_items'));
 
 	if ($selected_items != false) {
 		foreach($selected_items as $id) {
@@ -93,7 +109,7 @@ function schedule_delete() {
 }
 
 function schedule_update() {
-	$selected_items = sanitize_unserialize_selected_items($_POST['selected_items']);
+	$selected_items = sanitize_unserialize_selected_items(get_nfilter_request_var('selected_items'));
 
 	if ($selected_items != false) {
 		foreach($selected_items as $id) {
@@ -112,31 +128,31 @@ function schedule_update() {
 function form_save() {
 	global $plugins;
 
-	if (isset($_POST['save_component'])) {
+	if (isset_request_var('save_component')) {
 		/* ================= input validation ================= */
-		input_validate_input_number(get_request_var_post('id'));
-		input_validate_input_number(get_request_var_post('mtype'));
-		input_validate_input_number(get_request_var_post('minterval'));
+		get_filter_request_var('id');
+		get_filter_request_var('mtype');
+		get_filter_request_var('minterval');
 	
-		if (isset($_POST['name'])) {
-			$_POST['name'] = trim(str_replace(array("\\", "'", '"'), '', get_request_var_post('name')));
+		if (isset_request_var('name')) {
+			set_request_var('name', trim(str_replace(array("\\", "'", '"'), '', get_nfilter_request_var('name'))));
 		}
-		if (isset($_POST['stime'])) {
-			$_POST['stime'] = trim(str_replace(array("\\", "'", '"'), '', get_request_var_post('stime')));
+		if (isset_request_var('stime')) {
+			set_request_var('stime', trim(str_replace(array("\\", "'", '"'), '', get_nfilter_request_var('stime'))));
 		}
-		if (isset($_POST['etime'])) {
-			$_POST['etime'] = trim(str_replace(array("\\", "'", '"'), '', get_request_var_post('etime')));
+		if (isset_request_var('etime')) {
+			set_request_var('etime', trim(str_replace(array("\\", "'", '"'), '', get_nfilter_request_var('etime'))));
 		}
 		/* ==================================================== */
 
-		$save['id']    = $_POST['id'];
-		$save['name']  = $_POST['name'];
-		$save['mtype'] = $_POST['mtype'];
-		$save['stime'] = strtotime($_POST['stime']);
-		$save['etime'] = strtotime($_POST['etime']);
-		$save['minterval'] = $_POST['minterval'];
+		$save['id']        = get_nfilter_request_var('id');
+		$save['name']      = get_nfilter_request_var('name');
+		$save['mtype']     = get_nfilter_request_var('mtype');
+		$save['stime']     = strtotime(get_nfilter_request_var('stime'));
+		$save['etime']     = strtotime(get_nfilter_request_var('etime'));
+		$save['minterval'] = get_nfilter_request_var('minterval');
 
-		if (isset($_POST['enabled'])) {
+		if (isset_request_var('enabled')) {
 			$save['enabled'] = 'on';
 		} else {
 			$save['enabled'] = '';
@@ -159,7 +175,7 @@ function form_save() {
 			}
 		}
 
-		header('Location: maint.php?tab=general&action=edit&header=false&id=' . (empty($id) ? $_POST['id'] : $id));
+		header('Location: maint.php?tab=general&action=edit&header=false&id=' . (empty($id) ? get_request_var('id') : $id));
 
 		exit;
 	}
@@ -168,66 +184,57 @@ function form_save() {
 function form_actions() {
 	global $actions, $assoc_actions;
 
+	/* ================= input validation ================= */
+	get_filter_request_var('id');
+	get_filter_request_var('drp_action', FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => '/^([a-zA-Z0-9_]+)$/')));
+	/* ================= input validation ================= */
+
 	/* if we are to save this form, instead of display it */
-	if (isset($_POST['selected_items'])) {
-		if (isset($_POST['save_list'])) {
-			if ($_POST['drp_action'] == '2') { /* delete */
+	if (isset_request_var('selected_items')) {
+		if (isset_request_var('save_list')) {
+			if (get_request_var('drp_action') == '2') { /* delete */
 				schedule_delete();
-			}elseif ($_POST['drp_action'] == '1') { /* update */
+			}elseif (get_request_var('drp_action') == '1') { /* update */
 				schedule_update();
 			}
 
 			header('Location: maint.php&header=false');
 
 			exit;
-		}elseif (isset($_POST['save_hosts'])) {
-			$selected_items = unserialize(stripslashes($_POST['selected_items']));
-			input_validate_input_number(get_request_var_post('id'));
+		}elseif (isset_request_var('save_hosts')) {
+			$selected_items = sanitize_unserialize_selected_items(get_nfilter_request_var('selected_items'));
 
-			if ($_POST['drp_action'] == '1') { /* associate */
-				for ($i=0;($i<count($selected_items));$i++) {
-					/* ================= input validation ================= */
-					input_validate_input_number($selected_items[$i]);
-					/* ==================================================== */
-
-					db_execute('REPLACE INTO plugin_maint_hosts (type, host, schedule) VALUES (1, ' . $selected_items[$i] . ', ' . $_POST['id'] . ')');
-				}
-			}elseif ($_POST['drp_action'] == '2') { /* disassociate */
-				for ($i=0;($i<count($selected_items));$i++) {
-					/* ================= input validation ================= */
-					input_validate_input_number($selected_items[$i]);
-					/* ==================================================== */
-
-					db_execute('DELETE FROM plugin_maint_hosts WHERE type=1 AND host=' . $selected_items[$i] . ' AND schedule=' .  $_POST['id']);
+			if ($selected_items != false) {
+				if (get_request_var('drp_action') == '1') { /* associate */
+					for ($i=0;($i<count($selected_items));$i++) {
+						db_execute('REPLACE INTO plugin_maint_hosts (type, host, schedule) VALUES (1, ' . $selected_items[$i] . ', ' . get_request_var('id') . ')');
+					}
+				}elseif (get_request_var('drp_action') == '2') { /* disassociate */
+					for ($i=0;($i<count($selected_items));$i++) {
+						db_execute('DELETE FROM plugin_maint_hosts WHERE type=1 AND host=' . $selected_items[$i] . ' AND schedule=' .  get_request_var('id'));
+					}
 				}
 			}
 
-			header('Location: maint.php?action=edit&tab=hosts&header=false&id=' . get_request_var_request('id'));
+			header('Location: maint.php?action=edit&tab=hosts&header=false&id=' . get_request_var('id'));
 
 			exit;
-		}elseif (isset($_POST['save_webseer'])) {
-			$selected_items = unserialize(stripslashes($_POST['selected_items']));
-			input_validate_input_number(get_request_var_post('id'));
+		}elseif (isset_request_var('save_webseer')) {
+			$selected_items = sanitize_unserialize_selected_items(get_nfilter_request_var('selected_items'));
 
-			if ($_POST['drp_action'] == '1') { /* associate */
-				for ($i=0;($i<count($selected_items));$i++) {
-					/* ================= input validation ================= */
-					input_validate_input_number($selected_items[$i]);
-					/* ==================================================== */
-
-					db_execute('REPLACE INTO plugin_maint_hosts (type, host, schedule) VALUES (2, ' . $selected_items[$i] . ', ' . $_POST['id'] . ')');
-				}
-			}elseif ($_POST['drp_action'] == '2') { /* disassociate */
-				for ($i=0;($i<count($selected_items));$i++) {
-					/* ================= input validation ================= */
-					input_validate_input_number($selected_items[$i]);
-					/* ==================================================== */
-
-					db_execute('DELETE FROM plugin_maint_hosts WHERE type=2 AND host=' . $selected_items[$i] . ' AND schedule=' .  $_POST['id']);
+			if ($selected_items != false) {
+				if (get_request_var('drp_action') == '1') { /* associate */
+					for ($i=0;($i<count($selected_items));$i++) {
+						db_execute('REPLACE INTO plugin_maint_hosts (type, host, schedule) VALUES (2, ' . $selected_items[$i] . ', ' . get_request_var('id') . ')');
+					}
+				}elseif (get_request_var('drp_action') == '2') { /* disassociate */
+					for ($i=0;($i<count($selected_items));$i++) {
+						db_execute('DELETE FROM plugin_maint_hosts WHERE type=2 AND host=' . $selected_items[$i] . ' AND schedule=' .  get_request_var('id'));
+					}
 				}
 			}
-
-			header('Location: maint.php?action=edit&tab=webseer&header=false&id=' . get_request_var_request('id'));
+	
+			header('Location: maint.php?action=edit&tab=webseer&header=false&id=' . get_request_var('id'));
 
 			exit;
 		}else{
@@ -237,11 +244,11 @@ function form_actions() {
 
 	/* setup some variables */
 	$list = ''; $array = array(); $list_name = '';
-	if (isset($_POST['id'])) {
-		$list_name = db_fetch_cell('SELECT name FROM plugin_maint_schedules WHERE id=' . $_POST['id']);
+	if (isset_request_var('id')) {
+		$list_name = db_fetch_cell('SELECT name FROM plugin_maint_schedules WHERE id=' . get_request_var('id'));
 	}
 
-	if (isset($_POST['save_list'])) {
+	if (isset_request_var('save_list')) {
 		/* loop through each of the notification lists selected on the previous page and get more info about them */
 		while (list($var,$val) = each($_POST)) {
 			if (preg_match('/^chk_([0-9]+)$/', $var, $matches)) {
@@ -258,29 +265,31 @@ function form_actions() {
 
 		form_start('maint.php');
 
-		html_start_box('<strong>' . $actions{$_POST['drp_action']} . " $list_name</strong>", '60%', '', '3', 'center', '');
+		html_start_box($actions{get_request_var('drp_action')} . " $list_name", '60%', '', '3', 'center', '');
 
 		if (sizeof($array)) {
-			if ($_POST['drp_action'] == '1') { /* update */
-				print "	<tr>
-						<td class='textArea'>
-							<p>When you click \"Continue\", the following Maintenance Schedule(s) will be Updated.</p>
-							<ul>$list</ul>
-						</td>
-					</tr>\n";
-				$save_html = "<input type='button' value='Cancel' onClick='window.history.back()'>&nbsp;<input type='submit' value='Continue' title='Delete Notification List(s)'>";
-			}elseif ($_POST['drp_action'] == '2') { /* delete */
-				print "	<tr>
-						<td class='textArea'>
-							<p>When you click \"Continue\", the following Maintenance Schedule(s) will be Deleted.  Any Hosts(s) Associated with this Schedule will be lost.</p>
-							<ul>$list</ul>
-						</td>
-					</tr>\n";
-				$save_html = "<input type='button' value='Cancel' onClick='window.history.back()'>&nbsp;<input type='submit' value='Continue' title='Duplicate Notification List(s)'>";
+			if (get_request_var('drp_action') == '1') { /* update */
+				print "<tr>
+					<td class='textArea'>
+						<p>Click 'Continue' to Update the following Maintenance Schedule(s).</p>
+						<ul>$list</ul>
+					</td>
+				</tr>\n";
+
+				$save_html = "<input type='button' value='Cancel' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='Continue' title='Update Maintenance Schedule(s)'>";
+			}elseif (get_request_var('drp_action') == '2') { /* delete */
+				print "<tr>
+					<td class='textArea'>
+						<p>Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated.</p>
+						<ul>$list</ul>
+					</td>
+				</tr>\n";
+
+				$save_html = "<input type='button' value='Cancel' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='Continue' title='Delete Maintenance Schedule(s)'>";
 			}
 		} else {
 			print "<tr><td><span class='textError'>You must select at least one Maintenance Schedule.</span></td></tr>\n";
-			$save_html = "<input type='button' value='Return' onClick='window.history.back()'>";
+			$save_html = "<input type='button' value='Return' onClick='cactiReturnTo()'>";
 		}
 
 		print "<tr class='saveRow'>
@@ -288,7 +297,7 @@ function form_actions() {
 				<input type='hidden' name='action' value='actions'>
 				<input type='hidden' name='save_list' value='1'>
 				<input type='hidden' name='selected_items' value='" . (isset($array) ? serialize($array) : '') . "'>
-				<input type='hidden' name='drp_action' value='" . $_POST['drp_action'] . "'>
+				<input type='hidden' name='drp_action' value='" . get_request_var('drp_action') . "'>
 				$save_html
 			</td>
 		</tr>\n";
@@ -298,7 +307,7 @@ function form_actions() {
 		form_end();
 
 		bottom_footer();
-	}elseif (isset($_POST['save_hosts'])) {
+	}elseif (isset_request_var('save_hosts')) {
 		/* loop through each of the notification lists selected on the previous page and get more info about them */
 		while (list($var,$val) = each($_POST)) {
 			if (preg_match('/^chk_([0-9]+)$/', $var, $matches)) {
@@ -315,83 +324,27 @@ function form_actions() {
 
 		form_start('maint.php');
 
-		html_start_box('<strong>' . $assoc_actions{$_POST['drp_action']} . ' Host(s)</strong>', '60%', '', '3', 'center', '');
+		html_start_box($assoc_actions{get_request_var('drp_action')} . ' Host(s)', '60%', '', '3', 'center', '');
 
 		if (sizeof($array)) {
-			if ($_POST['drp_action'] == '1') { /* associate */
-				print "	<tr>
-						<td class='textArea'>
-							<p>Click 'Continue' to associate the following Device(s) with the Maintenance Schedule '<b>" . $list_name . "</b>'.</p>
-							<ul>$list</ul>
-						</td>
-					</tr>\n";
-				$save_html = "<input type='button' value='Cancel' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='Continue' title='Associate Notification List(s)'>";
-			}elseif ($_POST['drp_action'] == '2') { /* disassociate */
-				print "	<tr>
-						<td class='textArea'>
-							<p>Click 'Continue' to disassociate the following Device(s) with the Maintenance Schedule '<b>" . $list_name . "</b>'.</p>
-							<ul>$list</ul>
-						</td>
-					</tr>\n";
-				$save_html = "<input type='button' value='Cancel' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='Continue' title='Disassociate Notification List(s)'>";
-			}
-		} else {
-			print "<tr><td><span class='textError'>You must select at least one Host.</span></td></tr>\n";
-			$save_html = "<input type='button' value='Return' onClick='cactiReturnTo()'>";
-		}
+			if (get_request_var('drp_action') == '1') { /* associate */
+				print "<tr>
+					<td class='textArea'>
+						<p>Click 'Continue' to associate the following Device(s) with the Maintenance Schedule '<b>" . $list_name . "</b>'.</p>
+						<ul>$list</ul>
+					</td>
+				</tr>\n";
 
-		print "	<tr class='saveRow'>
-			<td>
-				<input type='hidden' name='action' value='actions'>
-				<input type='hidden' name='id' value='" . get_request_var_request('id') . "'>
-				<input type='hidden' name='save_hosts' value='1'>
-				<input type='hidden' name='selected_items' value='" . (isset($array) ? serialize($array) : '') . "'>
-				<input type='hidden' name='drp_action' value='" . $_POST['drp_action'] . "'>
-				$save_html
-			</td>
-		</tr>\n";
+				$save_html = "<input type='button' value='Cancel' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='Continue' title='Associate Maintenance Schedule(s)'>";
+			}elseif (get_request_var('drp_action') == '2') { /* disassociate */
+				print "<tr>
+					<td class='textArea'>
+						<p>Click 'Continue' to disassociate the following Device(s) with the Maintenance Schedule '<b>" . $list_name . "</b>'.</p>
+						<ul>$list</ul>
+					</td>
+				</tr>\n";
 
-		html_end_box();
-
-		form_end();
-
-		bottom_footer();
-	}elseif (isset($_POST['save_webseer'])) {
-		/* loop through each of the notification lists selected on the previous page and get more info about them */
-		while (list($var,$val) = each($_POST)) {
-			if (preg_match('/^chk_([0-9]+)$/', $var, $matches)) {
-				/* ================= input validation ================= */
-				input_validate_input_number($matches[1]);
-				/* ==================================================== */
-
-				$list .= '<li><b>' . db_fetch_cell('SELECT description FROM host WHERE id=' . $matches[1]) . '</b></li>';
-				$array[] = $matches[1];
-			}
-		}
-
-		top_header();
-
-		html_start_box('<strong>' . $assoc_actions{$_POST['drp_action']} . ' Host(s)</strong>', '60%', '', '3', 'center', '');
-
-		form_start('maint.php');
-
-		if (sizeof($array)) {
-			if ($_POST['drp_action'] == '1') { /* associate */
-				print "	<tr>
-						<td class='textArea'>
-							<p>Click 'Continue' to associate the Device(s) below with the Maintenance Schedule '<b>" . $list_name . "</b>'.</p>
-							<ul>$list</ul>
-						</td>
-					</tr>\n";
-				$save_html = "<input type='button' value='Cancel' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='Continue' title='Associate Notification List(s)'>";
-			}elseif ($_POST['drp_action'] == '2') { /* disassociate */
-				print "	<tr>
-						<td class='textArea'>
-							<p>Click 'Continue' to disassociate the Devices(s) below with the Maintenance Schedule '<b>" . $list_name . "</b>'.</p>
-							<ul>$list</ul>
-						</td>
-					</tr>\n";
-				$save_html = "<input type='button' value='Cancel' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='Continue' title='Disassociate Notification List(s)'>";
+				$save_html = "<input type='button' value='Cancel' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='Continue' title='Disassociate Maintenance Schedule(s)'>";
 			}
 		} else {
 			print "<tr><td><span class='textError'>You must select at least one Host.</span></td></tr>\n";
@@ -401,10 +354,70 @@ function form_actions() {
 		print "<tr class='saveRow'>
 			<td>
 				<input type='hidden' name='action' value='actions'>
-				<input type='hidden' name='id' value='" . get_request_var_request('id') . "'>
+				<input type='hidden' name='id' value='" . get_request_var('id') . "'>
+				<input type='hidden' name='save_hosts' value='1'>
+				<input type='hidden' name='selected_items' value='" . (isset($array) ? serialize($array) : '') . "'>
+				<input type='hidden' name='drp_action' value='" . get_request_var('drp_action') . "'>
+				$save_html
+			</td>
+		</tr>\n";
+
+		html_end_box();
+
+		form_end();
+
+		bottom_footer();
+	}elseif (isset_request_var('save_webseer')) {
+		/* loop through each of the notification lists selected on the previous page and get more info about them */
+		while (list($var,$val) = each($_POST)) {
+			if (preg_match('/^chk_([0-9]+)$/', $var, $matches)) {
+				/* ================= input validation ================= */
+				input_validate_input_number($matches[1]);
+				/* ==================================================== */
+
+				$list .= '<li><b>' . db_fetch_cell('SELECT description FROM host WHERE id=' . $matches[1]) . '</b></li>';
+				$array[] = $matches[1];
+			}
+		}
+
+		top_header();
+
+		html_start_box($assoc_actions{get_request_var('drp_action')} . ' Host(s)', '60%', '', '3', 'center', '');
+
+		form_start('maint.php');
+
+		if (sizeof($array)) {
+			if (get_request_var('drp_action') == '1') { /* associate */
+				print "<tr>
+					<td class='textArea'>
+						<p>Click 'Continue' to associate the Device(s) below with the Maintenance Schedule '<b>" . $list_name . "</b>'.</p>
+						<ul>$list</ul>
+					</td>
+				</tr>\n";
+
+				$save_html = "<input type='button' value='Cancel' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='Continue' title='Associate Maintenance Schedule(s)'>";
+			}elseif (get_request_var('drp_action') == '2') { /* disassociate */
+				print "<tr>
+					<td class='textArea'>
+						<p>Click 'Continue' to disassociate the Devices(s) below with the Maintenance Schedule '<b>" . $list_name . "</b>'.</p>
+						<ul>$list</ul>
+					</td>
+				</tr>\n";
+
+				$save_html = "<input type='button' value='Cancel' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='Continue' title='Disassociate Maintenance Schedule(s)'>";
+			}
+		} else {
+			print "<tr><td><span class='textError'>You must select at least one Host.</span></td></tr>\n";
+			$save_html = "<input type='button' value='Return' onClick='cactiReturnTo()'>";
+		}
+
+		print "<tr class='saveRow'>
+			<td>
+				<input type='hidden' name='action' value='actions'>
+				<input type='hidden' name='id' value='" . get_request_var('id') . "'>
 				<input type='hidden' name='save_webseer' value='1'>
 				<input type='hidden' name='selected_items' value='" . (isset($array) ? serialize($array) : '') . "'>
-				<input type='hidden' name='drp_action' value='" . $_POST['drp_action'] . "'>
+				<input type='hidden' name='drp_action' value='" . get_request_var('drp_action') . "'>
 				$save_html
 			</td>
 		</tr>\n";
@@ -420,8 +433,8 @@ function form_actions() {
 }
 
 function get_header_label() {
-	if (!empty($_REQUEST['id'])) {
-		$list = db_fetch_row('SELECT * FROM plugin_maint_schedules WHERE id=' . $_REQUEST['id']);
+	if (!isempty_request_var('id')) {
+		$list = db_fetch_row('SELECT * FROM plugin_maint_schedules WHERE id=' . get_filter_request_var('id'));
 		$header_label = '[edit: ' . $list['name'] . ']';
 	} else {
 		$header_label = '[new]';
@@ -433,17 +446,22 @@ function get_header_label() {
 function maint_tabs() {
 	global $config, $tabs;
 
+	/* ================= input validation ================= */
+	get_filter_request_var('id');
+	get_filter_request_var('tab', FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => '/^([a-zA-Z]+)$/')));
+	/* ==================================================== */
+
 	load_current_session_value('tab', 'sess_maint_tab', 'general');
-	$current_tab = $_REQUEST['tab'];
+	$current_tab = get_request_var('tab');
 
 	print "<div class='tabs'><nav><ul>\n";
 
 	if (sizeof($tabs)) {
 		foreach (array_keys($tabs) as $tab_short_name) {
-            print "<li><a class='pic" . (($tab_short_name == $current_tab) ? ' selected' : '') .  "' href='" . htmlspecialchars($config['url_path'] .
+            print "<li><a class='tab" . (($tab_short_name == $current_tab) ? ' selected' : '') .  "' href='" . htmlspecialchars($config['url_path'] .
 				'plugins/maint/maint.php?action=edit' .
 				'&tab=' . $tab_short_name .
-				(isset($_REQUEST['id']) ? '&id=' . $_REQUEST['id']:'')) .
+				(isset_request_var('id') ? '&id=' . get_request_var('id'):'')) .
 				"'>$tabs[$tab_short_name]</a></li>\n";
 		}
 	}
@@ -451,16 +469,16 @@ function maint_tabs() {
 }
 
 function schedule_edit() {
-	global $plugins, $config, $tabs;
+	global $plugins, $config, $tabs, $maint_types, $maint_intervals;
 
 	/* ================= input validation ================= */
-	input_validate_input_number(get_request_var_request('id'));
+	get_filter_request_var('id');
 	/* ==================================================== */
 
 	maint_tabs();
 
-	if (isset($_REQUEST['id'])) {
-		$id = $_REQUEST['id'];
+	if (isset_request_var('id')) {
+		$id = get_request_var('id');
 		$maint_item_data = db_fetch_row('SELECT * FROM plugin_maint_schedules WHERE id = ' . $id);
 	} else {
 		$id = 0;
@@ -469,15 +487,10 @@ function schedule_edit() {
 
 	$header_label = get_header_label();
 
-	if ($_REQUEST['tab'] == 'general') {
-		$maint_types = array (1 => 'One Time', 2 => 'Reoccurring');
-		$intervals = array(0 => 'Not Defined', 86400 => 'Every Day', 604800 => 'Every Week');
+	if (get_request_var('tab') == 'general') {
+		form_start('maint.php', 'maint');
 
-		form_start('maint.php');
-
-        html_start_box('<strong>General Settings</strong> ' . htmlspecialchars($header_label), '100%', '', '3', 'center', '');
-
-		print "<input type='hidden' name='save' value='edit'><input type='hidden' name='id' value='$id'>";
+        html_start_box('General Settings ' . htmlspecialchars($header_label), '100%', '', '3', 'center', '');
 
 		$form_array = array(
 			'general_header' => array(
@@ -510,7 +523,7 @@ function schedule_edit() {
 			'minterval' => array(
 				'friendly_name' => 'Interval',
 				'method' => 'drop_array',
-				'array' => $intervals,
+				'array' => $maint_intervals,
 				'default' => 86400,
 				'description' => 'This is the interval in which the start / end time will repeat.',
 				'value' => isset($maint_item_data['minterval']) ? $maint_item_data['minterval'] : '1'
@@ -534,6 +547,14 @@ function schedule_edit() {
 			'save_component' => array(
 				'method' => 'hidden',
 				'value' => '1'
+			),
+			'save' => array(
+				'method' => 'hidden',
+				'value'  => 'edit'
+			),
+			'id' => array(
+				'method' => 'hidden',
+				'value' => $id
 			)
 		);
 	
@@ -543,17 +564,19 @@ function schedule_edit() {
 					'no_form_tag' => true
 					),
 				'fields' => $form_array
-				)
+			)
 		);
 	
 		html_end_box();
 
 		form_save_button('maint.php', 'return');
 
-		form_end();
-
 		?>
 		<script type='text/javascript'>
+
+		var date1Open = false;
+		var date2Open = false;
+
 		function changemaintType () {
 			type = $('#mtype').val();
 			switch(type) {
@@ -562,35 +585,60 @@ function schedule_edit() {
 				break;
 			case '2':
 				$('#row_minterval').show();
-				maint_toggle_interval('');
 				break;
 			}
 		}
 	
 		$(function() {
+			$('#stime').after('<i id="startDate" class="calendar fa fa-calendar" title="Start Date/Time Selector"></i>');
+			$('#etime').after('<i id="endDate" class="calendar fa fa-calendar" title="End Date/Time Selector"></i>');
+			$('#startDate').click(function() {
+				if (date1Open) {
+					date1Open = false;
+					$('#stime').datetimepicker('hide');
+				}else{
+					date1Open = true;
+					$('#stime').datetimepicker('show');
+				}
+			});
+
+			$('#endDate').click(function() {
+				if (date2Open) {
+					date2Open = false;
+					$('#etime').datetimepicker('hide');
+				}else{
+					date2Open = true;
+					$('#etime').datetimepicker('show');
+				}
+			});
+
 			changemaintType ();
 
 			$('#stime').datetimepicker({
 				minuteGrid: 10,
-				stepMinute: 5,
+				stepMinute: 1,
+				showAnim: 'slideDown',
+				numberOfMonths: 1,
 				timeFormat: 'HH:mm',
-				dateFormat: 'DD, MM dd, yy, ',
-				minDateTime: new Date(<?php print date("Y") . ', ' . (date("m")-1) . ', ' . date("d, H") . ', ' . date('i', ceil(time()/300)*300) . ', 0, 0';?>)
+				dateFormat: 'MM d, yy, ',
+				showButtonPanel: false
 			});
 
 			$('#etime').datetimepicker({
 				minuteGrid: 10,
-				stepMinute: 5,
+				stepMinute: 1,
+				showAnim: 'slideDown',
+				numberOfMonths: 1,
 				timeFormat: 'HH:mm',
-				dateFormat: 'DD, MM dd, yy, ',
-				minDateTime: new Date(<?php print date("Y") . ', ' . (date("m")-1) . ', ' . date("d, H") . ', ' . date('i', ceil(time()/300)*300) . ', 0, 0';?>)
+				dateFormat: 'MM d, yy, ',
+				showButtonPanel: false
 			});
 		});
 		</script>
 		<?php
-	}elseif ($_REQUEST['tab'] == 'hosts') {
+	}elseif (get_request_var('tab') == 'hosts') {
 		thold_hosts($header_label);
-	}elseif ($_REQUEST['tab'] == 'webseer') {
+	}elseif (get_request_var('tab') == 'webseer') {
 		webseer_urls($header_label);
 	}else{
 		api_plugin_hook_function('maint_show_tab', $header_label);
@@ -598,16 +646,15 @@ function schedule_edit() {
 }
 
 function schedules() {
-	global $mactions;
+	global $actions, $maint_types, $maint_intervals, $yesno;
 
-	html_start_box('<strong>Maintenance Schedules</strong>', '100%', '', '2', 'center', 'maint.php?tab=general&action=edit');
-
-	html_header_checkbox(array('Name', 'Active', 'Type', 'Start', 'End', 'Interval', 'Enabled'));
-	$yesno = array(0 => 'No', 1 => 'Yes', 'on' => 'Yes', 'off' => 'No');
 	$schedules = db_fetch_assoc('SELECT * FROM plugin_maint_schedules ORDER BY name');
 
-	$types = array(1 => 'One Time', 2 => 'Reoccurring');
-	$reoccurring = array(0 => 'Not Defined', 86400 => 'Every Day', 604800 => 'Every Week');
+	form_start('maint.php', 'chk');
+
+	html_start_box('Maintenance Schedules', '100%', '', '2', 'center', 'maint.php?tab=general&action=edit');
+
+	html_header_checkbox(array('Name', 'Active', 'Type', 'Start', 'End', 'Interval', 'Enabled'));
 
 	if (sizeof($schedules)) {
 		foreach ($schedules as $schedule) {
@@ -617,7 +664,7 @@ function schedules() {
 
 			form_selectable_cell('<a class="linkEditMain" href="' . htmlspecialchars('maint.php?action=edit&id=' . $schedule['id']) . '">' . $schedule['name'] . '</a>', $schedule['id']);
 			form_selectable_cell($yesno[plugin_maint_check_schedule($schedule['id'])], $schedule['id'], '', $active ? 'color:green;font-weight:bold;':'');
-			form_selectable_cell($types[$schedule['mtype']], $schedule['id']);
+			form_selectable_cell($maint_types[$schedule['mtype']], $schedule['id']);
 			switch($schedule['minterval']) {
 				case 86400:
 					if (date('j',$schedule['etime']) != date('j', $schedule['stime'])) {
@@ -638,7 +685,7 @@ function schedules() {
 			}
 
 
-			form_selectable_cell($reoccurring[$schedule['minterval']], $schedule['id']);
+			form_selectable_cell($maint_intervals[$schedule['minterval']], $schedule['id']);
 			form_selectable_cell($yesno[$schedule['enabled']], $schedule['id']);
 			form_checkbox_cell($schedule['name'], $schedule['id']);
 			form_end_row();
@@ -652,7 +699,7 @@ function schedules() {
 	form_hidden_box('save_list', '1', '');
 
 	/* draw the dropdown containing a list of available actions for this form */
-	draw_actions_dropdown($mactions);
+	draw_actions_dropdown($actions);
 
 	form_end();
 }
@@ -660,80 +707,63 @@ function schedules() {
 function thold_hosts($header_label) {
 	global $assoc_actions, $item_rows;
 
+    /* ================= input validation and session storage ================= */
+    $filters = array(
+		'rows' => array(
+			'filter' => FILTER_VALIDATE_INT,
+			'pageset' => true,
+			'default' => '-1'
+			),
+		'page' => array(
+			'filter' => FILTER_VALIDATE_INT,
+			'default' => '1'
+			),
+		'filter' => array(
+			'filter' => FILTER_CALLBACK,
+			'pageset' => true,
+			'default' => '',
+			'options' => array('options' => 'sanitize_search_string')
+			),
+		'sort_column' => array(
+			'filter' => FILTER_CALLBACK,
+			'default' => 'description',
+			'options' => array('options' => 'sanitize_search_string')
+			),
+		'sort_direction' => array(
+			'filter' => FILTER_CALLBACK,
+			'default' => 'ASC',
+			'options' => array('options' => 'sanitize_search_string')
+			),
+		'host_template_id' => array(
+			'filter' => FILTER_VALIDATE_INT,
+			'pageset' => true,
+			'default' => '-1'
+			),
+		'associated' => array(
+			'filter' => FILTER_CALLBACK,
+			'default' => 'true',
+			'options' => array('options' => 'sanitize_search_string')
+			),
+		'id' => array(
+			'filter' => FILTER_VALIDATE_INT,
+			'default' => '-1'
+			)
+	);
+
+	validate_store_request_vars($filters, 'sess_maint');
 	/* ================= input validation ================= */
-	input_validate_input_number(get_request_var_request('host_template_id'));
-	input_validate_input_number(get_request_var_request('rows'));
-	input_validate_input_number(get_request_var_request('page'));
-	input_validate_input_number(get_request_var_request('id'));
-	/* ==================================================== */
-
-	/* clean up search string */
-	if (isset($_REQUEST['filter'])) {
-		$_REQUEST['filter'] = sanitize_search_string(get_request_var_request('filter'));
-	}
-
-	/* clean up associated string */
-	if (isset($_REQUEST['associated'])) {
-		$_REQUEST['associated'] = sanitize_search_string(get_request_var_request('associated'));
-	}
-
-	/* clean up sort_column */
-	if (isset($_REQUEST['sort_column'])) {
-		$_REQUEST['sort_column'] = sanitize_search_string(get_request_var_request('sort_column'));
-	}
-
-	/* clean up search string */
-	if (isset($_REQUEST['sort_direction'])) {
-		$_REQUEST['sort_direction'] = sanitize_search_string(get_request_var_request('sort_direction'));
-	}
-
-	/* if the user pushed the 'clear' button */
-	if (isset($_REQUEST['clearf'])) {
-		kill_session_var('sess_maint_current_page');
-		kill_session_var('sess_maint_filter');
-		kill_session_var('sess_maint_host_template_id');
-		kill_session_var('sess_default_rows');
-		kill_session_var('sess_maint_associated');
-		kill_session_var('sess_maint_sort_column');
-		kill_session_var('sess_maint_sort_direction');
-
-		unset($_REQUEST['page']);
-		unset($_REQUEST['filter']);
-		unset($_REQUEST['associated']);
-		unset($_REQUEST['host_template_id']);
-		unset($_REQUEST['rows']);
-		unset($_REQUEST['sort_column']);
-		unset($_REQUEST['sort_direction']);
-    }else{
-		$changed = 0;
-		$changed += check_changed('host_template_id', 'sess_maint_host_template_id');
-		$changed += check_changed('filter',           'sess_maint_filter');
-		$changed += check_changed('rows',             'sess_default_rows');
-		$changed += check_changed('associated',       'sess_maint_associated');
-
-		if ($changed) {
-			$_REQUEST['page'] = 1;
-		}
-	}
-
-	/* remember these search fields in session vars so we don't have to keep passing them around */
-	load_current_session_value('page',             'sess_maint_current_page',     '1');
-	load_current_session_value('filter',           'sess_maint_filter',           '');
-	load_current_session_value('associated',       'sess_maint_associated',       'true');
-	load_current_session_value('host_template_id', 'sess_maint_host_template_id', '-1');
-	load_current_session_value('rows',             'sess_default_rows',           read_config_option('num_rows_table'));
-	load_current_session_value('sort_column',      'sess_maint_sort_column',      'description');
-	load_current_session_value('sort_direction',   'sess_maint_sort_direction',   'ASC');
 
 	/* if the number of rows is -1, set it to the default */
-	if ($_REQUEST['rows'] == -1) {
-		$_REQUEST['rows'] = read_config_option('num_rows_table');
+	if (get_request_var('rows') == -1) {
+		$rows = read_config_option('num_rows_table');
+	}else{
+		$rows = get_request_var('rows');
 	}
 
 	?>
 	<script type='text/javascript'>
 	function applyFilter() {
-		strURL  = 'maint.php?tab=hosts&action=edit&id=<?php print get_request_var_request('id');?>'
+		strURL  = 'maint.php?tab=hosts&action=edit&id=<?php print get_request_var('id');?>'
 		strURL += '&rows=' + $('#rows').val();
 		strURL += '&host_template_id=' + $('#host_template_id').val();
 		strURL += '&associated=' + $('#associated').is(':checked');
@@ -743,13 +773,13 @@ function thold_hosts($header_label) {
 	}
 
 	function clearFilter() {
-		strURL = 'maint.php?tab=hosts&action=edit&id=<?php print get_request_var_request('id');?>&clearf=true&header=false'
+		strURL = 'maint.php?tab=hosts&action=edit&id=<?php print get_request_var('id');?>&clear=true&header=false'
 		loadPageNoHeader(strURL);
 	}
 	</script>
 	<?php
 
-	html_start_box('<strong>Associated Devices</strong> ' . htmlspecialchars($header_label), '100%', '', '3', 'center', '');
+	html_start_box('Associated Devices ' . htmlspecialchars($header_label), '100%', '', '3', 'center', '');
 
 	?>
 	<tr class='even'>
@@ -761,15 +791,15 @@ function thold_hosts($header_label) {
 						Search
 					</td>
 					<td>
-						<input type='text' id='filter' size='25' value='<?php print htmlspecialchars(get_request_var_request('filter'));?>' onChange='applyFilter()'>
+						<input type='text' id='filter' size='25' value='<?php print htmlspecialchars(get_request_var('filter'));?>' onChange='applyFilter()'>
 					</td>
 					<td>
 						Type
 					</td>
 					<td>
 						<select id='host_template_id' onChange='applyFilter()'>
-							<option value='-1'<?php if (get_request_var_request('host_template_id') == '-1') {?> selected<?php }?>>Any</option>
-							<option value='0'<?php if (get_request_var_request('host_template_id') == '0') {?> selected<?php }?>>None</option>
+							<option value='-1'<?php if (get_request_var('host_template_id') == '-1') {?> selected<?php }?>>Any</option>
+							<option value='0'<?php if (get_request_var('host_template_id') == '0') {?> selected<?php }?>>None</option>
 							<?php
 							$host_templates = db_fetch_assoc('SELECT DISTINCT ht.id, ht.name 
 								FROM host_template AS ht
@@ -779,7 +809,7 @@ function thold_hosts($header_label) {
 
 							if (sizeof($host_templates) > 0) {
 								foreach ($host_templates as $host_template) {
-									print "<option value='" . $host_template['id'] . "'"; if (get_request_var_request('host_template_id') == $host_template['id']) { print ' selected'; } print '>' . htmlspecialchars($host_template['name']) . "</option>\n";
+									print "<option value='" . $host_template['id'] . "'"; if (get_request_var('host_template_id') == $host_template['id']) { print ' selected'; } print '>' . htmlspecialchars($host_template['name']) . "</option>\n";
 								}
 							}
 							?>
@@ -790,18 +820,18 @@ function thold_hosts($header_label) {
 					</td>
 					<td>
 						<select id='rows' onChange='applyFilter()'>
-							<option value='-1'<?php if (get_request_var_request('rows') == '-1') {?> selected<?php }?>>Default</option>
+							<option value='-1'<?php if (get_request_var('rows') == '-1') {?> selected<?php }?>>Default</option>
 							<?php
 							if (sizeof($item_rows) > 0) {
 								foreach ($item_rows as $key => $value) {
-									print "<option value='" . $key . "'"; if (get_request_var_request('rows') == $key) { print ' selected'; } print '>' . htmlspecialchars($value) . "</option>\n";
+									print "<option value='" . $key . "'"; if (get_request_var('rows') == $key) { print ' selected'; } print '>' . htmlspecialchars($value) . "</option>\n";
 								}
 							}
 							?>
 						</select>
 					</td>
 					<td>
-						<input type='checkbox' id='associated' onChange='applyFilter()' <?php print ($_REQUEST['associated'] == 'true' || $_REQUEST['associated'] == 'on' ? 'checked':'');?>>
+						<input type='checkbox' id='associated' onChange='applyFilter()' <?php print (get_request_var('associated') == 'true' || get_request_var('associated') == 'on' ? 'checked':'');?>>
 					</td>
 					<td>
 						<label for='associated'>Associated</label>
@@ -810,12 +840,12 @@ function thold_hosts($header_label) {
 						<input type='button' value='Go' onClick='applyFilter()' title='Set/Refresh Filters'>
 					</td>
 					<td>
-						<input type='button' name='clearf' value='Clear' onClick='clearFilter()' title='Clear Filters'>
+						<input type='button' name='clear' value='Clear' onClick='clearFilter()' title='Clear Filters'>
 					</td>
 				</tr>
 			</table>
-			<input type='hidden' id='page' value='<?php print get_request_var_request('page');?>'>
-			<input type='hidden' id='id' value='<?php print get_request_var_request('id');?>'>
+			<input type='hidden' id='page' value='<?php print get_request_var('page');?>'>
+			<input type='hidden' id='id' value='<?php print get_request_var('id');?>'>
 		</form>
 		</td>
 	</tr>
@@ -824,25 +854,25 @@ function thold_hosts($header_label) {
 	html_end_box();
 
 	/* form the 'where' clause for our main sql query */
-	if (strlen(get_request_var_request('filter'))) {
-		$sql_where = "WHERE (h.hostname LIKE '%" . get_request_var_request('filter') . "%' 
-			OR h.description LIKE '%" . get_request_var_request('filter') . "%')";
+	if (strlen(get_request_var('filter'))) {
+		$sql_where = "WHERE (h.hostname LIKE '%" . get_request_var('filter') . "%' 
+			OR h.description LIKE '%" . get_request_var('filter') . "%')";
 	}else{
 		$sql_where = '';
 	}
 
-	if (get_request_var_request('host_template_id') == '-1') {
+	if (get_request_var('host_template_id') == '-1') {
 		/* Show all items */
-	}elseif (get_request_var_request('host_template_id') == '0') {
+	}elseif (get_request_var('host_template_id') == '0') {
 		$sql_where .= (strlen($sql_where) ? ' AND ':'WHERE ') . ' h.host_template_id=0';
-	}elseif (!empty($_REQUEST['host_template_id'])) {
-		$sql_where .= (strlen($sql_where) ? ' AND ':'WHERE ') . ' h.host_template_id=' . get_request_var_request('host_template_id');
+	}elseif (!isempty_request_var('host_template_id')) {
+		$sql_where .= (strlen($sql_where) ? ' AND ':'WHERE ') . ' h.host_template_id=' . get_request_var('host_template_id');
 	}
 
-	if (get_request_var_request('associated') == 'false') {
+	if (get_request_var('associated') == 'false') {
 		/* Show all items */
 	} else {
-		$sql_where .= (strlen($sql_where) ? ' AND ':'WHERE ') . ' type=1 AND schedule=' . get_request_var_request('id');
+		$sql_where .= (strlen($sql_where) ? ' AND ':'WHERE ') . ' type=1 AND schedule=' . get_request_var('id');
 	}
 
 	form_start('maint.php', 'chk');
@@ -856,17 +886,17 @@ function thold_hosts($header_label) {
 		ON h.id=td.host_id
 		LEFT JOIN plugin_maint_hosts AS pmh
 		ON h.id=pmh.host
-		AND pmh.schedule=" . get_request_var_request('id') . "
+		AND pmh.schedule=" . get_request_var('id') . "
 		$sql_where");
 
-	$sortby = get_request_var_request('sort_column');
+	$sortby = get_request_var('sort_column');
 	if ($sortby=='hostname') {
 		$sortby = 'INET_ATON(hostname)';
 	}
 
 	$sql_query = 'SELECT h.*, pmh.type, 
 		COUNT(DISTINCT gl.id) AS graphs, COUNT(DISTINCT dl.id) AS data_sources, COUNT(DISTINCT td.host_id) AS tholds, 
-		(SELECT schedule FROM plugin_maint_hosts WHERE host=h.id AND schedule=' . get_request_var_request('id') . ") AS associated 
+		(SELECT schedule FROM plugin_maint_hosts WHERE host=h.id AND schedule=' . get_request_var('id') . ") AS associated 
 		FROM host as h
 		INNER JOIN thold_data AS td
 		ON td.host_id=h.id
@@ -876,11 +906,11 @@ function thold_hosts($header_label) {
 		on dl.host_id=h.id
 		LEFT JOIN plugin_maint_hosts AS pmh
 		ON pmh.host=h.id
-		AND pmh.schedule=" . get_request_var_request('id') . "
+		AND pmh.schedule=" . get_request_var('id') . "
 		$sql_where 
 		GROUP BY h.id
-        ORDER BY " . $sortby . ' ' . get_request_var_request('sort_direction') . '
-		LIMIT ' . (get_request_var_request('rows')*(get_request_var_request('page')-1)) . ',' . get_request_var_request('rows');
+        ORDER BY " . $sortby . ' ' . get_request_var('sort_direction') . '
+		LIMIT ' . (get_request_var('rows')*(get_request_var('page')-1)) . ',' . get_request_var('rows');
 
 	//print $sql_query;
 
@@ -888,7 +918,7 @@ function thold_hosts($header_label) {
 
 	/* generate page list */
 	if (sizeof($hosts)) {
-		$nav = html_nav_bar('maint.php?action=edit&tab=hosts&id=' . get_request_var_request('id'), MAX_DISPLAY_PAGES, get_request_var_request('page'), get_request_var_request('rows'), $total_rows, 13, 'Devices', 'page', 'main');
+		$nav = html_nav_bar('maint.php?action=edit&tab=hosts&id=' . get_request_var('id'), MAX_DISPLAY_PAGES, get_request_var('page'), get_request_var('rows'), $total_rows, 13, 'Devices', 'page', 'main');
 
 		print $nav;
 
@@ -927,24 +957,24 @@ function thold_hosts($header_label) {
 				'sort' => 'desc')
 		);
 
-		html_header_sort_checkbox($display_text, get_request_var_request('sort_column'), get_request_var_request('sort_direction'), false, 'maint.php?action=edit&tab=hosts&id=' . get_request_var_request('id'));
+		html_header_sort_checkbox($display_text, get_request_var('sort_column'), get_request_var('sort_direction'), false, 'maint.php?action=edit&tab=hosts&id=' . get_request_var('id'));
 
 		foreach ($hosts as $host) {
 			form_alternate_row('line' . $host['id']);
-			form_selectable_cell((strlen(get_request_var_request('filter')) ? preg_replace('/(' . preg_quote(get_request_var_request('filter')) . ')/i', "<span class='filteredValue'>\\1</span>", htmlspecialchars($host['description'])) : htmlspecialchars($host['description'])), $host['id'], 250);
+			form_selectable_cell((strlen(get_request_var('filter')) ? preg_replace('/(' . preg_quote(get_request_var('filter')) . ')/i', "<span class='filteredValue'>\\1</span>", htmlspecialchars($host['description'])) : htmlspecialchars($host['description'])), $host['id'], 250);
 			form_selectable_cell(number_format($host['id']), $host['id'], '', 'text-align:right');
 			if ($host['associated'] != '') {
-				$names = '<span style="color:green;font-weight:bold;">Current Schedule</span>';
+				$names = '<span class="deviceUp"><b>Current Schedule</b></span>';
 			} else {
 				$names = '';
 			}
-			if (sizeof($lists = db_fetch_assoc('SELECT name FROM plugin_maint_schedules INNER JOIN plugin_maint_hosts ON plugin_maint_schedules.id=plugin_maint_hosts.schedule WHERE type=1 AND host=' . $host['id'] . ' AND plugin_maint_schedules.id != ' . get_request_var_request('id')))) {
+			if (sizeof($lists = db_fetch_assoc('SELECT name FROM plugin_maint_schedules INNER JOIN plugin_maint_hosts ON plugin_maint_schedules.id=plugin_maint_hosts.schedule WHERE type=1 AND host=' . $host['id'] . ' AND plugin_maint_schedules.id != ' . get_request_var('id')))) {
 				foreach($lists as $name) {
-					$names .= (strlen($names) ? ', ':'') . "<span style='color:purple;font-weight:bold;'>" . $name['name'] . '</span>';
+					$names .= (strlen($names) ? ', ':'') . "<span class='deviceRecovering'><b>" . $name['name'] . '</b></span>';
 				}
 			}
 			if ($names == '') {
-				form_selectable_cell('<span style="color:red;font-weight:bold;">No Schedules</span>', $host['id']);
+				form_selectable_cell('<span class="deviceUnknown"><b>No Schedules</b></span>', $host['id']);
 			} else {
 				form_selectable_cell($names, $host['id']);
 			}
@@ -952,7 +982,7 @@ function thold_hosts($header_label) {
 			form_selectable_cell(number_format($host['data_sources']), $host['id'], '', 'text-align:right');
 			form_selectable_cell(number_format($host['tholds']), $host['id'], '', 'text-align:right');
 			form_selectable_cell(get_colored_device_status(($host['disabled'] == 'on' ? true : false), $host['status']), $host['id']);
-			form_selectable_cell((strlen(get_request_var_request('filter')) ? preg_replace('/(' . preg_quote(get_request_var_request('filter')) . ')/i', "<span class='filteredValue'>\\1</span>", htmlspecialchars($host['hostname'])) : htmlspecialchars($host['hostname'])), $host['id']);
+			form_selectable_cell((strlen(get_request_var('filter')) ? preg_replace('/(' . preg_quote(get_request_var('filter')) . ')/i', "<span class='filteredValue'>\\1</span>", htmlspecialchars($host['hostname'])) : htmlspecialchars($host['hostname'])), $host['id']);
 			form_checkbox_cell($host['description'], $host['id']);
 			form_end_row();
 		}
@@ -964,7 +994,7 @@ function thold_hosts($header_label) {
 
 	html_end_box(false);
 
-	form_hidden_box('id', get_request_var_request('id'), '');
+	form_hidden_box('id', get_request_var('id'), '');
 	form_hidden_box('save_hosts', '1', '');
 
 	/* draw the dropdown containing a list of available actions for this form */
@@ -976,49 +1006,44 @@ function thold_hosts($header_label) {
 function webseer_urls($header_label) {
 	global $assoc_actions, $item_rows;
 
+    /* ================= input validation and session storage ================= */
+    $filters = array(
+		'rows' => array(
+			'filter' => FILTER_VALIDATE_INT,
+			'pageset' => true,
+			'default' => '-1'
+			),
+		'page' => array(
+			'filter' => FILTER_VALIDATE_INT,
+			'default' => '1'
+			),
+		'filter' => array(
+			'filter' => FILTER_CALLBACK,
+			'pageset' => true,
+			'default' => '',
+			'options' => array('options' => 'sanitize_search_string')
+			),
+		'associated' => array(
+			'filter' => FILTER_CALLBACK,
+			'default' => 'true',
+			'options' => array('options' => 'sanitize_search_string')
+			)
+	);
+
+	validate_store_request_vars($filters, 'sess_maint_ws');
 	/* ================= input validation ================= */
-	input_validate_input_number(get_request_var_request('rows'));
-	input_validate_input_number(get_request_var_request('page'));
-	/* ==================================================== */
-
-	/* clean up search string */
-	if (isset($_REQUEST['filter'])) {
-		$_REQUEST['filter'] = sanitize_search_string(get_request_var_request('filter'));
-	}
-
-	/* clean up associated string */
-	if (isset($_REQUEST['associated'])) {
-		$_REQUEST['associated'] = sanitize_search_string(get_request_var_request('associated'));
-	}
-
-	/* if the user pushed the 'clear' button */
-	if (isset($_REQUEST['clearf'])) {
-		kill_session_var('sess_maint_current_page');
-		kill_session_var('sess_maint_filter');
-		kill_session_var('sess_default_rows');
-		kill_session_var('sess_maint_associated');
-
-		unset($_REQUEST['page']);
-		unset($_REQUEST['filter']);
-		unset($_REQUEST['associated']);
-		unset($_REQUEST['rows']);
-	}
-
-	/* remember these search fields in session vars so we don't have to keep passing them around */
-	load_current_session_value('page', 'sess_maint_ws_current_page', '1');
-	load_current_session_value('filter', 'sess_maint_ws_filter', '');
-	load_current_session_value('associated', 'sess_maint_ws_associated', 'true');
-	load_current_session_value('rows', 'sess_default_rows', read_config_option('num_rows_table'));
 
 	/* if the number of rows is -1, set it to the default */
-	if ($_REQUEST['rows'] == -1) {
-		$_REQUEST['rows'] = read_config_option('num_rows_table');
+	if (get_request_var('rows') == -1) {
+		$rows = read_config_option('num_rows_table');
+	}else{
+		$rows = get_request_var('rows');
 	}
 
 	?>
 	<script type='text/javascript'>
 	function applyFilter() {
-		strURL  = '?tab=webseer&action=edit&id=<?php print get_request_var_request('id');?>';
+		strURL  = 'maint.php?tab=webseer&action=edit&id=<?php print get_request_var('id');?>';
 		strURL += '&rows=' + $('#rows').val();
 		strURL += '&associated=' + $('#associated').is(':checked');
 		strURL += '&filter=' + $('#filter').val();
@@ -1027,13 +1052,13 @@ function webseer_urls($header_label) {
 	}
 
 	function clearFilter() {
-		strURL = '?tab=webseer&action=edit&id=<?php print get_request_var_request('id');?>&clearf=true&header=false';
+		strURL = 'maint.php?tab=webseer&action=edit&id=<?php print get_request_var('id');?>&clear=true&header=false';
 		loadPageNoHeader(strURL);
 	}
 	</script>
 	<?php
 
-	html_start_box("<strong>Associated Web URL's</strong> " . htmlspecialchars($header_label), '100%', '', '3', 'center', '');
+	html_start_box("Associated Web URL's " . htmlspecialchars($header_label), '100%', '', '3', 'center', '');
 
 	?>
 	<tr class='even'>
@@ -1045,25 +1070,25 @@ function webseer_urls($header_label) {
 						Search
 					</td>
 					<td>
-						<input type='text' id='filter' size='25' value='<?php print htmlspecialchars(get_request_var_request('filter'));?>' onChange='applyFilter()'>
+						<input type='text' id='filter' size='25' value='<?php print htmlspecialchars(get_request_var('filter'));?>' onChange='applyFilter()'>
 					</td>
 					<td>
 						Rules
 					</td>
 					<td>
 						<select id='rows' onChange='applyFilter()'>
-							<option value='-1'<?php if (get_request_var_request('rows') == '-1') {?> selected<?php }?>>Default</option>
+							<option value='-1'<?php if (get_request_var('rows') == '-1') {?> selected<?php }?>>Default</option>
 							<?php
 							if (sizeof($item_rows) > 0) {
 								foreach ($item_rows as $key => $value) {
-									print "<option value='" . $key . "'"; if (get_request_var_request('rows') == $key) { print ' selected'; } print '>' . htmlspecialchars($value) . "</option>\n";
+									print "<option value='" . $key . "'"; if (get_request_var('rows') == $key) { print ' selected'; } print '>' . htmlspecialchars($value) . "</option>\n";
 								}
 							}
 							?>
 						</select>
 					</td>
 					<td>
-						<input type='checkbox' id='associated' onChange='applyFilter()' <?php print ($_REQUEST['associated'] == 'true' || $_REQUEST['associated'] == 'on' ? 'checked':'');?>>
+						<input type='checkbox' id='associated' onChange='applyFilter()' <?php print (get_request_var('associated') == 'true' || get_request_var('associated') == 'on' ? 'checked':'');?>>
 					</td>
 					<td>
 						<label for='associated'>Associated</label>
@@ -1072,12 +1097,12 @@ function webseer_urls($header_label) {
 						<input type='button' value='Go' onClick='applyFilter()' title='Set/Refresh Filters'>
 					</td>
 					<td>
-						<input type='button' name='clearf' value='Clear' onClick='clearFilter()' title='Clear Filters'>
+						<input type='button' name='clear' value='Clear' onClick='clearFilter()' title='Clear Filters'>
 					</td>
 				</tr>
 			</table>
-			<input type='hidden' name='page' value='<?php print get_request_var_request('page');?>'>
-			<input type='hidden' name='id' value='<?php print get_request_var_request('id');?>'>
+			<input type='hidden' name='page' value='<?php print get_request_var('page');?>'>
+			<input type='hidden' name='id' value='<?php print get_request_var('id');?>'>
 		</form>
 		</td>
 	</tr>
@@ -1086,18 +1111,18 @@ function webseer_urls($header_label) {
 	html_end_box();
 
 	/* form the 'where' clause for our main sql query */
-	if (strlen(get_request_var_request('filter'))) {
-		$sql_where = "WHERE ((u.url LIKE '%" . get_request_var_request('filter') . "%') 
-			OR (u.display_name LIKE '%" . get_request_var_request('filter') . "%') 
-			OR (u.ip LIKE '%" . get_request_var_request('filter') . "%'))";
+	if (strlen(get_request_var('filter'))) {
+		$sql_where = "WHERE ((u.url LIKE '%" . get_request_var('filter') . "%') 
+			OR (u.display_name LIKE '%" . get_request_var('filter') . "%') 
+			OR (u.ip LIKE '%" . get_request_var('filter') . "%'))";
 	}else{
 		$sql_where = '';
 	}
 
-	if (get_request_var_request('associated') == 'false') {
+	if (get_request_var('associated') == 'false') {
 		$sql_where .= (strlen($sql_where) ? ' AND ':'WHERE ') . ' (pmh.type=2 OR pmh.type IS NULL)';
 	} else {
-		$sql_where .= (strlen($sql_where) ? ' AND ':'WHERE ') . ' pmh.type=2 AND pmh.schedule=' . get_request_var_request('id');
+		$sql_where .= (strlen($sql_where) ? ' AND ':'WHERE ') . ' pmh.type=2 AND pmh.schedule=' . get_request_var('id');
 	}
 
 	form_start('maint.php', 'chk');
@@ -1116,13 +1141,13 @@ function webseer_urls($header_label) {
 		LEFT JOIN plugin_maint_hosts AS pmh
 		ON u.id=pmh.host
 		$sql_where 
-		LIMIT " . (get_request_var_request('rows')*(get_request_var_request('page')-1)) . ',' . get_request_var_request('rows');
+		LIMIT " . (get_request_var('rows')*(get_request_var('page')-1)) . ',' . get_request_var('rows');
 
 	//print $sql_query;
 
 	$urls = db_fetch_assoc($sql_query);
 
-	$nav = html_nav_bar('notify_lists.php?action=edit&id=' . get_request_var_request('id'), MAX_DISPLAY_PAGES, get_request_var_request('page'), get_request_var_request('rows'), $total_rows, 13, 'Lists', 'page', 'main');
+	$nav = html_nav_bar('notify_lists.php?action=edit&id=' . get_request_var('id'), MAX_DISPLAY_PAGES, get_request_var('page'), get_request_var('rows'), $total_rows, 13, 'Lists', 'page', 'main');
 
 	print $nav;
 
@@ -1133,7 +1158,7 @@ function webseer_urls($header_label) {
 	if (sizeof($urls)) {
 		foreach ($urls as $url) {
 			form_alternate_row('line' . $url['id']);
-			form_selectable_cell((strlen(get_request_var_request('filter')) ? preg_replace('/(' . preg_quote(get_request_var_request('filter')) . ')/i', "<span class='filteredValue'>\\1</span>", htmlspecialchars($url['display_name'])) : htmlspecialchars($url['display_name'])), $url['id'], 250);
+			form_selectable_cell((strlen(get_request_var('filter')) ? preg_replace('/(' . preg_quote(get_request_var('filter')) . ')/i', "<span class='filteredValue'>\\1</span>", htmlspecialchars($url['display_name'])) : htmlspecialchars($url['display_name'])), $url['id'], 250);
 			form_selectable_cell(round(($url['id']), 2), $url['id']);
 			if ($url['associated'] != '' && $url['maint_type'] == '2') {
 				form_selectable_cell('<span style="color:green;font-weight:bold;">Current Schedule</span>', $url['id']);
@@ -1152,8 +1177,8 @@ function webseer_urls($header_label) {
 			if (empty($url['ip'])) {
 				$url['ip'] = 'USING DNS';
 			}
-			form_selectable_cell((strlen(get_request_var_request('filter')) ? preg_replace('/(' . preg_quote(get_request_var_request('filter')) . ')/i', "<span class='filteredValue'>\\1</span>", '<i>' . htmlspecialchars($url['ip'])) . '</i>' : '<i>' . htmlspecialchars($url['ip']) . '</i>'), $url['id']);
-			form_selectable_cell((strlen(get_request_var_request('filter')) ? preg_replace('/(' . preg_quote(get_request_var_request('filter')) . ')/i', "<span class='filteredValue'>\\1</span>", htmlspecialchars($url['url'])) : htmlspecialchars($url['url'])), $url['id']);
+			form_selectable_cell((strlen(get_request_var('filter')) ? preg_replace('/(' . preg_quote(get_request_var('filter')) . ')/i', "<span class='filteredValue'>\\1</span>", '<i>' . htmlspecialchars($url['ip'])) . '</i>' : '<i>' . htmlspecialchars($url['ip']) . '</i>'), $url['id']);
+			form_selectable_cell((strlen(get_request_var('filter')) ? preg_replace('/(' . preg_quote(get_request_var('filter')) . ')/i', "<span class='filteredValue'>\\1</span>", htmlspecialchars($url['url'])) : htmlspecialchars($url['url'])), $url['id']);
 			form_checkbox_cell($url['display_name'], $url['id']);
 			form_end_row();
 		}
@@ -1165,7 +1190,7 @@ function webseer_urls($header_label) {
 	}
 	html_end_box(false);
 
-	form_hidden_box('id', get_request_var_request('id'), '');
+	form_hidden_box('id', get_request_var('id'), '');
 	form_hidden_box('save_webseer', '1', '');
 
 	/* draw the dropdown containing a list of available actions for this form */
