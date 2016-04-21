@@ -708,6 +708,8 @@ function thold_hosts($header_label) {
 	global $assoc_actions, $item_rows;
 
     /* ================= input validation and session storage ================= */
+	get_filter_request_var('id');
+
     $filters = array(
 		'rows' => array(
 			'filter' => FILTER_VALIDATE_INT,
@@ -743,10 +745,6 @@ function thold_hosts($header_label) {
 			'filter' => FILTER_CALLBACK,
 			'default' => 'true',
 			'options' => array('options' => 'sanitize_search_string')
-			),
-		'id' => array(
-			'filter' => FILTER_VALIDATE_INT,
-			'default' => '-1'
 			)
 	);
 
@@ -754,7 +752,7 @@ function thold_hosts($header_label) {
 	/* ================= input validation ================= */
 
 	/* if the number of rows is -1, set it to the default */
-	if (get_request_var('rows') == -1) {
+	if (get_request_var('rows') == '-1') {
 		$rows = read_config_option('num_rows_table');
 	}else{
 		$rows = get_request_var('rows');
@@ -882,7 +880,7 @@ function thold_hosts($header_label) {
 	$total_rows = db_fetch_cell("SELECT
 		COUNT(DISTINCT h.id)
 		FROM host AS h
-		INNER JOIN (SELECT DISTINCT host_id FROM thold_data) AS td 
+		LEFT JOIN (SELECT DISTINCT host_id FROM thold_data) AS td 
 		ON h.id=td.host_id
 		LEFT JOIN plugin_maint_hosts AS pmh
 		ON h.id=pmh.host
@@ -894,15 +892,14 @@ function thold_hosts($header_label) {
 		$sortby = 'INET_ATON(hostname)';
 	}
 
-	$sql_query = 'SELECT h.*, pmh.type, 
-		COUNT(DISTINCT gl.id) AS graphs, COUNT(DISTINCT dl.id) AS data_sources, COUNT(DISTINCT td.host_id) AS tholds, 
+	$sql_query = 'SELECT h.*, pmh.type, graphs, data_sources, tholds, 
 		(SELECT schedule FROM plugin_maint_hosts WHERE host=h.id AND schedule=' . get_request_var('id') . ") AS associated 
 		FROM host as h
-		INNER JOIN thold_data AS td
+		LEFT JOIN (SELECT COUNT(id) AS tholds, host_id FROM thold_data GROUP BY host_id) AS td
 		ON td.host_id=h.id
-		LEFT JOIN graph_local AS gl
+		LEFT JOIN (SELECT COUNT(id) AS graphs, host_id FROM graph_local GROUP BY host_id) AS gl
 		ON gl.host_id=h.id
-		LEFT JOIN data_local AS dl
+		LEFT JOIN (SELECT COUNT(id) AS data_sources, host_id FROM data_local GROUP BY host_id) AS dl
 		on dl.host_id=h.id
 		LEFT JOIN plugin_maint_hosts AS pmh
 		ON pmh.host=h.id
@@ -910,78 +907,78 @@ function thold_hosts($header_label) {
 		$sql_where 
 		GROUP BY h.id
         ORDER BY " . $sortby . ' ' . get_request_var('sort_direction') . '
-		LIMIT ' . (get_request_var('rows')*(get_request_var('page')-1)) . ',' . get_request_var('rows');
+		LIMIT ' . ($rows*(get_request_var('page')-1)) . ',' . $rows;
 
 	//print $sql_query;
 
 	$hosts = db_fetch_assoc($sql_query);
 
+	$display_text = array(
+		'description' => array(
+			'display' => 'Description', 
+			'align' => 'left',
+			'sort' => 'ASC'),
+		'id' => array(
+			'display' => 'ID', 
+			'align' => 'right',
+			'sort' => 'asc'),
+		'nosort' => array(
+			'display' => 'Associated Schedules', 
+			'align' => 'left',
+			'sort' => ''),
+		'graphs' => array(
+			'display' => 'Graphs', 
+			'align' => 'right',
+			'sort' => 'desc'),
+		'data_sources' => array(
+			'display' => 'Data Sources', 
+			'align' => 'right',
+			'sort' => 'desc'),
+		'tholds' => array(
+			'display' => 'Thresholds', 
+			'align' => 'right',
+			'sort' => 'desc'),
+		'nosort1' => array(
+			'display' => 'Status', 
+			'align' => 'center',
+			'sort' => ''),
+		'hostname' => array(
+			'display' => 'Hostname',
+			'align' => 'left',
+			'sort' => 'desc')
+	);
+
 	/* generate page list */
+	$nav = html_nav_bar('maint.php?action=edit&tab=hosts&id=' . get_request_var('id'), MAX_DISPLAY_PAGES, get_request_var('page'), $rows, $total_rows, 13, 'Devices', 'page', 'main');
+
+	print $nav;
+
+	html_header_sort_checkbox($display_text, get_request_var('sort_column'), get_request_var('sort_direction'), false, 'maint.php?action=edit&tab=hosts&id=' . get_request_var('id'));
+
 	if (sizeof($hosts)) {
-		$nav = html_nav_bar('maint.php?action=edit&tab=hosts&id=' . get_request_var('id'), MAX_DISPLAY_PAGES, get_request_var('page'), get_request_var('rows'), $total_rows, 13, 'Devices', 'page', 'main');
-
-		print $nav;
-
-		$display_text = array(
-			'description' => array(
-				'display' => 'Description', 
-				'align' => 'left',
-				'sort' => 'ASC'),
-			'id' => array(
-				'display' => 'ID', 
-				'align' => 'right',
-				'sort' => 'asc'),
-			'nosort' => array(
-				'display' => 'Associated Schedules', 
-				'align' => 'left',
-				'sort' => ''),
-			'graphs' => array(
-				'display' => 'Graphs', 
-				'align' => 'right',
-				'sort' => 'desc'),
-			'data_sources' => array(
-				'display' => 'Data Sources', 
-				'align' => 'right',
-				'sort' => 'desc'),
-			'tholds' => array(
-				'display' => 'Thresholds', 
-				'align' => 'right',
-				'sort' => 'desc'),
-			'nosort1' => array(
-				'display' => 'Status', 
-				'align' => 'left',
-				'sort' => ''),
-			'hostname' => array(
-				'display' => 'Hostname',
-				'align' => 'left',
-				'sort' => 'desc')
-		);
-
-		html_header_sort_checkbox($display_text, get_request_var('sort_column'), get_request_var('sort_direction'), false, 'maint.php?action=edit&tab=hosts&id=' . get_request_var('id'));
-
 		foreach ($hosts as $host) {
 			form_alternate_row('line' . $host['id']);
 			form_selectable_cell((strlen(get_request_var('filter')) ? preg_replace('/(' . preg_quote(get_request_var('filter')) . ')/i', "<span class='filteredValue'>\\1</span>", htmlspecialchars($host['description'])) : htmlspecialchars($host['description'])), $host['id'], 250);
 			form_selectable_cell(number_format($host['id']), $host['id'], '', 'text-align:right');
 			if ($host['associated'] != '') {
-				$names = '<span class="deviceUp"><b>Current Schedule</b></span>';
+				$names = '<span class="deviceUp">Current Schedule</span>';
 			} else {
 				$names = '';
 			}
 			if (sizeof($lists = db_fetch_assoc('SELECT name FROM plugin_maint_schedules INNER JOIN plugin_maint_hosts ON plugin_maint_schedules.id=plugin_maint_hosts.schedule WHERE type=1 AND host=' . $host['id'] . ' AND plugin_maint_schedules.id != ' . get_request_var('id')))) {
 				foreach($lists as $name) {
-					$names .= (strlen($names) ? ', ':'') . "<span class='deviceRecovering'><b>" . $name['name'] . '</b></span>';
+					$names .= (strlen($names) ? ', ':'') . "<span class='deviceRecovering'>" . $name['name'] . '</span>';
 				}
 			}
 			if ($names == '') {
-				form_selectable_cell('<span class="deviceUnknown"><b>No Schedules</b></span>', $host['id']);
+				form_selectable_cell('<span class="deviceUnknown">No Schedules</span>', $host['id']);
 			} else {
 				form_selectable_cell($names, $host['id']);
 			}
 			form_selectable_cell(number_format($host['graphs']), $host['id'], '', 'text-align:right');
 			form_selectable_cell(number_format($host['data_sources']), $host['id'], '', 'text-align:right');
 			form_selectable_cell(number_format($host['tholds']), $host['id'], '', 'text-align:right');
-			form_selectable_cell(get_colored_device_status(($host['disabled'] == 'on' ? true : false), $host['status']), $host['id']);
+			form_selectable_cell(get_colored_device_status(($host['disabled'] == 'on' ? true : false), $host['status']), $host['id'], '', 'text-align:center');
 			form_selectable_cell((strlen(get_request_var('filter')) ? preg_replace('/(' . preg_quote(get_request_var('filter')) . ')/i', "<span class='filteredValue'>\\1</span>", htmlspecialchars($host['hostname'])) : htmlspecialchars($host['hostname'])), $host['id']);
 			form_checkbox_cell($host['description'], $host['id']);
 			form_end_row();
@@ -1034,7 +1031,7 @@ function webseer_urls($header_label) {
 	/* ================= input validation ================= */
 
 	/* if the number of rows is -1, set it to the default */
-	if (get_request_var('rows') == -1) {
+	if (get_request_var('rows') == '-1') {
 		$rows = read_config_option('num_rows_table');
 	}else{
 		$rows = get_request_var('rows');
@@ -1141,13 +1138,13 @@ function webseer_urls($header_label) {
 		LEFT JOIN plugin_maint_hosts AS pmh
 		ON u.id=pmh.host
 		$sql_where 
-		LIMIT " . (get_request_var('rows')*(get_request_var('page')-1)) . ',' . get_request_var('rows');
+		LIMIT " . ($rows*(get_request_var('page')-1)) . ',' . $rows;
 
 	//print $sql_query;
 
 	$urls = db_fetch_assoc($sql_query);
 
-	$nav = html_nav_bar('notify_lists.php?action=edit&id=' . get_request_var('id'), MAX_DISPLAY_PAGES, get_request_var('page'), get_request_var('rows'), $total_rows, 13, 'Lists', 'page', 'main');
+	$nav = html_nav_bar('notify_lists.php?action=edit&id=' . get_request_var('id'), MAX_DISPLAY_PAGES, get_request_var('page'), $rows, $total_rows, 13, 'Lists', 'page', 'main');
 
 	print $nav;
 
@@ -1161,16 +1158,16 @@ function webseer_urls($header_label) {
 			form_selectable_cell((strlen(get_request_var('filter')) ? preg_replace('/(' . preg_quote(get_request_var('filter')) . ')/i', "<span class='filteredValue'>\\1</span>", htmlspecialchars($url['display_name'])) : htmlspecialchars($url['display_name'])), $url['id'], 250);
 			form_selectable_cell(round(($url['id']), 2), $url['id']);
 			if ($url['associated'] != '' && $url['maint_type'] == '2') {
-				form_selectable_cell('<span style="color:green;font-weight:bold;">Current Schedule</span>', $url['id']);
+				form_selectable_cell('<span class="deviceUp">Current Schedule</span>', $url['id']);
 			}else{
 				if (sizeof($lists = db_fetch_assoc('SELECT name FROM plugin_maint_schedules INNER JOIN plugin_maint_hosts ON plugin_maint_schedules.id=plugin_maint_hosts.schedule WHERE type=2 AND host=' . $url['id']))) {
 					$names = '';
 					foreach($lists['name'] as $name) {
-						$names .= (strlen($names) ? ', ':'') . "<span style='color:purple;font-weight:bold;'>$name</span>";
+						$names .= (strlen($names) ? ', ':'') . "<span class='deviceRecovering'>$name</span>";
 					}
 					form_selectable_cell($names, $url['id']);
 				}else{
-					form_selectable_cell('<span style="color:red;font-weight:bold;">No Schedules</span>', $url['id']);
+					form_selectable_cell('<span class="deviceUnknown">No Schedules</span>', $url['id']);
 				}
 			}
 			form_selectable_cell(($url['enabled'] == 'on' ? 'Enabled':'Disabled'), $url['id']);
