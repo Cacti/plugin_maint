@@ -23,19 +23,19 @@
  +-------------------------------------------------------------------------+
 */
 
-function plugin_maint_check_cacti_host ($host) {
-	return plugin_maint_check_host (1, $host);
+function plugin_maint_check_cacti_host($host) {
+	return plugin_maint_check_host(1, $host);
 }
 
-function plugin_maint_check_webseer_url ($host) {
-	return plugin_maint_check_host (2, $host);
+function plugin_maint_check_webseer_url($host) {
+	return plugin_maint_check_host(2, $host);
 }
 
 function plugin_maint_check_host ($type, $host) {
 	$schedules = db_fetch_assoc("SELECT * FROM plugin_maint_hosts WHERE TYPE = $type AND (host = $host OR host = 0)");
 	if (!empty($schedules)) {
 		foreach ($schedules as $s) {
-			if (plugin_maint_check_schedule ($s['schedule'])) {
+			if (plugin_maint_check_schedule($s['schedule'])) {
 				return true;
 			}
 		}
@@ -43,7 +43,7 @@ function plugin_maint_check_host ($type, $host) {
 	return false;
 }
 
-function plugin_maint_check_schedule ($schedule) {
+function plugin_maint_check_schedule($schedule) {
 	$sc = db_fetch_row("SELECT * FROM plugin_maint_schedules WHERE enabled = 'on' AND id = " . $schedule);
 	if (!empty($sc)) {
 		$t = time();

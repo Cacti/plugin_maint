@@ -23,7 +23,7 @@
  +-------------------------------------------------------------------------+
 */
 
-function plugin_maint_version () {
+function plugin_maint_version() {
 	return array( 
 		'name' 		=> 'maint',
 		'version' 	=> '1.0',
@@ -35,30 +35,30 @@ function plugin_maint_version () {
 		);
 }
 
-function plugin_maint_install () {
+function plugin_maint_install() {
 	api_plugin_register_hook('maint', 'config_arrays', 'maint_config_arrays', 'setup.php');
 	api_plugin_register_hook('maint', 'draw_navigation_text', 'maint_draw_navigation_text', 'setup.php');
 	api_plugin_register_realm('maint', 'maint.php', 'Maintenance Schedules', 1);
 
-	maint_setup_database ();
+	maint_setup_database();
 }
 
-function plugin_maint_uninstall () {
+function plugin_maint_uninstall() {
 }
 
-function plugin_maint_check_config () {
+function plugin_maint_check_config() {
 	return true;
 }
 
-function plugin_maint_upgrade () {
+function plugin_maint_upgrade() {
 	return false;
 }
 
-function maint_version () {
+function maint_version() {
 	return plugin_maint_version();
 }
 
-function maint_config_arrays () {
+function maint_config_arrays() {
 	global $menu;
 	$menu['Management']['plugins/maint/maint.php'] = 'Maintenance Schedules';
 }
@@ -70,7 +70,7 @@ function maint_draw_navigation_text ($nav) {
 	return $nav;
 }
 
-function maint_setup_database () {
+function maint_setup_database() {
 	$data = array();
 	$data['columns'][] = array('name' => 'id', 'type' => 'int(11)', 'NULL' => false, 'auto_increment' => true);
 	$data['columns'][] = array('name' => 'enabled', 'type' => 'varchar(3)', 'NULL' => false, 'default' => 'on');
