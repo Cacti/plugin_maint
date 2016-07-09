@@ -64,6 +64,3 @@ function plugin_maint_check_schedule($schedule) {
 	}
 	return false;
 }
-
-
-

@@ -32,12 +32,13 @@ function plugin_maint_version() {
 		'homepage'	=> 'http://cactiusers.org',
 		'email'		=> 'jimmy@sqmail.org',
 		'url'		=> 'http://cactiusers.org/cacti/versions.php'
-		);
+	);
 }
 
 function plugin_maint_install() {
 	api_plugin_register_hook('maint', 'config_arrays', 'maint_config_arrays', 'setup.php');
 	api_plugin_register_hook('maint', 'draw_navigation_text', 'maint_draw_navigation_text', 'setup.php');
+
 	api_plugin_register_realm('maint', 'maint.php', 'Maintenance Schedules', 1);
 
 	maint_setup_database();
@@ -60,13 +61,13 @@ function maint_version() {
 
 function maint_config_arrays() {
 	global $menu;
-	$menu['Management']['plugins/maint/maint.php'] = 'Maintenance Schedules';
+	$menu['Management']['plugins/maint/maint.php'] = __('Maintenance Schedules');
 }
 
 function maint_draw_navigation_text ($nav) {
-	$nav['maint.php:'] = array('title' => 'Maintenance Schedules', 'mapping' => 'index.php:', 'url' => 'maint.php', 'level' => '1');
-	$nav['maint.php:edit'] = array('title' => '(edit)', 'mapping' => 'index.php:', 'url' => 'maint.php', 'level' => '2');
-	$nav['maint.php:actions'] = array('title' => '(actions)', 'mapping' => 'index.php:', 'url' => 'maint.php', 'level' => '2');
+	$nav['maint.php:'] = array('title' => __('Maintenance Schedules'), 'mapping' => 'index.php:', 'url' => 'maint.php', 'level' => '1');
+	$nav['maint.php:edit'] = array('title' => __('(edit)'), 'mapping' => 'index.php:', 'url' => 'maint.php', 'level' => '2');
+	$nav['maint.php:actions'] = array('title' => __('(actions)'), 'mapping' => 'index.php:', 'url' => 'maint.php', 'level' => '2');
 	return $nav;
 }
 
