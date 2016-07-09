@@ -873,10 +873,6 @@ function thold_hosts($header_label) {
 		$sql_where .= (strlen($sql_where) ? ' AND ':'WHERE ') . ' type=1 AND schedule=' . get_request_var('id');
 	}
 
-	form_start('maint.php', 'chk');
-
-	html_start_box('', '100%', '', '3', 'center', '');
-
 	$total_rows = db_fetch_cell("SELECT
 		COUNT(DISTINCT h.id)
 		FROM host AS h
@@ -951,7 +947,11 @@ function thold_hosts($header_label) {
 	/* generate page list */
 	$nav = html_nav_bar('maint.php?action=edit&tab=hosts&id=' . get_request_var('id'), MAX_DISPLAY_PAGES, get_request_var('page'), $rows, $total_rows, 13, 'Devices', 'page', 'main');
 
+	form_start('maint.php', 'chk');
+
 	print $nav;
+
+	html_start_box('', '100%', '', '3', 'center', '');
 
 	html_header_sort_checkbox($display_text, get_request_var('sort_column'), get_request_var('sort_direction'), false, 'maint.php?action=edit&tab=hosts&id=' . get_request_var('id'));
 
@@ -983,13 +983,15 @@ function thold_hosts($header_label) {
 			form_checkbox_cell($host['description'], $host['id']);
 			form_end_row();
 		}
-
-		print $nav;
 	} else {
 		print "<tr><td colspan='8'><em>No Associated Hosts Found</em></td></tr>";
 	}
 
 	html_end_box(false);
+
+	if (sizeof($hosts)) {
+		print $nav;
+	}
 
 	form_hidden_box('id', get_request_var('id'), '');
 	form_hidden_box('save_hosts', '1', '');
@@ -1122,10 +1124,6 @@ function webseer_urls($header_label) {
 		$sql_where .= (strlen($sql_where) ? ' AND ':'WHERE ') . ' pmh.type=2 AND pmh.schedule=' . get_request_var('id');
 	}
 
-	form_start('maint.php', 'chk');
-
-	html_start_box('', '100%', '', '3', 'center', '');
-
 	$total_rows = db_fetch_cell('SELECT
 		COUNT(*)
 		FROM plugin_webseer_urls AS u
@@ -1140,13 +1138,15 @@ function webseer_urls($header_label) {
 		$sql_where 
 		LIMIT " . ($rows*(get_request_var('page')-1)) . ',' . $rows;
 
-	//print $sql_query;
-
 	$urls = db_fetch_assoc($sql_query);
 
 	$nav = html_nav_bar('notify_lists.php?action=edit&id=' . get_request_var('id'), MAX_DISPLAY_PAGES, get_request_var('page'), $rows, $total_rows, 13, 'Lists', 'page', 'main');
 
+	form_start('maint.php', 'chk');
+
 	print $nav;
+
+	html_start_box('', '100%', '', '3', 'center', '');
 
 	$display_text = array('Description', 'ID', 'Associated Schedules', 'Enabled' , 'Hostname', 'URL');
 
@@ -1179,13 +1179,14 @@ function webseer_urls($header_label) {
 			form_checkbox_cell($url['display_name'], $url['id']);
 			form_end_row();
 		}
-
-		/* put the nav bar on the bottom as well */
-		print $nav;
 	} else {
 		print "<tr><td><em>No Associated WebSeer URL's Found</em></td></tr>";
 	}
 	html_end_box(false);
+
+	if (sizeof($urls)) {
+		print $nav;
+	}
 
 	form_hidden_box('id', get_request_var('id'), '');
 	form_hidden_box('save_webseer', '1', '');
