@@ -959,7 +959,7 @@ function thold_hosts($header_label) {
 		foreach ($hosts as $host) {
 			form_alternate_row('line' . $host['id']);
 			form_selectable_cell((strlen(get_request_var('filter')) ? preg_replace('/(' . preg_quote(get_request_var('filter')) . ')/i', "<span class='filteredValue'>\\1</span>", htmlspecialchars($host['description'])) : htmlspecialchars($host['description'])), $host['id'], 250);
-			form_selectable_cell(number_format($host['id']), $host['id'], '', 'text-align:right');
+			form_selectable_cell(number_format_i18n($host['id']), $host['id'], '', 'text-align:right');
 			if ($host['associated'] != '') {
 				$names = '<span class="deviceUp">' . __('Current Schedule') . '</span>';
 			} else {
@@ -975,9 +975,9 @@ function thold_hosts($header_label) {
 			} else {
 				form_selectable_cell($names, $host['id']);
 			}
-			form_selectable_cell(number_format($host['graphs']), $host['id'], '', 'text-align:right');
-			form_selectable_cell(number_format($host['data_sources']), $host['id'], '', 'text-align:right');
-			form_selectable_cell(number_format($host['tholds']), $host['id'], '', 'text-align:right');
+			form_selectable_cell(number_format_i18n($host['graphs']), $host['id'], '', 'text-align:right');
+			form_selectable_cell(number_format_i18n($host['data_sources']), $host['id'], '', 'text-align:right');
+			form_selectable_cell(number_format_i18n($host['tholds']), $host['id'], '', 'text-align:right');
 			form_selectable_cell(get_colored_device_status(($host['disabled'] == 'on' ? true : false), $host['status']), $host['id'], '', 'text-align:center');
 			form_selectable_cell((strlen(get_request_var('filter')) ? preg_replace('/(' . preg_quote(get_request_var('filter')) . ')/i', "<span class='filteredValue'>\\1</span>", htmlspecialchars($host['hostname'])) : htmlspecialchars($host['hostname'])), $host['id']);
 			form_checkbox_cell($host['description'], $host['id']);
