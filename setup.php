@@ -24,15 +24,9 @@
 */
 
 function plugin_maint_version() {
-	return array( 
-		'name' 		=> 'maint',
-		'version' 	=> '1.0',
-		'longname'	=> 'Maintenance Scheduler',
-		'author'	=> 'Jimmy Conner',
-		'homepage'	=> 'http://cactiusers.org',
-		'email'		=> 'jimmy@sqmail.org',
-		'url'		=> 'http://cactiusers.org/cacti/versions.php'
-	);
+	global $config;
+	$info = parse_ini_file($config['base_path'] . '/plugins/maint/INFO', true);
+	return $info['info'];
 }
 
 function plugin_maint_install() {
@@ -53,10 +47,6 @@ function plugin_maint_check_config() {
 
 function plugin_maint_upgrade() {
 	return false;
-}
-
-function maint_version() {
-	return plugin_maint_version();
 }
 
 function maint_config_arrays() {

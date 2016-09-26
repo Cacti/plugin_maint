@@ -1,0 +1,8 @@
+[info]
+name = maint
+version = 1.0
+longname = Maintenance Scheduler
+author = The Cacti Group
+email = 
+homepage = http://cacti.net
+compat = 1.0.0
