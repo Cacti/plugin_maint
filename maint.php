@@ -534,7 +534,7 @@ function schedule_edit() {
 				'max_length' => 100,
 				'description' => __('The start date / time for this schedule. Most date / time formats accepted.'),
 				'default' => date('F j, Y, G:i', time()),
-				'value' => isset($maint_item_data['stime']) ?  date('l, F j, Y, G:i', $maint_item_data['stime']) : ''
+				'value' => isset($maint_item_data['stime']) ?  date('F j, Y,  G:i', $maint_item_data['stime']) : ''
 			),
 			'etime' => array(
 				'friendly_name' => __('End Time'),
@@ -542,7 +542,7 @@ function schedule_edit() {
 				'max_length' => 100,
 				'default' => date('F j, Y, G:i', time() + 3600),
 				'description' => __('The end date / time for this schedule. Most date / time formats accepted.'),
-				'value' => isset($maint_item_data['etime']) ? date('l, F j, Y, G:i', $maint_item_data['etime']) : ''
+				'value' => isset($maint_item_data['etime']) ? date('F j, Y,  G:i', $maint_item_data['etime']) : ''
 			),
 			'save_component' => array(
 				'method' => 'hidden',
