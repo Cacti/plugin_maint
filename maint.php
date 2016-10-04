@@ -103,7 +103,7 @@ function schedule_delete() {
 		}
 	}
 
-	header('Location: maint.php&header=false');
+	header('Location: maint.php?header=false');
 
 	exit;
 }
@@ -119,7 +119,7 @@ function schedule_update() {
 		}
 	}
 
-	header('Location: maint.php&header=false');
+	header('Location: maint.php?header=false');
 
 	exit;
 }
@@ -198,7 +198,7 @@ function form_actions() {
 				schedule_update();
 			}
 
-			header('Location: maint.php&header=false');
+			header('Location: maint.php?header=false');
 
 			exit;
 		}elseif (isset_request_var('save_hosts')) {
