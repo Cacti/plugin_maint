@@ -873,41 +873,47 @@ function thold_hosts($header_label) {
 		$sql_where .= (strlen($sql_where) ? ' AND ':'WHERE ') . ' type=1 AND schedule=' . get_request_var('id');
 	}
 
-	$total_rows = db_fetch_cell("SELECT
-		COUNT(DISTINCT h.id)
-		FROM host AS h
-		LEFT JOIN (SELECT DISTINCT host_id FROM thold_data) AS td 
-		ON h.id=td.host_id
-		LEFT JOIN plugin_maint_hosts AS pmh
-		ON h.id=pmh.host
-		AND pmh.schedule=" . get_request_var('id') . "
-		$sql_where");
+	if (get_request_var('id')) {
+		$total_rows = db_fetch_cell("SELECT
+			COUNT(DISTINCT h.id)
+			FROM host AS h
+			LEFT JOIN (SELECT DISTINCT host_id FROM thold_data) AS td 
+			ON h.id=td.host_id
+			LEFT JOIN plugin_maint_hosts AS pmh
+			ON h.id=pmh.host
+			AND pmh.schedule=" . get_request_var('id') . "
+			$sql_where");
+	} else {
+		$total_rows = 0;
+	}
 
 	$sortby = get_request_var('sort_column');
 	if ($sortby=='hostname') {
 		$sortby = 'INET_ATON(hostname)';
 	}
 
-	$sql_query = 'SELECT h.*, pmh.type, graphs, data_sources, tholds, 
-		(SELECT schedule FROM plugin_maint_hosts WHERE host=h.id AND schedule=' . get_request_var('id') . ") AS associated 
-		FROM host as h
-		LEFT JOIN (SELECT COUNT(id) AS tholds, host_id FROM thold_data GROUP BY host_id) AS td
-		ON td.host_id=h.id
-		LEFT JOIN (SELECT COUNT(id) AS graphs, host_id FROM graph_local GROUP BY host_id) AS gl
-		ON gl.host_id=h.id
-		LEFT JOIN (SELECT COUNT(id) AS data_sources, host_id FROM data_local GROUP BY host_id) AS dl
-		on dl.host_id=h.id
-		LEFT JOIN plugin_maint_hosts AS pmh
-		ON pmh.host=h.id
-		AND pmh.schedule=" . get_request_var('id') . "
-		$sql_where 
-		GROUP BY h.id
-        ORDER BY " . $sortby . ' ' . get_request_var('sort_direction') . '
-		LIMIT ' . ($rows*(get_request_var('page')-1)) . ',' . $rows;
+	if (get_request_var('id')) {
+		$sql_query = 'SELECT h.*, pmh.type, graphs, data_sources, tholds, 
+			(SELECT schedule FROM plugin_maint_hosts WHERE host=h.id AND schedule=' . get_request_var('id') . ") AS associated 
+			FROM host as h
+			LEFT JOIN (SELECT COUNT(id) AS tholds, host_id FROM thold_data GROUP BY host_id) AS td
+			ON td.host_id=h.id
+			LEFT JOIN (SELECT COUNT(id) AS graphs, host_id FROM graph_local GROUP BY host_id) AS gl
+			ON gl.host_id=h.id
+			LEFT JOIN (SELECT COUNT(id) AS data_sources, host_id FROM data_local GROUP BY host_id) AS dl
+			on dl.host_id=h.id
+			LEFT JOIN plugin_maint_hosts AS pmh
+			ON pmh.host=h.id
+			AND pmh.schedule=" . get_request_var('id') . "
+			$sql_where 
+			GROUP BY h.id
+	        ORDER BY " . $sortby . ' ' . get_request_var('sort_direction') . '
+			LIMIT ' . ($rows*(get_request_var('page')-1)) . ',' . $rows;
 
-	//print $sql_query;
-
-	$hosts = db_fetch_assoc($sql_query);
+		$hosts = db_fetch_assoc($sql_query);
+	} else {
+		$hosts = array();
+	}
 
 	$display_text = array(
 		'description' => array(
