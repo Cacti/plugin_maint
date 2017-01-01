@@ -51,7 +51,7 @@ function plugin_maint_upgrade() {
 
 function maint_config_arrays() {
 	global $menu;
-	$menu['Management']['plugins/maint/maint.php'] = __('Maintenance Schedules');
+	$menu[__('Management')]['plugins/maint/maint.php'] = __('Maintenance Schedules');
 }
 
 function maint_draw_navigation_text ($nav) {
