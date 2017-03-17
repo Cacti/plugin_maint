@@ -663,7 +663,7 @@ function schedules() {
 			form_alternate_row('line' . $schedule['id']);
 
 			form_selectable_cell('<a class="linkEditMain" href="' . htmlspecialchars('maint.php?action=edit&id=' . $schedule['id']) . '">' . $schedule['name'] . '</a>', $schedule['id']);
-			form_selectable_cell($yesno[plugin_maint_check_schedule($schedule['id'])], $schedule['id'], '', $active ? 'color:green;font-weight:bold;':'');
+			form_selectable_cell($yesno[plugin_maint_check_schedule($schedule['id'])], $schedule['id'], '', $active ? 'deviceUp':'');
 			form_selectable_cell($maint_types[$schedule['mtype']], $schedule['id']);
 			switch($schedule['minterval']) {
 				case 86400:
