@@ -887,9 +887,11 @@ function thold_hosts($header_label) {
 		$total_rows = 0;
 	}
 
-	$sortby = get_request_var('sort_column');
-	if ($sortby=='hostname') {
-		$sortby = 'INET_ATON(hostname)';
+	$sql_order = get_order_string();
+	if ($apply_limits) {
+		$sql_limit = ' LIMIT ' . ($rows*(get_request_var('page')-1)) . ', ' . $rows;
+	}else{
+		$sql_limit = '';
 	}
 
 	if (get_request_var('id')) {
@@ -907,8 +909,8 @@ function thold_hosts($header_label) {
 			AND pmh.schedule=" . get_request_var('id') . "
 			$sql_where 
 			GROUP BY h.id
-	        ORDER BY " . $sortby . ' ' . get_request_var('sort_direction') . '
-			LIMIT ' . ($rows*(get_request_var('page')-1)) . ',' . $rows;
+			$sql_order
+			$sql_limit";
 
 		$hosts = db_fetch_assoc($sql_query);
 	} else {
