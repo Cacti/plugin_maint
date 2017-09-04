@@ -20,6 +20,7 @@ Got any ideas or complaints, please e-mail me!
 
 	--- 1.0 ---
 	Updates for Cacti 1.0
+	* feature: Update Spanish translation
 
 	--- 0.3 ---
 	Add dropdown for quick updating of the Scheduled Time
