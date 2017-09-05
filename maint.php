@@ -29,45 +29,45 @@ include_once($config['base_path'] . '/plugins/maint/functions.php');
 
 // Maint Schedule Actions
 $actions = array(
-	1 => __('Update Time (Now + 1 Hour)'),
-	2 => __('Delete')
+	1 => __('Update Time (Now + 1 Hour)', 'maint'),
+	2 => __('Delete', 'maint')
 );
 
 // Host Maint Schedule Actions
 $assoc_actions = array(
-	1 => __('Associate'),
-	2 => __('Disassociate')
+	1 => __('Associate', 'maint'),
+	2 => __('Disassociate', 'maint')
 );
 
 $maint_types = array (
-	1 => __('One Time'), 
-	2 => __('Reoccurring')
+	1 => __('One Time', 'maint'),
+	2 => __('Reoccurring', 'maint')
 );
 
 $maint_intervals = array(
-	0      => __('Not Defined'), 
-	86400  => __('Every Day'), 
-	604800 => __('Every Week')
+	0      => __('Not Defined', 'maint'),
+	86400  => __('Every Day', 'maint'),
+	604800 => __('Every Week', 'maint')
 );
 
 $yesno = array(
-	0     => __('No'), 
-	1     => __('Yes'), 
-	'on'  => __('Yes'), 
-	'off' => __('No')
+	0     => __('No', 'maint'),
+	1     => __('Yes', 'maint'),
+	'on'  => __('Yes', 'maint'),
+	'off' => __('No', 'maint')
 );
 
 // Present a tabbed interface
 $tabs = array(
-	'general' => __('General')
+	'general' => __('General', 'maint')
 );
 
 if (api_plugin_is_enabled('thold')) {
-	$tabs['hosts'] = __('Devices');
+	$tabs['hosts'] = __('Devices', 'maint');
 }
 
 if (api_plugin_is_enabled('webseer')) {
-	$tabs['webseer'] = __('WebSeer');
+	$tabs['webseer'] = __('WebSeer', 'maint');
 }
 
 $tabs = api_plugin_hook_function('maint_tabs', $tabs);
@@ -133,7 +133,7 @@ function form_save() {
 		get_filter_request_var('id');
 		get_filter_request_var('mtype');
 		get_filter_request_var('minterval');
-	
+
 		if (isset_request_var('name')) {
 			set_request_var('name', trim(str_replace(array("\\", "'", '"'), '', get_nfilter_request_var('name'))));
 		}
@@ -157,11 +157,11 @@ function form_save() {
 		} else {
 			$save['enabled'] = '';
 		}
-	
+
 		if ($save['mtype'] == 1) {
 			$save['minterval'] = 0;
 		}
-	
+
 		if ($save['stime'] >= $save['etime']) {
 			raise_message(2);
 		}
@@ -233,7 +233,7 @@ function form_actions() {
 					}
 				}
 			}
-	
+
 			header('Location: maint.php?action=edit&tab=webseer&header=false&id=' . get_request_var('id'));
 
 			exit;
@@ -271,25 +271,25 @@ function form_actions() {
 			if (get_request_var('drp_action') == '1') { /* update */
 				print "<tr>
 					<td class='textArea'>
-						<p>" . __('Click \'Continue\' to Update the following Maintenance Schedule(s).') . "</p>
+						<p>" . __('Click \'Continue\' to Update the following Maintenance Schedule(s).', 'maint') . "</p>
 						<ul>$list</ul>
 					</td>
 				</tr>\n";
 
-				$save_html = "<input type='button' value='" . __('Cancel') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __('Continue') . "' title='" . __('Update Maintenance Schedule(s)') . "'>";
+				$save_html = "<input type='button' value='" . __esc('Cancel', 'maint') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __esc('Continue', 'maint') . "' title='" . __esc('Update Maintenance Schedule(s)', 'maint') . "'>";
 			}elseif (get_request_var('drp_action') == '2') { /* delete */
 				print "<tr>
 					<td class='textArea'>
-						<p>" . __('Click \'Continue\' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated.') . "</p>
+						<p>" . __('Click \'Continue\' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated.', 'maint') . "</p>
 						<ul>$list</ul>
 					</td>
 				</tr>\n";
 
-				$save_html = "<input type='button' value='" . __('Cancel') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __('Continue') . "' title='" . __('Delete Maintenance Schedule(s)') . "'>";
+				$save_html = "<input type='button' value='" . __esc('Cancel', 'maint') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __esc('Continue', 'maint') . "' title='" . __esc('Delete Maintenance Schedule(s)', 'maint') . "'>";
 			}
 		} else {
-			print "<tr><td><span class='textError'>" . __('You must select at least one Maintenance Schedule.') . "</span></td></tr>\n";
-			$save_html = "<input type='button' value='" . __('Return') . "' onClick='cactiReturnTo()'>";
+			print "<tr><td><span class='textError'>" . __('You must select at least one Maintenance Schedule.', 'maint') . "</span></td></tr>\n";
+			$save_html = "<input type='button' value='" . __esc('Return', 'maint') . "' onClick='cactiReturnTo()'>";
 		}
 
 		print "<tr class='saveRow'>
@@ -324,31 +324,31 @@ function form_actions() {
 
 		form_start('maint.php');
 
-		html_start_box($assoc_actions{get_request_var('drp_action')} . ' ' . __('Device(s)'), '60%', '', '3', 'center', '');
+		html_start_box($assoc_actions{get_request_var('drp_action')} . ' ' . __('Device(s)', 'maint'), '60%', '', '3', 'center', '');
 
 		if (sizeof($array)) {
 			if (get_request_var('drp_action') == '1') { /* associate */
 				print "<tr>
 					<td class='textArea'>
-						<p>" . __('Click \'Continue\' to associate the following Device(s) with the Maintenance Schedule \'<b>%s</b>\'.', $list_name) . "</p>
+						<p>" . __('Click \'Continue\' to associate the following Device(s) with the Maintenance Schedule \'<b>%s</b>\'.', $list_name, 'maint') . "</p>
 						<ul>$list</ul>
 					</td>
 				</tr>\n";
 
-				$save_html = "<input type='button' value='" . __('Cancel') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __('Continue') . "' title='" . __('Associate Maintenance Schedule(s)') . "'>";
+				$save_html = "<input type='button' value='" . __esc('Cancel', 'maint') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __esc('Continue', 'maint') . "' title='" . __esc('Associate Maintenance Schedule(s)', 'maint') . "'>";
 			}elseif (get_request_var('drp_action') == '2') { /* disassociate */
 				print "<tr>
 					<td class='textArea'>
-						<p>" . __('Click \'Continue\' to disassociate the following Device(s) with the Maintenance Schedule \'<b>%s</b>\'.', $list_name) . "</p>
+						<p>" . __('Click \'Continue\' to disassociate the following Device(s) with the Maintenance Schedule \'<b>%s</b>\'.', $list_name, 'maint') . "</p>
 						<ul>$list</ul>
 					</td>
 				</tr>\n";
 
-				$save_html = "<input type='button' value='" . __('Cancel') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __('Continue') . "' title='" . __('Disassociate Maintenance Schedule(s)') . "'>";
+				$save_html = "<input type='button' value='" . __esc('Cancel', 'maint') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __esc('Continue', 'maint') . "' title='" . __esc('Disassociate Maintenance Schedule(s)', 'maint') . "'>";
 			}
 		} else {
-			print "<tr><td><span class='textError'>" . __('You must select at least one Device.') . "</span></td></tr>\n";
-			$save_html = "<input type='button' value='" . __('Return') . "' onClick='cactiReturnTo()'>";
+			print "<tr><td><span class='textError'>" . __('You must select at least one Device.', 'maint') . "</span></td></tr>\n";
+			$save_html = "<input type='button' value='" . __esc('Return', 'maint') . "' onClick='cactiReturnTo()'>";
 		}
 
 		print "<tr class='saveRow'>
@@ -382,7 +382,7 @@ function form_actions() {
 
 		top_header();
 
-		html_start_box($assoc_actions{get_request_var('drp_action')} . ' ' . __('Device(s)'), '60%', '', '3', 'center', '');
+		html_start_box($assoc_actions{get_request_var('drp_action')} . ' ' . __('Device(s)', 'maint'), '60%', '', '3', 'center', '');
 
 		form_start('maint.php');
 
@@ -390,25 +390,25 @@ function form_actions() {
 			if (get_request_var('drp_action') == '1') { /* associate */
 				print "<tr>
 					<td class='textArea'>
-						<p>" . __('Click \'Continue\' to associate the Device(s) below with the Maintenance Schedule \'<b>%s</b>\'.', $list_name) . "</p>
+						<p>" . __('Click \'Continue\' to associate the Device(s) below with the Maintenance Schedule \'<b>%s</b>\'.', $list_name, 'maint') . "</p>
 						<ul>$list</ul>
 					</td>
 				</tr>\n";
 
-				$save_html = "<input type='button' value='" . __('Cancel') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __('Continue') . "' title='" . __('Associate Maintenance Schedule(s)') . "'>";
+				$save_html = "<input type='button' value='" . __esc('Cancel', 'maint') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __esc('Continue', 'maint') . "' title='" . __esc('Associate Maintenance Schedule(s)', 'maint') . "'>";
 			}elseif (get_request_var('drp_action') == '2') { /* disassociate */
 				print "<tr>
 					<td class='textArea'>
-						<p>" . __('Click \'Continue\' to disassociate the Devices(s) below with the Maintenance Schedule \'<b>%s</b>\'.', $list_name) . "</p>
+						<p>" . __('Click \'Continue\' to disassociate the Devices(s) below with the Maintenance Schedule \'<b>%s</b>\'.', $list_name, 'maint') . "</p>
 						<ul>$list</ul>
 					</td>
 				</tr>\n";
 
-				$save_html = "<input type='button' value='" . __('Cancel') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __('Continue') . "' title='" . __('Disassociate Maintenance Schedule(s)') . "'>";
+				$save_html = "<input type='button' value='" . __esc('Cancel', 'maint') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __esc('Continue', 'maint') . "' title='" . __esc('Disassociate Maintenance Schedule(s)', 'maint') . "'>";
 			}
 		} else {
-			print "<tr><td><span class='textError'>" . __('You must select at least one Device.') . "</span></td></tr>\n";
-			$save_html = "<input type='button' value='" . __('Return') . "' onClick='cactiReturnTo()'>";
+			print "<tr><td><span class='textError'>" . __('You must select at least one Device.', 'maint') . "</span></td></tr>\n";
+			$save_html = "<input type='button' value='" . __esc('Return', 'maint') . "' onClick='cactiReturnTo()'>";
 		}
 
 		print "<tr class='saveRow'>
@@ -435,9 +435,9 @@ function form_actions() {
 function get_header_label() {
 	if (!isempty_request_var('id')) {
 		$list = db_fetch_row('SELECT * FROM plugin_maint_schedules WHERE id=' . get_filter_request_var('id'));
-		$header_label = __('General Settings [edit: %s]', $list['name']);
+		$header_label = __('General Settings [edit: %s]', $list['name'], 'maint');
 	} else {
-		$header_label = __('General Settings [new]');
+		$header_label = __('General Settings [new]', 'maint');
 	}
 
 	return $header_label;
@@ -482,7 +482,7 @@ function schedule_edit() {
 		$maint_item_data = db_fetch_row('SELECT * FROM plugin_maint_schedules WHERE id = ' . $id);
 	} else {
 		$id = 0;
-		$maint_item_data = array('id' => 0, 'name' => __('New Maintenance Schedule'), 'enabled' => 'on', 'mtype' => 1, 'stime' => time(), 'etime' => time() + 3600, 'minterval' => 0);
+		$maint_item_data = array('id' => 0, 'name' => __('New Maintenance Schedule', 'maint'), 'enabled' => 'on', 'mtype' => 1, 'stime' => time(), 'etime' => time() + 3600, 'minterval' => 0);
 	}
 
 	$header_label = get_header_label();
@@ -494,54 +494,56 @@ function schedule_edit() {
 
 		$form_array = array(
 			'general_header' => array(
-				'friendly_name' => __('Schedule'),
+				'friendly_name' => __('Schedule', 'maint'),
 				'method' => 'spacer',
 			),
 			'name' => array(
-				'friendly_name' => __('Schedule Name'),
+				'friendly_name' => __('Schedule Name', 'maint'),
 				'method' => 'textbox',
 				'max_length' => 100,
 				'default' => $maint_item_data['name'],
-				'description' => __('Provide the Maintenance Schedule a meaningful name'),
+				'description' => __('Provide the Maintenance Schedule a meaningful name', 'maint'),
 				'value' => isset($maint_item_data['name']) ? $maint_item_data['name'] : ''
 			),
 			'enabled' => array(
-				'friendly_name' => __('Enabled'),
+				'friendly_name' => __('Enabled', 'maint'),
 				'method' => 'checkbox',
 				'default' => 'on',
-				'description' => __('Whether or not this threshold will be checked and alerted upon.'),
+				'description' => __('Whether or not this threshold will be checked and alerted upon.', 'maint'),
 				'value' => isset($maint_item_data['enabled']) ? $maint_item_data['enabled'] : ''
 			),
 			'mtype' => array(
-				'friendly_name' => __('Schedule Type'),
+				'friendly_name' => __('Schedule Type', 'maint'),
 				'method' => 'drop_array',
 				'on_change' => 'changemaintType()',
 				'array' => $maint_types,
-				'description' => __('The type of Threshold that will be monitored.'),
+				'description' => __('The type of Threshold that will be monitored.', 'maint'),
 				'value' => isset($maint_item_data['mtype']) ? $maint_item_data['mtype'] : ''
 			),
 			'minterval' => array(
-				'friendly_name' => __('Interval'),
+				'friendly_name' => __('Interval', 'maint'),
 				'method' => 'drop_array',
 				'array' => $maint_intervals,
 				'default' => 86400,
-				'description' => __('This is the interval in which the start / end time will repeat.'),
+				'description' => __('This is the interval in which the start / end time will repeat.', 'maint'),
 				'value' => isset($maint_item_data['minterval']) ? $maint_item_data['minterval'] : '1'
 			),
 			'stime' => array(
-				'friendly_name' => __('Start Time'),
+				'friendly_name' => __('Start Time', 'maint'),
 				'method' => 'textbox',
-				'max_length' => 100,
-				'description' => __('The start date / time for this schedule. Most date / time formats accepted.'),
+				'max_length' => 20,
+				'size' => 20,
+				'description' => __('The start date / time for this schedule. Most date / time formats accepted.', 'maint'),
 				'default' => date('F j, Y, G:i', time()),
 				'value' => isset($maint_item_data['stime']) ?  date('F j, Y,  G:i', $maint_item_data['stime']) : ''
 			),
 			'etime' => array(
-				'friendly_name' => __('End Time'),
+				'friendly_name' => __('End Time', 'maint'),
 				'method' => 'textbox',
-				'max_length' => 100,
+				'max_length' => 20,
+				'size' => 20,
 				'default' => date('F j, Y, G:i', time() + 3600),
-				'description' => __('The end date / time for this schedule. Most date / time formats accepted.'),
+				'description' => __('The end date / time for this schedule. Most date / time formats accepted.', 'maint'),
 				'value' => isset($maint_item_data['etime']) ? date('F j, Y,  G:i', $maint_item_data['etime']) : ''
 			),
 			'save_component' => array(
@@ -557,7 +559,7 @@ function schedule_edit() {
 				'value' => $id
 			)
 		);
-	
+
 		draw_edit_form(
 			array(
 				'config' => array(
@@ -566,7 +568,7 @@ function schedule_edit() {
 				'fields' => $form_array
 			)
 		);
-	
+
 		html_end_box();
 
 		form_save_button('maint.php', 'return');
@@ -588,10 +590,10 @@ function schedule_edit() {
 				break;
 			}
 		}
-	
+
 		$(function() {
-			$('#stime').after('<i id="startDate" class="calendar fa fa-calendar" title="<?php print __('Start Date/Time Selector');?>"></i>');
-			$('#etime').after('<i id="endDate" class="calendar fa fa-calendar" title="<?php print __('End Date/Time Selector');?>"></i>');
+			$('#stime').after('<i id="startDate" class="calendar fa fa-calendar" title="<?php print __esc('Start Date/Time Selector', 'maint');?>"></i>');
+			$('#etime').after('<i id="endDate" class="calendar fa fa-calendar" title="<?php print __esc('End Date/Time Selector', 'maint');?>"></i>');
 			$('#startDate').click(function() {
 				if (date1Open) {
 					date1Open = false;
@@ -652,9 +654,17 @@ function schedules() {
 
 	form_start('maint.php', 'chk');
 
-	html_start_box(__('Maintenance Schedules'), '100%', '', '2', 'center', 'maint.php?tab=general&action=edit');
+	html_start_box(__('Maintenance Schedules', 'maint'), '100%', '', '2', 'center', 'maint.php?tab=general&action=edit');
 
-	html_header_checkbox(array(__('Name'), __('Active'), __('Type'), __('Start'), __('End'), __('Interval'), __('Enabled')));
+	html_header_checkbox(array(
+		__('Name', 'maint'), 
+		__('Active', 'maint'), 
+		__('Type', 'maint'), 
+		__('Start', 'maint'), 
+		__('End', 'maint'), 
+		__('Interval', 'maint'), 
+		__('Enabled', 'maint'))
+	);
 
 	if (sizeof($schedules)) {
 		foreach ($schedules as $schedule) {
@@ -691,7 +701,7 @@ function schedules() {
 			form_end_row();
 		}
 	}else{
-		print "<tr><td colspan='5'><em>" . __('No Schedules') . "</em></td></tr>\n";
+		print "<tr><td colspan='5'><em>" . __('No Schedules', 'maint') . "</em></td></tr>\n";
 	}
 
 	html_end_box(false);
@@ -777,7 +787,7 @@ function thold_hosts($header_label) {
 	</script>
 	<?php
 
-	html_start_box(__('Associated Devices %s', htmlspecialchars($header_label)), '100%', '', '3', 'center', '');
+	html_start_box(__('Associated Devices %s', htmlspecialchars($header_label), 'maint'), '100%', '', '3', 'center', '');
 
 	?>
 	<tr class='even'>
@@ -786,23 +796,23 @@ function thold_hosts($header_label) {
 			<table class='filterTable'>
 				<tr>
 					<td>
-						<?php print __('Search');?>
+						<?php print __('Search', 'maint');?>
 					</td>
 					<td>
 						<input type='text' id='filter' size='25' value='<?php print htmlspecialchars(get_request_var('filter'));?>' onChange='applyFilter()'>
 					</td>
 					<td>
-						<?php print __('Type');?>
+						<?php print __('Type', 'maint');?>
 					</td>
 					<td>
 						<select id='host_template_id' onChange='applyFilter()'>
-							<option value='-1'<?php if (get_request_var('host_template_id') == '-1') {?> selected<?php }?>><?php print __('Any');?></option>
-							<option value='0'<?php if (get_request_var('host_template_id') == '0') {?> selected<?php }?>><?php print __('None');?></option>
+							<option value='-1'<?php if (get_request_var('host_template_id') == '-1') {?> selected<?php }?>><?php print __('Any', 'maint');?></option>
+							<option value='0'<?php if (get_request_var('host_template_id') == '0') {?> selected<?php }?>><?php print __('None', 'maint');?></option>
 							<?php
-							$host_templates = db_fetch_assoc('SELECT DISTINCT ht.id, ht.name 
+							$host_templates = db_fetch_assoc('SELECT DISTINCT ht.id, ht.name
 								FROM host_template AS ht
 								INNER JOIN host AS h
-								ON h.host_template_id=ht.id 
+								ON h.host_template_id=ht.id
 								ORDER BY ht.name');
 
 							if (sizeof($host_templates) > 0) {
@@ -814,11 +824,11 @@ function thold_hosts($header_label) {
 						</select>
 					</td>
 					<td>
-						<?php print __('Devices');?>
+						<?php print __('Devices', 'maint');?>
 					</td>
 					<td>
 						<select id='rows' onChange='applyFilter()'>
-							<option value='-1'<?php if (get_request_var('rows') == '-1') {?> selected<?php }?>><?php print __('Default');?></option>
+							<option value='-1'<?php if (get_request_var('rows') == '-1') {?> selected<?php }?>><?php print __('Default', 'maint');?></option>
 							<?php
 							if (sizeof($item_rows) > 0) {
 								foreach ($item_rows as $key => $value) {
@@ -832,13 +842,13 @@ function thold_hosts($header_label) {
 						<input type='checkbox' id='associated' onChange='applyFilter()' <?php print (get_request_var('associated') == 'true' || get_request_var('associated') == 'on' ? 'checked':'');?>>
 					</td>
 					<td>
-						<label for='associated'><?php print __('Associated');?></label>
+						<label for='associated'><?php print __('Associated', 'maint');?></label>
 					</td>
 					<td>
-						<input type='button' value='<?php print __('Go');?>' onClick='applyFilter()' title='<?php print __('Set/Refresh Filters');?>'>
-					</td>
-					<td>
-						<input type='button' name='clear' value='<?php print __('Clear');?>' onClick='clearFilter()' title='<?php print __('Clear Filters');?>'>
+						<span class='nowrap'>
+							<input type='button' value='<?php print __esc('Go', 'maint');?>' onClick='applyFilter()' title='<?php print __esc('Set/Refresh Filters', 'maint');?>'>
+							<input type='button' name='clear' value='<?php print __esc('Clear', 'maint');?>' onClick='clearFilter()' title='<?php print __esc('Clear Filters', 'maint');?>'>
+						</span>
 					</td>
 				</tr>
 			</table>
@@ -853,7 +863,7 @@ function thold_hosts($header_label) {
 
 	/* form the 'where' clause for our main sql query */
 	if (strlen(get_request_var('filter'))) {
-		$sql_where = "WHERE (h.hostname LIKE '%" . get_request_var('filter') . "%' 
+		$sql_where = "WHERE (h.hostname LIKE '%" . get_request_var('filter') . "%'
 			OR h.description LIKE '%" . get_request_var('filter') . "%')";
 	}else{
 		$sql_where = '';
@@ -877,7 +887,7 @@ function thold_hosts($header_label) {
 		$total_rows = db_fetch_cell("SELECT
 			COUNT(DISTINCT h.id)
 			FROM host AS h
-			LEFT JOIN (SELECT DISTINCT host_id FROM thold_data) AS td 
+			LEFT JOIN (SELECT DISTINCT host_id FROM thold_data) AS td
 			ON h.id=td.host_id
 			LEFT JOIN plugin_maint_hosts AS pmh
 			ON h.id=pmh.host
@@ -888,15 +898,16 @@ function thold_hosts($header_label) {
 	}
 
 	$sql_order = get_order_string();
-	if ($apply_limits) {
-		$sql_limit = ' LIMIT ' . ($rows*(get_request_var('page')-1)) . ', ' . $rows;
-	}else{
-		$sql_limit = '';
-	}
+
+//	if ($apply_limits) {
+//		$sql_limit = ' LIMIT ' . ($rows*(get_request_var('page')-1)) . ', ' . $rows;
+//	}else{
+//		$sql_limit = '';
+//	}
 
 	if (get_request_var('id')) {
-		$sql_query = 'SELECT h.*, pmh.type, graphs, data_sources, tholds, 
-			(SELECT schedule FROM plugin_maint_hosts WHERE host=h.id AND schedule=' . get_request_var('id') . ") AS associated 
+		$sql_query = 'SELECT h.*, pmh.type, graphs, data_sources, tholds,
+			(SELECT schedule FROM plugin_maint_hosts WHERE host=h.id AND schedule=' . get_request_var('id') . ") AS associated
 			FROM host as h
 			LEFT JOIN (SELECT COUNT(id) AS tholds, host_id FROM thold_data GROUP BY host_id) AS td
 			ON td.host_id=h.id
@@ -907,7 +918,7 @@ function thold_hosts($header_label) {
 			LEFT JOIN plugin_maint_hosts AS pmh
 			ON pmh.host=h.id
 			AND pmh.schedule=" . get_request_var('id') . "
-			$sql_where 
+			$sql_where
 			GROUP BY h.id
 			$sql_order
 			$sql_limit";
@@ -919,41 +930,41 @@ function thold_hosts($header_label) {
 
 	$display_text = array(
 		'description' => array(
-			'display' => __('Description'), 
+			'display' => __('Description', 'maint'),
 			'align' => 'left',
 			'sort' => 'ASC'),
 		'id' => array(
-			'display' => __('ID'), 
+			'display' => __('ID', 'maint'),
 			'align' => 'right',
 			'sort' => 'asc'),
 		'nosort' => array(
-			'display' => __('Associated Schedules'), 
+			'display' => __('Associated Schedules', 'maint'),
 			'align' => 'left',
 			'sort' => ''),
 		'graphs' => array(
-			'display' => __('Graphs'), 
+			'display' => __('Graphs', 'maint'),
 			'align' => 'right',
 			'sort' => 'desc'),
 		'data_sources' => array(
-			'display' => __('Data Sources'), 
+			'display' => __('Data Sources', 'maint'),
 			'align' => 'right',
 			'sort' => 'desc'),
 		'tholds' => array(
-			'display' => __('Thresholds'), 
+			'display' => __('Thresholds', 'maint'),
 			'align' => 'right',
 			'sort' => 'desc'),
 		'nosort1' => array(
-			'display' => __('Status'), 
+			'display' => __('Status', 'maint'),
 			'align' => 'center',
 			'sort' => ''),
 		'hostname' => array(
-			'display' => __('Hostname'),
+			'display' => __('Hostname', 'maint'),
 			'align' => 'left',
 			'sort' => 'desc')
 	);
 
 	/* generate page list */
-	$nav = html_nav_bar('maint.php?action=edit&tab=hosts&id=' . get_request_var('id'), MAX_DISPLAY_PAGES, get_request_var('page'), $rows, $total_rows, 13, __('Devices'), 'page', 'main');
+	$nav = html_nav_bar('maint.php?action=edit&tab=hosts&id=' . get_request_var('id'), MAX_DISPLAY_PAGES, get_request_var('page'), $rows, $total_rows, 13, __('Devices', 'maint'), 'page', 'main');
 
 	form_start('maint.php', 'chk');
 
@@ -969,7 +980,7 @@ function thold_hosts($header_label) {
 			form_selectable_cell((strlen(get_request_var('filter')) ? preg_replace('/(' . preg_quote(get_request_var('filter')) . ')/i', "<span class='filteredValue'>\\1</span>", htmlspecialchars($host['description'])) : htmlspecialchars($host['description'])), $host['id'], 250);
 			form_selectable_cell(number_format_i18n($host['id']), $host['id'], '', 'text-align:right');
 			if ($host['associated'] != '') {
-				$names = '<span class="deviceUp">' . __('Current Schedule') . '</span>';
+				$names = '<span class="deviceUp">' . __('Current Schedule', 'maint') . '</span>';
 			} else {
 				$names = '';
 			}
@@ -979,7 +990,7 @@ function thold_hosts($header_label) {
 				}
 			}
 			if ($names == '') {
-				form_selectable_cell('<span class="deviceUnknown">' . __('No Schedules') . '</span>', $host['id']);
+				form_selectable_cell('<span class="deviceUnknown">' . __('No Schedules', 'maint') . '</span>', $host['id']);
 			} else {
 				form_selectable_cell($names, $host['id']);
 			}
@@ -992,7 +1003,7 @@ function thold_hosts($header_label) {
 			form_end_row();
 		}
 	} else {
-		print "<tr><td colspan='8'><em>" . __('No Associated Devices Found') . "</em></td></tr>";
+		print "<tr><td colspan='8'><em>" . __('No Associated Devices Found', 'maint') . "</em></td></tr>";
 	}
 
 	html_end_box(false);
@@ -1065,7 +1076,7 @@ function webseer_urls($header_label) {
 	</script>
 	<?php
 
-	html_start_box(__('Associated Web URL\'s ') . htmlspecialchars($header_label), '100%', '', '3', 'center', '');
+	html_start_box(__('Associated Web URL\'s %s', htmlspecialchars($header_label), 'maint'), '100%', '', '3', 'center', '');
 
 	?>
 	<tr class='even'>
@@ -1074,17 +1085,17 @@ function webseer_urls($header_label) {
 			<table class='filterTable'>
 				<tr>
 					<td>
-						<?php print __('Search');?>
+						<?php print __('Search', 'maint');?>
 					</td>
 					<td>
 						<input type='text' id='filter' size='25' value='<?php print htmlspecialchars(get_request_var('filter'));?>' onChange='applyFilter()'>
 					</td>
 					<td>
-						<?php print __('Rules');?>
+						<?php print __('Rules', 'maint');?>
 					</td>
 					<td>
 						<select id='rows' onChange='applyFilter()'>
-							<option value='-1'<?php if (get_request_var('rows') == '-1') {?> selected<?php }?>><?php print __('Default');?></option>
+							<option value='-1'<?php if (get_request_var('rows') == '-1') {?> selected<?php }?>><?php print __('Default', 'maint');?></option>
 							<?php
 							if (sizeof($item_rows) > 0) {
 								foreach ($item_rows as $key => $value) {
@@ -1098,13 +1109,13 @@ function webseer_urls($header_label) {
 						<input type='checkbox' id='associated' onChange='applyFilter()' <?php print (get_request_var('associated') == 'true' || get_request_var('associated') == 'on' ? 'checked':'');?>>
 					</td>
 					<td>
-						<label for='associated'><?php print __('Associated');?></label>
+						<label for='associated'><?php print __('Associated', 'maint');?></label>
 					</td>
 					<td>
-						<input type='button' value='<?php print __('Go');?>' onClick='applyFilter()' title='<?php print __('Set/Refresh Filters');?>'>
-					</td>
-					<td>
-						<input type='button' name='clear' value='<?php print __('Clear');?>' onClick='clearFilter()' title='<?php print __('Clear Filters');?>'>
+						<span class='nowrap'>
+							<input type='button' value='<?php print __esc('Go', 'maint');?>' onClick='applyFilter()' title='<?php print __esc('Set/Refresh Filters', 'maint');?>'>
+							<input type='button' name='clear' value='<?php print __esc('Clear', 'maint');?>' onClick='clearFilter()' title='<?php print __esc('Clear Filters', 'maint');?>'>
+						</span>
 					</td>
 				</tr>
 			</table>
@@ -1119,8 +1130,8 @@ function webseer_urls($header_label) {
 
 	/* form the 'where' clause for our main sql query */
 	if (strlen(get_request_var('filter'))) {
-		$sql_where = "WHERE ((u.url LIKE '%" . get_request_var('filter') . "%') 
-			OR (u.display_name LIKE '%" . get_request_var('filter') . "%') 
+		$sql_where = "WHERE ((u.url LIKE '%" . get_request_var('filter') . "%')
+			OR (u.display_name LIKE '%" . get_request_var('filter') . "%')
 			OR (u.ip LIKE '%" . get_request_var('filter') . "%'))";
 	}else{
 		$sql_where = '';
@@ -1143,12 +1154,12 @@ function webseer_urls($header_label) {
 		FROM plugin_webseer_urls AS u
 		LEFT JOIN plugin_maint_hosts AS pmh
 		ON u.id=pmh.host
-		$sql_where 
+		$sql_where
 		LIMIT " . ($rows*(get_request_var('page')-1)) . ',' . $rows;
 
 	$urls = db_fetch_assoc($sql_query);
 
-	$nav = html_nav_bar('notify_lists.php?action=edit&id=' . get_request_var('id'), MAX_DISPLAY_PAGES, get_request_var('page'), $rows, $total_rows, 13, __('Lists'), 'page', 'main');
+	$nav = html_nav_bar('notify_lists.php?action=edit&id=' . get_request_var('id'), MAX_DISPLAY_PAGES, get_request_var('page'), $rows, $total_rows, 13, __('Lists', 'maint'), 'page', 'main');
 
 	form_start('maint.php', 'chk');
 
@@ -1156,7 +1167,14 @@ function webseer_urls($header_label) {
 
 	html_start_box('', '100%', '', '3', 'center', '');
 
-	$display_text = array(__('Description'), __('ID'), __('Associated Schedules'), __('Enabled'), __('Hostname'), __('URL'));
+	$display_text = array(
+		__('Description', 'maint'), 
+		__('ID', 'maint'), 
+		__('Associated Schedules', 'maint'), 
+		__('Enabled', 'maint'), 
+		__('Hostname', 'maint'), 
+		__('URL', 'maint')
+	);
 
 	html_header_checkbox($display_text);
 
@@ -1166,7 +1184,7 @@ function webseer_urls($header_label) {
 			form_selectable_cell((strlen(get_request_var('filter')) ? preg_replace('/(' . preg_quote(get_request_var('filter')) . ')/i', "<span class='filteredValue'>\\1</span>", htmlspecialchars($url['display_name'])) : htmlspecialchars($url['display_name'])), $url['id'], 250);
 			form_selectable_cell(round(($url['id']), 2), $url['id']);
 			if ($url['associated'] != '' && $url['maint_type'] == '2') {
-				form_selectable_cell('<span class="deviceUp">' . __('Current Schedule') . '</span>', $url['id']);
+				form_selectable_cell('<span class="deviceUp">' . __('Current Schedule', 'maint') . '</span>', $url['id']);
 			}else{
 				if (sizeof($lists = db_fetch_assoc('SELECT name FROM plugin_maint_schedules INNER JOIN plugin_maint_hosts ON plugin_maint_schedules.id=plugin_maint_hosts.schedule WHERE type=2 AND host=' . $url['id']))) {
 					$names = '';
@@ -1175,12 +1193,12 @@ function webseer_urls($header_label) {
 					}
 					form_selectable_cell($names, $url['id']);
 				}else{
-					form_selectable_cell('<span class="deviceUnknown">' . __('No Schedules') . '</span>', $url['id']);
+					form_selectable_cell('<span class="deviceUnknown">' . __('No Schedules', 'maint') . '</span>', $url['id']);
 				}
 			}
-			form_selectable_cell(($url['enabled'] == 'on' ? __('Enabled'):__('Disabled')), $url['id']);
+			form_selectable_cell(($url['enabled'] == 'on' ? __('Enabled', 'maint'):__('Disabled', 'maint')), $url['id']);
 			if (empty($url['ip'])) {
-				$url['ip'] = __('USING DNS');
+				$url['ip'] = __('USING DNS', 'maint');
 			}
 			form_selectable_cell((strlen(get_request_var('filter')) ? preg_replace('/(' . preg_quote(get_request_var('filter')) . ')/i', "<span class='filteredValue'>\\1</span>", '<i>' . htmlspecialchars($url['ip'])) . '</i>' : '<i>' . htmlspecialchars($url['ip']) . '</i>'), $url['id']);
 			form_selectable_cell((strlen(get_request_var('filter')) ? preg_replace('/(' . preg_quote(get_request_var('filter')) . ')/i', "<span class='filteredValue'>\\1</span>", htmlspecialchars($url['url'])) : htmlspecialchars($url['url'])), $url['id']);
@@ -1188,7 +1206,7 @@ function webseer_urls($header_label) {
 			form_end_row();
 		}
 	} else {
-		print "<tr><td><em>" . __('No Associated WebSeer URL\'s Found') . "</em></td></tr>";
+		print "<tr><td><em>" . __('No Associated WebSeer URL\'s Found', 'maint') . "</em></td></tr>";
 	}
 	html_end_box(false);
 
