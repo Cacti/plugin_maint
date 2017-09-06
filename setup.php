@@ -51,13 +51,13 @@ function plugin_maint_upgrade() {
 
 function maint_config_arrays() {
 	global $menu;
-	$menu[__('Management')]['plugins/maint/maint.php'] = __('Maintenance Schedules');
+	$menu[__('Management')]['plugins/maint/maint.php'] = __('Maintenance Schedules', 'maint');
 }
 
 function maint_draw_navigation_text ($nav) {
-	$nav['maint.php:'] = array('title' => __('Maintenance Schedules'), 'mapping' => 'index.php:', 'url' => 'maint.php', 'level' => '1');
-	$nav['maint.php:edit'] = array('title' => __('(edit)'), 'mapping' => 'index.php:', 'url' => 'maint.php', 'level' => '2');
-	$nav['maint.php:actions'] = array('title' => __('(actions)'), 'mapping' => 'index.php:', 'url' => 'maint.php', 'level' => '2');
+	$nav['maint.php:'] = array('title' => __('Maintenance Schedules', 'maint'), 'mapping' => 'index.php:', 'url' => 'maint.php', 'level' => '1');
+	$nav['maint.php:edit'] = array('title' => __('(edit)', 'maint'), 'mapping' => 'index.php:', 'url' => 'maint.php', 'level' => '2');
+	$nav['maint.php:actions'] = array('title' => __('(actions)', 'maint'), 'mapping' => 'index.php:', 'url' => 'maint.php', 'level' => '2');
 	return $nav;
 }
 
