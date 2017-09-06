@@ -22,10 +22,11 @@ Got any ideas or complaints, please see the forums.  If you find a bug, they can
 
 --- 1.1 ---
 * Updates for i18n by contributors
+* feature: Update Spanish translation
 
 --- 1.0 ---
-* Updates for Cacti 1.0
-
+*	Updates for Cacti 1.0
+	
 --- 0.3 ---
 * Add dropdown for quick updating of the Scheduled Time
 * Add User Friendly Way of Associating/Disassociating Objects
