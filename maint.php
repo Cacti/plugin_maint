@@ -898,12 +898,11 @@ function thold_hosts($header_label) {
 	}
 
 	$sql_order = get_order_string();
-
-//	if ($apply_limits) {
-//		$sql_limit = ' LIMIT ' . ($rows*(get_request_var('page')-1)) . ', ' . $rows;
-//	}else{
-//		$sql_limit = '';
-//	}
+	if ($apply_limits) {
+		$sql_limit = ' LIMIT ' . ($rows*(get_request_var('page')-1)) . ', ' . $rows;
+	}else{
+		$sql_limit = '';
+	}
 
 	if (get_request_var('id')) {
 		$sql_query = 'SELECT h.*, pmh.type, graphs, data_sources, tholds,
