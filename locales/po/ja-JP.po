@@ -9,12 +9,12 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-05 14:54-0400\n"
 "PO-Revision-Date: 2019-03-17 11:04-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: ja_JP\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "X-Generator: Poedit 2.2.1\n"
 
 #: ../setup.php:54
@@ -119,8 +119,8 @@ msgid ""
 "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any "
 "Devices(s) Associated with this Schedule will be Disassociated."
 msgstr ""
-"次のメンテナンススケジュールを削除するには、[続行]をクリックします。このス"
-"ケジュールに関連付けられているすべてのデバイスは関連付け解除されます。"
+"次のメンテナンススケジュールを削除するには、[続行]をクリックします。このスケ"
+"ジュールに関連付けられているすべてのデバイスは関連付け解除されます。"
 
 #: ../maint.php:291
 #, fuzzy
@@ -138,8 +138,8 @@ msgid ""
 "Click 'Continue' to associate the following Device(s) with the Maintenance "
 "Schedule '<b>%s</b>'."
 msgstr ""
-"[続行]をクリックして、次のデバイスをメンテナンススケジュール ' <b>％s</b> "
-"'に関連付けます。"
+"[続行]をクリックして、次のデバイスをメンテナンススケジュール ' <b>％s</b> 'に"
+"関連付けます。"
 
 #: ../maint.php:342
 #, fuzzy, php-format
@@ -147,8 +147,8 @@ msgid ""
 "Click 'Continue' to disassociate the following Device(s) with the "
 "Maintenance Schedule '<b>%s</b>'."
 msgstr ""
-"次のデバイスとメンテナンススケジュール ' <b>％1！</b> 'の関連付けを解除する"
-"には、 '続行'をクリックしてください。"
+"次のデバイスとメンテナンススケジュール ' <b>％1！</b> 'の関連付けを解除するに"
+"は、 '続行'をクリックしてください。"
 
 #: ../maint.php:350 ../maint.php:410
 #, fuzzy
@@ -161,8 +161,8 @@ msgid ""
 "Click 'Continue' to associate the Device(s) below with the Maintenance "
 "Schedule '<b>%s</b>'."
 msgstr ""
-"[続行]をクリックして、下のデバイスをメンテナンススケジュール ' <b>％s</b> "
-"'に関連付けてください。"
+"[続行]をクリックして、下のデバイスをメンテナンススケジュール ' <b>％s</b> 'に"
+"関連付けてください。"
 
 #: ../maint.php:402
 #, fuzzy, php-format
@@ -170,8 +170,8 @@ msgid ""
 "Click 'Continue' to disassociate the Devices(s) below with the Maintenance "
 "Schedule '<b>%s</b>'."
 msgstr ""
-"[続行]をクリックして、以下のデバイスとメンテナンススケジュール ' <b>％s</"
-"b> 'の関連付けを解除してください。"
+"[続行]をクリックして、以下のデバイスとメンテナンススケジュール ' <b>％s</b> "
+"'の関連付けを解除してください。"
 
 #: ../maint.php:438
 #, fuzzy, php-format
@@ -243,8 +243,8 @@ msgstr "開始時間"
 msgid ""
 "The start date / time for this schedule. Most date / time formats accepted."
 msgstr ""
-"このスケジュールの開始日時。ほとんどの日付/時刻フォーマットが受け入れられま"
-"した。"
+"このスケジュールの開始日時。ほとんどの日付/時刻フォーマットが受け入れられまし"
+"た。"
 
 #: ../maint.php:541
 #, fuzzy
@@ -256,8 +256,8 @@ msgstr "終了時間"
 msgid ""
 "The end date / time for this schedule. Most date / time formats accepted."
 msgstr ""
-"このスケジュールの終了日時。ほとんどの日付/時刻フォーマットが受け入れられま"
-"した。"
+"このスケジュールの終了日時。ほとんどの日付/時刻フォーマットが受け入れられまし"
+"た。"
 
 #: ../maint.php:660
 #, fuzzy
