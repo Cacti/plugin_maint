@@ -9,12 +9,12 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-05 14:54-0400\n"
 "PO-Revision-Date: 2019-03-17 11:09-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: tr_TR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "X-Generator: Poedit 2.2.1\n"
 
 #: ../setup.php:54
@@ -118,8 +118,8 @@ msgid ""
 "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any "
 "Devices(s) Associated with this Schedule will be Disassociated."
 msgstr ""
-"Aşağıdaki Bakım Programlarını silmek için 'Devam Et'i tıklayın. Bu "
-"Programla İlişkili Tüm Cihazlar Ayrılmayacak."
+"Aşağıdaki Bakım Programlarını silmek için 'Devam Et'i tıklayın. Bu Programla "
+"İlişkili Tüm Cihazlar Ayrılmayacak."
 
 #: ../maint.php:291
 #, fuzzy
@@ -160,8 +160,8 @@ msgid ""
 "Click 'Continue' to associate the Device(s) below with the Maintenance "
 "Schedule '<b>%s</b>'."
 msgstr ""
-"Aşağıdaki Aygıtları ' <b> %s</b> ' Bakım Çizelgesi ile ilişkilendirmek "
-"için 'Devam Et'i tıklayın."
+"Aşağıdaki Aygıtları ' <b> %s</b> ' Bakım Çizelgesi ile ilişkilendirmek için "
+"'Devam Et'i tıklayın."
 
 #: ../maint.php:402
 #, fuzzy, php-format
@@ -210,8 +210,7 @@ msgstr "Etkin"
 #: ../maint.php:512
 #, fuzzy
 msgid "Whether or not this threshold will be checked and alerted upon."
-msgstr ""
-"Bu eşiğin kontrol edilip edilmeyeceği konusunda uyarılıp uyarılmadığı."
+msgstr "Bu eşiğin kontrol edilip edilmeyeceği konusunda uyarılıp uyarılmadığı."
 
 #: ../maint.php:516
 #, fuzzy
