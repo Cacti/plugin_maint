@@ -9,12 +9,12 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-05 14:54-0400\n"
 "PO-Revision-Date: 2019-03-17 11:01-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: el_GR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "X-Generator: Poedit 2.2.1\n"
 
 #: ../setup.php:54
@@ -121,8 +121,8 @@ msgid ""
 "Devices(s) Associated with this Schedule will be Disassociated."
 msgstr ""
 "Κάντε κλικ στο κουμπί \"Συνέχεια\" για να διαγράψετε τα παρακάτω "
-"χρονοδιαγράμματα συντήρησης. Οποιαδήποτε Συσκευές που σχετίζονται με αυτό "
-"το Πρόγραμμα θα είναι Διασυνδεδεμένα."
+"χρονοδιαγράμματα συντήρησης. Οποιαδήποτε Συσκευές που σχετίζονται με αυτό το "
+"Πρόγραμμα θα είναι Διασυνδεδεμένα."
 
 #: ../maint.php:291
 #, fuzzy
@@ -140,8 +140,8 @@ msgid ""
 "Click 'Continue' to associate the following Device(s) with the Maintenance "
 "Schedule '<b>%s</b>'."
 msgstr ""
-"Κάντε κλικ στο κουμπί \"Συνέχεια\" για να συσχετίσετε τις ακόλουθες "
-"συσκευές με το πρόγραμμα συντήρησης ' <b> %s</b> '."
+"Κάντε κλικ στο κουμπί \"Συνέχεια\" για να συσχετίσετε τις ακόλουθες συσκευές "
+"με το πρόγραμμα συντήρησης ' <b> %s</b> '."
 
 #: ../maint.php:342
 #, fuzzy, php-format
@@ -149,8 +149,8 @@ msgid ""
 "Click 'Continue' to disassociate the following Device(s) with the "
 "Maintenance Schedule '<b>%s</b>'."
 msgstr ""
-"Κάντε κλικ στο κουμπί \"Συνέχεια\" για να διαχωρίσετε τις ακόλουθες "
-"συσκευές με το πρόγραμμα συντήρησης ' <b> %s</b> '."
+"Κάντε κλικ στο κουμπί \"Συνέχεια\" για να διαχωρίσετε τις ακόλουθες συσκευές "
+"με το πρόγραμμα συντήρησης ' <b> %s</b> '."
 
 #: ../maint.php:350 ../maint.php:410
 #, fuzzy
@@ -163,8 +163,8 @@ msgid ""
 "Click 'Continue' to associate the Device(s) below with the Maintenance "
 "Schedule '<b>%s</b>'."
 msgstr ""
-"Κάντε κλικ στο κουμπί \"Συνέχεια\" για να συσχετίσετε τις παρακάτω "
-"συσκευές με το πρόγραμμα συντήρησης ' <b> %s</b> '."
+"Κάντε κλικ στο κουμπί \"Συνέχεια\" για να συσχετίσετε τις παρακάτω συσκευές "
+"με το πρόγραμμα συντήρησης ' <b> %s</b> '."
 
 #: ../maint.php:402
 #, fuzzy, php-format
@@ -172,8 +172,8 @@ msgid ""
 "Click 'Continue' to disassociate the Devices(s) below with the Maintenance "
 "Schedule '<b>%s</b>'."
 msgstr ""
-"Κάντε κλικ στο κουμπί \"Συνέχεια\" για να διαχωρίσετε τις παρακάτω "
-"συσκευές με το πρόγραμμα συντήρησης ' <b> %s</b> '."
+"Κάντε κλικ στο κουμπί \"Συνέχεια\" για να διαχωρίσετε τις παρακάτω συσκευές "
+"με το πρόγραμμα συντήρησης ' <b> %s</b> '."
 
 #: ../maint.php:438
 #, fuzzy, php-format
@@ -233,8 +233,7 @@ msgstr "Διάστημα"
 #: ../maint.php:528
 #, fuzzy
 msgid "This is the interval in which the start / end time will repeat."
-msgstr ""
-"Αυτό είναι το διάστημα στο οποίο θα επαναληφθεί η ώρα έναρξης / λήξης."
+msgstr "Αυτό είναι το διάστημα στο οποίο θα επαναληφθεί η ώρα έναρξης / λήξης."
 
 #: ../maint.php:532
 #, fuzzy
