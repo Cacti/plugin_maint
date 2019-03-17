@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maint on cacti 1.1.34\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-22 04:55+0800\n"
+"POT-Creation-Date: 2017-09-05 14:54-0400\n"
 "PO-Revision-Date: 2018-02-22 14:00+0800\n"
 "Last-Translator: \n"
 "Language-Team: sfqas <sfqas@163.com>\n"
@@ -17,6 +17,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Chinese\n"
 "X-Poedit-Country: CHINA\n"
+
+#: ../setup.php:54
+msgid "Management"
+msgstr "管理"
+
+#: ../setup.php:54 ../setup.php:58 ../maint.php:657
+msgid "Maintenance Schedules"
+msgstr "维护计划"
+
+#: ../setup.php:59
+msgid "(edit)"
+msgstr "（编辑）"
+
+#: ../setup.php:60
+msgid "(actions)"
+msgstr "（动作）"
 
 #: ../maint.php:32
 msgid "Update Time (Now + 1 Hour)"
@@ -54,13 +70,11 @@ msgstr "每天"
 msgid "Every Week"
 msgstr "每周"
 
-#: ../maint.php:54
-#: ../maint.php:57
+#: ../maint.php:54 ../maint.php:57
 msgid "No"
 msgstr "不"
 
-#: ../maint.php:55
-#: ../maint.php:56
+#: ../maint.php:55 ../maint.php:56
 msgid "Yes"
 msgstr "是"
 
@@ -68,9 +82,7 @@ msgstr "是"
 msgid "General"
 msgstr "常规"
 
-#: ../maint.php:66
-#: ../maint.php:817
-#: ../maint.php:956
+#: ../maint.php:66 ../maint.php:827 ../maint.php:967
 msgid "Devices"
 msgstr "设备"
 
@@ -82,84 +94,50 @@ msgstr "WebSeer"
 msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
 msgstr "点击“继续”以更新下列维护计划。"
 
-#: ../maint.php:279
-#: ../maint.php:288
-#: ../maint.php:338
-#: ../maint.php:347
-#: ../maint.php:398
-#: ../maint.php:407
-msgid "Cancel"
-msgstr "取消"
-
-#: ../maint.php:279
-#: ../maint.php:288
-#: ../maint.php:338
-#: ../maint.php:347
-#: ../maint.php:398
-#: ../maint.php:407
-msgid "Continue"
-msgstr "继续"
-
-#: ../maint.php:279
-msgid "Update Maintenance Schedule(s)"
-msgstr "更新维护计划"
-
 #: ../maint.php:283
-msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
+msgid ""
+"Click 'Continue' to Delete the following Maintenance Schedule(s).  Any "
+"Devices(s) Associated with this Schedule will be Disassociated."
 msgstr "点击'继续'删除下列维护计划。 与本时间表相关的任何设备将被解除关联。"
-
-#: ../maint.php:288
-msgid "Delete Maintenance Schedule(s)"
-msgstr "删除维护计划"
 
 #: ../maint.php:291
 msgid "You must select at least one Maintenance Schedule."
 msgstr "您必须至少选择一个维护计划。"
 
-#: ../maint.php:292
-#: ../maint.php:351
-#: ../maint.php:411
-msgid "Return"
-msgstr "返回"
-
-#: ../maint.php:327
-#: ../maint.php:385
+#: ../maint.php:327 ../maint.php:385
 msgid "Device(s)"
 msgstr "设备"
 
 #: ../maint.php:333
 #, php-format
-msgid "Click 'Continue' to associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgid ""
+"Click 'Continue' to associate the following Device(s) with the Maintenance "
+"Schedule '<b>%s</b>'."
 msgstr "点击“继续”，将以下设备与维护计划 '<b>%s</b>'相关联。"
-
-#: ../maint.php:338
-#: ../maint.php:398
-msgid "Associate Maintenance Schedule(s)"
-msgstr "关联维护计划"
 
 #: ../maint.php:342
 #, php-format
-msgid "Click 'Continue' to disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgid ""
+"Click 'Continue' to disassociate the following Device(s) with the "
+"Maintenance Schedule '<b>%s</b>'."
 msgstr "点击“继续”，将以下设备与维护计划 '<b>%s</b>'取消关联。"
 
-#: ../maint.php:347
-#: ../maint.php:407
-msgid "Disassociate Maintenance Schedule(s)"
-msgstr "取消关联维护计划"
-
-#: ../maint.php:350
-#: ../maint.php:410
+#: ../maint.php:350 ../maint.php:410
 msgid "You must select at least one Device."
 msgstr "您必须至少选择一个设备。"
 
 #: ../maint.php:393
 #, php-format
-msgid "Click 'Continue' to associate the Device(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgid ""
+"Click 'Continue' to associate the Device(s) below with the Maintenance "
+"Schedule '<b>%s</b>'."
 msgstr "点击“继续”，将以下设备与维护计划 '<b>%s</b>'相关联。"
 
 #: ../maint.php:402
 #, php-format
-msgid "Click 'Continue' to disassociate the Devices(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgid ""
+"Click 'Continue' to disassociate the Devices(s) below with the Maintenance "
+"Schedule '<b>%s</b>'."
 msgstr "点击“继续”，将以下设备与维护计划 '<b>%s</b>'取消关联。"
 
 #: ../maint.php:438
@@ -187,10 +165,7 @@ msgstr "时间表名称"
 msgid "Provide the Maintenance Schedule a meaningful name"
 msgstr "为维护计划提供一个有意义的名称"
 
-#: ../maint.php:509
-#: ../maint.php:657
-#: ../maint.php:1159
-#: ../maint.php:1181
+#: ../maint.php:509 ../maint.php:666 ../maint.php:1174 ../maint.php:1199
 msgid "Enabled"
 msgstr "启用"
 
@@ -206,8 +181,7 @@ msgstr "计划类型"
 msgid "The type of Threshold that will be monitored."
 msgstr "将要监视的阈值类型。"
 
-#: ../maint.php:524
-#: ../maint.php:657
+#: ../maint.php:524 ../maint.php:665
 msgid "Interval"
 msgstr "间隔"
 
@@ -219,189 +193,173 @@ msgstr "这是重复开始/结束时间的时间间隔。"
 msgid "Start Time"
 msgstr "开始时间"
 
-#: ../maint.php:535
-msgid "The start date / time for this schedule. Most date / time formats accepted."
+#: ../maint.php:536
+msgid ""
+"The start date / time for this schedule. Most date / time formats accepted."
 msgstr "此计划的开始日期/时间。 大部分日期/时间格式均可接受"
 
-#: ../maint.php:540
+#: ../maint.php:541
 msgid "End Time"
 msgstr "结束时间"
 
-#: ../maint.php:544
-msgid "The end date / time for this schedule. Most date / time formats accepted."
+#: ../maint.php:546
+msgid ""
+"The end date / time for this schedule. Most date / time formats accepted."
 msgstr "此计划的结束日期/时间。 大部分日期/时间格式均可接受"
 
-#: ../maint.php:593
-msgid "Start Date/Time Selector"
-msgstr "开始日期/时间选择器"
-
-#: ../maint.php:594
-msgid "End Date/Time Selector"
-msgstr "结束日期/时间选择器"
-
-#: ../maint.php:655
-#: ../setup.php:54
-#: ../setup.php:58
-msgid "Maintenance Schedules"
-msgstr "维护计划"
-
-#: ../maint.php:657
+#: ../maint.php:660
 msgid "Name"
 msgstr "名称"
 
-#: ../maint.php:657
+#: ../maint.php:661
 msgid "Active"
 msgstr "活跃"
 
-#: ../maint.php:657
-#: ../maint.php:795
+#: ../maint.php:662 ../maint.php:805
 msgid "Type"
 msgstr "类型"
 
-#: ../maint.php:657
+#: ../maint.php:663
 msgid "Start"
 msgstr "开始"
 
-#: ../maint.php:657
+#: ../maint.php:664
 msgid "End"
 msgstr "结束"
 
-#: ../maint.php:694
-#: ../maint.php:982
-#: ../maint.php:1178
+#: ../maint.php:704 ../maint.php:993 ../maint.php:1196
 msgid "No Schedules"
 msgstr "没有时间表"
 
-#: ../maint.php:780
+#: ../maint.php:790
 #, php-format
 msgid "Associated Devices %s"
 msgstr "相关设备 %s"
 
-#: ../maint.php:789
-#: ../maint.php:1077
+#: ../maint.php:799 ../maint.php:1088
 msgid "Search"
 msgstr "搜索"
 
-#: ../maint.php:799
+#: ../maint.php:809
 msgid "Any"
 msgstr "所有"
 
-#: ../maint.php:800
+#: ../maint.php:810
 msgid "None"
 msgstr "None"
 
-#: ../maint.php:821
-#: ../maint.php:1087
+#: ../maint.php:831 ../maint.php:1098
 msgid "Default"
 msgstr "默认"
 
-#: ../maint.php:835
-#: ../maint.php:1101
+#: ../maint.php:845 ../maint.php:1112
 msgid "Associated"
 msgstr "关联的"
 
-#: ../maint.php:838
-#: ../maint.php:1104
-msgid "Go"
-msgstr "启动"
-
-#: ../maint.php:838
-#: ../maint.php:1104
-msgid "Set/Refresh Filters"
-msgstr "设置/刷新过滤器"
-
-#: ../maint.php:841
-#: ../maint.php:1107
-msgid "Clear"
-msgstr "清除"
-
-#: ../maint.php:841
-#: ../maint.php:1107
-msgid "Clear Filters"
-msgstr "清除过滤器"
-
-#: ../maint.php:922
-#: ../maint.php:1159
+#: ../maint.php:933 ../maint.php:1171
 msgid "Description"
 msgstr "描述"
 
-#: ../maint.php:926
-#: ../maint.php:1159
+#: ../maint.php:937 ../maint.php:1172
 msgid "ID"
 msgstr "ID"
 
-#: ../maint.php:930
-#: ../maint.php:1159
+#: ../maint.php:941 ../maint.php:1173
 msgid "Associated Schedules"
 msgstr "相关的时间表"
 
-#: ../maint.php:934
+#: ../maint.php:945
 msgid "Graphs"
 msgstr "图表"
 
-#: ../maint.php:938
+#: ../maint.php:949
 msgid "Data Sources"
 msgstr "数据源"
 
-#: ../maint.php:942
+#: ../maint.php:953
 msgid "Thresholds"
 msgstr "阈值"
 
-#: ../maint.php:946
+#: ../maint.php:957
 msgid "Status"
 msgstr "状态"
 
-#: ../maint.php:950
-#: ../maint.php:1159
+#: ../maint.php:961 ../maint.php:1175
 msgid "Hostname"
 msgstr "主机名"
 
-#: ../maint.php:972
-#: ../maint.php:1169
+#: ../maint.php:983 ../maint.php:1187
 msgid "Current Schedule"
 msgstr "当前时间表"
 
-#: ../maint.php:995
+#: ../maint.php:1006
 msgid "No Associated Devices Found"
 msgstr "找不到相关设备"
 
-#: ../maint.php:1068
-msgid "Associated Web URL's "
+#: ../maint.php:1079
+#, fuzzy, php-format
+msgid "Associated Web URL's %s"
 msgstr "关联的网址"
 
-#: ../maint.php:1083
+#: ../maint.php:1094
 msgid "Rules"
 msgstr "规则"
 
-#: ../maint.php:1151
+#: ../maint.php:1162
 msgid "Lists"
 msgstr "列表"
 
-#: ../maint.php:1159
+#: ../maint.php:1176
 msgid "URL"
 msgstr "URL"
 
-#: ../maint.php:1181
+#: ../maint.php:1199
 msgid "Disabled"
 msgstr "已禁用"
 
-#: ../maint.php:1183
+#: ../maint.php:1201
 msgid "USING DNS"
 msgstr "使用DNS"
 
-#: ../maint.php:1191
+#: ../maint.php:1209
 msgid "No Associated WebSeer URL's Found"
 msgstr "未找到关联的WebSeer URL"
 
-#: ../setup.php:54
-msgid "Management"
-msgstr "管理"
+#~ msgid "Cancel"
+#~ msgstr "取消"
 
-#: ../setup.php:59
-msgid "(edit)"
-msgstr "（编辑）"
+#~ msgid "Continue"
+#~ msgstr "继续"
 
-#: ../setup.php:60
-msgid "(actions)"
-msgstr "（动作）"
+#~ msgid "Update Maintenance Schedule(s)"
+#~ msgstr "更新维护计划"
 
+#~ msgid "Delete Maintenance Schedule(s)"
+#~ msgstr "删除维护计划"
+
+#~ msgid "Return"
+#~ msgstr "返回"
+
+#~ msgid "Associate Maintenance Schedule(s)"
+#~ msgstr "关联维护计划"
+
+#~ msgid "Disassociate Maintenance Schedule(s)"
+#~ msgstr "取消关联维护计划"
+
+#~ msgid "Start Date/Time Selector"
+#~ msgstr "开始日期/时间选择器"
+
+#~ msgid "End Date/Time Selector"
+#~ msgstr "结束日期/时间选择器"
+
+#~ msgid "Go"
+#~ msgstr "启动"
+
+#~ msgid "Set/Refresh Filters"
+#~ msgstr "设置/刷新过滤器"
+
+#~ msgid "Clear"
+#~ msgstr "清除"
+
+#~ msgid "Clear Filters"
+#~ msgstr "清除过滤器"
