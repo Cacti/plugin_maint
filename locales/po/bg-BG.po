@@ -9,12 +9,12 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-05 14:54-0400\n"
 "PO-Revision-Date: 2019-03-17 10:59-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: bg_BG\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "X-Generator: Poedit 2.2.1\n"
 
 #: ../setup.php:54
@@ -111,8 +111,7 @@ msgstr "WebSeer"
 #, fuzzy
 msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
 msgstr ""
-"Кликнете върху „Продължи“, за да актуализирате следните графици за "
-"поддръжка."
+"Кликнете върху „Продължи“, за да актуализирате следните графици за поддръжка."
 
 #: ../maint.php:283
 #, fuzzy
@@ -171,8 +170,8 @@ msgid ""
 "Click 'Continue' to disassociate the Devices(s) below with the Maintenance "
 "Schedule '<b>%s</b>'."
 msgstr ""
-"Кликнете върху „Напред“, за да разедините устройствата по-долу с Графика "
-"за поддръжка „ <b> %s</b> “."
+"Кликнете върху „Напред“, за да разедините устройствата по-долу с Графика за "
+"поддръжка „ <b> %s</b> “."
 
 #: ../maint.php:438
 #, fuzzy, php-format
@@ -257,8 +256,7 @@ msgstr "Краен час"
 msgid ""
 "The end date / time for this schedule. Most date / time formats accepted."
 msgstr ""
-"Крайна дата / час за този график. Приемат се повечето формати за дата / "
-"час."
+"Крайна дата / час за този график. Приемат се повечето формати за дата / час."
 
 #: ../maint.php:660
 #, fuzzy
