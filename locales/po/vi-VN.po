@@ -1,0 +1,324 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-09-05 14:54-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: vi-VN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../setup.php:54
+msgid "Management"
+msgstr ""
+
+#: ../setup.php:54 ../setup.php:58 ../maint.php:657
+msgid "Maintenance Schedules"
+msgstr ""
+
+#: ../setup.php:59
+msgid "(edit)"
+msgstr ""
+
+#: ../setup.php:60
+msgid "(actions)"
+msgstr ""
+
+#: ../maint.php:32
+msgid "Update Time (Now + 1 Hour)"
+msgstr ""
+
+#: ../maint.php:33
+msgid "Delete"
+msgstr ""
+
+#: ../maint.php:38
+msgid "Associate"
+msgstr ""
+
+#: ../maint.php:39
+msgid "Disassociate"
+msgstr ""
+
+#: ../maint.php:43
+msgid "One Time"
+msgstr ""
+
+#: ../maint.php:44
+msgid "Reoccurring"
+msgstr ""
+
+#: ../maint.php:48
+msgid "Not Defined"
+msgstr ""
+
+#: ../maint.php:49
+msgid "Every Day"
+msgstr ""
+
+#: ../maint.php:50
+msgid "Every Week"
+msgstr ""
+
+#: ../maint.php:54 ../maint.php:57
+msgid "No"
+msgstr ""
+
+#: ../maint.php:55 ../maint.php:56
+msgid "Yes"
+msgstr ""
+
+#: ../maint.php:62
+msgid "General"
+msgstr ""
+
+#: ../maint.php:66 ../maint.php:827 ../maint.php:967
+msgid "Devices"
+msgstr ""
+
+#: ../maint.php:70
+msgid "WebSeer"
+msgstr ""
+
+#: ../maint.php:274
+msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
+msgstr ""
+
+#: ../maint.php:283
+msgid ""
+"Click 'Continue' to Delete the following Maintenance Schedule(s).  Any "
+"Devices(s) Associated with this Schedule will be Disassociated."
+msgstr ""
+
+#: ../maint.php:291
+msgid "You must select at least one Maintenance Schedule."
+msgstr ""
+
+#: ../maint.php:327 ../maint.php:385
+msgid "Device(s)"
+msgstr ""
+
+#: ../maint.php:333
+#, php-format
+msgid ""
+"Click 'Continue' to associate the following Device(s) with the Maintenance "
+"Schedule '<b>%s</b>'."
+msgstr ""
+
+#: ../maint.php:342
+#, php-format
+msgid ""
+"Click 'Continue' to disassociate the following Device(s) with the "
+"Maintenance Schedule '<b>%s</b>'."
+msgstr ""
+
+#: ../maint.php:350 ../maint.php:410
+msgid "You must select at least one Device."
+msgstr ""
+
+#: ../maint.php:393
+#, php-format
+msgid ""
+"Click 'Continue' to associate the Device(s) below with the Maintenance "
+"Schedule '<b>%s</b>'."
+msgstr ""
+
+#: ../maint.php:402
+#, php-format
+msgid ""
+"Click 'Continue' to disassociate the Devices(s) below with the Maintenance "
+"Schedule '<b>%s</b>'."
+msgstr ""
+
+#: ../maint.php:438
+#, php-format
+msgid "General Settings [edit: %s]"
+msgstr ""
+
+#: ../maint.php:440
+msgid "General Settings [new]"
+msgstr ""
+
+#: ../maint.php:485
+msgid "New Maintenance Schedule"
+msgstr ""
+
+#: ../maint.php:497
+msgid "Schedule"
+msgstr ""
+
+#: ../maint.php:501
+msgid "Schedule Name"
+msgstr ""
+
+#: ../maint.php:505
+msgid "Provide the Maintenance Schedule a meaningful name"
+msgstr ""
+
+#: ../maint.php:509 ../maint.php:666 ../maint.php:1174 ../maint.php:1199
+msgid "Enabled"
+msgstr ""
+
+#: ../maint.php:512
+msgid "Whether or not this threshold will be checked and alerted upon."
+msgstr ""
+
+#: ../maint.php:516
+msgid "Schedule Type"
+msgstr ""
+
+#: ../maint.php:520
+msgid "The type of Threshold that will be monitored."
+msgstr ""
+
+#: ../maint.php:524 ../maint.php:665
+msgid "Interval"
+msgstr ""
+
+#: ../maint.php:528
+msgid "This is the interval in which the start / end time will repeat."
+msgstr ""
+
+#: ../maint.php:532
+msgid "Start Time"
+msgstr ""
+
+#: ../maint.php:536
+msgid ""
+"The start date / time for this schedule. Most date / time formats accepted."
+msgstr ""
+
+#: ../maint.php:541
+msgid "End Time"
+msgstr ""
+
+#: ../maint.php:546
+msgid ""
+"The end date / time for this schedule. Most date / time formats accepted."
+msgstr ""
+
+#: ../maint.php:660
+msgid "Name"
+msgstr ""
+
+#: ../maint.php:661
+msgid "Active"
+msgstr ""
+
+#: ../maint.php:662 ../maint.php:805
+msgid "Type"
+msgstr ""
+
+#: ../maint.php:663
+msgid "Start"
+msgstr ""
+
+#: ../maint.php:664
+msgid "End"
+msgstr ""
+
+#: ../maint.php:704 ../maint.php:993 ../maint.php:1196
+msgid "No Schedules"
+msgstr ""
+
+#: ../maint.php:790
+#, php-format
+msgid "Associated Devices %s"
+msgstr ""
+
+#: ../maint.php:799 ../maint.php:1088
+msgid "Search"
+msgstr ""
+
+#: ../maint.php:809
+msgid "Any"
+msgstr ""
+
+#: ../maint.php:810
+msgid "None"
+msgstr ""
+
+#: ../maint.php:831 ../maint.php:1098
+msgid "Default"
+msgstr ""
+
+#: ../maint.php:845 ../maint.php:1112
+msgid "Associated"
+msgstr ""
+
+#: ../maint.php:933 ../maint.php:1171
+msgid "Description"
+msgstr ""
+
+#: ../maint.php:937 ../maint.php:1172
+msgid "ID"
+msgstr ""
+
+#: ../maint.php:941 ../maint.php:1173
+msgid "Associated Schedules"
+msgstr ""
+
+#: ../maint.php:945
+msgid "Graphs"
+msgstr ""
+
+#: ../maint.php:949
+msgid "Data Sources"
+msgstr ""
+
+#: ../maint.php:953
+msgid "Thresholds"
+msgstr ""
+
+#: ../maint.php:957
+msgid "Status"
+msgstr ""
+
+#: ../maint.php:961 ../maint.php:1175
+msgid "Hostname"
+msgstr ""
+
+#: ../maint.php:983 ../maint.php:1187
+msgid "Current Schedule"
+msgstr ""
+
+#: ../maint.php:1006
+msgid "No Associated Devices Found"
+msgstr ""
+
+#: ../maint.php:1079
+#, php-format
+msgid "Associated Web URL's %s"
+msgstr ""
+
+#: ../maint.php:1094
+msgid "Rules"
+msgstr ""
+
+#: ../maint.php:1162
+msgid "Lists"
+msgstr ""
+
+#: ../maint.php:1176
+msgid "URL"
+msgstr ""
+
+#: ../maint.php:1199
+msgid "Disabled"
+msgstr ""
+
+#: ../maint.php:1201
+msgid "USING DNS"
+msgstr ""
+
+#: ../maint.php:1209
+msgid "No Associated WebSeer URL's Found"
+msgstr ""
