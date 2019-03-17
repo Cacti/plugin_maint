@@ -9,12 +9,12 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-05 14:54-0400\n"
 "PO-Revision-Date: 2019-03-17 11:07-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "X-Generator: Poedit 2.2.1\n"
 
 #: ../setup.php:54
@@ -163,8 +163,8 @@ msgid ""
 "Click 'Continue' to associate the Device(s) below with the Maintenance "
 "Schedule '<b>%s</b>'."
 msgstr ""
-"Нажмите кнопку \"Продолжить\", чтобы связать устройство (устройства) ниже "
-"с графиком технического обслуживания \"<b>%s</b>\"."
+"Нажмите кнопку \"Продолжить\", чтобы связать устройство (устройства) ниже с "
+"графиком технического обслуживания \"<b>%s</b>\"."
 
 #: ../maint.php:402
 #, fuzzy, php-format
@@ -233,8 +233,7 @@ msgstr "Интервал"
 #: ../maint.php:528
 #, fuzzy
 msgid "This is the interval in which the start / end time will repeat."
-msgstr ""
-"Это интервал, в течение которого время начала/конца будет повторяться."
+msgstr "Это интервал, в течение которого время начала/конца будет повторяться."
 
 #: ../maint.php:532
 #, fuzzy
@@ -246,8 +245,8 @@ msgstr "Время начала"
 msgid ""
 "The start date / time for this schedule. Most date / time formats accepted."
 msgstr ""
-"Дата начала / время для этого расписания. Большинство форматов даты/"
-"времени приняты."
+"Дата начала / время для этого расписания. Большинство форматов даты/времени "
+"приняты."
 
 #: ../maint.php:541
 #, fuzzy
@@ -259,8 +258,8 @@ msgstr "Время окончания"
 msgid ""
 "The end date / time for this schedule. Most date / time formats accepted."
 msgstr ""
-"Дата/время окончания для этого расписания. Большинство форматов даты/"
-"времени приняты."
+"Дата/время окончания для этого расписания. Большинство форматов даты/времени "
+"приняты."
 
 #: ../maint.php:660
 #, fuzzy
