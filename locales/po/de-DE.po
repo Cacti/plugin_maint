@@ -9,12 +9,12 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-05 14:54-0400\n"
 "PO-Revision-Date: 2019-03-17 11:00-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "X-Generator: Poedit 2.2.1\n"
 
 #: ../setup.php:54
@@ -149,8 +149,8 @@ msgid ""
 "Click 'Continue' to disassociate the following Device(s) with the "
 "Maintenance Schedule '<b>%s</b>'."
 msgstr ""
-"Klicken Sie auf \"Weiter\", um die folgenden Geräte mit dem Wartungsplan "
-"'<b>%s</b>' zu trennen."
+"Klicken Sie auf \"Weiter\", um die folgenden Geräte mit dem Wartungsplan '<b>"
+"%s</b>' zu trennen."
 
 #: ../maint.php:350 ../maint.php:410
 #, fuzzy
@@ -245,8 +245,8 @@ msgstr "Letzte Startzeit:"
 msgid ""
 "The start date / time for this schedule. Most date / time formats accepted."
 msgstr ""
-"Das Startdatum / die Startzeit für diesen Zeitplan. Die meisten Datums- "
-"und Zeitformate werden akzeptiert."
+"Das Startdatum / die Startzeit für diesen Zeitplan. Die meisten Datums- und "
+"Zeitformate werden akzeptiert."
 
 #: ../maint.php:541
 #, fuzzy
