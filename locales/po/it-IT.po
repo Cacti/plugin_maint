@@ -9,12 +9,12 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-05 14:54-0400\n"
 "PO-Revision-Date: 2019-03-17 11:03-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "X-Generator: Poedit 2.2.1\n"
 
 #: ../setup.php:54
@@ -163,8 +163,8 @@ msgid ""
 "Click 'Continue' to associate the Device(s) below with the Maintenance "
 "Schedule '<b>%s</b>'."
 msgstr ""
-"Fare clic su 'Continua' per associare i dispositivi sottostanti al piano "
-"di manutenzione '<b>%s</b>'."
+"Fare clic su 'Continua' per associare i dispositivi sottostanti al piano di "
+"manutenzione '<b>%s</b>'."
 
 #: ../maint.php:402
 #, fuzzy, php-format
@@ -245,8 +245,8 @@ msgstr "Ora Inizio"
 msgid ""
 "The start date / time for this schedule. Most date / time formats accepted."
 msgstr ""
-"La data e l'ora di inizio di questo programma. La maggior parte dei "
-"formati di data e ora accettati."
+"La data e l'ora di inizio di questo programma. La maggior parte dei formati "
+"di data e ora accettati."
 
 #: ../maint.php:541
 #, fuzzy
@@ -258,8 +258,8 @@ msgstr "Ora di fine"
 msgid ""
 "The end date / time for this schedule. Most date / time formats accepted."
 msgstr ""
-"La data e l'ora di fine di questo programma. La maggior parte dei formati "
-"di data e ora accettati."
+"La data e l'ora di fine di questo programma. La maggior parte dei formati di "
+"data e ora accettati."
 
 #: ../maint.php:660
 #, fuzzy
