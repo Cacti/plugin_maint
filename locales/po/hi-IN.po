@@ -9,12 +9,12 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-05 14:54-0400\n"
 "PO-Revision-Date: 2019-03-17 11:03-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: hi_IN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "X-Generator: Poedit 2.2.1\n"
 
 #: ../setup.php:54
@@ -137,8 +137,8 @@ msgid ""
 "Click 'Continue' to associate the following Device(s) with the Maintenance "
 "Schedule '<b>%s</b>'."
 msgstr ""
-"निम्न डिवाइस (ओं) को रखरखाव अनुसूची ' <b> %s</b> ' के साथ जोड़ने के लिए 'जारी रखें' "
-"पर क्लिक करें।"
+"निम्न डिवाइस (ओं) को रखरखाव अनुसूची ' <b> %s</b> ' के साथ जोड़ने के लिए 'जारी रखें' पर "
+"क्लिक करें।"
 
 #: ../maint.php:342
 #, fuzzy, php-format
@@ -160,8 +160,8 @@ msgid ""
 "Click 'Continue' to associate the Device(s) below with the Maintenance "
 "Schedule '<b>%s</b>'."
 msgstr ""
-"रखरखाव अनुसूची ' <b> %s</b> ' के साथ नीचे डिवाइस (ओं) को जोड़ने के लिए 'जारी रखें' "
-"पर क्लिक करें।"
+"रखरखाव अनुसूची ' <b> %s</b> ' के साथ नीचे डिवाइस (ओं) को जोड़ने के लिए 'जारी रखें' पर "
+"क्लिक करें।"
 
 #: ../maint.php:402
 #, fuzzy, php-format
