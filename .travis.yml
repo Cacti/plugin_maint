@@ -21,3 +21,5 @@ notifications:
     on_failure: always
     recipients:
     - developers@cacti.net
+  slack:
+    secure: YxaszXiUXQRpBS+pUT6eo85H7ry3X0HT0dURi4qX/f1xvVfXPA777E6IKTMKqdpY445CmN2ddK77anZCpIpmfVxFYfhYm/m4N1na2UVOcu3EpsD7UH5cerJKTmvBAMj+W+DZOeeKZ/O73SitqyLd+TpeVRbzjlM3LdD+fEXiX840t3MF9AdXu7KVkA/IxDAZM3gnAkiE8ew6WUTKT9Eyi9+Aty+YC6wJFFbOYfbanL6pWHzyghI0LWUdTexVu0u5Jqlf6dZgduJ/tku/p/KBiACjZadKOmvr6DaFtuXDVSlNlTR/TBuaFAPJLSTh8Qv//bTfhFXq8r+W7fTwj09B1h79ptVLOtx+YoDCXf+eUXh/2RW5yEDIDpYSagNQuH94dbNLRxl2UJn++mBNlZpnB7CcZ7v1KOJKlA31nhzJRtvOwMNTOmH8iiCsnDyxA87aZOArTAbG49Ln/zkTFXUM/IDB03fkCwWqwk6S/UaQFFQEde/LLTngqKIai0lI6JOVwNzwtwov4X1iM7/lzRQFGrbF4FRR4uVQVJGpL89RyyYnuOeAH9n1K0aob5YopA6O9jzFuI+pLnmR26L+5jGoXaV2mfDqJX+Q9mpSchOeomoAv8HH4ziO+uJnWgHuY0GleT2WXCqLHhCsHhpuCibcYtunO4nkiXOblu/zvziDXL4=
