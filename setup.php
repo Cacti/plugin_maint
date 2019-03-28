@@ -32,7 +32,7 @@ function plugin_maint_version() {
 function plugin_maint_install() {
 	api_plugin_register_hook('maint', 'config_arrays', 'maint_config_arrays', 'setup.php');
 	api_plugin_register_hook('maint', 'draw_navigation_text', 'maint_draw_navigation_text', 'setup.php');
-
+	api_plugin_register_hook('maint', 'is_device_in_maintenance', 'plugin_maint_check_cacti_host', 'functions.php');
 	api_plugin_register_realm('maint', 'maint.php', 'Maintenance Schedules', 1);
 
 	maint_setup_database();
