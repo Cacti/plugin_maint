@@ -6,22 +6,25 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: maint on cacti 1.1.34\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: developer@cacti.net\n"
 "POT-Creation-Date: 2019-03-19 09:50+0000\n"
-"PO-Revision-Date: 2019-03-17 11:09-0400\n"
-"Last-Translator: \n"
-"Language-Team: sfqas <sfqas@163.com>\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2019-04-26 10:12+0000\n"
+"Last-Translator: whsir <wh@whsir.com>\n"
+"Language-Team: Chinese (Simplified) <http://translate.cacti.net/projects/"
+"cacti/maint/zh-CN/>\n"
+"Language: zh-CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 3.4-dev\n"
 
 #: maint.php:32
 msgid "Update Time (Now + 1 Hour)"
 msgstr "更新时间（现在+ 1小时）"
 
 #: maint.php:33
+#, fuzzy
 msgid "Delete"
 msgstr "删除"
 
@@ -79,6 +82,7 @@ msgstr "点击“继续”以更新下列维护计划。"
 
 #: maint.php:279 maint.php:288 maint.php:338 maint.php:347 maint.php:398
 #: maint.php:407
+#, fuzzy
 msgid "Cancel"
 msgstr "取消"
 
@@ -262,6 +266,7 @@ msgid "Associated Devices %s"
 msgstr "相关设备 %s"
 
 #: maint.php:799 maint.php:1087
+#, fuzzy
 msgid "Search"
 msgstr "搜索"
 
@@ -270,8 +275,9 @@ msgid "Any"
 msgstr "所有"
 
 #: maint.php:810
+#, fuzzy
 msgid "None"
-msgstr "None"
+msgstr "无"
 
 #: maint.php:831 maint.php:1097
 msgid "Default"
@@ -282,20 +288,24 @@ msgid "Associated"
 msgstr "关联的"
 
 #: maint.php:849 maint.php:1115
+#, fuzzy
 msgid "Go"
-msgstr "启动"
+msgstr "Go"
 
 #: maint.php:849 maint.php:1115
+#, fuzzy
 msgid "Set/Refresh Filters"
 msgstr "设置/刷新过滤器"
 
 #: maint.php:850 maint.php:1116
+#, fuzzy
 msgid "Clear"
 msgstr "清除"
 
 #: maint.php:850 maint.php:1116
+#, fuzzy
 msgid "Clear Filters"
-msgstr "清除过滤器"
+msgstr "清除过滤"
 
 #: maint.php:932 maint.php:1170
 msgid "Description"
