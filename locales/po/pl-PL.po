@@ -6,16 +6,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: developer@cacti.net\n"
 "POT-Creation-Date: 2019-03-19 09:50+0000\n"
-"PO-Revision-Date: 2019-03-17 11:06-0400\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: pl_PL\n"
+"PO-Revision-Date: 2019-07-13 03:14+0000\n"
+"Last-Translator: Jaroslaw Kłopotek <jkl@interduo.pl>\n"
+"Language-Team: Polish <http://translate.cacti.net/projects/cacti/maint/pl-PL/"
+">\n"
+"Language: pl-PL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.4-dev\n"
 
 #: maint.php:32
 #, fuzzy
@@ -23,7 +26,6 @@ msgid "Update Time (Now + 1 Hour)"
 msgstr "Czas aktualizacji (teraz + 1 godzina)"
 
 #: maint.php:33
-#, fuzzy
 msgid "Delete"
 msgstr "Usuń"
 
@@ -78,7 +80,6 @@ msgid "General"
 msgstr "Ogólne"
 
 #: maint.php:66 maint.php:827 maint.php:966
-#, fuzzy
 msgid "Devices"
 msgstr "Urządzenia"
 
@@ -97,7 +98,7 @@ msgstr ""
 #: maint.php:279 maint.php:288 maint.php:338 maint.php:347 maint.php:398
 #: maint.php:407
 msgid "Cancel"
-msgstr ""
+msgstr "Anuluj"
 
 #: maint.php:279 maint.php:288 maint.php:338 maint.php:347 maint.php:398
 #: maint.php:407
@@ -325,17 +326,14 @@ msgid "Associated Devices %s"
 msgstr "Związane urządzenia %s"
 
 #: maint.php:799 maint.php:1087
-#, fuzzy
 msgid "Search"
 msgstr "Szukaj"
 
 #: maint.php:809
-#, fuzzy
 msgid "Any"
 msgstr "Dowolny"
 
 #: maint.php:810
-#, fuzzy
 msgid "None"
 msgstr "Brak"
 
@@ -366,7 +364,6 @@ msgid "Clear Filters"
 msgstr ""
 
 #: maint.php:932 maint.php:1170
-#, fuzzy
 msgid "Description"
 msgstr "Opis"
 
@@ -396,14 +393,12 @@ msgid "Thresholds"
 msgstr "Progi"
 
 #: maint.php:956
-#, fuzzy
 msgid "Status"
 msgstr "Status"
 
 #: maint.php:960 maint.php:1174
-#, fuzzy
 msgid "Hostname"
-msgstr "Serwer"
+msgstr "Nazwa hosta"
 
 #: maint.php:982 maint.php:1186
 #, fuzzy
@@ -436,7 +431,6 @@ msgid "URL"
 msgstr "URL"
 
 #: maint.php:1198
-#, fuzzy
 msgid "Disabled"
 msgstr "Wyłączone"
 
