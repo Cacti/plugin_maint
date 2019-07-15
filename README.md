@@ -24,6 +24,8 @@ be logged on GitHub.
 
 --- 1.2 ---
 
+* issue#9: Maintenance filtering causes undefined variable error
+
 * feature: New hook for maintenance checks (is_device_in_maintenance)
 
 --- 1.1 ---
