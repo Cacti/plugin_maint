@@ -175,7 +175,7 @@ function form_save() {
 			}
 		}
 
-		header('Location: maint.php?tab=general&action=edit&header=false&id=' . (empty($id) ? get_request_var('id') : $id));
+		header('Location: maint.php?tab=general&action=edit&header=false&id=' . (empty($id) ? $save['id'] : $id));
 
 		exit;
 	}
@@ -298,6 +298,7 @@ function form_actions() {
 				<input type='hidden' name='save_list' value='1'>
 				<input type='hidden' name='selected_items' value='" . (isset($array) ? serialize($array) : '') . "'>
 				<input type='hidden' name='drp_action' value='" . get_request_var('drp_action') . "'>
+				<input type='hidden' name='id' value='" . get_request_var_('id') . "'>
 				$save_html
 			</td>
 		</tr>\n";
@@ -657,12 +658,12 @@ function schedules() {
 	html_start_box(__('Maintenance Schedules', 'maint'), '100%', '', '2', 'center', 'maint.php?tab=general&action=edit');
 
 	html_header_checkbox(array(
-		__('Name', 'maint'), 
-		__('Active', 'maint'), 
-		__('Type', 'maint'), 
-		__('Start', 'maint'), 
-		__('End', 'maint'), 
-		__('Interval', 'maint'), 
+		__('Name', 'maint'),
+		__('Active', 'maint'),
+		__('Type', 'maint'),
+		__('Start', 'maint'),
+		__('End', 'maint'),
+		__('Interval', 'maint'),
 		__('Enabled', 'maint'))
 	);
 
@@ -1163,11 +1164,11 @@ function webseer_urls($header_label) {
 	html_start_box('', '100%', '', '3', 'center', '');
 
 	$display_text = array(
-		__('Description', 'maint'), 
-		__('ID', 'maint'), 
-		__('Associated Schedules', 'maint'), 
-		__('Enabled', 'maint'), 
-		__('Hostname', 'maint'), 
+		__('Description', 'maint'),
+		__('ID', 'maint'),
+		__('Associated Schedules', 'maint'),
+		__('Enabled', 'maint'),
+		__('Hostname', 'maint'),
 		__('URL', 'maint')
 	);
 
