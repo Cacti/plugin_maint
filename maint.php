@@ -41,7 +41,7 @@ $assoc_actions = array(
 
 $maint_types = array (
 	1 => __('One Time', 'maint'),
-	2 => __('Reoccurring', 'maint')
+	2 => __('Recurring', 'maint')
 );
 
 $maint_intervals = array(
@@ -567,20 +567,20 @@ function schedule_edit() {
 			'stime' => array(
 				'friendly_name' => __('Start Time', 'maint'),
 				'method' => 'textbox',
-				'max_length' => 20,
-				'size' => 20,
+				'max_length' => 22,
+				'size' => 22,
 				'description' => __('The start date / time for this schedule. Most date / time formats accepted.', 'maint'),
-				'default' => date('F j, Y, G:i', time()),
-				'value' => isset($maint_item_data['stime']) ?  date('F j, Y,  G:i', $maint_item_data['stime']) : ''
+				'default' => date(date_time_format(), time()),
+				'value' => isset($maint_item_data['stime']) ?  date(date_time_format(), $maint_item_data['stime']) : ''
 			),
 			'etime' => array(
 				'friendly_name' => __('End Time', 'maint'),
 				'method' => 'textbox',
-				'max_length' => 20,
-				'size' => 20,
-				'default' => date('F j, Y, G:i', time() + 3600),
+				'max_length' => 22,
+				'size' => 22,
+				'default' => date(date_time_format(), time() + 3600),
 				'description' => __('The end date / time for this schedule. Most date / time formats accepted.', 'maint'),
-				'value' => isset($maint_item_data['etime']) ? date('F j, Y,  G:i', $maint_item_data['etime']) : ''
+				'value' => isset($maint_item_data['etime']) ? date(date_time_format(), $maint_item_data['etime']) : ''
 			),
 			'save_component' => array(
 				'method' => 'hidden',
@@ -716,8 +716,8 @@ function schedules() {
 			switch($schedule['minterval']) {
 				case 86400:
 					if (date('j',$schedule['etime']) != date('j', $schedule['stime'])) {
-						form_selectable_cell(date('F j, Y, G:i', $schedule['stime']), $schedule['id']);
-						form_selectable_cell(date('F j, Y, G:i', $schedule['etime']), $schedule['id']);
+						form_selectable_cell(date(date_time_format(), $schedule['stime']), $schedule['id']);
+						form_selectable_cell(date(date_time_format(), $schedule['etime']), $schedule['id']);
 					} else {
 						form_selectable_cell(date('G:i', $schedule['stime']), $schedule['id']);
 						form_selectable_cell(date('G:i', $schedule['etime']), $schedule['id']);
@@ -728,8 +728,8 @@ function schedules() {
 					form_selectable_cell(date('l G:i', $schedule['etime']), $schedule['id']);
 					break;
 				default:
-					form_selectable_cell(date('F j, Y, G:i', $schedule['stime']), $schedule['id']);
-					form_selectable_cell(date('F j, Y, G:i', $schedule['etime']), $schedule['id']);
+					form_selectable_cell(date(date_time_format(), $schedule['stime']), $schedule['id']);
+					form_selectable_cell(date(date_time_format(), $schedule['etime']), $schedule['id']);
 			}
 
 
