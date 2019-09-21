@@ -32,7 +32,12 @@ function plugin_maint_check_webseer_url($host) {
 }
 
 function plugin_maint_check_host ($type, $host) {
-	$schedules = db_fetch_assoc("SELECT * FROM plugin_maint_hosts WHERE TYPE = $type AND (host = $host OR host = 0)");
+	$schedules = db_fetch_assoc_prepared('SELECT *
+		FROM plugin_maint_hosts
+		WHERE TYPE = ?
+		AND (host = ? OR host = 0)',
+		array($type, $host));
+
 	if (!empty($schedules)) {
 		foreach ($schedules as $s) {
 			if (plugin_maint_check_schedule($s['schedule'])) {
@@ -44,7 +49,11 @@ function plugin_maint_check_host ($type, $host) {
 }
 
 function plugin_maint_check_schedule($schedule) {
-	$sc = db_fetch_row("SELECT * FROM plugin_maint_schedules WHERE enabled = 'on' AND id = " . $schedule);
+	$sc = db_fetch_row_prepared('SELECT *
+		FROM plugin_maint_schedules
+		WHERE enabled = \'on\' AND id = ?',
+		array($schedule));
+
 	if (!empty($sc)) {
 		$t = time();
 		switch ($sc['mtype']) {
