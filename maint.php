@@ -287,7 +287,7 @@ function form_actions() {
 
 		html_start_box($actions{get_request_var('drp_action')} . " $list_name", '60%', '', '3', 'center', '');
 
-		if (sizeof($array)) {
+		if (cacti_sizeof($array)) {
 			if (get_request_var('drp_action') == '1') { /* update */
 				print "<tr>
 					<td class='textArea'>
@@ -351,7 +351,7 @@ function form_actions() {
 
 		html_start_box($assoc_actions{get_request_var('drp_action')} . ' ' . __('Device(s)', 'maint'), '60%', '', '3', 'center', '');
 
-		if (sizeof($array)) {
+		if (cacti_sizeof($array)) {
 			if (get_request_var('drp_action') == '1') { /* associate */
 				print "<tr>
 					<td class='textArea'>
@@ -416,7 +416,7 @@ function form_actions() {
 
 		form_start('maint.php');
 
-		if (sizeof($array)) {
+		if (cacti_sizeof($array)) {
 			if (get_request_var('drp_action') == '1') { /* associate */
 				print "<tr>
 					<td class='textArea'>
@@ -464,7 +464,7 @@ function form_actions() {
 
 function get_header_label() {
 	if (!isempty_request_var('id')) {
-		$list = db_fetch_row_prepraed('SELECT *
+		$list = db_fetch_row_prepared('SELECT *
 			FROM plugin_maint_schedules
 			WHERE id=?',
 			array(get_filter_request_var('id')));
@@ -489,7 +489,7 @@ function maint_tabs() {
 
 	print "<div class='tabs'><nav><ul>\n";
 
-	if (sizeof($tabs)) {
+	if (cacti_sizeof($tabs)) {
 		foreach (array_keys($tabs) as $tab_short_name) {
             print "<li><a class='tab" . (($tab_short_name == $current_tab) ? ' selected' : '') .  "' href='" . htmlspecialchars($config['url_path'] .
 				'plugins/maint/maint.php?action=edit' .
@@ -704,7 +704,7 @@ function schedules() {
 		__('Enabled', 'maint'))
 	);
 
-	if (sizeof($schedules)) {
+	if (cacti_sizeof($schedules)) {
 		foreach ($schedules as $schedule) {
 			$active = plugin_maint_check_schedule($schedule['id']);
 
@@ -853,7 +853,7 @@ function thold_hosts($header_label) {
 								ON h.host_template_id=ht.id
 								ORDER BY ht.name');
 
-							if (sizeof($host_templates) > 0) {
+							if (cacti_sizeof($host_templates) > 0) {
 								foreach ($host_templates as $host_template) {
 									print "<option value='" . $host_template['id'] . "'"; if (get_request_var('host_template_id') == $host_template['id']) { print ' selected'; } print '>' . htmlspecialchars($host_template['name']) . "</option>\n";
 								}
@@ -868,7 +868,7 @@ function thold_hosts($header_label) {
 						<select id='rows' onChange='applyFilter()'>
 							<option value='-1'<?php if (get_request_var('rows') == '-1') {?> selected<?php }?>><?php print __('Default', 'maint');?></option>
 							<?php
-							if (sizeof($item_rows) > 0) {
+							if (cacti_sizeof($item_rows) > 0) {
 								foreach ($item_rows as $key => $value) {
 									print "<option value='" . $key . "'"; if (get_request_var('rows') == $key) { print ' selected'; } print '>' . htmlspecialchars($value) . "</option>\n";
 								}
@@ -926,7 +926,7 @@ function thold_hosts($header_label) {
 	}
 
 	if (get_request_var('id')) {
-
+		$sql_params = array_merge(array(get_request_var('id')), $sql_where_params);
 		$total_rows = db_fetch_cell_prepared("SELECT
 			COUNT(DISTINCT h.id)
 			FROM host AS h
@@ -936,7 +936,7 @@ function thold_hosts($header_label) {
 			ON h.id=pmh.host
 			AND pmh.schedule=?
 			$sql_where",
-			$sql_where_params + array(get_request_var('id')));
+			$sql_params);
 	} else {
 		$total_rows = 0;
 	}
@@ -962,8 +962,8 @@ function thold_hosts($header_label) {
 			$sql_order
 			$sql_limit";
 
-		$hosts = db_fetch_assoc_prepared($sql_query,
-			array(get_request_var('id'), get_request_var('id')) + $sql_where_params);
+		$sql_params = array_merge(array(get_request_var('id'), get_request_var('id')), $sql_where_params);
+		$hosts = db_fetch_assoc_prepared($sql_query, $sql_params);
 	} else {
 		$hosts = array();
 	}
@@ -1014,7 +1014,7 @@ function thold_hosts($header_label) {
 
 	html_header_sort_checkbox($display_text, get_request_var('sort_column'), get_request_var('sort_direction'), false, 'maint.php?action=edit&tab=hosts&id=' . get_request_var('id'));
 
-	if (sizeof($hosts)) {
+	if (cacti_sizeof($hosts)) {
 		foreach ($hosts as $host) {
 			form_alternate_row('line' . $host['id']);
 			form_selectable_cell((strlen(get_request_var('filter')) ? preg_replace('/(' . preg_quote(get_request_var('filter')) . ')/i', "<span class='filteredValue'>\\1</span>", htmlspecialchars($host['description'])) : htmlspecialchars($host['description'])), $host['id'], 250);
@@ -1057,7 +1057,7 @@ function thold_hosts($header_label) {
 
 	html_end_box(false);
 
-	if (sizeof($hosts)) {
+	if (cacti_sizeof($hosts)) {
 		print $nav;
 	}
 
@@ -1146,7 +1146,7 @@ function webseer_urls($header_label) {
 						<select id='rows' onChange='applyFilter()'>
 							<option value='-1'<?php if (get_request_var('rows') == '-1') {?> selected<?php }?>><?php print __('Default', 'maint');?></option>
 							<?php
-							if (sizeof($item_rows) > 0) {
+							if (cacti_sizeof($item_rows) > 0) {
 								foreach ($item_rows as $key => $value) {
 									print "<option value='" . $key . "'"; if (get_request_var('rows') == $key) { print ' selected'; } print '>' . htmlspecialchars($value) . "</option>\n";
 								}
@@ -1234,7 +1234,7 @@ function webseer_urls($header_label) {
 
 	html_header_checkbox($display_text);
 
-	if (sizeof($urls)) {
+	if (cacti_sizeof($urls)) {
 		foreach ($urls as $url) {
 			form_alternate_row('line' . $url['id']);
 			form_selectable_cell((strlen(get_request_var('filter')) ? preg_replace('/(' . preg_quote(get_request_var('filter')) . ')/i', "<span class='filteredValue'>\\1</span>", htmlspecialchars($url['display_name'])) : htmlspecialchars($url['display_name'])), $url['id'], 250);
@@ -1273,7 +1273,7 @@ function webseer_urls($header_label) {
 	}
 	html_end_box(false);
 
-	if (sizeof($urls)) {
+	if (cacti_sizeof($urls)) {
 		print $nav;
 	}
 
