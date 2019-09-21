@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-19 09:50+0000\n"
+"POT-Creation-Date: 2019-09-21 10:27-0400\n"
 "PO-Revision-Date: 2019-04-01 22:12+0000\n"
 "Last-Translator: Javier Pobeda <javier.pobeda@pm.me>\n"
 "Language-Team: Spanish <http://translate.cacti.net/projects/cacti/maint/es-"
@@ -40,7 +40,8 @@ msgid "One Time"
 msgstr "Una vez"
 
 #: maint.php:44
-msgid "Reoccurring"
+#, fuzzy
+msgid "Recurring"
 msgstr "Periódico"
 
 #: maint.php:48
@@ -67,7 +68,7 @@ msgstr "Sí"
 msgid "General"
 msgstr "General"
 
-#: maint.php:66 maint.php:827 maint.php:966
+#: maint.php:66 maint.php:865 maint.php:1007
 msgid "Devices"
 msgstr "Dispositivos"
 
@@ -75,27 +76,27 @@ msgstr "Dispositivos"
 msgid "WebSeer"
 msgstr "WebSeer"
 
-#: maint.php:274
+#: maint.php:294
 msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
 msgstr ""
 "Haga click en 'Continuar' para actualizar la(s) siguiente(s) tarea(s) de "
 "mantenimiento."
 
-#: maint.php:279 maint.php:288 maint.php:338 maint.php:347 maint.php:398
-#: maint.php:407
+#: maint.php:299 maint.php:308 maint.php:363 maint.php:372 maint.php:428
+#: maint.php:437
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: maint.php:279 maint.php:288 maint.php:338 maint.php:347 maint.php:398
-#: maint.php:407
+#: maint.php:299 maint.php:308 maint.php:363 maint.php:372 maint.php:428
+#: maint.php:437
 msgid "Continue"
 msgstr "Continuar"
 
-#: maint.php:279
+#: maint.php:299
 msgid "Update Maintenance Schedule(s)"
 msgstr "Actualizar la(s) tarea(s) de mantenimiento"
 
-#: maint.php:283
+#: maint.php:303
 msgid ""
 "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any "
 "Devices(s) Associated with this Schedule will be Disassociated."
@@ -104,23 +105,23 @@ msgstr ""
 "mantenimiento. Cualquier dispositivo asociado con esta tarea programada sera "
 "desasociado."
 
-#: maint.php:288
+#: maint.php:308
 msgid "Delete Maintenance Schedule(s)"
 msgstr "Eliminar la(s) tarea(s) de mantenimiento"
 
-#: maint.php:291
+#: maint.php:311
 msgid "You must select at least one Maintenance Schedule."
 msgstr "Debes seleccionar al menos una Tarea de Mantenimiento."
 
-#: maint.php:292 maint.php:351 maint.php:411
+#: maint.php:312 maint.php:376 maint.php:441
 msgid "Return"
 msgstr "Regresar"
 
-#: maint.php:327 maint.php:385
+#: maint.php:352 maint.php:415
 msgid "Device(s)"
 msgstr "Dispositivo(s)"
 
-#: maint.php:333
+#: maint.php:358
 #, php-format
 msgid ""
 "Click 'Continue' to associate the following Device(s) with the Maintenance "
@@ -129,11 +130,11 @@ msgstr ""
 "Haga click en 'Continuar' para asociar el/los siguiente(s) dispositivo(s) "
 "con la tarea de mantenimiento '<b>%s</b>'."
 
-#: maint.php:338 maint.php:398
+#: maint.php:363 maint.php:428
 msgid "Associate Maintenance Schedule(s)"
 msgstr "Asociar tarea(s) de mantenimiento"
 
-#: maint.php:342
+#: maint.php:367
 #, php-format
 msgid ""
 "Click 'Continue' to disassociate the following Device(s) with the "
@@ -142,15 +143,15 @@ msgstr ""
 "Haga click en 'Continuar' para desasociar el/los siguiente(s) dispositivo(s) "
 "con la tarea de mantenimiento '<b>%s</b>'."
 
-#: maint.php:347 maint.php:407
+#: maint.php:372 maint.php:437
 msgid "Disassociate Maintenance Schedule(s)"
 msgstr "Desasociar tarea(s) de mantenimiento"
 
-#: maint.php:350 maint.php:410
+#: maint.php:375 maint.php:440
 msgid "You must select at least one Device."
 msgstr "Debes seleccionar al menos un dispositivo."
 
-#: maint.php:393
+#: maint.php:423
 #, php-format
 msgid ""
 "Click 'Continue' to associate the Device(s) below with the Maintenance "
@@ -159,7 +160,7 @@ msgstr ""
 "Haga click en 'Continuar' para asociar el/los siguiente(s) dispositivo(s) a "
 "continuación con la tarea de mantenimiento '<b>%s</b>'."
 
-#: maint.php:402
+#: maint.php:432
 #, php-format
 msgid ""
 "Click 'Continue' to disassociate the Devices(s) below with the Maintenance "
@@ -168,220 +169,220 @@ msgstr ""
 "Haga click en 'Continuar' para desasociar el/los siguiente(s) dispositivo(s) "
 "a continuación con la tarea de mantenimiento '<b>%s</b>'."
 
-#: maint.php:438
+#: maint.php:471
 #, php-format
 msgid "General Settings [edit: %s]"
 msgstr "Opciones Generales [editar: %s]"
 
-#: maint.php:440
+#: maint.php:473
 msgid "General Settings [new]"
 msgstr "Opciones Generales [nuevo]"
 
-#: maint.php:485
+#: maint.php:521
 msgid "New Maintenance Schedule"
 msgstr "Nueva Tarea de Mantenimiento"
 
-#: maint.php:497
+#: maint.php:533
 msgid "Schedule"
 msgstr "Tarea programada"
 
-#: maint.php:501
+#: maint.php:537
 msgid "Schedule Name"
 msgstr "Nombre de la Tarea Programada"
 
-#: maint.php:505
+#: maint.php:541
 msgid "Provide the Maintenance Schedule a meaningful name"
 msgstr "Proporcione a la tarea de mantenimiento un nombre significativo"
 
-#: maint.php:509 maint.php:666 maint.php:1173 maint.php:1198
+#: maint.php:545 maint.php:704 maint.php:1230 maint.php:1262
 msgid "Enabled"
 msgstr "Habilitado"
 
-#: maint.php:512
+#: maint.php:548
 msgid "Whether or not this threshold will be checked and alerted upon."
 msgstr "Si este umbral será verificado y alertado."
 
-#: maint.php:516
+#: maint.php:552
 msgid "Schedule Type"
 msgstr "Tipo de tarea programada"
 
-#: maint.php:520
+#: maint.php:556
 msgid "The type of Threshold that will be monitored."
 msgstr "El tipo de umbral que será monitoreado."
 
-#: maint.php:524 maint.php:665
+#: maint.php:560 maint.php:703
 msgid "Interval"
 msgstr "Intervalo"
 
-#: maint.php:528
+#: maint.php:564
 msgid "This is the interval in which the start / end time will repeat."
 msgstr "Este es el intervalo en el cual el inicio / fin se repetirá"
 
-#: maint.php:532
+#: maint.php:568
 msgid "Start Time"
 msgstr "Hora de inicio"
 
-#: maint.php:536
+#: maint.php:572
 msgid ""
 "The start date / time for this schedule. Most date / time formats accepted."
 msgstr ""
 "La fecha/hora de inicio de esta tarea programada. La mayoría de formatos de "
 "fecha/hora son aceptados."
 
-#: maint.php:541
+#: maint.php:577
 msgid "End Time"
 msgstr "Hora de finalización"
 
-#: maint.php:546
+#: maint.php:582
 msgid ""
 "The end date / time for this schedule. Most date / time formats accepted."
 msgstr ""
 "La fecha/hora de fin de esta tarea programada. La mayoría de formatos de "
 "fecha/hora son aceptados."
 
-#: maint.php:595
+#: maint.php:631
 msgid "Start Date/Time Selector"
 msgstr "Selector de Fecha/Hora de inicio"
 
-#: maint.php:596
+#: maint.php:632
 msgid "End Date/Time Selector"
 msgstr "Selector de Fecha/Hora de fin"
 
-#: maint.php:657 setup.php:54 setup.php:58
+#: maint.php:695 setup.php:54 setup.php:58
 msgid "Maintenance Schedules"
 msgstr "Tareas de mantenimiento"
 
-#: maint.php:660
+#: maint.php:698
 msgid "Name"
 msgstr "Nombre"
 
-#: maint.php:661
+#: maint.php:699
 msgid "Active"
 msgstr "Activo"
 
-#: maint.php:662 maint.php:805
+#: maint.php:700 maint.php:843
 msgid "Type"
 msgstr "Tipo"
 
-#: maint.php:663
+#: maint.php:701
 msgid "Start"
 msgstr "Inicio"
 
-#: maint.php:664
+#: maint.php:702
 msgid "End"
 msgstr "Fin"
 
-#: maint.php:704 maint.php:992 maint.php:1195
+#: maint.php:742 maint.php:1042 maint.php:1259
 msgid "No Schedules"
 msgstr "No hay Tareas Programadas"
 
-#: maint.php:790
+#: maint.php:828
 #, php-format
 msgid "Associated Devices %s"
 msgstr "Dispositivos asociados %s"
 
-#: maint.php:799 maint.php:1087
+#: maint.php:837 maint.php:1137
 msgid "Search"
 msgstr "Buscar"
 
-#: maint.php:809
+#: maint.php:847
 msgid "Any"
 msgstr "Cualquiera"
 
-#: maint.php:810
+#: maint.php:848
 msgid "None"
 msgstr "Ninguno"
 
-#: maint.php:831 maint.php:1097
+#: maint.php:869 maint.php:1147
 msgid "Default"
 msgstr "Por defecto"
 
-#: maint.php:845 maint.php:1111
+#: maint.php:883 maint.php:1161
 msgid "Associated"
 msgstr "Asociados"
 
-#: maint.php:849 maint.php:1115
+#: maint.php:887 maint.php:1165
 msgid "Go"
 msgstr "Ir"
 
-#: maint.php:849 maint.php:1115
+#: maint.php:887 maint.php:1165
 msgid "Set/Refresh Filters"
 msgstr "Definir/Refrescar Filtros"
 
-#: maint.php:850 maint.php:1116
+#: maint.php:888 maint.php:1166
 msgid "Clear"
 msgstr "Restablecer"
 
-#: maint.php:850 maint.php:1116
+#: maint.php:888 maint.php:1166
 msgid "Clear Filters"
 msgstr "Restablecer filtros"
 
-#: maint.php:932 maint.php:1170
+#: maint.php:973 maint.php:1227
 msgid "Description"
 msgstr "Descripción"
 
-#: maint.php:936 maint.php:1171
+#: maint.php:977 maint.php:1228
 msgid "ID"
 msgstr "ID"
 
-#: maint.php:940 maint.php:1172
+#: maint.php:981 maint.php:1229
 msgid "Associated Schedules"
 msgstr "Tareas programadas asociadas"
 
-#: maint.php:944
+#: maint.php:985
 msgid "Graphs"
 msgstr "Gráficos"
 
-#: maint.php:948
+#: maint.php:989
 msgid "Data Sources"
 msgstr "Data Sources"
 
-#: maint.php:952
+#: maint.php:993
 msgid "Thresholds"
 msgstr "Umbrales"
 
-#: maint.php:956
+#: maint.php:997
 msgid "Status"
 msgstr "Estado"
 
-#: maint.php:960 maint.php:1174
+#: maint.php:1001 maint.php:1231
 msgid "Hostname"
 msgstr "Nombre de equipo"
 
-#: maint.php:982 maint.php:1186
+#: maint.php:1024 maint.php:1243
 msgid "Current Schedule"
 msgstr "Tarea Programada Actual"
 
-#: maint.php:1005
+#: maint.php:1055
 msgid "No Associated Devices Found"
 msgstr "No se encontraron dispositivos asociados"
 
-#: maint.php:1078
+#: maint.php:1128
 #, php-format
 msgid "Associated Web URL's %s"
 msgstr "URL's Web Asociadas %s"
 
-#: maint.php:1093
+#: maint.php:1143
 msgid "Rules"
 msgstr "Reglas"
 
-#: maint.php:1161
+#: maint.php:1218
 msgid "Lists"
 msgstr "Listas"
 
-#: maint.php:1175
+#: maint.php:1232
 msgid "URL"
 msgstr "URL"
 
-#: maint.php:1198
+#: maint.php:1262
 msgid "Disabled"
 msgstr "Deshabilitado"
 
-#: maint.php:1200
+#: maint.php:1264
 msgid "USING DNS"
 msgstr "USANDO DNS"
 
-#: maint.php:1208
+#: maint.php:1272
 msgid "No Associated WebSeer URL's Found"
 msgstr "No se encontraron URL's the WebSeer asociadas"
 
