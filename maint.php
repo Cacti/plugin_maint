@@ -903,7 +903,7 @@ function thold_hosts($header_label) {
 	if (strlen(get_request_var('filter'))) {
 		$sql_where = 'WHERE (h.hostname LIKE ? OR h.description LIKE ?)';
 		$sql_where_params = array( '%' . get_request_var('filter') . '%',
-			'%' . get_request_vars('filter') . '%' );
+			'%' . get_request_var('filter') . '%' );
 	}else{
 		$sql_where = '';
 		$sql_where_params = array();
