@@ -51,7 +51,12 @@ function plugin_maint_upgrade() {
 
 function maint_config_arrays() {
 	global $menu;
+
 	$menu[__('Management')]['plugins/maint/maint.php'] = __('Maintenance Schedules', 'maint');
+
+	if (function_exists('auth_augment_roles')) {
+		auth_augment_roles(__('System Administration'), array('maint.php'));
+	}
 }
 
 function maint_draw_navigation_text ($nav) {
