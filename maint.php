@@ -466,7 +466,7 @@ function get_header_label() {
 	if (!isempty_request_var('id')) {
 		$list = db_fetch_row_prepared('SELECT *
 			FROM plugin_maint_schedules
-			WHERE id=?',
+			WHERE id = ?',
 			array(get_filter_request_var('id')));
 		$header_label = __('General Settings [edit: %s]', $list['name'], 'maint');
 	} else {
