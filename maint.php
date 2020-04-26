@@ -51,6 +51,7 @@ $maint_intervals = array(
 );
 
 $yesno = array(
+	''    => __('No', 'maint'), // table value
 	0     => __('No', 'maint'),
 	1     => __('Yes', 'maint'),
 	'on'  => __('Yes', 'maint'),
@@ -68,6 +69,7 @@ if (api_plugin_is_enabled('thold')) {
 
 if (api_plugin_is_enabled('webseer')) {
 	$tabs['webseer'] = __('WebSeer', 'maint');
+	define('HOST_TYPE_WEBSEER', '2');
 }
 
 $tabs = api_plugin_hook_function('maint_tabs', $tabs);
@@ -400,9 +402,9 @@ function form_actions() {
 				input_validate_input_number($matches[1]);
 				/* ==================================================== */
 
-				$description = db_fetch_cell_prepared('SELECT description
-					FROM host
-					WHERE id=?',
+				$description = db_fetch_cell_prepared('SELECT display_name
+					FROM plugin_webseer_urls
+					WHERE id = ?',
 					array($matches[1]));
 
 				$list .= "<li><b>$description</b></li>";
@@ -412,15 +414,15 @@ function form_actions() {
 
 		top_header();
 
-		html_start_box($assoc_actions{get_request_var('drp_action')} . ' ' . __('Device(s)', 'maint'), '60%', '', '3', 'center', '');
-
 		form_start('maint.php');
+
+		html_start_box($assoc_actions{get_request_var('drp_action')} . ' ' . __('Device(s)', 'maint'), '60%', '', '3', 'center', '');
 
 		if (cacti_sizeof($array)) {
 			if (get_request_var('drp_action') == '1') { /* associate */
 				print "<tr>
 					<td class='textArea'>
-						<p>" . __('Click \'Continue\' to associate the Device(s) below with the Maintenance Schedule \'<b>%s</b>\'.', $list_name, 'maint') . "</p>
+						<p>" . __('Click \'Continue\' to associate the Webseer(s) below with the Maintenance Schedule \'<b>%s</b>\'.', $list_name, 'maint') . "</p>
 						<ul>$list</ul>
 					</td>
 				</tr>\n";
@@ -452,12 +454,12 @@ function form_actions() {
 			</td>
 		</tr>\n";
 
-		form_end();
-
 		html_end_box();
 
+		form_end();
+
 		bottom_footer();
-	}else{
+	} else {
 		api_plugin_hook_function('maint_actions_prepare');
 	}
 }
@@ -545,15 +547,15 @@ function schedule_edit() {
 				'friendly_name' => __('Enabled', 'maint'),
 				'method' => 'checkbox',
 				'default' => 'on',
-				'description' => __('Whether or not this threshold will be checked and alerted upon.', 'maint'),
-				'value' => isset($maint_item_data['enabled']) ? $maint_item_data['enabled'] : ''
+				'description' => __('Whether or not this schedule will be checked.', 'maint'),
+				'value' => isset($maint_item_data['enabled']) ? ($maint_item_data['enabled'] == 'on' ? 'on' : 'off') : ''
 			),
 			'mtype' => array(
 				'friendly_name' => __('Schedule Type', 'maint'),
 				'method' => 'drop_array',
 				'on_change' => 'changemaintType()',
 				'array' => $maint_types,
-				'description' => __('The type of Threshold that will be monitored.', 'maint'),
+				'description' => __('The type of schedule, one time or recurring.', 'maint'),
 				'value' => isset($maint_item_data['mtype']) ? $maint_item_data['mtype'] : ''
 			),
 			'minterval' => array(
@@ -1070,6 +1072,10 @@ function thold_hosts($header_label) {
 	form_end();
 }
 
+/**
+ * webseer tab
+ */
+ 
 function webseer_urls($header_label) {
 	global $assoc_actions, $item_rows;
 
@@ -1098,6 +1104,11 @@ function webseer_urls($header_label) {
 	);
 
 	validate_store_request_vars($filters, 'sess_maint_ws');
+	
+	/* If add, list all */
+	if (!get_request_var('id')) {
+		set_request_var('associated', 'false');
+	}
 	/* ================= input validation ================= */
 
 	/* if the number of rows is -1, set it to the default */
@@ -1140,7 +1151,7 @@ function webseer_urls($header_label) {
 						<input type='text' id='filter' size='25' value='<?php print htmlspecialchars(get_request_var('filter'));?>' onChange='applyFilter()'>
 					</td>
 					<td>
-						<?php print __('Rules', 'maint');?>
+						<?php print __('Rows', 'maint');?>
 					</td>
 					<td>
 						<select id='rows' onChange='applyFilter()'>
@@ -1187,33 +1198,40 @@ function webseer_urls($header_label) {
 			'%' . get_request_var('filter') . '%',
 			'%' . get_request_var('filter') . '%'
 		);
-	}else{
-		$sql_where = '';
-	}
-
-	if (get_request_var('associated') == 'false') {
-		$sql_where .= (strlen($sql_where) ? ' AND ':'WHERE ') . ' (pmh.type=2 OR pmh.type IS NULL)';
 	} else {
-		$sql_where .= (strlen($sql_where) ? ' AND ':'WHERE ') . ' (pmh.type=2 AND pmh.schedule=?)';
-		$sql_where_params[] = get_request_var('id');
+		$sql_where = '';
+		$sql_where_params =  array();
 	}
 
+	if (get_request_var('associated') == 'true') {
+		$sql_where .= (strlen($sql_where) ? ' AND ' : ' WHERE ') . 
+			' (pmh.type IS NOT NULL)';
+	}
+
+	$sql_params = array_merge(array(get_request_var('id')), $sql_where_params);
 	$total_rows = db_fetch_cell_prepared("SELECT
 		COUNT(*)
 		FROM plugin_webseer_urls AS u
 		LEFT JOIN plugin_maint_hosts AS pmh
-		ON u.id=pmh.host
+			ON ( u.id = pmh.host 
+			AND pmh.type = " . HOST_TYPE_WEBSEER . "
+			AND pmh.schedule = ? )
 		$sql_where",
-		$sql_where_params);
+		$sql_params);
 
-	$sql_query = "SELECT u.*, pmh.host AS associated, pmh.type AS maint_type
+	$sql_params = array_merge(array(get_request_var('id'), get_request_var('id')), $sql_where_params);
+	$sql_query = "SELECT u.*, 
+		(SELECT schedule FROM plugin_maint_hosts WHERE host = u.id AND schedule = ?) AS associated,
+		pmh.type AS maint_type
 		FROM plugin_webseer_urls AS u
 		LEFT JOIN plugin_maint_hosts AS pmh
-		ON u.id=pmh.host
+			ON ( u.id = pmh.host 
+			AND pmh.type = " . HOST_TYPE_WEBSEER . "
+			AND pmh.schedule = ? )
 		$sql_where
-		LIMIT " . ($rows*(get_request_var('page')-1)) . ',' . $rows;
+		LIMIT " . ($rows * (get_request_var('page') - 1)) . ',' . $rows;
 
-	$urls = db_fetch_assoc_prepared($sql_query, $sql_where_params);
+	$urls = db_fetch_assoc_prepared($sql_query, $sql_params);
 
 	$nav = html_nav_bar('notify_lists.php?action=edit&id=' . get_request_var('id'), MAX_DISPLAY_PAGES, get_request_var('page'), $rows, $total_rows, 13, __('Lists', 'maint'), 'page', 'main');
 
@@ -1239,26 +1257,33 @@ function webseer_urls($header_label) {
 			form_alternate_row('line' . $url['id']);
 			form_selectable_cell((strlen(get_request_var('filter')) ? preg_replace('/(' . preg_quote(get_request_var('filter')) . ')/i', "<span class='filteredValue'>\\1</span>", htmlspecialchars($url['display_name'])) : htmlspecialchars($url['display_name'])), $url['id'], 250);
 			form_selectable_cell(round(($url['id']), 2), $url['id']);
-			if ($url['associated'] != '' && $url['maint_type'] == '2') {
-				form_selectable_cell('<span class="deviceUp">' . __('Current Schedule', 'maint') . '</span>', $url['id']);
-			}else{
-				$lists = db_fetch_assoc_prepared('SELECT name
-					FROM plugin_maint_schedules
-					INNER JOIN plugin_maint_hosts
-					ON plugin_maint_schedules.id=plugin_maint_hosts.schedule
-					WHERE type=2 AND host=?',
-					array($url['id']));
 
-				if (cacti_sizeof($lists)) {
-					$names = '';
-					foreach($lists['name'] as $name) {
-						$names .= (strlen($names) ? ', ':'') . "<span class='deviceRecovering'>$name</span>";
-					}
-					form_selectable_cell($names, $url['id']);
-				}else{
-					form_selectable_cell('<span class="deviceUnknown">' . __('No Schedules', 'maint') . '</span>', $url['id']);
+			if ($url['associated'] != '' ) {
+				$names = '<span class="deviceUp">' . __('Current Schedule', 'maint') . '</span>';
+			} else {
+				$names = '';
+			}
+
+			$lists = db_fetch_assoc_prepared("SELECT name
+				FROM plugin_maint_schedules
+				INNER JOIN plugin_maint_hosts
+				ON plugin_maint_schedules.id = plugin_maint_hosts.schedule
+				WHERE type = " . HOST_TYPE_WEBSEER . "
+				AND host = ? 
+				AND plugin_maint_schedules.id != ?",
+				array($url['id'], get_request_var('id')));
+
+			if (cacti_sizeof($lists)) {
+				foreach($lists as $name) {
+					$names .= (strlen($names) ? ', ':'') . "<span class='deviceRecovering'>" . $name['name'] . "</span>";
 				}
 			}
+			if ($names == '') {
+				form_selectable_cell('<span class="deviceUnknown">' . __('No Schedules', 'maint') . '</span>', $url['id']);
+			} else {
+				form_selectable_cell($names, $url['id']);
+			}
+
 			form_selectable_cell(($url['enabled'] == 'on' ? __('Enabled', 'maint'):__('Disabled', 'maint')), $url['id']);
 			if (empty($url['ip'])) {
 				$url['ip'] = __('USING DNS', 'maint');
