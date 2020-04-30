@@ -1,6 +1,6 @@
 # maint
 
-The Cacti maint plugin is for the scheduling of maintenace so that Thold /
+The Cacti maint plugin is for the scheduling of maintenance so that Thold /
 Webseer / Other plugins will not alert during that time period.
 
 ## Installation
@@ -21,6 +21,8 @@ Got any ideas or complaints, please see the forums.  If you find a bug, they can
 be logged on GitHub.
 
 ## Changelog
+
+* feature: webseer tab functional (webseer plugin update required to use schedule)
 
 --- 1.2 ---
 
