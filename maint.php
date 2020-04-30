@@ -416,7 +416,7 @@ function form_actions() {
 
 		form_start('maint.php');
 
-		html_start_box($assoc_actions{get_request_var('drp_action')} . ' ' . __('Device(s)', 'maint'), '60%', '', '3', 'center', '');
+		html_start_box($assoc_actions{get_request_var('drp_action')} . ' ' . __('Webseer(s)', 'maint'), '60%', '', '3', 'center', '');
 
 		if (cacti_sizeof($array)) {
 			if (get_request_var('drp_action') == '1') { /* associate */
@@ -431,7 +431,7 @@ function form_actions() {
 			}elseif (get_request_var('drp_action') == '2') { /* disassociate */
 				print "<tr>
 					<td class='textArea'>
-						<p>" . __('Click \'Continue\' to disassociate the Devices(s) below with the Maintenance Schedule \'<b>%s</b>\'.', $list_name, 'maint') . "</p>
+						<p>" . __('Click \'Continue\' to disassociate the Webseer(s) below from the Maintenance Schedule \'<b>%s</b>\'.', $list_name, 'maint') . "</p>
 						<ul>$list</ul>
 					</td>
 				</tr>\n";
@@ -439,7 +439,7 @@ function form_actions() {
 				$save_html = "<input type='button' value='" . __esc('Cancel', 'maint') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __esc('Continue', 'maint') . "' title='" . __esc('Disassociate Maintenance Schedule(s)', 'maint') . "'>";
 			}
 		} else {
-			print "<tr><td><span class='textError'>" . __('You must select at least one Device.', 'maint') . "</span></td></tr>\n";
+			print "<tr><td><span class='textError'>" . __('You must select at least one Webseer.', 'maint') . "</span></td></tr>\n";
 			$save_html = "<input type='button' value='" . __esc('Return', 'maint') . "' onClick='cactiReturnTo()'>";
 		}
 
