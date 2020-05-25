@@ -22,10 +22,9 @@ be logged on GitHub.
 
 ## Changelog
 
-* issue#:15 Fix webseer tab to not show items before schedule is created
-* issue#:15 Fix schedule delete invalid function
+* issue#15: Fix webseer tab to not show items before schedule is created
 
-* feature: webseer tab functional (webseer plugin update required to use schedule)
+* feature#14: webseer tab functional (webseer plugin update required to use schedule)
 
 --- 1.2 ---
 

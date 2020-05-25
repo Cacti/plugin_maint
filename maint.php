@@ -1057,11 +1057,7 @@ function thold_hosts($header_label) {
 		}
 	} else {
 		if ($schedule_created) {
-			if (get_request_var('associated') == 'false') {
-				print "<tr><td colspan='8'><em>" . __('No devices found for selection', 'maint') . "</em></td></tr>";
-			} else {
-				print "<tr><td colspan='8'><em>" . __('No associated devices found for selection.  Uncheck Associated to list unassociated devices.', 'maint') . "</em></td></tr>";
-			}
+			print "<tr><td colspan='8'><em>" . __('No Associated Devices Found', 'maint') . "</em></td></tr>";
 		} else {
 			print "<tr><td colspan='8'><em>" . __('Schedule must be created before associating', 'maint') . "</em></td></tr>";
 		}
@@ -1310,11 +1306,7 @@ function webseer_urls($header_label) {
 		}
 	} else {
 		if ($schedule_created) {
-			if (get_request_var('associated') == 'false') {
-				print "<tr><td colspan='8'><em>" . __('No webseer items found for selection', 'maint') . "</em></td></tr>";
-			} else {
-				print "<tr><td colspan='8'><em>" . __('No associated webseer items found for selection.  Uncheck Associated to list unassociated items.', 'maint') . "</em></td></tr>";
-			}
+			print "<tr><td colspan='8'><em>" . __('No Associated WebSeer URL\'s Found', 'maint') . "</em></td></tr>";
 		} else {
 			print "<tr><td colspan='8'><em>" . __('Schedule must be created before associating', 'maint') . "</em></td></tr>";
 		}
