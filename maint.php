@@ -320,7 +320,7 @@ function form_actions() {
 				<input type='hidden' name='save_list' value='1'>
 				<input type='hidden' name='selected_items' value='" . (isset($array) ? serialize($array) : '') . "'>
 				<input type='hidden' name='drp_action' value='" . get_request_var('drp_action') . "'>
-				<input type='hidden' name='id' value='" . get_request_var_('id') . "'>
+				<input type='hidden' name='id' value='" . get_request_var('id') . "'>
 				$save_html
 			</td>
 		</tr>\n";
@@ -757,6 +757,8 @@ function schedules() {
 function thold_hosts($header_label) {
 	global $assoc_actions, $item_rows;
 
+	$schedule_created = get_request_var('id') ? true : false;
+
     /* ================= input validation and session storage ================= */
 	get_filter_request_var('id');
 
@@ -927,7 +929,7 @@ function thold_hosts($header_label) {
 		$sql_where_params[] = get_request_var('id');
 	}
 
-	if (get_request_var('id')) {
+	if ($schedule_created) {
 		$sql_params = array_merge(array(get_request_var('id')), $sql_where_params);
 		$total_rows = db_fetch_cell_prepared("SELECT
 			COUNT(DISTINCT h.id)
@@ -946,7 +948,7 @@ function thold_hosts($header_label) {
 	$sql_order = get_order_string();
 	$sql_limit = ' LIMIT ' . ($rows*(get_request_var('page')-1)) . ', ' . $rows;
 
-	if (get_request_var('id')) {
+	if ($schedule_created) {
 		$sql_query = "SELECT h.*, pmh.type, graphs, data_sources, tholds,
 			(SELECT schedule FROM plugin_maint_hosts WHERE host=h.id AND schedule=?) AS associated
 			FROM host as h
@@ -1054,7 +1056,11 @@ function thold_hosts($header_label) {
 			form_end_row();
 		}
 	} else {
-		print "<tr><td colspan='8'><em>" . __('No Associated Devices Found', 'maint') . "</em></td></tr>";
+		if ($schedule_created) {
+			print "<tr><td colspan='8'><em>" . __('No Associated Devices Found', 'maint') . "</em></td></tr>";
+		} else {
+			print "<tr><td colspan='8'><em>" . __('Schedule must be created before associating', 'maint') . "</em></td></tr>";
+		}
 	}
 
 	html_end_box(false);
@@ -1078,6 +1084,8 @@ function thold_hosts($header_label) {
  
 function webseer_urls($header_label) {
 	global $assoc_actions, $item_rows;
+
+	$schedule_created = get_request_var('id') ? true : false;
 
     /* ================= input validation and session storage ================= */
     $filters = array(
@@ -1105,10 +1113,6 @@ function webseer_urls($header_label) {
 
 	validate_store_request_vars($filters, 'sess_maint_ws');
 	
-	/* If add, list all */
-	if (!get_request_var('id')) {
-		set_request_var('associated', 'false');
-	}
 	/* ================= input validation ================= */
 
 	/* if the number of rows is -1, set it to the default */
@@ -1208,30 +1212,37 @@ function webseer_urls($header_label) {
 			' (pmh.type IS NOT NULL)';
 	}
 
-	$sql_params = array_merge(array(get_request_var('id')), $sql_where_params);
-	$total_rows = db_fetch_cell_prepared("SELECT
-		COUNT(*)
-		FROM plugin_webseer_urls AS u
-		LEFT JOIN plugin_maint_hosts AS pmh
-			ON ( u.id = pmh.host 
-			AND pmh.type = " . HOST_TYPE_WEBSEER . "
-			AND pmh.schedule = ? )
-		$sql_where",
-		$sql_params);
+	if ($schedule_created) {
+		$sql_params = array_merge(array(get_request_var('id')), $sql_where_params);
+		$total_rows = db_fetch_cell_prepared("SELECT
+			COUNT(*)
+			FROM plugin_webseer_urls AS u
+			LEFT JOIN plugin_maint_hosts AS pmh
+				ON ( u.id = pmh.host 
+				AND pmh.type = " . HOST_TYPE_WEBSEER . "
+				AND pmh.schedule = ? )
+			$sql_where",
+			$sql_params);
+	
+		$sql_params = array_merge(array(get_request_var('id'), get_request_var('id')), $sql_where_params);
+		$sql_query = "SELECT u.*, 
+			(SELECT schedule FROM plugin_maint_hosts WHERE host = u.id AND schedule = ?) AS associated,
+			pmh.type AS maint_type
+			FROM plugin_webseer_urls AS u
+			LEFT JOIN plugin_maint_hosts AS pmh
+				ON ( u.id = pmh.host 
+				AND pmh.type = " . HOST_TYPE_WEBSEER . "
+				AND pmh.schedule = ? )
+			$sql_where
+			LIMIT " . ($rows * (get_request_var('page') - 1)) . ',' . $rows;
 
-	$sql_params = array_merge(array(get_request_var('id'), get_request_var('id')), $sql_where_params);
-	$sql_query = "SELECT u.*, 
-		(SELECT schedule FROM plugin_maint_hosts WHERE host = u.id AND schedule = ?) AS associated,
-		pmh.type AS maint_type
-		FROM plugin_webseer_urls AS u
-		LEFT JOIN plugin_maint_hosts AS pmh
-			ON ( u.id = pmh.host 
-			AND pmh.type = " . HOST_TYPE_WEBSEER . "
-			AND pmh.schedule = ? )
-		$sql_where
-		LIMIT " . ($rows * (get_request_var('page') - 1)) . ',' . $rows;
+		$urls = db_fetch_assoc_prepared($sql_query, $sql_params);
+	} else {
+		/* new schedule, no "id" yet */
+		$total_rows = 0;
+		$urls = array();
+	}
 
-	$urls = db_fetch_assoc_prepared($sql_query, $sql_params);
 
 	$nav = html_nav_bar('notify_lists.php?action=edit&id=' . get_request_var('id'), MAX_DISPLAY_PAGES, get_request_var('page'), $rows, $total_rows, 13, __('Lists', 'maint'), 'page', 'main');
 
@@ -1294,7 +1305,11 @@ function webseer_urls($header_label) {
 			form_end_row();
 		}
 	} else {
-		print "<tr><td><em>" . __('No Associated WebSeer URL\'s Found', 'maint') . "</em></td></tr>";
+		if ($schedule_created) {
+			print "<tr><td colspan='8'><em>" . __('No Associated WebSeer URL\'s Found', 'maint') . "</em></td></tr>";
+		} else {
+			print "<tr><td colspan='8'><em>" . __('Schedule must be created before associating', 'maint') . "</em></td></tr>";
+		}
 	}
 	html_end_box(false);
 

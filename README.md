@@ -22,7 +22,9 @@ be logged on GitHub.
 
 ## Changelog
 
-* feature: webseer tab functional (webseer plugin update required to use schedule)
+* issue#15: Fix webseer tab to not show items before schedule is created
+
+* feature#14: webseer tab functional (webseer plugin update required to use schedule)
 
 --- 1.2 ---
 
