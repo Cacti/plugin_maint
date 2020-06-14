@@ -27,6 +27,11 @@ chdir('../../');
 include_once('./include/auth.php');
 include_once($config['base_path'] . '/plugins/maint/functions.php');
 
+define('MAINT_HOST_FILTER_LOC_ANY', '__any'); // internal value unlikely in data
+define('MAINT_HOST_FILTER_LOC_NONE', '__none');
+define('MAINT_HOST_FILTER_ANY', '-1');
+define('MAINT_HOST_FILTER_NONE', '0'); // Must be zero to match host table values for None
+
 // Maint Schedule Actions
 $actions = array(
 	1 => __('Update Time (Now + 1 Hour)', 'maint'),
@@ -65,12 +70,12 @@ $tabs = array(
 
 if (api_plugin_is_enabled('thold')) {
 	$tabs['hosts'] = __('Devices', 'maint');
-	define('HOST_TYPE_HOSTS', '1');
+	define('MAINT_HOST_TYPE_HOSTS', '1');
 }
 
 if (api_plugin_is_enabled('webseer')) {
 	$tabs['webseer'] = __('WebSeer', 'maint');
-	define('HOST_TYPE_WEBSEER', '2');
+	define('MAINT_HOST_TYPE_WEBSEER', '2');
 }
 
 $tabs = api_plugin_hook_function('maint_tabs', $tabs);
@@ -213,16 +218,16 @@ function form_actions() {
 
 			if ($selected_items != false) {
 				if (get_request_var('drp_action') == '1') { /* associate */
-					for ($i=0;($i<count($selected_items));$i++) {
+					for ($i = 0; ($i < count($selected_items)); $i++) {
 						db_execute_prepared('REPLACE INTO plugin_maint_hosts (type, host, schedule)
-							VALUES (' . HOST_TYPE_HOSTS . ', ?, ?)',
-							array($selected_items[$i], get_request_var('id')));
+							VALUES (?, ?, ?)',
+							array(MAINT_HOST_TYPE_HOSTS, $selected_items[$i], get_request_var('id')));
 					}
 				}elseif (get_request_var('drp_action') == '2') { /* disassociate */
 					for ($i = 0; ($i < count($selected_items)); $i++) {
 						db_execute_prepared('DELETE FROM plugin_maint_hosts
-							WHERE type = ' . HOST_TYPE_HOSTS . ' AND host = ? AND schedule = ?',
-							array($selected_items[$i], get_request_var('id')));
+							WHERE type = ? AND host = ? AND schedule = ?',
+							array(MAINT_HOST_TYPE_HOSTS, $selected_items[$i], get_request_var('id')));
 					}
 				}
 			}
@@ -237,14 +242,14 @@ function form_actions() {
 				if (get_request_var('drp_action') == '1') { /* associate */
 					for ($i = 0; ($i<count($selected_items)); $i++) {
 						db_execute_prepared('REPLACE INTO plugin_maint_hosts (type, host, schedule)
-							VALUES (' . HOST_TYPE_WEBSEER . ', ?, ?)',
-							array($selected_items[$i], get_request_var('id')));
+							VALUES (?, ?, ?)',
+							array(MAINT_HOST_TYPE_WEBSEER, $selected_items[$i], get_request_var('id')));
 					}
 				}elseif (get_request_var('drp_action') == '2') { /* disassociate */
 					for ($i = 0; ($i < count($selected_items)); $i++) {
 						db_execute_prepared('DELETE FROM plugin_maint_hosts
-							WHERE type = ' . HOST_TYPE_WEBSEER . ' AND host = ? AND schedule = ?',
-							array($selected_items[$i], get_request_var('id')));
+							WHERE type = ? AND host = ? AND schedule = ?',
+							array(MAINT_HOST_TYPE_WEBSEER, $selected_items[$i], get_request_var('id')));
 					}
 				}
 			}
@@ -472,9 +477,9 @@ function get_header_label() {
 			FROM plugin_maint_schedules
 			WHERE id = ?',
 			array(get_filter_request_var('id')));
-		$header_label = __esc('General Settings [edit: %s]', $list['name']);
+		$header_label = __('[edit: %s]', $list['name'], 'maint');
 	} else {
-		$header_label = __('General Settings [new]');
+		$header_label = __('[new]', 'maint');
 	}
 
 	return $header_label;
@@ -530,7 +535,7 @@ function schedule_edit() {
 	if (get_request_var('tab') == 'general') {
 		form_start('maint.php', 'maint');
 
-        html_start_box($header_label, '100%', '', '3', 'center', '');
+		html_start_box(__('General Settings %s', htmlspecialchars($header_label), 'maint'), '100%', '', '3', 'center', '');
 
 		$form_array = array(
 			'general_header' => array(
@@ -757,10 +762,6 @@ function schedules() {
 
 function thold_hosts($header_label) {
 	global $assoc_actions, $item_rows;
-	define('HOST_FILTER_LOC_ANY', '__any'); // internal value unlikely in data
-	define('HOST_FILTER_LOC_NONE', '__none');
-	define('HOST_FILTER_ANY', '-1');
-	define('HOST_FILTER_NONE', '0'); // Must be zero to match host table values for None
 
 	$schedule_created = get_request_var('id') ? true : false;
 
@@ -771,7 +772,7 @@ function thold_hosts($header_label) {
 		'rows' => array(
 			'filter' => FILTER_VALIDATE_INT,
 			'pageset' => true,
-			'default' => HOST_FILTER_ANY
+			'default' => MAINT_HOST_FILTER_ANY
 			),
 		'page' => array(
 			'filter' => FILTER_VALIDATE_INT,
@@ -780,22 +781,22 @@ function thold_hosts($header_label) {
 		'site_id' => array(
 			'filter' => FILTER_VALIDATE_INT,
 			'pageset' => true,
-			'default' => HOST_FILTER_ANY
+			'default' => MAINT_HOST_FILTER_ANY
 			),
 		'poller_id' => array(
 			'filter' => FILTER_VALIDATE_INT,
 			'pageset' => true,
-			'default' => HOST_FILTER_ANY
+			'default' => MAINT_HOST_FILTER_ANY
 			),
 		'host_template_id' => array(
 			'filter' => FILTER_VALIDATE_INT,
 			'pageset' => true,
-			'default' => HOST_FILTER_ANY
+			'default' => MAINT_HOST_FILTER_ANY
 			),
 		'location' => array(
 			'filter' => FILTER_CALLBACK,
 			'pageset' => true,
-			'default' => HOST_FILTER_LOC_ANY,
+			'default' => MAINT_HOST_FILTER_LOC_ANY,
 			'options' => array('options' => 'sanitize_search_string')
 			),
 		'filter' => array(
@@ -873,7 +874,7 @@ function thold_hosts($header_label) {
 	</script>
 	<?php
 
-	html_start_box(__('Associated Devices %s', $header_label), '100%', '', '3', 'center', '');
+	html_start_box(__('Associated Devices %s', htmlspecialchars($header_label), 'maint'), '100%', '', '3', 'center', '');
 
 	?>
 	<tr class='even'>
@@ -886,8 +887,8 @@ function thold_hosts($header_label) {
 					</td>
 					<td>
 						<select id='site_id'>
-							<option value='<?php print HOST_FILTER_ANY ?>' <?php if (get_request_var('site_id') == HOST_FILTER_ANY) {?> selected<?php }?>><?php print __('Any');?></option>
-							<option value='<?php print HOST_FILTER_NONE ?>' <?php if (get_request_var('site_id') == HOST_FILTER_NONE) {?> selected<?php }?>><?php print __('None');?></option>
+							<option value='<?php print MAINT_HOST_FILTER_ANY ?>' <?php if (get_request_var('site_id') == MAINT_HOST_FILTER_ANY) {?> selected<?php }?>><?php print __('Any');?></option>
+							<option value='<?php print MAINT_HOST_FILTER_NONE ?>' <?php if (get_request_var('site_id') == MAINT_HOST_FILTER_NONE) {?> selected<?php }?>><?php print __('None');?></option>
 							<?php
 							$sites = db_fetch_assoc('SELECT id, name
 								FROM sites
@@ -906,7 +907,7 @@ function thold_hosts($header_label) {
 					</td>
 					<td>
 						<select id='poller_id'>
-							<option value='<?php print HOST_FILTER_ANY ?>' <?php if (get_request_var('poller_id') == HOST_FILTER_ANY) {?> selected<?php }?>><?php print __('Any');?></option>
+							<option value='<?php print MAINT_HOST_FILTER_ANY ?>' <?php if (get_request_var('poller_id') == MAINT_HOST_FILTER_ANY) {?> selected<?php }?>><?php print __('Any', 'maint');?></option>
 							<?php
 							$pollers = db_fetch_assoc("SELECT id, name
 								FROM poller
@@ -925,18 +926,17 @@ function thold_hosts($header_label) {
 					</td>
 					<td>
 						<select id='location'>
-							<option value='<?php print HOST_FILTER_LOC_ANY ?>' <?php if (get_request_var('location') == HOST_FILTER_LOC_ANY) {?> selected<?php }?>><?php print __('Any');?></option>
 							<?php
 							/* Filter location list based on other selections
 							 * List item None for Null and empty values
 							 * List item "Any" and "None" special values at top of list but can also be in data as another list entry for those; "None" could be listed twice*/
 
-							if (get_request_var('site_id') != HOST_FILTER_ANY) {
+							if (get_request_var('site_id') != MAINT_HOST_FILTER_ANY) {
 								$sql_where .= ' AND site_id = ?';
 								$sql_where_params = array_merge($sql_where_params, array(get_request_var('site_id')));
 							}
 
-							if (get_request_var('poller_id') != HOST_FILTER_ANY) {
+							if (get_request_var('poller_id') != MAINT_HOST_FILTER_ANY) {
 								$sql_where .= ' AND poller_id = ?';
 								$sql_where_params = array_merge($sql_where_params, array(get_request_var('poller_id')));
 							}
@@ -948,13 +948,19 @@ function thold_hosts($header_label) {
 								$sql_where_params = array_merge($sql_where_params, array(get_request_var('id')));
 							}
 
-							$locations = db_fetch_assoc_prepared("SELECT DISTINCT IF(IFNULL(location,'') = '', '" . __(HOST_FILTER_LOC_NONE) . "', location) AS location
-								FROM (SELECT location FROM host WHERE id = id $sql_where GROUP BY location) AS host
+							/* Include (UNION) Any */
+							$locations = db_fetch_assoc_prepared(
+								"SELECT * FROM (
+									SELECT DISTINCT IF(IFNULL(location,'') = '', ?, location) AS location
+									FROM (SELECT location FROM host WHERE id = id $sql_where GROUP BY location) AS host
+									UNION ALL
+									SELECT location FROM (SELECT ? AS location ) AS tableany
+								) tableunion
 								ORDER BY location",
-								$sql_where_params);
+								array_merge(array(MAINT_HOST_FILTER_LOC_NONE), $sql_where_params, array(MAINT_HOST_FILTER_LOC_ANY)));
 
 							/* If current selection is not in the result set, change selection to Any */
-							if (get_request_var('location') != HOST_FILTER_LOC_ANY) {
+							if (get_request_var('location') != MAINT_HOST_FILTER_LOC_ANY) {
 								$found = false;
 								foreach ($locations as $location) {
 									if ($location['location'] == get_request_var('location')) {
@@ -963,21 +969,25 @@ function thold_hosts($header_label) {
 									}
 								}
 								if (!$found) {
-									set_request_var('location', HOST_FILTER_LOC_ANY);
+									set_request_var('location', MAINT_HOST_FILTER_LOC_ANY);
 								}
 							}
-
+							
 							if (cacti_sizeof($locations)) {
 								foreach ($locations as $l) {
-									print "<option value='" . html_escape($l['location']) . "'";
+									echo "<option value='", html_escape($l['location']), "'";
 									if (get_request_var('location') == $l['location']) {
-										print ' selected';
+										echo " selected";
 									}
-									if ($l['location'] == HOST_FILTER_LOC_NONE) {
-										print '>' . html_escape('None') . "</option>";
+									echo ">";
+									if ($l['location'] == MAINT_HOST_FILTER_LOC_ANY) {
+										echo html_escape('Any');
+									} elseif ($l['location'] == MAINT_HOST_FILTER_LOC_NONE) {
+										echo html_escape('None');
 									} else {
-										print '>' . html_escape($l['location']) . "</option>";
+										echo html_escape($l['location']);
 									}
+									echo "</option>\n";
 								}
 							}
 							?>
@@ -990,8 +1000,8 @@ function thold_hosts($header_label) {
 						<select id='host_template_id'>
 							<?php
 							/* Get only templates used for the selected location */
-							if (get_request_var('location') != HOST_FILTER_LOC_ANY) {
-								if (get_request_var('location') == HOST_FILTER_LOC_NONE) {
+							if (get_request_var('location') != MAINT_HOST_FILTER_LOC_ANY) {
+								if (get_request_var('location') == MAINT_HOST_FILTER_LOC_NONE) {
 									$sql_where .= ' AND IFNULL(location,"") = ""';
 								} else {
 									$sql_where .= ' AND location = ?';
@@ -1011,7 +1021,7 @@ function thold_hosts($header_label) {
 								
 							/* If current selected template is not in the result set, change selected template to Any */
 							$found = false;
-							if (get_request_var('host_template_id') != HOST_FILTER_ANY && get_request_var('host_template_id') != HOST_FILTER_NONE) {
+							if (get_request_var('host_template_id') != MAINT_HOST_FILTER_ANY && get_request_var('host_template_id') != MAINT_HOST_FILTER_NONE) {
 								foreach ($host_templates as $host_template) {
 									if ($host_template['id'] == get_request_var('host_template_id')) {
 										$found = true;
@@ -1019,23 +1029,23 @@ function thold_hosts($header_label) {
 									}
 								}
 							}
-							if (!$found && (get_request_var('host_template_id') == HOST_FILTER_NONE ) && $hosts_no_templates) {
+							if (!$found && (get_request_var('host_template_id') == MAINT_HOST_FILTER_NONE ) && $hosts_no_templates) {
 								$found = true;
 							}		
 							if (!$found) {
-								set_request_var('host_template_id', HOST_FILTER_ANY);
+								set_request_var('host_template_id', MAINT_HOST_FILTER_ANY);
 							}	
 
-							echo "<option value='", HOST_FILTER_ANY, "'";
-							if (get_request_var('host_template_id') == HOST_FILTER_ANY) {
+							echo "<option value='", MAINT_HOST_FILTER_ANY, "'";
+							if (get_request_var('host_template_id') == MAINT_HOST_FILTER_ANY) {
 								echo " selected";
 							}
 							echo ">", __('Any'), "</option>\n";
 
 							/* Include "None" if hosts with no template */
 							if ($hosts_no_templates) {
-								echo "\t\t\t\t\t\t\t<option value='", HOST_FILTER_NONE . "'";
-								if (get_request_var('host_template_id') == HOST_FILTER_NONE) {
+								echo "\t\t\t\t\t\t\t<option value='", MAINT_HOST_FILTER_NONE . "'";
+								if (get_request_var('host_template_id') == MAINT_HOST_FILTER_NONE) {
 									echo " selected";
 								}
 								echo ">", __('None'), "</option>\n";
@@ -1111,22 +1121,22 @@ function thold_hosts($header_label) {
 			array('%' . get_request_var('filter') . '%', '%' . get_request_var('filter') . '%'));
 	}
 
-	if (get_request_var('site_id') == HOST_FILTER_ANY) {
+	if (get_request_var('site_id') == MAINT_HOST_FILTER_ANY) {
 		/* Show all items */
 	} else {
 		$sql_where .= ' AND h.site_id = ?';
 		$sql_where_params = array_merge($sql_where_params, array(get_request_var('site_id')));
 	}
 
-	if (get_request_var('poller_id') == HOST_FILTER_ANY) {
+	if (get_request_var('poller_id') == MAINT_HOST_FILTER_ANY) {
 		/* Show all items */
 	} else {
 		$sql_where .= ' AND h.poller_id = ?';
 		$sql_where_params = array_merge($sql_where_params, array(get_request_var('poller_id')));
 	}
 
-	if (get_request_var('location') != HOST_FILTER_LOC_ANY) {
-		if (get_request_var('location') == HOST_FILTER_LOC_NONE) {
+	if (get_request_var('location') != MAINT_HOST_FILTER_LOC_ANY) {
+		if (get_request_var('location') == MAINT_HOST_FILTER_LOC_NONE) {
 			$sql_where .= ' AND IFNULL(h.location,"") = ""';
 		} else {
 			$sql_where .= ' AND h.location = ?';
@@ -1134,9 +1144,9 @@ function thold_hosts($header_label) {
 		}
 	}
 
-	if (get_request_var('host_template_id') == HOST_FILTER_ANY) {
+	if (get_request_var('host_template_id') == MAINT_HOST_FILTER_ANY) {
 		/* Show all items */
-	} elseif (get_request_var('host_template_id') == HOST_FILTER_NONE || !isempty_request_var('host_template_id')) {
+	} elseif (get_request_var('host_template_id') == MAINT_HOST_FILTER_NONE || !isempty_request_var('host_template_id')) {
 		$sql_where .= ' AND h.host_template_id = ?';
 		$sql_where_params = array_merge($sql_where_params, array(get_request_var('host_template_id')));
 	}
@@ -1144,8 +1154,8 @@ function thold_hosts($header_label) {
 	if (get_request_var('associated') == 'false') {
 		/* Show all items */
 	} else {
-		$sql_where .= ' AND type = ' . HOST_TYPE_HOSTS . ' AND schedule = ?';
-		$sql_where_params = array_merge($sql_where_params, array(get_request_var('id')));
+		$sql_where .= ' AND type = ? AND schedule = ?';
+		$sql_where_params = array_merge($sql_where_params, array(MAINT_HOST_TYPE_HOSTS, get_request_var('id')));
 	}
 
 	/* Replace leading " AND" */
@@ -1245,7 +1255,7 @@ function thold_hosts($header_label) {
 	if (cacti_sizeof($hosts)) {
 		foreach ($hosts as $host) {
 			form_alternate_row('line' . $host['id']);
-			form_selectable_cell((strlen(get_request_var('filter')) ? preg_replace('/(' . preg_quote(get_request_var('filter')) . ')/i', "<span class='filteredValue'>\\1</span>", htmlspecialchars($host['description'])) : htmlspecialchars($host['description'])), $host['id'], 250);
+			form_selectable_cell(filter_value($host['description'], get_request_var('filter')), $host['id']);
 			form_selectable_cell(number_format_i18n($host['id']), $host['id'], '', 'text-align:right');
 
 			if ($host['associated'] != '') {
@@ -1258,12 +1268,12 @@ function thold_hosts($header_label) {
 				FROM plugin_maint_schedules
 				INNER JOIN plugin_maint_hosts
 				ON plugin_maint_schedules.id = plugin_maint_hosts.schedule
-				WHERE type = ' . HOST_TYPE_HOSTS . ' AND host = ? AND plugin_maint_schedules.id != ?',
-				array($host['id'], get_request_var('id')));
+				WHERE type = ? AND host = ? AND plugin_maint_schedules.id != ?',
+				array(MAINT_HOST_TYPE_HOSTS, $host['id'], get_request_var('id')));
 
 			if (cacti_sizeof($lists)) {
 				foreach($lists as $name) {
-					$names .= (strlen($names) ? ', ':'') . "<span class='deviceRecovering'>" . $name['name'] . '</span>';
+					$names .= (strlen($names) ? ', ':'') . "<span class='deviceRecovering'>" . html_escape($name['name']) . '</span>';
 				}
 			}
 			if ($names == '') {
@@ -1379,7 +1389,7 @@ function webseer_urls($header_label) {
 	</script>
 	<?php
 
-	html_start_box(__('Associated Web URL\'s %s', $header_label), '100%', '', '3', 'center', '');
+	html_start_box(__('Associated Web URL\'s %s', htmlspecialchars($header_label), 'maint'), '100%', '', '3', 'center', '');
 
 	?>
 	<tr class='even'>
@@ -1452,25 +1462,25 @@ function webseer_urls($header_label) {
 	}
 
 	if ($schedule_created) {
-		$sql_params = array_merge(array(get_request_var('id')), $sql_where_params);
+		$sql_params = array_merge(array(get_request_var('id'), MAINT_HOST_TYPE_WEBSEER), $sql_where_params);
 		$total_rows = db_fetch_cell_prepared("SELECT
 			COUNT(*)
 			FROM plugin_webseer_urls AS u
 			LEFT JOIN plugin_maint_hosts AS pmh
 				ON (u.id = pmh.host
-				AND pmh.type = " . HOST_TYPE_WEBSEER . "
+				AND pmh.type = ?
 				AND pmh.schedule = ?)
 			$sql_where",
 			$sql_params);
 
-		$sql_params = array_merge(array(get_request_var('id'), get_request_var('id')), $sql_where_params);
+		$sql_params = array_merge(array(get_request_var('id'), MAINT_HOST_TYPE_WEBSEER, get_request_var('id')), $sql_where_params);
 		$sql_query = "SELECT u.*,
 			(SELECT schedule FROM plugin_maint_hosts WHERE host = u.id AND schedule = ?) AS associated,
 			pmh.type AS maint_type
 			FROM plugin_webseer_urls AS u
 			LEFT JOIN plugin_maint_hosts AS pmh
 				ON (u.id = pmh.host
-				AND pmh.type = " . HOST_TYPE_WEBSEER . "
+				AND pmh.type = ?
 				AND pmh.schedule = ?)
 			$sql_where
 			LIMIT " . ($rows * (get_request_var('page') - 1)) . ',' . $rows;
@@ -1504,7 +1514,7 @@ function webseer_urls($header_label) {
 	if (cacti_sizeof($urls)) {
 		foreach ($urls as $url) {
 			form_alternate_row('line' . $url['id']);
-			form_selectable_cell((strlen(get_request_var('filter')) ? preg_replace('/(' . preg_quote(get_request_var('filter')) . ')/i', "<span class='filteredValue'>\\1</span>", htmlspecialchars($url['display_name'])) : htmlspecialchars($url['display_name'])), $url['id'], 250);
+			form_selectable_cell(filter_value($url['display_name'], get_request_var('filter')), $url['id'], 250);
 			form_selectable_cell(round(($url['id']), 2), $url['id']);
 
 			if ($url['associated'] != '') {
@@ -1517,10 +1527,10 @@ function webseer_urls($header_label) {
 				FROM plugin_maint_schedules
 				INNER JOIN plugin_maint_hosts
 				ON plugin_maint_schedules.id = plugin_maint_hosts.schedule
-				WHERE type = " . HOST_TYPE_WEBSEER . "
+				WHERE type = ?
 				AND host = ?
 				AND plugin_maint_schedules.id != ?",
-				array($url['id'], get_request_var('id')));
+				array(MAINT_HOST_TYPE_WEBSEER, $url['id'], get_request_var('id')));
 
 			if (cacti_sizeof($lists)) {
 				foreach($lists as $name) {
@@ -1537,8 +1547,8 @@ function webseer_urls($header_label) {
 			if (empty($url['ip'])) {
 				$url['ip'] = __('USING DNS', 'maint');
 			}
-			form_selectable_cell((strlen(get_request_var('filter')) ? preg_replace('/(' . preg_quote(get_request_var('filter')) . ')/i', "<span class='filteredValue'>\\1</span>", '<i>' . htmlspecialchars($url['ip'])) . '</i>' : '<i>' . htmlspecialchars($url['ip']) . '</i>'), $url['id']);
-			form_selectable_cell((strlen(get_request_var('filter')) ? preg_replace('/(' . preg_quote(get_request_var('filter')) . ')/i', "<span class='filteredValue'>\\1</span>", htmlspecialchars($url['url'])) : htmlspecialchars($url['url'])), $url['id']);
+			form_selectable_cell(filter_value($url['ip'], get_request_var('filter')), $url['id']);
+			form_selectable_cell(filter_value($url['url'], get_request_var('filter')), $url['id']);
 			form_checkbox_cell($url['display_name'], $url['id']);
 			form_end_row();
 		}

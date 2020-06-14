@@ -26,6 +26,8 @@ be logged on GitHub.
 
 * feature#14: webseer tab functional (webseer plugin update required to use schedule)
 
+* feature#18: device tab filter
+
 --- 1.2 ---
 
 * issue#11: PHP 7.2 compatibility: The each() function is deprecated
