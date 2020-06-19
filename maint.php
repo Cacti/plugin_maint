@@ -477,7 +477,7 @@ function get_header_label() {
 			FROM plugin_maint_schedules
 			WHERE id = ?',
 			array(get_filter_request_var('id')));
-		$header_label = __('[edit: %s]', $list['name'], 'maint');
+		$header_label = __esc('[edit: %s]', $list['name'], 'maint');
 	} else {
 		$header_label = __('[new]', 'maint');
 	}
