@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2020-12-12 20:50-0500\n"
+"POT-Creation-Date: 2020-12-12 22:16-0500\n"
 "PO-Revision-Date: 2020-12-12 20:55-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -418,9 +418,9 @@ msgid "(actions)"
 msgstr "Ações"
 
 #, fuzzy
-#~ msgid "Rules"
-#~ msgstr "Regras"
-
-#, fuzzy
 #~ msgid "The type of Threshold that will be monitored."
 #~ msgstr "O tipo de Limiar que será monitorado."
+
+#, fuzzy
+#~ msgid "Rules"
+#~ msgstr "Regras"
