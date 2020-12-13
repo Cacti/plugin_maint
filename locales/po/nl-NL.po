@@ -6,16 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-21 10:27-0400\n"
-"PO-Revision-Date: 2019-03-17 11:05-0400\n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2020-12-12 20:50-0500\n"
+"PO-Revision-Date: 2020-12-12 20:54-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #: maint.php:32
 #, fuzzy
@@ -23,14 +23,12 @@ msgid "Update Time (Now + 1 Hour)"
 msgstr "Update tijd (nu + 1 uur)"
 
 #: maint.php:33
-#, fuzzy
 msgid "Delete"
-msgstr "Verwijder"
+msgstr "Verwijderen"
 
 #: maint.php:38
-#, fuzzy
 msgid "Associate"
-msgstr "Geaggregeerde grafiek(en)"
+msgstr "Associëren"
 
 #: maint.php:39
 #, fuzzy
@@ -38,14 +36,12 @@ msgid "Disassociate"
 msgstr "Loskoppelen"
 
 #: maint.php:43
-#, fuzzy
 msgid "One Time"
 msgstr "Eenmalig"
 
 #: maint.php:44
-#, fuzzy
 msgid "Recurring"
-msgstr "Terugkerend"
+msgstr "Periodiek"
 
 #: maint.php:48
 #, fuzzy
@@ -53,410 +49,378 @@ msgid "Not Defined"
 msgstr "Geen grafiektemplate gedefinieerd."
 
 #: maint.php:49
-#, fuzzy
 msgid "Every Day"
 msgstr "Iedere dag"
 
 #: maint.php:50
-#, fuzzy
 msgid "Every Week"
 msgstr "Iedere week"
 
-#: maint.php:54 maint.php:57
-#, fuzzy
+#: maint.php:54 maint.php:55 maint.php:58
 msgid "No"
 msgstr "Nee"
 
-#: maint.php:55 maint.php:56
-#, fuzzy
+#: maint.php:56 maint.php:57
 msgid "Yes"
 msgstr "Ja"
 
-#: maint.php:62
-#, fuzzy
+#: maint.php:63
 msgid "General"
 msgstr "Generiek"
 
-#: maint.php:66 maint.php:865 maint.php:1007
-#, fuzzy
+#: maint.php:67 maint.php:869 maint.php:1011
 msgid "Devices"
 msgstr "Apparaten"
 
-#: maint.php:70
+#: maint.php:71
 #, fuzzy
 msgid "WebSeer"
 msgstr "WebSeer"
 
-#: maint.php:294
+#: maint.php:296
 #, fuzzy
 msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
 msgstr "Klik op 'Doorgaan' om de volgende onderhoudsschema('s) bij te werken."
 
-#: maint.php:299 maint.php:308 maint.php:363 maint.php:372 maint.php:428
-#: maint.php:437
+#: maint.php:301 maint.php:310 maint.php:365 maint.php:374 maint.php:430
+#: maint.php:439
 msgid "Cancel"
-msgstr ""
+msgstr "Annuleer"
 
-#: maint.php:299 maint.php:308 maint.php:363 maint.php:372 maint.php:428
-#: maint.php:437
+#: maint.php:301 maint.php:310 maint.php:365 maint.php:374 maint.php:430
+#: maint.php:439
 msgid "Continue"
-msgstr ""
+msgstr "Volgende"
 
-#: maint.php:299
+#: maint.php:301
 #, fuzzy
 msgid "Update Maintenance Schedule(s)"
 msgstr "Onderhoudsschema's"
 
-#: maint.php:303
+#: maint.php:305
 #, fuzzy
-msgid ""
-"Click 'Continue' to Delete the following Maintenance Schedule(s).  Any "
-"Devices(s) Associated with this Schedule will be Disassociated."
-msgstr ""
-"Klik op 'Doorgaan' om de volgende onderhoudsschema('s) te verwijderen.  "
-"Apparaten die aan dit schema zijn gekoppeld, worden losgekoppeld."
+msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
+msgstr "Klik op 'Doorgaan' om de volgende onderhoudsschema('s) te verwijderen.  Apparaten die aan dit schema zijn gekoppeld, worden losgekoppeld."
 
-#: maint.php:308
+#: maint.php:310
 #, fuzzy
 msgid "Delete Maintenance Schedule(s)"
 msgstr "Onderhoudsschema's"
 
-#: maint.php:311
+#: maint.php:313
 #, fuzzy
 msgid "You must select at least one Maintenance Schedule."
 msgstr "U moet ten minste één onderhoudsschema selecteren."
 
-#: maint.php:312 maint.php:376 maint.php:441
+#: maint.php:314 maint.php:378 maint.php:443
 msgid "Return"
-msgstr ""
+msgstr "Terug"
 
-#: maint.php:352 maint.php:415
-#, fuzzy
+#: maint.php:354
 msgid "Device(s)"
-msgstr "Wijzig de SNMP opties voor dit/deze appara(a)t(en)"
+msgstr "Apparaat(en)"
 
-#: maint.php:358
+#: maint.php:360
 #, fuzzy, php-format
-msgid ""
-"Click 'Continue' to associate the following Device(s) with the Maintenance "
-"Schedule '<b>%s</b>'."
-msgstr ""
-"Klik op 'Doorgaan' om de volgende apparaten te koppelen aan het "
-"onderhoudsschema '<b>%s</b>'."
+msgid "Click 'Continue' to associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Klik op 'Doorgaan' om de volgende apparaten te koppelen aan het onderhoudsschema '<b>%s</b>'."
 
-#: maint.php:363 maint.php:428
+#: maint.php:365 maint.php:430
 #, fuzzy
 msgid "Associate Maintenance Schedule(s)"
 msgstr "Onderhoudsschema's"
 
-#: maint.php:367
+#: maint.php:369
 #, fuzzy, php-format
-msgid ""
-"Click 'Continue' to disassociate the following Device(s) with the "
-"Maintenance Schedule '<b>%s</b>'."
-msgstr ""
-"Klik op 'Doorgaan' om de volgende apparaten los te koppelen van het "
-"onderhoudsschema '<b>%s</b>'."
+msgid "Click 'Continue' to disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Klik op 'Doorgaan' om de volgende apparaten los te koppelen van het onderhoudsschema '<b>%s</b>'."
 
-#: maint.php:372 maint.php:437
+#: maint.php:374 maint.php:439
 #, fuzzy
 msgid "Disassociate Maintenance Schedule(s)"
 msgstr "Onderhoudsschema's"
 
-#: maint.php:375 maint.php:440
+#: maint.php:377
 #, fuzzy
 msgid "You must select at least one Device."
 msgstr "U moet ten minste één apparaat selecteren."
 
-#: maint.php:423
-#, fuzzy, php-format
-msgid ""
-"Click 'Continue' to associate the Device(s) below with the Maintenance "
-"Schedule '<b>%s</b>'."
-msgstr ""
-"Klik op 'Doorgaan' om de onderstaande apparaten te koppelen aan het "
-"onderhoudsschema '<b>%s</b>'."
+#: maint.php:419
+#, fuzzy
+msgid "Webseer(s)"
+msgstr "Webseer (s)"
 
-#: maint.php:432
+#: maint.php:425
 #, fuzzy, php-format
-msgid ""
-"Click 'Continue' to disassociate the Devices(s) below with the Maintenance "
-"Schedule '<b>%s</b>'."
-msgstr ""
-"Klik op 'Doorgaan' om de onderstaande apparaten los te koppelen van het "
-"onderhoudsschema '<b>%s</b>'."
+msgid "Click 'Continue' to associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Klik op 'Doorgaan' om de onderstaande apparaten te koppelen aan het onderhoudsschema '<b>%s</b>'."
 
-#: maint.php:471
+#: maint.php:434
+#, fuzzy, php-format
+msgid "Click 'Continue' to disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr "Klik op 'Doorgaan' om de onderstaande apparaten los te koppelen van het onderhoudsschema '<b>%s</b>'."
+
+#: maint.php:442
+#, fuzzy
+msgid "You must select at least one Webseer."
+msgstr "U moet ten minste één apparaat selecteren."
+
+#: maint.php:473
 #, fuzzy, php-format
 msgid "General Settings [edit: %s]"
 msgstr "Algemene instellingen [Bewerken: %s]"
 
-#: maint.php:473
+#: maint.php:475
 #, fuzzy
 msgid "General Settings [new]"
 msgstr "Algemene instellingen [nieuw]"
 
-#: maint.php:521
+#: maint.php:523
 #, fuzzy
 msgid "New Maintenance Schedule"
 msgstr "Nieuw onderhoudsschema"
 
-#: maint.php:533
-#, fuzzy
+#: maint.php:535
 msgid "Schedule"
 msgstr "Schema"
 
-#: maint.php:537
+#: maint.php:539
 #, fuzzy
 msgid "Schedule Name"
 msgstr "Schema Naam"
 
-#: maint.php:541
+#: maint.php:543
 #, fuzzy
 msgid "Provide the Maintenance Schedule a meaningful name"
 msgstr "Geef het onderhoudsschema een betekenisvolle naam"
 
-#: maint.php:545 maint.php:704 maint.php:1230 maint.php:1262
-#, fuzzy
+#: maint.php:547 maint.php:706 maint.php:1259 maint.php:1298
 msgid "Enabled"
 msgstr "Ingeschakeld"
 
-#: maint.php:548
+#: maint.php:550
 #, fuzzy
-msgid "Whether or not this threshold will be checked and alerted upon."
+msgid "Whether or not this schedule will be checked."
 msgstr "Of deze drempel al dan niet wordt gecontroleerd en gealarmeerd."
 
-#: maint.php:552
-#, fuzzy
+#: maint.php:554
 msgid "Schedule Type"
 msgstr "Schematype"
 
-#: maint.php:556
+#: maint.php:558
 #, fuzzy
-msgid "The type of Threshold that will be monitored."
-msgstr "Het type drempel dat zal worden bewaakt."
+msgid "The type of schedule, one time or recurring."
+msgstr "Het soort schema, eenmalig of terugkerend."
 
-#: maint.php:560 maint.php:703
-#, fuzzy
+#: maint.php:562 maint.php:705
 msgid "Interval"
 msgstr "Interval"
 
-#: maint.php:564
+#: maint.php:566
 #, fuzzy
 msgid "This is the interval in which the start / end time will repeat."
 msgstr "Dit is het interval waarin de begin/eindtijd zich herhaalt."
 
-#: maint.php:568
-#, fuzzy
+#: maint.php:570
 msgid "Start Time"
-msgstr "Laatste starttijd:"
+msgstr "Starttijd"
 
-#: maint.php:572
+#: maint.php:574
 #, fuzzy
-msgid ""
-"The start date / time for this schedule. Most date / time formats accepted."
-msgstr ""
-"De startdatum / tijd voor dit schema. De meeste datum- en tijdformaten "
-"worden geaccepteerd."
+msgid "The start date / time for this schedule. Most date / time formats accepted."
+msgstr "De startdatum / tijd voor dit schema. De meeste datum- en tijdformaten worden geaccepteerd."
 
-#: maint.php:577
-#, fuzzy
+#: maint.php:579
 msgid "End Time"
 msgstr "Eindtijd"
 
-#: maint.php:582
+#: maint.php:584
 #, fuzzy
-msgid ""
-"The end date / time for this schedule. Most date / time formats accepted."
-msgstr ""
-"De einddatum / tijd voor dit schema. De meeste datum- en tijdformaten worden "
-"geaccepteerd."
+msgid "The end date / time for this schedule. Most date / time formats accepted."
+msgstr "De einddatum / tijd voor dit schema. De meeste datum- en tijdformaten worden geaccepteerd."
 
-#: maint.php:631
+#: maint.php:633
+#, fuzzy
 msgid "Start Date/Time Selector"
-msgstr ""
+msgstr "Start Datum / Tijd Selector"
 
-#: maint.php:632
+#: maint.php:634
+#, fuzzy
 msgid "End Date/Time Selector"
-msgstr ""
+msgstr "Einddatum / tijdselector"
 
-#: maint.php:695 setup.php:54 setup.php:58
+#: maint.php:697 setup.php:55 setup.php:63
 #, fuzzy
 msgid "Maintenance Schedules"
 msgstr "Onderhoudsschema's"
 
-#: maint.php:698
-#, fuzzy
+#: maint.php:700
 msgid "Name"
 msgstr "Naam"
 
-#: maint.php:699
-#, fuzzy
+#: maint.php:701
 msgid "Active"
 msgstr "Actief"
 
-#: maint.php:700 maint.php:843
-#, fuzzy
+#: maint.php:702 maint.php:847
 msgid "Type"
 msgstr "Type"
 
-#: maint.php:701
-#, fuzzy
+#: maint.php:703
 msgid "Start"
-msgstr "Laatste starttijd:"
+msgstr "Start"
 
-#: maint.php:702
-#, fuzzy
+#: maint.php:704
 msgid "End"
-msgstr "Einde werkdag"
+msgstr "Tot"
 
-#: maint.php:742 maint.php:1042 maint.php:1259
+#: maint.php:744 maint.php:1046 maint.php:1293
 #, fuzzy
 msgid "No Schedules"
-msgstr "Geen dienstregelingen"
+msgstr "Agenda’s"
 
-#: maint.php:828
+#: maint.php:832
 #, fuzzy, php-format
 msgid "Associated Devices %s"
 msgstr "Bijbehorende apparaten %s"
 
-#: maint.php:837 maint.php:1137
-#, fuzzy
+#: maint.php:841 maint.php:1152
 msgid "Search"
 msgstr "Zoeken"
 
-#: maint.php:847
-#, fuzzy
+#: maint.php:851
 msgid "Any"
 msgstr "Alle"
 
-#: maint.php:848
-#, fuzzy
+#: maint.php:852
 msgid "None"
 msgstr "Geen"
 
-#: maint.php:869 maint.php:1147
-#, fuzzy
+#: maint.php:873 maint.php:1162
 msgid "Default"
 msgstr "Standaard"
 
-#: maint.php:883 maint.php:1161
+#: maint.php:887 maint.php:1176
 #, fuzzy
 msgid "Associated"
 msgstr "Gekoppelde data templates"
 
-#: maint.php:887 maint.php:1165
+#: maint.php:891 maint.php:1180
 msgid "Go"
-msgstr ""
+msgstr "Ga"
 
-#: maint.php:887 maint.php:1165
+#: maint.php:891 maint.php:1180
 msgid "Set/Refresh Filters"
-msgstr ""
+msgstr "Stel in/vernieuw filters"
 
-#: maint.php:888 maint.php:1166
+#: maint.php:892 maint.php:1181
 msgid "Clear"
-msgstr ""
+msgstr "Herstel"
 
-#: maint.php:888 maint.php:1166
+#: maint.php:892 maint.php:1181
 msgid "Clear Filters"
-msgstr ""
+msgstr "Stel filters opnieuw in"
 
-#: maint.php:973 maint.php:1227
-#, fuzzy
+#: maint.php:977 maint.php:1256
 msgid "Description"
 msgstr "Omschrijving"
 
-#: maint.php:977 maint.php:1228
-#, fuzzy
+#: maint.php:981 maint.php:1257
 msgid "ID"
 msgstr "ID"
 
-#: maint.php:981 maint.php:1229
+#: maint.php:985 maint.php:1258
 #, fuzzy
 msgid "Associated Schedules"
 msgstr "Bijbehorende schema's"
 
-#: maint.php:985
-#, fuzzy
+#: maint.php:989
 msgid "Graphs"
 msgstr "Grafieken"
 
-#: maint.php:989
-#, fuzzy
+#: maint.php:993
 msgid "Data Sources"
 msgstr "Data bronnen"
 
-#: maint.php:993
-#, fuzzy
-msgid "Thresholds"
-msgstr "Drempels"
-
 #: maint.php:997
-#, fuzzy
+msgid "Thresholds"
+msgstr "Drempelwaarden"
+
+#: maint.php:1001
 msgid "Status"
 msgstr "Status"
 
-#: maint.php:1001 maint.php:1231
-#, fuzzy
+#: maint.php:1005 maint.php:1260
 msgid "Hostname"
 msgstr "Hostname"
 
-#: maint.php:1024 maint.php:1243
+#: maint.php:1028 maint.php:1273
 #, fuzzy
 msgid "Current Schedule"
 msgstr "Huidige planning"
 
-#: maint.php:1055
+#: maint.php:1060
 #, fuzzy
 msgid "No Associated Devices Found"
 msgstr "Geen gekoppelde apparaten gevonden"
 
-#: maint.php:1128
+#: maint.php:1062 maint.php:1311
+#, fuzzy
+msgid "Schedule must be created before associating"
+msgstr "Het schema moet worden gemaakt voordat u kunt koppelen"
+
+#: maint.php:1143
 #, fuzzy, php-format
 msgid "Associated Web URL's %s"
 msgstr "Bijbehorende Web URL's %s"
 
-#: maint.php:1143
-#, fuzzy
-msgid "Rules"
-msgstr "Geen grafiekregels gevonden"
+#: maint.php:1158
+msgid "Rows"
+msgstr "Rijen"
 
-#: maint.php:1218
-#, fuzzy
+#: maint.php:1247
 msgid "Lists"
 msgstr "Lijsten"
 
-#: maint.php:1232
-#, fuzzy
+#: maint.php:1261
 msgid "URL"
 msgstr "URL"
 
-#: maint.php:1262
-#, fuzzy
+#: maint.php:1298
 msgid "Disabled"
 msgstr "Uitgeschakeld"
 
-#: maint.php:1264
+#: maint.php:1300
 #, fuzzy
 msgid "USING DNS"
 msgstr "GEBRUIK DNS"
 
-#: maint.php:1272
+#: maint.php:1309
 #, fuzzy
 msgid "No Associated WebSeer URL's Found"
 msgstr "Geen gekoppelde WebSeer URL's gevonden"
 
-#: setup.php:54
-#, fuzzy
+#: setup.php:55
 msgid "Management"
 msgstr "Onderhoud"
 
-#: setup.php:59
-#, fuzzy
-msgid "(edit)"
-msgstr "(Wijzig)"
+#: setup.php:58
+msgid "System Administration"
+msgstr "Systeembeheer"
 
-#: setup.php:60
+#: setup.php:64
+msgid "(edit)"
+msgstr "(bewerken)"
+
+#: setup.php:65
 #, fuzzy
 msgid "(actions)"
 msgstr "Acties"
+
+#, fuzzy
+#~ msgid "Rules"
+#~ msgstr "Geen grafiekregels gevonden"
+
+#, fuzzy
+#~ msgid "The type of Threshold that will be monitored."
+#~ msgstr "Het type drempel dat zal worden bewaakt."
