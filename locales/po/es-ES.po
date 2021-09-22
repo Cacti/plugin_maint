@@ -4,19 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2020-12-12 22:16-0500\n"
-"PO-Revision-Date: 2020-12-12 20:52-0500\n"
-"Last-Translator: Javier Pobeda <javier.pobeda@pm.me>\n"
-"Language-Team: Spanish <http://translate.cacti.net/projects/cacti/maint/es-ES/>\n"
-"Language: es_ES\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 2.4.2\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2020-12-12 22:16-0500\nPO-Revision-Date: 2021-09-22 14:09+0000\nLast-Translator: Tadeo Briceño <tadeobriceno@vencable.com>\nLanguage-Team: Spanish <http://translate.cacti.net/projects/cacti/maint/es/>\nLanguage: es-ES\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 4.3.2\n"
 
 #: maint.php:32
 msgid "Update Time (Now + 1 Hour)"
@@ -28,7 +16,7 @@ msgstr "Eliminar"
 
 #: maint.php:38
 msgid "Associate"
-msgstr "Asociar"
+msgstr "Asociado"
 
 #: maint.php:39
 msgid "Disassociate"
@@ -276,7 +264,7 @@ msgstr "Ninguno"
 
 #: maint.php:873 maint.php:1162
 msgid "Default"
-msgstr "Por defecto"
+msgstr "Predeterminado"
 
 #: maint.php:887 maint.php:1176
 msgid "Associated"
@@ -316,7 +304,7 @@ msgstr "Gráficos"
 
 #: maint.php:993
 msgid "Data Sources"
-msgstr "Data Sources"
+msgstr "Fuentes de datos"
 
 #: maint.php:997
 msgid "Thresholds"
@@ -382,7 +370,7 @@ msgstr "Administración del sistema"
 
 #: setup.php:64
 msgid "(edit)"
-msgstr "(editar)"
+msgstr "(Editar)"
 
 #: setup.php:65
 msgid "(actions)"
