@@ -2,7 +2,7 @@
 /*
  ex: set tabstop=4 shiftwidth=4 autoindent:
  +-------------------------------------------------------------------------+
- | Copyright (C) 2010-2017 The Cacti Group                                 |
+ | Copyright (C) 2010-2022 The Cacti Group                                 |
  |                                                                         |
  | This program is free software; you can redistribute it and/or           |
  | modify it under the terms of the GNU General Public License             |
@@ -58,7 +58,7 @@ function plugin_maint_check_schedule($schedule) {
 		$t = time();
 		switch ($sc['mtype']) {
 			case 1:
-				if ($t > $sc['stime'] && $t < $sc['etime']) 
+				if ($t > $sc['stime'] && $t < $sc['etime'])
 					return true;
 				break;
 			case 2:
@@ -66,7 +66,7 @@ function plugin_maint_check_schedule($schedule) {
 					$sc['etime'] += $sc['minterval'];
 					$sc['stime'] += $sc['minterval'];
 				}
-				if ($t > $sc['stime'] && $t < $sc['etime']) 
+				if ($t > $sc['stime'] && $t < $sc['etime'])
 					return true;
 				break;
 		}

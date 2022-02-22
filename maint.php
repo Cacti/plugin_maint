@@ -2,7 +2,7 @@
 /*
  ex: set tabstop=4 shiftwidth=4 autoindent:
  +-------------------------------------------------------------------------+
- | Copyright (C) 2010-2017 The Cacti Group                                 |
+ | Copyright (C) 2010-2022 The Cacti Group                                 |
  |                                                                         |
  | This program is free software; you can redistribute it and/or           |
  | modify it under the terms of the GNU General Public License             |
@@ -294,7 +294,7 @@ function form_actions() {
 
 		form_start('maint.php');
 
-		html_start_box($actions{get_request_var('drp_action')} . " $list_name", '60%', '', '3', 'center', '');
+		html_start_box($actions[get_request_var('drp_action')] . " $list_name", '60%', '', '3', 'center', '');
 
 		if (cacti_sizeof($array)) {
 			if (get_request_var('drp_action') == '1') { /* update */
@@ -358,7 +358,7 @@ function form_actions() {
 
 		form_start('maint.php');
 
-		html_start_box($assoc_actions{get_request_var('drp_action')} . ' ' . __('Device(s)', 'maint'), '60%', '', '3', 'center', '');
+		html_start_box($assoc_actions[get_request_var('drp_action')] . ' ' . __('Device(s)', 'maint'), '60%', '', '3', 'center', '');
 
 		if (cacti_sizeof($array)) {
 			if (get_request_var('drp_action') == '1') { /* associate */
@@ -423,7 +423,7 @@ function form_actions() {
 
 		form_start('maint.php');
 
-		html_start_box($assoc_actions{get_request_var('drp_action')} . ' ' . __('Webseer(s)', 'maint'), '60%', '', '3', 'center', '');
+		html_start_box($assoc_actions[get_request_var('drp_action')] . ' ' . __('Webseer(s)', 'maint'), '60%', '', '3', 'center', '');
 
 		if (cacti_sizeof($array)) {
 			if (get_request_var('drp_action') == '1') { /* associate */
@@ -972,7 +972,7 @@ function thold_hosts($header_label) {
 									set_request_var('location', MAINT_HOST_FILTER_LOC_ANY);
 								}
 							}
-							
+
 							if (cacti_sizeof($locations)) {
 								foreach ($locations as $l) {
 									echo "<option value='", html_escape($l['location']), "'";
@@ -1008,7 +1008,7 @@ function thold_hosts($header_label) {
 									$sql_where_params = array_merge($sql_where_params, array(get_request_var('location')));
 								}
 							}
-							
+
 							$sql_statement = "SELECT ht.id, ht.name
 								FROM host_template AS ht
 								WHERE ht.id IN (SELECT host_template_id FROM host WHERE id = id $sql_where)
@@ -1018,7 +1018,7 @@ function thold_hosts($header_label) {
 								FROM host WHERE host_template_id = 0 $sql_where
 								LIMIT 1",
 								$sql_where_params);
-								
+
 							/* If current selected template is not in the result set, change selected template to Any */
 							$found = false;
 							if (get_request_var('host_template_id') != MAINT_HOST_FILTER_ANY && get_request_var('host_template_id') != MAINT_HOST_FILTER_NONE) {
@@ -1031,10 +1031,10 @@ function thold_hosts($header_label) {
 							}
 							if (!$found && (get_request_var('host_template_id') == MAINT_HOST_FILTER_NONE ) && $hosts_no_templates) {
 								$found = true;
-							}		
+							}
 							if (!$found) {
 								set_request_var('host_template_id', MAINT_HOST_FILTER_ANY);
-							}	
+							}
 
 							echo "<option value='", MAINT_HOST_FILTER_ANY, "'";
 							if (get_request_var('host_template_id') == MAINT_HOST_FILTER_ANY) {

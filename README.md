@@ -22,6 +22,8 @@ be logged on GitHub.
 
 ## Changelog
 
+* issue: Fix some PHP 8.1.2 compatibility issues
+
 * issue#15: Fix webseer tab to not show items before schedule is created
 
 * feature#14: webseer tab functional (webseer plugin update required to use schedule)
