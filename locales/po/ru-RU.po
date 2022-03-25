@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2020-12-12 22:16-0500\nPO-Revision-Date: 2021-04-12 08:18+0000\nLast-Translator: Sergey <sbolshagin@gmail.com>\nLanguage-Team: Russian <http://translate.cacti.net/projects/cacti/maint/ru/>\nLanguage: ru-RU\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\nX-Generator: Weblate 4.3.2\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2020-12-12 22:16-0500\nPO-Revision-Date: 2022-03-25 04:14+0000\nLast-Translator: Anatoliy <hamrad99h2@gmail.com>\nLanguage-Team: Russian <http://translate.cacti.net/projects/cacti/maint/ru/>\nLanguage: ru-RU\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\nX-Generator: Weblate 4.8.1\n"
 
 #: maint.php:32
 #, fuzzy
@@ -17,12 +17,11 @@ msgstr "Удалить"
 
 #: maint.php:38
 msgid "Associate"
-msgstr "ассоциированный"
+msgstr "Ассоциировать"
 
 #: maint.php:39
-#, fuzzy
 msgid "Disassociate"
-msgstr "отмежеваться"
+msgstr "Разъединить"
 
 #: maint.php:43
 msgid "One Time"
@@ -66,9 +65,8 @@ msgid "WebSeer"
 msgstr "WebSeer"
 
 #: maint.php:296
-#, fuzzy
 msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
-msgstr "Нажмите кнопку \"Продолжить\", чтобы обновить следующий(ые) график(ы) технического обслуживания."
+msgstr "Нажмите \"Продолжить\", чтобы обновить следующий(ие) график(и) обслуживания."
 
 #: maint.php:301 maint.php:310 maint.php:365 maint.php:374 maint.php:430
 #: maint.php:439
@@ -81,53 +79,46 @@ msgid "Continue"
 msgstr "Продолжить"
 
 #: maint.php:301
-#, fuzzy
 msgid "Update Maintenance Schedule(s)"
-msgstr "Графики технического обслуживания"
+msgstr "Обновление графика(ов) обслуживания"
 
 #: maint.php:305
-#, fuzzy
 msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
-msgstr "Нажмите кнопку \"Продолжить\", чтобы удалить следующий(ые) график(ы) технического обслуживания.  Любые Устройства, связанные с данным Графиком, будут отключены."
+msgstr "Нажмите \"Продолжить\", чтобы удалить следующий(ие) график(и) обслуживания.  Любые Устройства, связанные с данным графиком, будут отключены."
 
 #: maint.php:310
-#, fuzzy
 msgid "Delete Maintenance Schedule(s)"
-msgstr "Графики технического обслуживания"
+msgstr "Удаление графиков обслуживания"
 
 #: maint.php:313
-#, fuzzy
 msgid "You must select at least one Maintenance Schedule."
-msgstr "Необходимо выбрать хотя бы один график технического обслуживания."
+msgstr "Необходимо выбрать хотя бы один график обслуживания."
 
 #: maint.php:314 maint.php:378 maint.php:443
 msgid "Return"
 msgstr "Вернуть"
 
 #: maint.php:354
-#, fuzzy
 msgid "Device(s)"
-msgstr "Устройство(ы)"
+msgstr "Устройство(ва)"
 
 #: maint.php:360
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Нажмите кнопку \"Продолжить\", чтобы связать следующее устройство (устройства) с графиком технического обслуживания '<b>%s</b>'."
+msgstr "Нажмите \"Продолжить\", чтобы связать следующее устройство(ва) с графиком обслуживания '<b>%s</b>'."
 
 #: maint.php:365 maint.php:430
-#, fuzzy
 msgid "Associate Maintenance Schedule(s)"
-msgstr "Графики технического обслуживания"
+msgstr "Ассоциировать графики обслуживания"
 
 #: maint.php:369
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Нажмите кнопку \"Продолжить\", чтобы разделить следующие устройства с расписанием технического обслуживания '<b>%s</b>'."
+msgstr "Нажмите \"Продолжить\", чтобы разделить следующие устройства с расписанием обслуживания '<b>%s</b>'."
 
 #: maint.php:374 maint.php:439
-#, fuzzy
 msgid "Disassociate Maintenance Schedule(s)"
-msgstr "Графики технического обслуживания"
+msgstr "Отделение графиков обслуживания"
 
 #: maint.php:377
 #, fuzzy
@@ -140,34 +131,31 @@ msgid "Webseer(s)"
 msgstr "Веб-провидец (и)"
 
 #: maint.php:425
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Нажмите кнопку \"Продолжить\", чтобы связать устройство (устройства) ниже с графиком технического обслуживания \"<b>%s</b>\"."
+msgstr "Нажмите \"Продолжить\", чтобы ассоциировать устройство (ва) ниже с графиком обслуживания \"<b>%s</b>\"."
 
 #: maint.php:434
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
-msgstr "Нажмите кнопку \"Продолжить\", чтобы отменить связь между устройствами, указанными ниже, и графиком технического обслуживания \"<b>%s</b>\"."
+msgstr "Нажмите \"Продолжить\", чтобы отменить связь между Webseer(s), указанными ниже и графиком обслуживания \"<b>%s</b>\"."
 
 #: maint.php:442
-#, fuzzy
 msgid "You must select at least one Webseer."
-msgstr "Вы должны выбрать хотя бы одно устройство."
+msgstr "Вы должны выбрать хотя бы одно Webseer."
 
 #: maint.php:473
-#, fuzzy, php-format
+#, php-format
 msgid "General Settings [edit: %s]"
-msgstr "Общие настройки [Изменить: %s]"
+msgstr "Основные настройки [Изменить: %s]"
 
 #: maint.php:475
-#, fuzzy
 msgid "General Settings [new]"
-msgstr "Общие настройки [новые]"
+msgstr "Основные настройки [новые]"
 
 #: maint.php:523
-#, fuzzy
 msgid "New Maintenance Schedule"
-msgstr "Новый график технического обслуживания"
+msgstr "Новый график обслуживания"
 
 #: maint.php:535
 msgid "Schedule"
@@ -178,18 +166,16 @@ msgid "Schedule Name"
 msgstr "Название расписания"
 
 #: maint.php:543
-#, fuzzy
 msgid "Provide the Maintenance Schedule a meaningful name"
-msgstr "Предоставьте значимое имя в Графике технического обслуживания."
+msgstr "Присвойте расписанию обслуживания осмысленное имя"
 
 #: maint.php:547 maint.php:706 maint.php:1259 maint.php:1298
 msgid "Enabled"
-msgstr "Включено"
+msgstr "Разрешено"
 
 #: maint.php:550
-#, fuzzy
 msgid "Whether or not this schedule will be checked."
-msgstr "Будет ли этот порог проверяться и предупреждаться об этом или нет."
+msgstr "Будет ли проверяться это расписание."
 
 #: maint.php:554
 msgid "Schedule Type"
