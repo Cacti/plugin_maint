@@ -4,10 +4,9 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2020-12-12 22:16-0500\nPO-Revision-Date: 2022-03-25 04:14+0000\nLast-Translator: Anatoliy <hamrad99h2@gmail.com>\nLanguage-Team: Russian <http://translate.cacti.net/projects/cacti/maint/ru/>\nLanguage: ru-RU\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\nX-Generator: Weblate 4.8.1\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2020-12-12 22:16-0500\nPO-Revision-Date: 2022-03-31 15:49+0000\nLast-Translator: Anatoliy <hamrad99h2@gmail.com>\nLanguage-Team: Russian <http://translate.cacti.net/projects/cacti/maint/ru/>\nLanguage: ru-RU\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\nX-Generator: Weblate 4.8.1\n"
 
 #: maint.php:32
-#, fuzzy
 msgid "Update Time (Now + 1 Hour)"
 msgstr "Время обновления (сейчас + 1 час)"
 
@@ -60,7 +59,6 @@ msgid "Devices"
 msgstr "Устройства"
 
 #: maint.php:71
-#, fuzzy
 msgid "WebSeer"
 msgstr "WebSeer"
 
@@ -121,14 +119,12 @@ msgid "Disassociate Maintenance Schedule(s)"
 msgstr "Отделение графиков обслуживания"
 
 #: maint.php:377
-#, fuzzy
 msgid "You must select at least one Device."
 msgstr "Вы должны выбрать хотя бы одно устройство."
 
 #: maint.php:419
-#, fuzzy
 msgid "Webseer(s)"
-msgstr "Веб-провидец (и)"
+msgstr "Webseer(s)"
 
 #: maint.php:425
 #, php-format
@@ -182,7 +178,6 @@ msgid "Schedule Type"
 msgstr "Тип Расписания"
 
 #: maint.php:558
-#, fuzzy
 msgid "The type of schedule, one time or recurring."
 msgstr "Тип расписания, разовое или повторяющееся."
 
@@ -191,40 +186,34 @@ msgid "Interval"
 msgstr "Интервал"
 
 #: maint.php:566
-#, fuzzy
 msgid "This is the interval in which the start / end time will repeat."
-msgstr "Это интервал, в течение которого время начала/конца будет повторяться."
+msgstr "Это интервал, в котором время начала/конца будет повторяться."
 
 #: maint.php:570
 msgid "Start Time"
 msgstr "Время начала"
 
 #: maint.php:574
-#, fuzzy
 msgid "The start date / time for this schedule. Most date / time formats accepted."
-msgstr "Дата начала / время для этого расписания. Большинство форматов даты/времени приняты."
+msgstr "Дата/время начала для этого расписания. Принимается большинство форматов даты/времени."
 
 #: maint.php:579
 msgid "End Time"
 msgstr "Время окончания"
 
 #: maint.php:584
-#, fuzzy
 msgid "The end date / time for this schedule. Most date / time formats accepted."
-msgstr "Дата/время окончания для этого расписания. Большинство форматов даты/времени приняты."
+msgstr "Дата/время окончания для этого расписания. Принимаются большинство форматов даты/времени."
 
 #: maint.php:633
-#, fuzzy
 msgid "Start Date/Time Selector"
-msgstr "Селектор даты / времени начала"
+msgstr "Выбор даты/времени начала"
 
 #: maint.php:634
-#, fuzzy
 msgid "End Date/Time Selector"
-msgstr "Селектор даты / времени окончания"
+msgstr "Выбор даты/времени окончания"
 
 #: maint.php:697 setup.php:55 setup.php:63
-#, fuzzy
 msgid "Maintenance Schedules"
 msgstr "Графики технического обслуживания"
 
@@ -249,18 +238,17 @@ msgid "End"
 msgstr "Конец"
 
 #: maint.php:744 maint.php:1046 maint.php:1293
-#, fuzzy
 msgid "No Schedules"
-msgstr "Расписание"
+msgstr "Нет расписаний"
 
 #: maint.php:832
-#, fuzzy, php-format
+#, php-format
 msgid "Associated Devices %s"
 msgstr "Связанные устройства %s"
 
 #: maint.php:841 maint.php:1152
 msgid "Search"
-msgstr "Найти"
+msgstr "Поиск"
 
 #: maint.php:851
 msgid "Any"
@@ -284,7 +272,7 @@ msgstr "Перейти"
 
 #: maint.php:891 maint.php:1180
 msgid "Set/Refresh Filters"
-msgstr "Установить/Обновить фильтры"
+msgstr "Выбрать/Обновить фильтры"
 
 #: maint.php:892 maint.php:1181
 msgid "Clear"
@@ -303,9 +291,8 @@ msgid "ID"
 msgstr "ИД"
 
 #: maint.php:985 maint.php:1258
-#, fuzzy
 msgid "Associated Schedules"
-msgstr "Сопутствующие графики"
+msgstr "Связанные расписания"
 
 #: maint.php:989
 msgid "Graphs"
@@ -328,24 +315,21 @@ msgid "Hostname"
 msgstr "Имя хоста"
 
 #: maint.php:1028 maint.php:1273
-#, fuzzy
 msgid "Current Schedule"
-msgstr "Текущий график"
+msgstr "Текущее расписание"
 
 #: maint.php:1060
-#, fuzzy
 msgid "No Associated Devices Found"
-msgstr "Нет Сопутствующих устройств найдено не было"
+msgstr "Связанные устройства не найдены"
 
 #: maint.php:1062 maint.php:1311
-#, fuzzy
 msgid "Schedule must be created before associating"
 msgstr "Расписание необходимо создать перед связыванием"
 
 #: maint.php:1143
-#, fuzzy, php-format
+#, php-format
 msgid "Associated Web URL's %s"
-msgstr "Соответствующие URL-адреса веб-сайтов"
+msgstr "Соответствующие URL-адреса веб-сайтов %s"
 
 #: maint.php:1158
 msgid "Rows"
@@ -364,14 +348,12 @@ msgid "Disabled"
 msgstr "Выключен"
 
 #: maint.php:1300
-#, fuzzy
 msgid "USING DNS"
-msgstr "ИСПОЛЬЗОВАТЕЛЬНЫЙ DNS"
+msgstr "ИСПОЛЬЗОВАНИЕ DNS"
 
 #: maint.php:1309
-#, fuzzy
 msgid "No Associated WebSeer URL's Found"
-msgstr "URL-адрес ассоциированного WebSeer не найден"
+msgstr "URL-адреса ассоциированного WebSeer не найдены"
 
 #: setup.php:55
 msgid "Management"
@@ -379,16 +361,15 @@ msgstr "Управление"
 
 #: setup.php:58
 msgid "System Administration"
-msgstr "Администрирование системы."
+msgstr "Администрирование системы"
 
 #: setup.php:64
 msgid "(edit)"
 msgstr "(редактировать)"
 
 #: setup.php:65
-#, fuzzy
 msgid "(actions)"
-msgstr "Действия"
+msgstr "(действия)"
 
 #, fuzzy
 #~ msgid "The type of Threshold that will be monitored."
