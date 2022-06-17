@@ -1,0 +1,372 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR The Cacti Group
+# This file is distributed under the same license as the Cacti package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr "Project-Id-Version: Cacti\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2020-12-12 22:16-0500\nPO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\nLast-Translator: Automatically generated\nLanguage-Team: none\nLanguage: lv\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\n"
+
+#: maint.php:32
+msgid "Update Time (Now + 1 Hour)"
+msgstr ""
+
+#: maint.php:33
+msgid "Delete"
+msgstr ""
+
+#: maint.php:38
+msgid "Associate"
+msgstr ""
+
+#: maint.php:39
+msgid "Disassociate"
+msgstr ""
+
+#: maint.php:43
+msgid "One Time"
+msgstr ""
+
+#: maint.php:44
+msgid "Recurring"
+msgstr ""
+
+#: maint.php:48
+msgid "Not Defined"
+msgstr ""
+
+#: maint.php:49
+msgid "Every Day"
+msgstr ""
+
+#: maint.php:50
+msgid "Every Week"
+msgstr ""
+
+#: maint.php:54 maint.php:55 maint.php:58
+msgid "No"
+msgstr ""
+
+#: maint.php:56 maint.php:57
+msgid "Yes"
+msgstr ""
+
+#: maint.php:63
+msgid "General"
+msgstr ""
+
+#: maint.php:67 maint.php:869 maint.php:1011
+msgid "Devices"
+msgstr ""
+
+#: maint.php:71
+msgid "WebSeer"
+msgstr ""
+
+#: maint.php:296
+msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
+msgstr ""
+
+#: maint.php:301 maint.php:310 maint.php:365 maint.php:374 maint.php:430
+#: maint.php:439
+msgid "Cancel"
+msgstr ""
+
+#: maint.php:301 maint.php:310 maint.php:365 maint.php:374 maint.php:430
+#: maint.php:439
+msgid "Continue"
+msgstr ""
+
+#: maint.php:301
+msgid "Update Maintenance Schedule(s)"
+msgstr ""
+
+#: maint.php:305
+msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
+msgstr ""
+
+#: maint.php:310
+msgid "Delete Maintenance Schedule(s)"
+msgstr ""
+
+#: maint.php:313
+msgid "You must select at least one Maintenance Schedule."
+msgstr ""
+
+#: maint.php:314 maint.php:378 maint.php:443
+msgid "Return"
+msgstr ""
+
+#: maint.php:354
+msgid "Device(s)"
+msgstr ""
+
+#: maint.php:360
+#, php-format
+msgid "Click 'Continue' to associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr ""
+
+#: maint.php:365 maint.php:430
+msgid "Associate Maintenance Schedule(s)"
+msgstr ""
+
+#: maint.php:369
+#, php-format
+msgid "Click 'Continue' to disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr ""
+
+#: maint.php:374 maint.php:439
+msgid "Disassociate Maintenance Schedule(s)"
+msgstr ""
+
+#: maint.php:377
+msgid "You must select at least one Device."
+msgstr ""
+
+#: maint.php:419
+msgid "Webseer(s)"
+msgstr ""
+
+#: maint.php:425
+#, php-format
+msgid "Click 'Continue' to associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr ""
+
+#: maint.php:434
+#, php-format
+msgid "Click 'Continue' to disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr ""
+
+#: maint.php:442
+msgid "You must select at least one Webseer."
+msgstr ""
+
+#: maint.php:473
+#, php-format
+msgid "General Settings [edit: %s]"
+msgstr ""
+
+#: maint.php:475
+msgid "General Settings [new]"
+msgstr ""
+
+#: maint.php:523
+msgid "New Maintenance Schedule"
+msgstr ""
+
+#: maint.php:535
+msgid "Schedule"
+msgstr ""
+
+#: maint.php:539
+msgid "Schedule Name"
+msgstr ""
+
+#: maint.php:543
+msgid "Provide the Maintenance Schedule a meaningful name"
+msgstr ""
+
+#: maint.php:547 maint.php:706 maint.php:1259 maint.php:1298
+msgid "Enabled"
+msgstr ""
+
+#: maint.php:550
+msgid "Whether or not this schedule will be checked."
+msgstr ""
+
+#: maint.php:554
+msgid "Schedule Type"
+msgstr ""
+
+#: maint.php:558
+msgid "The type of schedule, one time or recurring."
+msgstr ""
+
+#: maint.php:562 maint.php:705
+msgid "Interval"
+msgstr ""
+
+#: maint.php:566
+msgid "This is the interval in which the start / end time will repeat."
+msgstr ""
+
+#: maint.php:570
+msgid "Start Time"
+msgstr ""
+
+#: maint.php:574
+msgid "The start date / time for this schedule. Most date / time formats accepted."
+msgstr ""
+
+#: maint.php:579
+msgid "End Time"
+msgstr ""
+
+#: maint.php:584
+msgid "The end date / time for this schedule. Most date / time formats accepted."
+msgstr ""
+
+#: maint.php:633
+msgid "Start Date/Time Selector"
+msgstr ""
+
+#: maint.php:634
+msgid "End Date/Time Selector"
+msgstr ""
+
+#: maint.php:697 setup.php:55 setup.php:63
+msgid "Maintenance Schedules"
+msgstr ""
+
+#: maint.php:700
+msgid "Name"
+msgstr ""
+
+#: maint.php:701
+msgid "Active"
+msgstr ""
+
+#: maint.php:702 maint.php:847
+msgid "Type"
+msgstr ""
+
+#: maint.php:703
+msgid "Start"
+msgstr ""
+
+#: maint.php:704
+msgid "End"
+msgstr ""
+
+#: maint.php:744 maint.php:1046 maint.php:1293
+msgid "No Schedules"
+msgstr ""
+
+#: maint.php:832
+#, php-format
+msgid "Associated Devices %s"
+msgstr ""
+
+#: maint.php:841 maint.php:1152
+msgid "Search"
+msgstr ""
+
+#: maint.php:851
+msgid "Any"
+msgstr ""
+
+#: maint.php:852
+msgid "None"
+msgstr ""
+
+#: maint.php:873 maint.php:1162
+msgid "Default"
+msgstr ""
+
+#: maint.php:887 maint.php:1176
+msgid "Associated"
+msgstr ""
+
+#: maint.php:891 maint.php:1180
+msgid "Go"
+msgstr ""
+
+#: maint.php:891 maint.php:1180
+msgid "Set/Refresh Filters"
+msgstr ""
+
+#: maint.php:892 maint.php:1181
+msgid "Clear"
+msgstr ""
+
+#: maint.php:892 maint.php:1181
+msgid "Clear Filters"
+msgstr ""
+
+#: maint.php:977 maint.php:1256
+msgid "Description"
+msgstr ""
+
+#: maint.php:981 maint.php:1257
+msgid "ID"
+msgstr ""
+
+#: maint.php:985 maint.php:1258
+msgid "Associated Schedules"
+msgstr ""
+
+#: maint.php:989
+msgid "Graphs"
+msgstr ""
+
+#: maint.php:993
+msgid "Data Sources"
+msgstr ""
+
+#: maint.php:997
+msgid "Thresholds"
+msgstr ""
+
+#: maint.php:1001
+msgid "Status"
+msgstr ""
+
+#: maint.php:1005 maint.php:1260
+msgid "Hostname"
+msgstr ""
+
+#: maint.php:1028 maint.php:1273
+msgid "Current Schedule"
+msgstr ""
+
+#: maint.php:1060
+msgid "No Associated Devices Found"
+msgstr ""
+
+#: maint.php:1062 maint.php:1311
+msgid "Schedule must be created before associating"
+msgstr ""
+
+#: maint.php:1143
+#, php-format
+msgid "Associated Web URL's %s"
+msgstr ""
+
+#: maint.php:1158
+msgid "Rows"
+msgstr ""
+
+#: maint.php:1247
+msgid "Lists"
+msgstr ""
+
+#: maint.php:1261
+msgid "URL"
+msgstr ""
+
+#: maint.php:1298
+msgid "Disabled"
+msgstr ""
+
+#: maint.php:1300
+msgid "USING DNS"
+msgstr ""
+
+#: maint.php:1309
+msgid "No Associated WebSeer URL's Found"
+msgstr ""
+
+#: setup.php:55
+msgid "Management"
+msgstr ""
+
+#: setup.php:58
+msgid "System Administration"
+msgstr ""
+
+#: setup.php:64
+msgid "(edit)"
+msgstr ""
+
+#: setup.php:65
+msgid "(actions)"
+msgstr ""
