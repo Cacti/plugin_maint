@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: Cacti\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2022-06-18 08:24-0400\nPO-Revision-Date: 2022-06-18 16:55+0000\nLast-Translator: Coool <coool@mail.lv>\nLanguage-Team: Latvian <http://translate.cacti.net/projects/cacti/maint/lv/>\nLanguage: lv-LV\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=(n % 10 == 0 || n % 100 >= 11 && n % 100 <= 19) ? 0 : ((n % 10 == 1 && n % 100 != 11) ? 1 : 2);\nX-Generator: Weblate 4.8.1\n"
+msgstr "Project-Id-Version: Cacti\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2022-06-18 08:24-0400\nPO-Revision-Date: 2022-06-18 17:20+0000\nLast-Translator: Coool <coool@mail.lv>\nLanguage-Team: Latvian <http://translate.cacti.net/projects/cacti/maint/lv/>\nLanguage: lv-LV\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=(n % 10 == 0 || n % 100 >= 11 && n % 100 <= 19) ? 0 : ((n % 10 == 1 && n % 100 != 11) ? 1 : 2);\nX-Generator: Weblate 4.8.1\n"
 
 #: maint.php:37
 msgid "Update Time (Now + 1 Hour)"
@@ -64,7 +64,7 @@ msgstr "WebSeer"
 
 #: maint.php:303
 msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
-msgstr "Noklikšķiniet 'Turpināt', lai atjauninātu norādīto(-ās) apkopes izpildes sarakstu(-us)."
+msgstr "Noklikšķiniet 'Turpināt', lai atjauninātu norādīto(s) apkopes izpildes sarakstu(s)."
 
 #: maint.php:308 maint.php:317 maint.php:372 maint.php:381 maint.php:437
 #: maint.php:446
@@ -78,11 +78,11 @@ msgstr "Turpināt"
 
 #: maint.php:308
 msgid "Update Maintenance Schedule(s)"
-msgstr "Atjaunināt apkopes izpildes sarakstu(-us)"
+msgstr "Atjaunināt apkopes izpildes sarakstu(s)"
 
 #: maint.php:312
 msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
-msgstr "Noklikšķiniet 'Turpināt', lai dzēstu norādīto(-ās) apkopes izpildes sarakstu(-us).  Visas sasaistītās ierīces ar šo izpildes sarakstu tiks atsaistītas."
+msgstr "Noklikšķiniet 'Turpināt', lai dzēstu norādīto(s) apkopes izpildes sarakstu(s).  Visas sasaistītās ierīces ar šo izpildes sarakstu tiks atsaistītas."
 
 #: maint.php:317
 msgid "Delete Maintenance Schedule(s)"
@@ -112,7 +112,7 @@ msgstr "Saistīt apkopes izpildes sarakstus"
 #: maint.php:376
 #, php-format
 msgid "Click 'Continue' to disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Noklikšķiniet 'Turpināt', lai atsaistīt norādīto(-ās) ierīci(-es) no apkopes izpildes sarakstu '<b>%s</b>'."
+msgstr "Noklikšķiniet 'Turpināt', lai atsaistīt norādīto(-ās) ierīci(-es) no apkopes izpildes saraksta '<b>%s</b>'."
 
 #: maint.php:381 maint.php:446
 msgid "Disassociate Maintenance Schedule(s)"
@@ -120,7 +120,7 @@ msgstr "Atsaistīt apkopes izpildes sarakstu(s)"
 
 #: maint.php:384
 msgid "You must select at least one Device."
-msgstr "Jums ir jāatlasa vismaz viena ierīce."
+msgstr "Jums ir jāizvēlas vismaz viena ierīce."
 
 #: maint.php:426
 msgid "Webseer(s)"
@@ -134,29 +134,29 @@ msgstr "Noklikšķiniet 'Turpināt', lai saistītu zemāk norādīto(-ās) Webse
 #: maint.php:441
 #, php-format
 msgid "Click 'Continue' to disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
-msgstr "Noklikšķiniet 'Turpināt', lai atsaistītu zemāk norādīto(s) Webseer(s) no '<b>%s</b>' apkopes izpildes sarakstu."
+msgstr "Noklikšķiniet 'Turpināt', lai atsaistītu zemāk norādīto(s) Webseer(s) no '<b>%s</b>' apkopes izpildes saraksta."
 
 #: maint.php:449
 msgid "You must select at least one Webseer."
-msgstr "Jums ir jāatlasa vismaz viens Webseer."
+msgstr "Jums ir jāizvēlas vismaz viens Webseer."
 
 #: maint.php:480
 #, php-format
 msgid "[edit: %s]"
-msgstr ""
+msgstr "[labot: %s]"
 
 #: maint.php:482
 msgid "[new]"
-msgstr ""
+msgstr "[jauns]"
 
 #: maint.php:530
 msgid "New Maintenance Schedule"
 msgstr "Jauns apkopes izpildes saraksts"
 
 #: maint.php:538
-#, fuzzy, php-format
+#, php-format
 msgid "General Settings %s"
-msgstr "Pamatiestatījumi [jauns]"
+msgstr "Pamatiestatījumi %s"
 
 #: maint.php:542
 msgid "Schedule"
@@ -253,7 +253,7 @@ msgstr "Saistītās ierīces %s"
 
 #: maint.php:886
 msgid "Site"
-msgstr ""
+msgstr "Vietne"
 
 #: maint.php:890 maint.php:910 maint.php:1043
 msgid "Any"
@@ -265,15 +265,15 @@ msgstr "Nevienu"
 
 #: maint.php:906
 msgid "Data Collector"
-msgstr ""
+msgstr "Datu ievācējs"
 
 #: maint.php:925
 msgid "Location"
-msgstr ""
+msgstr "Atrašanās vieta"
 
 #: maint.php:997
 msgid "Template"
-msgstr ""
+msgstr "Veidne"
 
 #: maint.php:1068 maint.php:1429
 msgid "Go"
@@ -386,7 +386,7 @@ msgstr "Sistēmas pārvaldīšana"
 
 #: setup.php:64
 msgid "(edit)"
-msgstr "(Rediģēt)"
+msgstr "(rediģēt)"
 
 #: setup.php:65
 msgid "(actions)"
