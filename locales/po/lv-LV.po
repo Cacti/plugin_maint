@@ -4,19 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr ""
-"Project-Id-Version: Cacti\n"
-"Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2022-06-18 08:24-0400\n"
-"PO-Revision-Date: 2022-06-18 06:37+0000\n"
-"Last-Translator: Coool <coool@mail.lv>\n"
-"Language-Team: Latvian <http://translate.cacti.net/projects/cacti/maint/lv/>\n"
-"Language: lv\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n % 10 == 0 || n % 100 >= 11 && n % 100 <= 19) ? 0 : ((n % 10 == 1 && n % 100 != 11) ? 1 : 2);\n"
-"X-Generator: Weblate 4.8.1\n"
+msgstr "Project-Id-Version: Cacti\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2022-06-18 08:24-0400\nPO-Revision-Date: 2022-06-18 16:55+0000\nLast-Translator: Coool <coool@mail.lv>\nLanguage-Team: Latvian <http://translate.cacti.net/projects/cacti/maint/lv/>\nLanguage: lv-LV\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=(n % 10 == 0 || n % 100 >= 11 && n % 100 <= 19) ? 0 : ((n % 10 == 1 && n % 100 != 11) ? 1 : 2);\nX-Generator: Weblate 4.8.1\n"
 
 #: maint.php:37
 msgid "Update Time (Now + 1 Hour)"
@@ -68,7 +56,7 @@ msgstr "Pamata"
 
 #: maint.php:72 maint.php:1083 maint.php:1245
 msgid "Devices"
-msgstr "Iekārtas"
+msgstr "Ierīces"
 
 #: maint.php:77
 msgid "WebSeer"
@@ -398,7 +386,7 @@ msgstr "Sistēmas pārvaldīšana"
 
 #: setup.php:64
 msgid "(edit)"
-msgstr "(rediģēt)"
+msgstr "(Rediģēt)"
 
 #: setup.php:65
 msgid "(actions)"
