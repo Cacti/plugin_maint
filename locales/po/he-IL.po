@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2020-12-12 22:16-0500\n"
+"POT-Creation-Date: 2022-06-18 08:24-0400\n"
 "PO-Revision-Date: 2020-12-12 20:53-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -17,391 +17,411 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.4.2\n"
 
-#: maint.php:32
+#: maint.php:37
 #, fuzzy
 msgid "Update Time (Now + 1 Hour)"
 msgstr "עדכון זמן (כעת + שעה)"
 
-#: maint.php:33
+#: maint.php:38
 msgid "Delete"
 msgstr "מחק"
 
-#: maint.php:38
+#: maint.php:43
 #, fuzzy
 msgid "Associate"
 msgstr "עמית"
 
-#: maint.php:39
+#: maint.php:44
 #, fuzzy
 msgid "Disassociate"
 msgstr "להתנתק"
 
-#: maint.php:43
+#: maint.php:48
 #, fuzzy
 msgid "One Time"
 msgstr "פעם אחת"
 
-#: maint.php:44
+#: maint.php:49
 msgid "Recurring"
 msgstr "חוזר"
 
-#: maint.php:48
+#: maint.php:53
 #, fuzzy
 msgid "Not Defined"
 msgstr "לא מוגדר"
 
-#: maint.php:49
+#: maint.php:54
 msgid "Every Day"
 msgstr "כל יום"
 
-#: maint.php:50
+#: maint.php:55
 msgid "Every Week"
 msgstr "כל שבוע"
 
-#: maint.php:54 maint.php:55 maint.php:58
+#: maint.php:59 maint.php:60 maint.php:63
 msgid "No"
 msgstr "לא"
 
-#: maint.php:56 maint.php:57
+#: maint.php:61 maint.php:62
 msgid "Yes"
 msgstr "כן"
 
-#: maint.php:63
+#: maint.php:68
 msgid "General"
 msgstr "כללי"
 
-#: maint.php:67 maint.php:869 maint.php:1011
+#: maint.php:72 maint.php:1083 maint.php:1245
 msgid "Devices"
 msgstr "ניתן להתנתק מכל ההתקנים האחרים, כגון טלפון נייד או מחשב ציבורי, על ידי לחיצה על כפתור התנתקות מכל ההתקנים האחרים."
 
-#: maint.php:71
+#: maint.php:77
 #, fuzzy
 msgid "WebSeer"
 msgstr "WebSeer"
 
-#: maint.php:296
+#: maint.php:303
 #, fuzzy
 msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
 msgstr "לחץ על 'המשך' כדי לעדכן את תזמוני התחזוקה הבאים."
 
-#: maint.php:301 maint.php:310 maint.php:365 maint.php:374 maint.php:430
-#: maint.php:439
+#: maint.php:308 maint.php:317 maint.php:372 maint.php:381 maint.php:437
+#: maint.php:446
 msgid "Cancel"
 msgstr "ביטול"
 
-#: maint.php:301 maint.php:310 maint.php:365 maint.php:374 maint.php:430
-#: maint.php:439
+#: maint.php:308 maint.php:317 maint.php:372 maint.php:381 maint.php:437
+#: maint.php:446
 msgid "Continue"
 msgstr "המשך"
 
-#: maint.php:301
+#: maint.php:308
 #, fuzzy
 msgid "Update Maintenance Schedule(s)"
 msgstr "לוחות זמנים לתחזוקה"
 
-#: maint.php:305
+#: maint.php:312
 #, fuzzy
 msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
 msgstr "לחץ על 'המשך' כדי למחוק את תזמוני התחזוקה הבאים. כל המכשירים הקשורים ללוח זה יהיו מנותקים."
 
-#: maint.php:310
+#: maint.php:317
 #, fuzzy
 msgid "Delete Maintenance Schedule(s)"
 msgstr "לוחות זמנים לתחזוקה"
 
-#: maint.php:313
+#: maint.php:320
 #, fuzzy
 msgid "You must select at least one Maintenance Schedule."
 msgstr "עליך לבחור לפחות תזמון תחזוקה אחד."
 
-#: maint.php:314 maint.php:378 maint.php:443
+#: maint.php:321 maint.php:385 maint.php:450
 msgid "Return"
 msgstr "חזרה אל עריכת פוסט"
 
-#: maint.php:354
+#: maint.php:361
 #, fuzzy
 msgid "Device(s)"
 msgstr "מכשירים (מכשירים)"
 
-#: maint.php:360
+#: maint.php:367
 #, fuzzy, php-format
 msgid "Click 'Continue' to associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
 msgstr "לחץ על 'המשך' כדי לשייך את ההתקנים הבאים עם ' <b> %s</b> '."
 
-#: maint.php:365 maint.php:430
+#: maint.php:372 maint.php:437
 #, fuzzy
 msgid "Associate Maintenance Schedule(s)"
 msgstr "לוחות זמנים לתחזוקה"
 
-#: maint.php:369
+#: maint.php:376
 #, fuzzy, php-format
 msgid "Click 'Continue' to disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
 msgstr "לחץ על 'המשך' כדי לנתק את ההתקנים הבאים עם ' <b> %s</b> '."
 
-#: maint.php:374 maint.php:439
+#: maint.php:381 maint.php:446
 #, fuzzy
 msgid "Disassociate Maintenance Schedule(s)"
 msgstr "לוחות זמנים לתחזוקה"
 
-#: maint.php:377
+#: maint.php:384
 #, fuzzy
 msgid "You must select at least one Device."
 msgstr "עליך לבחור לפחות מכשיר אחד."
 
-#: maint.php:419
+#: maint.php:426
 #, fuzzy
 msgid "Webseer(s)"
 msgstr "רואה אינטרנט"
 
-#: maint.php:425
+#: maint.php:432
 #, fuzzy, php-format
 msgid "Click 'Continue' to associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
 msgstr "לחץ על 'המשך' כדי לשייך את ההתקן (ים) למטה עם ' <b> %s</b> '."
 
-#: maint.php:434
+#: maint.php:441
 #, fuzzy, php-format
 msgid "Click 'Continue' to disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
 msgstr "לחץ על 'המשך' כדי לנתק את המכשירים (ים) שלהלן עם ' <b> %s</b> '."
 
-#: maint.php:442
+#: maint.php:449
 #, fuzzy
 msgid "You must select at least one Webseer."
 msgstr "עליך לבחור לפחות מכשיר אחד."
 
-#: maint.php:473
-#, fuzzy, php-format
-msgid "General Settings [edit: %s]"
-msgstr "הגדרות כלליות [עריכה: %s]"
+#: maint.php:480
+#, php-format
+msgid "[edit: %s]"
+msgstr ""
 
-#: maint.php:475
-#, fuzzy
-msgid "General Settings [new]"
-msgstr "הגדרות כלליות [חדש]"
+#: maint.php:482
+msgid "[new]"
+msgstr ""
 
-#: maint.php:523
+#: maint.php:530
 #, fuzzy
 msgid "New Maintenance Schedule"
 msgstr "לוח תחזוקה חדש"
 
-#: maint.php:535
+#: maint.php:538
+#, fuzzy, php-format
+msgid "General Settings %s"
+msgstr "הגדרות כלליות [חדש]"
+
+#: maint.php:542
 msgid "Schedule"
 msgstr "תאריך משלוח"
 
-#: maint.php:539
+#: maint.php:546
 #, fuzzy
 msgid "Schedule Name"
 msgstr "שם לוח זמנים"
 
-#: maint.php:543
+#: maint.php:550
 #, fuzzy
 msgid "Provide the Maintenance Schedule a meaningful name"
 msgstr "ציין את תזמן התחזוקה שם בעל משמעות"
 
-#: maint.php:547 maint.php:706 maint.php:1259 maint.php:1298
+#: maint.php:554 maint.php:713 maint.php:1507 maint.php:1546
 msgid "Enabled"
 msgstr "מאופשר"
 
-#: maint.php:550
+#: maint.php:557
 #, fuzzy
 msgid "Whether or not this schedule will be checked."
 msgstr "האם זה יבדוק או יידרש."
 
-#: maint.php:554
+#: maint.php:561
 #, fuzzy
 msgid "Schedule Type"
 msgstr "סוג תזמון"
 
-#: maint.php:558
+#: maint.php:565
 #, fuzzy
 msgid "The type of schedule, one time or recurring."
 msgstr "סוג לוח הזמנים, פעם אחת או חוזר."
 
-#: maint.php:562 maint.php:705
+#: maint.php:569 maint.php:712
 msgid "Interval"
 msgstr "מרווח"
 
-#: maint.php:566
+#: maint.php:573
 #, fuzzy
 msgid "This is the interval in which the start / end time will repeat."
 msgstr "זהו המרווח שבו יחזור שעת ההתחלה / הסיום."
 
-#: maint.php:570
+#: maint.php:577
 msgid "Start Time"
 msgstr "זמן התחלה"
 
-#: maint.php:574
+#: maint.php:581
 #, fuzzy
 msgid "The start date / time for this schedule. Most date / time formats accepted."
 msgstr "תאריך ההתחלה / השעה עבור לוח זמנים זה. רוב הפורמטים של תאריך / שעה התקבלו."
 
-#: maint.php:579
+#: maint.php:586
 msgid "End Time"
 msgstr "שעת סיום"
 
-#: maint.php:584
+#: maint.php:591
 #, fuzzy
 msgid "The end date / time for this schedule. Most date / time formats accepted."
 msgstr "תאריך / תאריך הסיום של לוח זמנים זה. רוב הפורמטים של תאריך / שעה התקבלו."
 
-#: maint.php:633
+#: maint.php:640
 #, fuzzy
 msgid "Start Date/Time Selector"
 msgstr "בורר תאריך / זמן התחלה"
 
-#: maint.php:634
+#: maint.php:641
 #, fuzzy
 msgid "End Date/Time Selector"
 msgstr "בוחר תאריך סיום / שעה"
 
-#: maint.php:697 setup.php:55 setup.php:63
+#: maint.php:704 setup.php:55 setup.php:63
 #, fuzzy
 msgid "Maintenance Schedules"
 msgstr "לוחות זמנים לתחזוקה"
 
-#: maint.php:700
+#: maint.php:707
 msgid "Name"
 msgstr "שם"
 
-#: maint.php:701
+#: maint.php:708
 msgid "Active"
 msgstr "פעיל"
 
-#: maint.php:702 maint.php:847
+#: maint.php:709
 msgid "Type"
 msgstr "סוג"
 
-#: maint.php:703
+#: maint.php:710
 msgid "Start"
 msgstr "התחל"
 
-#: maint.php:704
+#: maint.php:711
 msgid "End"
 msgstr "סיום"
 
-#: maint.php:744 maint.php:1046 maint.php:1293
+#: maint.php:750 maint.php:1280 maint.php:1541
 #, fuzzy
 msgid "No Schedules"
 msgstr "תזמונים"
 
-#: maint.php:832
+#: maint.php:877
 #, fuzzy, php-format
 msgid "Associated Devices %s"
 msgstr "התקנים משויכים %s"
 
-#: maint.php:841 maint.php:1152
-msgid "Search"
-msgstr "חיפוש"
+#: maint.php:886
+msgid "Site"
+msgstr ""
 
-#: maint.php:851
+#: maint.php:890 maint.php:910 maint.php:1043
 msgid "Any"
 msgstr "הכל"
 
-#: maint.php:852
+#: maint.php:891 maint.php:1051
 msgid "None"
 msgstr "ללא"
 
-#: maint.php:873 maint.php:1162
-msgid "Default"
-msgstr "ברירת מחדל"
+#: maint.php:906
+msgid "Data Collector"
+msgstr ""
 
-#: maint.php:887 maint.php:1176
-#, fuzzy
-msgid "Associated"
-msgstr "משויך"
+#: maint.php:925
+msgid "Location"
+msgstr ""
 
-#: maint.php:891 maint.php:1180
+#: maint.php:997
+msgid "Template"
+msgstr ""
+
+#: maint.php:1068 maint.php:1429
 msgid "Go"
 msgstr "עבור"
 
-#: maint.php:891 maint.php:1180
+#: maint.php:1068 maint.php:1429
 #, fuzzy
 msgid "Set/Refresh Filters"
 msgstr "הגדר / רענן מסננים"
 
-#: maint.php:892 maint.php:1181
+#: maint.php:1069 maint.php:1430
 msgid "Clear"
 msgstr "נקה"
 
-#: maint.php:892 maint.php:1181
+#: maint.php:1069 maint.php:1430
 msgid "Clear Filters"
 msgstr "מחיקת מסננים"
 
-#: maint.php:977 maint.php:1256
+#: maint.php:1077 maint.php:1401
+msgid "Search"
+msgstr "חיפוש"
+
+#: maint.php:1087 maint.php:1411
+msgid "Default"
+msgstr "ברירת מחדל"
+
+#: maint.php:1101 maint.php:1425
+#, fuzzy
+msgid "Associated"
+msgstr "משויך"
+
+#: maint.php:1211 maint.php:1504
 msgid "Description"
 msgstr "תיאור"
 
-#: maint.php:981 maint.php:1257
+#: maint.php:1215 maint.php:1505
 msgid "ID"
 msgstr "מזהה"
 
-#: maint.php:985 maint.php:1258
+#: maint.php:1219 maint.php:1506
 #, fuzzy
 msgid "Associated Schedules"
 msgstr "לוחות זמנים משויכים"
 
-#: maint.php:989
+#: maint.php:1223
 msgid "Graphs"
 msgstr "גרפים"
 
-#: maint.php:993
+#: maint.php:1227
 #, fuzzy
 msgid "Data Sources"
 msgstr "מקורות מידע"
 
-#: maint.php:997
+#: maint.php:1231
 msgid "Thresholds"
 msgstr "ערכי סף"
 
-#: maint.php:1001
+#: maint.php:1235
 msgid "Status"
 msgstr "סטטוס"
 
-#: maint.php:1005 maint.php:1260
+#: maint.php:1239 maint.php:1508
 msgid "Hostname"
 msgstr "Hostname"
 
-#: maint.php:1028 maint.php:1273
+#: maint.php:1262 maint.php:1521
 #, fuzzy
 msgid "Current Schedule"
 msgstr "לוח זמנים נוכחי"
 
-#: maint.php:1060
+#: maint.php:1294
 #, fuzzy
 msgid "No Associated Devices Found"
 msgstr "לא נמצאו מכשירים משויכים"
 
-#: maint.php:1062 maint.php:1311
+#: maint.php:1296 maint.php:1559
 #, fuzzy
 msgid "Schedule must be created before associating"
 msgstr "יש ליצור לוח זמנים לפני השיוך"
 
-#: maint.php:1143
+#: maint.php:1392
 #, fuzzy, php-format
 msgid "Associated Web URL's %s"
 msgstr "%s כתובת אתר אינטרנט משויכת"
 
-#: maint.php:1158
+#: maint.php:1407
 msgid "Rows"
 msgstr "שורות"
 
-#: maint.php:1247
+#: maint.php:1495
 msgid "Lists"
 msgstr "ליסט"
 
-#: maint.php:1261
+#: maint.php:1509
 msgid "URL"
 msgstr "URL"
 
-#: maint.php:1298
+#: maint.php:1546
 msgid "Disabled"
 msgstr "לא זמין"
 
-#: maint.php:1300
+#: maint.php:1548
 #, fuzzy
 msgid "USING DNS"
 msgstr "משתמש ב- DNS"
 
-#: maint.php:1309
+#: maint.php:1557
 #, fuzzy
 msgid "No Associated WebSeer URL's Found"
 msgstr "לא נמצאה כתובת WebSeer משויכת"
@@ -424,9 +444,13 @@ msgid "(actions)"
 msgstr "פעולות"
 
 #, fuzzy
+#~ msgid "Rules"
+#~ msgstr "כללים"
+
+#, fuzzy
 #~ msgid "The type of Threshold that will be monitored."
 #~ msgstr "סוג הסף שיש לפקח עליו."
 
 #, fuzzy
-#~ msgid "Rules"
-#~ msgstr "כללים"
+#~ msgid "General Settings [edit: %s]"
+#~ msgstr "הגדרות כלליות [עריכה: %s]"

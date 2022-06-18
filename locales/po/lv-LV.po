@@ -4,354 +4,387 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: Cacti\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2020-12-12 22:16-0500\nPO-Revision-Date: 2022-06-18 06:37+0000\nLast-Translator: Coool <coool@mail.lv>\nLanguage-Team: Latvian <http://translate.cacti.net/projects/cacti/maint/lv/>\nLanguage: lv\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=(n % 10 == 0 || n % 100 >= 11 && n % 100 <= 19) ? 0 : ((n % 10 == 1 && n % 100 != 11) ? 1 : 2);\nX-Generator: Weblate 4.8.1\n"
+msgstr ""
+"Project-Id-Version: Cacti\n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2022-06-18 08:24-0400\n"
+"PO-Revision-Date: 2022-06-18 06:37+0000\n"
+"Last-Translator: Coool <coool@mail.lv>\n"
+"Language-Team: Latvian <http://translate.cacti.net/projects/cacti/maint/lv/>\n"
+"Language: lv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n % 10 == 0 || n % 100 >= 11 && n % 100 <= 19) ? 0 : ((n % 10 == 1 && n % 100 != 11) ? 1 : 2);\n"
+"X-Generator: Weblate 4.8.1\n"
 
-#: maint.php:32
+#: maint.php:37
 msgid "Update Time (Now + 1 Hour)"
 msgstr "Atjaunināšanas laiks (tagad + 1 stunda)"
 
-#: maint.php:33
+#: maint.php:38
 msgid "Delete"
 msgstr "Dzēst"
 
-#: maint.php:38
+#: maint.php:43
 msgid "Associate"
 msgstr "Sasaistīt"
 
-#: maint.php:39
+#: maint.php:44
 msgid "Disassociate"
 msgstr "Atsaistīt"
 
-#: maint.php:43
+#: maint.php:48
 msgid "One Time"
 msgstr "Vienreiz"
 
-#: maint.php:44
+#: maint.php:49
 msgid "Recurring"
 msgstr "Atkārtojas"
 
-#: maint.php:48
+#: maint.php:53
 msgid "Not Defined"
 msgstr "Nav definēts"
 
-#: maint.php:49
+#: maint.php:54
 msgid "Every Day"
 msgstr "Katru dienu"
 
-#: maint.php:50
+#: maint.php:55
 msgid "Every Week"
 msgstr "Katru nedēļu"
 
-#: maint.php:54 maint.php:55 maint.php:58
+#: maint.php:59 maint.php:60 maint.php:63
 msgid "No"
 msgstr "Nē"
 
-#: maint.php:56 maint.php:57
+#: maint.php:61 maint.php:62
 msgid "Yes"
 msgstr "Jā"
 
-#: maint.php:63
+#: maint.php:68
 msgid "General"
 msgstr "Pamata"
 
-#: maint.php:67 maint.php:869 maint.php:1011
+#: maint.php:72 maint.php:1083 maint.php:1245
 msgid "Devices"
 msgstr "Iekārtas"
 
-#: maint.php:71
+#: maint.php:77
 msgid "WebSeer"
 msgstr "WebSeer"
 
-#: maint.php:296
+#: maint.php:303
 msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
 msgstr "Noklikšķiniet 'Turpināt', lai atjauninātu norādīto(-ās) apkopes izpildes sarakstu(-us)."
 
-#: maint.php:301 maint.php:310 maint.php:365 maint.php:374 maint.php:430
-#: maint.php:439
+#: maint.php:308 maint.php:317 maint.php:372 maint.php:381 maint.php:437
+#: maint.php:446
 msgid "Cancel"
 msgstr "Atcelt"
 
-#: maint.php:301 maint.php:310 maint.php:365 maint.php:374 maint.php:430
-#: maint.php:439
+#: maint.php:308 maint.php:317 maint.php:372 maint.php:381 maint.php:437
+#: maint.php:446
 msgid "Continue"
 msgstr "Turpināt"
 
-#: maint.php:301
+#: maint.php:308
 msgid "Update Maintenance Schedule(s)"
 msgstr "Atjaunināt apkopes izpildes sarakstu(-us)"
 
-#: maint.php:305
+#: maint.php:312
 msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
 msgstr "Noklikšķiniet 'Turpināt', lai dzēstu norādīto(-ās) apkopes izpildes sarakstu(-us).  Visas sasaistītās ierīces ar šo izpildes sarakstu tiks atsaistītas."
 
-#: maint.php:310
+#: maint.php:317
 msgid "Delete Maintenance Schedule(s)"
 msgstr "Apkopes izpildes sarakstu dzēšana"
 
-#: maint.php:313
+#: maint.php:320
 msgid "You must select at least one Maintenance Schedule."
 msgstr "Jums ir jāizvēlas vismaz viens apkopes izpildes saraksts."
 
-#: maint.php:314 maint.php:378 maint.php:443
+#: maint.php:321 maint.php:385 maint.php:450
 msgid "Return"
 msgstr "Atgriezties"
 
-#: maint.php:354
+#: maint.php:361
 msgid "Device(s)"
 msgstr "Iekārta(s)"
 
-#: maint.php:360
+#: maint.php:367
 #, php-format
 msgid "Click 'Continue' to associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
 msgstr "Noklikšķiniet 'Turpināt', lai saistītu norādīto(-ās) ierīci(-es) ar <b>%s</b> apkopes izpildes sarakstu."
 
-#: maint.php:365 maint.php:430
+#: maint.php:372 maint.php:437
 msgid "Associate Maintenance Schedule(s)"
 msgstr "Saistīt apkopes izpildes sarakstus"
 
-#: maint.php:369
+#: maint.php:376
 #, php-format
 msgid "Click 'Continue' to disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
 msgstr "Noklikšķiniet 'Turpināt', lai atsaistīt norādīto(-ās) ierīci(-es) no apkopes izpildes sarakstu '<b>%s</b>'."
 
-#: maint.php:374 maint.php:439
+#: maint.php:381 maint.php:446
 msgid "Disassociate Maintenance Schedule(s)"
 msgstr "Atsaistīt apkopes izpildes sarakstu(s)"
 
-#: maint.php:377
+#: maint.php:384
 msgid "You must select at least one Device."
 msgstr "Jums ir jāatlasa vismaz viena ierīce."
 
-#: maint.php:419
+#: maint.php:426
 msgid "Webseer(s)"
 msgstr "Webseer(s)"
 
-#: maint.php:425
+#: maint.php:432
 #, php-format
 msgid "Click 'Continue' to associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
 msgstr "Noklikšķiniet 'Turpināt', lai saistītu zemāk norādīto(-ās) Webseer(s) ar '<b>%s</b>' apkopes izpildes sarakstu."
 
-#: maint.php:434
+#: maint.php:441
 #, php-format
 msgid "Click 'Continue' to disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
 msgstr "Noklikšķiniet 'Turpināt', lai atsaistītu zemāk norādīto(s) Webseer(s) no '<b>%s</b>' apkopes izpildes sarakstu."
 
-#: maint.php:442
+#: maint.php:449
 msgid "You must select at least one Webseer."
 msgstr "Jums ir jāatlasa vismaz viens Webseer."
 
-#: maint.php:473
+#: maint.php:480
 #, php-format
-msgid "General Settings [edit: %s]"
-msgstr "Pamatiestatījumi [rediģēt: %s]"
+msgid "[edit: %s]"
+msgstr ""
 
-#: maint.php:475
-msgid "General Settings [new]"
-msgstr "Pamatiestatījumi [jauns]"
+#: maint.php:482
+msgid "[new]"
+msgstr ""
 
-#: maint.php:523
+#: maint.php:530
 msgid "New Maintenance Schedule"
 msgstr "Jauns apkopes izpildes saraksts"
 
-#: maint.php:535
+#: maint.php:538
+#, fuzzy, php-format
+msgid "General Settings %s"
+msgstr "Pamatiestatījumi [jauns]"
+
+#: maint.php:542
 msgid "Schedule"
 msgstr "Izpildes saraksts"
 
-#: maint.php:539
+#: maint.php:546
 msgid "Schedule Name"
 msgstr "Izpildes saraksta nosaukums"
 
-#: maint.php:543
+#: maint.php:550
 msgid "Provide the Maintenance Schedule a meaningful name"
 msgstr "Norādiet apkopes izpildes sarakstam jēgpilnu nosaukumu"
 
-#: maint.php:547 maint.php:706 maint.php:1259 maint.php:1298
+#: maint.php:554 maint.php:713 maint.php:1507 maint.php:1546
 msgid "Enabled"
 msgstr "Iespējots"
 
-#: maint.php:550
+#: maint.php:557
 msgid "Whether or not this schedule will be checked."
 msgstr "Vai šis izpildes saraksts tiks pārbaudīts."
 
-#: maint.php:554
+#: maint.php:561
 msgid "Schedule Type"
 msgstr "Izpildes saraksta tips"
 
-#: maint.php:558
+#: maint.php:565
 msgid "The type of schedule, one time or recurring."
 msgstr "Izpildes saraksta tips, vienreizējs vai atkārtojas."
 
-#: maint.php:562 maint.php:705
+#: maint.php:569 maint.php:712
 msgid "Interval"
 msgstr "Intervāls"
 
-#: maint.php:566
+#: maint.php:573
 msgid "This is the interval in which the start / end time will repeat."
 msgstr "Intervāls, kurā sākuma / beigu laiks atkārtosies."
 
-#: maint.php:570
+#: maint.php:577
 msgid "Start Time"
 msgstr "Sākuma laiks"
 
-#: maint.php:574
+#: maint.php:581
 msgid "The start date / time for this schedule. Most date / time formats accepted."
 msgstr "Šī izpildes saraksta sākuma datums / laiks. Tiek pieņemti lielākā daļa datuma / laika formātu."
 
-#: maint.php:579
+#: maint.php:586
 msgid "End Time"
 msgstr "Beigu laiks"
 
-#: maint.php:584
+#: maint.php:591
 msgid "The end date / time for this schedule. Most date / time formats accepted."
 msgstr "Šī izpildes saraksta beigu datums / laiks. Tiek pieņemti lielākā daļa datuma / laika formātu."
 
-#: maint.php:633
+#: maint.php:640
 msgid "Start Date/Time Selector"
 msgstr "Sākuma datuma/laika izvēle"
 
-#: maint.php:634
+#: maint.php:641
 msgid "End Date/Time Selector"
 msgstr "Beigu datuma/laika izvēle"
 
-#: maint.php:697 setup.php:55 setup.php:63
+#: maint.php:704 setup.php:55 setup.php:63
 msgid "Maintenance Schedules"
 msgstr "Tehniskās apkopes izpildes saraksti"
 
-#: maint.php:700
+#: maint.php:707
 msgid "Name"
 msgstr "Nosaukums"
 
-#: maint.php:701
+#: maint.php:708
 msgid "Active"
 msgstr "Aktīvs"
 
-#: maint.php:702 maint.php:847
+#: maint.php:709
 msgid "Type"
 msgstr "Tips"
 
-#: maint.php:703
+#: maint.php:710
 msgid "Start"
 msgstr "Sākuma"
 
-#: maint.php:704
+#: maint.php:711
 msgid "End"
 msgstr "Beigu"
 
-#: maint.php:744 maint.php:1046 maint.php:1293
+#: maint.php:750 maint.php:1280 maint.php:1541
 msgid "No Schedules"
 msgstr "Nav izpildes sarakstu"
 
-#: maint.php:832
+#: maint.php:877
 #, php-format
 msgid "Associated Devices %s"
 msgstr "Saistītās ierīces %s"
 
-#: maint.php:841 maint.php:1152
-msgid "Search"
-msgstr "Meklēt"
+#: maint.php:886
+msgid "Site"
+msgstr ""
 
-#: maint.php:851
+#: maint.php:890 maint.php:910 maint.php:1043
 msgid "Any"
 msgstr "Jebkuru"
 
-#: maint.php:852
+#: maint.php:891 maint.php:1051
 msgid "None"
 msgstr "Nevienu"
 
-#: maint.php:873 maint.php:1162
-msgid "Default"
-msgstr "Noklusējuma"
+#: maint.php:906
+msgid "Data Collector"
+msgstr ""
 
-#: maint.php:887 maint.php:1176
-msgid "Associated"
-msgstr "Sasaistītos"
+#: maint.php:925
+msgid "Location"
+msgstr ""
 
-#: maint.php:891 maint.php:1180
+#: maint.php:997
+msgid "Template"
+msgstr ""
+
+#: maint.php:1068 maint.php:1429
 msgid "Go"
 msgstr "Aiziet"
 
-#: maint.php:891 maint.php:1180
+#: maint.php:1068 maint.php:1429
 msgid "Set/Refresh Filters"
 msgstr "Atlasīt/Atjaunināt filtrus"
 
-#: maint.php:892 maint.php:1181
+#: maint.php:1069 maint.php:1430
 msgid "Clear"
 msgstr "Notīrīt"
 
-#: maint.php:892 maint.php:1181
+#: maint.php:1069 maint.php:1430
 msgid "Clear Filters"
 msgstr "Notīrīt filtrus"
 
-#: maint.php:977 maint.php:1256
+#: maint.php:1077 maint.php:1401
+msgid "Search"
+msgstr "Meklēt"
+
+#: maint.php:1087 maint.php:1411
+msgid "Default"
+msgstr "Noklusējuma"
+
+#: maint.php:1101 maint.php:1425
+msgid "Associated"
+msgstr "Sasaistītos"
+
+#: maint.php:1211 maint.php:1504
 msgid "Description"
 msgstr "Apraksts"
 
-#: maint.php:981 maint.php:1257
+#: maint.php:1215 maint.php:1505
 msgid "ID"
 msgstr "ID"
 
-#: maint.php:985 maint.php:1258
+#: maint.php:1219 maint.php:1506
 msgid "Associated Schedules"
 msgstr "Sasaistītie izpildes saraksti"
 
-#: maint.php:989
+#: maint.php:1223
 msgid "Graphs"
 msgstr "Grafiki"
 
-#: maint.php:993
+#: maint.php:1227
 msgid "Data Sources"
 msgstr "Datu avoti"
 
-#: maint.php:997
+#: maint.php:1231
 msgid "Thresholds"
 msgstr "Robežvērtības"
 
-#: maint.php:1001
+#: maint.php:1235
 msgid "Status"
 msgstr "Statuss"
 
-#: maint.php:1005 maint.php:1260
+#: maint.php:1239 maint.php:1508
 msgid "Hostname"
 msgstr "Resursdatora nosaukums"
 
-#: maint.php:1028 maint.php:1273
+#: maint.php:1262 maint.php:1521
 msgid "Current Schedule"
 msgstr "Pašreizējais izpildes saraksts"
 
-#: maint.php:1060
+#: maint.php:1294
 msgid "No Associated Devices Found"
 msgstr "Saistītās ierīces nav atrastas"
 
-#: maint.php:1062 maint.php:1311
+#: maint.php:1296 maint.php:1559
 msgid "Schedule must be created before associating"
 msgstr "Pirms saistīšanas ir jāizveido izpildes saraksts"
 
-#: maint.php:1143
+#: maint.php:1392
 #, php-format
 msgid "Associated Web URL's %s"
 msgstr "Atbilstošās tīmekļa vietņu URL adreses %s"
 
-#: maint.php:1158
+#: maint.php:1407
 msgid "Rows"
 msgstr "Rindas"
 
-#: maint.php:1247
+#: maint.php:1495
 msgid "Lists"
 msgstr "Saraksti"
 
-#: maint.php:1261
+#: maint.php:1509
 msgid "URL"
 msgstr "Tīmekļa vietņu adrese"
 
-#: maint.php:1298
+#: maint.php:1546
 msgid "Disabled"
 msgstr "Atspējots"
 
-#: maint.php:1300
+#: maint.php:1548
 msgid "USING DNS"
 msgstr "IZMANTOJOT DNS"
 
-#: maint.php:1309
+#: maint.php:1557
 msgid "No Associated WebSeer URL's Found"
 msgstr "Atbilstošās WebSeer tīmekļa vietņu URL adreses nav atrastas"
 
@@ -370,3 +403,6 @@ msgstr "(rediģēt)"
 #: setup.php:65
 msgid "(actions)"
 msgstr "(darbības)"
+
+#~ msgid "General Settings [edit: %s]"
+#~ msgstr "Pamatiestatījumi [rediģēt: %s]"

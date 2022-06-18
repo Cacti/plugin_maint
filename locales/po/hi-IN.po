@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2020-12-12 22:16-0500\n"
+"POT-Creation-Date: 2022-06-18 08:24-0400\n"
 "PO-Revision-Date: 2020-12-12 20:53-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -17,398 +17,418 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.4.2\n"
 
-#: maint.php:32
+#: maint.php:37
 #, fuzzy
 msgid "Update Time (Now + 1 Hour)"
 msgstr "अपडेट का समय (अब + 1 घंटा)"
 
-#: maint.php:33
+#: maint.php:38
 msgid "Delete"
 msgstr "हटाएं"
 
-#: maint.php:38
+#: maint.php:43
 #, fuzzy
 msgid "Associate"
 msgstr "साथी"
 
-#: maint.php:39
+#: maint.php:44
 #, fuzzy
 msgid "Disassociate"
 msgstr "अलग"
 
-#: maint.php:43
+#: maint.php:48
 #, fuzzy
 msgid "One Time"
 msgstr "एक बार"
 
-#: maint.php:44
+#: maint.php:49
 msgid "Recurring"
 msgstr "आवर्ती"
 
-#: maint.php:48
+#: maint.php:53
 #, fuzzy
 msgid "Not Defined"
 msgstr "परिभाषित नहीं"
 
-#: maint.php:49
+#: maint.php:54
 #, fuzzy
 msgid "Every Day"
 msgstr "हर रोज"
 
-#: maint.php:50
+#: maint.php:55
 #, fuzzy
 msgid "Every Week"
 msgstr "प्रति सप्ताह"
 
-#: maint.php:54 maint.php:55 maint.php:58
+#: maint.php:59 maint.php:60 maint.php:63
 msgid "No"
 msgstr "नहीं"
 
-#: maint.php:56 maint.php:57
+#: maint.php:61 maint.php:62
 msgid "Yes"
 msgstr "हाँ"
 
-#: maint.php:63
+#: maint.php:68
 msgid "General"
 msgstr "सामान्य"
 
-#: maint.php:67 maint.php:869 maint.php:1011
+#: maint.php:72 maint.php:1083 maint.php:1245
 msgid "Devices"
 msgstr "डिवाइस"
 
-#: maint.php:71
+#: maint.php:77
 #, fuzzy
 msgid "WebSeer"
 msgstr "WebSeer"
 
-#: maint.php:296
+#: maint.php:303
 #, fuzzy
 msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
 msgstr "निम्न रखरखाव अनुसूची को अपडेट करने के लिए 'जारी रखें' पर क्लिक करें।"
 
-#: maint.php:301 maint.php:310 maint.php:365 maint.php:374 maint.php:430
-#: maint.php:439
+#: maint.php:308 maint.php:317 maint.php:372 maint.php:381 maint.php:437
+#: maint.php:446
 msgid "Cancel"
 msgstr "कैंसिल करें"
 
-#: maint.php:301 maint.php:310 maint.php:365 maint.php:374 maint.php:430
-#: maint.php:439
+#: maint.php:308 maint.php:317 maint.php:372 maint.php:381 maint.php:437
+#: maint.php:446
 msgid "Continue"
 msgstr "जारी रखें"
 
-#: maint.php:301
+#: maint.php:308
 #, fuzzy
 msgid "Update Maintenance Schedule(s)"
 msgstr "अनुरक्षण अनुसूचियां"
 
-#: maint.php:305
+#: maint.php:312
 #, fuzzy
 msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
 msgstr "निम्नलिखित अनुरक्षण अनुसूची (ओं) को हटाने के लिए 'जारी रखें' पर क्लिक करें। इस अनुसूची से संबद्ध किसी भी उपकरण को अलग कर दिया जाएगा।"
 
-#: maint.php:310
+#: maint.php:317
 #, fuzzy
 msgid "Delete Maintenance Schedule(s)"
 msgstr "अनुरक्षण अनुसूचियां"
 
-#: maint.php:313
+#: maint.php:320
 #, fuzzy
 msgid "You must select at least one Maintenance Schedule."
 msgstr "आपको कम से कम एक रखरखाव अनुसूची का चयन करना होगा।"
 
-#: maint.php:314 maint.php:378 maint.php:443
+#: maint.php:321 maint.php:385 maint.php:450
 msgid "Return"
 msgstr "वापसी"
 
-#: maint.php:354
+#: maint.php:361
 #, fuzzy
 msgid "Device(s)"
 msgstr "उपकरण)"
 
-#: maint.php:360
+#: maint.php:367
 #, fuzzy, php-format
 msgid "Click 'Continue' to associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
 msgstr "निम्न डिवाइस (ओं) को रखरखाव अनुसूची ' <b> %s</b> ' के साथ जोड़ने के लिए 'जारी रखें' पर क्लिक करें।"
 
-#: maint.php:365 maint.php:430
+#: maint.php:372 maint.php:437
 #, fuzzy
 msgid "Associate Maintenance Schedule(s)"
 msgstr "अनुरक्षण अनुसूचियां"
 
-#: maint.php:369
+#: maint.php:376
 #, fuzzy, php-format
 msgid "Click 'Continue' to disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
 msgstr "रखरखाव अनुसूची ' <b> %s</b> ' के साथ निम्नलिखित डिवाइस (एस) को अलग करने के लिए 'जारी रखें' पर क्लिक करें।"
 
-#: maint.php:374 maint.php:439
+#: maint.php:381 maint.php:446
 #, fuzzy
 msgid "Disassociate Maintenance Schedule(s)"
 msgstr "अनुरक्षण अनुसूचियां"
 
-#: maint.php:377
+#: maint.php:384
 #, fuzzy
 msgid "You must select at least one Device."
 msgstr "आपके लिए कम से कम एक डिवाइस चुनना ज़रूरी है।"
 
-#: maint.php:419
+#: maint.php:426
 #, fuzzy
 msgid "Webseer(s)"
 msgstr "Webseer (रों)"
 
-#: maint.php:425
+#: maint.php:432
 #, fuzzy, php-format
 msgid "Click 'Continue' to associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
 msgstr "रखरखाव अनुसूची ' <b> %s</b> ' के साथ नीचे डिवाइस (ओं) को जोड़ने के लिए 'जारी रखें' पर क्लिक करें।"
 
-#: maint.php:434
+#: maint.php:441
 #, fuzzy, php-format
 msgid "Click 'Continue' to disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
 msgstr "रखरखाव अनुसूची ' <b> %s</b> ' के साथ नीचे दिए गए उपकरणों को अलग करने के लिए 'जारी रखें' पर क्लिक करें।"
 
-#: maint.php:442
+#: maint.php:449
 #, fuzzy
 msgid "You must select at least one Webseer."
 msgstr "आपके लिए कम से कम एक डिवाइस चुनना ज़रूरी है।"
 
-#: maint.php:473
-#, fuzzy, php-format
-msgid "General Settings [edit: %s]"
-msgstr "सामान्य सेटिंग्स [संपादित करें: %s]"
+#: maint.php:480
+#, php-format
+msgid "[edit: %s]"
+msgstr ""
 
-#: maint.php:475
-#, fuzzy
-msgid "General Settings [new]"
-msgstr "सामान्य सेटिंग्स [नया]"
+#: maint.php:482
+msgid "[new]"
+msgstr ""
 
-#: maint.php:523
+#: maint.php:530
 #, fuzzy
 msgid "New Maintenance Schedule"
 msgstr "नई रखरखाव अनुसूची"
 
-#: maint.php:535
+#: maint.php:538
+#, fuzzy, php-format
+msgid "General Settings %s"
+msgstr "सामान्य सेटिंग्स [नया]"
+
+#: maint.php:542
 msgid "Schedule"
 msgstr "शैड्‌यूल"
 
-#: maint.php:539
+#: maint.php:546
 #, fuzzy
 msgid "Schedule Name"
 msgstr "अनुसूची का नाम"
 
-#: maint.php:543
+#: maint.php:550
 #, fuzzy
 msgid "Provide the Maintenance Schedule a meaningful name"
 msgstr "रखरखाव अनुसूची को एक सार्थक नाम प्रदान करें"
 
-#: maint.php:547 maint.php:706 maint.php:1259 maint.php:1298
+#: maint.php:554 maint.php:713 maint.php:1507 maint.php:1546
 msgid "Enabled"
 msgstr "सक्षम"
 
-#: maint.php:550
+#: maint.php:557
 #, fuzzy
 msgid "Whether or not this schedule will be checked."
 msgstr "इस दहलीज की जाँच की जाएगी या नहीं।"
 
-#: maint.php:554
+#: maint.php:561
 #, fuzzy
 msgid "Schedule Type"
 msgstr "अनुसूची प्रकार"
 
-#: maint.php:558
+#: maint.php:565
 #, fuzzy
 msgid "The type of schedule, one time or recurring."
 msgstr "अनुसूची का प्रकार, एक बार या आवर्ती।"
 
-#: maint.php:562 maint.php:705
+#: maint.php:569 maint.php:712
 msgid "Interval"
 msgstr "अंतराल"
 
-#: maint.php:566
+#: maint.php:573
 #, fuzzy
 msgid "This is the interval in which the start / end time will repeat."
 msgstr "यह अंतराल है जिसमें प्रारंभ / समाप्ति समय दोहराएगा।"
 
-#: maint.php:570
+#: maint.php:577
 msgid "Start Time"
 msgstr "प्रारंभ समय"
 
-#: maint.php:574
+#: maint.php:581
 #, fuzzy
 msgid "The start date / time for this schedule. Most date / time formats accepted."
 msgstr "इस अनुसूची के लिए प्रारंभ तिथि / समय। अधिकांश दिनांक / समय प्रारूप स्वीकार किए जाते हैं।"
 
-#: maint.php:579
+#: maint.php:586
 msgid "End Time"
 msgstr "अंतिम समय"
 
-#: maint.php:584
+#: maint.php:591
 #, fuzzy
 msgid "The end date / time for this schedule. Most date / time formats accepted."
 msgstr "इस अनुसूची के लिए अंतिम तिथि / समय। अधिकांश दिनांक / समय प्रारूप स्वीकार किए जाते हैं।"
 
-#: maint.php:633
+#: maint.php:640
 #, fuzzy
 msgid "Start Date/Time Selector"
 msgstr "प्रारंभ दिनांक / समय चयनकर्ता"
 
-#: maint.php:634
+#: maint.php:641
 #, fuzzy
 msgid "End Date/Time Selector"
 msgstr "अंतिम तिथि / समय चयनकर्ता"
 
-#: maint.php:697 setup.php:55 setup.php:63
+#: maint.php:704 setup.php:55 setup.php:63
 #, fuzzy
 msgid "Maintenance Schedules"
 msgstr "अनुरक्षण अनुसूचियां"
 
-#: maint.php:700
+#: maint.php:707
 msgid "Name"
 msgstr "नाम"
 
-#: maint.php:701
+#: maint.php:708
 msgid "Active"
 msgstr "सक्रिय"
 
-#: maint.php:702 maint.php:847
+#: maint.php:709
 msgid "Type"
 msgstr "प्रकार"
 
-#: maint.php:703
+#: maint.php:710
 msgid "Start"
 msgstr "शुरू करें"
 
-#: maint.php:704
+#: maint.php:711
 #, fuzzy
 msgid "End"
 msgstr "समाप्त"
 
-#: maint.php:744 maint.php:1046 maint.php:1293
+#: maint.php:750 maint.php:1280 maint.php:1541
 #, fuzzy
 msgid "No Schedules"
 msgstr "कोई अनुसूचियां नहीं"
 
-#: maint.php:832
+#: maint.php:877
 #, fuzzy, php-format
 msgid "Associated Devices %s"
 msgstr "संबद्ध डिवाइस %s"
 
-#: maint.php:841 maint.php:1152
-msgid "Search"
-msgstr "खोजें"
+#: maint.php:886
+msgid "Site"
+msgstr ""
 
-#: maint.php:851
+#: maint.php:890 maint.php:910 maint.php:1043
 msgid "Any"
 msgstr "कोई भी@ label"
 
-#: maint.php:852
+#: maint.php:891 maint.php:1051
 msgid "None"
 msgstr "कोई नहीं"
 
-#: maint.php:873 maint.php:1162
-msgid "Default"
-msgstr "डिफ़ॉल्ट"
+#: maint.php:906
+msgid "Data Collector"
+msgstr ""
 
-#: maint.php:887 maint.php:1176
-#, fuzzy
-msgid "Associated"
-msgstr "एसोसिएटेड"
+#: maint.php:925
+msgid "Location"
+msgstr ""
 
-#: maint.php:891 maint.php:1180
+#: maint.php:997
+msgid "Template"
+msgstr ""
+
+#: maint.php:1068 maint.php:1429
 msgid "Go"
 msgstr "जाएं"
 
-#: maint.php:891 maint.php:1180
+#: maint.php:1068 maint.php:1429
 #, fuzzy
 msgid "Set/Refresh Filters"
 msgstr "फ़िल्टर सेट करें / ताज़ा करें"
 
-#: maint.php:892 maint.php:1181
+#: maint.php:1069 maint.php:1430
 msgid "Clear"
 msgstr "明确"
 
-#: maint.php:892 maint.php:1181
+#: maint.php:1069 maint.php:1430
 #, fuzzy
 msgid "Clear Filters"
 msgstr "साफ फिल्टर"
 
-#: maint.php:977 maint.php:1256
+#: maint.php:1077 maint.php:1401
+msgid "Search"
+msgstr "खोजें"
+
+#: maint.php:1087 maint.php:1411
+msgid "Default"
+msgstr "डिफ़ॉल्ट"
+
+#: maint.php:1101 maint.php:1425
+#, fuzzy
+msgid "Associated"
+msgstr "एसोसिएटेड"
+
+#: maint.php:1211 maint.php:1504
 msgid "Description"
 msgstr "विवरण"
 
-#: maint.php:981 maint.php:1257
+#: maint.php:1215 maint.php:1505
 msgid "ID"
 msgstr "ID"
 
-#: maint.php:985 maint.php:1258
+#: maint.php:1219 maint.php:1506
 #, fuzzy
 msgid "Associated Schedules"
 msgstr "एसोसिएटेड अनुसूचियां"
 
-#: maint.php:989
+#: maint.php:1223
 #, fuzzy
 msgid "Graphs"
 msgstr "रेखांकन"
 
-#: maint.php:993
+#: maint.php:1227
 #, fuzzy
 msgid "Data Sources"
 msgstr "डाटा के स्रोत"
 
-#: maint.php:997
+#: maint.php:1231
 #, fuzzy
 msgid "Thresholds"
 msgstr "सीमारेखा"
 
-#: maint.php:1001
+#: maint.php:1235
 msgid "Status"
 msgstr "ऑर्डर स्थिति"
 
-#: maint.php:1005 maint.php:1260
+#: maint.php:1239 maint.php:1508
 msgid "Hostname"
 msgstr "होस्टनांऽ"
 
-#: maint.php:1028 maint.php:1273
+#: maint.php:1262 maint.php:1521
 #, fuzzy
 msgid "Current Schedule"
 msgstr "वर्तमान अनुसूची"
 
-#: maint.php:1060
+#: maint.php:1294
 #, fuzzy
 msgid "No Associated Devices Found"
 msgstr "कोई एसोसिएटेड डिवाइस नहीं मिला"
 
-#: maint.php:1062 maint.php:1311
+#: maint.php:1296 maint.php:1559
 #, fuzzy
 msgid "Schedule must be created before associating"
 msgstr "संबद्ध करने से पहले अनुसूची बनाई जानी चाहिए"
 
-#: maint.php:1143
+#: maint.php:1392
 #, fuzzy, php-format
 msgid "Associated Web URL's %s"
 msgstr "संबद्ध वेब URL का %s"
 
-#: maint.php:1158
+#: maint.php:1407
 msgid "Rows"
 msgstr "पंक्तियाँ"
 
-#: maint.php:1247
+#: maint.php:1495
 #, fuzzy
 msgid "Lists"
 msgstr "सूचियाँ"
 
-#: maint.php:1261
+#: maint.php:1509
 msgid "URL"
 msgstr "URL"
 
-#: maint.php:1298
+#: maint.php:1546
 msgid "Disabled"
 msgstr "अक्षम"
 
-#: maint.php:1300
+#: maint.php:1548
 #, fuzzy
 msgid "USING DNS"
 msgstr "DNS का उपयोग करना"
 
-#: maint.php:1309
+#: maint.php:1557
 #, fuzzy
 msgid "No Associated WebSeer URL's Found"
 msgstr "कोई संबद्ध WebSeer URL का संस्थापक नहीं है"
@@ -432,9 +452,13 @@ msgid "(actions)"
 msgstr "कार्रवाइयाँ"
 
 #, fuzzy
+#~ msgid "Rules"
+#~ msgstr "नियम"
+
+#, fuzzy
 #~ msgid "The type of Threshold that will be monitored."
 #~ msgstr "थ्रेशोल्ड का प्रकार जिसे मॉनिटर किया जाएगा।"
 
 #, fuzzy
-#~ msgid "Rules"
-#~ msgstr "नियम"
+#~ msgid "General Settings [edit: %s]"
+#~ msgstr "सामान्य सेटिंग्स [संपादित करें: %s]"

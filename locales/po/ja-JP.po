@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2020-12-12 22:16-0500\n"
+"POT-Creation-Date: 2022-06-18 08:24-0400\n"
 "PO-Revision-Date: 2020-12-12 20:54-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -17,386 +17,406 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.4.2\n"
 
-#: maint.php:32
+#: maint.php:37
 #, fuzzy
 msgid "Update Time (Now + 1 Hour)"
 msgstr "更新時間（今すぐ+ 1時間）"
 
-#: maint.php:33
+#: maint.php:38
 msgid "Delete"
 msgstr "削除"
 
-#: maint.php:38
+#: maint.php:43
 msgid "Associate"
 msgstr "アソシエイト"
 
-#: maint.php:39
+#: maint.php:44
 #, fuzzy
 msgid "Disassociate"
 msgstr "関連付け解除"
 
-#: maint.php:43
+#: maint.php:48
 msgid "One Time"
 msgstr "一回払い"
 
-#: maint.php:44
+#: maint.php:49
 msgid "Recurring"
 msgstr "繰り返し"
 
-#: maint.php:48
+#: maint.php:53
 #, fuzzy
 msgid "Not Defined"
 msgstr "定義されていません"
 
-#: maint.php:49
+#: maint.php:54
 msgid "Every Day"
 msgstr "毎日"
 
-#: maint.php:50
+#: maint.php:55
 msgid "Every Week"
 msgstr "毎週"
 
-#: maint.php:54 maint.php:55 maint.php:58
+#: maint.php:59 maint.php:60 maint.php:63
 msgid "No"
 msgstr "いいえ"
 
-#: maint.php:56 maint.php:57
+#: maint.php:61 maint.php:62
 msgid "Yes"
 msgstr "はい"
 
-#: maint.php:63
+#: maint.php:68
 msgid "General"
 msgstr "一般"
 
-#: maint.php:67 maint.php:869 maint.php:1011
+#: maint.php:72 maint.php:1083 maint.php:1245
 msgid "Devices"
 msgstr "デバイス"
 
-#: maint.php:71
+#: maint.php:77
 #, fuzzy
 msgid "WebSeer"
 msgstr "WebSeer"
 
-#: maint.php:296
+#: maint.php:303
 #, fuzzy
 msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
 msgstr "次のメンテナンススケジュールを更新するには、[続行]をクリックしてください。"
 
-#: maint.php:301 maint.php:310 maint.php:365 maint.php:374 maint.php:430
-#: maint.php:439
+#: maint.php:308 maint.php:317 maint.php:372 maint.php:381 maint.php:437
+#: maint.php:446
 msgid "Cancel"
 msgstr "取り消し"
 
-#: maint.php:301 maint.php:310 maint.php:365 maint.php:374 maint.php:430
-#: maint.php:439
+#: maint.php:308 maint.php:317 maint.php:372 maint.php:381 maint.php:437
+#: maint.php:446
 msgid "Continue"
 msgstr "続ける"
 
-#: maint.php:301
+#: maint.php:308
 #, fuzzy
 msgid "Update Maintenance Schedule(s)"
 msgstr "メンテナンススケジュール"
 
-#: maint.php:305
+#: maint.php:312
 #, fuzzy
 msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
 msgstr "次のメンテナンススケジュールを削除するには、[続行]をクリックします。このスケジュールに関連付けられているすべてのデバイスは関連付け解除されます。"
 
-#: maint.php:310
+#: maint.php:317
 #, fuzzy
 msgid "Delete Maintenance Schedule(s)"
 msgstr "メンテナンススケジュール"
 
-#: maint.php:313
+#: maint.php:320
 #, fuzzy
 msgid "You must select at least one Maintenance Schedule."
 msgstr "少なくとも1つのメンテナンススケジュールを選択する必要があります。"
 
-#: maint.php:314 maint.php:378 maint.php:443
+#: maint.php:321 maint.php:385 maint.php:450
 msgid "Return"
 msgstr "帰還"
 
-#: maint.php:354
+#: maint.php:361
 #, fuzzy
 msgid "Device(s)"
 msgstr "デバイス"
 
-#: maint.php:360
+#: maint.php:367
 #, fuzzy, php-format
 msgid "Click 'Continue' to associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
 msgstr "[続行]をクリックして、次のデバイスをメンテナンススケジュール ' <b>％s</b> 'に関連付けます。"
 
-#: maint.php:365 maint.php:430
+#: maint.php:372 maint.php:437
 #, fuzzy
 msgid "Associate Maintenance Schedule(s)"
 msgstr "メンテナンススケジュール"
 
-#: maint.php:369
+#: maint.php:376
 #, fuzzy, php-format
 msgid "Click 'Continue' to disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
 msgstr "次のデバイスとメンテナンススケジュール ' <b>％1！</b> 'の関連付けを解除するには、 '続行'をクリックしてください。"
 
-#: maint.php:374 maint.php:439
+#: maint.php:381 maint.php:446
 #, fuzzy
 msgid "Disassociate Maintenance Schedule(s)"
 msgstr "メンテナンススケジュール"
 
-#: maint.php:377
+#: maint.php:384
 #, fuzzy
 msgid "You must select at least one Device."
 msgstr "少なくとも1つのデバイスを選択する必要があります。"
 
-#: maint.php:419
+#: maint.php:426
 #, fuzzy
 msgid "Webseer(s)"
 msgstr "Webseer（s）"
 
-#: maint.php:425
+#: maint.php:432
 #, fuzzy, php-format
 msgid "Click 'Continue' to associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
 msgstr "[続行]をクリックして、下のデバイスをメンテナンススケジュール ' <b>％s</b> 'に関連付けてください。"
 
-#: maint.php:434
+#: maint.php:441
 #, fuzzy, php-format
 msgid "Click 'Continue' to disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
 msgstr "[続行]をクリックして、以下のデバイスとメンテナンススケジュール ' <b>％s</b> 'の関連付けを解除してください。"
 
-#: maint.php:442
+#: maint.php:449
 #, fuzzy
 msgid "You must select at least one Webseer."
 msgstr "少なくとも1つのデバイスを選択する必要があります。"
 
-#: maint.php:473
-#, fuzzy, php-format
-msgid "General Settings [edit: %s]"
-msgstr "一般設定[編集：％s]"
+#: maint.php:480
+#, php-format
+msgid "[edit: %s]"
+msgstr ""
 
-#: maint.php:475
-#, fuzzy
-msgid "General Settings [new]"
-msgstr "一般設定[新規]"
+#: maint.php:482
+msgid "[new]"
+msgstr ""
 
-#: maint.php:523
+#: maint.php:530
 #, fuzzy
 msgid "New Maintenance Schedule"
 msgstr "新しいメンテナンススケジュール"
 
-#: maint.php:535
+#: maint.php:538
+#, fuzzy, php-format
+msgid "General Settings %s"
+msgstr "一般設定[新規]"
+
+#: maint.php:542
 msgid "Schedule"
 msgstr "スケジュール"
 
-#: maint.php:539
+#: maint.php:546
 msgid "Schedule Name"
 msgstr "スケジュール名"
 
-#: maint.php:543
+#: maint.php:550
 #, fuzzy
 msgid "Provide the Maintenance Schedule a meaningful name"
 msgstr "メンテナンススケジュールにわかりやすい名前を付ける"
 
-#: maint.php:547 maint.php:706 maint.php:1259 maint.php:1298
+#: maint.php:554 maint.php:713 maint.php:1507 maint.php:1546
 msgid "Enabled"
 msgstr "有効"
 
-#: maint.php:550
+#: maint.php:557
 #, fuzzy
 msgid "Whether or not this schedule will be checked."
 msgstr "このしきい値を調べて警告するかどうか。"
 
-#: maint.php:554
+#: maint.php:561
 msgid "Schedule Type"
 msgstr "スケジュールの種類"
 
-#: maint.php:558
+#: maint.php:565
 #, fuzzy
 msgid "The type of schedule, one time or recurring."
 msgstr "スケジュールのタイプ、1回または定期的。"
 
-#: maint.php:562 maint.php:705
+#: maint.php:569 maint.php:712
 msgid "Interval"
 msgstr "間隔"
 
-#: maint.php:566
+#: maint.php:573
 #, fuzzy
 msgid "This is the interval in which the start / end time will repeat."
 msgstr "これは開始/終了時間が繰り返される間隔です。"
 
-#: maint.php:570
+#: maint.php:577
 msgid "Start Time"
 msgstr "開始時間"
 
-#: maint.php:574
+#: maint.php:581
 #, fuzzy
 msgid "The start date / time for this schedule. Most date / time formats accepted."
 msgstr "このスケジュールの開始日時。ほとんどの日付/時刻フォーマットが受け入れられました。"
 
-#: maint.php:579
+#: maint.php:586
 msgid "End Time"
 msgstr "終了時間"
 
-#: maint.php:584
+#: maint.php:591
 #, fuzzy
 msgid "The end date / time for this schedule. Most date / time formats accepted."
 msgstr "このスケジュールの終了日時。ほとんどの日付/時刻フォーマットが受け入れられました。"
 
-#: maint.php:633
+#: maint.php:640
 #, fuzzy
 msgid "Start Date/Time Selector"
 msgstr "開始日時セレクター"
 
-#: maint.php:634
+#: maint.php:641
 #, fuzzy
 msgid "End Date/Time Selector"
 msgstr "終了日時セレクター"
 
-#: maint.php:697 setup.php:55 setup.php:63
+#: maint.php:704 setup.php:55 setup.php:63
 #, fuzzy
 msgid "Maintenance Schedules"
 msgstr "メンテナンススケジュール"
 
-#: maint.php:700
+#: maint.php:707
 msgid "Name"
 msgstr "名前"
 
-#: maint.php:701
+#: maint.php:708
 msgid "Active"
 msgstr "操作"
 
-#: maint.php:702 maint.php:847
+#: maint.php:709
 msgid "Type"
 msgstr "タイプ"
 
-#: maint.php:703
+#: maint.php:710
 msgid "Start"
 msgstr "開始"
 
-#: maint.php:704
+#: maint.php:711
 msgid "End"
 msgstr "終了"
 
-#: maint.php:744 maint.php:1046 maint.php:1293
+#: maint.php:750 maint.php:1280 maint.php:1541
 #, fuzzy
 msgid "No Schedules"
 msgstr "スケジュール"
 
-#: maint.php:832
+#: maint.php:877
 #, fuzzy, php-format
 msgid "Associated Devices %s"
 msgstr "関連デバイス％s"
 
-#: maint.php:841 maint.php:1152
-msgid "Search"
-msgstr "検索"
+#: maint.php:886
+msgid "Site"
+msgstr ""
 
-#: maint.php:851
+#: maint.php:890 maint.php:910 maint.php:1043
 msgid "Any"
 msgstr "任意"
 
-#: maint.php:852
+#: maint.php:891 maint.php:1051
 msgid "None"
 msgstr "なし"
 
-#: maint.php:873 maint.php:1162
-msgid "Default"
-msgstr "デフォルト"
+#: maint.php:906
+msgid "Data Collector"
+msgstr ""
 
-#: maint.php:887 maint.php:1176
-#, fuzzy
-msgid "Associated"
-msgstr "関連付けられている"
+#: maint.php:925
+msgid "Location"
+msgstr ""
 
-#: maint.php:891 maint.php:1180
+#: maint.php:997
+msgid "Template"
+msgstr ""
+
+#: maint.php:1068 maint.php:1429
 msgid "Go"
 msgstr "Go"
 
-#: maint.php:891 maint.php:1180
+#: maint.php:1068 maint.php:1429
 #, fuzzy
 msgid "Set/Refresh Filters"
 msgstr "フィルタの設定/更新"
 
-#: maint.php:892 maint.php:1181
+#: maint.php:1069 maint.php:1430
 msgid "Clear"
 msgstr "クリア"
 
-#: maint.php:892 maint.php:1181
+#: maint.php:1069 maint.php:1430
 msgid "Clear Filters"
 msgstr "絞り込み条件を解除する"
 
-#: maint.php:977 maint.php:1256
+#: maint.php:1077 maint.php:1401
+msgid "Search"
+msgstr "検索"
+
+#: maint.php:1087 maint.php:1411
+msgid "Default"
+msgstr "デフォルト"
+
+#: maint.php:1101 maint.php:1425
+#, fuzzy
+msgid "Associated"
+msgstr "関連付けられている"
+
+#: maint.php:1211 maint.php:1504
 msgid "Description"
 msgstr "説明"
 
-#: maint.php:981 maint.php:1257
+#: maint.php:1215 maint.php:1505
 msgid "ID"
 msgstr "ID"
 
-#: maint.php:985 maint.php:1258
+#: maint.php:1219 maint.php:1506
 #, fuzzy
 msgid "Associated Schedules"
 msgstr "関連スケジュール"
 
-#: maint.php:989
+#: maint.php:1223
 msgid "Graphs"
 msgstr "グラフ"
 
-#: maint.php:993
+#: maint.php:1227
 msgid "Data Sources"
 msgstr "データソース"
 
-#: maint.php:997
+#: maint.php:1231
 msgid "Thresholds"
 msgstr "しきい値"
 
-#: maint.php:1001
+#: maint.php:1235
 msgid "Status"
 msgstr "状態"
 
-#: maint.php:1005 maint.php:1260
+#: maint.php:1239 maint.php:1508
 msgid "Hostname"
 msgstr "ホスト名"
 
-#: maint.php:1028 maint.php:1273
+#: maint.php:1262 maint.php:1521
 #, fuzzy
 msgid "Current Schedule"
 msgstr "現在のスケジュール"
 
-#: maint.php:1060
+#: maint.php:1294
 #, fuzzy
 msgid "No Associated Devices Found"
 msgstr "関連デバイスが見つかりません"
 
-#: maint.php:1062 maint.php:1311
+#: maint.php:1296 maint.php:1559
 #, fuzzy
 msgid "Schedule must be created before associating"
 msgstr "関連付ける前にスケジュールを作成する必要があります"
 
-#: maint.php:1143
+#: maint.php:1392
 #, fuzzy, php-format
 msgid "Associated Web URL's %s"
 msgstr "関連付けられたWeb URLの％s"
 
-#: maint.php:1158
+#: maint.php:1407
 msgid "Rows"
 msgstr "行"
 
-#: maint.php:1247
+#: maint.php:1495
 msgid "Lists"
 msgstr "リスト"
 
-#: maint.php:1261
+#: maint.php:1509
 msgid "URL"
 msgstr "URL"
 
-#: maint.php:1298
+#: maint.php:1546
 msgid "Disabled"
 msgstr "無効"
 
-#: maint.php:1300
+#: maint.php:1548
 #, fuzzy
 msgid "USING DNS"
 msgstr "DNSを使う"
 
-#: maint.php:1309
+#: maint.php:1557
 #, fuzzy
 msgid "No Associated WebSeer URL's Found"
 msgstr "関連付けられたWebSeer URLが見つかりません"
@@ -419,9 +439,13 @@ msgid "(actions)"
 msgstr "(操作)"
 
 #, fuzzy
+#~ msgid "Rules"
+#~ msgstr "ルール"
+
+#, fuzzy
 #~ msgid "The type of Threshold that will be monitored."
 #~ msgstr "監視されるしきい値の種類。"
 
 #, fuzzy
-#~ msgid "Rules"
-#~ msgstr "ルール"
+#~ msgid "General Settings [edit: %s]"
+#~ msgstr "一般設定[編集：％s]"
