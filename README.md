@@ -26,9 +26,11 @@ be logged on GitHub.
 
 * issue#15: Fix webseer tab to not show items before schedule is created
 
-* feature#14: webseer tab functional (webseer plugin update required to use schedule)
+* feature#14: webseer tab functional (webseer plugin update required to use
+schedule)
 
 * feature#18: device tab filter
+
 
 --- 1.2 ---
 
@@ -38,15 +40,18 @@ be logged on GitHub.
 
 * feature: New hook for maintenance checks (is_device_in_maintenance)
 
+
 --- 1.1 ---
 
 * Updates for i18n by contributors
 
 * feature: Update Spanish translation
 
+
 --- 1.0 ---
 
 * Updates for Cacti 1.0
+
 
 --- 0.3 ---
 
@@ -56,12 +61,17 @@ be logged on GitHub.
 
 * Allow Plugins to Hook Maintenance Plugin
 
+
 --- 0.2 ---
 
 * Order by Name by default
 
 * Don't check disabled schedules
 
+
 --- 0.1 ---
 
 * Initial Version
+
+-----------------------------------------------
+Copyright (c) 2004-2023 - The Cacti Group, Inc.
