@@ -4,19 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr ""
-"Project-Id-Version: maint on cacti 1.1.34\n"
-"Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2022-06-18 08:24-0400\n"
-"PO-Revision-Date: 2020-12-12 20:57-0500\n"
-"Last-Translator: tomcat <luis_126@126.com>\n"
-"Language-Team: Chinese (Simplified) <http://translate.cacti.net/projects/cacti/maint/zh-CN/>\n"
-"Language: zh_CN\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.4.2\n"
+msgstr "Project-Id-Version: maint on cacti 1.1.34\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2022-06-18 08:24-0400\nPO-Revision-Date: 2023-11-10 02:07+0000\nLast-Translator: Ben Hsu <48728121@qq.com>\nLanguage-Team: Chinese (Simplified) <http://translate.cacti.net/projects/cacti/maint/zh_Hans/>\nLanguage: zh-CN\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=1; plural=0;\nX-Generator: Weblate 4.8.1\n"
 
 #: maint.php:37
 msgid "Update Time (Now + 1 Hour)"
@@ -157,11 +145,11 @@ msgstr "您必须至少选择一个设备。"
 #: maint.php:480
 #, php-format
 msgid "[edit: %s]"
-msgstr ""
+msgstr "[编辑:%s]"
 
 #: maint.php:482
 msgid "[new]"
-msgstr ""
+msgstr "[新的]"
 
 #: maint.php:530
 msgid "New Maintenance Schedule"
@@ -269,7 +257,7 @@ msgstr "相关设备 %s"
 
 #: maint.php:886
 msgid "Site"
-msgstr ""
+msgstr "站点"
 
 #: maint.php:890 maint.php:910 maint.php:1043
 msgid "Any"
@@ -281,15 +269,15 @@ msgstr "无"
 
 #: maint.php:906
 msgid "Data Collector"
-msgstr ""
+msgstr "数据收集器"
 
 #: maint.php:925
 msgid "Location"
-msgstr ""
+msgstr "位置"
 
 #: maint.php:997
 msgid "Template"
-msgstr ""
+msgstr "模板"
 
 #: maint.php:1068 maint.php:1429
 msgid "Go"
@@ -403,7 +391,7 @@ msgstr "系统管理"
 
 #: setup.php:64
 msgid "(edit)"
-msgstr "（编辑）"
+msgstr "(编辑)"
 
 #: setup.php:65
 msgid "(actions)"
