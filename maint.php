@@ -667,7 +667,7 @@ function schedule_edit() {
 				showAnim: 'slideDown',
 				numberOfMonths: 1,
 				timeFormat: 'HH:mm',
-				dateFormat: 'MM d, yy, ',
+				dateFormat: 'yy-mm-dd',
 				showButtonPanel: false
 			});
 
@@ -677,7 +677,7 @@ function schedule_edit() {
 				showAnim: 'slideDown',
 				numberOfMonths: 1,
 				timeFormat: 'HH:mm',
-				dateFormat: 'MM d, yy, ',
+				dateFormat: 'yy-mm-dd',
 				showButtonPanel: false
 			});
 		});
