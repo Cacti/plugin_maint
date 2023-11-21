@@ -1183,7 +1183,7 @@ function thold_hosts($header_label) {
 	$sql_limit = ' LIMIT ' . ($rows*(get_request_var('page') - 1)) . ', ' . $rows;
 
 	if ($schedule_created) {
-		$sql_query = "SELECT h.*, pmh.type, graphs, data_sources, tholds,
+		$sql_query = "SELECT h.*, pmh.type, gl.graphs, dl.data_sources, tholds,
 			(SELECT schedule FROM plugin_maint_hosts WHERE host=h.id AND schedule=?) AS associated
 			FROM host as h
 			LEFT JOIN (SELECT COUNT(id) AS tholds, host_id FROM thold_data GROUP BY host_id) AS td
