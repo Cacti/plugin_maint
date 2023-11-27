@@ -66,9 +66,9 @@ function plugin_maint_check_schedule($schedule) {
 				/* past, calculate next */
 				if ($sc['etime'] < $t) {
 					/* convert start and end to local so that hour stays same for add days across daylight saving time change */
-					$starttimelocal = (new DateTimeImmutable('@' . strval($sc['stime'])))->setTimezone( new DateTimeZone( date_default_timezone_get()));
-					$endtimelocal   = (new DateTimeImmutable('@' . strval($sc['etime'])))->setTimezone( new DateTimeZone( date_default_timezone_get()));
-					$nowtime        = new DateTimeImmutable();
+					$starttimelocal = (new DateTime('@' . strval($sc['stime'])))->setTimezone( new DateTimeZone( date_default_timezone_get()));
+					$endtimelocal   = (new DateTime('@' . strval($sc['etime'])))->setTimezone( new DateTimeZone( date_default_timezone_get()));
+					$nowtime        = new DateTime();
 					/* add interval days */
 					$addday = new DateInterval( 'P' . strval($sc['minterval'] / 86400) . 'D');
 					while ($endtimelocal < $nowtime) {
