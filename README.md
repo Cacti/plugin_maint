@@ -22,6 +22,10 @@ be logged on GitHub.
 
 ## Changelog
 
+* issue: Fix to keep same local hour for standard and daylight saving time
+*   Initial start/end date/time no longer kept, always has next interval
+*   Log calculated next interval
+
 * issue: Fix some PHP 8.1.2 compatibility issues
 
 * issue#15: Fix webseer tab to not show items before schedule is created

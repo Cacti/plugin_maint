@@ -61,13 +61,35 @@ function plugin_maint_check_schedule($schedule) {
 				if ($t > $sc['stime'] && $t < $sc['etime'])
 					return true;
 				break;
-			case 2:
-				while ($sc['etime'] < $t) {
-					$sc['etime'] += $sc['minterval'];
-					$sc['stime'] += $sc['minterval'];
+
+			case 2: // Recurring
+				/* past, calculate next */
+				if ($sc['etime'] < $t) {
+					/* convert start and end to local so that hour stays same for add days across daylight saving time change */
+					$starttimelocal = (new DateTime('@' . strval($sc['stime'])))->setTimezone( new DateTimeZone( date_default_timezone_get()));
+					$endtimelocal   = (new DateTime('@' . strval($sc['etime'])))->setTimezone( new DateTimeZone( date_default_timezone_get()));
+					$nowtime        = new DateTime();
+					/* add interval days */
+					$addday = new DateInterval( 'P' . strval($sc['minterval'] / 86400) . 'D');
+					while ($endtimelocal < $nowtime) {
+						$starttimelocal = $starttimelocal->add( $addday );
+						$endtimelocal   = $endtimelocal->add( $addday );
+					}
+
+					$sc['stime'] = $starttimelocal->getTimestamp();
+					$sc['etime'] = $endtimelocal->getTimestamp();
+					/* save next interval so not need to recalculate */
+					db_execute_prepared('UPDATE plugin_maint_schedules
+						SET stime = ?, etime = ?
+						WHERE id = ?',
+						array($sc['stime'], $sc['etime'], $schedule));
+					/* format yyyy-mm-dd hh:mm */
+					cacti_log( 'INFO: Maintance schedule "' . $sc['name'] . '" Next start ' . $starttimelocal->format('Y-m-d H:i') .
+					           ' End ' . $endtimelocal->format('Y-m-d H:i'), false, 'MAINT' );
 				}
-				if ($t > $sc['stime'] && $t < $sc['etime'])
+				if ($t > $sc['stime'] && $t < $sc['etime']) {
 					return true;
+				}
 				break;
 		}
 	}
