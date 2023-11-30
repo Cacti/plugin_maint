@@ -78,7 +78,7 @@ function maint_setup_database() {
 	$data['primary'] = 'id';
 	$data['keys'][] = array('name' => 'mtype', 'columns' => 'mtype');
 	$data['keys'][] = array('name' => 'enabled', 'columns' => 'enabled');
-	$data['type'] = 'MyISAM';
+	$data['type'] = 'InnoDB';
 	$data['comment'] = 'Maintenance Schedules';
 	api_plugin_db_table_create ('maint', 'plugin_maint_schedules', $data);
 
@@ -89,7 +89,7 @@ function maint_setup_database() {
 	$data['primary'] = 'type`,`schedule`,`host';
 	$data['keys'][] = array('name' => 'type', 'columns' => 'type');
 	$data['keys'][] = array('name' => 'schedule', 'columns' => 'schedule');
-	$data['type'] = 'MyISAM';
+	$data['type'] = 'InnoDB';
 	$data['comment'] = 'Maintenance Schedules Hosts';
 	api_plugin_db_table_create ('maint', 'plugin_maint_hosts', $data);
 }
