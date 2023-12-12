@@ -84,7 +84,7 @@ function plugin_maint_check_schedule($schedule) {
 						WHERE id = ?',
 						array($sc['stime'], $sc['etime'], $schedule));
 					/* format yyyy-mm-dd hh:mm */
-					cacti_log( 'INFO: Maintance schedule "' . $sc['name'] . '" Next start ' . $starttimelocal->format('Y-m-d H:i') .
+					cacti_log( 'INFO: Maintenance schedule "' . $sc['name'] . '" Next start ' . $starttimelocal->format('Y-m-d H:i') .
 					           ' End ' . $endtimelocal->format('Y-m-d H:i'), false, 'MAINT' );
 				}
 				if ($t > $sc['stime'] && $t < $sc['etime']) {
