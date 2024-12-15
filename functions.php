@@ -31,6 +31,11 @@ function plugin_maint_check_webseer_url($host) {
 	return plugin_maint_check_host(2, $host);
 }
 
+function plugin_maint_check_servcheck_test($host) {
+	return plugin_maint_check_host(3, $host);
+}
+
+
 function plugin_maint_check_host ($type, $host) {
 	$schedules = db_fetch_assoc_prepared('SELECT *
 		FROM plugin_maint_hosts
