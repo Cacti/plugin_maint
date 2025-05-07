@@ -1201,9 +1201,6 @@ function thold_hosts($header_label) {
 			$sql_limit";
 
 		$sql_params = array_merge(array(get_request_var('id'), get_request_var('id')), $sql_where_params);
-
-//echo $sql_query;
-//var_dump( $sql_params);
 		$hosts = db_fetch_assoc_prepared($sql_query, $sql_params);
 	} else {
 		$hosts = array();
