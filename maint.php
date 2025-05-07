@@ -1201,6 +1201,9 @@ function thold_hosts($header_label) {
 			$sql_limit";
 
 		$sql_params = array_merge(array(get_request_var('id'), get_request_var('id')), $sql_where_params);
+
+//echo $sql_query;
+//var_dump( $sql_params);
 		$hosts = db_fetch_assoc_prepared($sql_query, $sql_params);
 	} else {
 		$hosts = array();
@@ -1281,9 +1284,9 @@ function thold_hosts($header_label) {
 			} else {
 				form_selectable_cell($names, $host['id']);
 			}
-			form_selectable_cell(number_format_i18n($host['graphs']), $host['id'], '', 'text-align:right');
-			form_selectable_cell(number_format_i18n($host['data_sources']), $host['id'], '', 'text-align:right');
-			form_selectable_cell(number_format_i18n($host['tholds']), $host['id'], '', 'text-align:right');
+			form_selectable_cell(number_format_i18n(is_null($host['graphs']) ? 0 : $host['graphs']), $host['id'], '', 'text-align:right');
+			form_selectable_cell(number_format_i18n(is_null($host['data_sources']) ? 0 : $host['data_sources']), $host['id'], '', 'text-align:right');
+			form_selectable_cell(number_format_i18n(is_null($host['tholds']) ? 0 : $host['tholds']), $host['id'], '', 'text-align:right');
 			form_selectable_cell(get_colored_device_status(($host['disabled'] == 'on' ? true : false), $host['status']), $host['id'], '', 'text-align:center');
 			form_selectable_cell(filter_value($host['hostname'], get_request_var('filter')), $host['id']);
 			form_checkbox_cell($host['description'], $host['id']);
