@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: Cacti\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2022-06-18 08:24-0400\nPO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\nLast-Translator: Automatically generated\nLanguage-Team: none\nLanguage: ka\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\n"
+msgstr "Project-Id-Version: Cacti\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2022-06-18 08:24-0400\nPO-Revision-Date: 2025-07-01 15:51+0000\nLast-Translator: Ekaterine papava <papava.e@gtu.ge>\nLanguage-Team: Georgian <https://translate.cacti.net/projects/cacti/maint/ka/>\nLanguage: ka-GE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
 
 #: maint.php:37
 msgid "Update Time (Now + 1 Hour)"
@@ -12,23 +12,23 @@ msgstr ""
 
 #: maint.php:38
 msgid "Delete"
-msgstr ""
+msgstr "წაშლა"
 
 #: maint.php:43
 msgid "Associate"
-msgstr ""
+msgstr "ასოცირება"
 
 #: maint.php:44
 msgid "Disassociate"
-msgstr ""
+msgstr "დისასოცირება"
 
 #: maint.php:48
 msgid "One Time"
-msgstr ""
+msgstr "ერთხელ"
 
 #: maint.php:49
 msgid "Recurring"
-msgstr ""
+msgstr "გამეორებადი"
 
 #: maint.php:53
 msgid "Not Defined"
@@ -44,23 +44,23 @@ msgstr ""
 
 #: maint.php:59 maint.php:60 maint.php:63
 msgid "No"
-msgstr ""
+msgstr "არა"
 
 #: maint.php:61 maint.php:62
 msgid "Yes"
-msgstr ""
+msgstr "კი"
 
 #: maint.php:68
 msgid "General"
-msgstr ""
+msgstr "ზოგადი"
 
 #: maint.php:72 maint.php:1083 maint.php:1245
 msgid "Devices"
-msgstr ""
+msgstr "მოწყობილობები"
 
 #: maint.php:77
 msgid "WebSeer"
-msgstr ""
+msgstr "WebSeer"
 
 #: maint.php:303
 msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
@@ -69,12 +69,12 @@ msgstr ""
 #: maint.php:308 maint.php:317 maint.php:372 maint.php:381 maint.php:437
 #: maint.php:446
 msgid "Cancel"
-msgstr ""
+msgstr "გაუქმება"
 
 #: maint.php:308 maint.php:317 maint.php:372 maint.php:381 maint.php:437
 #: maint.php:446
 msgid "Continue"
-msgstr ""
+msgstr "გაგრძელება"
 
 #: maint.php:308
 msgid "Update Maintenance Schedule(s)"
@@ -94,11 +94,11 @@ msgstr ""
 
 #: maint.php:321 maint.php:385 maint.php:450
 msgid "Return"
-msgstr ""
+msgstr "დაბრუნება"
 
 #: maint.php:361
 msgid "Device(s)"
-msgstr ""
+msgstr "მოწყობილობა"
 
 #: maint.php:367
 #, php-format
@@ -124,7 +124,7 @@ msgstr ""
 
 #: maint.php:426
 msgid "Webseer(s)"
-msgstr ""
+msgstr "Webseer(s)"
 
 #: maint.php:432
 #, php-format
@@ -147,7 +147,7 @@ msgstr ""
 
 #: maint.php:482
 msgid "[new]"
-msgstr ""
+msgstr "[ახალი]"
 
 #: maint.php:530
 msgid "New Maintenance Schedule"
@@ -160,7 +160,7 @@ msgstr ""
 
 #: maint.php:542
 msgid "Schedule"
-msgstr ""
+msgstr "გეგმა"
 
 #: maint.php:546
 msgid "Schedule Name"
@@ -172,7 +172,7 @@ msgstr ""
 
 #: maint.php:554 maint.php:713 maint.php:1507 maint.php:1546
 msgid "Enabled"
-msgstr ""
+msgstr "ჩართულია"
 
 #: maint.php:557
 msgid "Whether or not this schedule will be checked."
@@ -180,7 +180,7 @@ msgstr ""
 
 #: maint.php:561
 msgid "Schedule Type"
-msgstr ""
+msgstr "გეგმის ტიპი"
 
 #: maint.php:565
 msgid "The type of schedule, one time or recurring."
@@ -188,7 +188,7 @@ msgstr ""
 
 #: maint.php:569 maint.php:712
 msgid "Interval"
-msgstr ""
+msgstr "ინტერვალი"
 
 #: maint.php:573
 msgid "This is the interval in which the start / end time will repeat."
@@ -204,7 +204,7 @@ msgstr ""
 
 #: maint.php:586
 msgid "End Time"
-msgstr ""
+msgstr "დასრულების დრო"
 
 #: maint.php:591
 msgid "The end date / time for this schedule. Most date / time formats accepted."
@@ -224,23 +224,23 @@ msgstr ""
 
 #: maint.php:707
 msgid "Name"
-msgstr ""
+msgstr "სახელი"
 
 #: maint.php:708
 msgid "Active"
-msgstr ""
+msgstr "აქტიური"
 
 #: maint.php:709
 msgid "Type"
-msgstr ""
+msgstr "ტიპი"
 
 #: maint.php:710
 msgid "Start"
-msgstr ""
+msgstr "დაწყება"
 
 #: maint.php:711
 msgid "End"
-msgstr ""
+msgstr "დასასრული"
 
 #: maint.php:750 maint.php:1280 maint.php:1541
 msgid "No Schedules"
@@ -253,15 +253,15 @@ msgstr ""
 
 #: maint.php:886
 msgid "Site"
-msgstr ""
+msgstr "საიტი"
 
 #: maint.php:890 maint.php:910 maint.php:1043
 msgid "Any"
-msgstr ""
+msgstr "ნებისმიერი"
 
 #: maint.php:891 maint.php:1051
 msgid "None"
-msgstr ""
+msgstr "არცერთი"
 
 #: maint.php:906
 msgid "Data Collector"
@@ -269,47 +269,47 @@ msgstr ""
 
 #: maint.php:925
 msgid "Location"
-msgstr ""
+msgstr "მდებარეობა"
 
 #: maint.php:997
 msgid "Template"
-msgstr ""
+msgstr "ნიმუში"
 
 #: maint.php:1068 maint.php:1429
 msgid "Go"
-msgstr ""
+msgstr "მიდი"
 
 #: maint.php:1068 maint.php:1429
 msgid "Set/Refresh Filters"
-msgstr ""
+msgstr "ფილტრების დაყენება/განახლება"
 
 #: maint.php:1069 maint.php:1430
 msgid "Clear"
-msgstr ""
+msgstr "გასუფთავება"
 
 #: maint.php:1069 maint.php:1430
 msgid "Clear Filters"
-msgstr ""
+msgstr "ფილტრების გასუფთავება"
 
 #: maint.php:1077 maint.php:1401
 msgid "Search"
-msgstr ""
+msgstr "ძებნა"
 
 #: maint.php:1087 maint.php:1411
 msgid "Default"
-msgstr ""
+msgstr "ნაგულისხმევი"
 
 #: maint.php:1101 maint.php:1425
 msgid "Associated"
-msgstr ""
+msgstr "ასოცირებული"
 
 #: maint.php:1211 maint.php:1504
 msgid "Description"
-msgstr ""
+msgstr "აღწერა"
 
 #: maint.php:1215 maint.php:1505
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: maint.php:1219 maint.php:1506
 msgid "Associated Schedules"
@@ -317,7 +317,7 @@ msgstr ""
 
 #: maint.php:1223
 msgid "Graphs"
-msgstr ""
+msgstr "გრაფიკები"
 
 #: maint.php:1227
 msgid "Data Sources"
@@ -325,15 +325,15 @@ msgstr ""
 
 #: maint.php:1231
 msgid "Thresholds"
-msgstr ""
+msgstr "ზღვრები"
 
 #: maint.php:1235
 msgid "Status"
-msgstr ""
+msgstr "სტატუსი"
 
 #: maint.php:1239 maint.php:1508
 msgid "Hostname"
-msgstr ""
+msgstr "ჰოსტის სახელი"
 
 #: maint.php:1262 maint.php:1521
 msgid "Current Schedule"
@@ -354,19 +354,19 @@ msgstr ""
 
 #: maint.php:1407
 msgid "Rows"
-msgstr ""
+msgstr "მწკრივები"
 
 #: maint.php:1495
 msgid "Lists"
-msgstr ""
+msgstr "სიები"
 
 #: maint.php:1509
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: maint.php:1546
 msgid "Disabled"
-msgstr ""
+msgstr "გათიშულია"
 
 #: maint.php:1548
 msgid "USING DNS"
@@ -378,16 +378,16 @@ msgstr ""
 
 #: setup.php:55
 msgid "Management"
-msgstr ""
+msgstr "მართვა"
 
 #: setup.php:58
 msgid "System Administration"
-msgstr ""
+msgstr "სისტემის ადმინისტრირება"
 
 #: setup.php:64
 msgid "(edit)"
-msgstr ""
+msgstr "(ჩასწორება)"
 
 #: setup.php:65
 msgid "(actions)"
-msgstr ""
+msgstr "(ქმედებები)"
