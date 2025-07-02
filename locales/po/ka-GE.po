@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: Cacti\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2022-06-18 08:24-0400\nPO-Revision-Date: 2025-07-01 15:51+0000\nLast-Translator: Ekaterine papava <papava.e@gtu.ge>\nLanguage-Team: Georgian <https://translate.cacti.net/projects/cacti/maint/ka/>\nLanguage: ka-GE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
+msgstr "Project-Id-Version: Cacti\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2022-06-18 08:24-0400\nPO-Revision-Date: 2025-07-02 19:26+0000\nLast-Translator: Ekaterine papava <papava.e@gtu.ge>\nLanguage-Team: Georgian <https://translate.cacti.net/projects/cacti/maint/ka/>\nLanguage: ka-GE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
 
 #: maint.php:37
 msgid "Update Time (Now + 1 Hour)"
@@ -32,15 +32,15 @@ msgstr "გამეორებადი"
 
 #: maint.php:53
 msgid "Not Defined"
-msgstr ""
+msgstr "აღწერილი არაა"
 
 #: maint.php:54
 msgid "Every Day"
-msgstr ""
+msgstr "ყოველდღე"
 
 #: maint.php:55
 msgid "Every Week"
-msgstr ""
+msgstr "ყოველკვირა"
 
 #: maint.php:59 maint.php:60 maint.php:63
 msgid "No"
@@ -143,7 +143,7 @@ msgstr ""
 #: maint.php:480
 #, php-format
 msgid "[edit: %s]"
-msgstr ""
+msgstr "[ჩასწორება: %s]"
 
 #: maint.php:482
 msgid "[new]"
@@ -164,7 +164,7 @@ msgstr "გეგმა"
 
 #: maint.php:546
 msgid "Schedule Name"
-msgstr ""
+msgstr "გეგმის სახელი"
 
 #: maint.php:550
 msgid "Provide the Maintenance Schedule a meaningful name"
@@ -196,7 +196,7 @@ msgstr ""
 
 #: maint.php:577
 msgid "Start Time"
-msgstr ""
+msgstr "გაშვების დრო"
 
 #: maint.php:581
 msgid "The start date / time for this schedule. Most date / time formats accepted."
@@ -244,7 +244,7 @@ msgstr "დასასრული"
 
 #: maint.php:750 maint.php:1280 maint.php:1541
 msgid "No Schedules"
-msgstr ""
+msgstr "გეგმების გარეშე"
 
 #: maint.php:877
 #, php-format
@@ -321,7 +321,7 @@ msgstr "გრაფიკები"
 
 #: maint.php:1227
 msgid "Data Sources"
-msgstr ""
+msgstr "მონაცემთა წყაროები"
 
 #: maint.php:1231
 msgid "Thresholds"
@@ -337,7 +337,7 @@ msgstr "ჰოსტის სახელი"
 
 #: maint.php:1262 maint.php:1521
 msgid "Current Schedule"
-msgstr ""
+msgstr "მიმდინარე გეგემა"
 
 #: maint.php:1294
 msgid "No Associated Devices Found"
@@ -382,7 +382,7 @@ msgstr "მართვა"
 
 #: setup.php:58
 msgid "System Administration"
-msgstr "სისტემის ადმინისტრირება"
+msgstr "სისტემის ადმინისტრაცია"
 
 #: setup.php:64
 msgid "(edit)"
