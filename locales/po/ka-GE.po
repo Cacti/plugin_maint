@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: Cacti\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2022-06-18 08:24-0400\nPO-Revision-Date: 2025-07-02 19:26+0000\nLast-Translator: Ekaterine papava <papava.e@gtu.ge>\nLanguage-Team: Georgian <https://translate.cacti.net/projects/cacti/maint/ka/>\nLanguage: ka-GE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
+msgstr "Project-Id-Version: Cacti\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2022-06-18 08:24-0400\nPO-Revision-Date: 2025-07-04 06:26+0000\nLast-Translator: Ekaterine papava <papava.e@gtu.ge>\nLanguage-Team: Georgian <https://translate.cacti.net/projects/cacti/maint/ka/>\nLanguage: ka-GE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
 
 #: maint.php:37
 msgid "Update Time (Now + 1 Hour)"
@@ -220,7 +220,7 @@ msgstr ""
 
 #: maint.php:704 setup.php:55 setup.php:63
 msgid "Maintenance Schedules"
-msgstr ""
+msgstr "რემონტის გეგმები"
 
 #: maint.php:707
 msgid "Name"
@@ -265,7 +265,7 @@ msgstr "არცერთი"
 
 #: maint.php:906
 msgid "Data Collector"
-msgstr ""
+msgstr "მონაცემების შემგროვებელი"
 
 #: maint.php:925
 msgid "Location"
@@ -313,7 +313,7 @@ msgstr "ID"
 
 #: maint.php:1219 maint.php:1506
 msgid "Associated Schedules"
-msgstr ""
+msgstr "მინიჭებული გეგმები"
 
 #: maint.php:1223
 msgid "Graphs"
@@ -370,7 +370,7 @@ msgstr "გათიშულია"
 
 #: maint.php:1548
 msgid "USING DNS"
-msgstr ""
+msgstr "DNS-ის გამოყენებით"
 
 #: maint.php:1557
 msgid "No Associated WebSeer URL's Found"
