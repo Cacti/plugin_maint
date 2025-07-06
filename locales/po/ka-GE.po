@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: Cacti\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2022-06-18 08:24-0400\nPO-Revision-Date: 2025-07-04 06:26+0000\nLast-Translator: Ekaterine papava <papava.e@gtu.ge>\nLanguage-Team: Georgian <https://translate.cacti.net/projects/cacti/maint/ka/>\nLanguage: ka-GE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
+msgstr "Project-Id-Version: Cacti\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2022-06-18 08:24-0400\nPO-Revision-Date: 2025-07-06 05:26+0000\nLast-Translator: Ekaterine papava <papava.e@gtu.ge>\nLanguage-Team: Georgian <https://translate.cacti.net/projects/cacti/maint/ka/>\nLanguage: ka-GE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
 
 #: maint.php:37
 msgid "Update Time (Now + 1 Hour)"
@@ -78,7 +78,7 @@ msgstr "გაგრძელება"
 
 #: maint.php:308
 msgid "Update Maintenance Schedule(s)"
-msgstr ""
+msgstr "განახლების რემონტის გეგმები"
 
 #: maint.php:312
 msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
@@ -156,7 +156,7 @@ msgstr ""
 #: maint.php:538
 #, php-format
 msgid "General Settings %s"
-msgstr ""
+msgstr "ზოგადი პარამეტრები %s"
 
 #: maint.php:542
 msgid "Schedule"
@@ -216,7 +216,7 @@ msgstr ""
 
 #: maint.php:641
 msgid "End Date/Time Selector"
-msgstr ""
+msgstr "დასრულების თარიღი/დროის ამრჩევი"
 
 #: maint.php:704 setup.php:55 setup.php:63
 msgid "Maintenance Schedules"
@@ -249,7 +249,7 @@ msgstr "გეგმების გარეშე"
 #: maint.php:877
 #, php-format
 msgid "Associated Devices %s"
-msgstr ""
+msgstr "მინიჭებული მოწყობილობები %s"
 
 #: maint.php:886
 msgid "Site"
