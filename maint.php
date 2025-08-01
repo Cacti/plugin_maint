@@ -330,22 +330,23 @@ function form_actions() {
 						<p>" . __('Click \'Continue\' to Update the following Maintenance Schedule(s).', 'maint') . "</p>
 						<ul>$list</ul>
 					</td>
-				</tr>\n";
+				</tr>";
 
-				$save_html = "<input type='button' value='" . __esc('Cancel', 'maint') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __esc('Continue', 'maint') . "' title='" . __esc('Update Maintenance Schedule(s)', 'maint') . "'>";
+				$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget' onClick='cactiReturnTo(\"maint.php\")'>" . __esc('Cancel', 'maint') . "</button>
+					<button type='submit' class='ui-button ui-corner-all ui-widget ui-state-active' title='" . __esc('Update Maintenance Schedule(s)', 'maint') . "'>" . __esc('Continue', 'maint') . "</button>";
 			}elseif (get_request_var('drp_action') == '2') { /* delete */
 				print "<tr>
 					<td class='textArea'>
 						<p>" . __('Click \'Continue\' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated.', 'maint') . "</p>
 						<ul>$list</ul>
 					</td>
-				</tr>\n";
+				</tr>";
 
-				$save_html = "<input type='button' value='" . __esc('Cancel', 'maint') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __esc('Continue', 'maint') . "' title='" . __esc('Delete Maintenance Schedule(s)', 'maint') . "'>";
+				$save_html = "<input type='button' value='" . __esc('Cancel', 'maint') . "' onClick='cactiReturnTo(\"maint.php\")'>&nbsp;<input type='submit' value='" . __esc('Continue', 'maint') . "' title='" . __esc('Delete Maintenance Schedule(s)', 'maint') . "'>";
 			}
 		} else {
-			print "<tr><td><span class='textError'>" . __('You must select at least one Maintenance Schedule.', 'maint') . "</span></td></tr>\n";
-			$save_html = "<input type='button' value='" . __esc('Return', 'maint') . "' onClick='cactiReturnTo()'>";
+			print "<tr><td><span class='textError'>" . __('You must select at least one Maintenance Schedule.', 'maint') . "</span></td></tr>";
+			$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget' onClick='cactiReturnTo(\"maint.php\")'>" . __esc('Return', 'maint') . "</button";
 		}
 
 		print "<tr class='saveRow'>
@@ -357,7 +358,7 @@ function form_actions() {
 				<input type='hidden' name='id' value='" . get_request_var('id') . "'>
 				$save_html
 			</td>
-		</tr>\n";
+		</tr>";
 
 		html_end_box();
 
@@ -371,6 +372,7 @@ function form_actions() {
 				/* ================= input validation ================= */
 				input_validate_input_number($matches[1]);
 				/* ==================================================== */
+
 				$description = db_fetch_cell_prepared('SELECT description
 					FROM host
 					WHERE id = ?',
@@ -391,25 +393,27 @@ function form_actions() {
 			if (get_request_var('drp_action') == '1') { /* associate */
 				print "<tr>
 					<td class='textArea'>
-						<p>" . __('Click \'Continue\' to associate the following Device(s) with the Maintenance Schedule \'<b>%s</b>\'.', $list_name, 'maint') . "</p>
+						<p>" . __('Click \'Continue\' to Associate the following Device(s) with the Maintenance Schedule \'<b>%s</b>\'.', $list_name, 'maint') . "</p>
 						<ul>$list</ul>
 					</td>
-				</tr>\n";
+				</tr>";
 
-				$save_html = "<input type='button' value='" . __esc('Cancel', 'maint') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __esc('Continue', 'maint') . "' title='" . __esc('Associate Maintenance Schedule(s)', 'maint') . "'>";
+				$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget' onClick='cactiReturnTo(\"maint.php\")'>" . __esc('Cancel', 'maint') . "</button>
+					<button type='submit' class='ui-button ui-corner-all ui-widget ui-state-active' title='" . __esc('Associate Maintenance Schedule(s)', 'maint') . "'>" . __esc('Continue', 'maint') . "</button>";
 			}elseif (get_request_var('drp_action') == '2') { /* disassociate */
 				print "<tr>
 					<td class='textArea'>
-						<p>" . __('Click \'Continue\' to disassociate the following Device(s) with the Maintenance Schedule \'<b>%s</b>\'.', $list_name, 'maint') . "</p>
+						<p>" . __('Click \'Continue\' to Disassociate the following Device(s) with the Maintenance Schedule \'<b>%s</b>\'.', $list_name, 'maint') . "</p>
 						<ul>$list</ul>
 					</td>
-				</tr>\n";
+				</tr>";
 
-				$save_html = "<input type='button' value='" . __esc('Cancel', 'maint') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __esc('Continue', 'maint') . "' title='" . __esc('Disassociate Maintenance Schedule(s)', 'maint') . "'>";
+				$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget' onClick='cactiReturnTo(\"maint.php\")'>" . __esc('Cancel', 'maint') . "</button>
+					<button type='submit' class='ui-button ui-corner-all ui-widget ui-state-active' title='" . __esc('Disassociate Maintenance Schedule(s)', 'maint') . "'>" . __esc('Continue', 'maint') . "</button>";
 			}
 		} else {
-			print "<tr><td><span class='textError'>" . __('You must select at least one Device.', 'maint') . "</span></td></tr>\n";
-			$save_html = "<input type='button' value='" . __esc('Return', 'maint') . "' onClick='cactiReturnTo()'>";
+			print "<tr><td><span class='textError'>" . __('You must select at least one Device.', 'maint') . "</span></td></tr>";
+			$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget' onClick='cactiReturnTo(\"maint.php\")'>" . __esc('Return', 'maint') . "</button>";
 		}
 
 		print "<tr class='saveRow'>
@@ -421,7 +425,7 @@ function form_actions() {
 				<input type='hidden' name='drp_action' value='" . get_request_var('drp_action') . "'>
 				$save_html
 			</td>
-		</tr>\n";
+		</tr>";
 
 		html_end_box();
 
@@ -456,25 +460,27 @@ function form_actions() {
 			if (get_request_var('drp_action') == '1') { /* associate */
 				print "<tr>
 					<td class='textArea'>
-						<p>" . __('Click \'Continue\' to associate the Webseer(s) below with the Maintenance Schedule \'<b>%s</b>\'.', $list_name, 'maint') . "</p>
+						<p>" . __('Click \'Continue\' to Associate the Webseer(s) below with the Maintenance Schedule \'<b>%s</b>\'.', $list_name, 'maint') . "</p>
 						<ul>$list</ul>
 					</td>
-				</tr>\n";
+				</tr>";
 
-				$save_html = "<input type='button' value='" . __esc('Cancel', 'maint') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __esc('Continue', 'maint') . "' title='" . __esc('Associate Maintenance Schedule(s)', 'maint') . "'>";
+				$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget' onClick='cactiReturnTo(\"maint.php\")'>" . __esc('Cancel', 'maint') . "</button>
+					<button type='submit' class='ui-button ui-corner-all ui-widget ui-state-active' title='" . __esc('Associate Maintenance Schedule(s)', 'maint') . "'>" . __esc('Continue', 'maint') . "</button>";
 			}elseif (get_request_var('drp_action') == '2') { /* disassociate */
 				print "<tr>
 					<td class='textArea'>
-						<p>" . __('Click \'Continue\' to disassociate the Webseer(s) below from the Maintenance Schedule \'<b>%s</b>\'.', $list_name, 'maint') . "</p>
+						<p>" . __('Click \'Continue\' to Disassociate the Webseer(s) below from the Maintenance Schedule \'<b>%s</b>\'.', $list_name, 'maint') . "</p>
 						<ul>$list</ul>
 					</td>
-				</tr>\n";
+				</tr>";
 
-				$save_html = "<input type='button' value='" . __esc('Cancel', 'maint') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __esc('Continue', 'maint') . "' title='" . __esc('Disassociate Maintenance Schedule(s)', 'maint') . "'>";
+				$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget' onClick='cactiReturnTo(\"maint.php\")'>" . __esc('Cancel', 'maint') . "</button>
+					<button type='submit' class='ui-button ui-corner-all ui-widget ui-state-active' title='" . __esc('Disassociate Maintenance Schedule(s)', 'maint') . "'>" . __esc('Continue', 'maint') . "</button>";
 			}
 		} else {
-			print "<tr><td><span class='textError'>" . __('You must select at least one Webseer.', 'maint') . "</span></td></tr>\n";
-			$save_html = "<input type='button' value='" . __esc('Return', 'maint') . "' onClick='cactiReturnTo()'>";
+			print "<tr><td><span class='textError'>" . __('You must select at least one Webseer.', 'maint') . "</span></td></tr>";
+			$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget'> onClick='cactiReturnTo(\"maint.php\")'>" . __esc('Return', 'maint') . "</button>";
 		}
 
 		print "<tr class='saveRow'>
@@ -486,7 +492,7 @@ function form_actions() {
 				<input type='hidden' name='drp_action' value='" . get_request_var('drp_action') . "'>
 				$save_html
 			</td>
-		</tr>\n";
+		</tr>";
 
 		html_end_box();
 
@@ -521,25 +527,27 @@ function form_actions() {
 			if (get_request_var('drp_action') == '1') { /* associate */
 				print "<tr>
 					<td class='textArea'>
-						<p>" . __('Click \'Continue\' to associate the Servcheck(s) below with the Maintenance Schedule \'<b>%s</b>\'.', $list_name, 'maint') . "</p>
+						<p>" . __('Click \'Continue\' to Associate the Servcheck(s) below with the Maintenance Schedule \'<b>%s</b>\'.', $list_name, 'maint') . "</p>
 						<ul>$list</ul>
 					</td>
-				</tr>\n";
+				</tr>";
 
-				$save_html = "<input type='button' value='" . __esc('Cancel', 'maint') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __esc('Continue', 'maint') . "' title='" . __esc('Associate Maintenance Schedule(s)', 'maint') . "'>";
+				$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget' onClick='cactiReturnTo(\"maint.php\")'>" . __esc('Cancel', 'maint') . "</button>
+					<button type='submit' class='ui-button ui-corner-all ui-widget ui-state-active' title='" . __esc('Associate Maintenance Schedule(s)', 'maint') . "'>" . __esc('Continue', 'maint') . "</button>";
 			}elseif (get_request_var('drp_action') == '2') { /* disassociate */
 				print "<tr>
 					<td class='textArea'>
-						<p>" . __('Click \'Continue\' to disassociate the Servcheck(s) below from the Maintenance Schedule \'<b>%s</b>\'.', $list_name, 'maint') . "</p>
+						<p>" . __('Click \'Continue\' to Disassociate the Servcheck(s) below from the Maintenance Schedule \'<b>%s</b>\'.', $list_name, 'maint') . "</p>
 						<ul>$list</ul>
 					</td>
-				</tr>\n";
+				</tr>";
 
-				$save_html = "<input type='button' value='" . __esc('Cancel', 'maint') . "' onClick='cactiReturnTo()'>&nbsp;<input type='submit' value='" . __esc('Continue', 'maint') . "' title='" . __esc('Disassociate Maintenance Schedule(s)', 'maint') . "'>";
+				$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget' onClick='cactiReturnTo(\"maint.php\")'>" . __esc('Cancel', 'maint') . "</button>
+					<input type='submit' class='ui-button ui-corner-all ui-widget ui-state-active' title='" . __esc('Disassociate Maintenance Schedule(s)', 'maint') . "'>" . __esc('Continue', 'maint') . "</button>";
 			}
 		} else {
-			print "<tr><td><span class='textError'>" . __('You must select at least one Servcheck test.', 'maint') . "</span></td></tr>\n";
-			$save_html = "<input type='button' value='" . __esc('Return', 'maint') . "' onClick='cactiReturnTo()'>";
+			print "<tr><td><span class='textError'>" . __('You must select at least one Servcheck test.', 'maint') . "</span></td></tr>";
+			$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget' onClick='cactiReturnTo(\"maint.php\")'>" . __esc('Return', 'maint') . "</button>";
 		}
 
 		print "<tr class='saveRow'>
@@ -551,7 +559,7 @@ function form_actions() {
 				<input type='hidden' name='drp_action' value='" . get_request_var('drp_action') . "'>
 				$save_html
 			</td>
-		</tr>\n";
+		</tr>";
 
 		html_end_box();
 
@@ -588,7 +596,7 @@ function maint_tabs() {
 	load_current_session_value('tab', 'sess_maint_tab', 'general');
 	$current_tab = get_request_var('tab');
 
-	print "<div class='tabs'><nav><ul>\n";
+	print "<div class='tabs'><nav><ul>";
 
 	if (cacti_sizeof($tabs)) {
 		foreach (array_keys($tabs) as $tab_short_name) {
@@ -596,10 +604,10 @@ function maint_tabs() {
 				'plugins/maint/maint.php?action=edit' .
 				'&tab=' . $tab_short_name .
 				(isset_request_var('id') ? '&id=' . get_request_var('id'):'')) .
-				"'>" . $tabs[$tab_short_name] . "</a></li>\n";
+				"'>" . $tabs[$tab_short_name] . "</a></li>";
 		}
 	}
-	print "</ul></nav></div>\n";
+	print "</ul></nav></div>";
 }
 
 function schedule_edit() {
@@ -841,7 +849,7 @@ function schedules() {
 			form_end_row();
 		}
 	}else{
-		print "<tr><td colspan='5'><em>" . __('No Schedules', 'maint') . "</em></td></tr>\n";
+		print "<tr><td colspan='5'><em>" . __('No Schedules', 'maint') . "</em></td></tr>";
 	}
 
 	html_end_box(false);
@@ -977,12 +985,12 @@ function thold_hosts($header_label) {
 			<table class='filterTable'>
 				<tr>
 					<td>
-						<?php print __('Site');?>
+						<?php print __('Site', 'maint');?>
 					</td>
 					<td>
 						<select id='site_id'>
-							<option value='<?php print MAINT_HOST_FILTER_ANY ?>' <?php if (get_request_var('site_id') == MAINT_HOST_FILTER_ANY) {?> selected<?php }?>><?php print __('Any');?></option>
-							<option value='<?php print MAINT_HOST_FILTER_NONE ?>' <?php if (get_request_var('site_id') == MAINT_HOST_FILTER_NONE) {?> selected<?php }?>><?php print __('None');?></option>
+							<option value='<?php print MAINT_HOST_FILTER_ANY ?>' <?php if (get_request_var('site_id') == MAINT_HOST_FILTER_ANY) {?> selected<?php }?>><?php print __('Any', 'maint');?></option>
+							<option value='<?php print MAINT_HOST_FILTER_NONE ?>' <?php if (get_request_var('site_id') == MAINT_HOST_FILTER_NONE) {?> selected<?php }?>><?php print __('None', 'maint');?></option>
 							<?php
 							$sites = db_fetch_assoc('SELECT id, name
 								FROM sites
@@ -997,7 +1005,7 @@ function thold_hosts($header_label) {
 						</select>
 					</td>
 					<td>
-						<?php print __('Data Collector');?>
+						<?php print __('Data Collector', 'maint');?>
 					</td>
 					<td>
 						<select id='poller_id'>
@@ -1016,7 +1024,7 @@ function thold_hosts($header_label) {
 						</select>
 					</td>
 					<td>
-						<?php print __('Location');?>
+						<?php print __('Location', 'maint');?>
 					</td>
 					<td>
 						<select id='location'>
@@ -1043,8 +1051,8 @@ function thold_hosts($header_label) {
 							}
 
 							/* Include (UNION) Any */
-							$locations = db_fetch_assoc_prepared(
-								"SELECT * FROM (
+							$locations = db_fetch_assoc_prepared("SELECT * 
+								FROM (
 									SELECT DISTINCT IF(IFNULL(location,'') = '', ?, location) AS location
 									FROM (SELECT location FROM host WHERE id = id $sql_where GROUP BY location) AS host
 									UNION ALL
@@ -1069,26 +1077,26 @@ function thold_hosts($header_label) {
 
 							if (cacti_sizeof($locations)) {
 								foreach ($locations as $l) {
-									echo "<option value='", html_escape($l['location']), "'";
+									print "<option value='", html_escape($l['location']), "'";
 									if (get_request_var('location') == $l['location']) {
-										echo " selected";
+										print " selected";
 									}
-									echo ">";
+									print ">";
 									if ($l['location'] == MAINT_HOST_FILTER_LOC_ANY) {
-										echo html_escape('Any');
+										print html_escape('Any');
 									} elseif ($l['location'] == MAINT_HOST_FILTER_LOC_NONE) {
-										echo html_escape('None');
+										print html_escape('None');
 									} else {
-										echo html_escape($l['location']);
+										print html_escape($l['location']);
 									}
-									echo "</option>\n";
+									print "</option>";
 								}
 							}
 							?>
 						</select>
 					</td>
 					<td>
-						<?php print __('Template');?>
+						<?php print __('Template', 'maint');?>
 					</td>
 					<td>
 						<select id='host_template_id'>
@@ -1107,7 +1115,9 @@ function thold_hosts($header_label) {
 								FROM host_template AS ht
 								WHERE ht.id IN (SELECT host_template_id FROM host WHERE id = id $sql_where)
 								ORDER BY ht.name";
+
 							$host_templates = db_fetch_assoc_prepared($sql_statement, $sql_where_params);
+
 							$hosts_no_templates = db_fetch_assoc_prepared("SELECT id
 								FROM host WHERE host_template_id = 0 $sql_where
 								LIMIT 1",
@@ -1130,37 +1140,37 @@ function thold_hosts($header_label) {
 								set_request_var('host_template_id', MAINT_HOST_FILTER_ANY);
 							}
 
-							echo "<option value='", MAINT_HOST_FILTER_ANY, "'";
+							print "<option value='", MAINT_HOST_FILTER_ANY, "'";
 							if (get_request_var('host_template_id') == MAINT_HOST_FILTER_ANY) {
-								echo " selected";
+								print " selected";
 							}
-							echo ">", __('Any'), "</option>\n";
+							print ">", __('Any', 'maint'), "</option>";
 
 							/* Include "None" if hosts with no template */
 							if ($hosts_no_templates) {
-								echo "\t\t\t\t\t\t\t<option value='", MAINT_HOST_FILTER_NONE . "'";
+								print "\t\t\t\t\t\t\t<option value='", MAINT_HOST_FILTER_NONE . "'";
 								if (get_request_var('host_template_id') == MAINT_HOST_FILTER_NONE) {
-									echo " selected";
+									print " selected";
 								}
-								echo ">", __('None'), "</option>\n";
+								print ">", __('None', 'maint'), "</option>";
 							}
 
 							if (cacti_sizeof($host_templates)) {
 								foreach ($host_templates as $host_template) {
-									echo "\t\t\t\t\t\t\t<option value='", $host_template['id'], "'";
+									print "\t\t\t\t\t\t\t<option value='", $host_template['id'], "'";
 									if (get_request_var('host_template_id') == $host_template['id']) {
-										echo " selected";
+										print " selected";
 									}
-									echo ">", html_escape($host_template['name']), "</option>\n";
+									print ">", html_escape($host_template['name']), "</option>";
 								}
 							}
 							?>
 						</select>
 					</td>
         			<td>
-						<span class='nowrap'>
-							<input type='button' class='ui-button ui-corner-all ui-widget' id='refresh' value='<?php print __('Go');?>' title='<?php print __esc('Set/Refresh Filters');?>'>
-							<input type='button' class='ui-button ui-corner-all ui-widget' id='clear' value='<?php print __('Clear');?>' title='<?php print __esc('Clear Filters');?>'>
+						<span>
+							<button type='submit' class='ui-button ui-corner-all ui-widget ui-state-active' id='refresh' title='<?php print __esc('Set/Refresh Filters', 'maint');?>'><?php print __('Go', 'maint', 'maint');?></button>
+							<button type='button' class='ui-button ui-corner-all ui-widget' id='clear' title='<?php print __esc('Clear Filters', 'maint');?>'><?php print __('Clear', 'maint');?></button>
 						</span>
 					</td>
 		        </tr>
@@ -1182,7 +1192,7 @@ function thold_hosts($header_label) {
 							<?php
 							if (cacti_sizeof($item_rows) > 0) {
 								foreach ($item_rows as $key => $value) {
-									print "<option value='" . $key . "'"; if (get_request_var('rows') == $key) { print ' selected'; } print '>' . htmlspecialchars($value) . "</option>\n";
+									print "<option value='" . $key . "'"; if (get_request_var('rows') == $key) { print ' selected'; } print '>' . htmlspecialchars($value) . "</option>";
 								}
 							}
 							?>
@@ -1259,8 +1269,7 @@ function thold_hosts($header_label) {
 
 	if ($schedule_created) {
 		$sql_params = array_merge(array(get_request_var('id')), $sql_where_params);
-		$total_rows = db_fetch_cell_prepared("SELECT
-			COUNT(DISTINCT h.id)
+		$total_rows = db_fetch_cell_prepared("SELECT COUNT(DISTINCT h.id)
 			FROM host AS h
 			LEFT JOIN (SELECT DISTINCT host_id FROM thold_data) AS td
 			ON h.id = td.host_id
@@ -1418,25 +1427,25 @@ function webseer_urls($header_label) {
     /* ================= input validation and session storage ================= */
     $filters = array(
 		'rows' => array(
-			'filter' => FILTER_VALIDATE_INT,
+			'filter'  => FILTER_VALIDATE_INT,
 			'pageset' => true,
 			'default' => '-1'
-			),
+		),
 		'page' => array(
-			'filter' => FILTER_VALIDATE_INT,
+			'filter'  => FILTER_VALIDATE_INT,
 			'default' => '1'
-			),
+		),
 		'filter' => array(
-			'filter' => FILTER_CALLBACK,
+			'filter'  => FILTER_CALLBACK,
 			'pageset' => true,
 			'default' => '',
 			'options' => array('options' => 'sanitize_search_string')
-			),
+		),
 		'associated' => array(
-			'filter' => FILTER_CALLBACK,
+			'filter'  => FILTER_CALLBACK,
 			'default' => 'true',
 			'options' => array('options' => 'sanitize_search_string')
-			)
+		)
 	);
 
 	validate_store_request_vars($filters, 'sess_maint_ws');
@@ -1446,44 +1455,11 @@ function webseer_urls($header_label) {
 	/* if the number of rows is -1, set it to the default */
 	if (get_request_var('rows') == '-1') {
 		$rows = read_config_option('num_rows_table');
-	}else{
+	} else {
 		$rows = get_request_var('rows');
 	}
 
-	?>
-	<script type='text/javascript'>
-	function applyFilter() {
-		strURL  = 'maint.php?tab=webseer&action=edit&id=<?php print get_request_var('id');?>';
-		strURL += '&rows=' + $('#rows').val();
-		strURL += '&associated=' + $('#associated').is(':checked');
-		strURL += '&filter=' + $('#filter').val();
-		strURL += '&header=false';
-		loadPageNoHeader(strURL);
-	}
-
-	function clearFilter() {
-		strURL = 'maint.php?tab=webseer&action=edit&id=<?php print get_request_var('id');?>&clear=true&header=false';
-		loadPageNoHeader(strURL);
-	}
-
-	$(function() {
-		$('#rows, #associated').change(function() {
-			applyFilter();
-		});
-
-		$('#clear').click(function() {
-			clearFilter();
-		});
-
-		$('#form_webseer').submit(function(event) {
-			event.preventDefault();
-			applyFilter();
-		});
-	});
-	</script>
-	<?php
-
-	html_start_box(__('Associated Web URL\'s %s', htmlspecialchars($header_label), 'maint'), '100%', '', '3', 'center', '');
+	html_start_box(__esc("Associated Web URL's %s", $header_label, 'maint'), '100%', '', '3', 'center', '');
 
 	?>
 	<tr class='even'>
@@ -1504,9 +1480,9 @@ function webseer_urls($header_label) {
 						<select id='rows''>
 							<option value='-1'<?php if (get_request_var('rows') == '-1') {?> selected<?php }?>><?php print __('Default', 'maint');?></option>
 							<?php
-							if (cacti_sizeof($item_rows) > 0) {
+							if (cacti_sizeof($item_rows)) {
 								foreach ($item_rows as $key => $value) {
-									print "<option value='" . $key . "'"; if (get_request_var('rows') == $key) { print ' selected'; } print '>' . htmlspecialchars($value) . "</option>\n";
+									print "<option value='" . $key . "'" . (get_request_var('rows') == $key ? ' selected':'') . '>' . html_escape($value) . '</option>';
 								}
 							}
 							?>
@@ -1519,9 +1495,9 @@ function webseer_urls($header_label) {
 						<label for='associated'><?php print __('Associated', 'maint');?></label>
 					</td>
 					<td>
-						<span class='nowrap'>
-							<input type='button' class='ui-button ui-corner-all ui-widget' id='refresh' value='<?php print __('Go');?>' title='<?php print __esc('Set/Refresh Filters');?>'>
-							<input type='button' class='ui-button ui-corner-all ui-widget' id='clear' value='<?php print __('Clear');?>' title='<?php print __esc('Clear Filters');?>'>
+						<span>
+							<button type='submit' class='ui-button ui-corner-all ui-widget ui-state-active' id='refresh' title='<?php print __esc('Set/Refresh Filters');?>'><?php print __('Go');?></button>
+							<button type='button' class='ui-button ui-corner-all ui-widget' id='clear' title='<?php print __esc('Clear Filters');?>'><?php print __('Clear');?></button>
 						</span>
 					</td>
 				</tr>
@@ -1529,6 +1505,36 @@ function webseer_urls($header_label) {
 			<input type='hidden' name='page' value='<?php print get_request_var('page');?>'>
 			<input type='hidden' name='id' value='<?php print get_request_var('id');?>'>
 		</form>
+		<script type='text/javascript'>
+		function applyFilter() {
+			strURL  = 'maint.php?tab=webseer&action=edit&id=<?php print get_request_var('id');?>';
+			strURL += '&rows=' + $('#rows').val();
+			strURL += '&associated=' + $('#associated').is(':checked');
+			strURL += '&filter=' + $('#filter').val();
+			strURL += '&header=false';
+			loadPageNoHeader(strURL);
+		}
+	
+		function clearFilter() {
+			strURL = 'maint.php?tab=webseer&action=edit&id=<?php print get_request_var('id');?>&clear=true&header=false';
+			loadPageNoHeader(strURL);
+		}
+	
+		$(function() {
+			$('#rows, #associated').change(function() {
+				applyFilter();
+			});
+	
+			$('#clear').click(function() {
+				clearFilter();
+			});
+	
+			$('#form_webseer').submit(function(event) {
+				event.preventDefault();
+				applyFilter();
+			});
+		});
+		</script>
 		</td>
 	</tr>
 	<?php
@@ -1557,8 +1563,7 @@ function webseer_urls($header_label) {
 
 	if ($schedule_created) {
 		$sql_params = array_merge(array(get_request_var('id'), MAINT_HOST_TYPE_WEBSEER), $sql_where_params);
-		$total_rows = db_fetch_cell_prepared("SELECT
-			COUNT(*)
+		$total_rows = db_fetch_cell_prepared("SELECT COUNT(*)
 			FROM plugin_webseer_urls AS u
 			LEFT JOIN plugin_maint_hosts AS pmh
 				ON (u.id = pmh.host
@@ -1769,7 +1774,7 @@ function servcheck_test($header_label) {
 							<?php
 							if (cacti_sizeof($item_rows) > 0) {
 								foreach ($item_rows as $key => $value) {
-									print "<option value='" . $key . "'"; if (get_request_var('rows') == $key) { print ' selected'; } print '>' . htmlspecialchars($value) . "</option>\n";
+									print "<option value='" . $key . "'"; if (get_request_var('rows') == $key) { print ' selected'; } print '>' . htmlspecialchars($value) . "</option>";
 								}
 							}
 							?>
@@ -1782,9 +1787,9 @@ function servcheck_test($header_label) {
 						<label for='associated'><?php print __('Associated', 'maint');?></label>
 					</td>
 					<td>
-						<span class='nowrap'>
-							<input type='button' class='ui-button ui-corner-all ui-widget' id='refresh' value='<?php print __('Go');?>' title='<?php print __esc('Set/Refresh Filters');?>'>
-							<input type='button' class='ui-button ui-corner-all ui-widget' id='clear' value='<?php print __('Clear');?>' title='<?php print __esc('Clear Filters');?>'>
+						<span>
+							<button type='submit' class='ui-button ui-corner-all ui-widget ui-state-active' id='refresh' title='<?php print __esc('Set/Refresh Filters', 'maint');?>'><?php print __('Go', 'maint');?></button>
+							<button type='button' class='ui-button ui-corner-all ui-widget' id='clear' title='<?php print __esc('Clear Filters', 'maint');?>'><?php print __('Clear', 'maint');?></button>
 						</span>
 					</td>
 				</tr>
@@ -1820,8 +1825,7 @@ function servcheck_test($header_label) {
 
 	if ($schedule_created) {
 		$sql_params = array_merge(array(get_request_var('id'), MAINT_HOST_TYPE_SERVCHECK), $sql_where_params);
-		$total_rows = db_fetch_cell_prepared("SELECT
-			COUNT(*)
+		$total_rows = db_fetch_cell_prepared("SELECT COUNT(*)
 			FROM plugin_servcheck_test AS t
 			LEFT JOIN plugin_maint_hosts AS pmh
 				ON (t.id = pmh.host
