@@ -1077,7 +1077,7 @@ function thold_hosts($header_label) {
 
 							if (cacti_sizeof($locations)) {
 								foreach ($locations as $l) {
-									print "<option value='", html_escape($l['location']), "'";
+									print "<option value='" . html_escape($l['location']) . "'";
 									if (get_request_var('location') == $l['location']) {
 										print " selected";
 									}
@@ -1140,28 +1140,28 @@ function thold_hosts($header_label) {
 								set_request_var('host_template_id', MAINT_HOST_FILTER_ANY);
 							}
 
-							print "<option value='", MAINT_HOST_FILTER_ANY, "'";
+							print "<option value='" . MAINT_HOST_FILTER_ANY . "'";
 							if (get_request_var('host_template_id') == MAINT_HOST_FILTER_ANY) {
 								print " selected";
 							}
-							print ">", __('Any', 'maint'), "</option>";
+							print ">" . __('Any', 'maint') . "</option>";
 
 							/* Include "None" if hosts with no template */
 							if ($hosts_no_templates) {
-								print "\t\t\t\t\t\t\t<option value='", MAINT_HOST_FILTER_NONE . "'";
+								print "\t\t\t\t\t\t\t<option value='" . MAINT_HOST_FILTER_NONE . "'";
 								if (get_request_var('host_template_id') == MAINT_HOST_FILTER_NONE) {
 									print " selected";
 								}
-								print ">", __('None', 'maint'), "</option>";
+								print ">" . __('None', 'maint') . "</option>";
 							}
 
 							if (cacti_sizeof($host_templates)) {
 								foreach ($host_templates as $host_template) {
-									print "\t\t\t\t\t\t\t<option value='", $host_template['id'], "'";
+									print "\t\t\t\t\t\t\t<option value='" . $host_template['id'] . "'";
 									if (get_request_var('host_template_id') == $host_template['id']) {
 										print " selected";
 									}
-									print ">", html_escape($host_template['name']), "</option>";
+									print ">" . html_escape($host_template['name']) . "</option>";
 								}
 							}
 							?>
