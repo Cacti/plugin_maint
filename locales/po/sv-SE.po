@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2022-06-18 08:24-0400\nPO-Revision-Date: 2025-03-18 09:57+0000\nLast-Translator: Daniel Nylander <weblate@danielnylander.se>\nLanguage-Team: Swedish <http://translate.cacti.net/projects/cacti/maint/sv/>\nLanguage: sv-SE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 4.8.1\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2022-06-18 08:24-0400\nPO-Revision-Date: 2025-10-16 18:18+0000\nLast-Translator: Daniel Nylander <daniel@danielnylander.se>\nLanguage-Team: Swedish <https://translate.cacti.net/projects/cacti/maint/sv/>\nLanguage: sv-SE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
 
 #: maint.php:37
 msgid "Update Time (Now + 1 Hour)"
@@ -12,15 +12,15 @@ msgstr "Uppdateringstid (Nu + 1 timme)"
 
 #: maint.php:38
 msgid "Delete"
-msgstr "Radera"
+msgstr "Ta bort"
 
 #: maint.php:43
 msgid "Associate"
-msgstr "Koppla"
+msgstr "Associera"
 
 #: maint.php:44
 msgid "Disassociate"
-msgstr "Icke-associera"
+msgstr "Ta bort associering"
 
 #: maint.php:48
 msgid "One Time"
@@ -82,7 +82,7 @@ msgstr "Uppdatera underhållsschema(n)"
 
 #: maint.php:312
 msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
-msgstr "Klicka på \"Fortsätt\" för att ta bort följande underhållsschema(n).  Alla enheter som är kopplade till det här schemat kommer att kopplas bort."
+msgstr "Klicka på \"Fortsätt\" för att ta bort följande underhållsschema(n).  Alla enheter som är associerade till det här schemat kommer att kopplas bort."
 
 #: maint.php:317
 msgid "Delete Maintenance Schedule(s)"
@@ -107,7 +107,7 @@ msgstr "Klicka på 'Fortsätt' för att associera följande enhet(er) med underh
 
 #: maint.php:372 maint.php:437
 msgid "Associate Maintenance Schedule(s)"
-msgstr "Underhållsschema(n) för associerade enheter"
+msgstr "Associera underhållsschema(n)"
 
 #: maint.php:376
 #, php-format
@@ -172,7 +172,7 @@ msgstr "Ge underhållsschemat ett meningsfullt namn"
 
 #: maint.php:554 maint.php:713 maint.php:1507 maint.php:1546
 msgid "Enabled"
-msgstr "Aktiverad"
+msgstr "Aktiverat"
 
 #: maint.php:557
 msgid "Whether or not this schedule will be checked."
@@ -228,7 +228,7 @@ msgstr "Namn"
 
 #: maint.php:708
 msgid "Active"
-msgstr "Aktiv"
+msgstr "Aktivt"
 
 #: maint.php:709
 msgid "Type"
@@ -244,12 +244,12 @@ msgstr "Slut"
 
 #: maint.php:750 maint.php:1280 maint.php:1541
 msgid "No Schedules"
-msgstr "Inga tidtabeller"
+msgstr "Inga scheman"
 
 #: maint.php:877
 #, php-format
 msgid "Associated Devices %s"
-msgstr "Tillhörande enheter %s"
+msgstr "Associerade enheter %s"
 
 #: maint.php:886
 msgid "Site"
@@ -257,7 +257,7 @@ msgstr "Plats"
 
 #: maint.php:890 maint.php:910 maint.php:1043
 msgid "Any"
-msgstr "Vilken som helst"
+msgstr "Alla"
 
 #: maint.php:891 maint.php:1051
 msgid "None"
@@ -285,11 +285,11 @@ msgstr "Ställ in/uppdatera filter"
 
 #: maint.php:1069 maint.php:1430
 msgid "Clear"
-msgstr "Rensa"
+msgstr "Töm"
 
 #: maint.php:1069 maint.php:1430
 msgid "Clear Filters"
-msgstr "Rensa filter"
+msgstr "Töm filter"
 
 #: maint.php:1077 maint.php:1401
 msgid "Search"
@@ -337,7 +337,7 @@ msgstr "Värdnamn"
 
 #: maint.php:1262 maint.php:1521
 msgid "Current Schedule"
-msgstr "Nuvarande schema"
+msgstr "Aktuellt schema"
 
 #: maint.php:1294
 msgid "No Associated Devices Found"
@@ -366,11 +366,11 @@ msgstr "URL"
 
 #: maint.php:1546
 msgid "Disabled"
-msgstr "Inaktiverad"
+msgstr "Inaktiverat"
 
 #: maint.php:1548
 msgid "USING DNS"
-msgstr "ANVÄNDNING AV DNS"
+msgstr "ANVÄNDER DNS"
 
 #: maint.php:1557
 msgid "No Associated WebSeer URL's Found"
@@ -382,7 +382,7 @@ msgstr "Hantering"
 
 #: setup.php:58
 msgid "System Administration"
-msgstr "Systemadministratör"
+msgstr "Systemadministration"
 
 #: setup.php:64
 msgid "(edit)"
