@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: Cacti\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2022-06-18 08:24-0400\nPO-Revision-Date: 2025-09-23 05:09+0000\nLast-Translator: Ekaterine papava <papava.e@gtu.ge>\nLanguage-Team: Georgian <https://translate.cacti.net/projects/cacti/maint/ka/>\nLanguage: ka-GE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
+msgstr "Project-Id-Version: Cacti\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2022-06-18 08:24-0400\nPO-Revision-Date: 2025-12-10 14:18+0000\nLast-Translator: Ekaterine papava <papava.e@gtu.ge>\nLanguage-Team: Georgian <https://translate.cacti.net/projects/cacti/maint/ka/>\nLanguage: ka-GE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
 
 #: maint.php:37
 msgid "Update Time (Now + 1 Hour)"
@@ -64,7 +64,7 @@ msgstr "WebSeer"
 
 #: maint.php:303
 msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
-msgstr ""
+msgstr "შემდეგი რემონტის გეგმების განახლებისთვის დააწკაპუნეთ ღილაკზე 'გაგრძელება'."
 
 #: maint.php:308 maint.php:317 maint.php:372 maint.php:381 maint.php:437
 #: maint.php:446
@@ -82,7 +82,7 @@ msgstr "განახლების რემონტის გეგმე�
 
 #: maint.php:312
 msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
-msgstr ""
+msgstr "შემდეგი რემონტის გეგმების წასაშლელად დააწკაპუნეთ ღილაკზე 'გაგრძელება.    მოწყობილობები, რომლებიც ასოცირებულია ამ გეგმასთან, მოიხსნება გეგმიდან."
 
 #: maint.php:317
 msgid "Delete Maintenance Schedule(s)"
@@ -90,7 +90,7 @@ msgstr "რემონტის გეგმების წაშლა"
 
 #: maint.php:320
 msgid "You must select at least one Maintenance Schedule."
-msgstr ""
+msgstr "უნდა მონიშნოთ, სულ ცოტა, ერთი რემონტის გეგმა."
 
 #: maint.php:321 maint.php:385 maint.php:450
 msgid "Return"
@@ -103,16 +103,16 @@ msgstr "მოწყობილობა"
 #: maint.php:367
 #, php-format
 msgid "Click 'Continue' to associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
-msgstr ""
+msgstr "დააწკაპუნეთ ღილაკზე 'გაგრძელება', რომ მიანიჭოთ შემდეგი მოწყობილობები რემონტის გეგმას '<b>%s</b>'."
 
 #: maint.php:372 maint.php:437
 msgid "Associate Maintenance Schedule(s)"
-msgstr ""
+msgstr "რემონტის გეგმების მინიჭება"
 
 #: maint.php:376
 #, php-format
 msgid "Click 'Continue' to disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
-msgstr ""
+msgstr "დააწკაპუნეთ ღილაკზე 'გაგრძელება', რომ გააუქმოთ მინიჭება შემდეგი მოწყობილობებისთვის რემონტის გეგმიდან '<b>%s</b>'."
 
 #: maint.php:381 maint.php:446
 msgid "Disassociate Maintenance Schedule(s)"
@@ -120,7 +120,7 @@ msgstr "რემონდის გეგმების მოხსნა"
 
 #: maint.php:384
 msgid "You must select at least one Device."
-msgstr ""
+msgstr "უნდა მონიშნოთ, სულ ცოტა, ერთი მოწყობილობა."
 
 #: maint.php:426
 msgid "Webseer(s)"
