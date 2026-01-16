@@ -4,19 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2022-06-18 08:24-0400\n"
-"PO-Revision-Date: 2021-05-04 08:47+0000\n"
-"Last-Translator: Linya Huang <linya0405@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <http://translate.cacti.net/projects/cacti/maint/zh_Hant/>\n"
-"Language: zh-TW\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.3.2\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2022-06-18 08:24-0400\nPO-Revision-Date: 2026-01-16 03:18+0000\nLast-Translator: sucharlie <su.charlie@gmail.com>\nLanguage-Team: Chinese (Traditional Han script) <https://translate.cacti.net/projects/cacti/maint/zh_Hant/>\nLanguage: zh-TW\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=1; plural=0;\nX-Generator: Weblate 5.11.4\n"
 
 #: maint.php:37
 #, fuzzy
@@ -24,6 +12,7 @@ msgid "Update Time (Now + 1 Hour)"
 msgstr "更新時間（現在+ 1小時）"
 
 #: maint.php:38
+#, fuzzy
 msgid "Delete"
 msgstr "刪除"
 
@@ -49,26 +38,32 @@ msgid "Not Defined"
 msgstr "沒有定義的"
 
 #: maint.php:54
+#, fuzzy
 msgid "Every Day"
 msgstr "每天"
 
 #: maint.php:55
+#, fuzzy
 msgid "Every Week"
 msgstr "每週"
 
 #: maint.php:59 maint.php:60 maint.php:63
+#, fuzzy
 msgid "No"
 msgstr "否"
 
 #: maint.php:61 maint.php:62
+#, fuzzy
 msgid "Yes"
 msgstr "是"
 
 #: maint.php:68
+#, fuzzy
 msgid "General"
 msgstr "一般"
 
 #: maint.php:72 maint.php:1083 maint.php:1245
+#, fuzzy
 msgid "Devices"
 msgstr "設備"
 
@@ -84,11 +79,13 @@ msgstr "單擊“繼續”以更新以下維護計劃。"
 
 #: maint.php:308 maint.php:317 maint.php:372 maint.php:381 maint.php:437
 #: maint.php:446
+#, fuzzy
 msgid "Cancel"
 msgstr "取消"
 
 #: maint.php:308 maint.php:317 maint.php:372 maint.php:381 maint.php:437
 #: maint.php:446
+#, fuzzy
 msgid "Continue"
 msgstr "繼續"
 
@@ -113,6 +110,7 @@ msgid "You must select at least one Maintenance Schedule."
 msgstr "您必須至少選擇一個維護計劃。"
 
 #: maint.php:321 maint.php:385 maint.php:450
+#, fuzzy
 msgid "Return"
 msgstr "返回"
 
@@ -167,13 +165,14 @@ msgid "You must select at least one Webseer."
 msgstr "您必須至少選擇一個設備。"
 
 #: maint.php:480
-#, php-format
+#, fuzzy, php-format
 msgid "[edit: %s]"
-msgstr ""
+msgstr "[編輯：%s]"
 
 #: maint.php:482
+#, fuzzy
 msgid "[new]"
-msgstr ""
+msgstr "[新]"
 
 #: maint.php:530
 #, fuzzy
@@ -186,6 +185,7 @@ msgid "General Settings %s"
 msgstr "一般設置[新]"
 
 #: maint.php:542
+#, fuzzy
 msgid "Schedule"
 msgstr "排程"
 
@@ -199,6 +199,7 @@ msgid "Provide the Maintenance Schedule a meaningful name"
 msgstr "為維護計劃提供有意義的名稱"
 
 #: maint.php:554 maint.php:713 maint.php:1507 maint.php:1546
+#, fuzzy
 msgid "Enabled"
 msgstr "啟用"
 
@@ -208,6 +209,7 @@ msgid "Whether or not this schedule will be checked."
 msgstr "是否檢查此閾值並提醒您。"
 
 #: maint.php:561
+#, fuzzy
 msgid "Schedule Type"
 msgstr "計劃類型"
 
@@ -217,6 +219,7 @@ msgid "The type of schedule, one time or recurring."
 msgstr "時間表的類型，一次或重複。"
 
 #: maint.php:569 maint.php:712
+#, fuzzy
 msgid "Interval"
 msgstr "間隔"
 
@@ -259,14 +262,17 @@ msgid "Maintenance Schedules"
 msgstr "維護計劃"
 
 #: maint.php:707
+#, fuzzy
 msgid "Name"
 msgstr "名稱"
 
 #: maint.php:708
+#, fuzzy
 msgid "Active"
 msgstr "啟用"
 
 #: maint.php:709
+#, fuzzy
 msgid "Type"
 msgstr "類型"
 
@@ -289,52 +295,64 @@ msgid "Associated Devices %s"
 msgstr "相關設備％s"
 
 #: maint.php:886
+#, fuzzy
 msgid "Site"
-msgstr ""
+msgstr "網站"
 
 #: maint.php:890 maint.php:910 maint.php:1043
+#, fuzzy
 msgid "Any"
 msgstr "任何"
 
 #: maint.php:891 maint.php:1051
+#, fuzzy
 msgid "None"
 msgstr "無"
 
 #: maint.php:906
+#, fuzzy
 msgid "Data Collector"
-msgstr ""
+msgstr "數據收集器"
 
 #: maint.php:925
+#, fuzzy
 msgid "Location"
-msgstr ""
+msgstr "地點"
 
 #: maint.php:997
+#, fuzzy
 msgid "Template"
-msgstr ""
+msgstr "模板"
 
 #: maint.php:1068 maint.php:1429
+#, fuzzy
 msgid "Go"
 msgstr "送出"
 
 #: maint.php:1068 maint.php:1429
+#, fuzzy
 msgid "Set/Refresh Filters"
 msgstr "設置/刷新過濾器"
 
 #: maint.php:1069 maint.php:1430
+#, fuzzy
 msgid "Clear"
 msgstr "清除"
 
 #: maint.php:1069 maint.php:1430
+#, fuzzy
 msgid "Clear Filters"
 msgstr "清除過濾器"
 
 #: maint.php:1077 maint.php:1401
+#, fuzzy
 msgid "Search"
 msgstr "搜尋"
 
 #: maint.php:1087 maint.php:1411
+#, fuzzy
 msgid "Default"
-msgstr "預設"
+msgstr "默认"
 
 #: maint.php:1101 maint.php:1425
 #, fuzzy
@@ -342,10 +360,12 @@ msgid "Associated"
 msgstr "關聯的"
 
 #: maint.php:1211 maint.php:1504
+#, fuzzy
 msgid "Description"
 msgstr "描述"
 
 #: maint.php:1215 maint.php:1505
+#, fuzzy
 msgid "ID"
 msgstr "ID"
 
@@ -355,10 +375,12 @@ msgid "Associated Schedules"
 msgstr "相關時間表"
 
 #: maint.php:1223
+#, fuzzy
 msgid "Graphs"
 msgstr "圖表"
 
 #: maint.php:1227
+#, fuzzy
 msgid "Data Sources"
 msgstr "數據源"
 
@@ -368,10 +390,12 @@ msgid "Thresholds"
 msgstr "閾值"
 
 #: maint.php:1235
+#, fuzzy
 msgid "Status"
 msgstr "狀態"
 
 #: maint.php:1239 maint.php:1508
+#, fuzzy
 msgid "Hostname"
 msgstr "主機名稱"
 
@@ -396,6 +420,7 @@ msgid "Associated Web URL's %s"
 msgstr "關聯的Web URL的％s"
 
 #: maint.php:1407
+#, fuzzy
 msgid "Rows"
 msgstr "行"
 
@@ -408,6 +433,7 @@ msgid "URL"
 msgstr "網址"
 
 #: maint.php:1546
+#, fuzzy
 msgid "Disabled"
 msgstr "停用"
 
@@ -422,14 +448,17 @@ msgid "No Associated WebSeer URL's Found"
 msgstr "找不到關聯的WebSeer URL"
 
 #: setup.php:55
+#, fuzzy
 msgid "Management"
 msgstr "管理"
 
 #: setup.php:58
+#, fuzzy
 msgid "System Administration"
 msgstr "系統管理"
 
 #: setup.php:64
+#, fuzzy
 msgid "(edit)"
 msgstr "(編輯)"
 
