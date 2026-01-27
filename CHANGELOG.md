@@ -10,7 +10,7 @@
 * issue#15: Fix webseer tab to not show items before schedule is created
 * feature#14: Webseer tab functional (webseer plugin update required to use schedule)
 * feature#18: Device tab filter
-* featuer#29: Add Servcheck
+* feature#29: Add Servcheck
 
 --- 1.2 ---
 
