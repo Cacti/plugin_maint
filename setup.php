@@ -25,7 +25,9 @@
 
 function plugin_maint_version() {
 	global $config;
+
 	$info = parse_ini_file($config['base_path'] . '/plugins/maint/INFO', true);
+
 	return $info['info'];
 }
 
@@ -67,6 +69,7 @@ function maint_draw_navigation_text ($nav) {
 	$nav['maint.php:'] = array('title' => __('Maintenance Schedules', 'maint'), 'mapping' => 'index.php:', 'url' => 'maint.php', 'level' => '1');
 	$nav['maint.php:edit'] = array('title' => __('(edit)', 'maint'), 'mapping' => 'index.php:', 'url' => 'maint.php', 'level' => '2');
 	$nav['maint.php:actions'] = array('title' => __('(actions)', 'maint'), 'mapping' => 'index.php:', 'url' => 'maint.php', 'level' => '2');
+
 	return $nav;
 }
 
@@ -84,7 +87,7 @@ function maint_device_edit_top_links() {
 	// Get current device id from edit context
 	$host_id = get_filter_request_var('id');
 	if (empty($host_id)) {
-	    return;
+		return;
 	}
 
 	$action_url = $config['url_path'] . 'host.php';
@@ -113,23 +116,25 @@ function maint_device_edit_top_links() {
 function maint_device_action_array($actions) {
 	$actions['maint'] = MAINT_LABEL_ENABLE_NOW;
 	$actions['maint_add_to_schedule'] = MAINT_LABEL_ADD_TO_SCHEDULE;
+
 	return $actions;
 }
 
 function maint_device_action_prepare($save) {
 	// Render confirmation details for the maint action
 	if (isset($save['drp_action']) && $save['drp_action'] == 'maint') {
-	    $now = time();
-	    $one_hour_later = $now + 3600;
+		$now = time();
+		$one_hour_later = $now + 3600;
 
-	    // Human readable time window
-	    $time_window = date(date_time_format(), $now) . ' - ' . date(date_time_format(), $one_hour_later);
+		// Human readable time window
+		$time_window = date(date_time_format(), $now) . ' - ' . date(date_time_format(), $one_hour_later);
 
 	    // Build device list
-	    $host_list = '';
+		$host_list = '';
 	    if (!empty($save['host_array']) && is_array($save['host_array'])) {
 	        foreach ($save['host_array'] as $host_id) {
 	            $row = db_fetch_row_prepared('SELECT description FROM host WHERE id = ?', array((int)$host_id));
+
 	            if (!empty($row)) {
 	                $host_list .= '<li>' . html_escape($row['description']) . '</li>';
 	            }
@@ -156,77 +161,88 @@ function maint_device_action_prepare($save) {
 	    // Aligned Schedule Name full-width row
 	    $label_name = __('Schedule name', 'maint');
 	    $ph_name    = __esc('e.g. Emergency patching', 'maint');
-	    print "<tr><td colspan='2' class='textArea'>"
-	        . "<div style='border:1px solid #efefef;background:#fafafa;padding:8px 12px;'>"
-	        .   "<div style='display:flex;align-items:center;gap:12px;'>"
-	        .     "<div style='min-width:180px;font-weight:bold;'>" . html_escape($label_name) . ":</div>"
-	        .     "<input type='text' name='maint_schedule_name' value='' size='50' placeholder='" . $ph_name . "'>"
-	        .   "</div>"
-	        . "</div>"
-	        . "</td></tr>";
 
-	    // Aligned Schedule Type full-width row
-	    $one_time_label = __('One Time', 'maint');
-	    $recurring_label = __('Recurring', 'maint');
-	    $every_day = __('Every Day', 'maint');
-	    $every_week = __('Every Week', 'maint');
-	    $label_type = __('Schedule Type', 'maint');
-	    $row  = "<div style='border:1px solid #efefef;background:#fafafa;padding:8px 12px;'>";
-	    $row .=   "<div style='display:flex;align-items:center;gap:12px;'>";
-	    $row .=     "<div style='min-width:180px;font-weight:bold;'>" . html_escape($label_type) . ":</div>";
-	    $row .=     "<select name='maint_mtype' id='maint_mtype' style='min-width:220px' onchange=\"document.getElementById('maint_interval_wrap').style.display=(this.value==='2')?'':'none'\">"
-	            .     "<option value='1' selected>" . html_escape($one_time_label) . "</option>"
-	            .     "<option value='2'>" . html_escape($recurring_label) . "</option>"
-	            .   "</select>";
-	    $row .=     "<span id='maint_interval_wrap' style='margin-left:12px; display:none;'>"
-	            .     "<select name='maint_minterval' id='maint_minterval'>"
-	            .         "<option value='86400'>" . html_escape($every_day) . "</option>"
-	            .         "<option value='604800'>" . html_escape($every_week) . "</option>"
-	            .     "</select>"
-	            .   "</span>";
-	    $row .=   "</div>";
-	    $row .= "</div>";
-	    print "<tr><td colspan='2' class='textArea'>" . $row . "</td></tr>";
+		print "<tr><td colspan='2' class='textArea'>" . 
+			"<div style='border:1px solid #efefef;background:#fafafa;padding:8px 12px;'>" .
+			"<div style='display:flex;align-items:center;gap:12px;'>" .
+			"<div style='min-width:180px;font-weight:bold;'>" . html_escape($label_name) . ":</div>" .
+			"<input type='text' name='maint_schedule_name' value='' size='50' placeholder='" . $ph_name . "'>" .
+			"</div>" .
+			"</div>" .
+			"</td></tr>";
 
-	    // Initialize visibility on load
-	    print "<tr style='display:none'><td colspan='2'><script>(function(){try{var e=document.getElementById('maint_mtype'),w=document.getElementById('maint_interval_wrap');if(e&&w){w.style.display=(e.value==='2')?'':'none';}}catch(ex){}})();</script></td></tr>";
+		// Aligned Schedule Type full-width row
+		$one_time_label  = __('One Time', 'maint');
+		$recurring_label = __('Recurring', 'maint');
 
-	    $devices  = "<div style='border:1px solid #efefef;background:#fafafa;padding:8px 12px;'>";
-	    $devices .=     "<b>" . __('Devices', 'maint') . " (" . count((array)$save['host_array']) . ")</b>";
-	    $devices .=     "<ul style='margin:6px 0 0 18px;'>" . $host_list . "</ul>";
-	    $devices .= "</div>";
+		$every_day  = __('Every Day', 'maint');
+		$every_week = __('Every Week', 'maint');
+		$label_type = __('Schedule Type', 'maint');
 
-	    print "<tr><td colspan='2' class='textArea'>" . $devices . "</td></tr>";
+		$row  = "<div style='border:1px solid #efefef;background:#fafafa;padding:8px 12px;'>";
+		$row .= "<div style='display:flex;align-items:center;gap:12px;'>";
+		$row .= "<div style='min-width:180px;font-weight:bold;'>" . html_escape($label_type) . ":</div>";
+
+		$row .= "<select name='maint_mtype' id='maint_mtype' style='min-width:220px' onchange=\"document.getElementById('maint_interval_wrap').style.display=(this.value==='2')?'':'none'\">"
+			"<option value='1' selected>" . html_escape($one_time_label) . "</option>" .
+			"<option value='2'>" . html_escape($recurring_label) . "</option>" .
+			"</select>";
+
+		$row .=     "<span id='maint_interval_wrap' style='margin-left:12px; display:none;'>" .
+			"<select name='maint_minterval' id='maint_minterval'>" .
+			"<option value='86400'>" . html_escape($every_day) . "</option>" . 
+			"<option value='604800'>" . html_escape($every_week) . "</option>" .
+			"</select>" .
+			"</span>";
+
+		$row .=   "</div>";
+		$row .= "</div>";
+
+		print "<tr><td colspan='2' class='textArea'>" . $row . "</td></tr>";
+
+		// Initialize visibility on load
+		print "<tr style='display:none'><td colspan='2'><script>(function(){try{var e=document.getElementById('maint_mtype'),w=document.getElementById('maint_interval_wrap');if(e&&w){w.style.display=(e.value==='2')?'':'none';}}catch(ex){}})();</script></td></tr>";
+
+		$devices  = "<div style='border:1px solid #efefef;background:#fafafa;padding:8px 12px;'>";
+		$devices .=     "<b>" . __('Devices', 'maint') . " (" . count((array)$save['host_array']) . ")</b>";
+		$devices .=     "<ul style='margin:6px 0 0 18px;'>" . $host_list . "</ul>";
+		$devices .= "</div>";
+
+		print "<tr><td colspan='2' class='textArea'>" . $devices . "</td></tr>";
 	} elseif (isset($save['drp_action']) && $save['drp_action'] == 'maint_add_to_schedule') {
-	    // Build device list
-	    $host_list = '';
-	    if (!empty($save['host_array']) && is_array($save['host_array'])) {
-	        foreach ($save['host_array'] as $host_id) {
-	            $row = db_fetch_row_prepared('SELECT description FROM host WHERE id = ?', array((int)$host_id));
-	            if (!empty($row)) {
-	                $host_list .= '<li>' . html_escape($row['description']) . '</li>';
-	            }
-	        }
-	    }
+		// Build device list
+		$host_list = '';
 
-	    // Load schedules to choose from
-	    $schedules = db_fetch_assoc('SELECT id, name, enabled, mtype, stime, etime, minterval FROM plugin_maint_schedules ORDER BY name');
+		if (!empty($save['host_array']) && is_array($save['host_array'])) {
+			foreach ($save['host_array'] as $host_id) {
+				$row = db_fetch_row_prepared('SELECT description FROM host WHERE id = ?', array((int)$host_id));
 
-	    $select = "<select name='maint_schedule_id' style='min-width:360px'>";
-	    if (!empty($schedules)) {
-	        foreach ($schedules as $sc) {
-	            $label_name = !empty($sc['name']) ? $sc['name'] : ('#' . (int)$sc['id']);
-	            $window = date(date_time_format(), (int)$sc['stime']) . ' → ' . date(date_time_format(), (int)$sc['etime']);
-	            $state = ($sc['enabled'] === 'on') ? '' : ' (' . __('disabled', 'maint') . ')';
-	            $select .= "<option value='" . (int)$sc['id'] . "'>" . html_escape($label_name . ' — ' . $window . $state) . "</option>";
-	        }
-	    } else {
-	        $select .= "<option value='' disabled>" . html_escape(__('No schedules found', 'maint')) . "</option>";
-	    }
-	    $select .= '</select>';
+				if (!empty($row)) {
+					$host_list .= '<li>' . html_escape($row['description']) . '</li>';
+				}
+			}
+		}
 
-	    print "<tr><td class='textArea'>" . __('Select schedule', 'maint') . ":</td><td class='textArea'>" . $select . "</td></tr>";
-	    print "<tr><td colspan='2' class='textArea'><div style='border:1px solid #efefef;background:#fafafa;padding:8px 12px;'><b>" . __('Devices', 'maint') . " (" . count((array)$save['host_array']) . ")</b><ul style='margin:6px 0 0 18px;'>" . $host_list . "</ul></div></td></tr>";
+		// Load schedules to choose from
+		$schedules = db_fetch_assoc('SELECT id, name, enabled, mtype, stime, etime, minterval 
+			FROM plugin_maint_schedules 
+			ORDER BY name');
+
+		$select = "<select name='maint_schedule_id' style='min-width:360px'>";
+		if (!empty($schedules)) {
+			foreach ($schedules as $sc) {
+				$label_name = !empty($sc['name']) ? $sc['name'] : ('#' . (int)$sc['id']);
+				$window     = date(date_time_format(), (int)$sc['stime']) . ' → ' . date(date_time_format(), (int)$sc['etime']);
+				$state      = ($sc['enabled'] === 'on') ? '' : ' (' . __('disabled', 'maint') . ')';
+				$select    .= "<option value='" . (int)$sc['id'] . "'>" . html_escape($label_name . ' — ' . $window . $state) . "</option>";
+			}
+		} else {
+			$select .= "<option value='' disabled>" . html_escape(__('No schedules found', 'maint')) . "</option>";
+		}
+		$select .= '</select>';
+
+		print "<tr><td class='textArea'>" . __('Select schedule', 'maint') . ":</td><td class='textArea'>" . $select . "</td></tr>";
+		print "<tr><td colspan='2' class='textArea'><div style='border:1px solid #efefef;background:#fafafa;padding:8px 12px;'><b>" . __('Devices', 'maint') . " (" . count((array)$save['host_array']) . ")</b><ul style='margin:6px 0 0 18px;'>" . $host_list . "</ul></div></td></tr>";
 	}
 
 	return $save;
@@ -256,7 +272,9 @@ function maint_device_action_execute($action) {
 		}
 
 		// Create a new schedule (one-time or recurring)
-		db_execute_prepared('INSERT INTO plugin_maint_schedules (enabled, name, mtype, stime, etime, minterval) VALUES ("on", ?, ?, ?, ?, ?)',
+		db_execute_prepared('INSERT INTO plugin_maint_schedules 
+			(enabled, name, mtype, stime, etime, minterval) 
+			VALUES ("on", ?, ?, ?, ?, ?)',
 			array($name, (int)$mtype, (int)$now, (int)$one_hour_later, (int)$minterval));
 
 		$schedule_id = db_fetch_insert_id();
@@ -269,7 +287,11 @@ function maint_device_action_execute($action) {
 
 			if (is_array($selected_items)) {
 				foreach ($selected_items as $host_id) {
-					db_execute_prepared('REPLACE INTO plugin_maint_hosts (type, host, schedule) VALUES (1, ?, ?)', array((int)$host_id, (int)$schedule_id));
+					db_execute_prepared('REPLACE INTO plugin_maint_hosts 
+						(type, host, schedule) 
+						VALUES (1, ?, ?)', 
+						array((int)$host_id, (int)$schedule_id));
+
 					$associated++;
 				}
 			}
