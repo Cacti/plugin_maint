@@ -183,7 +183,7 @@ function maint_device_action_prepare($save) {
 		$row .= "<div style='display:flex;align-items:center;gap:12px;'>";
 		$row .= "<div style='min-width:180px;font-weight:bold;'>" . html_escape($label_type) . ":</div>";
 
-		$row .= "<select name='maint_mtype' id='maint_mtype' style='min-width:220px' onchange=\"document.getElementById('maint_interval_wrap').style.display=(this.value==='2')?'':'none'\">"
+		$row .= "<select name='maint_mtype' id='maint_mtype' style='min-width:220px' onchange=\"document.getElementById('maint_interval_wrap').style.display=(this.value==='2')?'':'none'\">" .
 			"<option value='1' selected>" . html_escape($one_time_label) . "</option>" .
 			"<option value='2'>" . html_escape($recurring_label) . "</option>" .
 			"</select>";
