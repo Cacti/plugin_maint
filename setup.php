@@ -267,8 +267,8 @@ function maint_device_action_execute($action) {
 		if ($schedule_id && isset($_POST['selected_items'])) {
 			$selected_items = sanitize_unserialize_selected_items(get_nfilter_request_var('selected_items'));
 
-			if (is_array($selected)) {
-				foreach ($selected as $host_id) {
+			if (is_array($selected_items)) {
+				foreach ($selected_items as $host_id) {
 					db_execute_prepared('REPLACE INTO plugin_maint_hosts (type, host, schedule) VALUES (1, ?, ?)', array((int)$host_id, (int)$schedule_id));
 					$associated++;
 				}
@@ -288,8 +288,8 @@ function maint_device_action_execute($action) {
 		$added = 0;
 		if (isset($_POST['selected_items'])) {
 			$selected_items = sanitize_unserialize_selected_items(get_nfilter_request_var('selected_items'));
-			if (is_array($selected)) {
-				foreach ($selected as $host_id) {
+			if (is_array($selected_items)) {
+				foreach ($selected_items as $host_id) {
 					db_execute_prepared('REPLACE INTO plugin_maint_hosts (type, host, schedule) VALUES (1, ?, ?)', array((int)$host_id, $schedule_id));
 					$added++;
 				}
