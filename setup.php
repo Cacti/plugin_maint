@@ -298,7 +298,7 @@ function maint_device_action_execute($action) {
 		}
 
 		// Show info message like other Cacti actions
-		raise_message('maint_created', __esc("Maintenance schedule '%s' created and %d device(s) associated.", $name, $associated), MESSAGE_LEVEL_INFO);
+		raise_message('maint_created', __esc("Maintenance schedule '%s' created and %d device(s) associated.", $name, $associated, 'maint'), MESSAGE_LEVEL_INFO);
 
 		return true;
 	} elseif ($action == 'maint_add_to_schedule') {
@@ -324,7 +324,7 @@ function maint_device_action_execute($action) {
 			$sname = '#' . $schedule_id; 
 		}
 
-		raise_message('maint_added', __esc("%d device(s) added to maintenance schedule '%s'.", $added, $sname), MESSAGE_LEVEL_INFO);
+		raise_message('maint_added', __esc("%d device(s) added to maintenance schedule '%s'.", $added, $sname, 'maint'), MESSAGE_LEVEL_INFO);
 
 		return true;
 	}
