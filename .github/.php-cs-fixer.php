@@ -3,25 +3,11 @@
 $root = dirname(__DIR__);
 
 $finder = PhpCsFixer\Finder::create()
-    ->exclude('include/vendor')
-    ->exclude('rra')
-    ->exclude('cache')
-    ->exclude('log')
-    ->exclude('mib')
-    ->exclude('resource')
-    ->exclude('service')
-    ->exclude('tests')
+    ->exclude('vendor')
     ->exclude('locales')
-    ->exclude('images')
-    ->exclude('plugins')
-    ->exclude('formats')
-    ->exclude('contrib')
-    ->exclude('docs')
-    ->in($root)
-    ->append(array(
-        $root . '/php-cs-fixer',
-    )
-);
+    ->exclude('.git')
+    ->exclude('.github')
+    ->in($root);
 
 $config = new PhpCsFixer\Config();
 $config
