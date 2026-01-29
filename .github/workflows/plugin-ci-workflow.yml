@@ -66,7 +66,7 @@ jobs:
         repository: Cacti/cacti
         path: cacti
     
-    - name: Checkout Syslog Plugin
+    - name: Checkout Maint Plugin
       uses: actions/checkout@v4
       with:
         path: cacti/plugins/maint
@@ -196,7 +196,6 @@ jobs:
       run: |
         ls -la ${{ github.workspace }}/cacti/plugins/maint/vendor
         ls -la ${{ github.workspace }}/cacti/plugins/maint/vendor/bin
-        ${{ github.workspace }}/cacti/plugins/maint/vendor/bin/phplint --version
     
     - name: Run Linter on base code
       run: composer run-script lint
