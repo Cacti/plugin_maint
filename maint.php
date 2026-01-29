@@ -397,6 +397,8 @@ function form_actions(): void {
 
 		html_start_box($actions[get_request_var('drp_action')] . " $list_name", '60%', false, 3, 'center', '');
 
+		$save_html = '';
+
 		if (cacti_sizeof($array)) {
 			if (get_request_var('drp_action') == '1') { // update
 				print "<tr>
@@ -604,6 +606,8 @@ function form_actions(): void {
 
 		html_start_box($assoc_actions[get_request_var('drp_action')] . ' ' . __('Servcheck(s)', 'maint'), '60%', false, 3, 'center', '');
 
+		$save_html = '';
+
 		if (cacti_sizeof($array)) {
 			if (get_request_var('drp_action') == '1') { // associate
 				print "<tr>
@@ -636,7 +640,7 @@ function form_actions(): void {
 				<input type='hidden' name='action' value='actions'>
 				<input type='hidden' name='id' value='" . get_request_var('id') . "'>
 				<input type='hidden' name='save_servcheck' value='1'>
-				<input type='hidden' name='selected_items' value='" . (isset($array) ? serialize($array) : '') . "'>
+				<input type='hidden' name='selected_items' value='" . serialize($array) . "'>
 				<input type='hidden' name='drp_action' value='" . get_request_var('drp_action') . "'>
 				$save_html
 			</td>
