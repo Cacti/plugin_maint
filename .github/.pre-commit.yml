@@ -1,0 +1,18 @@
+repos:
+  - repo: local
+    hooks:
+      - id: php-lint
+        name: PHP lint
+        entry: composer run-script lint
+        language: system
+        pass_filenames: false
+      - id: php-cs-fixer
+        name: PHP CS Fixer (dry run)
+        entry: composer run-script phpcsfixer
+        language: system
+        pass_filenames: false
+      - id: phpstan
+        name: PHPStan
+        entry: composer run-script phpstan
+        language: system
+        pass_filenames: false
