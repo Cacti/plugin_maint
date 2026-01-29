@@ -1,0 +1,11 @@
+parameters:
+  level: 6
+  paths:
+    - .
+  excludePaths:
+    - vendor
+    - locales
+    - .git
+    - .github
+  bootstrapFiles:
+    - %currentWorkingDirectory%/.github/.phpstan-bootstrap.php
