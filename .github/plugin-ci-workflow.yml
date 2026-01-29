@@ -190,6 +190,9 @@ jobs:
     - name: Install Maint Plugin Composer Dependencies
       run: composer install --prefer-dist --no-progress
       working-directory: ${{ github.workspace }}/cacti/plugins/maint
+
+    - name: Verify Maint Plugin Vendor Binaries
+      run: ls -la ${{ github.workspace }}/cacti/plugins/maint/vendor/bin
     
     - name: Run Linter on base code
       run: composer run-script lint

@@ -10,8 +10,8 @@
     "overtrue/phplint": "^9.2"
   },
   "scripts": {
-    "lint": "phplint -c .github/.phplint.yml",
-    "phpcsfixer": "php-cs-fixer fix --dry-run --diff --config .github/.php-cs-fixer.php",
-    "phpstan": "phpstan analyse -c .github/.phpstan.neon"
+    "lint": "./vendor/bin/phplint -c .github/.phplint.yml",
+    "phpcsfixer": "./vendor/bin/php-cs-fixer fix --dry-run --diff --config .github/.php-cs-fixer.php",
+    "phpstan": "./vendor/bin/phpstan analyse -c .github/.phpstan.neon"
   }
 }
