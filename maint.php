@@ -110,7 +110,15 @@ switch (get_request_var('action')) {
 		break;
 }
 
-function schedule_delete() {
+/**
+ * Delete selected maintenance schedules
+ *
+ * Deletes schedules and all associated host mappings.
+ * Redirects to main page after deletion.
+ *
+ * @return void This function exits after redirect
+ */
+function schedule_delete(): void {
 	$selected_items = sanitize_unserialize_selected_items(get_nfilter_request_var('selected_items'));
 
 	if ($selected_items != false) {
@@ -125,7 +133,15 @@ function schedule_delete() {
 	exit;
 }
 
-function schedule_update() {
+/**
+ * Update selected schedules to start now and end in 1 hour
+ *
+ * Sets the start time to current time (rounded to nearest minute)
+ * and end time to 1 hour later. Redirects to main page after update.
+ *
+ * @return void This function exits after redirect
+ */
+function schedule_update(): void {
 	$selected_items = sanitize_unserialize_selected_items(get_nfilter_request_var('selected_items'));
 
 	if ($selected_items != false) {
@@ -147,7 +163,17 @@ function schedule_update() {
 	exit;
 }
 
-function form_save() {
+/**
+ * Save a maintenance schedule from edit form
+ *
+ * Validates and saves schedule data including:
+ * - Name, type (one-time or recurring), enabled status
+ * - Start/end times, interval for recurring schedules
+ * Redirects to edit page after save.
+ *
+ * @return void This function exits after redirect
+ */
+function form_save(): void {
 	global $plugins;
 
 	if (isset_request_var('save_component')) {
@@ -201,21 +227,30 @@ function form_save() {
 			}
 		}
 
-		header('Location: maint.php?tab=general&action=edit&header=false&id=' . (empty($id) ? $save['id'] : $id));
+	header('Location: maint.php?tab=general&action=edit&header=false&id=' . (empty($id) ? $save['id'] : $id));
 
-		exit;
+	exit;
 	}
 }
 
-function form_actions() {
+/**
+ * Handle form actions for schedules and host associations
+ *
+ * Processes:
+ * - Schedule actions (delete, update time)
+ * - Host association actions (associate, disassociate)
+ * - WebSeer URL associations
+ * - Servcheck test associations
+ *
+ * @return void This function may exit after processing
+ */
+function form_actions(): void {
 	global $actions, $assoc_actions;
 
 	// ================= input validation =================
 	get_filter_request_var('id');
 	get_filter_request_var('drp_action', FILTER_VALIDATE_REGEXP, ['options' => ['regexp' => '/^([a-zA-Z0-9_]+)$/']]);
-	// ================= input validation =================
-
-	// if we are to save this form, instead of display it
+	// ================= input validation =================	// if we are to save this form, instead of display it
 	if (isset_request_var('selected_items')) {
 		if (isset_request_var('save_list')) {
 			if (get_request_var('drp_action') == '2') { // delete
@@ -613,7 +648,12 @@ function form_actions() {
 	}
 }
 
-function get_header_label() {
+/**
+ * Get the header label for the current schedule
+ *
+ * @return string Header label showing schedule name for edit or '[new]' for new schedule
+ */
+function get_header_label(): string {
 	if (!isempty_request_var('id')) {
 		$list = db_fetch_row_prepared(
 			'SELECT *
@@ -629,7 +669,18 @@ function get_header_label() {
 	return $header_label;
 }
 
-function maint_tabs() {
+/**
+ * Display maintenance schedule tabs
+ *
+ * Shows tabs for:
+ * - General settings
+ * - Thold devices (if plugin enabled)
+ * - WebSeer URLs (if plugin enabled)
+ * - Servcheck tests (if plugin enabled)
+ *
+ * @return void
+ */
+function maint_tabs(): void {
 	global $config, $tabs;
 
 	// ================= input validation =================
@@ -654,7 +705,18 @@ function maint_tabs() {
 	print '</ul></nav></div>';
 }
 
-function schedule_edit() {
+/**
+ * Display schedule edit form
+ *
+ * Shows the appropriate tab content based on current tab:
+ * - General: Schedule settings form
+ * - hosts: Thold device associations
+ * - webseer: WebSeer URL associations
+ * - servcheck: Servcheck test associations
+ *
+ * @return void
+ */
+function schedule_edit(): void {
 	global $plugins, $config, $tabs, $maint_types, $maint_intervals;
 
 	// ================= input validation =================
@@ -840,7 +902,18 @@ function schedule_edit() {
 	}
 }
 
-function schedules() {
+/**
+ * Display maintenance schedules list
+ *
+ * Shows a table of all schedules with:
+ * - Name, active status, type
+ * - Start/end times (formatted based on interval)
+ * - Interval, enabled status
+ * Provides bulk actions (update time, delete).
+ *
+ * @return void
+ */
+function schedules(): void {
 	global $actions, $maint_types, $maint_intervals, $yesno;
 
 	$schedules = db_fetch_assoc('SELECT *
@@ -911,7 +984,19 @@ function schedules() {
 	form_end();
 }
 
-function thold_hosts($header_label) {
+/**
+ * Display and manage Thold device associations
+ *
+ * Shows a filterable table of Cacti devices with options to:
+ * - Filter by site, poller, template, location, status
+ * - Associate/disassociate devices with the current schedule
+ * - View current associations
+ *
+ * @param string $header_label Header label for the current schedule
+ *
+ * @return void
+ */
+function thold_hosts(string $header_label): void {
 	global $assoc_actions, $item_rows;
 
 	$schedule_created = get_request_var('id') ? true : false;
@@ -1501,11 +1586,18 @@ function thold_hosts($header_label) {
 }
 
 /**
- * webseer tab
- * @param mixed $header_label
+ * Display and manage WebSeer URL associations
+ *
+ * Shows a filterable table of WebSeer URLs with options to:
+ * - Filter by search term
+ * - Toggle between associated/all URLs
+ * - Associate/disassociate URLs with the current schedule
+ *
+ * @param string $header_label Header label for the current schedule
+ *
+ * @return void
  */
-
-function webseer_urls($header_label) {
+function webseer_urls(string $header_label): void {
 	global $assoc_actions, $item_rows;
 
 	$schedule_created = get_request_var('id') ? true : false;
@@ -1767,11 +1859,18 @@ function webseer_urls($header_label) {
 }
 
 /**
- * servcheck tab
- * @param mixed $header_label
+ * Display and manage Servcheck test associations
+ *
+ * Shows a filterable table of Servcheck tests with options to:
+ * - Filter by search term
+ * - Toggle between associated/all tests
+ * - Associate/disassociate tests with the current schedule
+ *
+ * @param string $header_label Header label for the current schedule
+ *
+ * @return void
  */
-
-function servcheck_test($header_label) {
+function servcheck_test(string $header_label): void {
 	global $assoc_actions, $item_rows;
 
 	$schedule_created = get_request_var('id') ? true : false;

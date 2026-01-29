@@ -24,19 +24,50 @@
  +-------------------------------------------------------------------------+
 */
 
-function plugin_maint_check_cacti_host($host) {
+/**
+ * Check if a Cacti host is in maintenance
+ *
+ * This is called via the 'is_device_in_maintenance' hook.
+ *
+ * @param int $host Host ID to check
+ *
+ * @return bool True if host is in active maintenance, false otherwise
+ */
+function plugin_maint_check_cacti_host(int $host): bool {
 	return plugin_maint_check_host(1, $host);
 }
 
-function plugin_maint_check_webseer_url($host) {
+/**
+ * Check if a WebSeer URL is in maintenance
+ *
+ * @param int $host WebSeer URL ID to check
+ *
+ * @return bool True if URL is in active maintenance, false otherwise
+ */
+function plugin_maint_check_webseer_url(int $host): bool {
 	return plugin_maint_check_host(2, $host);
 }
 
-function plugin_maint_check_servcheck_test($host) {
+/**
+ * Check if a Servcheck test is in maintenance
+ *
+ * @param int $host Servcheck test ID to check
+ *
+ * @return bool True if test is in active maintenance, false otherwise
+ */
+function plugin_maint_check_servcheck_test(int $host): bool {
 	return plugin_maint_check_host(3, $host);
 }
 
-function plugin_maint_check_host($type, $host) {
+/**
+ * Check if a host is in maintenance based on type
+ *
+ * @param int $type Host type (1=Cacti host, 2=WebSeer URL, 3=Servcheck test)
+ * @param int $host Host/URL/Test ID to check
+ *
+ * @return bool True if host is in active maintenance schedule, false otherwise
+ */
+function plugin_maint_check_host(int $type, int $host): bool {
 	$schedules = db_fetch_assoc_prepared(
 		'SELECT *
 		FROM plugin_maint_hosts
@@ -56,7 +87,18 @@ function plugin_maint_check_host($type, $host) {
 	return false;
 }
 
-function plugin_maint_check_schedule($schedule) {
+/**
+ * Check if a maintenance schedule is currently active
+ *
+ * Handles both one-time and recurring schedules.
+ * For recurring schedules that have passed, automatically calculates
+ * and updates the next occurrence.
+ *
+ * @param int $schedule Schedule ID to check
+ *
+ * @return bool True if schedule is active now, false otherwise
+ */
+function plugin_maint_check_schedule(int $schedule): bool {
 	$sc = db_fetch_row_prepared(
 		'SELECT *
 		FROM plugin_maint_schedules

@@ -24,7 +24,12 @@
  +-------------------------------------------------------------------------+
 */
 
-function plugin_maint_version() {
+/**
+ * Get the plugin version information from INFO file
+ *
+ * @return array Plugin metadata array containing version, author, homepage, etc.
+ */
+function plugin_maint_version(): array {
 	global $config;
 
 	$info = parse_ini_file($config['base_path'] . '/plugins/maint/INFO', true);
@@ -32,7 +37,14 @@ function plugin_maint_version() {
 	return $info['info'];
 }
 
-function plugin_maint_install() {
+/**
+ * Install the maintenance plugin
+ *
+ * Registers all hooks, realms, and creates database tables.
+ *
+ * @return void
+ */
+function plugin_maint_install(): void {
 	api_plugin_register_hook('maint', 'config_arrays', 'maint_config_arrays', 'setup.php');
 	api_plugin_register_hook('maint', 'draw_navigation_text', 'maint_draw_navigation_text', 'setup.php');
 	api_plugin_register_hook('maint', 'device_edit_top_links', 'maint_device_edit_top_links', 'setup.php');
@@ -45,18 +57,41 @@ function plugin_maint_install() {
 	maint_setup_database();
 }
 
-function plugin_maint_uninstall() {
+/**
+ * Uninstall the maintenance plugin
+ *
+ * @return void
+ */
+function plugin_maint_uninstall(): void {
 }
 
-function plugin_maint_check_config() {
+/**
+ * Check plugin configuration
+ *
+ * @return bool Always returns true
+ */
+function plugin_maint_check_config(): bool {
 	return true;
 }
 
-function plugin_maint_upgrade() {
+/**
+ * Upgrade the maintenance plugin
+ *
+ * @return bool Always returns false (no upgrade needed)
+ */
+function plugin_maint_upgrade(): bool {
 	return false;
 }
 
-function maint_config_arrays() {
+/**
+ * Configure plugin menu arrays and augment roles
+ *
+ * Adds the maintenance schedules menu item to the Management menu
+ * and augments System Administration roles if the function exists.
+ *
+ * @return void
+ */
+function maint_config_arrays(): void {
 	global $menu;
 
 	$menu[__('Management')]['plugins/maint/maint.php'] = __('Maintenance Schedules', 'maint');
@@ -66,7 +101,14 @@ function maint_config_arrays() {
 	}
 }
 
-function maint_draw_navigation_text($nav) {
+/**
+ * Configure navigation breadcrumb text for maintenance pages
+ *
+ * @param array<string, array<string, mixed>> $nav Navigation array
+ *
+ * @return array<string, array<string, mixed>> Modified navigation array
+ */
+function maint_draw_navigation_text(array $nav): array {
 	$nav['maint.php:']        = ['title' => __('Maintenance Schedules', 'maint'), 'mapping' => 'index.php:', 'url' => 'maint.php', 'level' => '1'];
 	$nav['maint.php:edit']    = ['title' => __('(edit)', 'maint'), 'mapping' => 'index.php:', 'url' => 'maint.php', 'level' => '2'];
 	$nav['maint.php:actions'] = ['title' => __('(actions)', 'maint'), 'mapping' => 'index.php:', 'url' => 'maint.php', 'level' => '2'];
@@ -83,7 +125,16 @@ if (!defined('MAINT_LABEL_ADD_TO_SCHEDULE')) {
 	define('MAINT_LABEL_ADD_TO_SCHEDULE', __('Add device(s) to existing maintenance schedule', 'maint'));
 }
 
-function maint_device_edit_top_links() {
+/**
+ * Add maintenance action links to device edit page
+ *
+ * Displays two hidden forms with links:
+ * 1. Enable maintenance now (now + 1 hour)
+ * 2. Add device to existing schedule
+ *
+ * @return void
+ */
+function maint_device_edit_top_links(): void {
 	global $config;
 
 	// Get current device id from edit context
@@ -116,14 +167,32 @@ function maint_device_edit_top_links() {
 	print "<span class='linkMarker'>*</span><a class='hyperLink' href='#' onclick=\"document.getElementById('{$uid}_f2').submit(); return false;\">" . MAINT_LABEL_ADD_TO_SCHEDULE . '</a>';
 }
 
-function maint_device_action_array($actions) {
+/**
+ * Add maintenance actions to device action dropdown
+ *
+ * @param array<string, string> $actions Existing device actions
+ *
+ * @return array<string, string> Modified actions array with maintenance options
+ */
+function maint_device_action_array(array $actions): array {
 	$actions['maint']                 = MAINT_LABEL_ENABLE_NOW;
 	$actions['maint_add_to_schedule'] = MAINT_LABEL_ADD_TO_SCHEDULE;
 
 	return $actions;
 }
 
-function maint_device_action_prepare($save) {
+/**
+ * Prepare device action confirmation UI
+ *
+ * Renders the confirmation dialog for maintenance actions:
+ * - Quick maintenance (now + 1 hour)
+ * - Add devices to existing schedule
+ *
+ * @param array<string, mixed> $save Action data including drp_action and host_array
+ *
+ * @return array<string, mixed> Modified save array
+ */
+function maint_device_action_prepare(array $save): array {
 	// Render confirmation details for the maint action
 	if (isset($save['drp_action']) && $save['drp_action'] == 'maint') {
 		$now            = time();
@@ -254,7 +323,18 @@ function maint_device_action_prepare($save) {
 	return $save;
 }
 
-function maint_device_action_execute($action) {
+/**
+ * Execute device maintenance actions
+ *
+ * Handles two types of actions:
+ * 1. 'maint' - Creates a new schedule and associates devices
+ * 2. 'maint_add_to_schedule' - Adds devices to existing schedule
+ *
+ * @param string $action The action to execute
+ *
+ * @return bool True if action was handled, false otherwise
+ */
+function maint_device_action_execute(string $action): bool {
 	if ($action == 'maint') {
 		// One-hour quick maintenance: create a new schedule and attach devices
 		$now            = time();
@@ -349,7 +429,16 @@ function maint_device_action_execute($action) {
 	return false;
 }
 
-function maint_setup_database() {
+/**
+ * Setup database tables for maintenance plugin
+ *
+ * Creates two tables:
+ * - plugin_maint_schedules: Stores maintenance schedules
+ * - plugin_maint_hosts: Associates hosts with schedules
+ *
+ * @return void
+ */
+function maint_setup_database(): void {
 	$data              = [];
 	$data['columns'][] = ['name' => 'id', 'type' => 'int(11)', 'NULL' => false, 'auto_increment' => true];
 	$data['columns'][] = ['name' => 'enabled', 'type' => 'varchar(3)', 'NULL' => false, 'default' => 'on'];
