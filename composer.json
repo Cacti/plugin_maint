@@ -9,8 +9,8 @@
     "overtrue/phplint": "^9.2"
   },
   "scripts": {
-    "lint": "cd ../../ && vendor/bin/phplint -c .phplint.yml plugins/maint",
-    "phpcsfixer": "cd ../../ && vendor/bin/php-cs-fixer fix --dry-run --diff --config=.php-cs-fixer.php plugins/maint",
-    "phpstan": "cd ../../ && vendor/bin/phpstan analyse -c phpstan.neon plugins/maint"
+    "lint": "bash -c 'cd ../../ && vendor/bin/phplint -c .phplint.yml plugins/maint'",
+    "phpcsfixer": "bash -c 'cd ../../ && vendor/bin/php-cs-fixer fix --dry-run --diff --config=.php-cs-fixer.php plugins/maint'",
+    "phpstan": "bash -c 'cd ../../ && vendor/bin/phpstan analyse -c phpstan.neon plugins/maint'"
   }
 }
