@@ -227,9 +227,9 @@ function form_save(): void {
 			}
 		}
 
-	header('Location: maint.php?tab=general&action=edit&header=false&id=' . (empty($id) ? $save['id'] : $id));
+		header('Location: maint.php?tab=general&action=edit&header=false&id=' . (empty($id) ? $save['id'] : $id));
 
-	exit;
+		exit;
 	}
 }
 
@@ -250,6 +250,7 @@ function form_actions(): void {
 	// ================= input validation =================
 	get_filter_request_var('id');
 	get_filter_request_var('drp_action', FILTER_VALIDATE_REGEXP, ['options' => ['regexp' => '/^([a-zA-Z0-9_]+)$/']]);
+
 	// ================= input validation =================	// if we are to save this form, instead of display it
 	if (isset_request_var('selected_items')) {
 		if (isset_request_var('save_list')) {
