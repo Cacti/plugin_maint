@@ -47,8 +47,8 @@ jobs:
         env:
           MYSQL_ROOT_PASSWORD: cactiroot
           MYSQL_DATABASE: cacti
-          MYSQL_USER: ${{ secrets.CACTI_MYSQL_USER }}
-          MYSQL_PASSWORD: ${{ secrets.CACTI_MYSQL_PASSWORD }}
+          MYSQL_USER: cactiuser
+          MYSQL_PASSWORD: cactiuser
         ports:
           - 3306:3306
         options: >-
@@ -110,9 +110,9 @@ jobs:
         MYSQL_AUTH_USR: '--defaults-file=~/.my.cnf'
       run: |
         mysql $MYSQL_AUTH_USR -e 'CREATE DATABASE IF NOT EXISTS cacti;'
-        mysql $MYSQL_AUTH_USR -e "CREATE USER IF NOT EXISTS '${{ secrets.CACTI_MYSQL_USER }}'@'localhost' IDENTIFIED BY '${{ secrets.CACTI_MYSQL_PASSWORD }}';"
-        mysql $MYSQL_AUTH_USR -e "GRANT ALL PRIVILEGES ON cacti.* TO '${{ secrets.CACTI_MYSQL_USER }}'@'localhost';"
-        mysql $MYSQL_AUTH_USR -e "GRANT SELECT ON mysql.time_zone_name TO '${{ secrets.CACTI_MYSQL_USER }}'@'localhost';"
+        mysql $MYSQL_AUTH_USR -e "CREATE USER IF NOT EXISTS 'cactiuser'@'localhost' IDENTIFIED BY 'cactiuser';"
+        mysql $MYSQL_AUTH_USR -e "GRANT ALL PRIVILEGES ON cacti.* TO 'cactiuser'@'localhost';"
+        mysql $MYSQL_AUTH_USR -e "GRANT SELECT ON mysql.time_zone_name TO 'cactiuser'@'localhost';"
         mysql $MYSQL_AUTH_USR -e "FLUSH PRIVILEGES;"
         mysql $MYSQL_AUTH_USR cacti < ${{ github.workspace }}/cacti/cacti.sql
         mysql $MYSQL_AUTH_USR -e "INSERT INTO settings (name, value) VALUES ('path_php_binary', '/usr/bin/php')" cacti
@@ -136,8 +136,8 @@ jobs:
         cat ${{ github.workspace }}/cacti/include/config.php.dist | \
         sed -r "s/localhost/127.0.0.1/g" | \
         sed -r "s/'cacti'/'cacti'/g" | \
-        sed -r "s/'cactiuser'/'${{ secrets.CACTI_MYSQL_USER }}'/g" | \
-        sed -r "s/'cactiuser'/'${{ secrets.CACTI_MYSQL_USER }}'/g" > ${{ github.workspace }}/cacti/include/config.php
+        sed -r "s/'cactiuser'/'cactiuser'/g" | \
+        sed -r "s/'cactiuser'/'cactiuser'/g" > ${{ github.workspace }}/cacti/include/config.php
         sudo chmod 664 ${{ github.workspace }}/cacti/include/config.php
     
     - name: Configure Apache
