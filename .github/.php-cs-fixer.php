@@ -7,11 +7,7 @@ $finder = PhpCsFixer\Finder::create()
     ->exclude('locales')
     ->exclude('.git')
     ->exclude('.github')
-    ->in($root)
-    ->append(array(
-        $root . '/php-cs-fixer',
-    )
-);
+    ->in($root);
 
 $config = new PhpCsFixer\Config();
 $config
