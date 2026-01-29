@@ -148,8 +148,7 @@ function schedule_update(): void {
 		foreach ($selected_items as $id) {
 			$stime = intval(time() / 60) * 60;
 			$etime = $stime + 3600;
-			db_execute_prepared(
-				'UPDATE plugin_maint_schedules
+			db_execute_prepared('UPDATE plugin_maint_schedules
 				SET stime = ?, etime = ?
 				WHERE id = ?
 				LIMIT 1',
@@ -271,17 +270,18 @@ function form_actions(): void {
 			if ($selected_items != false) {
 				if (get_request_var('drp_action') == '1') { // associate
 					for ($i = 0; ($i < count($selected_items)); $i++) {
-						db_execute_prepared(
-							'REPLACE INTO plugin_maint_hosts (type, host, schedule)
+						db_execute_prepared('REPLACE INTO plugin_maint_hosts
+							(type, host, schedule)
 							VALUES (?, ?, ?)',
 							[MAINT_HOST_TYPE_HOSTS, $selected_items[$i], get_request_var('id')],
 						);
 					}
 				} elseif (get_request_var('drp_action') == '2') { // disassociate
 					for ($i = 0; ($i < count($selected_items)); $i++) {
-						db_execute_prepared(
-							'DELETE FROM plugin_maint_hosts
-							WHERE type = ? AND host = ? AND schedule = ?',
+						db_execute_prepared('DELETE FROM plugin_maint_hosts
+							WHERE type = ?
+							AND host = ?
+							AND schedule = ?',
 							[MAINT_HOST_TYPE_HOSTS, $selected_items[$i], get_request_var('id')],
 						);
 					}
@@ -299,17 +299,18 @@ function form_actions(): void {
 			if ($selected_items != false) {
 				if (get_request_var('drp_action') == '1') { // associate
 					for ($i = 0; ($i < count($selected_items)); $i++) {
-						db_execute_prepared(
-							'REPLACE INTO plugin_maint_hosts (type, host, schedule)
+						db_execute_prepared('REPLACE INTO plugin_maint_hosts
+							(type, host, schedule)
 							VALUES (?, ?, ?)',
 							[MAINT_HOST_TYPE_WEBSEER, $selected_items[$i], get_request_var('id')],
 						);
 					}
 				} elseif (get_request_var('drp_action') == '2') { // disassociate
 					for ($i = 0; ($i < count($selected_items)); $i++) {
-						db_execute_prepared(
-							'DELETE FROM plugin_maint_hosts
-							WHERE type = ? AND host = ? AND schedule = ?',
+						db_execute_prepared('DELETE FROM plugin_maint_hosts
+							WHERE type = ?
+							AND host = ?
+							AND schedule = ?',
 							[MAINT_HOST_TYPE_WEBSEER, $selected_items[$i], get_request_var('id')],
 						);
 					}
@@ -327,17 +328,18 @@ function form_actions(): void {
 			if ($selected_items != false) {
 				if (get_request_var('drp_action') == '1') { // associate
 					for ($i = 0; ($i < count($selected_items)); $i++) {
-						db_execute_prepared(
-							'REPLACE INTO plugin_maint_hosts (type, host, schedule)
+						db_execute_prepared('REPLACE INTO plugin_maint_hosts
+							(type, host, schedule)
 							VALUES (?, ?, ?)',
 							[MAINT_HOST_TYPE_SERVCHECK, $selected_items[$i], get_request_var('id')],
 						);
 					}
 				} elseif (get_request_var('drp_action') == '2') { // disassociate
 					for ($i = 0; ($i < count($selected_items)); $i++) {
-						db_execute_prepared(
-							'DELETE FROM plugin_maint_hosts
-							WHERE type = ? AND host = ? AND schedule = ?',
+						db_execute_prepared('DELETE FROM plugin_maint_hosts
+							WHERE type = ?
+							AND host = ?
+							AND schedule = ?',
 							[MAINT_HOST_TYPE_SERVCHECK, $selected_items[$i], get_request_var('id')],
 						);
 					}
@@ -359,10 +361,9 @@ function form_actions(): void {
 
 	if (isset_request_var('id')) {
 		$list_name = html_escape(
-			db_fetch_cell_prepared(
-				'SELECT name
-			FROM plugin_maint_schedules
-			WHERE id = ?',
+			db_fetch_cell_prepared('SELECT name
+				FROM plugin_maint_schedules
+				WHERE id = ?',
 				[get_request_var('id')],
 			),
 		);
@@ -377,8 +378,7 @@ function form_actions(): void {
 				// ====================================================
 
 				$list .= '<li><b>' . html_escape(
-					db_fetch_cell_prepared(
-						'SELECT name
+					db_fetch_cell_prepared('SELECT name
 						FROM plugin_maint_schedules
 						WHERE id=?',
 						[$matches[1]],
@@ -393,7 +393,7 @@ function form_actions(): void {
 
 		form_start('maint.php');
 
-		html_start_box($actions[get_request_var('drp_action')] . " $list_name", '60%', '', '3', 'center', '');
+		html_start_box($actions[get_request_var('drp_action')] . " $list_name", '60%', false, 3, 'center', '');
 
 		if (cacti_sizeof($array)) {
 			if (get_request_var('drp_action') == '1') { // update
@@ -445,8 +445,7 @@ function form_actions(): void {
 				input_validate_input_number($matches[1]);
 				// ====================================================
 
-				$description = db_fetch_cell_prepared(
-					'SELECT description
+				$description = db_fetch_cell_prepared('SELECT description
 					FROM host
 					WHERE id = ?',
 					[$matches[1]],
@@ -461,7 +460,7 @@ function form_actions(): void {
 
 		form_start('maint.php');
 
-		html_start_box($assoc_actions[get_request_var('drp_action')] . ' ' . __('Device(s)', 'maint'), '60%', '', '3', 'center', '');
+		html_start_box($assoc_actions[get_request_var('drp_action')] . ' ' . __('Device(s)', 'maint'), '60%', false, 3, 'center', '');
 
 		if (cacti_sizeof($array)) {
 			if (get_request_var('drp_action') == '1') { // associate
@@ -514,8 +513,7 @@ function form_actions(): void {
 				input_validate_input_number($matches[1]);
 				// ====================================================
 
-				$description = db_fetch_cell_prepared(
-					'SELECT display_name
+				$description = db_fetch_cell_prepared('SELECT display_name
 					FROM plugin_webseer_urls
 					WHERE id = ?',
 					[$matches[1]],
@@ -530,7 +528,7 @@ function form_actions(): void {
 
 		form_start('maint.php');
 
-		html_start_box($assoc_actions[get_request_var('drp_action')] . ' ' . __('Webseer(s)', 'maint'), '60%', '', '3', 'center', '');
+		html_start_box($assoc_actions[get_request_var('drp_action')] . ' ' . __('Webseer(s)', 'maint'), '60%', false, 3, 'center', '');
 
 		if (cacti_sizeof($array)) {
 			if (get_request_var('drp_action') == '1') { // associate
@@ -583,8 +581,7 @@ function form_actions(): void {
 				input_validate_input_number($matches[1]);
 				// ====================================================
 
-				$description = db_fetch_cell_prepared(
-					'SELECT display_name
+				$description = db_fetch_cell_prepared('SELECT display_name
 					FROM plugin_servcheck_test
 					WHERE id = ?',
 					[$matches[1]],
@@ -599,7 +596,7 @@ function form_actions(): void {
 
 		form_start('maint.php');
 
-		html_start_box($assoc_actions[get_request_var('drp_action')] . ' ' . __('Servcheck(s)', 'maint'), '60%', '', '3', 'center', '');
+		html_start_box($assoc_actions[get_request_var('drp_action')] . ' ' . __('Servcheck(s)', 'maint'), '60%', false, 3, 'center', '');
 
 		if (cacti_sizeof($array)) {
 			if (get_request_var('drp_action') == '1') { // associate
@@ -656,12 +653,12 @@ function form_actions(): void {
  */
 function get_header_label(): string {
 	if (!isempty_request_var('id')) {
-		$list = db_fetch_row_prepared(
-			'SELECT *
+		$list = db_fetch_row_prepared('SELECT *
 			FROM plugin_maint_schedules
 			WHERE id = ?',
 			[get_filter_request_var('id')],
 		);
+
 		$header_label = __esc('[edit: %s]', $list['name'], 'maint');
 	} else {
 		$header_label = __('[new]', 'maint');
@@ -727,9 +724,9 @@ function schedule_edit(): void {
 	maint_tabs();
 
 	if (isset_request_var('id')) {
-		$id              = get_request_var('id');
-		$maint_item_data = db_fetch_row_prepared(
-			'SELECT *
+		$id = get_request_var('id');
+
+		$maint_item_data = db_fetch_row_prepared('SELECT *
 			FROM plugin_maint_schedules
 			WHERE id = ?',
 			[$id],
@@ -744,7 +741,7 @@ function schedule_edit(): void {
 	if (get_request_var('tab') == 'general') {
 		form_start('maint.php', 'maint');
 
-		html_start_box(__('General Settings %s', htmlspecialchars($header_label), 'maint'), '100%', '', '3', 'center', '');
+		html_start_box(__('General Settings %s', htmlspecialchars($header_label), 'maint'), '100%', false, 3, 'center', '');
 
 		$form_array = [
 			'general_header' => [
@@ -923,7 +920,7 @@ function schedules(): void {
 
 	form_start('maint.php', 'chk');
 
-	html_start_box(__('Maintenance Schedules', 'maint'), '100%', '', '2', 'center', 'maint.php?tab=general&action=edit');
+	html_start_box(__('Maintenance Schedules', 'maint'), '100%', false, 3, 'center', 'maint.php?tab=general&action=edit');
 
 	html_header_checkbox(
 		[
@@ -1111,7 +1108,7 @@ function thold_hosts(string $header_label): void {
 	</script>
 	<?php
 
-	html_start_box(__('Associated Devices %s', htmlspecialchars($header_label), 'maint'), '100%', '', '3', 'center', '');
+	html_start_box(__('Associated Devices %s', htmlspecialchars($header_label), 'maint'), '100%', false, 3, 'center', '');
 
 	?>
 	<tr class='even'>
@@ -1195,15 +1192,14 @@ function thold_hosts(string $header_label): void {
 	}
 
 	// Include (UNION) Any
-	$locations = db_fetch_assoc_prepared(
-		"SELECT * 
-								FROM (
-									SELECT DISTINCT IF(IFNULL(location,'') = '', ?, location) AS location
-									FROM (SELECT location FROM host WHERE id = id $sql_where GROUP BY location) AS host
-									UNION ALL
-									SELECT location FROM (SELECT ? AS location ) AS tableany
-								) tableunion
-								ORDER BY location",
+	$locations = db_fetch_assoc_prepared("SELECT *
+		FROM (
+			SELECT DISTINCT IF(IFNULL(location,'') = '', ?, location) AS location
+			FROM (SELECT location FROM host WHERE id = id $sql_where GROUP BY location) AS host
+			UNION ALL
+			SELECT location FROM (SELECT ? AS location ) AS tableany
+		) tableunion
+		ORDER BY location",
 		array_merge([MAINT_HOST_FILTER_LOC_NONE], $sql_where_params, [MAINT_HOST_FILTER_LOC_ANY]),
 	);
 
@@ -1263,16 +1259,15 @@ function thold_hosts(string $header_label): void {
 	}
 
 	$sql_statement = "SELECT ht.id, ht.name
-								FROM host_template AS ht
-								WHERE ht.id IN (SELECT host_template_id FROM host WHERE id = id $sql_where)
-								ORDER BY ht.name";
+		FROM host_template AS ht
+		WHERE ht.id IN (SELECT host_template_id FROM host WHERE id = id $sql_where)
+		ORDER BY ht.name";
 
 	$host_templates = db_fetch_assoc_prepared($sql_statement, $sql_where_params);
 
-	$hosts_no_templates = db_fetch_assoc_prepared(
-		"SELECT id
-								FROM host WHERE host_template_id = 0 $sql_where
-								LIMIT 1",
+	$hosts_no_templates = db_fetch_assoc_prepared("SELECT id
+		FROM host WHERE host_template_id = 0 $sql_where
+		LIMIT 1",
 		$sql_where_params,
 	);
 
@@ -1435,8 +1430,7 @@ function thold_hosts(string $header_label): void {
 
 	if ($schedule_created) {
 		$sql_params = array_merge([get_request_var('id')], $sql_where_params);
-		$total_rows = db_fetch_cell_prepared(
-			"SELECT COUNT(DISTINCT h.id)
+		$total_rows = db_fetch_cell_prepared("SELECT COUNT(DISTINCT h.id)
 			FROM host AS h
 			LEFT JOIN (SELECT DISTINCT host_id FROM thold_data) AS td
 			ON h.id = td.host_id
@@ -1519,7 +1513,7 @@ function thold_hosts(string $header_label): void {
 
 	print $nav;
 
-	html_start_box('', '100%', '', '3', 'center', '');
+	html_start_box('', '100%', false, 3, 'center', '');
 
 	html_header_sort_checkbox($display_text, get_request_var('sort_column'), get_request_var('sort_direction'), false, 'maint.php?action=edit&tab=hosts&id=' . get_request_var('id'));
 
@@ -1535,12 +1529,13 @@ function thold_hosts(string $header_label): void {
 				$names = '';
 			}
 
-			$lists = db_fetch_assoc_prepared(
-				'SELECT name
+			$lists = db_fetch_assoc_prepared('SELECT name
 				FROM plugin_maint_schedules
 				INNER JOIN plugin_maint_hosts
 				ON plugin_maint_schedules.id = plugin_maint_hosts.schedule
-				WHERE type = ? AND host = ? AND plugin_maint_schedules.id != ?',
+				WHERE type = ?
+				AND host = ?
+				AND plugin_maint_schedules.id != ?',
 				[MAINT_HOST_TYPE_HOSTS, $host['id'], get_request_var('id')],
 			);
 
@@ -1638,7 +1633,7 @@ function webseer_urls(string $header_label): void {
 		$rows = get_request_var('rows');
 	}
 
-	html_start_box(__esc("Associated Web URL's %s", $header_label, 'maint'), '100%', '', '3', 'center', '');
+	html_start_box(__esc("Associated Web URL's %s", $header_label, 'maint'), '100%', false, 3, 'center', '');
 
 	?>
 	<tr class='even'>
@@ -1693,21 +1688,21 @@ function webseer_urls(string $header_label): void {
 			strURL += '&header=false';
 			loadPageNoHeader(strURL);
 		}
-	
+
 		function clearFilter() {
 			strURL = 'maint.php?tab=webseer&action=edit&id=<?php print get_request_var('id'); ?>&clear=true&header=false';
 			loadPageNoHeader(strURL);
 		}
-	
+
 		$(function() {
 			$('#rows, #associated').change(function() {
 				applyFilter();
 			});
-	
+
 			$('#clear').click(function() {
 				clearFilter();
 			});
-	
+
 			$('#form_webseer').submit(function(event) {
 				event.preventDefault();
 				applyFilter();
@@ -1742,13 +1737,12 @@ function webseer_urls(string $header_label): void {
 
 	if ($schedule_created) {
 		$sql_params = array_merge([get_request_var('id'), MAINT_HOST_TYPE_WEBSEER], $sql_where_params);
-		$total_rows = db_fetch_cell_prepared(
-			"SELECT COUNT(*)
+		$total_rows = db_fetch_cell_prepared("SELECT COUNT(*)
 			FROM plugin_webseer_urls AS u
 			LEFT JOIN plugin_maint_hosts AS pmh
-				ON (u.id = pmh.host
-				AND pmh.type = ?
-				AND pmh.schedule = ?)
+			ON u.id = pmh.host
+			AND pmh.type = ?
+			AND pmh.schedule = ?
 			$sql_where",
 			$sql_params,
 		);
@@ -1759,9 +1753,9 @@ function webseer_urls(string $header_label): void {
 			pmh.type AS maint_type
 			FROM plugin_webseer_urls AS u
 			LEFT JOIN plugin_maint_hosts AS pmh
-				ON (u.id = pmh.host
-				AND pmh.type = ?
-				AND pmh.schedule = ?)
+			ON u.id = pmh.host
+			AND pmh.type = ?
+			AND pmh.schedule = ?
 			$sql_where
 			LIMIT " . ($rows * (get_request_var('page') - 1)) . ',' . $rows;
 
@@ -1778,7 +1772,7 @@ function webseer_urls(string $header_label): void {
 
 	print $nav;
 
-	html_start_box('', '100%', '', '3', 'center', '');
+	html_start_box('', '100%', false, 3, 'center', '');
 
 	$display_text = [
 		__('Description', 'maint'),
@@ -1803,8 +1797,7 @@ function webseer_urls(string $header_label): void {
 				$names = '';
 			}
 
-			$lists = db_fetch_assoc_prepared(
-				'SELECT name
+			$lists = db_fetch_assoc_prepared('SELECT name
 				FROM plugin_maint_schedules
 				INNER JOIN plugin_maint_hosts
 				ON plugin_maint_schedules.id = plugin_maint_hosts.schedule
@@ -1944,7 +1937,7 @@ function servcheck_test(string $header_label): void {
 	</script>
 	<?php
 
-	html_start_box(__('Associated Servcheck test\'s %s', htmlspecialchars($header_label), 'maint'), '100%', '', '3', 'center', '');
+	html_start_box(__('Associated Servcheck test\'s %s', htmlspecialchars($header_label), 'maint'), '100%', false, 3, 'center', '');
 
 	?>
 	<tr class='even'>
@@ -2022,13 +2015,12 @@ function servcheck_test(string $header_label): void {
 
 	if ($schedule_created) {
 		$sql_params = array_merge([get_request_var('id'), MAINT_HOST_TYPE_SERVCHECK], $sql_where_params);
-		$total_rows = db_fetch_cell_prepared(
-			"SELECT COUNT(*)
+		$total_rows = db_fetch_cell_prepared("SELECT COUNT(*)
 			FROM plugin_servcheck_test AS t
 			LEFT JOIN plugin_maint_hosts AS pmh
-				ON (t.id = pmh.host
-				AND pmh.type = ?
-				AND pmh.schedule = ?)
+			ON t.id = pmh.host
+			AND pmh.type = ?
+			AND pmh.schedule = ?
 			$sql_where",
 			$sql_params,
 		);
@@ -2039,9 +2031,9 @@ function servcheck_test(string $header_label): void {
 			pmh.type AS maint_type
 			FROM plugin_servcheck_test AS t
 			LEFT JOIN plugin_maint_hosts AS pmh
-				ON (t.id = pmh.host
-				AND pmh.type = ?
-				AND pmh.schedule = ?)
+			ON t.id = pmh.host
+			AND pmh.type = ?
+			AND pmh.schedule = ?
 			$sql_where
 			LIMIT " . ($rows * (get_request_var('page') - 1)) . ',' . $rows;
 
@@ -2058,7 +2050,7 @@ function servcheck_test(string $header_label): void {
 
 	print $nav;
 
-	html_start_box('', '100%', '', '3', 'center', '');
+	html_start_box('', '100%', false, 3, 'center', '');
 
 	$display_text = [
 		__('Description', 'maint'),
@@ -2083,8 +2075,7 @@ function servcheck_test(string $header_label): void {
 				$names = '';
 			}
 
-			$lists = db_fetch_assoc_prepared(
-				'SELECT name
+			$lists = db_fetch_assoc_prepared('SELECT name
 				FROM plugin_maint_schedules
 				INNER JOIN plugin_maint_hosts
 				ON plugin_maint_schedules.id = plugin_maint_hosts.schedule

@@ -68,8 +68,7 @@ function plugin_maint_check_servcheck_test(int $host): bool {
  * @return bool True if host is in active maintenance schedule, false otherwise
  */
 function plugin_maint_check_host(int $type, int $host): bool {
-	$schedules = db_fetch_assoc_prepared(
-		'SELECT *
+	$schedules = db_fetch_assoc_prepared('SELECT *
 		FROM plugin_maint_hosts
 		WHERE TYPE = ?
 		AND (host = ? OR host = 0)',
@@ -99,8 +98,7 @@ function plugin_maint_check_host(int $type, int $host): bool {
  * @return bool True if schedule is active now, false otherwise
  */
 function plugin_maint_check_schedule(int $schedule): bool {
-	$sc = db_fetch_row_prepared(
-		'SELECT *
+	$sc = db_fetch_row_prepared('SELECT *
 		FROM plugin_maint_schedules
 		WHERE enabled = \'on\' AND id = ?',
 		[$schedule],
@@ -134,8 +132,7 @@ function plugin_maint_check_schedule(int $schedule): bool {
 					$sc['stime'] = $starttimelocal->getTimestamp();
 					$sc['etime'] = $endtimelocal->getTimestamp();
 					// save next interval so not need to recalculate
-					db_execute_prepared(
-						'UPDATE plugin_maint_schedules
+					db_execute_prepared('UPDATE plugin_maint_schedules
 						SET stime = ?, etime = ?
 						WHERE id = ?',
 						[$sc['stime'], $sc['etime'], $schedule],
