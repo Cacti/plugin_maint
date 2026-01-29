@@ -99,7 +99,6 @@ jobs:
         sudo find ${{ github.workspace }}/cacti -type d -exec chmod 775 {} \;
         sudo find ${{ github.workspace }}/cacti -type f -exec chmod 664 {} \;
         sudo chmod +x ${{ github.workspace }}/cacti/cmd.php
-        fi
     
     - name: Create MySQL Config
       run: |
