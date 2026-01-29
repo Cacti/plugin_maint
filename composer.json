@@ -1,0 +1,17 @@
+{
+  "name": "cacti/plugin-maint",
+  "description": "Cacti maintenance window plugin.",
+  "type": "project",
+  "license": "GPL-2.0-or-later",
+  "require": {},
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.60",
+    "phpstan/phpstan": "^1.11",
+    "overtrue/phplint": "^9.2"
+  },
+  "scripts": {
+    "lint": "phplint -c .github/.phplint.yml",
+    "phpcsfixer": "php-cs-fixer fix --dry-run --diff --config .github/.php-cs-fixer.php",
+    "phpstan": "phpstan analyse -c .github/.phpstan.neon"
+  }
+}
