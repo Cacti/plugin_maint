@@ -298,8 +298,8 @@ function maint_device_action_prepare(array $save): array {
 		}
 
 		// Load schedules to choose from
-		$schedules = db_fetch_assoc('SELECT id, name, enabled, mtype, stime, etime, minterval 
-			FROM plugin_maint_schedules 
+		$schedules = db_fetch_assoc('SELECT id, name, enabled, mtype, stime, etime, minterval
+			FROM plugin_maint_schedules
 			ORDER BY name');
 
 		$select = "<select name='maint_schedule_id' style='min-width:360px'>";
@@ -360,9 +360,8 @@ function maint_device_action_execute(string $action): bool {
 		}
 
 		// Create a new schedule (one-time or recurring)
-		db_execute_prepared(
-			'INSERT INTO plugin_maint_schedules 
-			(enabled, name, mtype, stime, etime, minterval) 
+		db_execute_prepared('INSERT INTO plugin_maint_schedules
+			(enabled, name, mtype, stime, etime, minterval)
 			VALUES ("on", ?, ?, ?, ?, ?)',
 			[$name, (int) $mtype, (int) $now, (int) $one_hour_later, (int) $minterval],
 		);
@@ -377,9 +376,8 @@ function maint_device_action_execute(string $action): bool {
 
 			if (is_array($selected_items)) {
 				foreach ($selected_items as $host_id) {
-					db_execute_prepared(
-						'REPLACE INTO plugin_maint_hosts 
-						(type, host, schedule) 
+					db_execute_prepared('REPLACE INTO plugin_maint_hosts
+						(type, host, schedule)
 						VALUES (1, ?, ?)',
 						[(int) $host_id, (int) $schedule_id],
 					);
@@ -398,7 +396,7 @@ function maint_device_action_execute(string $action): bool {
 	if ($action == 'maint_add_to_schedule') {
 		$schedule_id = isset($_POST['maint_schedule_id']) ? (int) $_POST['maint_schedule_id'] : 0;
 
-		if ($schedule_id <= 0 || !db_fetch_cell_prepared('SELECT id FROM plugin_maint_schedules WHERE id = ?', [$schedule_id])) {
+		if ($schedule_id <= 0 || ! db_fetch_cell_prepared('SELECT id FROM plugin_maint_schedules WHERE id = ?', [$schedule_id])) {
 			return false;
 		}
 
