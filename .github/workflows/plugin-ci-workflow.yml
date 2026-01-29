@@ -181,6 +181,10 @@ jobs:
           exit 1
         fi
 
+    - name: Install Plugin Composer Dependencies
+      run: composer install --prefer-dist --no-progress
+      working-directory: ${{ github.workspace }}/cacti/plugins/maint
+
     - name: Run Linter on base code
       run: composer run-script lint
       working-directory: ${{ github.workspace }}/cacti/plugins/maint
