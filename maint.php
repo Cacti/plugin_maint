@@ -23,6 +23,8 @@
  +-------------------------------------------------------------------------+
 */
 
+global $config;
+
 chdir('../../');
 include_once('./include/auth.php');
 include_once($config['base_path'] . '/plugins/maint/functions.php');
@@ -425,7 +427,7 @@ function form_actions(): void {
 			<td>
 				<input type='hidden' name='action' value='actions'>
 				<input type='hidden' name='save_list' value='1'>
-				<input type='hidden' name='selected_items' value='" . (isset($array) ? serialize($array) : '') . "'>
+				<input type='hidden' name='selected_items' value='" . serialize($array) . "'>
 				<input type='hidden' name='drp_action' value='" . get_request_var('drp_action') . "'>
 				<input type='hidden' name='id' value='" . get_request_var('id') . "'>
 				$save_html
@@ -462,6 +464,8 @@ function form_actions(): void {
 
 		html_start_box($assoc_actions[get_request_var('drp_action')] . ' ' . __('Device(s)', 'maint'), '60%', false, 3, 'center', '');
 
+		$save_html = '';
+
 		if (cacti_sizeof($array)) {
 			if (get_request_var('drp_action') == '1') { // associate
 				print "<tr>
@@ -494,7 +498,7 @@ function form_actions(): void {
 				<input type='hidden' name='action' value='actions'>
 				<input type='hidden' name='id' value='" . get_request_var('id') . "'>
 				<input type='hidden' name='save_hosts' value='1'>
-				<input type='hidden' name='selected_items' value='" . (isset($array) ? serialize($array) : '') . "'>
+				<input type='hidden' name='selected_items' value='" . serialize($array) . "'>
 				<input type='hidden' name='drp_action' value='" . get_request_var('drp_action') . "'>
 				$save_html
 			</td>
@@ -530,6 +534,8 @@ function form_actions(): void {
 
 		html_start_box($assoc_actions[get_request_var('drp_action')] . ' ' . __('Webseer(s)', 'maint'), '60%', false, 3, 'center', '');
 
+		$save_html = '';
+
 		if (cacti_sizeof($array)) {
 			if (get_request_var('drp_action') == '1') { // associate
 				print "<tr>
@@ -562,7 +568,7 @@ function form_actions(): void {
 				<input type='hidden' name='action' value='actions'>
 				<input type='hidden' name='id' value='" . get_request_var('id') . "'>
 				<input type='hidden' name='save_webseer' value='1'>
-				<input type='hidden' name='selected_items' value='" . (isset($array) ? serialize($array) : '') . "'>
+				<input type='hidden' name='selected_items' value='" . serialize($array) . "'>
 				<input type='hidden' name='drp_action' value='" . get_request_var('drp_action') . "'>
 				$save_html
 			</td>
@@ -1788,7 +1794,7 @@ function webseer_urls(string $header_label): void {
 	if (cacti_sizeof($urls)) {
 		foreach ($urls as $url) {
 			form_alternate_row('line' . $url['id']);
-			form_selectable_cell(filter_value($url['display_name'], get_request_var('filter')), $url['id'], 250);
+			form_selectable_cell(filter_value($url['display_name'], get_request_var('filter')), $url['id'], '250');
 			form_selectable_cell(round(($url['id']), 2), $url['id']);
 
 			if ($url['associated'] != '') {
@@ -2066,7 +2072,7 @@ function servcheck_test(string $header_label): void {
 	if (cacti_sizeof($tests)) {
 		foreach ($tests as $test) {
 			form_alternate_row('line' . $test['id']);
-			form_selectable_cell(filter_value($test['display_name'], get_request_var('filter')), $test['id'], 250);
+			form_selectable_cell(filter_value($test['display_name'], get_request_var('filter')), $test['id'], '250');
 			form_selectable_cell(round(($test['id']), 2), $test['id']);
 
 			if ($test['associated'] != '') {
