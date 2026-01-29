@@ -11,6 +11,6 @@
   "scripts": {
     "lint": "bash -c 'cd ../../ && plugins/maint/vendor/bin/phplint plugins/maint --exclude=vendor'",
     "phpcsfixer": "bash -c 'cd ../../ && plugins/maint/vendor/bin/php-cs-fixer fix --dry-run --diff --config=.php-cs-fixer.php plugins/maint'",
-    "phpstan": "bash -c 'cd ../../ && plugins/maint/vendor/bin/phpstan analyse -c phpstan.neon plugins/maint'"
+    "phpstan": "bash -c 'cd ../../ && plugins/maint/vendor/bin/phpstan analyse -c .phpstan.neon plugins/maint'"
   }
 }
