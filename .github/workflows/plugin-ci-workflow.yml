@@ -124,7 +124,7 @@ jobs:
           composer validate --strict || true
         fi
     
-    - name: Install Composer Dependencies
+    - name: Install Composer Dependencies for Cacti
       run: |
         cd ${{ github.workspace }}/cacti
         if [ -f composer.json ]; then
@@ -181,22 +181,10 @@ jobs:
           exit 1
         fi
 
-    - name: Verify Maint Plugin Composer Setup
-      run: |
-        ls -la ${{ github.workspace }}/cacti/plugins/maint
-        cat ${{ github.workspace }}/cacti/plugins/maint/composer.json
-
-    - name: Install Maint Plugin Composer Dependencies
-      run: composer install --prefer-dist --no-progress --no-interaction
+    - name: Install Plugin Composer Dependencies
+      run: composer install --prefer-dist --no-progress
       working-directory: ${{ github.workspace }}/cacti/plugins/maint
-      env:
-        COMPOSER_NO_DEV: 0
 
-    - name: Verify Maint Plugin Vendor Binaries
-      run: |
-        ls -la ${{ github.workspace }}/cacti/plugins/maint/vendor
-        ls -la ${{ github.workspace }}/cacti/plugins/maint/vendor/bin
-    
     - name: Run Linter on base code
       run: composer run-script lint
       working-directory: ${{ github.workspace }}/cacti/plugins/maint

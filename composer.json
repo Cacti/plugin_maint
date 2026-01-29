@@ -3,15 +3,14 @@
   "description": "Cacti maintenance window plugin.",
   "type": "project",
   "license": "GPL-2.0-or-later",
-  "require": {},
   "require-dev": {
-    "friendsofphp/php-cs-fixer": "^3.60",
+    "friendsofphp/php-cs-fixer": "^3.93",
     "phpstan/phpstan": "^1.11",
     "overtrue/phplint": "^9.2"
   },
   "scripts": {
-    "lint": "./vendor/bin/phplint -c .github/.phplint.yml",
-    "phpcsfixer": "./vendor/bin/php-cs-fixer fix --dry-run --diff --config .github/.php-cs-fixer.php",
-    "phpstan": "./vendor/bin/phpstan analyse -c .github/.phpstan.neon"
+    "lint": "bash -c 'cd ../../ && plugins/maint/vendor/bin/phplint plugins/maint --exclude=vendor'",
+    "phpcsfixer": "bash -c 'cd ../../ && plugins/maint/vendor/bin/php-cs-fixer fix --dry-run --diff --config=.php-cs-fixer.php plugins/maint'",
+    "phpstan": "bash -c 'cd ../../ && plugins/maint/vendor/bin/phpstan analyse --level=6 plugins/maint'"
   }
 }
