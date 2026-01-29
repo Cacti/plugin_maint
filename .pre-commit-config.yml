@@ -6,11 +6,13 @@ repos:
         entry: composer run-script lint
         language: system
         pass_filenames: false
+
       - id: php-cs-fixer
         name: PHP CS Fixer (dry run)
         entry: composer run-script phpcsfixer
         language: system
         pass_filenames: false
+
       - id: phpstan
         name: PHPStan
         entry: composer run-script phpstan

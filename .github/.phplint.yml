@@ -1,8 +1,0 @@
-path: ..
-extensions:
-  - php
-exclude:
-  - vendor
-  - locales
-  - .git
-  - .github
