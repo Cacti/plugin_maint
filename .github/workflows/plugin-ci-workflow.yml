@@ -185,7 +185,7 @@ jobs:
 
     - name: Run Linter on base code
       run: composer run-script lint ${{ github.workspace }}/cacti/plugins/maint
-      working-directory: ${{ github.workspace }}/cacti/plugins/maint
+      working-directory: ${{ github.workspace }}/cacti
 
     - name: Checking coding standards on base code
       run: composer run-script phpcsfixer ${{ github.workspace }}/cacti/plugins/maint
