@@ -182,6 +182,11 @@ jobs:
           exit 1
         fi
 
+    - name: Verify Maint Plugin Composer Setup
+      run: |
+        ls -la ${{ github.workspace }}/cacti/plugins/maint
+        cat ${{ github.workspace }}/cacti/plugins/maint/composer.json
+
     - name: Install Maint Plugin Composer Dependencies
       run: composer install --prefer-dist --no-progress
       working-directory: ${{ github.workspace }}/cacti/plugins/maint
