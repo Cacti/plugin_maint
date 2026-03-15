@@ -28,6 +28,7 @@ global $config;
 chdir('../../');
 include_once('./include/auth.php');
 include_once($config['base_path'] . '/plugins/maint/functions.php');
+include_once($config['base_path'] . '/plugins/maint/ui_helpers.php');
 
 define('MAINT_HOST_FILTER_LOC_ANY', '__any'); // internal value unlikely in data
 define('MAINT_HOST_FILTER_LOC_NONE', '__none');
@@ -99,15 +100,11 @@ switch (get_request_var('action')) {
 
 		break;
 	case 'edit':
-		top_header();
-		schedule_edit();
-		bottom_footer();
+		maint_render_with_layout('schedule_edit');
 
 		break;
 	default:
-		top_header();
-		schedules();
-		bottom_footer();
+		maint_render_with_layout('schedules');
 
 		break;
 }
