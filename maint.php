@@ -927,7 +927,7 @@ function schedules(): void {
 	$schedules = db_fetch_assoc_prepared('SELECT *
 		FROM plugin_maint_schedules
 		ORDER BY name',
-		array());
+		[]);
 
 	form_start('maint.php', 'chk');
 
@@ -1139,7 +1139,7 @@ function thold_hosts(string $header_label): void {
 								FROM sites
 								WHERE id IN (SELECT site_id FROM host)
 								ORDER BY name',
-								array());
+								[]);
 
 	if (cacti_sizeof($sites)) {
 		foreach ($sites as $site) {
@@ -1163,7 +1163,7 @@ function thold_hosts(string $header_label): void {
 	$pollers = db_fetch_assoc_prepared('SELECT id, name
 								FROM poller
 								ORDER BY name',
-								array());
+								[]);
 
 	if (cacti_sizeof($pollers)) {
 		foreach ($pollers as $poller) {

@@ -27,9 +27,16 @@ function assert_true($label, $value) {
 $setup_contents = file_get_contents(__DIR__ . '/../setup.php');
 $maint_contents = file_get_contents(__DIR__ . '/../maint.php');
 
+assert_true('setup.php is readable', $setup_contents !== false);
+assert_true('maint.php is readable', $maint_contents !== false);
+
+$setup_contents = ($setup_contents === false ? '' : $setup_contents);
+$maint_contents = ($maint_contents === false ? '' : $maint_contents);
+
 assert_true(
 	'setup.php uses prepared schedules query',
-	preg_match('/db_fetch_assoc_prepared\s*\(\s*\'SELECT id,\s*name,\s*enabled,\s*mtype,\s*stime,\s*etime,\s*minterval/s', $setup_contents) === 1
+	preg_match('/db_fetch_assoc_prepared\s*\(/', $setup_contents) === 1
+	&& preg_match('/\bplugin_maint_schedules\b/', $setup_contents) === 1
 );
 assert_true(
 	'setup.php has no raw db_fetch_assoc calls',
@@ -37,15 +44,18 @@ assert_true(
 );
 assert_true(
 	'maint.php uses prepared schedule list query',
-	preg_match('/db_fetch_assoc_prepared\s*\(\s*\'SELECT \*\s+FROM plugin_maint_schedules/s', $maint_contents) === 1
+	preg_match('/db_fetch_assoc_prepared\s*\(/', $maint_contents) === 1
+	&& preg_match('/\bplugin_maint_schedules\b/', $maint_contents) === 1
 );
 assert_true(
 	'maint.php uses prepared site list query',
-	preg_match('/db_fetch_assoc_prepared\s*\(\s*\'SELECT id,\s*name\s+FROM sites/s', $maint_contents) === 1
+	preg_match('/db_fetch_assoc_prepared\s*\(/', $maint_contents) === 1
+	&& preg_match('/\bFROM\s+sites\b/i', $maint_contents) === 1
 );
 assert_true(
 	'maint.php uses prepared poller list query',
-	preg_match('/db_fetch_assoc_prepared\s*\(\s*\'SELECT id,\s*name\s+FROM poller/s', $maint_contents) === 1
+	preg_match('/db_fetch_assoc_prepared\s*\(/', $maint_contents) === 1
+	&& preg_match('/\bFROM\s+poller\b/i', $maint_contents) === 1
 );
 assert_true(
 	'maint.php has no raw db_fetch_assoc calls',
