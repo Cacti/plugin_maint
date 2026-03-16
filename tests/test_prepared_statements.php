@@ -39,8 +39,16 @@ assert_true(
 	&& preg_match('/\bplugin_maint_schedules\b/', $setup_contents) === 1
 );
 assert_true(
+	'setup.php uses prepared host description lookup',
+	preg_match('/db_fetch_row_prepared\s*\(\s*\'SELECT description FROM host WHERE id = \?/s', $setup_contents) === 1
+);
+assert_true(
 	'setup.php has no raw db_fetch_assoc calls',
 	preg_match('/\bdb_fetch_assoc\s*\(/', $setup_contents) === 0
+);
+assert_true(
+	'setup.php has no raw db_fetch_row calls',
+	preg_match('/\bdb_fetch_row\s*\(/', $setup_contents) === 0
 );
 assert_true(
 	'maint.php uses prepared schedule list query',
