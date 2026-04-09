@@ -117,6 +117,11 @@ function plugin_maint_check_schedule(int $schedule): bool {
 			case 2: // Recurring
 				// past, calculate next
 				if ($sc['etime'] < $t) {
+					// minterval=0 would produce a zero-duration DateInterval and loop forever (FIND-004)
+					if ($sc['minterval'] <= 0) {
+						return false;
+					}
+
 					// convert start and end to local so that hour stays same for add days across daylight saving time change
 					$starttimelocal = (new DateTime('@' . strval($sc['stime'])))->setTimezone(new DateTimeZone(date_default_timezone_get()));
 					$endtimelocal   = (new DateTime('@' . strval($sc['etime'])))->setTimezone(new DateTimeZone(date_default_timezone_get()));

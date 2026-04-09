@@ -764,7 +764,7 @@ function schedule_edit(): void {
 				'max_length'    => 100,
 				'default'       => $maint_item_data['name'],
 				'description'   => __('Provide the Maintenance Schedule a meaningful name', 'maint'),
-				'value'         => isset($maint_item_data['name']) ? $maint_item_data['name'] : '',
+				'value'         => $maint_item_data['name'] ?? '',
 			],
 			'enabled' => [
 				'friendly_name' => __('Enabled', 'maint'),
@@ -779,7 +779,7 @@ function schedule_edit(): void {
 				'on_change'     => 'changemaintType()',
 				'array'         => $maint_types,
 				'description'   => __('The type of schedule, one time or recurring.', 'maint'),
-				'value'         => isset($maint_item_data['mtype']) ? $maint_item_data['mtype'] : '',
+				'value'         => $maint_item_data['mtype'] ?? '',
 			],
 			'minterval' => [
 				'friendly_name' => __('Interval', 'maint'),
@@ -787,7 +787,7 @@ function schedule_edit(): void {
 				'array'         => $maint_intervals,
 				'default'       => 86400,
 				'description'   => __('This is the interval in which the start / end time will repeat.', 'maint'),
-				'value'         => isset($maint_item_data['minterval']) ? $maint_item_data['minterval'] : '1',
+				'value'         => $maint_item_data['minterval'] ?? '1',
 			],
 			'stime' => [
 				'friendly_name' => __('Start Time', 'maint'),
@@ -975,7 +975,7 @@ function schedules(): void {
 
 			form_selectable_cell($maint_intervals[$schedule['minterval']], $schedule['id']);
 			form_selectable_cell($yesno[$schedule['enabled']], $schedule['id']);
-			form_checkbox_cell($schedule['name'], $schedule['id']);
+			form_checkbox_cell(html_escape($schedule['name']), $schedule['id']);
 			form_end_row();
 		}
 	} else {
