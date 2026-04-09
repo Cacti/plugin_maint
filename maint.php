@@ -1375,8 +1375,8 @@ function thold_hosts(string $header_label): void {
 					</td>
 				</tr>
 			</table>
-			<input type='hidden' id='page' value='<?php print get_request_var('page'); ?>'>
-			<input type='hidden' id='id' value='<?php print get_request_var('id'); ?>'>
+			<input type='hidden' id='page' value='<?php print html_escape_request_var('page'); ?>'>
+			<input type='hidden' id='id' value='<?php print html_escape_request_var('id'); ?>'>
 		</form>
 		</td>
 	</tr>
@@ -1686,8 +1686,8 @@ function webseer_urls(string $header_label): void {
 					</td>
 				</tr>
 			</table>
-			<input type='hidden' name='page' value='<?php print get_request_var('page'); ?>'>
-			<input type='hidden' name='id' value='<?php print get_request_var('id'); ?>'>
+			<input type='hidden' name='page' value='<?php print html_escape_request_var('page'); ?>'>
+			<input type='hidden' name='id' value='<?php print html_escape_request_var('id'); ?>'>
 		</form>
 		<script type='text/javascript'>
 		function applyFilter() {
@@ -1994,8 +1994,8 @@ function servcheck_test(string $header_label): void {
 					</td>
 				</tr>
 			</table>
-			<input type='hidden' name='page' value='<?php print get_request_var('page'); ?>'>
-			<input type='hidden' name='id' value='<?php print get_request_var('id'); ?>'>
+			<input type='hidden' name='page' value='<?php print html_escape_request_var('page'); ?>'>
+			<input type='hidden' name='id' value='<?php print html_escape_request_var('id'); ?>'>
 		</form>
 		</td>
 	</tr>
