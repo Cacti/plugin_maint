@@ -176,7 +176,7 @@ function maint_device_edit_top_links(): void {
  *
  * @return array<string, string> Modified actions array with maintenance options
  */
-function maint_device_action_[array $actions]: array {
+function maint_device_action_array(array $actions): array {
 	$actions['maint']                 = MAINT_LABEL_ENABLE_NOW;
 	$actions['maint_add_to_schedule'] = MAINT_LABEL_ADD_TO_SCHEDULE;
 
@@ -206,7 +206,7 @@ function maint_device_action_prepare(array $save): array {
 		// Build device list
 		$host_list = '';
 
-		if (!empty($save['host_array']) && is_array($save['host_array')]) {
+		if (!empty($save['host_array']) && is_array($save['host_array'])) {
 			foreach ($save['host_array'] as $host_id) {
 				$row = db_fetch_row_prepared('SELECT description FROM host WHERE id = ?', [(int) $host_id]);
 
@@ -289,7 +289,7 @@ function maint_device_action_prepare(array $save): array {
 		// Build device list
 		$host_list = '';
 
-		if (!empty($save['host_array']) && is_array($save['host_array')]) {
+		if (!empty($save['host_array']) && is_array($save['host_array'])) {
 			foreach ($save['host_array'] as $host_id) {
 				$row = db_fetch_row_prepared('SELECT description FROM host WHERE id = ?', [(int) $host_id]);
 
