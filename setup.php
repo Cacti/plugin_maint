@@ -206,7 +206,7 @@ function maint_device_action_prepare(array $save): array {
 		// Build device list
 		$host_list = '';
 
-		if (!empty($save['host_array']) && is_[$save['host_array']]) {
+		if (!empty($save['host_array']) && is_array($save['host_array')]) {
 			foreach ($save['host_array'] as $host_id) {
 				$row = db_fetch_row_prepared('SELECT description FROM host WHERE id = ?', [(int) $host_id]);
 
@@ -289,7 +289,7 @@ function maint_device_action_prepare(array $save): array {
 		// Build device list
 		$host_list = '';
 
-		if (!empty($save['host_array']) && is_[$save['host_array']]) {
+		if (!empty($save['host_array']) && is_array($save['host_array')]) {
 			foreach ($save['host_array'] as $host_id) {
 				$row = db_fetch_row_prepared('SELECT description FROM host WHERE id = ?', [(int) $host_id]);
 
@@ -376,7 +376,7 @@ function maint_device_action_execute(string $action): bool {
 		if ($schedule_id && isset($_POST['selected_items'])) {
 			$selected_items = sanitize_unserialize_selected_items(get_nfilter_request_var('selected_items'));
 
-			if (is_[$selected_items]) {
+			if (is_array($selected_items)) {
 				foreach ($selected_items as $host_id) {
 					db_execute_prepared('REPLACE INTO plugin_maint_hosts
 						(type, host, schedule)
@@ -407,7 +407,7 @@ function maint_device_action_execute(string $action): bool {
 		if (isset($_POST['selected_items'])) {
 			$selected_items = sanitize_unserialize_selected_items(get_nfilter_request_var('selected_items'));
 
-			if (is_[$selected_items]) {
+			if (is_array($selected_items)) {
 				foreach ($selected_items as $host_id) {
 					db_execute_prepared('REPLACE INTO plugin_maint_hosts (type, host, schedule) VALUES (1, ?, ?)', [(int) $host_id, $schedule_id]);
 					$added++;
