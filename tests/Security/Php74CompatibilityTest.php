@@ -13,11 +13,11 @@
  */
 
 describe('PHP 7.4 compatibility in maint', function () {
-	$files = array(
+	$files = [
 		'functions.php',
 		'maint.php',
 		'setup.php',
-	);
+	];
 
 	it('does not use str_contains (PHP 8.0)', function () use ($files) {
 		foreach ($files as $relativeFile) {

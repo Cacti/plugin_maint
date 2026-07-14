@@ -14,13 +14,13 @@
 
 describe('prepared statement consistency in maint', function () {
 	it('uses prepared DB helpers in all plugin files', function () {
-		$targetFiles = array(
+		$targetFiles = [
 		'functions.php',
 		'maint.php',
 		'setup.php',
-		);
+		];
 
-		$rawPattern = '/\bdb_(?:execute|fetch_row|fetch_assoc|fetch_cell)\s*\(/';
+		$rawPattern      = '/\bdb_(?:execute|fetch_row|fetch_assoc|fetch_cell)\s*\(/';
 		$preparedPattern = '/\bdb_(?:execute|fetch_row|fetch_assoc|fetch_cell)_prepared\s*\(/';
 
 		foreach ($targetFiles as $relativeFile) {
@@ -36,7 +36,7 @@ describe('prepared statement consistency in maint', function () {
 				continue;
 			}
 
-			$lines = explode("\n", $contents);
+			$lines                   = explode("\n", $contents);
 			$rawCallsOutsideComments = 0;
 
 			foreach ($lines as $line) {
