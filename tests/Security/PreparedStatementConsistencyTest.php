@@ -9,26 +9,36 @@
 
 describe('prepared statement consistency in maint', function () {
 	it('uses prepared DB helpers in all plugin files', function () {
-		$targetFiles = array(
+		$targetFiles = [
 		'functions.php',
 		'maint.php',
-		);
+		];
 
-		$rawPattern = '/\bdb_(?:execute|fetch_row|fetch_assoc|fetch_cell)\s*\(/';
+		$rawPattern      = '/\bdb_(?:execute|fetch_row|fetch_assoc|fetch_cell)\s*\(/';
 		$preparedPattern = '/\bdb_(?:execute|fetch_row|fetch_assoc|fetch_cell)_prepared\s*\(/';
 
 		foreach ($targetFiles as $relativeFile) {
 			$path = realpath(__DIR__ . '/../../' . $relativeFile);
-			if ($path === false) continue;
-			$contents = file_get_contents($path);
-			if ($contents === false) continue;
 
-			$lines = explode("\n", $contents);
+			if ($path === false) {
+				continue;
+			}
+			$contents = file_get_contents($path);
+
+			if ($contents === false) {
+				continue;
+			}
+
+			$lines    = explode("\n", $contents);
 			$rawCalls = 0;
 
 			foreach ($lines as $line) {
 				$trimmed = ltrim($line);
-				if (strpos($trimmed, '//') === 0 || strpos($trimmed, '*') === 0 || strpos($trimmed, '#') === 0) continue;
+
+				if (strpos($trimmed, '//') === 0 || strpos($trimmed, '*') === 0 || strpos($trimmed, '#') === 0) {
+					continue;
+				}
+
 				if (preg_match($rawPattern, $line) && !preg_match($preparedPattern, $line)) {
 					$rawCalls++;
 				}
@@ -39,23 +49,32 @@ describe('prepared statement consistency in maint', function () {
 	});
 
 	it('uses parameterized placeholders not string interpolation in SQL', function () {
-		$targetFiles = array(
+		$targetFiles = [
 		'functions.php',
 		'maint.php',
-		);
+		];
 
 		foreach ($targetFiles as $relativeFile) {
 			$path = realpath(__DIR__ . '/../../' . $relativeFile);
-			if ($path === false) continue;
-			$contents = file_get_contents($path);
-			if ($contents === false) continue;
 
-			$lines = explode("\n", $contents);
+			if ($path === false) {
+				continue;
+			}
+			$contents = file_get_contents($path);
+
+			if ($contents === false) {
+				continue;
+			}
+
+			$lines           = explode("\n", $contents);
 			$interpolatedSql = 0;
 
 			foreach ($lines as $num => $line) {
 				$trimmed = ltrim($line);
-				if (strpos($trimmed, '//') === 0 || strpos($trimmed, '*') === 0) continue;
+
+				if (strpos($trimmed, '//') === 0 || strpos($trimmed, '*') === 0) {
+					continue;
+				}
 
 				// Detect _prepared calls with $ interpolation instead of ? placeholders
 				if (preg_match('/_prepared\s*\(/', $line) && preg_match('/\$[a-zA-Z_]/', $line)) {

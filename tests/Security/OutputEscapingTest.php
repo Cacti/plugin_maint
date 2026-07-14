@@ -9,28 +9,38 @@
 
 describe('output escaping in maint', function () {
 	it('does not interpolate raw variables into HTML attributes', function () {
-		$uiFiles = array(
+		$uiFiles = [
 		'functions.php',
 		'maint.php',
-		);
+		];
 
 		foreach ($uiFiles as $relativeFile) {
 			$path = realpath(__DIR__ . '/../../' . $relativeFile);
-			if ($path === false) continue;
-			$contents = file_get_contents($path);
-			if ($contents === false) continue;
 
-			$lines = explode("\n", $contents);
+			if ($path === false) {
+				continue;
+			}
+			$contents = file_get_contents($path);
+
+			if ($contents === false) {
+				continue;
+			}
+
+			$lines     = explode("\n", $contents);
 			$dangerous = 0;
 
 			foreach ($lines as $line) {
 				$trimmed = ltrim($line);
-				if (strpos($trimmed, '//') === 0 || strpos($trimmed, '*') === 0) continue;
+
+				if (strpos($trimmed, '//') === 0 || strpos($trimmed, '*') === 0) {
+					continue;
+				}
 
 				// value="$row[...] without html_escape wrapping
 				if (preg_match('/value\s*=\s*["\'"]\s*<\?php\s+echo\s+\$/', $line)) {
 					$dangerous++;
 				}
+
 				// title="<?php print $something without escaping
 				if (preg_match('/(?:title|alt|placeholder)\s*=.*print\s+\$(?!_|config)/', $line)) {
 					if (strpos($line, 'html_escape') === false && strpos($line, '__esc') === false && strpos($line, 'htmlspecialchars') === false) {
@@ -46,18 +56,24 @@ describe('output escaping in maint', function () {
 	});
 
 	it('uses html_escape or __esc for user-controlled output', function () {
-		$uiFiles = array(
+		$uiFiles = [
 		'functions.php',
 		'maint.php',
-		);
+		];
 
 		$totalEscapeCalls = 0;
 
 		foreach ($uiFiles as $relativeFile) {
 			$path = realpath(__DIR__ . '/../../' . $relativeFile);
-			if ($path === false) continue;
+
+			if ($path === false) {
+				continue;
+			}
 			$contents = file_get_contents($path);
-			if ($contents === false) continue;
+
+			if ($contents === false) {
+				continue;
+			}
 
 			$totalEscapeCalls += preg_match_all('/html_escape|__esc\(|htmlspecialchars/', $contents);
 		}
