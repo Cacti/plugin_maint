@@ -10,7 +10,17 @@
 // Verify setup.php defines required plugin hooks and info function.
 
 describe('maint setup.php structure', function () {
-	$source = file_get_contents(realpath(__DIR__ . '/../../setup.php'));
+	$setupPath = realpath(__DIR__ . '/../../setup.php');
+	expect($setupPath)->not->toBeFalse();
+
+	$source = file_get_contents($setupPath);
+	expect($source)->not->toBeFalse();
+
+	$infoPath = realpath(__DIR__ . '/../../INFO');
+	expect($infoPath)->not->toBeFalse();
+
+	$info = parse_ini_file($infoPath, true);
+	expect($info)->not->toBeFalse();
 
 	it('defines plugin_maint_install function', function () use ($source) {
 		expect($source)->toContain('function plugin_maint_install');
@@ -24,11 +34,11 @@ describe('maint setup.php structure', function () {
 		expect($source)->toContain('function plugin_maint_uninstall');
 	});
 
-	it('returns version array with name key', function () use ($source) {
-		expect($source)->toMatch('/[\'\""]name[\'\""]\s*=>/');
+	it('declares a name in INFO', function () use ($info) {
+		expect($info['info'])->toHaveKey('name');
 	});
 
-	it('returns version array with version key', function () use ($source) {
-		expect($source)->toMatch('/[\'\""]version[\'\""]\s*=>/');
+	it('declares a version in INFO', function () use ($info) {
+		expect($info['info'])->toHaveKey('version');
 	});
 });

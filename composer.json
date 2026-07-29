@@ -14,5 +14,8 @@
         "files": [
             "tests/bootstrap.php"
         ]
+    },
+    "scripts": {
+        "test": "vendor/bin/pest"
     }
 }

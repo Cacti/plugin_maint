@@ -27,13 +27,13 @@ describe('prepared statement consistency in maint', function () {
 			$path = realpath(__DIR__ . '/../../' . $relativeFile);
 
 			if ($path === false) {
-				continue;
+				throw new RuntimeException("Unable to resolve required plugin file: {$relativeFile}");
 			}
 
 			$contents = file_get_contents($path);
 
 			if ($contents === false) {
-				continue;
+				throw new RuntimeException("Unable to read required plugin file: {$relativeFile}");
 			}
 
 			$lines                   = explode("\n", $contents);
