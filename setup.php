@@ -298,9 +298,9 @@ function maint_device_action_prepare(array $save): array {
 		}
 
 		// Load schedules to choose from
-		$schedules = db_fetch_assoc('SELECT id, name, enabled, mtype, stime, etime, minterval
+		$schedules = db_fetch_assoc_prepared('SELECT id, name, enabled, mtype, stime, etime, minterval
 			FROM plugin_maint_schedules
-			ORDER BY name');
+			ORDER BY name', []);
 
 		$select = "<select name='maint_schedule_id' style='min-width:360px'>";
 

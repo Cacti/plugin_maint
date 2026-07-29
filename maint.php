@@ -924,9 +924,9 @@ function schedule_edit(): void {
 function schedules(): void {
 	global $actions, $maint_types, $maint_intervals, $yesno;
 
-	$schedules = db_fetch_assoc('SELECT *
+	$schedules = db_fetch_assoc_prepared('SELECT *
 		FROM plugin_maint_schedules
-		ORDER BY name');
+		ORDER BY name', []);
 
 	form_start('maint.php', 'chk');
 
@@ -1134,10 +1134,10 @@ function thold_hosts(string $header_label): void {
 							<option value='<?php print MAINT_HOST_FILTER_ANY ?>' <?php if (get_request_var('site_id') == MAINT_HOST_FILTER_ANY) {?> selected<?php }?>><?php print __('Any', 'maint'); ?></option>
 							<option value='<?php print MAINT_HOST_FILTER_NONE ?>' <?php if (get_request_var('site_id') == MAINT_HOST_FILTER_NONE) {?> selected<?php }?>><?php print __('None', 'maint'); ?></option>
 							<?php
-							$sites = db_fetch_assoc('SELECT id, name
+							$sites = db_fetch_assoc_prepared('SELECT id, name
 								FROM sites
 								WHERE id IN (SELECT site_id FROM host)
-								ORDER BY name');
+								ORDER BY name', []);
 
 	if (cacti_sizeof($sites)) {
 		foreach ($sites as $site) {
@@ -1158,9 +1158,9 @@ function thold_hosts(string $header_label): void {
 						<select id='poller_id'>
 							<option value='<?php print MAINT_HOST_FILTER_ANY ?>' <?php if (get_request_var('poller_id') == MAINT_HOST_FILTER_ANY) {?> selected<?php }?>><?php print __('Any', 'maint'); ?></option>
 							<?php
-	$pollers = db_fetch_assoc('SELECT id, name
+	$pollers = db_fetch_assoc_prepared('SELECT id, name
 								FROM poller
-								ORDER BY name');
+								ORDER BY name', []);
 
 	if (cacti_sizeof($pollers)) {
 		foreach ($pollers as $poller) {
