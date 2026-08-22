@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: Cacti\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2022-06-18 08:24-0400\nPO-Revision-Date: 2025-12-10 14:18+0000\nLast-Translator: Ekaterine papava <papava.e@gtu.ge>\nLanguage-Team: Georgian <https://translate.cacti.net/projects/cacti/maint/ka/>\nLanguage: ka-GE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
+msgstr "Project-Id-Version: Cacti\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2022-06-18 08:24-0400\nPO-Revision-Date: 2026-08-04 05:18+0000\nLast-Translator: Ekaterine papava <papava.e@gtu.ge>\nLanguage-Team: Georgian <https://translate.cacti.net/projects/cacti/maint/ka/>\nLanguage: ka-GE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
 
 #: maint.php:37
 msgid "Update Time (Now + 1 Hour)"
@@ -138,7 +138,7 @@ msgstr ""
 
 #: maint.php:449
 msgid "You must select at least one Webseer."
-msgstr ""
+msgstr "უნდა აირჩიოთ, სულ ცოტა, ერთი Webseer."
 
 #: maint.php:480
 #, php-format
@@ -168,7 +168,7 @@ msgstr "გეგმის სახელი"
 
 #: maint.php:550
 msgid "Provide the Maintenance Schedule a meaningful name"
-msgstr ""
+msgstr "შეიყვანეთ რემონტის გეგმის სახელი, რომელიც რამეს ნიშნავს"
 
 #: maint.php:554 maint.php:713 maint.php:1507 maint.php:1546
 msgid "Enabled"
@@ -176,7 +176,7 @@ msgstr "ჩართულია"
 
 #: maint.php:557
 msgid "Whether or not this schedule will be checked."
-msgstr ""
+msgstr "მოხდება, თუ არა ამ გეგმის შემოწმება."
 
 #: maint.php:561
 msgid "Schedule Type"
@@ -184,7 +184,7 @@ msgstr "გეგმის ტიპი"
 
 #: maint.php:565
 msgid "The type of schedule, one time or recurring."
-msgstr ""
+msgstr "გეგმის ტიპი: ერთჯერადი, თუ განმეორებადი."
 
 #: maint.php:569 maint.php:712
 msgid "Interval"
@@ -341,16 +341,16 @@ msgstr "მიმდინარე გეგემა"
 
 #: maint.php:1294
 msgid "No Associated Devices Found"
-msgstr ""
+msgstr "ასოცირებული მოწყობილობები აღმოჩენილი არაა"
 
 #: maint.php:1296 maint.php:1559
 msgid "Schedule must be created before associating"
-msgstr ""
+msgstr "ასოცირებამდე ჯერ გეგმა უნდა შექმნათ"
 
 #: maint.php:1392
 #, php-format
 msgid "Associated Web URL's %s"
-msgstr ""
+msgstr "ასოცირებული ვების URL-ები %s"
 
 #: maint.php:1407
 msgid "Rows"
@@ -374,7 +374,7 @@ msgstr "DNS-ის გამოყენებით"
 
 #: maint.php:1557
 msgid "No Associated WebSeer URL's Found"
-msgstr ""
+msgstr "ასოცირებული WebSeer-ის URL-ები აღმოჩენილი არაა"
 
 #: setup.php:55
 msgid "Management"
