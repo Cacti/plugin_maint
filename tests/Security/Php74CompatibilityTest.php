@@ -12,7 +12,6 @@
  * Cacti 1.2.x plugins must remain compatible with PHP 7.4.
  */
 
-describe('PHP 7.4 compatibility in maint', function () {
 	$files = [
 		'functions.php',
 		'maint.php',
@@ -74,4 +73,3 @@ describe('PHP 7.4 compatibility in maint', function () {
 			);
 		}
 	});
-});
