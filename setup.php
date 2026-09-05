@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  ex: set tabstop=4 shiftwidth=4 autoindent:
  +-------------------------------------------------------------------------+
