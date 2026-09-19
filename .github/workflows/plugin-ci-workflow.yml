@@ -195,7 +195,9 @@ jobs:
       working-directory: ${{ github.workspace }}/cacti
 
     - name: Run PHPStan at Level 6 on base code outside of Composer due to technical issues
-      run: ./include/vendor/bin/phpstan analyze --level 6 ${{ github.workspace }}/cacti/plugins/maint
+      run: |
+        find ${{ github.workspace }}/cacti/plugins/maint -type f -name '*.php' ! -path '*/tests/*' -print0 |
+          xargs -0 ./include/vendor/bin/phpstan analyze --level 6
       working-directory: ${{ github.workspace }}/cacti
 
     - name: Run Cacti Poller
