@@ -12,6 +12,7 @@ describe('prepared statement consistency in maint', function () {
 		$targetFiles = [
 		'functions.php',
 		'maint.php',
+		'setup.php',
 		];
 
 		$rawPattern      = '/\bdb_(?:execute|fetch_row|fetch_assoc|fetch_cell)\s*\(/';
@@ -52,6 +53,7 @@ describe('prepared statement consistency in maint', function () {
 		$targetFiles = [
 		'functions.php',
 		'maint.php',
+		'setup.php',
 		];
 
 		foreach ($targetFiles as $relativeFile) {
@@ -76,10 +78,11 @@ describe('prepared statement consistency in maint', function () {
 					continue;
 				}
 
-				// Detect _prepared calls with $ interpolation instead of ? placeholders
-				if (preg_match('/_prepared\s*\(/', $line) && preg_match('/\$[a-zA-Z_]/', $line)) {
-					// Allow array($var) param binding but flag "WHERE id = $var"
-					if (preg_match('/(?:SELECT|INSERT|UPDATE|DELETE|WHERE|SET|FROM|JOIN).*\$/', $line)) {
+				// Only inspect the SQL literal itself (between the quotes right after
+				// _prepared(), not the trailing bound-params array, so single-line
+				// calls like db_x_prepared('...WHERE id = ?', [$id]) aren't flagged.
+				if (preg_match('/_prepared\s*\(\s*([\'"])((?:(?!\1).)*)\1/', $line, $matches)) {
+					if (preg_match('/(?:SELECT|INSERT|UPDATE|DELETE|WHERE|SET|FROM|JOIN).*\$/', $matches[2])) {
 						$interpolatedSql++;
 					}
 				}

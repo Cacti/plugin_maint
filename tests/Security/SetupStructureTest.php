@@ -8,8 +8,13 @@
 */
 
 describe('maint setup.php structure', function () {
-	$source = file_get_contents(realpath(__DIR__ . '/../../setup.php'));
-	$info   = file_get_contents(realpath(__DIR__ . '/../../INFO'));
+	$source   = file_get_contents(realpath(__DIR__ . '/../../setup.php'));
+	$infoFile = parse_ini_file(realpath(__DIR__ . '/../../INFO'), true);
+
+	if (!is_array($infoFile) || !isset($infoFile['info']) || !is_array($infoFile['info'])) {
+		throw new RuntimeException('Unable to parse the INFO section');
+	}
+	$info = $infoFile['info'];
 
 	it('defines plugin_maint_install function', function () use ($source) {
 		expect($source)->toContain('function plugin_maint_install');
@@ -29,11 +34,11 @@ describe('maint setup.php structure', function () {
 	});
 
 	it('declares a name in the INFO file', function () use ($info) {
-		expect($info)->toMatch('/^name\s*=\s*\S+/m');
+		expect($info)->toHaveKey('name');
 	});
 
 	it('declares a version in the INFO file', function () use ($info) {
-		expect($info)->toMatch('/^version\s*=\s*\S+/m');
+		expect($info)->toHaveKey('version');
 	});
 
 	it('registers hooks in install function', function () use ($source) {
