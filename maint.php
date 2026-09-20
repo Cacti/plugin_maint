@@ -432,8 +432,8 @@ function form_actions(): void {
 				<input type='hidden' name='action' value='actions'>
 				<input type='hidden' name='save_list' value='1'>
 				<input type='hidden' name='selected_items' value='" . serialize($array) . "'>
-				<input type='hidden' name='drp_action' value='" . get_request_var('drp_action') . "'>
-				<input type='hidden' name='id' value='" . get_request_var('id') . "'>
+				<input type='hidden' name='drp_action' value='" . html_escape_request_var('drp_action') . "'>
+				<input type='hidden' name='id' value='" . html_escape_request_var('id') . "'>
 				$save_html
 			</td>
 		</tr>";
@@ -500,10 +500,10 @@ function form_actions(): void {
 		print "<tr class='saveRow'>
 			<td>
 				<input type='hidden' name='action' value='actions'>
-				<input type='hidden' name='id' value='" . get_request_var('id') . "'>
+				<input type='hidden' name='id' value='" . html_escape_request_var('id') . "'>
 				<input type='hidden' name='save_hosts' value='1'>
 				<input type='hidden' name='selected_items' value='" . serialize($array) . "'>
-				<input type='hidden' name='drp_action' value='" . get_request_var('drp_action') . "'>
+				<input type='hidden' name='drp_action' value='" . html_escape_request_var('drp_action') . "'>
 				$save_html
 			</td>
 		</tr>";
@@ -570,10 +570,10 @@ function form_actions(): void {
 		print "<tr class='saveRow'>
 			<td>
 				<input type='hidden' name='action' value='actions'>
-				<input type='hidden' name='id' value='" . get_request_var('id') . "'>
+				<input type='hidden' name='id' value='" . html_escape_request_var('id') . "'>
 				<input type='hidden' name='save_webseer' value='1'>
 				<input type='hidden' name='selected_items' value='" . serialize($array) . "'>
-				<input type='hidden' name='drp_action' value='" . get_request_var('drp_action') . "'>
+				<input type='hidden' name='drp_action' value='" . html_escape_request_var('drp_action') . "'>
 				$save_html
 			</td>
 		</tr>";
@@ -640,10 +640,10 @@ function form_actions(): void {
 		print "<tr class='saveRow'>
 			<td>
 				<input type='hidden' name='action' value='actions'>
-				<input type='hidden' name='id' value='" . get_request_var('id') . "'>
+				<input type='hidden' name='id' value='" . html_escape_request_var('id') . "'>
 				<input type='hidden' name='save_servcheck' value='1'>
 				<input type='hidden' name='selected_items' value='" . serialize($array) . "'>
-				<input type='hidden' name='drp_action' value='" . get_request_var('drp_action') . "'>
+				<input type='hidden' name='drp_action' value='" . html_escape_request_var('drp_action') . "'>
 				$save_html
 			</td>
 		</tr>";
@@ -766,7 +766,7 @@ function schedule_edit(): void {
 				'max_length'    => 100,
 				'default'       => $maint_item_data['name'],
 				'description'   => __('Provide the Maintenance Schedule a meaningful name', 'maint'),
-				'value'         => isset($maint_item_data['name']) ? $maint_item_data['name'] : '',
+				'value'         => $maint_item_data['name'] ?? '',
 			],
 			'enabled' => [
 				'friendly_name' => __('Enabled', 'maint'),
@@ -781,7 +781,7 @@ function schedule_edit(): void {
 				'on_change'     => 'changemaintType()',
 				'array'         => $maint_types,
 				'description'   => __('The type of schedule, one time or recurring.', 'maint'),
-				'value'         => isset($maint_item_data['mtype']) ? $maint_item_data['mtype'] : '',
+				'value'         => $maint_item_data['mtype'] ?? '',
 			],
 			'minterval' => [
 				'friendly_name' => __('Interval', 'maint'),
@@ -789,7 +789,7 @@ function schedule_edit(): void {
 				'array'         => $maint_intervals,
 				'default'       => 86400,
 				'description'   => __('This is the interval in which the start / end time will repeat.', 'maint'),
-				'value'         => isset($maint_item_data['minterval']) ? $maint_item_data['minterval'] : '1',
+				'value'         => $maint_item_data['minterval'] ?? '1',
 			],
 			'stime' => [
 				'friendly_name' => __('Start Time', 'maint'),
@@ -926,9 +926,9 @@ function schedule_edit(): void {
 function schedules(): void {
 	global $actions, $maint_types, $maint_intervals, $yesno;
 
-	$schedules = db_fetch_assoc('SELECT *
+	$schedules = db_fetch_assoc_prepared('SELECT *
 		FROM plugin_maint_schedules
-		ORDER BY name');
+		ORDER BY name', []);
 
 	form_start('maint.php', 'chk');
 
@@ -947,11 +947,11 @@ function schedules(): void {
 
 	if (cacti_sizeof($schedules)) {
 		foreach ($schedules as $schedule) {
-			$active = plugin_maint_check_schedule($schedule['id']);
+			$active = plugin_maint_check_schedule((int) $schedule['id']);
 
 			form_alternate_row('line' . $schedule['id']);
 			form_selectable_cell(filter_value($schedule['name'], get_request_var('filter'), 'maint.php?action=edit&id=' . $schedule['id']), $schedule['id']);
-			form_selectable_cell($yesno[plugin_maint_check_schedule($schedule['id'])], $schedule['id'], '', $active ? 'deviceUp' : '');
+			form_selectable_cell($yesno[plugin_maint_check_schedule((int) $schedule['id'])], $schedule['id'], '', $active ? 'deviceUp' : '');
 			form_selectable_cell($maint_types[$schedule['mtype']], $schedule['id']);
 
 			switch ($schedule['minterval']) {
@@ -1086,7 +1086,7 @@ function thold_hosts(string $header_label): void {
 	?>
 	<script type='text/javascript'>
 	function applyFilter() {
-		strURL  = 'maint.php?tab=hosts&action=edit&id=<?php print get_request_var('id'); ?>'
+		strURL  = 'maint.php?tab=hosts&action=edit&id=<?php print html_escape_request_var('id'); ?>'
 		strURL += '&rows=' + $('#rows').val();
 		strURL += '&host_template_id=' + $('#host_template_id').val();
 		strURL += '&associated=' + $('#associated').is(':checked');
@@ -1099,7 +1099,7 @@ function thold_hosts(string $header_label): void {
 	}
 
 	function clearFilter() {
-		strURL = 'maint.php?tab=hosts&action=edit&id=<?php print get_request_var('id'); ?>&clear=true&header=false'
+		strURL = 'maint.php?tab=hosts&action=edit&id=<?php print html_escape_request_var('id'); ?>&clear=true&header=false'
 		loadPageNoHeader(strURL);
 	}
 
@@ -1136,10 +1136,10 @@ function thold_hosts(string $header_label): void {
 							<option value='<?php print MAINT_HOST_FILTER_ANY ?>' <?php if (get_request_var('site_id') == MAINT_HOST_FILTER_ANY) {?> selected<?php }?>><?php print __('Any', 'maint'); ?></option>
 							<option value='<?php print MAINT_HOST_FILTER_NONE ?>' <?php if (get_request_var('site_id') == MAINT_HOST_FILTER_NONE) {?> selected<?php }?>><?php print __('None', 'maint'); ?></option>
 							<?php
-							$sites = db_fetch_assoc('SELECT id, name
+							$sites = db_fetch_assoc_prepared('SELECT id, name
 								FROM sites
 								WHERE id IN (SELECT site_id FROM host)
-								ORDER BY name');
+								ORDER BY name', []);
 
 	if (cacti_sizeof($sites)) {
 		foreach ($sites as $site) {
@@ -1160,9 +1160,9 @@ function thold_hosts(string $header_label): void {
 						<select id='poller_id'>
 							<option value='<?php print MAINT_HOST_FILTER_ANY ?>' <?php if (get_request_var('poller_id') == MAINT_HOST_FILTER_ANY) {?> selected<?php }?>><?php print __('Any', 'maint'); ?></option>
 							<?php
-	$pollers = db_fetch_assoc('SELECT id, name
+	$pollers = db_fetch_assoc_prepared('SELECT id, name
 								FROM poller
-								ORDER BY name');
+								ORDER BY name', []);
 
 	if (cacti_sizeof($pollers)) {
 		foreach ($pollers as $poller) {
@@ -1693,7 +1693,7 @@ function webseer_urls(string $header_label): void {
 		</form>
 		<script type='text/javascript'>
 		function applyFilter() {
-			strURL  = 'maint.php?tab=webseer&action=edit&id=<?php print get_request_var('id'); ?>';
+			strURL  = 'maint.php?tab=webseer&action=edit&id=<?php print html_escape_request_var('id'); ?>';
 			strURL += '&rows=' + $('#rows').val();
 			strURL += '&associated=' + $('#associated').is(':checked');
 			strURL += '&filter=' + $('#filter').val();
@@ -1702,7 +1702,7 @@ function webseer_urls(string $header_label): void {
 		}
 
 		function clearFilter() {
-			strURL = 'maint.php?tab=webseer&action=edit&id=<?php print get_request_var('id'); ?>&clear=true&header=false';
+			strURL = 'maint.php?tab=webseer&action=edit&id=<?php print html_escape_request_var('id'); ?>&clear=true&header=false';
 			loadPageNoHeader(strURL);
 		}
 
@@ -1919,7 +1919,7 @@ function servcheck_test(string $header_label): void {
 	?>
 	<script type='text/javascript'>
 	function applyFilter() {
-		strURL  = 'maint.php?tab=servcheck&action=edit&id=<?php print get_request_var('id'); ?>';
+		strURL  = 'maint.php?tab=servcheck&action=edit&id=<?php print html_escape_request_var('id'); ?>';
 		strURL += '&rows=' + $('#rows').val();
 		strURL += '&associated=' + $('#associated').is(':checked');
 		strURL += '&filter=' + $('#filter').val();
@@ -1928,7 +1928,7 @@ function servcheck_test(string $header_label): void {
 	}
 
 	function clearFilter() {
-		strURL = 'maint.php?tab=servcheck&action=edit&id=<?php print get_request_var('id'); ?>&clear=true&header=false';
+		strURL = 'maint.php?tab=servcheck&action=edit&id=<?php print html_escape_request_var('id'); ?>&clear=true&header=false';
 		loadPageNoHeader(strURL);
 	}
 
