@@ -977,7 +977,7 @@ function schedules(): void {
 
 			form_selectable_cell($maint_intervals[$schedule['minterval']], $schedule['id']);
 			form_selectable_cell($yesno[$schedule['enabled']], $schedule['id']);
-			form_checkbox_cell(html_escape($schedule['name']), $schedule['id']);
+			form_checkbox_cell($schedule['name'], $schedule['id']);
 			form_end_row();
 		}
 	} else {
