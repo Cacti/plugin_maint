@@ -83,4 +83,31 @@ describe('output escaping in maint', function () {
 			'UI files should contain at least one html_escape/__esc call'
 		);
 	});
+
+	it('never echoes get_request_var() directly without html_escape_request_var()', function () {
+		// Regression guard: maint.php used to `print get_request_var('id')` straight into
+		// HTML hidden-input values and inline <script> URL strings in several places.
+		// Direct echoing must always go through html_escape_request_var() instead.
+		$uiFiles = [
+			'functions.php',
+			'maint.php',
+		];
+
+		foreach ($uiFiles as $relativeFile) {
+			$path = realpath(__DIR__ . '/../../' . $relativeFile);
+
+			if ($path === false) {
+				continue;
+			}
+			$contents = file_get_contents($path);
+
+			if ($contents === false) {
+				continue;
+			}
+
+			expect($contents)->not->toMatch('/\b(?:print|echo)\s+get_request_var\s*\(/',
+				"File {$relativeFile} echoes get_request_var() directly without html_escape_request_var()"
+			);
+		}
+	});
 });

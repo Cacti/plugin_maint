@@ -116,9 +116,26 @@ describe('plugin_maint_check_schedule recurring schedules', function () {
 		expect($updates)->toHaveCount(1);
 	});
 
-	it('refuses to advance and logs a warning when minterval is zero (FIND-004 guard)', function () {
+	it('refuses to advance and logs a warning when minterval is not a whole day (FIND-004 guard)', function () {
 		$now = time();
 
+		maint_test_queue('db_fetch_row_prepared', [
+			'name'      => 'broken',
+			'mtype'     => 2,
+			'stime'     => $now - 200,
+			'etime'     => $now - 100,
+			'minterval' => 86401,
+		]);
+
+		expect(plugin_maint_check_schedule(4))->toBeFalse();
+
+		$updates = array_filter($GLOBALS['__test_db_calls'], fn ($c) => $c['fn'] === 'db_execute_prepared');
+		expect($updates)->toBeEmpty();
+		expect($GLOBALS['__test_log'][0])->toContain('WARNING');
+	});
+
+	it('refuses to advance and logs a warning when minterval is zero (FIND-004 guard)', function () {
+		$now = time();
 		maint_test_queue('db_fetch_row_prepared', [
 			'name'      => 'broken',
 			'mtype'     => 2,

@@ -432,8 +432,8 @@ function form_actions(): void {
 				<input type='hidden' name='action' value='actions'>
 				<input type='hidden' name='save_list' value='1'>
 				<input type='hidden' name='selected_items' value='" . serialize($array) . "'>
-				<input type='hidden' name='drp_action' value='" . get_request_var('drp_action') . "'>
-				<input type='hidden' name='id' value='" . get_request_var('id') . "'>
+				<input type='hidden' name='drp_action' value='" . html_escape_request_var('drp_action') . "'>
+				<input type='hidden' name='id' value='" . html_escape_request_var('id') . "'>
 				$save_html
 			</td>
 		</tr>";
@@ -500,10 +500,10 @@ function form_actions(): void {
 		print "<tr class='saveRow'>
 			<td>
 				<input type='hidden' name='action' value='actions'>
-				<input type='hidden' name='id' value='" . get_request_var('id') . "'>
+				<input type='hidden' name='id' value='" . html_escape_request_var('id') . "'>
 				<input type='hidden' name='save_hosts' value='1'>
 				<input type='hidden' name='selected_items' value='" . serialize($array) . "'>
-				<input type='hidden' name='drp_action' value='" . get_request_var('drp_action') . "'>
+				<input type='hidden' name='drp_action' value='" . html_escape_request_var('drp_action') . "'>
 				$save_html
 			</td>
 		</tr>";
@@ -570,10 +570,10 @@ function form_actions(): void {
 		print "<tr class='saveRow'>
 			<td>
 				<input type='hidden' name='action' value='actions'>
-				<input type='hidden' name='id' value='" . get_request_var('id') . "'>
+				<input type='hidden' name='id' value='" . html_escape_request_var('id') . "'>
 				<input type='hidden' name='save_webseer' value='1'>
 				<input type='hidden' name='selected_items' value='" . serialize($array) . "'>
-				<input type='hidden' name='drp_action' value='" . get_request_var('drp_action') . "'>
+				<input type='hidden' name='drp_action' value='" . html_escape_request_var('drp_action') . "'>
 				$save_html
 			</td>
 		</tr>";
@@ -640,10 +640,10 @@ function form_actions(): void {
 		print "<tr class='saveRow'>
 			<td>
 				<input type='hidden' name='action' value='actions'>
-				<input type='hidden' name='id' value='" . get_request_var('id') . "'>
+				<input type='hidden' name='id' value='" . html_escape_request_var('id') . "'>
 				<input type='hidden' name='save_servcheck' value='1'>
 				<input type='hidden' name='selected_items' value='" . serialize($array) . "'>
-				<input type='hidden' name='drp_action' value='" . get_request_var('drp_action') . "'>
+				<input type='hidden' name='drp_action' value='" . html_escape_request_var('drp_action') . "'>
 				$save_html
 			</td>
 		</tr>";
@@ -1086,7 +1086,7 @@ function thold_hosts(string $header_label): void {
 	?>
 	<script type='text/javascript'>
 	function applyFilter() {
-		strURL  = 'maint.php?tab=hosts&action=edit&id=<?php print get_request_var('id'); ?>'
+		strURL  = 'maint.php?tab=hosts&action=edit&id=<?php print html_escape_request_var('id'); ?>'
 		strURL += '&rows=' + $('#rows').val();
 		strURL += '&host_template_id=' + $('#host_template_id').val();
 		strURL += '&associated=' + $('#associated').is(':checked');
@@ -1099,7 +1099,7 @@ function thold_hosts(string $header_label): void {
 	}
 
 	function clearFilter() {
-		strURL = 'maint.php?tab=hosts&action=edit&id=<?php print get_request_var('id'); ?>&clear=true&header=false'
+		strURL = 'maint.php?tab=hosts&action=edit&id=<?php print html_escape_request_var('id'); ?>&clear=true&header=false'
 		loadPageNoHeader(strURL);
 	}
 
@@ -1693,7 +1693,7 @@ function webseer_urls(string $header_label): void {
 		</form>
 		<script type='text/javascript'>
 		function applyFilter() {
-			strURL  = 'maint.php?tab=webseer&action=edit&id=<?php print get_request_var('id'); ?>';
+			strURL  = 'maint.php?tab=webseer&action=edit&id=<?php print html_escape_request_var('id'); ?>';
 			strURL += '&rows=' + $('#rows').val();
 			strURL += '&associated=' + $('#associated').is(':checked');
 			strURL += '&filter=' + $('#filter').val();
@@ -1702,7 +1702,7 @@ function webseer_urls(string $header_label): void {
 		}
 
 		function clearFilter() {
-			strURL = 'maint.php?tab=webseer&action=edit&id=<?php print get_request_var('id'); ?>&clear=true&header=false';
+			strURL = 'maint.php?tab=webseer&action=edit&id=<?php print html_escape_request_var('id'); ?>&clear=true&header=false';
 			loadPageNoHeader(strURL);
 		}
 
@@ -1919,7 +1919,7 @@ function servcheck_test(string $header_label): void {
 	?>
 	<script type='text/javascript'>
 	function applyFilter() {
-		strURL  = 'maint.php?tab=servcheck&action=edit&id=<?php print get_request_var('id'); ?>';
+		strURL  = 'maint.php?tab=servcheck&action=edit&id=<?php print html_escape_request_var('id'); ?>';
 		strURL += '&rows=' + $('#rows').val();
 		strURL += '&associated=' + $('#associated').is(':checked');
 		strURL += '&filter=' + $('#filter').val();
@@ -1928,7 +1928,7 @@ function servcheck_test(string $header_label): void {
 	}
 
 	function clearFilter() {
-		strURL = 'maint.php?tab=servcheck&action=edit&id=<?php print get_request_var('id'); ?>&clear=true&header=false';
+		strURL = 'maint.php?tab=servcheck&action=edit&id=<?php print html_escape_request_var('id'); ?>&clear=true&header=false';
 		loadPageNoHeader(strURL);
 	}
 

@@ -119,8 +119,10 @@ function plugin_maint_check_schedule(int $schedule): bool {
 			case 2: // Recurring
 				// past, calculate next
 				if ($sc['etime'] < $t) {
-					// minterval=0 would produce a zero-duration DateInterval and loop forever (FIND-004)
-					if ($sc['minterval'] <= 0) {
+					// minterval=0 would produce a zero-duration DateInterval and loop forever;
+					// a non-whole-day minterval produces a fractional 'PxD' spec that DateInterval
+					// rejects with an uncaught exception (FIND-004)
+					if ($sc['minterval'] <= 0 || $sc['minterval'] % 86400 !== 0) {
 						cacti_log('WARNING: Maintenance schedule "' . $sc['name'] . '" (ID ' . $schedule . ') has invalid recurring interval "' . $sc['minterval']
 								   . '" and cannot be advanced. Recurring maintenance will remain inactive until this schedule is corrected.', false, 'MAINT');
 
