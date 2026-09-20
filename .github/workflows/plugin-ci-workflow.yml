@@ -202,6 +202,7 @@ jobs:
         COMPOSER_ROOT_VERSION: 1.3.0-dev
       run: |
         cd ${{ github.workspace }}/cacti
+        mkdir -p plugins/maint/coverage
         include/vendor/bin/pest --configuration=plugins/maint/phpunit.xml \
           --coverage-clover=plugins/maint/coverage/clover.xml
 
