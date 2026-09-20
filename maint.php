@@ -947,11 +947,11 @@ function schedules(): void {
 
 	if (cacti_sizeof($schedules)) {
 		foreach ($schedules as $schedule) {
-			$active = plugin_maint_check_schedule($schedule['id']);
+			$active = plugin_maint_check_schedule((int) $schedule['id']);
 
 			form_alternate_row('line' . $schedule['id']);
 			form_selectable_cell(filter_value($schedule['name'], get_request_var('filter'), 'maint.php?action=edit&id=' . $schedule['id']), $schedule['id']);
-			form_selectable_cell($yesno[plugin_maint_check_schedule($schedule['id'])], $schedule['id'], '', $active ? 'deviceUp' : '');
+			form_selectable_cell($yesno[plugin_maint_check_schedule((int) $schedule['id'])], $schedule['id'], '', $active ? 'deviceUp' : '');
 			form_selectable_cell($maint_types[$schedule['mtype']], $schedule['id']);
 
 			switch ($schedule['minterval']) {

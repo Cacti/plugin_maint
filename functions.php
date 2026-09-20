@@ -79,7 +79,7 @@ function plugin_maint_check_host(int $type, int $host): bool {
 
 	if (!empty($schedules)) {
 		foreach ($schedules as $s) {
-			if (plugin_maint_check_schedule($s['schedule'])) {
+			if (plugin_maint_check_schedule((int) $s['schedule'])) {
 				return true;
 			}
 		}

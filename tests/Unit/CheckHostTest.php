@@ -52,7 +52,7 @@ describe('plugin_maint_check_host type dispatch', function () {
 		$now = time();
 
 		maint_test_queue('db_fetch_assoc_prepared', [
-			['schedule' => 42],
+			['schedule' => '42'],
 		]);
 		maint_test_queue('db_fetch_row_prepared', [
 			'mtype' => 1,
@@ -67,7 +67,7 @@ describe('plugin_maint_check_host type dispatch', function () {
 		$now = time();
 
 		maint_test_queue('db_fetch_assoc_prepared', [
-			['schedule' => 42],
+			['schedule' => '42'],
 		]);
 		maint_test_queue('db_fetch_row_prepared', [
 			'mtype' => 1,
