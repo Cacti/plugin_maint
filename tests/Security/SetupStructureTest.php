@@ -9,6 +9,7 @@
 
 describe('maint setup.php structure', function () {
 	$source = file_get_contents(realpath(__DIR__ . '/../../setup.php'));
+	$info   = file_get_contents(realpath(__DIR__ . '/../../INFO'));
 
 	it('defines plugin_maint_install function', function () use ($source) {
 		expect($source)->toContain('function plugin_maint_install');
@@ -22,15 +23,21 @@ describe('maint setup.php structure', function () {
 		expect($source)->toContain('function plugin_maint_uninstall');
 	});
 
-	it('returns version array with name key', function () use ($source) {
-		expect($source)->toMatch('/[\'\""]name[\'\""]\s*=>/');
+	it('reads the plugin version from the INFO file', function () use ($source) {
+		expect($source)->toContain("parse_ini_file(\$config['base_path'] . '/plugins/maint/INFO', true)");
+		expect($source)->toContain("return \$info['info']");
 	});
 
-	it('returns version array with version key', function () use ($source) {
-		expect($source)->toMatch('/[\'\""]version[\'\""]\s*=>/');
+	it('declares a name in the INFO file', function () use ($info) {
+		expect($info)->toMatch('/^name\s*=\s*\S+/m');
+	});
+
+	it('declares a version in the INFO file', function () use ($info) {
+		expect($info)->toMatch('/^version\s*=\s*\S+/m');
 	});
 
 	it('registers hooks in install function', function () use ($source) {
 		expect($source)->toContain('api_plugin_register_hook');
 	});
 });
+

@@ -9,8 +9,9 @@
 
 describe('auth guard presence in maint', function () {
 	it('includes auth.php or global.php in all UI entry points', function () {
+		// functions.php is a library file loaded by maint.php (never a direct
+		// web entry point), so it is intentionally excluded here.
 		$uiFiles = array(
-		'functions.php',
 		'maint.php',
 		);
 
