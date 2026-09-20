@@ -31,12 +31,18 @@ declare(strict_types = 1);
  *
  * This is called via the 'is_device_in_maintenance' hook.
  *
- * @param int $host Host ID to check
+ * Cacti core invokes this with $device['id'] pulled straight from a
+ * database row, which arrives as a numeric string rather than an int.
+ * Under this file's strict_types=1, an `int $host` parameter would raise
+ * a TypeError before maintenance checks from the poller/SNMP path ever
+ * ran, so the hook entry point stays untyped and casts explicitly.
+ *
+ * @param mixed $host Host ID to check
  *
  * @return bool True if host is in active maintenance, false otherwise
  */
-function plugin_maint_check_cacti_host(int $host): bool {
-	return plugin_maint_check_host(1, $host);
+function plugin_maint_check_cacti_host($host): bool {
+	return plugin_maint_check_host(1, (int) $host);
 }
 
 /**

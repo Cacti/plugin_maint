@@ -24,6 +24,15 @@ describe('plugin_maint_check_host type dispatch', function () {
 		expect($call['params'])->toBe([1, 5]);
 	});
 
+	it('accepts the numeric-string host ID Cacti core actually passes via the is_device_in_maintenance hook', function () {
+		maint_test_queue('db_fetch_assoc_prepared', []);
+
+		expect(plugin_maint_check_cacti_host('5'))->toBeFalse();
+
+		$call = $GLOBALS['__test_db_calls'][0];
+		expect($call['params'])->toBe([1, 5]);
+	});
+
 	it('queries plugin_maint_hosts with type 2 for a WebSeer URL', function () {
 		maint_test_queue('db_fetch_assoc_prepared', []);
 
