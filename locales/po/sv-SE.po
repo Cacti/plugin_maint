@@ -4,393 +4,524 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2022-06-18 08:24-0400\nPO-Revision-Date: 2026-09-12 08:18+0000\nLast-Translator: Daniel Nylander <daniel@danielnylander.se>\nLanguage-Team: Swedish <https://translate.cacti.net/projects/cacti/maint/sv/>\nLanguage: sv-SE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2026-09-21 14:09-0400\n"
+"PO-Revision-Date: 2026-09-12 08:18+0000\n"
+"Last-Translator: Daniel Nylander <daniel@danielnylander.se>\n"
+"Language-Team: Swedish <https://translate.cacti.net/projects/cacti/maint/sv/>\n"
+"Language: sv-SE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.11.4\n"
 
-#: maint.php:37
+#: maint.php:41
 msgid "Update Time (Now + 1 Hour)"
 msgstr "Uppdateringstid (Nu + 1 timme)"
 
-#: maint.php:38
+#: maint.php:42
 msgid "Delete"
 msgstr "Ta bort"
 
-#: maint.php:43
+#: maint.php:47
 msgid "Associate"
 msgstr "Koppla"
 
-#: maint.php:44
+#: maint.php:48
 msgid "Disassociate"
 msgstr "Icke-associera"
 
-#: maint.php:48
+#: maint.php:52 setup.php:251
 msgid "One Time"
 msgstr "Engångs"
 
-#: maint.php:49
+#: maint.php:53 setup.php:252
 msgid "Recurring"
 msgstr "Återkommande"
 
-#: maint.php:53
+#: maint.php:57
 msgid "Not Defined"
 msgstr "Inte definierad"
 
-#: maint.php:54
+#: maint.php:58 setup.php:254
 msgid "Every Day"
 msgstr "Varje dag"
 
-#: maint.php:55
+#: maint.php:59 setup.php:255
 msgid "Every Week"
 msgstr "Varje vecka"
 
-#: maint.php:59 maint.php:60 maint.php:63
+#: maint.php:63 maint.php:64 maint.php:67
 msgid "No"
 msgstr "Nej"
 
-#: maint.php:61 maint.php:62
+#: maint.php:65 maint.php:66
 msgid "Yes"
 msgstr "Ja"
 
-#: maint.php:68
+#: maint.php:72
 msgid "General"
 msgstr "Allmän"
 
-#: maint.php:72 maint.php:1083 maint.php:1245
-msgid "Devices"
+#: maint.php:76
+#, fuzzy
+msgid "Thold Devices"
 msgstr "Enheter"
 
-#: maint.php:77
+#: maint.php:81
 msgid "WebSeer"
 msgstr "WebSeer"
 
-#: maint.php:303
+#: maint.php:86
+msgid "Servcheck"
+msgstr ""
+
+#: maint.php:408
 msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
 msgstr "Klicka på \"Fortsätt\" för att uppdatera följande underhållsschema(n)."
 
-#: maint.php:308 maint.php:317 maint.php:372 maint.php:381 maint.php:437
-#: maint.php:446
+#: maint.php:413 maint.php:423 maint.php:482 maint.php:492 maint.php:552
+#: maint.php:562 maint.php:622 maint.php:632
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: maint.php:308 maint.php:317 maint.php:372 maint.php:381 maint.php:437
-#: maint.php:446
+#: maint.php:414 maint.php:423 maint.php:483 maint.php:493 maint.php:553
+#: maint.php:563 maint.php:623 maint.php:633
 msgid "Continue"
 msgstr "Fortsätt"
 
-#: maint.php:308
+#: maint.php:414
 msgid "Update Maintenance Schedule(s)"
 msgstr "Uppdatera underhållsschema(n)"
 
-#: maint.php:312
+#: maint.php:418
 msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
 msgstr "Klicka på \"Fortsätt\" för att ta bort följande underhållsschema(n).  Alla enheter som är kopplade till det här schemat kommer att kopplas bort."
 
-#: maint.php:317
+#: maint.php:423
 msgid "Delete Maintenance Schedule(s)"
 msgstr "Ta bort underhållsschema(n)"
 
-#: maint.php:320
+#: maint.php:426
 msgid "You must select at least one Maintenance Schedule."
 msgstr "Du måste välja minst ett underhållsschema."
 
-#: maint.php:321 maint.php:385 maint.php:450
+#: maint.php:427 maint.php:497 maint.php:567 maint.php:637
 msgid "Return"
 msgstr "Tillbaka"
 
-#: maint.php:361
+#: maint.php:469
 msgid "Device(s)"
 msgstr "Enhet(er)"
 
-#: maint.php:367
-#, php-format
-msgid "Click 'Continue' to associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+#: maint.php:477
+#, fuzzy, php-format
+msgid "Click 'Continue' to Associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
 msgstr "Klicka på 'Fortsätt' för att associera följande enhet(er) med underhållsschemat '<b>%s</b>'."
 
-#: maint.php:372 maint.php:437
+#: maint.php:483 maint.php:553 maint.php:623
 msgid "Associate Maintenance Schedule(s)"
 msgstr "Underhållsschema(n) för associerade enheter"
 
-#: maint.php:376
-#, php-format
-msgid "Click 'Continue' to disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+#: maint.php:487
+#, fuzzy, php-format
+msgid "Click 'Continue' to Disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
 msgstr "Klicka på 'Fortsätt' för att koppla bort följande enhet(er) från underhållsschemat '<b>%s</b>'."
 
-#: maint.php:381 maint.php:446
+#: maint.php:493 maint.php:563 maint.php:633
 msgid "Disassociate Maintenance Schedule(s)"
 msgstr "Koppla bort underhållsschema(n)"
 
-#: maint.php:384
+#: maint.php:496
 msgid "You must select at least one Device."
 msgstr "Du måste välja minst en enhet."
 
-#: maint.php:426
+#: maint.php:539
 msgid "Webseer(s)"
 msgstr "Webseer(s)"
 
-#: maint.php:432
-#, php-format
-msgid "Click 'Continue' to associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
+#: maint.php:547
+#, fuzzy, php-format
+msgid "Click 'Continue' to Associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
 msgstr "Klicka på 'Fortsätt' för att associera Webseer(s) nedan med underhållsschemat '<b>%s</b>'."
 
-#: maint.php:441
-#, php-format
-msgid "Click 'Continue' to disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
+#: maint.php:557
+#, fuzzy, php-format
+msgid "Click 'Continue' to Disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
 msgstr "Klicka på 'Fortsätt' för att koppla bort Webseer(s) nedan från underhållsschemat '<b>%s</b>'."
 
-#: maint.php:449
+#: maint.php:566
 msgid "You must select at least one Webseer."
 msgstr "Du måste välja minst en Webseer."
 
-#: maint.php:480
+#: maint.php:609
+msgid "Servcheck(s)"
+msgstr ""
+
+#: maint.php:617
+#, fuzzy, php-format
+msgid "Click 'Continue' to Associate the Servcheck(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Klicka på 'Fortsätt' för att associera Webseer(s) nedan med underhållsschemat '<b>%s</b>'."
+
+#: maint.php:627
+#, fuzzy, php-format
+msgid "Click 'Continue' to Disassociate the Servcheck(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr "Klicka på 'Fortsätt' för att koppla bort Webseer(s) nedan från underhållsschemat '<b>%s</b>'."
+
+#: maint.php:636
+#, fuzzy
+msgid "You must select at least one Servcheck test."
+msgstr "Du måste välja minst en enhet."
+
+#: maint.php:674
 #, php-format
 msgid "[edit: %s]"
 msgstr "[redigera: %s]"
 
-#: maint.php:482
+#: maint.php:676
 msgid "[new]"
 msgstr "[nytt]"
 
-#: maint.php:530
+#: maint.php:748
 msgid "New Maintenance Schedule"
 msgstr "Nytt underhållsschema"
 
-#: maint.php:538
+#: maint.php:756
 #, php-format
 msgid "General Settings %s"
 msgstr "Allmänna inställningar %s"
 
-#: maint.php:542
+#: maint.php:760
 msgid "Schedule"
 msgstr "Schema"
 
-#: maint.php:546
+#: maint.php:764
 msgid "Schedule Name"
 msgstr "Schemanamn"
 
-#: maint.php:550
+#: maint.php:768
 msgid "Provide the Maintenance Schedule a meaningful name"
 msgstr "Ge underhållsschemat ett meningsfullt namn"
 
-#: maint.php:554 maint.php:713 maint.php:1507 maint.php:1546
+#: maint.php:772 maint.php:945 maint.php:1793 maint.php:1834 maint.php:2071
+#: maint.php:2112
 msgid "Enabled"
 msgstr "Aktiverad"
 
-#: maint.php:557
+#: maint.php:775
 msgid "Whether or not this schedule will be checked."
 msgstr "Om detta schema kommer att kontrolleras eller inte."
 
-#: maint.php:561
+#: maint.php:779 setup.php:256
 msgid "Schedule Type"
 msgstr "Schematyp"
 
-#: maint.php:565
+#: maint.php:783
 msgid "The type of schedule, one time or recurring."
 msgstr "Typ av schema, en gång eller återkommande."
 
-#: maint.php:569 maint.php:712
+#: maint.php:787 maint.php:944
 msgid "Interval"
 msgstr "Intervall"
 
-#: maint.php:573
+#: maint.php:791
 msgid "This is the interval in which the start / end time will repeat."
 msgstr "Detta är det intervall inom vilket start- och sluttiden kommer att upprepas."
 
-#: maint.php:577
+#: maint.php:795
 msgid "Start Time"
 msgstr "Starttid"
 
-#: maint.php:581
+#: maint.php:799
 msgid "The start date / time for this schedule. Most date / time formats accepted."
 msgstr "Startdatum/tid för detta schema. De flesta datum- och tidsformat accepteras."
 
-#: maint.php:586
+#: maint.php:804
 msgid "End Time"
 msgstr "Sluttid"
 
-#: maint.php:591
+#: maint.php:809
 msgid "The end date / time for this schedule. Most date / time formats accepted."
 msgstr "Slutdatum/tid för detta schema. De flesta datum- och tidsformat accepteras."
 
-#: maint.php:640
+#: maint.php:858
 msgid "Start Date/Time Selector"
 msgstr "Väljare för startdatum/tid"
 
-#: maint.php:641
+#: maint.php:859
 msgid "End Date/Time Selector"
 msgstr "Väljare för slutdatum/tid"
 
-#: maint.php:704 setup.php:55 setup.php:63
+#: maint.php:935 setup.php:99 setup.php:114
 msgid "Maintenance Schedules"
 msgstr "Underhållsscheman"
 
-#: maint.php:707
+#: maint.php:939
 msgid "Name"
 msgstr "Namn"
 
-#: maint.php:708
+#: maint.php:940
 msgid "Active"
 msgstr "Aktiv"
 
-#: maint.php:709
+#: maint.php:941
 msgid "Type"
 msgstr "Typ"
 
-#: maint.php:710
+#: maint.php:942
 msgid "Start"
 msgstr "Start"
 
-#: maint.php:711
+#: maint.php:943
 msgid "End"
 msgstr "Slut"
 
-#: maint.php:750 maint.php:1280 maint.php:1541
+#: maint.php:984 maint.php:1561 maint.php:1829 maint.php:2107
 msgid "No Schedules"
 msgstr "Inga tidtabeller"
 
-#: maint.php:877
+#: maint.php:1123
 #, php-format
 msgid "Associated Devices %s"
 msgstr "Tillhörande enheter %s"
 
-#: maint.php:886
+#: maint.php:1132
 msgid "Site"
 msgstr "Webbplats"
 
-#: maint.php:890 maint.php:910 maint.php:1043
+#: maint.php:1136 maint.php:1161 maint.php:1312
 msgid "Any"
 msgstr "Vilken som helst"
 
-#: maint.php:891 maint.php:1051
+#: maint.php:1137 maint.php:1321
 msgid "None"
 msgstr "inget"
 
-#: maint.php:906
+#: maint.php:1157
 msgid "Data Collector"
 msgstr "Datainsamlare"
 
-#: maint.php:925
+#: maint.php:1180
 msgid "Location"
 msgstr "Plats"
 
-#: maint.php:997
+#: maint.php:1258
 msgid "Template"
 msgstr "Mall"
 
-#: maint.php:1068 maint.php:1429
+#: maint.php:1339 maint.php:1685 maint.php:1993
 msgid "Go"
 msgstr "Utför"
 
-#: maint.php:1068 maint.php:1429
+#: maint.php:1339 maint.php:1685 maint.php:1993
 msgid "Set/Refresh Filters"
 msgstr "Ange / Uppdatera filter"
 
-#: maint.php:1069 maint.php:1430
+#: maint.php:1340 maint.php:1686 maint.php:1994
 msgid "Clear"
 msgstr "Rensa"
 
-#: maint.php:1069 maint.php:1430
+#: maint.php:1340 maint.php:1686 maint.php:1994
 msgid "Clear Filters"
 msgstr "Rensa filter"
 
-#: maint.php:1077 maint.php:1401
+#: maint.php:1348 maint.php:1657 maint.php:1961
 msgid "Search"
 msgstr "Sök"
 
-#: maint.php:1087 maint.php:1411
+#: maint.php:1354 maint.php:1522 setup.php:283 setup.php:322
+msgid "Devices"
+msgstr "Enheter"
+
+#: maint.php:1358 maint.php:1667 maint.php:1971
 msgid "Default"
 msgstr "Standard"
 
-#: maint.php:1101 maint.php:1425
+#: maint.php:1376 maint.php:1681 maint.php:1989
 msgid "Associated"
 msgstr "Associerad"
 
-#: maint.php:1211 maint.php:1504
+#: maint.php:1488 maint.php:1790 maint.php:2068
 msgid "Description"
 msgstr "Beskrivning"
 
-#: maint.php:1215 maint.php:1505
+#: maint.php:1492 maint.php:1791 maint.php:2069
 msgid "ID"
 msgstr "ID"
 
-#: maint.php:1219 maint.php:1506
+#: maint.php:1496 maint.php:1792 maint.php:2070
 msgid "Associated Schedules"
 msgstr "Associerade scheman"
 
-#: maint.php:1223
+#: maint.php:1500
 msgid "Graphs"
 msgstr "Grafer"
 
-#: maint.php:1227
+#: maint.php:1504
 msgid "Data Sources"
 msgstr "Datakällor"
 
-#: maint.php:1231
+#: maint.php:1508
 msgid "Thresholds"
 msgstr "Tröskelvärden"
 
-#: maint.php:1235
+#: maint.php:1512
 msgid "Status"
 msgstr "Status"
 
-#: maint.php:1239 maint.php:1508
+#: maint.php:1516 maint.php:1794 maint.php:2072
 msgid "Hostname"
 msgstr "Värdnamn"
 
-#: maint.php:1262 maint.php:1521
+#: maint.php:1539 maint.php:1807 maint.php:2085
 msgid "Current Schedule"
 msgstr "Nuvarande schema"
 
-#: maint.php:1294
+#: maint.php:1575
 msgid "No Associated Devices Found"
 msgstr "Inga associerade enheter hittades"
 
-#: maint.php:1296 maint.php:1559
+#: maint.php:1577 maint.php:1848 maint.php:2122
 msgid "Schedule must be created before associating"
 msgstr "Schemat måste skapas innan det associeras"
 
-#: maint.php:1392
+#: maint.php:1648
 #, php-format
 msgid "Associated Web URL's %s"
 msgstr "Associerade webbadresser %s"
 
-#: maint.php:1407
+#: maint.php:1663 maint.php:1967
 msgid "Rows"
 msgstr "Rader"
 
-#: maint.php:1495
-msgid "Lists"
-msgstr "Listor"
+#: maint.php:1781
+msgid "URLS"
+msgstr ""
 
-#: maint.php:1509
+#: maint.php:1795
 msgid "URL"
 msgstr "URL"
 
-#: maint.php:1546
+#: maint.php:1834 maint.php:2112
 msgid "Disabled"
 msgstr "Inaktiverad"
 
-#: maint.php:1548
+#: maint.php:1837
 msgid "USING DNS"
 msgstr "ANVÄNDNING AV DNS"
 
-#: maint.php:1557
+#: maint.php:1846
 msgid "No Associated WebSeer URL's Found"
 msgstr "Inga associerade WebSeer-URL:er hittades"
 
-#: setup.php:55
+#: maint.php:1952
+#, fuzzy, php-format
+msgid "Associated Servcheck test's %s"
+msgstr "Tillhörande enheter %s"
+
+#: maint.php:2059
+msgid "Tests"
+msgstr ""
+
+#: maint.php:2073
+msgid "Path"
+msgstr ""
+
+#: maint.php:2120
+#, fuzzy
+msgid "No Associated Servcheck Test's Found"
+msgstr "Inga associerade enheter hittades"
+
+#: setup.php:99
 msgid "Management"
 msgstr "Hantering"
 
-#: setup.php:58
+#: setup.php:102
 msgid "System Administration"
 msgstr "Systemadministratör"
 
-#: setup.php:64
+#: setup.php:115
 msgid "(edit)"
 msgstr "(redigera)"
 
-#: setup.php:65
+#: setup.php:116
 msgid "(actions)"
 msgstr "Åtgärder"
+
+#: setup.php:123
+msgid "Enable maintenance for this device (now+1h)"
+msgstr ""
+
+#: setup.php:127
+#, fuzzy
+msgid "Add device(s) to existing maintenance schedule"
+msgstr "Underhållsschema(n) för associerade enheter"
+
+#: setup.php:225
+#, fuzzy
+msgid "Maintenance Window"
+msgstr "Underhållsscheman"
+
+#: setup.php:230
+#, fuzzy
+msgid "Duration"
+msgstr "Beskrivning"
+
+#: setup.php:230
+msgid "Timezone"
+msgstr ""
+
+#: setup.php:230
+msgid "min"
+msgstr ""
+
+#: setup.php:238
+#, fuzzy
+msgid "Schedule name"
+msgstr "Schemanamn"
+
+#: setup.php:239
+msgid "e.g. Emergency patching"
+msgstr ""
+
+#: setup.php:313
+#, fuzzy
+msgid "disabled"
+msgstr "Inaktiverad"
+
+#: setup.php:317
+#, fuzzy
+msgid "No schedules found"
+msgstr "Inga tidtabeller"
+
+#: setup.php:321
+#, fuzzy
+msgid "Select schedule"
+msgstr "Schema"
+
+#: setup.php:351
+msgid "Quick Maintenance"
+msgstr ""
+
+#: setup.php:393
+#, php-format
+msgid "Maintenance schedule '%s' created and %d device(s) associated."
+msgstr ""
+
+#: setup.php:424
+#, php-format
+msgid "%d device(s) added to maintenance schedule '%s'."
+msgstr ""
+
+#, fuzzy
+#~ msgid "General Settings [edit: %s]"
+#~ msgstr "Allmänna inställningar [redigera: %s]"
+
+#~ msgid "Lists"
+#~ msgstr "Listor"
 
 #, fuzzy
 #~ msgid "Rules"
@@ -399,7 +530,3 @@ msgstr "Åtgärder"
 #, fuzzy
 #~ msgid "The type of Threshold that will be monitored."
 #~ msgstr "Den typ av tröskel som kommer att övervakas."
-
-#, fuzzy
-#~ msgid "General Settings [edit: %s]"
-#~ msgstr "Allmänna inställningar [redigera: %s]"
