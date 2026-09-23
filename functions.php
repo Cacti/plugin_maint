@@ -48,6 +48,10 @@ function plugin_maint_check_cacti_host($host): bool {
 /**
  * Check if a WebSeer URL is in maintenance
  *
+ * This is a cross-plugin API function called directly by plugin_webseer
+ * (which is not a Cacti hook point) to suppress alerting/checks for a
+ * URL while it has an active maintenance schedule.
+ *
  * @param int $host WebSeer URL ID to check
  *
  * @return bool True if URL is in active maintenance, false otherwise
@@ -59,6 +63,10 @@ function plugin_maint_check_webseer_url(int $host): bool {
 /**
  * Check if a Servcheck test is in maintenance
  *
+ * This is a cross-plugin API function called directly by plugin_servcheck
+ * (which is not a Cacti hook point) to suppress alerting/checks for a
+ * test while it has an active maintenance schedule.
+ *
  * @param int $host Servcheck test ID to check
  *
  * @return bool True if test is in active maintenance, false otherwise
@@ -69,6 +77,11 @@ function plugin_maint_check_servcheck_test(int $host): bool {
 
 /**
  * Check if a host is in maintenance based on type
+ *
+ * Called from plugin_maint_check_cacti_host(),
+ * plugin_maint_check_webseer_url(), and plugin_maint_check_servcheck_test()
+ * to look up and evaluate any maintenance schedules matching the given
+ * type/host (or a type-wide schedule with host = 0).
  *
  * @param int $type Host type (1=Cacti host, 2=WebSeer URL, 3=Servcheck test)
  * @param int $host Host/URL/Test ID to check
