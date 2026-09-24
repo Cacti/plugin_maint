@@ -711,8 +711,8 @@ function get_header_label(): string {
  * - WebSeer URLs (if plugin enabled)
  * - Servcheck tests (if plugin enabled)
  * Called from schedule_edit() to render the tab strip above the edit
- * form, and registered as the 'maint_tabs' hook's default renderer for
- * other plugins to extend.
+ * form, after $tabs has already been populated and passed through the
+ * 'maint_tabs' hook so other plugins can transform/extend the tab list.
  *
  * @return void
  *

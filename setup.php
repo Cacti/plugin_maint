@@ -33,6 +33,9 @@ declare(strict_types = 1);
  * and internally wherever this plugin needs to report its own version.
  *
  * @return array Plugin metadata array containing version, author, homepage, etc.
+ *
+ * @global array $config Cacti global configuration array; used to
+ *                       locate the plugin's INFO file.
  */
 function plugin_maint_version(): array {
 	global $config;
