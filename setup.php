@@ -29,7 +29,13 @@ declare(strict_types = 1);
 /**
  * Get the plugin version information from INFO file
  *
+ * Used by Cacti's plugin architecture via the api_plugin_version hook,
+ * and internally wherever this plugin needs to report its own version.
+ *
  * @return array Plugin metadata array containing version, author, homepage, etc.
+ *
+ * @global array $config Cacti global configuration array; used to
+ *                       locate the plugin's INFO file.
  */
 function plugin_maint_version(): array {
 	global $config;
@@ -42,7 +48,9 @@ function plugin_maint_version(): array {
 /**
  * Install the maintenance plugin
  *
- * Registers all hooks, realms, and creates database tables.
+ * Registers all hooks, realms, and creates database tables. Invoked by
+ * Cacti's plugin architecture when an administrator installs this plugin
+ * from Console > Plugin Management.
  *
  * @return void
  */
@@ -62,6 +70,11 @@ function plugin_maint_install(): void {
 /**
  * Uninstall the maintenance plugin
  *
+ * Currently a no-op placeholder (this plugin's tables/settings are left
+ * in place rather than being dropped on uninstall). Invoked by Cacti's
+ * plugin architecture when an administrator uninstalls this plugin from
+ * Console > Plugin Management.
+ *
  * @return void
  */
 function plugin_maint_uninstall(): void {
@@ -69,6 +82,9 @@ function plugin_maint_uninstall(): void {
 
 /**
  * Check plugin configuration
+ *
+ * Currently a no-op placeholder. Invoked by Cacti's plugin architecture
+ * on relevant page loads.
  *
  * @return bool Always returns true
  */
@@ -78,6 +94,10 @@ function plugin_maint_check_config(): bool {
 
 /**
  * Upgrade the maintenance plugin
+ *
+ * Currently a no-op placeholder (this plugin's schema has not required
+ * migrations since its initial release). Invoked by Cacti's plugin
+ * architecture when an installed plugin's version increases.
  *
  * @return bool Always returns false (no upgrade needed)
  */
@@ -89,9 +109,14 @@ function plugin_maint_upgrade(): bool {
  * Configure plugin menu arrays and augment roles
  *
  * Adds the maintenance schedules menu item to the Management menu
- * and augments System Administration roles if the function exists.
+ * and augments System Administration roles if the function exists. Called
+ * by Cacti core via api_plugin_hook('config_arrays', ...) while building
+ * the navigation menu.
  *
  * @return void
+ *
+ * @global array $menu Cacti's main navigation menu array, extended here
+ *                      with this plugin's entry.
  */
 function maint_config_arrays(): void {
 	global $menu;
@@ -105,6 +130,9 @@ function maint_config_arrays(): void {
 
 /**
  * Configure navigation breadcrumb text for maintenance pages
+ *
+ * Called by Cacti core via api_plugin_hook('draw_navigation_text', ...)
+ * while rendering the page breadcrumb trail.
  *
  * @param array<string, array<string, mixed>> $nav Navigation array
  *
@@ -133,8 +161,14 @@ if (!defined('MAINT_LABEL_ADD_TO_SCHEDULE')) {
  * Displays two hidden forms with links:
  * 1. Enable maintenance now (now + 1 hour)
  * 2. Add device to existing schedule
+ * Called by Cacti core via
+ * api_plugin_hook('device_edit_top_links', ...) while rendering the top
+ * of the Device edit page.
  *
  * @return void
+ *
+ * @global array $config Cacti global configuration array; used to build
+ *                        the hidden forms' action URL.
  */
 function maint_device_edit_top_links(): void {
 	global $config;
@@ -172,6 +206,9 @@ function maint_device_edit_top_links(): void {
 /**
  * Add maintenance actions to device action dropdown
  *
+ * Called by Cacti core via api_plugin_hook('device_action_array', ...)
+ * while building the device list's bulk-actions dropdown.
+ *
  * @param array<string, string> $actions Existing device actions
  *
  * @return array<string, string> Modified actions array with maintenance options
@@ -189,6 +226,10 @@ function maint_device_action_array(array $actions): array {
  * Renders the confirmation dialog for maintenance actions:
  * - Quick maintenance (now + 1 hour)
  * - Add devices to existing schedule
+ * Called by Cacti core via api_plugin_hook('device_action_prepare', ...)
+ * while rendering the device list's bulk-action confirmation dialog,
+ * for the 'maint'/'maint_add_to_schedule' actions added by
+ * maint_device_action_array().
  *
  * @param array<string, mixed> $save Action data including drp_action and host_array
  *
@@ -331,6 +372,9 @@ function maint_device_action_prepare(array $save): array {
  * Handles two types of actions:
  * 1. 'maint' - Creates a new schedule and associates devices
  * 2. 'maint_add_to_schedule' - Adds devices to existing schedule
+ * Called by Cacti core via api_plugin_hook('device_action_execute', ...)
+ * once the bulk-action confirmation dialog rendered by
+ * maint_device_action_prepare() is submitted.
  *
  * @param string $action The action to execute
  *
@@ -435,6 +479,7 @@ function maint_device_action_execute(string $action): bool {
  * Creates two tables:
  * - plugin_maint_schedules: Stores maintenance schedules
  * - plugin_maint_hosts: Associates hosts with schedules
+ * Called from plugin_maint_install() during plugin installation.
  *
  * @return void
  */

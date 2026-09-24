@@ -117,7 +117,9 @@ switch (get_request_var('action')) {
 /**
  * Delete selected maintenance schedules
  *
- * Deletes schedules and all associated host mappings.
+ * Deletes schedules and all associated host mappings. Invoked from this
+ * file's dispatcher when the request's 'action' is 'actions' and the
+ * bulk drop-down action is 'Delete', via form_actions().
  * Redirects to main page after deletion.
  *
  * @return void This function exits after redirect
@@ -141,7 +143,10 @@ function schedule_delete(): void {
  * Update selected schedules to start now and end in 1 hour
  *
  * Sets the start time to current time (rounded to nearest minute)
- * and end time to 1 hour later. Redirects to main page after update.
+ * and end time to 1 hour later. Invoked from this file's dispatcher when
+ * the request's 'action' is 'actions' and the bulk drop-down action is
+ * 'Update Time (Now + 1 Hour)', via form_actions(). Redirects to main
+ * page after update.
  *
  * @return void This function exits after redirect
  */
@@ -172,9 +177,14 @@ function schedule_update(): void {
  * Validates and saves schedule data including:
  * - Name, type (one-time or recurring), enabled status
  * - Start/end times, interval for recurring schedules
+ * Invoked from this file's dispatcher when the request's 'action' is
+ * 'save', called when the schedule edit form is submitted.
  * Redirects to edit page after save.
  *
  * @return void This function exits after redirect
+ *
+ * @global array $plugins Reserved/declared for parity with other form-
+ *                         save functions; not used directly here.
  */
 function form_save(): void {
 	global $plugins;
@@ -244,8 +254,18 @@ function form_save(): void {
  * - Host association actions (associate, disassociate)
  * - WebSeer URL associations
  * - Servcheck test associations
+ * Invoked from this file's dispatcher when the request's 'action' is
+ * 'actions', for both the main schedule list's bulk-actions form and each
+ * tab's host/URL/test association bulk-actions form.
  *
  * @return void This function may exit after processing
+ *
+ * @global array $actions       Map of schedule bulk-action ids to their
+ *                              display labels, used for the confirmation
+ *                              dialog title.
+ * @global array $assoc_actions Map of association bulk-action ids to
+ *                              their display labels, used for the
+ *                              confirmation dialog title.
  */
 function form_actions(): void {
 	global $actions, $assoc_actions;
@@ -661,6 +681,9 @@ function form_actions(): void {
 /**
  * Get the header label for the current schedule
  *
+ * Called from schedule_edit() when rendering the schedule edit form's
+ * title.
+ *
  * @return string Header label showing schedule name for edit or '[new]' for new schedule
  */
 function get_header_label(): string {
@@ -687,8 +710,17 @@ function get_header_label(): string {
  * - Thold devices (if plugin enabled)
  * - WebSeer URLs (if plugin enabled)
  * - Servcheck tests (if plugin enabled)
+ * Called from schedule_edit() to render the tab strip above the edit
+ * form, after $tabs has already been populated and passed through the
+ * 'maint_tabs' hook so other plugins can transform/extend the tab list.
  *
  * @return void
+ *
+ * @global array $config Cacti global configuration array; used to build
+ *                        each tab's link URL.
+ * @global array $tabs   The available tabs (general, plus any enabled
+ *                        integration tabs), populated at the top of this
+ *                        file and extended via the 'maint_tabs' hook.
  */
 function maint_tabs(): void {
 	global $config, $tabs;
@@ -723,8 +755,23 @@ function maint_tabs(): void {
  * - hosts: Thold device associations
  * - webseer: WebSeer URL associations
  * - servcheck: Servcheck test associations
+ * Invoked from this file's dispatcher when the request's 'action' is
+ * 'edit'.
  *
  * @return void
+ *
+ * @global array $plugins         Reserved/declared for parity with other
+ *                                page-rendering functions; not used
+ *                                directly here.
+ * @global array $config          Cacti global configuration array; used
+ *                                throughout the general tab's form
+ *                                rendering.
+ * @global array $tabs            The available tabs, used to determine
+ *                                which tab's content to render.
+ * @global array $maint_types     Map of schedule type ids (one-time/
+ *                                recurring) to display labels.
+ * @global array $maint_intervals Map of recurrence interval values to
+ *                                display labels.
  */
 function schedule_edit(): void {
 	global $plugins, $config, $tabs, $maint_types, $maint_intervals;
@@ -919,9 +966,21 @@ function schedule_edit(): void {
  * - Name, active status, type
  * - Start/end times (formatted based on interval)
  * - Interval, enabled status
- * Provides bulk actions (update time, delete).
+ * Provides bulk actions (update time, delete). Invoked from this file's
+ * dispatcher for the default (no 'action') request, rendering the main
+ * Maintenance Schedules page.
  *
  * @return void
+ *
+ * @global array $actions          Map of bulk-action ids to their
+ *                                 display labels, used to populate the
+ *                                 actions dropdown.
+ * @global array $maint_types      Map of schedule type ids to display
+ *                                 labels.
+ * @global array $maint_intervals  Map of recurrence interval values to
+ *                                 display labels.
+ * @global array $yesno            Map of enabled/boolean-ish values to
+ *                                 Yes/No display labels.
  */
 function schedules(): void {
 	global $actions, $maint_types, $maint_intervals, $yesno;
@@ -1001,10 +1060,19 @@ function schedules(): void {
  * - Filter by site, poller, template, location, status
  * - Associate/disassociate devices with the current schedule
  * - View current associations
+ * Called from schedule_edit() when the current tab is 'hosts' (only
+ * available when the thold plugin is enabled).
  *
  * @param string $header_label Header label for the current schedule
  *
  * @return void
+ *
+ * @global array $assoc_actions Map of association bulk-action ids to
+ *                              their display labels, used to populate
+ *                              the actions dropdown.
+ * @global array $item_rows     Rows-per-page options offered by Cacti
+ *                              core, used to populate the 'rows' select
+ *                              list.
  */
 function thold_hosts(string $header_label): void {
 	global $assoc_actions, $item_rows;
@@ -1600,10 +1668,19 @@ function thold_hosts(string $header_label): void {
  * - Filter by search term
  * - Toggle between associated/all URLs
  * - Associate/disassociate URLs with the current schedule
+ * Called from schedule_edit() when the current tab is 'webseer' (only
+ * available when the webseer plugin is enabled).
  *
  * @param string $header_label Header label for the current schedule
  *
  * @return void
+ *
+ * @global array $assoc_actions Map of association bulk-action ids to
+ *                              their display labels, used to populate
+ *                              the actions dropdown.
+ * @global array $item_rows     Rows-per-page options offered by Cacti
+ *                              core, used to populate the 'rows' select
+ *                              list.
  */
 function webseer_urls(string $header_label): void {
 	global $assoc_actions, $item_rows;
@@ -1871,10 +1948,19 @@ function webseer_urls(string $header_label): void {
  * - Filter by search term
  * - Toggle between associated/all tests
  * - Associate/disassociate tests with the current schedule
+ * Called from schedule_edit() when the current tab is 'servcheck' (only
+ * available when the servcheck plugin is enabled).
  *
  * @param string $header_label Header label for the current schedule
  *
  * @return void
+ *
+ * @global array $assoc_actions Map of association bulk-action ids to
+ *                              their display labels, used to populate
+ *                              the actions dropdown.
+ * @global array $item_rows     Rows-per-page options offered by Cacti
+ *                              core, used to populate the 'rows' select
+ *                              list.
  */
 function servcheck_test(string $header_label): void {
 	global $assoc_actions, $item_rows;
