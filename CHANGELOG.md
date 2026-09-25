@@ -1,5 +1,9 @@
 # ChangeLog
 
+--- develop ---
+
+* issue: PHPStan level 8 typing pass - hardened parse_ini_file()/db_fetch_row_prepared() result narrowing, widened 2 over-narrow scratch stub types, fixed several !empty()-vs-is_array() narrowing gaps
+
 --- 1.3 ---
 
 * security: Unsafe unserialization when working with schedules

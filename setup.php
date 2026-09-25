@@ -42,6 +42,10 @@ function plugin_maint_version(): array {
 
 	$info = parse_ini_file($config['base_path'] . '/plugins/maint/INFO', true);
 
+	if (!isset($info['info']) || !is_array($info['info'])) {
+		return [];
+	}
+
 	return $info['info'];
 }
 
@@ -251,7 +255,7 @@ function maint_device_action_prepare(array $save): array {
 			foreach ($save['host_array'] as $host_id) {
 				$row = db_fetch_row_prepared('SELECT description FROM host WHERE id = ?', [(int) $host_id]);
 
-				if (!empty($row)) {
+				if (is_array($row) && !empty($row)) {
 					$host_list .= '<li>' . html_escape($row['description']) . '</li>';
 				}
 			}
@@ -334,7 +338,7 @@ function maint_device_action_prepare(array $save): array {
 			foreach ($save['host_array'] as $host_id) {
 				$row = db_fetch_row_prepared('SELECT description FROM host WHERE id = ?', [(int) $host_id]);
 
-				if (!empty($row)) {
+				if (is_array($row) && !empty($row)) {
 					$host_list .= '<li>' . html_escape($row['description']) . '</li>';
 				}
 			}

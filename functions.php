@@ -125,7 +125,7 @@ function plugin_maint_check_schedule(int $schedule): bool {
 		[$schedule],
 	);
 
-	if (!empty($sc)) {
+	if (is_array($sc) && !empty($sc)) {
 		$t = time();
 
 		switch ($sc['mtype']) {
