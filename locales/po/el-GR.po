@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-24 12:01-0400\n"
+"POT-Creation-Date: 2026-09-25 10:10-0400\n"
 "PO-Revision-Date: 2020-12-12 20:52-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -35,11 +35,11 @@ msgstr "Συνάδελφος"
 msgid "Disassociate"
 msgstr "διαχωρίσει"
 
-#: maint.php:52 setup.php:292
+#: maint.php:52 setup.php:296
 msgid "One Time"
 msgstr "Εφάπαξ"
 
-#: maint.php:53 setup.php:293
+#: maint.php:53 setup.php:297
 msgid "Recurring"
 msgstr "Επαναλαμβανόμενη"
 
@@ -48,11 +48,11 @@ msgstr "Επαναλαμβανόμενη"
 msgid "Not Defined"
 msgstr "Μη καθορισμένο"
 
-#: maint.php:58 setup.php:295
+#: maint.php:58 setup.php:299
 msgid "Every Day"
 msgstr "Καθημερινά"
 
-#: maint.php:59 setup.php:296
+#: maint.php:59 setup.php:300
 msgid "Every Week"
 msgstr "Κάθε Εβδομάδα"
 
@@ -190,365 +190,365 @@ msgstr "Κάντε κλικ στο κουμπί \"Συνέχεια\" για να
 msgid "You must select at least one Servcheck test."
 msgstr "Πρέπει να επιλέξετε τουλάχιστον μία συσκευή."
 
-#: maint.php:697
+#: maint.php:698
 #, php-format
 msgid "[edit: %s]"
 msgstr ""
 
-#: maint.php:699
+#: maint.php:700
 msgid "[new]"
 msgstr ""
 
-#: maint.php:795
+#: maint.php:798
 #, fuzzy
 msgid "New Maintenance Schedule"
 msgstr "Νέο πρόγραμμα συντήρησης"
 
-#: maint.php:803
+#: maint.php:806
 #, fuzzy, php-format
 msgid "General Settings %s"
 msgstr "Γενικές ρυθμίσεις [new]"
 
-#: maint.php:807
+#: maint.php:810
 msgid "Schedule"
 msgstr "Πρόγραμμα"
 
-#: maint.php:811
+#: maint.php:814
 #, fuzzy
 msgid "Schedule Name"
 msgstr "Όνομα προγράμματος"
 
-#: maint.php:815
+#: maint.php:818
 #, fuzzy
 msgid "Provide the Maintenance Schedule a meaningful name"
 msgstr "Παρέχετε στο πρόγραμμα συντήρησης ένα σωστό όνομα"
 
-#: maint.php:819 maint.php:1004 maint.php:1870 maint.php:1911 maint.php:2157
-#: maint.php:2198
+#: maint.php:822 maint.php:1007 maint.php:1873 maint.php:1914 maint.php:2160
+#: maint.php:2201
 msgid "Enabled"
 msgstr "Ενεργοποιημένο"
 
-#: maint.php:822
+#: maint.php:825
 #, fuzzy
 msgid "Whether or not this schedule will be checked."
 msgstr "Το κατά πόσον αυτό το κατώτατο όριο θα ελεγχθεί και θα ειδοποιηθεί."
 
-#: maint.php:826 setup.php:297
+#: maint.php:829 setup.php:301
 #, fuzzy
 msgid "Schedule Type"
 msgstr "Τύπος προγράμματος"
 
-#: maint.php:830
+#: maint.php:833
 #, fuzzy
 msgid "The type of schedule, one time or recurring."
 msgstr "Ο τύπος προγράμματος, μία φορά ή επαναλαμβανόμενος."
 
-#: maint.php:834 maint.php:1003
+#: maint.php:837 maint.php:1006
 msgid "Interval"
 msgstr "Διάστημα"
 
-#: maint.php:838
+#: maint.php:841
 #, fuzzy
 msgid "This is the interval in which the start / end time will repeat."
 msgstr "Αυτό είναι το διάστημα στο οποίο θα επαναληφθεί η ώρα έναρξης / λήξης."
 
-#: maint.php:842
+#: maint.php:845
 msgid "Start Time"
 msgstr "Ώρα Έναρξης"
 
-#: maint.php:846
+#: maint.php:849
 #, fuzzy
 msgid "The start date / time for this schedule. Most date / time formats accepted."
 msgstr "Η ημερομηνία / ώρα έναρξης αυτού του χρονοδιαγράμματος. Οι περισσότερες μορφές ημερομηνίας / ώρας είναι αποδεκτές."
 
-#: maint.php:851
+#: maint.php:854
 msgid "End Time"
 msgstr "Ώρα Λήξης"
 
-#: maint.php:856
+#: maint.php:859
 #, fuzzy
 msgid "The end date / time for this schedule. Most date / time formats accepted."
 msgstr "Η ημερομηνία / ώρα λήξης για αυτό το πρόγραμμα. Οι περισσότερες μορφές ημερομηνίας / ώρας είναι αποδεκτές."
 
-#: maint.php:905
+#: maint.php:908
 #, fuzzy
 msgid "Start Date/Time Selector"
 msgstr "Επιλογέας ημερομηνίας / ώρας έναρξης"
 
-#: maint.php:906
+#: maint.php:909
 #, fuzzy
 msgid "End Date/Time Selector"
 msgstr "Επιλογέας ημερομηνίας / ώρας λήξης"
 
-#: maint.php:994 setup.php:124 setup.php:142
+#: maint.php:997 setup.php:128 setup.php:146
 #, fuzzy
 msgid "Maintenance Schedules"
 msgstr "Σχέδια Συντήρησης"
 
-#: maint.php:998
+#: maint.php:1001
 msgid "Name"
 msgstr "Όνομα"
 
-#: maint.php:999
+#: maint.php:1002
 msgid "Active"
 msgstr "Ενεργό"
 
-#: maint.php:1000
+#: maint.php:1003
 msgid "Type"
 msgstr "Τύπος"
 
-#: maint.php:1001
+#: maint.php:1004
 msgid "Start"
 msgstr "Έναρξη"
 
-#: maint.php:1002
+#: maint.php:1005
 msgid "End"
 msgstr "Τέλος"
 
-#: maint.php:1043 maint.php:1629 maint.php:1906 maint.php:2193
+#: maint.php:1046 maint.php:1632 maint.php:1909 maint.php:2196
 #, fuzzy
 msgid "No Schedules"
 msgstr "Πρόγραμμα"
 
-#: maint.php:1191
+#: maint.php:1194
 #, fuzzy, php-format
 msgid "Associated Devices %s"
 msgstr "Συσχετισμένες συσκευές %s"
 
-#: maint.php:1200
+#: maint.php:1203
 msgid "Site"
 msgstr ""
 
-#: maint.php:1204 maint.php:1229 maint.php:1380
+#: maint.php:1207 maint.php:1232 maint.php:1383
 msgid "Any"
 msgstr "Οποιοδήποτε"
 
-#: maint.php:1205 maint.php:1389
+#: maint.php:1208 maint.php:1392
 msgid "None"
 msgstr "Κανένα"
 
-#: maint.php:1225
+#: maint.php:1228
 msgid "Data Collector"
 msgstr ""
 
-#: maint.php:1248
+#: maint.php:1251
 msgid "Location"
 msgstr ""
 
-#: maint.php:1326
+#: maint.php:1329
 msgid "Template"
 msgstr ""
 
-#: maint.php:1407 maint.php:1762 maint.php:2079
+#: maint.php:1410 maint.php:1765 maint.php:2082
 msgid "Go"
 msgstr "Πήγαινε"
 
-#: maint.php:1407 maint.php:1762 maint.php:2079
+#: maint.php:1410 maint.php:1765 maint.php:2082
 #, fuzzy
 msgid "Set/Refresh Filters"
 msgstr "Ορισμός / Ανανέωση φίλτρων"
 
-#: maint.php:1408 maint.php:1763 maint.php:2080
+#: maint.php:1411 maint.php:1766 maint.php:2083
 msgid "Clear"
 msgstr "Καθαρισμός"
 
-#: maint.php:1408 maint.php:1763 maint.php:2080
+#: maint.php:1411 maint.php:1766 maint.php:2083
 msgid "Clear Filters"
 msgstr "Καθαρισμός Φίλτρων"
 
-#: maint.php:1416 maint.php:1734 maint.php:2047
+#: maint.php:1419 maint.php:1737 maint.php:2050
 msgid "Search"
 msgstr "Αναζήτηση"
 
-#: maint.php:1422 maint.php:1590 setup.php:324 setup.php:363
+#: maint.php:1425 maint.php:1593 setup.php:328 setup.php:367
 msgid "Devices"
 msgstr "Τύπος Συσκευής"
 
-#: maint.php:1426 maint.php:1744 maint.php:2057
+#: maint.php:1429 maint.php:1747 maint.php:2060
 msgid "Default"
 msgstr "Προεπιλογή"
 
-#: maint.php:1444 maint.php:1758 maint.php:2075
+#: maint.php:1447 maint.php:1761 maint.php:2078
 msgid "Associated"
 msgstr "Συσχετισμός"
 
-#: maint.php:1556 maint.php:1867 maint.php:2154
+#: maint.php:1559 maint.php:1870 maint.php:2157
 msgid "Description"
 msgstr "Περιγραφή"
 
-#: maint.php:1560 maint.php:1868 maint.php:2155
+#: maint.php:1563 maint.php:1871 maint.php:2158
 msgid "ID"
 msgstr "ID"
 
-#: maint.php:1564 maint.php:1869 maint.php:2156
+#: maint.php:1567 maint.php:1872 maint.php:2159
 #, fuzzy
 msgid "Associated Schedules"
 msgstr "Σχετικά προγράμματα"
 
-#: maint.php:1568
+#: maint.php:1571
 msgid "Graphs"
 msgstr "Γραφήματα"
 
-#: maint.php:1572
+#: maint.php:1575
 #, fuzzy
 msgid "Data Sources"
 msgstr "Πηγές δεδομένων"
 
-#: maint.php:1576
+#: maint.php:1579
 msgid "Thresholds"
 msgstr "Κατώφλια/'Ορια"
 
-#: maint.php:1580
+#: maint.php:1583
 msgid "Status"
 msgstr "Κατάσταση"
 
-#: maint.php:1584 maint.php:1871 maint.php:2158
+#: maint.php:1587 maint.php:1874 maint.php:2161
 msgid "Hostname"
 msgstr "Νέο όνομα φιλοξενίας"
 
-#: maint.php:1607 maint.php:1884 maint.php:2171
+#: maint.php:1610 maint.php:1887 maint.php:2174
 #, fuzzy
 msgid "Current Schedule"
 msgstr "Τρέχον χρονοδιάγραμμα"
 
-#: maint.php:1643
+#: maint.php:1646
 #, fuzzy
 msgid "No Associated Devices Found"
 msgstr "Δεν βρέθηκαν συσχετισμένες συσκευές"
 
-#: maint.php:1645 maint.php:1925 maint.php:2208
+#: maint.php:1648 maint.php:1928 maint.php:2211
 #, fuzzy
 msgid "Schedule must be created before associating"
 msgstr "Το πρόγραμμα πρέπει να δημιουργηθεί πριν από τη συσχέτιση"
 
-#: maint.php:1725
+#: maint.php:1728
 #, fuzzy, php-format
 msgid "Associated Web URL's %s"
 msgstr "Το %s της συνδεδεμένης διεύθυνσης ιστού"
 
-#: maint.php:1740 maint.php:2053
+#: maint.php:1743 maint.php:2056
 msgid "Rows"
 msgstr "Σειρές"
 
-#: maint.php:1858
+#: maint.php:1861
 msgid "URLS"
 msgstr ""
 
-#: maint.php:1872
+#: maint.php:1875
 msgid "URL"
 msgstr "URL"
 
-#: maint.php:1911 maint.php:2198
+#: maint.php:1914 maint.php:2201
 msgid "Disabled"
 msgstr "Απενεργοποιημένο"
 
-#: maint.php:1914
+#: maint.php:1917
 #, fuzzy
 msgid "USING DNS"
 msgstr "Χρησιμοποιώντας το DNS"
 
-#: maint.php:1923
+#: maint.php:1926
 #, fuzzy
 msgid "No Associated WebSeer URL's Found"
 msgstr "Δεν βρέθηκε καμία συνδεδεμένη διεύθυνση WebSeer URL"
 
-#: maint.php:2038
+#: maint.php:2041
 #, fuzzy, php-format
 msgid "Associated Servcheck test's %s"
 msgstr "Συσχετισμένες συσκευές %s"
 
-#: maint.php:2145
+#: maint.php:2148
 msgid "Tests"
 msgstr ""
 
-#: maint.php:2159
+#: maint.php:2162
 msgid "Path"
 msgstr ""
 
-#: maint.php:2206
+#: maint.php:2209
 #, fuzzy
 msgid "No Associated Servcheck Test's Found"
 msgstr "Δεν βρέθηκαν συσχετισμένες συσκευές"
 
-#: setup.php:124
+#: setup.php:128
 msgid "Management"
 msgstr "Διοίκηση"
 
-#: setup.php:127
+#: setup.php:131
 msgid "System Administration"
 msgstr "Διαχείριση συστήματος"
 
-#: setup.php:143
+#: setup.php:147
 #, fuzzy
 msgid "(edit)"
 msgstr "(Eπεξεργασία)"
 
-#: setup.php:144
+#: setup.php:148
 #, fuzzy
 msgid "(actions)"
 msgstr "Ενέργειες"
 
-#: setup.php:151
+#: setup.php:155
 msgid "Enable maintenance for this device (now+1h)"
 msgstr ""
 
-#: setup.php:155
+#: setup.php:159
 #, fuzzy
 msgid "Add device(s) to existing maintenance schedule"
 msgstr "Σχέδια Συντήρησης"
 
-#: setup.php:266
+#: setup.php:270
 #, fuzzy
 msgid "Maintenance Window"
 msgstr "Σχέδια Συντήρησης"
 
-#: setup.php:271
+#: setup.php:275
 #, fuzzy
 msgid "Duration"
 msgstr "Περιγραφή"
 
-#: setup.php:271
+#: setup.php:275
 msgid "Timezone"
 msgstr ""
 
-#: setup.php:271
+#: setup.php:275
 msgid "min"
 msgstr ""
 
-#: setup.php:279
+#: setup.php:283
 #, fuzzy
 msgid "Schedule name"
 msgstr "Όνομα προγράμματος"
 
-#: setup.php:280
+#: setup.php:284
 msgid "e.g. Emergency patching"
 msgstr ""
 
-#: setup.php:354
+#: setup.php:358
 #, fuzzy
 msgid "disabled"
 msgstr "Απενεργοποιημένο"
 
-#: setup.php:358
+#: setup.php:362
 #, fuzzy
 msgid "No schedules found"
 msgstr "Πρόγραμμα"
 
-#: setup.php:362
+#: setup.php:366
 #, fuzzy
 msgid "Select schedule"
 msgstr "Πρόγραμμα"
 
-#: setup.php:395
+#: setup.php:399
 msgid "Quick Maintenance"
 msgstr ""
 
-#: setup.php:437
+#: setup.php:441
 #, php-format
 msgid "Maintenance schedule '%s' created and %d device(s) associated."
 msgstr ""
 
-#: setup.php:468
+#: setup.php:472
 #, php-format
 msgid "%d device(s) added to maintenance schedule '%s'."
 msgstr ""
