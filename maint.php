@@ -694,7 +694,8 @@ function get_header_label(): string {
 			[get_filter_request_var('id')],
 		);
 
-		$header_label = __esc('[edit: %s]', $list['name'], 'maint');
+		$list         = is_array($list) ? $list : [];
+		$header_label = __esc('[edit: %s]', $list['name'] ?? '', 'maint');
 	} else {
 		$header_label = __('[new]', 'maint');
 	}
@@ -790,6 +791,8 @@ function schedule_edit(): void {
 			WHERE id = ?',
 			[$id],
 		);
+
+		$maint_item_data = is_array($maint_item_data) ? $maint_item_data : [];
 	} else {
 		$id              = 0;
 		$maint_item_data = ['id' => 0, 'name' => __('New Maintenance Schedule', 'maint'), 'enabled' => 'on', 'mtype' => 1, 'stime' => time(), 'etime' => time() + 3600, 'minterval' => 0];
@@ -811,7 +814,7 @@ function schedule_edit(): void {
 				'friendly_name' => __('Schedule Name', 'maint'),
 				'method'        => 'textbox',
 				'max_length'    => 100,
-				'default'       => $maint_item_data['name'],
+				'default'       => $maint_item_data['name'] ?? '',
 				'description'   => __('Provide the Maintenance Schedule a meaningful name', 'maint'),
 				'value'         => $maint_item_data['name'] ?? '',
 			],
