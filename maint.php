@@ -887,7 +887,7 @@ function schedule_edit(): void {
 		form_save_button('maint.php', 'return');
 
 		?>
-		<script type='text/javascript'>
+		<script type='text/javascript' <?php print plugin_maint_csp_nonce(); ?>>
 
 		var date1Open = false;
 		var date2Open = false;
@@ -1155,7 +1155,7 @@ function thold_hosts(string $header_label): void {
 	$sql_where_params = [];
 
 	?>
-	<script type='text/javascript'>
+	<script type='text/javascript' <?php print plugin_maint_csp_nonce(); ?>>
 	function applyFilter() {
 		strURL  = 'maint.php?tab=hosts&action=edit&id=<?php print html_escape_request_var('id'); ?>'
 		strURL += '&rows=' + $('#rows').val();
@@ -1771,7 +1771,7 @@ function webseer_urls(string $header_label): void {
 			<input type='hidden' name='page' value='<?php print html_escape_request_var('page'); ?>'>
 			<input type='hidden' name='id' value='<?php print html_escape_request_var('id'); ?>'>
 		</form>
-		<script type='text/javascript'>
+		<script type='text/javascript' <?php print plugin_maint_csp_nonce(); ?>>
 		function applyFilter() {
 			strURL  = 'maint.php?tab=webseer&action=edit&id=<?php print html_escape_request_var('id'); ?>';
 			strURL += '&rows=' + $('#rows').val();
@@ -2006,7 +2006,7 @@ function servcheck_test(string $header_label): void {
 	}
 
 	?>
-	<script type='text/javascript'>
+	<script type='text/javascript' <?php print plugin_maint_csp_nonce(); ?>>
 	function applyFilter() {
 		strURL  = 'maint.php?tab=servcheck&action=edit&id=<?php print html_escape_request_var('id'); ?>';
 		strURL += '&rows=' + $('#rows').val();
