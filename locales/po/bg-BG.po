@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-25 10:10-0400\n"
+"POT-Creation-Date: 2026-09-27 11:28-0400\n"
 "PO-Revision-Date: 2020-12-12 20:52-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -36,11 +36,11 @@ msgstr "сътрудник"
 msgid "Disassociate"
 msgstr "разграничи"
 
-#: maint.php:52 setup.php:296
+#: maint.php:52 setup.php:312
 msgid "One Time"
 msgstr "Веднъж"
 
-#: maint.php:53 setup.php:297
+#: maint.php:53 setup.php:313
 msgid "Recurring"
 msgstr "Повтаряне"
 
@@ -49,12 +49,12 @@ msgstr "Повтаряне"
 msgid "Not Defined"
 msgstr "Не е определено"
 
-#: maint.php:58 setup.php:299
+#: maint.php:58 setup.php:315
 #, fuzzy
 msgid "Every Day"
 msgstr "Всеки ден"
 
-#: maint.php:59 setup.php:300
+#: maint.php:59 setup.php:316
 #, fuzzy
 msgid "Every Week"
 msgstr "Всяка седмица"
@@ -236,7 +236,7 @@ msgstr "Разрешен"
 msgid "Whether or not this schedule will be checked."
 msgstr "Дали този праг ще бъде проверен или алармиран."
 
-#: maint.php:829 setup.php:301
+#: maint.php:829 setup.php:317
 msgid "Schedule Type"
 msgstr "Zeitplan"
 
@@ -282,7 +282,7 @@ msgstr "Селектор за начална дата / час"
 msgid "End Date/Time Selector"
 msgstr "Селектор за крайна дата / час"
 
-#: maint.php:997 setup.php:128 setup.php:146
+#: maint.php:997 setup.php:144 setup.php:162
 #, fuzzy
 msgid "Maintenance Schedules"
 msgstr "Графики за поддръжка"
@@ -363,7 +363,7 @@ msgstr "Изчистване на филтрите"
 msgid "Search"
 msgstr "Търсене"
 
-#: maint.php:1425 maint.php:1593 setup.php:328 setup.php:367
+#: maint.php:1425 maint.php:1593 setup.php:344 setup.php:383
 msgid "Devices"
 msgstr "Устройства"
 
@@ -473,84 +473,84 @@ msgstr ""
 msgid "No Associated Servcheck Test's Found"
 msgstr "Не са намерени свързани устройства"
 
-#: setup.php:128
+#: setup.php:144
 msgid "Management"
 msgstr "управление"
 
-#: setup.php:131
+#: setup.php:147
 msgid "System Administration"
 msgstr "Системна администрация"
 
-#: setup.php:147
+#: setup.php:163
 msgid "(edit)"
 msgstr "Редактиране..."
 
-#: setup.php:148
+#: setup.php:164
 #, fuzzy
 msgid "(actions)"
 msgstr "Действия"
 
-#: setup.php:155
+#: setup.php:171
 msgid "Enable maintenance for this device (now+1h)"
 msgstr ""
 
-#: setup.php:159
+#: setup.php:175
 #, fuzzy
 msgid "Add device(s) to existing maintenance schedule"
 msgstr "Графики за поддръжка"
 
-#: setup.php:270
+#: setup.php:286
 #, fuzzy
 msgid "Maintenance Window"
 msgstr "Графики за поддръжка"
 
-#: setup.php:275
+#: setup.php:291
 #, fuzzy
 msgid "Duration"
 msgstr "Описание"
 
-#: setup.php:275
+#: setup.php:291
 msgid "Timezone"
 msgstr ""
 
-#: setup.php:275
+#: setup.php:291
 msgid "min"
 msgstr ""
 
-#: setup.php:283
+#: setup.php:299
 #, fuzzy
 msgid "Schedule name"
 msgstr "Име на графика"
 
-#: setup.php:284
+#: setup.php:300
 msgid "e.g. Emergency patching"
 msgstr ""
 
-#: setup.php:358
+#: setup.php:374
 #, fuzzy
 msgid "disabled"
 msgstr "Изключен"
 
-#: setup.php:362
+#: setup.php:378
 #, fuzzy
 msgid "No schedules found"
 msgstr "Няма графици"
 
-#: setup.php:366
+#: setup.php:382
 #, fuzzy
 msgid "Select schedule"
 msgstr "Планиране"
 
-#: setup.php:399
+#: setup.php:415
 msgid "Quick Maintenance"
 msgstr ""
 
-#: setup.php:441
+#: setup.php:457
 #, php-format
 msgid "Maintenance schedule '%s' created and %d device(s) associated."
 msgstr ""
 
-#: setup.php:472
+#: setup.php:488
 #, php-format
 msgid "%d device(s) added to maintenance schedule '%s'."
 msgstr ""
