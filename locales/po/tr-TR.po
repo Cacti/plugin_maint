@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-25 10:10-0400\n"
+"POT-Creation-Date: 2026-09-27 11:28-0400\n"
 "PO-Revision-Date: 2022-06-21 05:25+0000\n"
 "Last-Translator: San IPE <sanipe1949@krunsea.com>\n"
 "Language-Team: Turkish <http://translate.cacti.net/projects/cacti/maint/tr/>\n"
@@ -36,11 +36,11 @@ msgstr "Ön Lisans"
 msgid "Disassociate"
 msgstr "ilişkisini"
 
-#: maint.php:52 setup.php:296
+#: maint.php:52 setup.php:312
 msgid "One Time"
 msgstr "Bir kez"
 
-#: maint.php:53 setup.php:297
+#: maint.php:53 setup.php:313
 msgid "Recurring"
 msgstr "Yinelenen"
 
@@ -48,11 +48,11 @@ msgstr "Yinelenen"
 msgid "Not Defined"
 msgstr "Tanımlanmamış"
 
-#: maint.php:58 setup.php:299
+#: maint.php:58 setup.php:315
 msgid "Every Day"
 msgstr "Her Gün"
 
-#: maint.php:59 setup.php:300
+#: maint.php:59 setup.php:316
 msgid "Every Week"
 msgstr "Her Hafta"
 
@@ -233,7 +233,7 @@ msgstr "Etkin"
 msgid "Whether or not this schedule will be checked."
 msgstr "Bu eşiğin kontrol edilip edilmeyeceği konusunda uyarılıp uyarılmadığı."
 
-#: maint.php:829 setup.php:301
+#: maint.php:829 setup.php:317
 msgid "Schedule Type"
 msgstr "Program Türü"
 
@@ -279,7 +279,7 @@ msgstr "Başlangıç Tarihi / Saat Seçici"
 msgid "End Date/Time Selector"
 msgstr "Bitiş Tarihi / Saat Seçici"
 
-#: maint.php:997 setup.php:128 setup.php:146
+#: maint.php:997 setup.php:144 setup.php:162
 #, fuzzy
 msgid "Maintenance Schedules"
 msgstr "Bakım Takvimi"
@@ -358,7 +358,7 @@ msgstr "Filtreleri Temizle"
 msgid "Search"
 msgstr "Ara"
 
-#: maint.php:1425 maint.php:1593 setup.php:328 setup.php:367
+#: maint.php:1425 maint.php:1593 setup.php:344 setup.php:383
 msgid "Devices"
 msgstr "Cihazlar"
 
@@ -467,84 +467,84 @@ msgstr ""
 msgid "No Associated Servcheck Test's Found"
 msgstr "İlişkili Aygıt Bulunamadı"
 
-#: setup.php:128
+#: setup.php:144
 msgid "Management"
 msgstr "Kullanıcı Yonetimi"
 
-#: setup.php:131
+#: setup.php:147
 msgid "System Administration"
 msgstr "Sistem Yönetimi"
 
-#: setup.php:147
+#: setup.php:163
 msgid "(edit)"
 msgstr "(Düzenle)"
 
-#: setup.php:148
+#: setup.php:164
 #, fuzzy
 msgid "(actions)"
 msgstr "Eylemler"
 
-#: setup.php:155
+#: setup.php:171
 msgid "Enable maintenance for this device (now+1h)"
 msgstr ""
 
-#: setup.php:159
+#: setup.php:175
 #, fuzzy
 msgid "Add device(s) to existing maintenance schedule"
 msgstr "Bakım Takvimi"
 
-#: setup.php:270
+#: setup.php:286
 #, fuzzy
 msgid "Maintenance Window"
 msgstr "Bakım Takvimi"
 
-#: setup.php:275
+#: setup.php:291
 #, fuzzy
 msgid "Duration"
 msgstr "Açıklama"
 
-#: setup.php:275
+#: setup.php:291
 msgid "Timezone"
 msgstr ""
 
-#: setup.php:275
+#: setup.php:291
 msgid "min"
 msgstr ""
 
-#: setup.php:283
+#: setup.php:299
 #, fuzzy
 msgid "Schedule name"
 msgstr "Zamanlama Adı"
 
-#: setup.php:284
+#: setup.php:300
 msgid "e.g. Emergency patching"
 msgstr ""
 
-#: setup.php:358
+#: setup.php:374
 #, fuzzy
 msgid "disabled"
 msgstr "Devre dışı"
 
-#: setup.php:362
+#: setup.php:378
 #, fuzzy
 msgid "No schedules found"
 msgstr "Toplu Zamanlama"
 
-#: setup.php:366
+#: setup.php:382
 #, fuzzy
 msgid "Select schedule"
 msgstr "Program"
 
-#: setup.php:399
+#: setup.php:415
 msgid "Quick Maintenance"
 msgstr ""
 
-#: setup.php:441
+#: setup.php:457
 #, php-format
 msgid "Maintenance schedule '%s' created and %d device(s) associated."
 msgstr ""
 
-#: setup.php:472
+#: setup.php:488
 #, php-format
 msgid "%d device(s) added to maintenance schedule '%s'."
 msgstr ""
