@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-25 10:10-0400\n"
+"POT-Creation-Date: 2026-09-27 11:28-0400\n"
 "PO-Revision-Date: 2020-12-12 20:53-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -36,12 +36,12 @@ msgstr "साथी"
 msgid "Disassociate"
 msgstr "अलग"
 
-#: maint.php:52 setup.php:296
+#: maint.php:52 setup.php:312
 #, fuzzy
 msgid "One Time"
 msgstr "एक बार"
 
-#: maint.php:53 setup.php:297
+#: maint.php:53 setup.php:313
 msgid "Recurring"
 msgstr "आवर्ती"
 
@@ -50,12 +50,12 @@ msgstr "आवर्ती"
 msgid "Not Defined"
 msgstr "परिभाषित नहीं"
 
-#: maint.php:58 setup.php:299
+#: maint.php:58 setup.php:315
 #, fuzzy
 msgid "Every Day"
 msgstr "हर रोज"
 
-#: maint.php:59 setup.php:300
+#: maint.php:59 setup.php:316
 #, fuzzy
 msgid "Every Week"
 msgstr "प्रति सप्ताह"
@@ -237,7 +237,7 @@ msgstr "सक्षम"
 msgid "Whether or not this schedule will be checked."
 msgstr "इस दहलीज की जाँच की जाएगी या नहीं।"
 
-#: maint.php:829 setup.php:301
+#: maint.php:829 setup.php:317
 #, fuzzy
 msgid "Schedule Type"
 msgstr "अनुसूची प्रकार"
@@ -284,7 +284,7 @@ msgstr "प्रारंभ दिनांक / समय चयनकर्�
 msgid "End Date/Time Selector"
 msgstr "अंतिम तिथि / समय चयनकर्ता"
 
-#: maint.php:997 setup.php:128 setup.php:146
+#: maint.php:997 setup.php:144 setup.php:162
 #, fuzzy
 msgid "Maintenance Schedules"
 msgstr "अनुरक्षण अनुसूचियां"
@@ -366,7 +366,7 @@ msgstr "साफ फिल्टर"
 msgid "Search"
 msgstr "खोजें"
 
-#: maint.php:1425 maint.php:1593 setup.php:328 setup.php:367
+#: maint.php:1425 maint.php:1593 setup.php:344 setup.php:383
 msgid "Devices"
 msgstr "डिवाइस"
 
@@ -479,85 +479,85 @@ msgstr ""
 msgid "No Associated Servcheck Test's Found"
 msgstr "कोई एसोसिएटेड डिवाइस नहीं मिला"
 
-#: setup.php:128
+#: setup.php:144
 msgid "Management"
 msgstr "प्रबंधन"
 
-#: setup.php:131
+#: setup.php:147
 msgid "System Administration"
 msgstr "तंत्र प्रशासन"
 
-#: setup.php:147
+#: setup.php:163
 #, fuzzy
 msgid "(edit)"
 msgstr "संपादित करें"
 
-#: setup.php:148
+#: setup.php:164
 #, fuzzy
 msgid "(actions)"
 msgstr "कार्रवाइयाँ"
 
-#: setup.php:155
+#: setup.php:171
 msgid "Enable maintenance for this device (now+1h)"
 msgstr ""
 
-#: setup.php:159
+#: setup.php:175
 #, fuzzy
 msgid "Add device(s) to existing maintenance schedule"
 msgstr "अनुरक्षण अनुसूचियां"
 
-#: setup.php:270
+#: setup.php:286
 #, fuzzy
 msgid "Maintenance Window"
 msgstr "अनुरक्षण अनुसूचियां"
 
-#: setup.php:275
+#: setup.php:291
 #, fuzzy
 msgid "Duration"
 msgstr "विवरण"
 
-#: setup.php:275
+#: setup.php:291
 msgid "Timezone"
 msgstr ""
 
-#: setup.php:275
+#: setup.php:291
 msgid "min"
 msgstr ""
 
-#: setup.php:283
+#: setup.php:299
 #, fuzzy
 msgid "Schedule name"
 msgstr "अनुसूची का नाम"
 
-#: setup.php:284
+#: setup.php:300
 msgid "e.g. Emergency patching"
 msgstr ""
 
-#: setup.php:358
+#: setup.php:374
 #, fuzzy
 msgid "disabled"
 msgstr "अक्षम"
 
-#: setup.php:362
+#: setup.php:378
 #, fuzzy
 msgid "No schedules found"
 msgstr "कोई अनुसूचियां नहीं"
 
-#: setup.php:366
+#: setup.php:382
 #, fuzzy
 msgid "Select schedule"
 msgstr "शैड्‌यूल"
 
-#: setup.php:399
+#: setup.php:415
 msgid "Quick Maintenance"
 msgstr ""
 
-#: setup.php:441
+#: setup.php:457
 #, php-format
 msgid "Maintenance schedule '%s' created and %d device(s) associated."
 msgstr ""
 
-#: setup.php:472
+#: setup.php:488
 #, php-format
 msgid "%d device(s) added to maintenance schedule '%s'."
 msgstr ""
