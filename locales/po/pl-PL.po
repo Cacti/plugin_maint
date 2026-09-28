@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-25 10:10-0400\n"
+"POT-Creation-Date: 2026-09-27 11:28-0400\n"
 "PO-Revision-Date: 2022-11-25 15:50+0000\n"
 "Last-Translator: kaktus <kaktus_j_p@o2.pl>\n"
 "Language-Team: Polish <http://translate.cacti.net/projects/cacti/maint/pl/>\n"
@@ -36,11 +36,11 @@ msgstr "Współpracownik"
 msgid "Disassociate"
 msgstr "dysocjacjacja"
 
-#: maint.php:52 setup.php:296
+#: maint.php:52 setup.php:312
 msgid "One Time"
 msgstr "Jednorazowo"
 
-#: maint.php:53 setup.php:297
+#: maint.php:53 setup.php:313
 msgid "Recurring"
 msgstr "Cykliczny"
 
@@ -49,11 +49,11 @@ msgstr "Cykliczny"
 msgid "Not Defined"
 msgstr "Nieokreślone"
 
-#: maint.php:58 setup.php:299
+#: maint.php:58 setup.php:315
 msgid "Every Day"
 msgstr "codziennie"
 
-#: maint.php:59 setup.php:300
+#: maint.php:59 setup.php:316
 msgid "Every Week"
 msgstr "Raz na tygodzień"
 
@@ -233,7 +233,7 @@ msgstr "Włączone"
 msgid "Whether or not this schedule will be checked."
 msgstr "Czy próg ten będzie sprawdzany i ostrzegany o tym, czy nie."
 
-#: maint.php:829 setup.php:301
+#: maint.php:829 setup.php:317
 msgid "Schedule Type"
 msgstr "Typ planowania"
 
@@ -279,7 +279,7 @@ msgstr "Wybór daty / godziny rozpoczęcia"
 msgid "End Date/Time Selector"
 msgstr "Selektor daty / godziny zakończenia"
 
-#: maint.php:997 setup.php:128 setup.php:146
+#: maint.php:997 setup.php:144 setup.php:162
 #, fuzzy
 msgid "Maintenance Schedules"
 msgstr "Plany utrzymania"
@@ -358,7 +358,7 @@ msgstr "Wyczyść filtry"
 msgid "Search"
 msgstr "Szukaj"
 
-#: maint.php:1425 maint.php:1593 setup.php:328 setup.php:367
+#: maint.php:1425 maint.php:1593 setup.php:344 setup.php:383
 msgid "Devices"
 msgstr "Urządzenia"
 
@@ -467,84 +467,84 @@ msgstr ""
 msgid "No Associated Servcheck Test's Found"
 msgstr "Nie znaleziono powiązanych urządzeń"
 
-#: setup.php:128
+#: setup.php:144
 msgid "Management"
 msgstr "Zarządzanie"
 
-#: setup.php:131
+#: setup.php:147
 msgid "System Administration"
 msgstr "Administracja systemu"
 
-#: setup.php:147
+#: setup.php:163
 msgid "(edit)"
 msgstr "(edytuj)"
 
-#: setup.php:148
+#: setup.php:164
 #, fuzzy
 msgid "(actions)"
 msgstr "Akcje"
 
-#: setup.php:155
+#: setup.php:171
 msgid "Enable maintenance for this device (now+1h)"
 msgstr ""
 
-#: setup.php:159
+#: setup.php:175
 #, fuzzy
 msgid "Add device(s) to existing maintenance schedule"
 msgstr "Plany utrzymania"
 
-#: setup.php:270
+#: setup.php:286
 #, fuzzy
 msgid "Maintenance Window"
 msgstr "Plany utrzymania"
 
-#: setup.php:275
+#: setup.php:291
 #, fuzzy
 msgid "Duration"
 msgstr "Opis"
 
-#: setup.php:275
+#: setup.php:291
 msgid "Timezone"
 msgstr ""
 
-#: setup.php:275
+#: setup.php:291
 msgid "min"
 msgstr ""
 
-#: setup.php:283
+#: setup.php:299
 #, fuzzy
 msgid "Schedule name"
 msgstr "Nazwa harmonogramu"
 
-#: setup.php:284
+#: setup.php:300
 msgid "e.g. Emergency patching"
 msgstr ""
 
-#: setup.php:358
+#: setup.php:374
 #, fuzzy
 msgid "disabled"
 msgstr "Wyłączone"
 
-#: setup.php:362
+#: setup.php:378
 #, fuzzy
 msgid "No schedules found"
 msgstr "Harmonogram"
 
-#: setup.php:366
+#: setup.php:382
 #, fuzzy
 msgid "Select schedule"
 msgstr "Harmonogram"
 
-#: setup.php:399
+#: setup.php:415
 msgid "Quick Maintenance"
 msgstr ""
 
-#: setup.php:441
+#: setup.php:457
 #, php-format
 msgid "Maintenance schedule '%s' created and %d device(s) associated."
 msgstr ""
 
-#: setup.php:472
+#: setup.php:488
 #, php-format
 msgid "%d device(s) added to maintenance schedule '%s'."
 msgstr ""
