@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maint on cacti 1.1.34\n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-25 10:10-0400\n"
+"POT-Creation-Date: 2026-09-27 11:28-0400\n"
 "PO-Revision-Date: 2024-06-23 04:08+0000\n"
 "Last-Translator: tql <fttx31@126.com>\n"
 "Language-Team: Chinese (Simplified) <http://translate.cacti.net/projects/cacti/maint/zh_Hans/>\n"
@@ -34,11 +34,11 @@ msgstr "关联"
 msgid "Disassociate"
 msgstr "取消关联"
 
-#: maint.php:52 setup.php:296
+#: maint.php:52 setup.php:312
 msgid "One Time"
 msgstr "一次"
 
-#: maint.php:53 setup.php:297
+#: maint.php:53 setup.php:313
 msgid "Recurring"
 msgstr "定期"
 
@@ -46,11 +46,11 @@ msgstr "定期"
 msgid "Not Defined"
 msgstr "没有定义的"
 
-#: maint.php:58 setup.php:299
+#: maint.php:58 setup.php:315
 msgid "Every Day"
 msgstr "每天"
 
-#: maint.php:59 setup.php:300
+#: maint.php:59 setup.php:316
 msgid "Every Week"
 msgstr "每周"
 
@@ -218,7 +218,7 @@ msgstr "已启用"
 msgid "Whether or not this schedule will be checked."
 msgstr "是否会检查并警告此阈值。"
 
-#: maint.php:829 setup.php:301
+#: maint.php:829 setup.php:317
 msgid "Schedule Type"
 msgstr "计划类型"
 
@@ -259,7 +259,7 @@ msgstr "开始日期/时间选择器"
 msgid "End Date/Time Selector"
 msgstr "结束日期/时间选择器"
 
-#: maint.php:997 setup.php:128 setup.php:146
+#: maint.php:997 setup.php:144 setup.php:162
 msgid "Maintenance Schedules"
 msgstr "维护计划"
 
@@ -336,7 +336,7 @@ msgstr "清除过滤器"
 msgid "Search"
 msgstr "搜索"
 
-#: maint.php:1425 maint.php:1593 setup.php:328 setup.php:367
+#: maint.php:1425 maint.php:1593 setup.php:344 setup.php:383
 msgid "Devices"
 msgstr "设备"
 
@@ -440,83 +440,83 @@ msgstr ""
 msgid "No Associated Servcheck Test's Found"
 msgstr "找不到相关设备"
 
-#: setup.php:128
+#: setup.php:144
 msgid "Management"
 msgstr "管理"
 
-#: setup.php:131
+#: setup.php:147
 msgid "System Administration"
 msgstr "系统管理"
 
-#: setup.php:147
+#: setup.php:163
 msgid "(edit)"
 msgstr "(编辑)"
 
-#: setup.php:148
+#: setup.php:164
 msgid "(actions)"
 msgstr "（动作）"
 
-#: setup.php:155
+#: setup.php:171
 msgid "Enable maintenance for this device (now+1h)"
 msgstr ""
 
-#: setup.php:159
+#: setup.php:175
 #, fuzzy
 msgid "Add device(s) to existing maintenance schedule"
 msgstr "关联维护计划"
 
-#: setup.php:270
+#: setup.php:286
 #, fuzzy
 msgid "Maintenance Window"
 msgstr "维护计划"
 
-#: setup.php:275
+#: setup.php:291
 #, fuzzy
 msgid "Duration"
 msgstr "描述"
 
-#: setup.php:275
+#: setup.php:291
 msgid "Timezone"
 msgstr ""
 
-#: setup.php:275
+#: setup.php:291
 msgid "min"
 msgstr ""
 
-#: setup.php:283
+#: setup.php:299
 #, fuzzy
 msgid "Schedule name"
 msgstr "时间表名称"
 
-#: setup.php:284
+#: setup.php:300
 msgid "e.g. Emergency patching"
 msgstr ""
 
-#: setup.php:358
+#: setup.php:374
 #, fuzzy
 msgid "disabled"
 msgstr "已禁用"
 
-#: setup.php:362
+#: setup.php:378
 #, fuzzy
 msgid "No schedules found"
 msgstr "没有时间表"
 
-#: setup.php:366
+#: setup.php:382
 #, fuzzy
 msgid "Select schedule"
 msgstr "计划表"
 
-#: setup.php:399
+#: setup.php:415
 msgid "Quick Maintenance"
 msgstr ""
 
-#: setup.php:441
+#: setup.php:457
 #, php-format
 msgid "Maintenance schedule '%s' created and %d device(s) associated."
 msgstr ""
 
-#: setup.php:472
+#: setup.php:488
 #, php-format
 msgid "%d device(s) added to maintenance schedule '%s'."
 msgstr ""
