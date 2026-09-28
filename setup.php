@@ -27,6 +27,22 @@ declare(strict_types = 1);
 */
 
 /**
+ * Return the CSP nonce attribute for inline <script> tags, safely across
+ * Cacti versions. Newer Cacti releases enforce a Content-Security-Policy that
+ * requires a per-request nonce on parser-inserted scripts; older releases lack
+ * the CactiSecureHeaders class, so this returns an empty string there.
+ *
+ * @return string The nonce attribute when supported, otherwise empty string.
+ */
+function plugin_maint_csp_nonce(): string {
+	if (class_exists('CactiSecureHeaders')) {
+		return CactiSecureHeaders::getNonceAttribute();
+	}
+
+	return '';
+}
+
+/**
  * Get the plugin version information from INFO file
  *
  * Used by Cacti's plugin architecture via the api_plugin_version hook,
@@ -322,7 +338,7 @@ function maint_device_action_prepare(array $save): array {
 		print "<tr><td colspan='2' class='textArea'>" . $row . '</td></tr>';
 
 		// Initialize visibility on load
-		print "<tr style='display:none'><td colspan='2'><script>(function(){try{var e=document.getElementById('maint_mtype'),w=document.getElementById('maint_interval_wrap');if(e&&w){w.style.display=(e.value==='2')?'':'none';}}catch(ex){}})();</script></td></tr>";
+		print "<tr style='display:none'><td colspan='2'><script " . plugin_maint_csp_nonce() . ">(function(){try{var e=document.getElementById('maint_mtype'),w=document.getElementById('maint_interval_wrap');if(e&&w){w.style.display=(e.value==='2')?'':'none';}}catch(ex){}})();</script></td></tr>";
 
 		$devices  = "<div style='border:1px solid #efefef;background:#fafafa;padding:8px 12px;'>";
 		$devices .= '<b>' . __('Devices', 'maint') . ' (' . count((array) $save['host_array']) . ')</b>';
