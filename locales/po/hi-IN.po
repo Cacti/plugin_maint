@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-28 16:06-0400\n"
+"POT-Creation-Date: 2026-09-29 00:45-0400\n"
 "PO-Revision-Date: 2020-12-12 20:53-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -287,8 +287,45 @@ msgid "Maintenance Schedules"
 msgstr "अनुरक्षण अनुसूचियां"
 
 #: maint.php
+msgid "Search"
+msgstr "खोजें"
+
+#: maint.php
+#, fuzzy
+#| msgid "Schedule"
+msgid "Schedules"
+msgstr "शैड्‌यूल"
+
+#: maint.php
+msgid "Default"
+msgstr "डिफ़ॉल्ट"
+
+#: maint.php
+msgid "Go"
+msgstr "जाएं"
+
+#: maint.php
+#, fuzzy
+msgid "Set/Refresh Filters"
+msgstr "फ़िल्टर सेट करें / ताज़ा करें"
+
+#: maint.php
+msgid "Clear"
+msgstr "明确"
+
+#: maint.php
+#, fuzzy
+msgid "Clear Filters"
+msgstr "साफ फिल्टर"
+
+#: maint.php
 msgid "Name"
 msgstr "नाम"
+
+#: maint.php
+#, fuzzy
+msgid "The name of this Maintenance Schedule."
+msgstr "नई रखरखाव अनुसूची"
 
 #: maint.php
 msgid "Active"
@@ -341,35 +378,9 @@ msgstr ""
 msgid "Template"
 msgstr ""
 
-#: maint.php
-msgid "Go"
-msgstr "जाएं"
-
-#: maint.php
-#, fuzzy
-msgid "Set/Refresh Filters"
-msgstr "फ़िल्टर सेट करें / ताज़ा करें"
-
-#: maint.php
-msgid "Clear"
-msgstr "明确"
-
-#: maint.php
-#, fuzzy
-msgid "Clear Filters"
-msgstr "साफ फिल्टर"
-
-#: maint.php
-msgid "Search"
-msgstr "खोजें"
-
 #: maint.php setup.php
 msgid "Devices"
 msgstr "डिवाइस"
-
-#: maint.php
-msgid "Default"
-msgstr "डिफ़ॉल्ट"
 
 #: maint.php
 #, fuzzy
