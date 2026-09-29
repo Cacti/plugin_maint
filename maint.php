@@ -611,7 +611,7 @@ function form_actions(): void {
 				input_validate_input_number($matches[1]);
 				// ====================================================
 
-				$description = db_fetch_cell_prepared('SELECT display_name
+				$description = db_fetch_cell_prepared('SELECT name
 					FROM plugin_servcheck_test
 					WHERE id = ?',
 					[$matches[1]],
@@ -1044,7 +1044,7 @@ function schedules(): void {
 		}
 
 		if (api_plugin_is_enabled('servcheck')) {
-			$clauses[]        = 'id IN (SELECT pmh.schedule FROM plugin_maint_hosts AS pmh INNER JOIN plugin_servcheck_test AS t ON t.id = pmh.host WHERE pmh.type = ? AND (t.hostname LIKE ? OR t.display_name LIKE ?))';
+			$clauses[]        = 'id IN (SELECT pmh.schedule FROM plugin_maint_hosts AS pmh INNER JOIN plugin_servcheck_test AS t ON t.id = pmh.host WHERE pmh.type = ? AND (t.hostname LIKE ? OR t.name LIKE ?))';
 			$sql_where_params = array_merge($sql_where_params, [MAINT_HOST_TYPE_SERVCHECK, $like, $like]);
 		}
 
@@ -2261,7 +2261,7 @@ function servcheck_test(string $header_label): void {
 	// form the 'where' clause for our main sql query
 	if (strlen(get_request_var('filter'))) {
 		$sql_where = 'WHERE ((t.hostname LIKE ?)
-			OR (t.display_name LIKE ?)
+			OR (t.name LIKE ?)
 			OR (t.path LIKE ?))';
 		$sql_where_params = [
 			'%' . get_request_var('filter') . '%',
@@ -2331,7 +2331,7 @@ function servcheck_test(string $header_label): void {
 	if (cacti_sizeof($tests)) {
 		foreach ($tests as $test) {
 			form_alternate_row('line' . $test['id']);
-			form_selectable_cell(filter_value($test['display_name'], get_request_var('filter')), $test['id'], '250');
+			form_selectable_cell(filter_value($test['name'], get_request_var('filter')), $test['id'], '250');
 			form_selectable_cell(round(($test['id']), 2), $test['id']);
 
 			if ($test['associated'] != '') {
@@ -2365,7 +2365,7 @@ function servcheck_test(string $header_label): void {
 			form_selectable_cell(($test['enabled'] == 'on' ? __('Enabled', 'maint') : __('Disabled', 'maint')), $test['id']);
 			form_selectable_cell(filter_value($test['hostname'], get_request_var('filter')), $test['id']);
 			form_selectable_cell(filter_value($test['hostname'], get_request_var('filter')), $test['id']);
-			form_checkbox_cell($test['display_name'], $test['id']);
+			form_checkbox_cell($test['name'], $test['id']);
 			form_end_row();
 		}
 	} else {
