@@ -2,6 +2,7 @@
 
 --- develop ---
 
+* feature: Add a standard Cacti search filter to the Maintenance Schedules list that also matches the hostname/description/location/site name of associated Thold devices and the hostname/description of associated Servcheck tests
 * security: Add a version-safe CSP nonce (`plugin_maint_csp_nonce()`) to every inline `<script>` tag so pages stay compatible with Cacti's Content-Security-Policy nonce enforcement, while falling back cleanly on older Cacti releases that lack the `CactiSecureHeaders` class
 * issue: PHPStan level 8 typing pass - hardened parse_ini_file()/db_fetch_row_prepared() result narrowing, widened 2 over-narrow scratch stub types, fixed several !empty()-vs-is_array() narrowing gaps
 
