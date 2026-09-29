@@ -986,26 +986,186 @@ function schedule_edit(): void {
  *                                 Yes/No display labels.
  */
 function schedules(): void {
-	global $actions, $maint_types, $maint_intervals, $yesno;
+	global $actions, $maint_types, $maint_intervals, $yesno, $item_rows;
 
-	$schedules = db_fetch_assoc_prepared('SELECT *
+	// ================= input validation and session storage =================
+	$filters = [
+		'rows' => [
+			'filter'  => FILTER_VALIDATE_INT,
+			'pageset' => true,
+			'default' => '-1',
+		],
+		'page' => [
+			'filter'  => FILTER_VALIDATE_INT,
+			'default' => '1',
+		],
+		'filter' => [
+			'filter'  => FILTER_CALLBACK,
+			'pageset' => true,
+			'default' => '',
+			'options' => ['options' => 'sanitize_search_string'],
+		],
+		'sort_column' => [
+			'filter'  => FILTER_CALLBACK,
+			'default' => 'name',
+			'options' => ['options' => 'sanitize_search_string'],
+		],
+		'sort_direction' => [
+			'filter'  => FILTER_CALLBACK,
+			'default' => 'ASC',
+			'options' => ['options' => 'sanitize_search_string'],
+		],
+	];
+
+	validate_store_request_vars($filters, 'sess_maint_schedules');
+
+	// ================= input validation =================
+
+	// if the number of rows is -1, set it to the default
+	if (get_request_var('rows') == '-1') {
+		$rows = read_config_option('num_rows_table');
+	} else {
+		$rows = get_request_var('rows');
+	}
+
+	// form the 'where' clause for our main sql query; the search matches the schedule
+	// name plus the hostname/description of any Thold device or Servcheck test it covers
+	$sql_where        = '';
+	$sql_where_params = [];
+
+	if (strlen(get_request_var('filter'))) {
+		$like               = '%' . get_request_var('filter') . '%';
+		$clauses            = ['name LIKE ?'];
+		$sql_where_params[] = $like;
+
+		if (api_plugin_is_enabled('thold')) {
+			$clauses[]        = 'id IN (SELECT pmh.schedule FROM plugin_maint_hosts AS pmh INNER JOIN host AS h ON h.id = pmh.host WHERE pmh.type = ? AND (h.hostname LIKE ? OR h.description LIKE ?))';
+			$sql_where_params = array_merge($sql_where_params, [MAINT_HOST_TYPE_HOSTS, $like, $like]);
+		}
+
+		if (api_plugin_is_enabled('servcheck')) {
+			$clauses[]        = 'id IN (SELECT pmh.schedule FROM plugin_maint_hosts AS pmh INNER JOIN plugin_servcheck_test AS t ON t.id = pmh.host WHERE pmh.type = ? AND (t.hostname LIKE ? OR t.display_name LIKE ?))';
+			$sql_where_params = array_merge($sql_where_params, [MAINT_HOST_TYPE_SERVCHECK, $like, $like]);
+		}
+
+		$sql_where = 'WHERE (' . implode(' OR ', $clauses) . ')';
+	}
+
+	$total_rows = db_fetch_cell_prepared("SELECT COUNT(*)
 		FROM plugin_maint_schedules
-		ORDER BY name', []);
+		$sql_where",
+		$sql_where_params,
+	);
 
-	form_start('maint.php', 'chk');
+	$sql_order = get_order_string();
+	$sql_limit = ' LIMIT ' . ($rows * (get_request_var('page') - 1)) . ', ' . $rows;
+
+	$schedules = db_fetch_assoc_prepared("SELECT *
+		FROM plugin_maint_schedules
+		$sql_where
+		$sql_order
+		$sql_limit",
+		$sql_where_params,
+	);
+
+	?>
+	<script type='text/javascript' <?php print plugin_maint_csp_nonce(); ?>>
+	function applyFilter() {
+		strURL  = 'maint.php?header=false';
+		strURL += '&filter=' + $('#filter').val();
+		strURL += '&rows=' + $('#rows').val();
+		loadPageNoHeader(strURL);
+	}
+
+	function clearFilter() {
+		strURL = 'maint.php?clear=true&header=false';
+		loadPageNoHeader(strURL);
+	}
+
+	$(function() {
+		$('#refresh').click(function() {
+			applyFilter();
+		});
+
+		$('#rows').change(function() {
+			applyFilter();
+		});
+
+		$('#clear').click(function() {
+			clearFilter();
+		});
+
+		$('#form_schedules').submit(function(event) {
+			event.preventDefault();
+			applyFilter();
+		});
+	});
+	</script>
+	<?php
 
 	html_start_box(__('Maintenance Schedules', 'maint'), '100%', false, 3, 'center', 'maint.php?tab=general&action=edit');
 
-	html_header_checkbox(
-		[
-			__('Name', 'maint'),
-			__('Active', 'maint'),
-			__('Type', 'maint'),
-			__('Start', 'maint'),
-			__('End', 'maint'),
-			__('Interval', 'maint'),
-			__('Enabled', 'maint')],
-	);
+	?>
+	<tr class='even'>
+		<td>
+		<form id='form_schedules' action='maint.php'>
+			<table class='filterTable'>
+				<tr>
+					<td>
+						<?php print __('Search', 'maint'); ?>
+					</td>
+					<td>
+						<input type='text' class='ui-state-default ui-corner-all' id='filter' size='25' value='<?php print html_escape_request_var('filter'); ?>'>
+					</td>
+					<td>
+						<?php print __('Schedules', 'maint'); ?>
+					</td>
+					<td>
+						<select id='rows'>
+							<option value='-1'<?php print(get_request_var('rows') == '-1' ? ' selected' : ''); ?>><?php print __('Default', 'maint'); ?></option>
+							<?php
+	if (cacti_sizeof($item_rows)) {
+		foreach ($item_rows as $key => $value) {
+			print "<option value='" . $key . "'" . (get_request_var('rows') == $key ? ' selected' : '') . '>' . html_escape($value) . '</option>';
+		}
+	}
+	?>
+						</select>
+					</td>
+					<td>
+						<span>
+							<input type='button' class='ui-button ui-corner-all ui-widget' id='refresh' value='<?php print __esc('Go', 'maint'); ?>' title='<?php print __esc('Set/Refresh Filters', 'maint'); ?>'>
+							<input type='button' class='ui-button ui-corner-all ui-widget' id='clear' value='<?php print __esc('Clear', 'maint'); ?>' title='<?php print __esc('Clear Filters', 'maint'); ?>'>
+						</span>
+					</td>
+				</tr>
+			</table>
+		</form>
+		</td>
+	</tr>
+	<?php
+
+	html_end_box();
+
+	$nav = html_nav_bar('maint.php', MAX_DISPLAY_PAGES, get_request_var('page'), $rows, $total_rows, 8, __('Schedules', 'maint'), 'page', 'main');
+
+	form_start('maint.php', 'chk');
+
+	print $nav;
+
+	html_start_box('', '100%', false, 3, 'center', '');
+
+	$display_text = [
+		'name'      => ['display' => __('Name', 'maint'),     'align' => 'left', 'sort' => 'ASC', 'tip' => __('The name of this Maintenance Schedule.', 'maint')],
+		'nosort'    => ['display' => __('Active', 'maint'),    'align' => 'left', 'sort' => ''],
+		'mtype'     => ['display' => __('Type', 'maint'),      'align' => 'left', 'sort' => 'ASC'],
+		'stime'     => ['display' => __('Start', 'maint'),     'align' => 'left', 'sort' => 'ASC'],
+		'etime'     => ['display' => __('End', 'maint'),       'align' => 'left', 'sort' => 'ASC'],
+		'minterval' => ['display' => __('Interval', 'maint'),  'align' => 'left', 'sort' => 'ASC'],
+		'enabled'   => ['display' => __('Enabled', 'maint'),   'align' => 'left', 'sort' => 'ASC'],
+	];
+
+	html_header_sort_checkbox($display_text, get_request_var('sort_column'), get_request_var('sort_direction'), false, 'maint.php');
 
 	if (cacti_sizeof($schedules)) {
 		foreach ($schedules as $schedule) {
@@ -1043,10 +1203,14 @@ function schedules(): void {
 			form_end_row();
 		}
 	} else {
-		print "<tr><td colspan='5'><em>" . __('No Schedules', 'maint') . '</em></td></tr>';
+		print "<tr><td colspan='" . (cacti_sizeof($display_text) + 1) . "'><em>" . __('No Schedules', 'maint') . '</em></td></tr>';
 	}
 
 	html_end_box(false);
+
+	if (cacti_sizeof($schedules)) {
+		print $nav;
+	}
 
 	form_hidden_box('save_list', '1', '');
 
