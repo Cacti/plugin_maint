@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-28 16:06-0400\n"
+"POT-Creation-Date: 2026-09-29 00:45-0400\n"
 "PO-Revision-Date: 2020-12-12 20:53-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -285,8 +285,44 @@ msgid "Maintenance Schedules"
 msgstr "לוחות זמנים לתחזוקה"
 
 #: maint.php
+msgid "Search"
+msgstr "חיפוש"
+
+#: maint.php
+#, fuzzy
+#| msgid "Schedule"
+msgid "Schedules"
+msgstr "תאריך משלוח"
+
+#: maint.php
+msgid "Default"
+msgstr "ברירת מחדל"
+
+#: maint.php
+msgid "Go"
+msgstr "עבור"
+
+#: maint.php
+#, fuzzy
+msgid "Set/Refresh Filters"
+msgstr "הגדר / רענן מסננים"
+
+#: maint.php
+msgid "Clear"
+msgstr "נקה"
+
+#: maint.php
+msgid "Clear Filters"
+msgstr "מחיקת מסננים"
+
+#: maint.php
 msgid "Name"
 msgstr "שם"
+
+#: maint.php
+#, fuzzy
+msgid "The name of this Maintenance Schedule."
+msgstr "לוח תחזוקה חדש"
 
 #: maint.php
 msgid "Active"
@@ -338,34 +374,9 @@ msgstr ""
 msgid "Template"
 msgstr ""
 
-#: maint.php
-msgid "Go"
-msgstr "עבור"
-
-#: maint.php
-#, fuzzy
-msgid "Set/Refresh Filters"
-msgstr "הגדר / רענן מסננים"
-
-#: maint.php
-msgid "Clear"
-msgstr "נקה"
-
-#: maint.php
-msgid "Clear Filters"
-msgstr "מחיקת מסננים"
-
-#: maint.php
-msgid "Search"
-msgstr "חיפוש"
-
 #: maint.php setup.php
 msgid "Devices"
 msgstr "ניתן להתנתק מכל ההתקנים האחרים, כגון טלפון נייד או מחשב ציבורי, על ידי לחיצה על כפתור התנתקות מכל ההתקנים האחרים."
-
-#: maint.php
-msgid "Default"
-msgstr "ברירת מחדל"
 
 #: maint.php
 #, fuzzy
