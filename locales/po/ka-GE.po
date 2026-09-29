@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Cacti\n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-27 11:28-0400\n"
+"POT-Creation-Date: 2026-09-28 16:06-0400\n"
 "PO-Revision-Date: 2026-08-04 05:18+0000\n"
 "Last-Translator: Ekaterine papava <papava.e@gtu.ge>\n"
 "Language-Team: Georgian <https://translate.cacti.net/projects/cacti/maint/ka/>\n"
@@ -18,500 +18,497 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.11.4\n"
 
-#: maint.php:41
+#: maint.php
 msgid "Update Time (Now + 1 Hour)"
 msgstr "განახლების დრო (ახლა + 1 სთ)"
 
-#: maint.php:42
+#: maint.php
 msgid "Delete"
 msgstr "წაშლა"
 
-#: maint.php:47
+#: maint.php
 msgid "Associate"
 msgstr "ასოცირება"
 
-#: maint.php:48
+#: maint.php
 msgid "Disassociate"
 msgstr "დისასოცირება"
 
-#: maint.php:52 setup.php:312
+#: maint.php setup.php
 msgid "One Time"
 msgstr "ერთხელ"
 
-#: maint.php:53 setup.php:313
+#: maint.php setup.php
 msgid "Recurring"
 msgstr "გამეორებადი"
 
-#: maint.php:57
+#: maint.php
 msgid "Not Defined"
 msgstr "აღწერილი არაა"
 
-#: maint.php:58 setup.php:315
+#: maint.php setup.php
 msgid "Every Day"
 msgstr "ყოველდღე"
 
-#: maint.php:59 setup.php:316
+#: maint.php setup.php
 msgid "Every Week"
 msgstr "ყოველკვირა"
 
-#: maint.php:63 maint.php:64 maint.php:67
+#: maint.php
 msgid "No"
 msgstr "არა"
 
-#: maint.php:65 maint.php:66
+#: maint.php
 msgid "Yes"
 msgstr "კი"
 
-#: maint.php:72
+#: maint.php
 msgid "General"
 msgstr "ზოგადი"
 
-#: maint.php:76
+#: maint.php
 #, fuzzy
 msgid "Thold Devices"
 msgstr "მოწყობილობები"
 
-#: maint.php:81
+#: maint.php
 msgid "WebSeer"
 msgstr "WebSeer"
 
-#: maint.php:86
+#: maint.php
 msgid "Servcheck"
 msgstr ""
 
-#: maint.php:428
+#: maint.php
 msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
 msgstr "შემდეგი რემონტის გეგმების განახლებისთვის დააწკაპუნეთ ღილაკზე 'გაგრძელება'."
 
-#: maint.php:433 maint.php:443 maint.php:502 maint.php:512 maint.php:572
-#: maint.php:582 maint.php:642 maint.php:652
+#: maint.php
 msgid "Cancel"
 msgstr "გაუქმება"
 
-#: maint.php:434 maint.php:443 maint.php:503 maint.php:513 maint.php:573
-#: maint.php:583 maint.php:643 maint.php:653
+#: maint.php
 msgid "Continue"
 msgstr "გაგრძელება"
 
-#: maint.php:434
+#: maint.php
 msgid "Update Maintenance Schedule(s)"
 msgstr "განახლების რემონტის გეგმები"
 
-#: maint.php:438
+#: maint.php
 msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
 msgstr "შემდეგი რემონტის გეგმების წასაშლელად დააწკაპუნეთ ღილაკზე 'გაგრძელება.    მოწყობილობები, რომლებიც ასოცირებულია ამ გეგმასთან, მოიხსნება გეგმიდან."
 
-#: maint.php:443
+#: maint.php
 msgid "Delete Maintenance Schedule(s)"
 msgstr "რემონტის გეგმების წაშლა"
 
-#: maint.php:446
+#: maint.php
 msgid "You must select at least one Maintenance Schedule."
 msgstr "უნდა მონიშნოთ, სულ ცოტა, ერთი რემონტის გეგმა."
 
-#: maint.php:447 maint.php:517 maint.php:587 maint.php:657
+#: maint.php
 msgid "Return"
 msgstr "დაბრუნება"
 
-#: maint.php:489
+#: maint.php
 msgid "Device(s)"
 msgstr "მოწყობილობა"
 
-#: maint.php:497
+#: maint.php
 #, fuzzy, php-format
 msgid "Click 'Continue' to Associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
 msgstr "დააწკაპუნეთ ღილაკზე 'გაგრძელება', რომ მიანიჭოთ შემდეგი მოწყობილობები რემონტის გეგმას '<b>%s</b>'."
 
-#: maint.php:503 maint.php:573 maint.php:643
+#: maint.php
 msgid "Associate Maintenance Schedule(s)"
 msgstr "რემონტის გეგმების მინიჭება"
 
-#: maint.php:507
+#: maint.php
 #, fuzzy, php-format
 msgid "Click 'Continue' to Disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
 msgstr "დააწკაპუნეთ ღილაკზე 'გაგრძელება', რომ გააუქმოთ მინიჭება შემდეგი მოწყობილობებისთვის რემონტის გეგმიდან '<b>%s</b>'."
 
-#: maint.php:513 maint.php:583 maint.php:653
+#: maint.php
 msgid "Disassociate Maintenance Schedule(s)"
 msgstr "რემონდის გეგმების მოხსნა"
 
-#: maint.php:516
+#: maint.php
 msgid "You must select at least one Device."
 msgstr "უნდა მონიშნოთ, სულ ცოტა, ერთი მოწყობილობა."
 
-#: maint.php:559
+#: maint.php
 msgid "Webseer(s)"
 msgstr "Webseer(s)"
 
-#: maint.php:567
+#: maint.php
 #, fuzzy, php-format
 msgid "Click 'Continue' to Associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
 msgstr "დააწკაპუნეთ ღილაკზე 'გაგრძელება', რომ მიანიჭოთ შემდეგი მოწყობილობები რემონტის გეგმას '<b>%s</b>'."
 
-#: maint.php:577
+#: maint.php
 #, fuzzy, php-format
 msgid "Click 'Continue' to Disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
 msgstr "დააწკაპუნეთ ღილაკზე 'გაგრძელება', რომ გააუქმოთ მინიჭება შემდეგი მოწყობილობებისთვის რემონტის გეგმიდან '<b>%s</b>'."
 
-#: maint.php:586
+#: maint.php
 msgid "You must select at least one Webseer."
 msgstr "უნდა აირჩიოთ, სულ ცოტა, ერთი Webseer."
 
-#: maint.php:629
+#: maint.php
 msgid "Servcheck(s)"
 msgstr ""
 
-#: maint.php:637
+#: maint.php
 #, fuzzy, php-format
 msgid "Click 'Continue' to Associate the Servcheck(s) below with the Maintenance Schedule '<b>%s</b>'."
 msgstr "დააწკაპუნეთ ღილაკზე 'გაგრძელება', რომ მიანიჭოთ შემდეგი მოწყობილობები რემონტის გეგმას '<b>%s</b>'."
 
-#: maint.php:647
+#: maint.php
 #, fuzzy, php-format
 msgid "Click 'Continue' to Disassociate the Servcheck(s) below from the Maintenance Schedule '<b>%s</b>'."
 msgstr "დააწკაპუნეთ ღილაკზე 'გაგრძელება', რომ გააუქმოთ მინიჭება შემდეგი მოწყობილობებისთვის რემონტის გეგმიდან '<b>%s</b>'."
 
-#: maint.php:656
+#: maint.php
 #, fuzzy
 msgid "You must select at least one Servcheck test."
 msgstr "უნდა მონიშნოთ, სულ ცოტა, ერთი მოწყობილობა."
 
-#: maint.php:698
+#: maint.php
 #, php-format
 msgid "[edit: %s]"
 msgstr "[ჩასწორება: %s]"
 
-#: maint.php:700
+#: maint.php
 msgid "[new]"
 msgstr "[ახალი]"
 
-#: maint.php:798
+#: maint.php
 msgid "New Maintenance Schedule"
 msgstr "ახალი რემონტის გეგმა"
 
-#: maint.php:806
+#: maint.php
 #, php-format
 msgid "General Settings %s"
 msgstr "ზოგადი პარამეტრები %s"
 
-#: maint.php:810
+#: maint.php
 msgid "Schedule"
 msgstr "გეგმა"
 
-#: maint.php:814
+#: maint.php
 msgid "Schedule Name"
 msgstr "გეგმის სახელი"
 
-#: maint.php:818
+#: maint.php
 msgid "Provide the Maintenance Schedule a meaningful name"
 msgstr "შეიყვანეთ რემონტის გეგმის სახელი, რომელიც რამეს ნიშნავს"
 
-#: maint.php:822 maint.php:1007 maint.php:1873 maint.php:1914 maint.php:2160
-#: maint.php:2201
+#: maint.php
 msgid "Enabled"
 msgstr "ჩართულია"
 
-#: maint.php:825
+#: maint.php
 msgid "Whether or not this schedule will be checked."
 msgstr "მოხდება, თუ არა ამ გეგმის შემოწმება."
 
-#: maint.php:829 setup.php:317
+#: maint.php setup.php
 msgid "Schedule Type"
 msgstr "გეგმის ტიპი"
 
-#: maint.php:833
+#: maint.php
 msgid "The type of schedule, one time or recurring."
 msgstr "გეგმის ტიპი: ერთჯერადი, თუ განმეორებადი."
 
-#: maint.php:837 maint.php:1006
+#: maint.php
 msgid "Interval"
 msgstr "ინტერვალი"
 
-#: maint.php:841
+#: maint.php
 msgid "This is the interval in which the start / end time will repeat."
 msgstr ""
 
-#: maint.php:845
+#: maint.php
 msgid "Start Time"
 msgstr "გაშვების დრო"
 
-#: maint.php:849
+#: maint.php
 msgid "The start date / time for this schedule. Most date / time formats accepted."
 msgstr ""
 
-#: maint.php:854
+#: maint.php
 msgid "End Time"
 msgstr "დასრულების დრო"
 
-#: maint.php:859
+#: maint.php
 msgid "The end date / time for this schedule. Most date / time formats accepted."
 msgstr ""
 
-#: maint.php:908
+#: maint.php
 msgid "Start Date/Time Selector"
 msgstr "დაწყების თარიღი/დროის ამრჩევი"
 
-#: maint.php:909
+#: maint.php
 msgid "End Date/Time Selector"
 msgstr "დასრულების თარიღი/დროის ამრჩევი"
 
-#: maint.php:997 setup.php:144 setup.php:162
+#: maint.php setup.php
 msgid "Maintenance Schedules"
 msgstr "რემონტის გეგმები"
 
-#: maint.php:1001
+#: maint.php
 msgid "Name"
 msgstr "სახელი"
 
-#: maint.php:1002
+#: maint.php
 msgid "Active"
 msgstr "აქტიური"
 
-#: maint.php:1003
+#: maint.php
 msgid "Type"
 msgstr "ტიპი"
 
-#: maint.php:1004
+#: maint.php
 msgid "Start"
 msgstr "დაწყება"
 
-#: maint.php:1005
+#: maint.php
 msgid "End"
 msgstr "დასასრული"
 
-#: maint.php:1046 maint.php:1632 maint.php:1909 maint.php:2196
+#: maint.php
 msgid "No Schedules"
 msgstr "გეგმების გარეშე"
 
-#: maint.php:1194
+#: maint.php
 #, php-format
 msgid "Associated Devices %s"
 msgstr "მინიჭებული მოწყობილობები %s"
 
-#: maint.php:1203
+#: maint.php
 msgid "Site"
 msgstr "საიტი"
 
-#: maint.php:1207 maint.php:1232 maint.php:1383
+#: maint.php
 msgid "Any"
 msgstr "ნებისმიერი"
 
-#: maint.php:1208 maint.php:1392
+#: maint.php
 msgid "None"
 msgstr "არცერთი"
 
-#: maint.php:1228
+#: maint.php
 msgid "Data Collector"
 msgstr "მონაცემების შემგროვებელი"
 
-#: maint.php:1251
+#: maint.php
 msgid "Location"
 msgstr "მდებარეობა"
 
-#: maint.php:1329
+#: maint.php
 msgid "Template"
 msgstr "ნიმუში"
 
-#: maint.php:1410 maint.php:1765 maint.php:2082
+#: maint.php
 msgid "Go"
 msgstr "მიდი"
 
-#: maint.php:1410 maint.php:1765 maint.php:2082
+#: maint.php
 msgid "Set/Refresh Filters"
 msgstr "ფილტრების დაყენება/განახლება"
 
-#: maint.php:1411 maint.php:1766 maint.php:2083
+#: maint.php
 msgid "Clear"
 msgstr "გასუფთავება"
 
-#: maint.php:1411 maint.php:1766 maint.php:2083
+#: maint.php
 msgid "Clear Filters"
 msgstr "ფილტრების გასუფთავება"
 
-#: maint.php:1419 maint.php:1737 maint.php:2050
+#: maint.php
 msgid "Search"
 msgstr "ძებნა"
 
-#: maint.php:1425 maint.php:1593 setup.php:344 setup.php:383
+#: maint.php setup.php
 msgid "Devices"
 msgstr "მოწყობილობები"
 
-#: maint.php:1429 maint.php:1747 maint.php:2060
+#: maint.php
 msgid "Default"
 msgstr "ნაგულისხმევი"
 
-#: maint.php:1447 maint.php:1761 maint.php:2078
+#: maint.php
 msgid "Associated"
 msgstr "ასოცირებული"
 
-#: maint.php:1559 maint.php:1870 maint.php:2157
+#: maint.php
 msgid "Description"
 msgstr "აღწერა"
 
-#: maint.php:1563 maint.php:1871 maint.php:2158
+#: maint.php
 msgid "ID"
 msgstr "ID"
 
-#: maint.php:1567 maint.php:1872 maint.php:2159
+#: maint.php
 msgid "Associated Schedules"
 msgstr "მინიჭებული გეგმები"
 
-#: maint.php:1571
+#: maint.php
 msgid "Graphs"
 msgstr "გრაფიკები"
 
-#: maint.php:1575
+#: maint.php
 msgid "Data Sources"
 msgstr "მონაცემთა წყაროები"
 
-#: maint.php:1579
+#: maint.php
 msgid "Thresholds"
 msgstr "ზღვრები"
 
-#: maint.php:1583
+#: maint.php
 msgid "Status"
 msgstr "სტატუსი"
 
-#: maint.php:1587 maint.php:1874 maint.php:2161
+#: maint.php
 msgid "Hostname"
 msgstr "ჰოსტის სახელი"
 
-#: maint.php:1610 maint.php:1887 maint.php:2174
+#: maint.php
 msgid "Current Schedule"
 msgstr "მიმდინარე გეგემა"
 
-#: maint.php:1646
+#: maint.php
 msgid "No Associated Devices Found"
 msgstr "ასოცირებული მოწყობილობები აღმოჩენილი არაა"
 
-#: maint.php:1648 maint.php:1928 maint.php:2211
+#: maint.php
 msgid "Schedule must be created before associating"
 msgstr "ასოცირებამდე ჯერ გეგმა უნდა შექმნათ"
 
-#: maint.php:1728
+#: maint.php
 #, php-format
 msgid "Associated Web URL's %s"
 msgstr "ასოცირებული ვების URL-ები %s"
 
-#: maint.php:1743 maint.php:2056
+#: maint.php
 msgid "Rows"
 msgstr "მწკრივები"
 
-#: maint.php:1861
+#: maint.php
 msgid "URLS"
 msgstr ""
 
-#: maint.php:1875
+#: maint.php
 msgid "URL"
 msgstr "URL"
 
-#: maint.php:1914 maint.php:2201
+#: maint.php
 msgid "Disabled"
 msgstr "გათიშულია"
 
-#: maint.php:1917
+#: maint.php
 msgid "USING DNS"
 msgstr "DNS-ის გამოყენებით"
 
-#: maint.php:1926
+#: maint.php
 msgid "No Associated WebSeer URL's Found"
 msgstr "ასოცირებული WebSeer-ის URL-ები აღმოჩენილი არაა"
 
-#: maint.php:2041
+#: maint.php
 #, fuzzy, php-format
 msgid "Associated Servcheck test's %s"
 msgstr "მინიჭებული მოწყობილობები %s"
 
-#: maint.php:2148
+#: maint.php
 msgid "Tests"
 msgstr ""
 
-#: maint.php:2162
+#: maint.php
 msgid "Path"
 msgstr ""
 
-#: maint.php:2209
+#: maint.php
 #, fuzzy
 msgid "No Associated Servcheck Test's Found"
 msgstr "ასოცირებული მოწყობილობები აღმოჩენილი არაა"
 
-#: setup.php:144
+#: setup.php
 msgid "Management"
 msgstr "მართვა"
 
-#: setup.php:147
+#: setup.php
 msgid "System Administration"
 msgstr "სისტემის ადმინისტრაცია"
 
-#: setup.php:163
+#: setup.php
 msgid "(edit)"
 msgstr "(ჩასწორება)"
 
-#: setup.php:164
+#: setup.php
 msgid "(actions)"
 msgstr "(ქმედებები)"
 
-#: setup.php:171
+#: setup.php
 msgid "Enable maintenance for this device (now+1h)"
 msgstr ""
 
-#: setup.php:175
+#: setup.php
 #, fuzzy
 msgid "Add device(s) to existing maintenance schedule"
 msgstr "რემონტის გეგმების მინიჭება"
 
-#: setup.php:286
+#: setup.php
 #, fuzzy
 msgid "Maintenance Window"
 msgstr "რემონტის გეგმები"
 
-#: setup.php:291
+#: setup.php
 #, fuzzy
 msgid "Duration"
 msgstr "აღწერა"
 
-#: setup.php:291
+#: setup.php
 msgid "Timezone"
 msgstr ""
 
-#: setup.php:291
+#: setup.php
 msgid "min"
 msgstr ""
 
-#: setup.php:299
+#: setup.php
 #, fuzzy
 msgid "Schedule name"
 msgstr "გეგმის სახელი"
 
-#: setup.php:300
+#: setup.php
 msgid "e.g. Emergency patching"
 msgstr ""
 
-#: setup.php:374
+#: setup.php
 #, fuzzy
 msgid "disabled"
 msgstr "გათიშულია"
 
-#: setup.php:378
+#: setup.php
 #, fuzzy
 msgid "No schedules found"
 msgstr "გეგმების გარეშე"
 
-#: setup.php:382
+#: setup.php
 #, fuzzy
 msgid "Select schedule"
 msgstr "გეგმა"
 
-#: setup.php:415
+#: setup.php
 msgid "Quick Maintenance"
 msgstr ""
 
-#: setup.php:457
+#: setup.php
 #, php-format
 msgid "Maintenance schedule '%s' created and %d device(s) associated."
 msgstr ""
 
-#: setup.php:488
+#: setup.php
 #, php-format
 msgid "%d device(s) added to maintenance schedule '%s'."
 msgstr ""
