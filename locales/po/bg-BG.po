@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-28 16:06-0400\n"
+"POT-Creation-Date: 2026-09-29 00:45-0400\n"
 "PO-Revision-Date: 2020-12-12 20:52-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -285,8 +285,45 @@ msgid "Maintenance Schedules"
 msgstr "Графики за поддръжка"
 
 #: maint.php
+msgid "Search"
+msgstr "Търсене"
+
+#: maint.php
+#, fuzzy
+#| msgid "Schedule"
+msgid "Schedules"
+msgstr "Планиране"
+
+#: maint.php
+msgid "Default"
+msgstr "По подразбиране"
+
+#: maint.php
+msgid "Go"
+msgstr "Търси"
+
+#: maint.php
+#, fuzzy
+msgid "Set/Refresh Filters"
+msgstr "Задаване / обновяване на филтри"
+
+#: maint.php
+msgid "Clear"
+msgstr "Изчисти"
+
+#: maint.php
+#, fuzzy
+msgid "Clear Filters"
+msgstr "Изчистване на филтрите"
+
+#: maint.php
 msgid "Name"
 msgstr "Име"
+
+#: maint.php
+#, fuzzy
+msgid "The name of this Maintenance Schedule."
+msgstr "Нов график за поддръжка"
 
 #: maint.php
 msgid "Active"
@@ -338,35 +375,9 @@ msgstr ""
 msgid "Template"
 msgstr ""
 
-#: maint.php
-msgid "Go"
-msgstr "Търси"
-
-#: maint.php
-#, fuzzy
-msgid "Set/Refresh Filters"
-msgstr "Задаване / обновяване на филтри"
-
-#: maint.php
-msgid "Clear"
-msgstr "Изчисти"
-
-#: maint.php
-#, fuzzy
-msgid "Clear Filters"
-msgstr "Изчистване на филтрите"
-
-#: maint.php
-msgid "Search"
-msgstr "Търсене"
-
 #: maint.php setup.php
 msgid "Devices"
 msgstr "Устройства"
-
-#: maint.php
-msgid "Default"
-msgstr "По подразбиране"
 
 #: maint.php
 #, fuzzy
