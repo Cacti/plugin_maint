@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-27 11:28-0400\n"
+"POT-Creation-Date: 2026-09-28 16:06-0400\n"
 "PO-Revision-Date: 2020-12-12 20:52-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -17,540 +17,537 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.4.2\n"
 
-#: maint.php:41
+#: maint.php
 #, fuzzy
 msgid "Update Time (Now + 1 Hour)"
 msgstr "Време за актуализиране (сега + 1 час)"
 
-#: maint.php:42
+#: maint.php
 msgid "Delete"
 msgstr "Изтрий"
 
-#: maint.php:47
+#: maint.php
 #, fuzzy
 msgid "Associate"
 msgstr "сътрудник"
 
-#: maint.php:48
+#: maint.php
 #, fuzzy
 msgid "Disassociate"
 msgstr "разграничи"
 
-#: maint.php:52 setup.php:312
+#: maint.php setup.php
 msgid "One Time"
 msgstr "Веднъж"
 
-#: maint.php:53 setup.php:313
+#: maint.php setup.php
 msgid "Recurring"
 msgstr "Повтаряне"
 
-#: maint.php:57
+#: maint.php
 #, fuzzy
 msgid "Not Defined"
 msgstr "Не е определено"
 
-#: maint.php:58 setup.php:315
+#: maint.php setup.php
 #, fuzzy
 msgid "Every Day"
 msgstr "Всеки ден"
 
-#: maint.php:59 setup.php:316
+#: maint.php setup.php
 #, fuzzy
 msgid "Every Week"
 msgstr "Всяка седмица"
 
-#: maint.php:63 maint.php:64 maint.php:67
+#: maint.php
 msgid "No"
 msgstr "Не"
 
-#: maint.php:65 maint.php:66
+#: maint.php
 msgid "Yes"
 msgstr "Да"
 
-#: maint.php:72
+#: maint.php
 msgid "General"
 msgstr "Основни"
 
-#: maint.php:76
+#: maint.php
 #, fuzzy
 msgid "Thold Devices"
 msgstr "Устройства"
 
-#: maint.php:81
+#: maint.php
 #, fuzzy
 msgid "WebSeer"
 msgstr "WebSeer"
 
-#: maint.php:86
+#: maint.php
 msgid "Servcheck"
 msgstr ""
 
-#: maint.php:428
+#: maint.php
 #, fuzzy
 msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
 msgstr "Кликнете върху „Продължи“, за да актуализирате следните графици за поддръжка."
 
-#: maint.php:433 maint.php:443 maint.php:502 maint.php:512 maint.php:572
-#: maint.php:582 maint.php:642 maint.php:652
+#: maint.php
 msgid "Cancel"
 msgstr "Отказ"
 
-#: maint.php:434 maint.php:443 maint.php:503 maint.php:513 maint.php:573
-#: maint.php:583 maint.php:643 maint.php:653
+#: maint.php
 msgid "Continue"
 msgstr "Продължи"
 
-#: maint.php:434
+#: maint.php
 #, fuzzy
 msgid "Update Maintenance Schedule(s)"
 msgstr "Графики за поддръжка"
 
-#: maint.php:438
+#: maint.php
 #, fuzzy
 msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
 msgstr "Кликнете върху „Напред“, за да изтриете следващите графици за поддръжка. Всички устройства, свързани с този график, ще бъдат прекъснати."
 
-#: maint.php:443
+#: maint.php
 #, fuzzy
 msgid "Delete Maintenance Schedule(s)"
 msgstr "Графики за поддръжка"
 
-#: maint.php:446
+#: maint.php
 #, fuzzy
 msgid "You must select at least one Maintenance Schedule."
 msgstr "Трябва да изберете поне един график за поддръжка."
 
-#: maint.php:447 maint.php:517 maint.php:587 maint.php:657
+#: maint.php
 msgid "Return"
 msgstr "Връщане"
 
-#: maint.php:489
+#: maint.php
 #, fuzzy
 msgid "Device(s)"
 msgstr "Устройство (а)"
 
-#: maint.php:497
+#: maint.php
 #, fuzzy, php-format
 msgid "Click 'Continue' to Associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
 msgstr "Кликнете върху „Напред“, за да свържете следните устройства с графика за поддръжка „ <b> %s</b> “."
 
-#: maint.php:503 maint.php:573 maint.php:643
+#: maint.php
 #, fuzzy
 msgid "Associate Maintenance Schedule(s)"
 msgstr "Графики за поддръжка"
 
-#: maint.php:507
+#: maint.php
 #, fuzzy, php-format
 msgid "Click 'Continue' to Disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
 msgstr "Кликнете върху „Напред“, за да разедините следните устройства с График за поддръжка „ <b> %s</b> “."
 
-#: maint.php:513 maint.php:583 maint.php:653
+#: maint.php
 #, fuzzy
 msgid "Disassociate Maintenance Schedule(s)"
 msgstr "Графики за поддръжка"
 
-#: maint.php:516
+#: maint.php
 #, fuzzy
 msgid "You must select at least one Device."
 msgstr "Трябва да изберете поне едно устройство."
 
-#: maint.php:559
+#: maint.php
 #, fuzzy
 msgid "Webseer(s)"
 msgstr "Webseer (и)"
 
-#: maint.php:567
+#: maint.php
 #, fuzzy, php-format
 msgid "Click 'Continue' to Associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
 msgstr "Кликнете върху „Продължи“, за да свържете устройството (ите) по-долу с Графика за поддръжка „ <b> %s</b> “."
 
-#: maint.php:577
+#: maint.php
 #, fuzzy, php-format
 msgid "Click 'Continue' to Disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
 msgstr "Кликнете върху „Напред“, за да разедините устройствата по-долу с Графика за поддръжка „ <b> %s</b> “."
 
-#: maint.php:586
+#: maint.php
 #, fuzzy
 msgid "You must select at least one Webseer."
 msgstr "Трябва да изберете поне едно устройство."
 
-#: maint.php:629
+#: maint.php
 msgid "Servcheck(s)"
 msgstr ""
 
-#: maint.php:637
+#: maint.php
 #, fuzzy, php-format
 msgid "Click 'Continue' to Associate the Servcheck(s) below with the Maintenance Schedule '<b>%s</b>'."
 msgstr "Кликнете върху „Продължи“, за да свържете устройството (ите) по-долу с Графика за поддръжка „ <b> %s</b> “."
 
-#: maint.php:647
+#: maint.php
 #, fuzzy, php-format
 msgid "Click 'Continue' to Disassociate the Servcheck(s) below from the Maintenance Schedule '<b>%s</b>'."
 msgstr "Кликнете върху „Напред“, за да разедините устройствата по-долу с Графика за поддръжка „ <b> %s</b> “."
 
-#: maint.php:656
+#: maint.php
 #, fuzzy
 msgid "You must select at least one Servcheck test."
 msgstr "Трябва да изберете поне едно устройство."
 
-#: maint.php:698
+#: maint.php
 #, php-format
 msgid "[edit: %s]"
 msgstr ""
 
-#: maint.php:700
+#: maint.php
 msgid "[new]"
 msgstr ""
 
-#: maint.php:798
+#: maint.php
 #, fuzzy
 msgid "New Maintenance Schedule"
 msgstr "Нов график за поддръжка"
 
-#: maint.php:806
+#: maint.php
 #, fuzzy, php-format
 msgid "General Settings %s"
 msgstr "Общи настройки [ново]"
 
-#: maint.php:810
+#: maint.php
 msgid "Schedule"
 msgstr "Планиране"
 
-#: maint.php:814
+#: maint.php
 #, fuzzy
 msgid "Schedule Name"
 msgstr "Име на графика"
 
-#: maint.php:818
+#: maint.php
 #, fuzzy
 msgid "Provide the Maintenance Schedule a meaningful name"
 msgstr "Предоставете графика за поддръжка на смислено име"
 
-#: maint.php:822 maint.php:1007 maint.php:1873 maint.php:1914 maint.php:2160
-#: maint.php:2201
+#: maint.php
 msgid "Enabled"
 msgstr "Разрешен"
 
-#: maint.php:825
+#: maint.php
 #, fuzzy
 msgid "Whether or not this schedule will be checked."
 msgstr "Дали този праг ще бъде проверен или алармиран."
 
-#: maint.php:829 setup.php:317
+#: maint.php setup.php
 msgid "Schedule Type"
 msgstr "Zeitplan"
 
-#: maint.php:833
+#: maint.php
 #, fuzzy
 msgid "The type of schedule, one time or recurring."
 msgstr "Типът график, еднократен или повтарящ се."
 
-#: maint.php:837 maint.php:1006
+#: maint.php
 msgid "Interval"
 msgstr "Интервал"
 
-#: maint.php:841
+#: maint.php
 #, fuzzy
 msgid "This is the interval in which the start / end time will repeat."
 msgstr "Това е интервалът, в който времето за начало / край ще се повтори."
 
-#: maint.php:845
+#: maint.php
 msgid "Start Time"
 msgstr "Начален час"
 
-#: maint.php:849
+#: maint.php
 #, fuzzy
 msgid "The start date / time for this schedule. Most date / time formats accepted."
 msgstr "Началната дата / час за този график. Приемат се повечето формати за дата / час."
 
-#: maint.php:854
+#: maint.php
 msgid "End Time"
 msgstr "Краен час"
 
-#: maint.php:859
+#: maint.php
 #, fuzzy
 msgid "The end date / time for this schedule. Most date / time formats accepted."
 msgstr "Крайна дата / час за този график. Приемат се повечето формати за дата / час."
 
-#: maint.php:908
+#: maint.php
 #, fuzzy
 msgid "Start Date/Time Selector"
 msgstr "Селектор за начална дата / час"
 
-#: maint.php:909
+#: maint.php
 #, fuzzy
 msgid "End Date/Time Selector"
 msgstr "Селектор за крайна дата / час"
 
-#: maint.php:997 setup.php:144 setup.php:162
+#: maint.php setup.php
 #, fuzzy
 msgid "Maintenance Schedules"
 msgstr "Графики за поддръжка"
 
-#: maint.php:1001
+#: maint.php
 msgid "Name"
 msgstr "Име"
 
-#: maint.php:1002
+#: maint.php
 msgid "Active"
 msgstr "Активен"
 
-#: maint.php:1003
+#: maint.php
 msgid "Type"
 msgstr "Тип"
 
-#: maint.php:1004
+#: maint.php
 msgid "Start"
 msgstr "Старт"
 
-#: maint.php:1005
+#: maint.php
 msgid "End"
 msgstr "Край"
 
-#: maint.php:1046 maint.php:1632 maint.php:1909 maint.php:2196
+#: maint.php
 #, fuzzy
 msgid "No Schedules"
 msgstr "Няма графици"
 
-#: maint.php:1194
+#: maint.php
 #, fuzzy, php-format
 msgid "Associated Devices %s"
 msgstr "Свързани устройства %s"
 
-#: maint.php:1203
+#: maint.php
 msgid "Site"
 msgstr ""
 
-#: maint.php:1207 maint.php:1232 maint.php:1383
+#: maint.php
 msgid "Any"
 msgstr "Всички"
 
-#: maint.php:1208 maint.php:1392
+#: maint.php
 msgid "None"
 msgstr "Няма"
 
-#: maint.php:1228
+#: maint.php
 msgid "Data Collector"
 msgstr ""
 
-#: maint.php:1251
+#: maint.php
 msgid "Location"
 msgstr ""
 
-#: maint.php:1329
+#: maint.php
 msgid "Template"
 msgstr ""
 
-#: maint.php:1410 maint.php:1765 maint.php:2082
+#: maint.php
 msgid "Go"
 msgstr "Търси"
 
-#: maint.php:1410 maint.php:1765 maint.php:2082
+#: maint.php
 #, fuzzy
 msgid "Set/Refresh Filters"
 msgstr "Задаване / обновяване на филтри"
 
-#: maint.php:1411 maint.php:1766 maint.php:2083
+#: maint.php
 msgid "Clear"
 msgstr "Изчисти"
 
-#: maint.php:1411 maint.php:1766 maint.php:2083
+#: maint.php
 #, fuzzy
 msgid "Clear Filters"
 msgstr "Изчистване на филтрите"
 
-#: maint.php:1419 maint.php:1737 maint.php:2050
+#: maint.php
 msgid "Search"
 msgstr "Търсене"
 
-#: maint.php:1425 maint.php:1593 setup.php:344 setup.php:383
+#: maint.php setup.php
 msgid "Devices"
 msgstr "Устройства"
 
-#: maint.php:1429 maint.php:1747 maint.php:2060
+#: maint.php
 msgid "Default"
 msgstr "По подразбиране"
 
-#: maint.php:1447 maint.php:1761 maint.php:2078
+#: maint.php
 #, fuzzy
 msgid "Associated"
 msgstr "Асошиейтед"
 
-#: maint.php:1559 maint.php:1870 maint.php:2157
+#: maint.php
 msgid "Description"
 msgstr "Описание"
 
-#: maint.php:1563 maint.php:1871 maint.php:2158
+#: maint.php
 msgid "ID"
 msgstr "ID"
 
-#: maint.php:1567 maint.php:1872 maint.php:2159
+#: maint.php
 #, fuzzy
 msgid "Associated Schedules"
 msgstr "Свързани графици"
 
-#: maint.php:1571
+#: maint.php
 msgid "Graphs"
 msgstr "Графики"
 
-#: maint.php:1575
+#: maint.php
 msgid "Data Sources"
 msgstr "Източници на данни"
 
-#: maint.php:1579
+#: maint.php
 msgid "Thresholds"
 msgstr "Прагове"
 
-#: maint.php:1583
+#: maint.php
 msgid "Status"
 msgstr "Статус"
 
-#: maint.php:1587 maint.php:1874 maint.php:2161
+#: maint.php
 msgid "Hostname"
 msgstr "Име на хост"
 
-#: maint.php:1610 maint.php:1887 maint.php:2174
+#: maint.php
 #, fuzzy
 msgid "Current Schedule"
 msgstr "Текущ график"
 
-#: maint.php:1646
+#: maint.php
 #, fuzzy
 msgid "No Associated Devices Found"
 msgstr "Не са намерени свързани устройства"
 
-#: maint.php:1648 maint.php:1928 maint.php:2211
+#: maint.php
 #, fuzzy
 msgid "Schedule must be created before associating"
 msgstr "Графикът трябва да бъде създаден преди асоцииране"
 
-#: maint.php:1728
+#: maint.php
 #, fuzzy, php-format
 msgid "Associated Web URL's %s"
 msgstr "Свързаните уеб URL адреси %s"
 
-#: maint.php:1743 maint.php:2056
+#: maint.php
 msgid "Rows"
 msgstr "Редове"
 
-#: maint.php:1861
+#: maint.php
 msgid "URLS"
 msgstr ""
 
-#: maint.php:1875
+#: maint.php
 msgid "URL"
 msgstr "URL"
 
-#: maint.php:1914 maint.php:2201
+#: maint.php
 msgid "Disabled"
 msgstr "Изключен"
 
-#: maint.php:1917
+#: maint.php
 #, fuzzy
 msgid "USING DNS"
 msgstr "ИЗПОЛЗВАНЕ НА DNS"
 
-#: maint.php:1926
+#: maint.php
 #, fuzzy
 msgid "No Associated WebSeer URL's Found"
 msgstr "Не е намерен асоцииран URL адрес на WebSeer"
 
-#: maint.php:2041
+#: maint.php
 #, fuzzy, php-format
 msgid "Associated Servcheck test's %s"
 msgstr "Свързани устройства %s"
 
-#: maint.php:2148
+#: maint.php
 msgid "Tests"
 msgstr ""
 
-#: maint.php:2162
+#: maint.php
 msgid "Path"
 msgstr ""
 
-#: maint.php:2209
+#: maint.php
 #, fuzzy
 msgid "No Associated Servcheck Test's Found"
 msgstr "Не са намерени свързани устройства"
 
-#: setup.php:144
+#: setup.php
 msgid "Management"
 msgstr "управление"
 
-#: setup.php:147
+#: setup.php
 msgid "System Administration"
 msgstr "Системна администрация"
 
-#: setup.php:163
+#: setup.php
 msgid "(edit)"
 msgstr "Редактиране..."
 
-#: setup.php:164
+#: setup.php
 #, fuzzy
 msgid "(actions)"
 msgstr "Действия"
 
-#: setup.php:171
+#: setup.php
 msgid "Enable maintenance for this device (now+1h)"
 msgstr ""
 
-#: setup.php:175
+#: setup.php
 #, fuzzy
 msgid "Add device(s) to existing maintenance schedule"
 msgstr "Графики за поддръжка"
 
-#: setup.php:286
+#: setup.php
 #, fuzzy
 msgid "Maintenance Window"
 msgstr "Графики за поддръжка"
 
-#: setup.php:291
+#: setup.php
 #, fuzzy
 msgid "Duration"
 msgstr "Описание"
 
-#: setup.php:291
+#: setup.php
 msgid "Timezone"
 msgstr ""
 
-#: setup.php:291
+#: setup.php
 msgid "min"
 msgstr ""
 
-#: setup.php:299
+#: setup.php
 #, fuzzy
 msgid "Schedule name"
 msgstr "Име на графика"
 
-#: setup.php:300
+#: setup.php
 msgid "e.g. Emergency patching"
 msgstr ""
 
-#: setup.php:374
+#: setup.php
 #, fuzzy
 msgid "disabled"
 msgstr "Изключен"
 
-#: setup.php:378
+#: setup.php
 #, fuzzy
 msgid "No schedules found"
 msgstr "Няма графици"
 
-#: setup.php:382
+#: setup.php
 #, fuzzy
 msgid "Select schedule"
 msgstr "Планиране"
 
-#: setup.php:415
+#: setup.php
 msgid "Quick Maintenance"
 msgstr ""
 
-#: setup.php:457
+#: setup.php
 #, php-format
 msgid "Maintenance schedule '%s' created and %d device(s) associated."
 msgstr ""
 
-#: setup.php:488
+#: setup.php
 #, php-format
 msgid "%d device(s) added to maintenance schedule '%s'."
 msgstr ""
