@@ -1072,7 +1072,7 @@ function schedules(): void {
 	<script type='text/javascript' <?php print plugin_maint_csp_nonce(); ?>>
 	function applyFilter() {
 		strURL  = 'maint.php?header=false';
-		strURL += '&filter=' + $('#filter').val();
+		strURL += '&filter=' + encodeURIComponent($('#filter').val());
 		strURL += '&rows=' + $('#rows').val();
 		loadPageNoHeader(strURL);
 	}
