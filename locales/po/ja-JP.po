@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-28 16:06-0400\n"
+"POT-Creation-Date: 2026-09-29 00:45-0400\n"
 "PO-Revision-Date: 2020-12-12 20:54-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -281,8 +281,44 @@ msgid "Maintenance Schedules"
 msgstr "メンテナンススケジュール"
 
 #: maint.php
+msgid "Search"
+msgstr "検索"
+
+#: maint.php
+#, fuzzy
+#| msgid "Schedule"
+msgid "Schedules"
+msgstr "スケジュール"
+
+#: maint.php
+msgid "Default"
+msgstr "デフォルト"
+
+#: maint.php
+msgid "Go"
+msgstr "Go"
+
+#: maint.php
+#, fuzzy
+msgid "Set/Refresh Filters"
+msgstr "フィルタの設定/更新"
+
+#: maint.php
+msgid "Clear"
+msgstr "クリア"
+
+#: maint.php
+msgid "Clear Filters"
+msgstr "絞り込み条件を解除する"
+
+#: maint.php
 msgid "Name"
 msgstr "名前"
+
+#: maint.php
+#, fuzzy
+msgid "The name of this Maintenance Schedule."
+msgstr "新しいメンテナンススケジュール"
 
 #: maint.php
 msgid "Active"
@@ -334,34 +370,9 @@ msgstr ""
 msgid "Template"
 msgstr ""
 
-#: maint.php
-msgid "Go"
-msgstr "Go"
-
-#: maint.php
-#, fuzzy
-msgid "Set/Refresh Filters"
-msgstr "フィルタの設定/更新"
-
-#: maint.php
-msgid "Clear"
-msgstr "クリア"
-
-#: maint.php
-msgid "Clear Filters"
-msgstr "絞り込み条件を解除する"
-
-#: maint.php
-msgid "Search"
-msgstr "検索"
-
 #: maint.php setup.php
 msgid "Devices"
 msgstr "デバイス"
-
-#: maint.php
-msgid "Default"
-msgstr "デフォルト"
 
 #: maint.php
 #, fuzzy
