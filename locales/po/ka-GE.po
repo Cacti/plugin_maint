@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Cacti\n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-28 16:06-0400\n"
+"POT-Creation-Date: 2026-09-29 00:45-0400\n"
 "PO-Revision-Date: 2026-08-04 05:18+0000\n"
 "Last-Translator: Ekaterine papava <papava.e@gtu.ge>\n"
 "Language-Team: Georgian <https://translate.cacti.net/projects/cacti/maint/ka/>\n"
@@ -257,8 +257,44 @@ msgid "Maintenance Schedules"
 msgstr "რემონტის გეგმები"
 
 #: maint.php
+msgid "Search"
+msgstr "ძებნა"
+
+#: maint.php
+#, fuzzy
+#| msgid "Schedule"
+msgid "Schedules"
+msgstr "გეგმა"
+
+#: maint.php
+msgid "Default"
+msgstr "ნაგულისხმევი"
+
+#: maint.php
+msgid "Go"
+msgstr "მიდი"
+
+#: maint.php
+msgid "Set/Refresh Filters"
+msgstr "ფილტრების დაყენება/განახლება"
+
+#: maint.php
+msgid "Clear"
+msgstr "გასუფთავება"
+
+#: maint.php
+msgid "Clear Filters"
+msgstr "ფილტრების გასუფთავება"
+
+#: maint.php
 msgid "Name"
 msgstr "სახელი"
+
+#: maint.php
+#, fuzzy
+#| msgid "New Maintenance Schedule"
+msgid "The name of this Maintenance Schedule."
+msgstr "ახალი რემონტის გეგმა"
 
 #: maint.php
 msgid "Active"
@@ -309,33 +345,9 @@ msgstr "მდებარეობა"
 msgid "Template"
 msgstr "ნიმუში"
 
-#: maint.php
-msgid "Go"
-msgstr "მიდი"
-
-#: maint.php
-msgid "Set/Refresh Filters"
-msgstr "ფილტრების დაყენება/განახლება"
-
-#: maint.php
-msgid "Clear"
-msgstr "გასუფთავება"
-
-#: maint.php
-msgid "Clear Filters"
-msgstr "ფილტრების გასუფთავება"
-
-#: maint.php
-msgid "Search"
-msgstr "ძებნა"
-
 #: maint.php setup.php
 msgid "Devices"
 msgstr "მოწყობილობები"
-
-#: maint.php
-msgid "Default"
-msgstr "ნაგულისხმევი"
 
 #: maint.php
 msgid "Associated"
