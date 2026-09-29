@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-28 16:06-0400\n"
+"POT-Creation-Date: 2026-09-29 00:45-0400\n"
 "PO-Revision-Date: 2020-12-12 20:51-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -284,8 +284,44 @@ msgid "Maintenance Schedules"
 msgstr "جداول الصيانة"
 
 #: maint.php
+msgid "Search"
+msgstr "بحث"
+
+#: maint.php
+#, fuzzy
+#| msgid "Schedule"
+msgid "Schedules"
+msgstr "الجدول"
+
+#: maint.php
+msgid "Default"
+msgstr "الافتراضي"
+
+#: maint.php
+msgid "Go"
+msgstr "أذهب"
+
+#: maint.php
+#, fuzzy
+msgid "Set/Refresh Filters"
+msgstr "تعيين / تحديث عوامل التصفية"
+
+#: maint.php
+msgid "Clear"
+msgstr "واضح"
+
+#: maint.php
+msgid "Clear Filters"
+msgstr "مسح الفلتر"
+
+#: maint.php
 msgid "Name"
 msgstr "الاسم"
+
+#: maint.php
+#, fuzzy
+msgid "The name of this Maintenance Schedule."
+msgstr "جدول الصيانة الجديد"
 
 #: maint.php
 msgid "Active"
@@ -338,34 +374,9 @@ msgstr ""
 msgid "Template"
 msgstr ""
 
-#: maint.php
-msgid "Go"
-msgstr "أذهب"
-
-#: maint.php
-#, fuzzy
-msgid "Set/Refresh Filters"
-msgstr "تعيين / تحديث عوامل التصفية"
-
-#: maint.php
-msgid "Clear"
-msgstr "واضح"
-
-#: maint.php
-msgid "Clear Filters"
-msgstr "مسح الفلتر"
-
-#: maint.php
-msgid "Search"
-msgstr "بحث"
-
 #: maint.php setup.php
 msgid "Devices"
 msgstr "الأجهزة"
-
-#: maint.php
-msgid "Default"
-msgstr "الافتراضي"
 
 #: maint.php
 msgid "Associated"
