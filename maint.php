@@ -1039,8 +1039,8 @@ function schedules(): void {
 		$sql_where_params[] = $like;
 
 		if (api_plugin_is_enabled('thold')) {
-			$clauses[]        = 'id IN (SELECT pmh.schedule FROM plugin_maint_hosts AS pmh INNER JOIN host AS h ON h.id = pmh.host LEFT JOIN sites AS s ON s.id = h.site_id WHERE pmh.type = ? AND (h.hostname LIKE ? OR h.description LIKE ? OR s.name LIKE ?))';
-			$sql_where_params = array_merge($sql_where_params, [MAINT_HOST_TYPE_HOSTS, $like, $like, $like]);
+			$clauses[]        = 'id IN (SELECT pmh.schedule FROM plugin_maint_hosts AS pmh INNER JOIN host AS h ON h.id = pmh.host LEFT JOIN sites AS s ON s.id = h.site_id WHERE pmh.type = ? AND (h.hostname LIKE ? OR h.description LIKE ? OR h.location LIKE ? OR s.name LIKE ?))';
+			$sql_where_params = array_merge($sql_where_params, [MAINT_HOST_TYPE_HOSTS, $like, $like, $like, $like]);
 		}
 
 		if (api_plugin_is_enabled('servcheck')) {
