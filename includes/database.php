@@ -79,8 +79,28 @@ function maint_hosts_table_data(): array {
  * @return void
  */
 function maint_setup_database(): void {
-	api_plugin_db_table_create('maint', 'plugin_maint_schedules', maint_schedules_table_data());
-	api_plugin_db_table_create('maint', 'plugin_maint_hosts', maint_hosts_table_data());
+	api_plugin_db_table_create('maint', 'plugin_maint_schedules', maint_create_definition(maint_schedules_table_data()));
+	api_plugin_db_table_create('maint', 'plugin_maint_hosts', maint_create_definition(maint_hosts_table_data()));
+}
+
+/**
+ * Returns a copy of a table definition with its array primary key
+ * normalized to the legacy backtick-joined scalar form. Older Cacti
+ * releases (1.2.0) concatenate data['primary'] straight into the CREATE in
+ * api_plugin_db_table_create(), so an array would render PRIMARY KEY
+ * (`Array`) and break a fresh install; the array form is retained in the
+ * *_table_data() helpers for db_update_table(), which requires it.
+ *
+ * @param array<string, mixed> $data The table definition (array primary).
+ *
+ * @return array<string, mixed> The definition with a scalar primary key.
+ */
+function maint_create_definition(array $data): array {
+	if (isset($data['primary']) && is_array($data['primary'])) {
+		$data['primary'] = implode('`,`', $data['primary']);
+	}
+
+	return $data;
 }
 
 /**
@@ -90,17 +110,28 @@ function maint_setup_database(): void {
  * table is created outright. Called from plugin_maint_check_upgrade() when
  * the stored version changes.
  *
- * @return void
+ * @return bool True when every table reconciled; false when any
+ *              db_update_table()/api_plugin_db_table_create() reported an
+ *              explicit failure, so the caller can skip the version bump
+ *              and retry on the next request.
  */
-function maint_upgrade_tables(): void {
+function maint_upgrade_tables(): bool {
+	$success = true;
+
 	foreach ([
 		'plugin_maint_schedules' => maint_schedules_table_data(),
 		'plugin_maint_hosts'     => maint_hosts_table_data(),
 	] as $table => $data) {
 		if (db_table_exists($table)) {
-			db_update_table($table, $data);
+			$result = db_update_table($table, $data);
 		} else {
-			api_plugin_db_table_create('maint', $table, $data);
+			$result = api_plugin_db_table_create('maint', $table, maint_create_definition($data));
+		}
+
+		if ($result === false) {
+			$success = false;
 		}
 	}
+
+	return $success;
 }

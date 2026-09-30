@@ -173,13 +173,15 @@ function plugin_maint_check_upgrade(): void {
 
 	if ($current != $old) {
 		// Refresh the schema from the shared definition (create when missing,
-		// db_update_table() diff when it already exists).
-		maint_upgrade_tables();
-
-		db_execute_prepared('UPDATE plugin_config
-			SET version = ?, name = ?, author = ?, webpage = ?
-			WHERE directory = ?',
-			[$info['version'], $info['longname'], $info['author'], $info['homepage'], 'maint']);
+		// db_update_table() diff when it already exists). Only record the new
+		// version once every table reconciled, so a failed refresh is retried on
+		// the next request instead of being masked by a now-matching version.
+		if (maint_upgrade_tables()) {
+			db_execute_prepared('UPDATE plugin_config
+				SET version = ?, name = ?, author = ?, webpage = ?
+				WHERE directory = ?',
+				[$info['version'], $info['longname'], $info['author'], $info['homepage'], 'maint']);
+		}
 	}
 }
 
@@ -550,10 +552,3 @@ function maint_device_action_execute(string $action): bool {
 
 	return false;
 }
-
-/**
- * Setup database tables for maintenance plugin
- *
- * Moved to includes/database.php; see maint_setup_database() and
- * maint_upgrade_tables() there.
- */
