@@ -177,6 +177,12 @@ function plugin_maint_check_upgrade(): void {
 		// version once every table reconciled, so a failed refresh is retried on
 		// the next request instead of being masked by a now-matching version.
 		if (maint_upgrade_tables()) {
+			// Re-register the is_device_in_maintenance hook so existing installs
+			// pick up the relocated includes/functions.php file. plugin_maint_install()
+			// registers the new path, but it never re-runs on upgrade, and core's
+			// upgrade path only touches plugin_config, never plugin_hooks.
+			api_plugin_register_hook('maint', 'is_device_in_maintenance', 'plugin_maint_check_cacti_host', 'includes/functions.php');
+
 			db_execute_prepared('UPDATE plugin_config
 				SET version = ?, name = ?, author = ?, webpage = ?
 				WHERE directory = ?',

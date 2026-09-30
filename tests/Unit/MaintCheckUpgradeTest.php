@@ -41,7 +41,8 @@ it('refreshes the schema and updates plugin_config when the stored version diffe
 	// db_table_exists defaults to false -> create branch; stale stored version.
 	$GLOBALS['__test_table_exists'] = [];
 	maint_test_queue('db_fetch_cell_prepared', '0.0-stale');
-	$GLOBALS['__test_db_calls'] = [];
+	$GLOBALS['__test_db_calls']         = [];
+	$GLOBALS['__test_registered_hooks'] = [];
 
 	try {
 		plugin_maint_check_upgrade();
@@ -71,8 +72,13 @@ it('refreshes the schema and updates plugin_config when the stored version diffe
 		return $call['fn'] === 'db_execute_prepared' && strpos($call['sql'], 'plugin_config') !== false;
 	});
 
+	$repointed = array_filter($GLOBALS['__test_registered_hooks'], function ($hook) {
+		return $hook['hook'] === 'is_device_in_maintenance' && $hook['file'] === 'includes/functions.php';
+	});
+
 	expect($created)->toContain('plugin_maint_schedules');
 	expect($created)->toContain('plugin_maint_hosts');
+	expect($repointed)->not->toBeEmpty();
 	expect($config_updates)->not->toBeEmpty();
 });
 
