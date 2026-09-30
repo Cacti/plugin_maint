@@ -1,0 +1,18 @@
+{
+    "tombstones": [],
+    "expected": [
+        ".pre-commit-config.yml",
+        "CHANGELOG.md",
+        "INFO",
+        "LICENSE",
+        "README.md",
+        "includes/",
+        "index.php",
+        "locales/",
+        "maint.php",
+        "manifest.json",
+        "phpunit.xml",
+        "setup.php"
+    ],
+    "whitelist": []
+}

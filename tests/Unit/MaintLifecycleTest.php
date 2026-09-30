@@ -15,6 +15,13 @@ beforeAll(function () {
 	require_once __DIR__ . '/../../setup.php';
 });
 
+beforeEach(function () {
+	// Keep these contract tests off the upgrade path: a non-plugin page makes
+	// plugin_maint_check_upgrade() short-circuit before the version-drift block
+	// (and its file prune), which is covered separately by MaintCheckUpgradeTest.
+	$_SERVER['PHP_SELF'] = '/graphs.php';
+});
+
 it('parses the plugin INFO file into an info array', function () {
 	$info = plugin_maint_version();
 

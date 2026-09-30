@@ -19,6 +19,25 @@ beforeAll(function () {
 	require_once __DIR__ . '/../../includes/database.php';
 });
 
+beforeEach(function () {
+	// Sandbox base_path (complete temp INFO + empty includes/database.php stub)
+	// so every upgrade-path test runs plugin_maint_prune_files() against a
+	// throwaway tree, never the real checkout. Tests needing a different INFO
+	// override base_path themselves.
+	$GLOBALS['__maint_base_restore'] = $GLOBALS['config']['base_path'];
+	$base = sys_get_temp_dir() . '/maint-test-' . uniqid();
+	mkdir($base . '/plugins/maint/includes', 0777, true);
+	file_put_contents($base . '/plugins/maint/INFO', "[info]\nversion = 9.9.9\nname = maint\nlongname = Maint\nauthor = x\nhomepage = x\n");
+	file_put_contents($base . '/plugins/maint/includes/database.php', "<?php\n");
+	$GLOBALS['config']['base_path'] = $base;
+});
+
+afterEach(function () {
+	if (isset($GLOBALS['__maint_base_restore'])) {
+		$GLOBALS['config']['base_path'] = $GLOBALS['__maint_base_restore'];
+	}
+});
+
 it('refreshes the schema and updates plugin_config when the stored version differs', function () {
 	/*
 	 * plugin_maint_check_upgrade() require_once's $config['library_path'] .
