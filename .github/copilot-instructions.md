@@ -25,12 +25,14 @@ When generating code for this repository:
 
 ```
 maint/                # Repository root (install to plugins/maint/ in Cacti)
-├── locales/             # Internationalization files
-├── functions.php          # Runtime maintenance checks (plugin_maint_check_* -> plugin_maint_check_schedule)
-├── maint.php                # Main UI/controller: CRUD schedules, tabbed views, host associations
-├── INFO                        # Plugin metadata (name, version, compat)
+├── includes/            # Library/helper files, require_once'd from the entry points
+│   ├── database.php       # Schema management: table defs + create/upgrade helpers
+│   └── functions.php      # Runtime maintenance checks (plugin_maint_check_* -> plugin_maint_check_schedule)
+├── locales/                 # Internationalization files
+├── maint.php                  # Main UI/controller: CRUD schedules, tabbed views, host associations
+├── INFO                         # Plugin metadata (name, version, compat)
 ├── README.md
-└── setup.php                     # Plugin entry points and hooks (menu, realms, device actions, maintenance hook)
+└── setup.php                      # Plugin entry points and hooks (menu, realms, device actions, maintenance hook)
 ```
 
 ## Naming Conventions
@@ -77,7 +79,14 @@ arithmetic, strict `===` comparisons).
 
 ## Database Operations
 
-Tables are created in `maint_setup_database()` via `api_plugin_db_table_create()`; `plugin_maint_check_schedule()` updates `stime`/`etime` for recurring schedules when windows pass, and schedule listing in `maint.php` uses it to compute "Active" state.
+All schema management lives in `includes/database.php` (the thold model), not in `setup.php`. `setup.php`'s
+install/upgrade paths `require_once($config['base_path'] . '/plugins/maint/includes/database.php')` and
+delegate. Each table is defined once (`maint_schedules_table_data()`, `maint_hosts_table_data()`) and created
+via `api_plugin_db_table_create('maint', ...)`; `plugin_maint_check_upgrade()` version-gates against
+`plugin_config`, refreshes the schema through `maint_upgrade_tables()` (`db_update_table()` when the table
+exists, create fallback when missing), and updates the full `plugin_config` row on a version change.
+`plugin_maint_check_schedule()` (in `includes/functions.php`) updates `stime`/`etime` for recurring schedules
+when windows pass, and schedule listing in `maint.php` uses it to compute "Active" state.
 
 ## Internationalization
 
@@ -150,6 +159,11 @@ existing code or adding new code, not just in dedicated cleanup passes:
 - **i18n text domain.** Every `__()`/`__esc()` call must include this plugin's text domain as the
   final argument, except when deliberately comparing against a literal, untranslated Cacti-core
   label.
+- **File inclusion uses `require`/`require_once`.** Always use `require`/`require_once` (never
+  `include`/`include_once`) so a missing dependency fails fast and loudly. Keep library/helper files
+  (e.g. `functions.php`, `includes/database.php`) under `includes/` and reference them from that path;
+  entry points (`maint.php`, `setup.php`) stay in the plugin root. A hook registered for a function that
+  lives in `includes/functions.php` must pass `'includes/functions.php'` as its file argument.
 - **Plugin table-creation API.** Use `api_plugin_db_table_create()`/`api_plugin_db_add_column()`
   (from Cacti core's `lib/plugins.php`) instead of raw `CREATE TABLE`/`ALTER TABLE ... ADD COLUMN`.
   Both are idempotent (safe no-ops when already applied), so the same call can run unconditionally

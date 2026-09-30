@@ -203,6 +203,19 @@ if (!function_exists('api_plugin_db_table_create')) {
 	}
 }
 
+if (!function_exists('db_update_table')) {
+	function db_update_table($table, $data) {
+		$GLOBALS['__test_db_calls'][] = array('fn' => 'db_update_table', 'sql' => $table, 'params' => $data);
+		return true;
+	}
+}
+
+if (!function_exists('db_table_exists')) {
+	function db_table_exists($table) {
+		return $GLOBALS['__test_table_exists'][$table] ?? false;
+	}
+}
+
 $GLOBALS['__test_registered_hooks'] = array();
 
 if (!function_exists('api_plugin_register_hook')) {

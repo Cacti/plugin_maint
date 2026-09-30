@@ -75,14 +75,18 @@ function plugin_maint_version(): array {
  * @return void
  */
 function plugin_maint_install(): void {
+	global $config;
+
 	api_plugin_register_hook('maint', 'config_arrays', 'maint_config_arrays', 'setup.php');
 	api_plugin_register_hook('maint', 'draw_navigation_text', 'maint_draw_navigation_text', 'setup.php');
 	api_plugin_register_hook('maint', 'device_edit_top_links', 'maint_device_edit_top_links', 'setup.php');
-	api_plugin_register_hook('maint', 'is_device_in_maintenance', 'plugin_maint_check_cacti_host', 'functions.php');
+	api_plugin_register_hook('maint', 'is_device_in_maintenance', 'plugin_maint_check_cacti_host', 'includes/functions.php');
 	api_plugin_register_hook('maint', 'device_action_array', 'maint_device_action_array', 'setup.php');
 	api_plugin_register_hook('maint', 'device_action_prepare', 'maint_device_action_prepare', 'setup.php');
 	api_plugin_register_hook('maint', 'device_action_execute', 'maint_device_action_execute', 'setup.php');
 	api_plugin_register_realm('maint', 'maint.php', 'Maintenance Schedules', 1);
+
+	require_once($config['base_path'] . '/plugins/maint/includes/database.php');
 
 	maint_setup_database();
 }
@@ -101,28 +105,82 @@ function plugin_maint_uninstall(): void {
 }
 
 /**
- * Check plugin configuration
- *
- * Currently a no-op placeholder. Invoked by Cacti's plugin architecture
- * on relevant page loads.
+ * Runs any pending schema/version upgrade for this plugin. Invoked by
+ * Cacti's plugin architecture on relevant page loads.
  *
  * @return bool Always returns true
  */
 function plugin_maint_check_config(): bool {
+	plugin_maint_check_upgrade();
+
 	return true;
 }
 
 /**
  * Upgrade the maintenance plugin
  *
- * Currently a no-op placeholder (this plugin's schema has not required
- * migrations since its initial release). Invoked by Cacti's plugin
- * architecture when an installed plugin's version increases.
+ * Runs any pending schema/version upgrade for this plugin. Invoked by
+ * Cacti's plugin architecture when an installed plugin's version
+ * increases.
  *
- * @return bool Always returns false (no upgrade needed)
+ * @return bool Always returns false
  */
 function plugin_maint_upgrade(): bool {
+	plugin_maint_check_upgrade();
+
 	return false;
+}
+
+/**
+ * Applies any pending schema migration for this plugin on a version change,
+ * based on comparing the installed version recorded in plugin_config
+ * against the current INFO file version. Only runs on plugins.php or
+ * maint.php to avoid the version lookup on every page. Refreshes the schema
+ * through includes/database.php and updates the full plugin_config row.
+ * Called from plugin_maint_check_config()/plugin_maint_upgrade().
+ *
+ * @return void
+ *
+ * @global array  $config           Cacti global configuration array; used
+ *                                   to locate the database/functions
+ *                                   libraries and this plugin's schema file.
+ * @global object $database_default  Reserved/declared for parity with the
+ *                                   included library files; not used
+ *                                   directly here.
+ */
+function plugin_maint_check_upgrade(): void {
+	global $config, $database_default;
+
+	// Only run this check on a page that actually needs the plugin's data.
+	$files = ['plugins.php', 'maint.php'];
+
+	if (isset($_SERVER['PHP_SELF']) && !in_array(basename($_SERVER['PHP_SELF']), $files, true)) {
+		return;
+	}
+
+	require_once($config['library_path'] . '/database.php');
+	require_once($config['library_path'] . '/functions.php');
+	require_once($config['base_path'] . '/plugins/maint/includes/database.php');
+
+	$info = plugin_maint_version();
+
+	if (empty($info['version']) || empty($info['longname']) || empty($info['author']) || empty($info['homepage'])) {
+		return;
+	}
+
+	$current = $info['version'];
+	$old     = db_fetch_cell("SELECT version FROM plugin_config WHERE directory='maint'");
+
+	if ($current != $old) {
+		// Refresh the schema from the shared definition (create when missing,
+		// db_update_table() diff when it already exists).
+		maint_upgrade_tables();
+
+		db_execute_prepared('UPDATE plugin_config
+			SET version = ?, name = ?, author = ?, webpage = ?
+			WHERE directory = ?',
+			[$info['version'], $info['longname'], $info['author'], $info['homepage'], 'maint']);
+	}
 }
 
 /**
@@ -496,39 +554,6 @@ function maint_device_action_execute(string $action): bool {
 /**
  * Setup database tables for maintenance plugin
  *
- * Creates two tables:
- * - plugin_maint_schedules: Stores maintenance schedules
- * - plugin_maint_hosts: Associates hosts with schedules
- * Called from plugin_maint_install() during plugin installation.
- *
- * @return void
+ * Moved to includes/database.php; see maint_setup_database() and
+ * maint_upgrade_tables() there.
  */
-function maint_setup_database(): void {
-	$data              = [];
-	$data['columns'][] = ['name' => 'id', 'type' => 'int(11)', 'NULL' => false, 'auto_increment' => true];
-	$data['columns'][] = ['name' => 'enabled', 'type' => 'varchar(3)', 'NULL' => false, 'default' => 'on'];
-	$data['columns'][] = ['name' => 'name', 'type' => 'varchar(128)', 'NULL' => true];
-	$data['columns'][] = ['name' => 'mtype', 'type' => 'int(11)', 'NULL' => false];
-	$data['columns'][] = ['name' => 'stime', 'type' => 'int(22)', 'NULL' => false];
-	$data['columns'][] = ['name' => 'etime', 'type' => 'int(22)', 'NULL' => false];
-	$data['columns'][] = ['name' => 'minterval', 'type' => 'int(11)', 'NULL' => false];
-	$data['primary']   = 'id';
-	$data['keys'][]    = ['name' => 'mtype', 'columns' => 'mtype'];
-	$data['keys'][]    = ['name' => 'enabled', 'columns' => 'enabled'];
-	$data['type']      = 'InnoDB';
-	$data['comment']   = 'Maintenance Schedules';
-
-	api_plugin_db_table_create('maint', 'plugin_maint_schedules', $data);
-
-	$data              = [];
-	$data['columns'][] = ['name' => 'type', 'type' => 'int(6)', 'NULL' => false];
-	$data['columns'][] = ['name' => 'host', 'type' => 'int(12)', 'NULL' => false];
-	$data['columns'][] = ['name' => 'schedule', 'type' => 'int(12)', 'NULL' => false];
-	$data['primary']   = 'type`,`schedule`,`host';
-	$data['keys'][]    = ['name' => 'type', 'columns' => 'type'];
-	$data['keys'][]    = ['name' => 'schedule', 'columns' => 'schedule'];
-	$data['type']      = 'InnoDB';
-	$data['comment']   = 'Maintenance Schedules Hosts';
-
-	api_plugin_db_table_create('maint', 'plugin_maint_hosts', $data);
-}

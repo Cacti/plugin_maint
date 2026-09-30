@@ -2,6 +2,7 @@
 
 --- develop ---
 
+* refactor: Move schema management into includes/database.php (the thold model) and relocate functions.php into includes/; setup.php delegates via require_once, and plugin_maint_check_upgrade() now refreshes the schema via db_update_table() and updates the full plugin_config row on a version change. Switches every file inclusion from include/include_once to require/require_once
 * dev: Enforce patch coverage of changed lines in CI and remove the inert COMPOSER_ROOT_VERSION env from the Pest step
 * feature: Add a standard Cacti search filter to the Maintenance Schedules list that also matches the hostname/description/location/site name of associated Thold devices and the hostname/description of associated Servcheck tests
 * security: Add a version-safe CSP nonce (`plugin_maint_csp_nonce()`) to every inline `<script>` tag so pages stay compatible with Cacti's Content-Security-Policy nonce enforcement, while falling back cleanly on older Cacti releases that lack the `CactiSecureHeaders` class

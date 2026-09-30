@@ -10,7 +10,7 @@
 uses(TestCase::class);
 
 beforeEach(function () {
-	$this->loadPluginSource('functions.php');
+	$this->loadPluginSource('includes/functions.php');
 });
 
 describe('plugin_maint_check_host type dispatch', function () {

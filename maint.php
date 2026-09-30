@@ -28,8 +28,8 @@ declare(strict_types = 1);
 global $config;
 
 chdir('../../');
-include_once('./include/auth.php');
-include_once($config['base_path'] . '/plugins/maint/functions.php');
+require_once('./include/auth.php');
+require_once($config['base_path'] . '/plugins/maint/includes/functions.php');
 
 define('MAINT_HOST_FILTER_LOC_ANY', '__any'); // internal value unlikely in data
 define('MAINT_HOST_FILTER_LOC_NONE', '__none');
