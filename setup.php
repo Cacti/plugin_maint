@@ -169,7 +169,7 @@ function plugin_maint_check_upgrade(): void {
 	}
 
 	$current = $info['version'];
-	$old     = db_fetch_cell("SELECT version FROM plugin_config WHERE directory='maint'");
+	$old     = db_fetch_cell_prepared('SELECT version FROM plugin_config WHERE directory = ?', ['maint']);
 
 	if ($current != $old) {
 		// Refresh the schema from the shared definition (create when missing,
