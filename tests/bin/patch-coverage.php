@@ -162,6 +162,7 @@ foreach ($clover->xpath('//file') as $file) {
 $unmeasured_allowlist = [
 	'maint.php',             // web UI entry point (chdir(../../) + require auth.php); not loadable in the isolated unit process
 	'includes/database.php', // install/upgrade/drop schema bootstrap; require_once's the live Cacti library, only runs during a real install/upgrade
+	'functions.php',         // back-compat shim; only forwards to includes/functions.php for core's hard-coded snmpagent include, nothing to cover
 ];
 $unmeasured            = array_values(array_diff(array_keys($changed), array_keys($measured)));
 $unexpected_unmeasured = array_values(array_diff($unmeasured, $unmeasured_allowlist));
