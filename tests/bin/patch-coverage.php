@@ -118,11 +118,16 @@ foreach ($clover->xpath('//file') as $file) {
 	$path     = (string) $file['name'];
 	$relative = null;
 
+	// Pick the most specific (longest) matching candidate. A shorter path can
+	// be a suffix of a longer one (e.g. the root back-compat 'functions.php'
+	// shim vs 'includes/functions.php'), so a first-match would misattribute
+	// the clover file to the wrong changed path and report the real file as
+	// unmeasured.
 	foreach (array_keys($changed) as $candidate) {
 		if ($path === $candidate || substr($path, -strlen('/' . $candidate)) === '/' . $candidate) {
-			$relative = $candidate;
-
-			break;
+			if ($relative === null || strlen($candidate) > strlen($relative)) {
+				$relative = $candidate;
+			}
 		}
 	}
 
