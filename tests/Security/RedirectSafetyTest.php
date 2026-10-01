@@ -10,7 +10,7 @@
 describe('redirect safety in maint', function () {
 	it('calls exit or die after header Location redirects', function () {
 		$files = array(
-		'functions.php',
+		'includes/functions.php',
 		'maint.php',
 		);
 

@@ -10,7 +10,7 @@
 describe('prepared statement consistency in maint', function () {
 	it('uses prepared DB helpers in all plugin files', function () {
 		$targetFiles = [
-		'functions.php',
+		'includes/functions.php',
 		'maint.php',
 		'setup.php',
 		];
@@ -51,7 +51,7 @@ describe('prepared statement consistency in maint', function () {
 
 	it('uses parameterized placeholders not string interpolation in SQL', function () {
 		$targetFiles = [
-		'functions.php',
+		'includes/functions.php',
 		'maint.php',
 		'setup.php',
 		];

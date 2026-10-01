@@ -39,7 +39,7 @@ describe('auth guard presence in maint', function () {
 
 	it('validates numeric IDs from request variables before DB queries', function () {
 		$uiFiles = array(
-		'functions.php',
+		'includes/functions.php',
 		'maint.php',
 		);
 

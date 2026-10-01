@@ -27,8 +27,7 @@
     -->
     <source>
         <include>
-            <file>functions.php</file>
-            <file>maint.php</file>
+            <file>includes/functions.php</file>
             <file>setup.php</file>
         </include>
     </source>

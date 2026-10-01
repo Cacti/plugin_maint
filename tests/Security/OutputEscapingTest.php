@@ -10,7 +10,7 @@
 describe('output escaping in maint', function () {
 	it('does not interpolate raw variables into HTML attributes', function () {
 		$uiFiles = [
-		'functions.php',
+		'includes/functions.php',
 		'maint.php',
 		];
 
@@ -57,7 +57,7 @@ describe('output escaping in maint', function () {
 
 	it('uses html_escape or __esc for user-controlled output', function () {
 		$uiFiles = [
-		'functions.php',
+		'includes/functions.php',
 		'maint.php',
 		];
 
@@ -89,7 +89,7 @@ describe('output escaping in maint', function () {
 		// HTML hidden-input values and inline <script> URL strings in several places.
 		// Direct echoing must always go through html_escape_request_var() instead.
 		$uiFiles = [
-			'functions.php',
+			'includes/functions.php',
 			'maint.php',
 		];
 

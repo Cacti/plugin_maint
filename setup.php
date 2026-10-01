@@ -75,14 +75,18 @@ function plugin_maint_version(): array {
  * @return void
  */
 function plugin_maint_install(): void {
+	global $config;
+
 	api_plugin_register_hook('maint', 'config_arrays', 'maint_config_arrays', 'setup.php');
 	api_plugin_register_hook('maint', 'draw_navigation_text', 'maint_draw_navigation_text', 'setup.php');
 	api_plugin_register_hook('maint', 'device_edit_top_links', 'maint_device_edit_top_links', 'setup.php');
-	api_plugin_register_hook('maint', 'is_device_in_maintenance', 'plugin_maint_check_cacti_host', 'functions.php');
+	api_plugin_register_hook('maint', 'is_device_in_maintenance', 'plugin_maint_check_cacti_host', 'includes/functions.php');
 	api_plugin_register_hook('maint', 'device_action_array', 'maint_device_action_array', 'setup.php');
 	api_plugin_register_hook('maint', 'device_action_prepare', 'maint_device_action_prepare', 'setup.php');
 	api_plugin_register_hook('maint', 'device_action_execute', 'maint_device_action_execute', 'setup.php');
 	api_plugin_register_realm('maint', 'maint.php', 'Maintenance Schedules', 1);
+
+	require_once($config['base_path'] . '/plugins/maint/includes/database.php');
 
 	maint_setup_database();
 }
@@ -101,28 +105,93 @@ function plugin_maint_uninstall(): void {
 }
 
 /**
- * Check plugin configuration
- *
- * Currently a no-op placeholder. Invoked by Cacti's plugin architecture
- * on relevant page loads.
+ * Runs any pending schema/version upgrade for this plugin. Invoked by
+ * Cacti's plugin architecture on relevant page loads.
  *
  * @return bool Always returns true
  */
 function plugin_maint_check_config(): bool {
+	plugin_maint_check_upgrade();
+
 	return true;
 }
 
 /**
  * Upgrade the maintenance plugin
  *
- * Currently a no-op placeholder (this plugin's schema has not required
- * migrations since its initial release). Invoked by Cacti's plugin
- * architecture when an installed plugin's version increases.
+ * Runs any pending schema/version upgrade for this plugin. Invoked by
+ * Cacti's plugin architecture when an installed plugin's version
+ * increases.
  *
- * @return bool Always returns false (no upgrade needed)
+ * @return bool Always returns false
  */
 function plugin_maint_upgrade(): bool {
+	plugin_maint_check_upgrade();
+
 	return false;
+}
+
+/**
+ * Applies any pending schema migration for this plugin on a version change,
+ * based on comparing the installed version recorded in plugin_config
+ * against the current INFO file version. Only runs on plugins.php or
+ * maint.php to avoid the version lookup on every page. Refreshes the schema
+ * through includes/database.php and updates the full plugin_config row.
+ * Called from plugin_maint_check_config()/plugin_maint_upgrade().
+ *
+ * @return void
+ *
+ * @global array  $config           Cacti global configuration array; used
+ *                                   to locate the database/functions
+ *                                   libraries and this plugin's schema file.
+ * @global object $database_default  Reserved/declared for parity with the
+ *                                   included library files; not used
+ *                                   directly here.
+ */
+function plugin_maint_check_upgrade(): void {
+	global $config, $database_default;
+
+	// Only run this check on a page that actually needs the plugin's data.
+	$files = ['plugins.php', 'maint.php'];
+
+	if (isset($_SERVER['PHP_SELF']) && !in_array(basename($_SERVER['PHP_SELF']), $files, true)) {
+		return;
+	}
+
+	require_once($config['library_path'] . '/database.php');
+	require_once($config['library_path'] . '/functions.php');
+	require_once($config['base_path'] . '/plugins/maint/includes/database.php');
+
+	$info = plugin_maint_version();
+
+	if (empty($info['version']) || empty($info['longname']) || empty($info['author']) || empty($info['homepage'])) {
+		return;
+	}
+
+	$current = $info['version'];
+	$old     = db_fetch_cell_prepared('SELECT version FROM plugin_config WHERE directory = ?', ['maint']);
+
+	if ($current != $old) {
+		// Refresh the schema from the shared definition (create when missing,
+		// db_update_table() diff when it already exists). Only record the new
+		// version once every table reconciled, so a failed refresh is retried on
+		// the next request instead of being masked by a now-matching version.
+		if (maint_upgrade_tables()) {
+			// Re-register the is_device_in_maintenance hook so existing installs
+			// pick up the relocated includes/functions.php file. plugin_maint_install()
+			// registers the new path, but it never re-runs on upgrade, and core's
+			// upgrade path only touches plugin_config, never plugin_hooks.
+			api_plugin_register_hook('maint', 'is_device_in_maintenance', 'plugin_maint_check_cacti_host', 'includes/functions.php');
+
+			db_execute_prepared('UPDATE plugin_config
+				SET version = ?, name = ?, author = ?, webpage = ?
+				WHERE directory = ?',
+				[$info['version'], $info['longname'], $info['author'], $info['homepage'], 'maint']);
+
+			// Remove files tombstoned in manifest.json plus the dev-only tests/ tree.
+			maint_prune_files();
+		}
+	}
 }
 
 /**
@@ -496,39 +565,176 @@ function maint_device_action_execute(string $action): bool {
 /**
  * Setup database tables for maintenance plugin
  *
- * Creates two tables:
- * - plugin_maint_schedules: Stores maintenance schedules
- * - plugin_maint_hosts: Associates hosts with schedules
- * Called from plugin_maint_install() during plugin installation.
+ * Moved to includes/database.php; see maint_setup_database() and
+ * maint_upgrade_tables() there.
+ */
+
+/**
+ * Removes files and directories that a previous version of this plugin
+ * shipped but that have since moved or been deleted, using the tombstone
+ * and whitelist lists in manifest.json. Whitelisted (user-data) paths and
+ * any VCS metadata (.git*) are never touched; the dev-only tests/ tree is
+ * removed. Any path that resolves outside the plugin directory (a tampered
+ * manifest.json) is refused, and any file/directory that cannot be removed
+ * (e.g. read-only) is reported to the Cacti log. Any top-level entry that is
+ * neither expected nor a tombstone nor whitelisted is logged to the Cacti
+ * log and left in place. Called on a plugin version change.
  *
  * @return void
+ *
+ * @global array $config Cacti global configuration array; used to resolve
+ *                       the plugin directory.
  */
-function maint_setup_database(): void {
-	$data              = [];
-	$data['columns'][] = ['name' => 'id', 'type' => 'int(11)', 'NULL' => false, 'auto_increment' => true];
-	$data['columns'][] = ['name' => 'enabled', 'type' => 'varchar(3)', 'NULL' => false, 'default' => 'on'];
-	$data['columns'][] = ['name' => 'name', 'type' => 'varchar(128)', 'NULL' => true];
-	$data['columns'][] = ['name' => 'mtype', 'type' => 'int(11)', 'NULL' => false];
-	$data['columns'][] = ['name' => 'stime', 'type' => 'int(22)', 'NULL' => false];
-	$data['columns'][] = ['name' => 'etime', 'type' => 'int(22)', 'NULL' => false];
-	$data['columns'][] = ['name' => 'minterval', 'type' => 'int(11)', 'NULL' => false];
-	$data['primary']   = 'id';
-	$data['keys'][]    = ['name' => 'mtype', 'columns' => 'mtype'];
-	$data['keys'][]    = ['name' => 'enabled', 'columns' => 'enabled'];
-	$data['type']      = 'InnoDB';
-	$data['comment']   = 'Maintenance Schedules';
+function maint_prune_files(): void {
+	global $config;
 
-	api_plugin_db_table_create('maint', 'plugin_maint_schedules', $data);
+	$plugin_dir    = $config['base_path'] . '/plugins/maint';
+	$manifest_path = $plugin_dir . '/manifest.json';
 
-	$data              = [];
-	$data['columns'][] = ['name' => 'type', 'type' => 'int(6)', 'NULL' => false];
-	$data['columns'][] = ['name' => 'host', 'type' => 'int(12)', 'NULL' => false];
-	$data['columns'][] = ['name' => 'schedule', 'type' => 'int(12)', 'NULL' => false];
-	$data['primary']   = 'type`,`schedule`,`host';
-	$data['keys'][]    = ['name' => 'type', 'columns' => 'type'];
-	$data['keys'][]    = ['name' => 'schedule', 'columns' => 'schedule'];
-	$data['type']      = 'InnoDB';
-	$data['comment']   = 'Maintenance Schedules Hosts';
+	if (!is_readable($manifest_path)) {
+		return;
+	}
 
-	api_plugin_db_table_create('maint', 'plugin_maint_hosts', $data);
+	$manifest = json_decode((string) file_get_contents($manifest_path), true);
+
+	if (!is_array($manifest)) {
+		cacti_log('WARNING: maint manifest.json could not be parsed; skipping file prune', false, 'MAINT');
+
+		return;
+	}
+
+	$tombstones = isset($manifest['tombstones']) && is_array($manifest['tombstones']) ? $manifest['tombstones'] : [];
+	$expected   = isset($manifest['expected'])   && is_array($manifest['expected'])   ? $manifest['expected']   : [];
+	$whitelist  = isset($manifest['whitelist'])  && is_array($manifest['whitelist'])  ? $manifest['whitelist']  : [];
+
+	$protected = function (string $rel) use ($whitelist): bool {
+		if (strncmp($rel, '.git', 4) === 0 || strncmp($rel, '.md', 3) === 0) {
+			return true;
+		}
+
+		foreach ($whitelist as $entry) {
+			$entry = trim((string) $entry, '/');
+
+			if ($entry !== '' && ($rel === $entry
+				|| strncmp($rel, $entry . '/', strlen($entry) + 1) === 0
+				|| strncmp($entry, $rel . '/', strlen($rel) + 1) === 0)) {
+				return true;
+			}
+		}
+
+		return false;
+	};
+
+	// Security: resolve the plugin directory so a tampered manifest.json
+	// cannot steer the prune outside of it.
+	$plugin_real = realpath($plugin_dir);
+
+	// Remove tombstoned (moved/deleted) paths plus the dev-only tests/
+	// tree and the phpunit.xml test configuration.
+	$remove   = $tombstones;
+	$remove[] = 'tests/';
+	$remove[] = 'phpunit.xml';
+
+	foreach ($remove as $rel) {
+		$rel = trim((string) $rel, '/');
+
+		if ($rel === '' || $protected($rel)) {
+			continue;
+		}
+
+		// A tombstone must never contain '.'/'..' segments; a tampered manifest
+		// could use them to escape the plugin directory or target its root.
+		$segments = explode('/', $rel);
+
+		if (in_array('.', $segments, true) || in_array('..', $segments, true)) {
+			cacti_log(sprintf('WARNING: maint prune refused to remove %s: path contains a traversal segment (tampered manifest.json?)', $rel), false, 'MAINT');
+
+			continue;
+		}
+
+		$path = $plugin_dir . '/' . $rel;
+
+		if (!is_link($path) && !file_exists($path)) {
+			continue;
+		}
+
+		// Refuse any path that, after resolving symlinks and ../ segments,
+		// escapes the plugin directory (protects user data from a tampered
+		// manifest.json).
+		$anchor = is_link($path) ? dirname($path) : $path;
+		$real   = realpath($anchor);
+
+		if ($real === false || ($real !== $plugin_real && strncmp($real, $plugin_real . DIRECTORY_SEPARATOR, strlen((string) $plugin_real) + 1) !== 0)) {
+			cacti_log(sprintf('WARNING: maint prune refused to remove %s: path resolves outside the plugin directory (tampered manifest.json?)', $rel), false, 'MAINT');
+
+			continue;
+		}
+
+		if (is_dir($path) && !is_link($path)) {
+			$removed = maint_rmtree($path);
+		} else {
+			$removed = @unlink($path);
+		}
+
+		if (!$removed) {
+			cacti_log(sprintf('WARNING: maint upgrade could not remove %s (check file/directory permissions)', $rel), false, 'MAINT');
+		}
+	}
+
+	// Surface any top-level entry the manifest does not account for.
+	$known = [];
+
+	foreach (array_merge($expected, $tombstones) as $entry) {
+		$top = explode('/', trim((string) $entry, '/'))[0];
+
+		if ($top !== '') {
+			$known[$top] = true;
+		}
+	}
+
+	$entries = scandir($plugin_dir);
+
+	foreach (($entries !== false ? $entries : []) as $entry) {
+		if ($entry === '.' || $entry === '..' || $entry === 'tests' || $entry === 'phpunit.xml' || $protected($entry) || isset($known[$entry])) {
+			continue;
+		}
+
+		cacti_log(sprintf('WARNING: maint upgrade found a file/directory not described in manifest.json: %s (left in place)', $entry), false, 'MAINT');
+	}
+}
+
+/**
+ * Recursively deletes a directory and its contents. Symlinks are removed
+ * without being followed. Helper for maint_prune_files().
+ *
+ * @param string $dir Absolute path to the directory to remove.
+ *
+ * @return bool True if the directory and everything under it was removed;
+ *              false if any entry could not be deleted.
+ */
+function maint_rmtree(string $dir): bool {
+	$entries = scandir($dir);
+	$ok      = true;
+
+	foreach (($entries !== false ? $entries : []) as $entry) {
+		if ($entry === '.' || $entry === '..') {
+			continue;
+		}
+
+		$path = $dir . '/' . $entry;
+
+		if (is_dir($path) && !is_link($path)) {
+			if (!maint_rmtree($path)) {
+				$ok = false;
+			}
+		} elseif (!@unlink($path)) {
+			$ok = false;
+		}
+	}
+
+	if (!@rmdir($dir)) {
+		$ok = false;
+	}
+
+	return $ok;
 }

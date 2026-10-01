@@ -118,11 +118,16 @@ foreach ($clover->xpath('//file') as $file) {
 	$path     = (string) $file['name'];
 	$relative = null;
 
+	// Pick the most specific (longest) matching candidate. A shorter path can
+	// be a suffix of a longer one (e.g. the root back-compat 'functions.php'
+	// shim vs 'includes/functions.php'), so a first-match would misattribute
+	// the clover file to the wrong changed path and report the real file as
+	// unmeasured.
 	foreach (array_keys($changed) as $candidate) {
 		if ($path === $candidate || substr($path, -strlen('/' . $candidate)) === '/' . $candidate) {
-			$relative = $candidate;
-
-			break;
+			if ($relative === null || strlen($candidate) > strlen($relative)) {
+				$relative = $candidate;
+			}
 		}
 	}
 
@@ -160,6 +165,9 @@ foreach ($clover->xpath('//file') as $file) {
  * Empty by default; add entries per repository as the need arises.
  */
 $unmeasured_allowlist = [
+	'maint.php',             // web UI entry point (chdir(../../) + require auth.php); not loadable in the isolated unit process
+	'includes/database.php', // install/upgrade/drop schema bootstrap; require_once's the live Cacti library, only runs during a real install/upgrade
+	'functions.php',         // back-compat shim; only forwards to includes/functions.php for core's hard-coded snmpagent include, nothing to cover
 ];
 $unmeasured            = array_values(array_diff(array_keys($changed), array_keys($measured)));
 $unexpected_unmeasured = array_values(array_diff($unmeasured, $unmeasured_allowlist));
