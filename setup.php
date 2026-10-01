@@ -189,7 +189,7 @@ function plugin_maint_check_upgrade(): void {
 				[$info['version'], $info['longname'], $info['author'], $info['homepage'], 'maint']);
 
 			// Remove files tombstoned in manifest.json plus the dev-only tests/ tree.
-			plugin_maint_prune_files();
+			maint_prune_files();
 		}
 	}
 }
@@ -585,7 +585,7 @@ function maint_device_action_execute(string $action): bool {
  * @global array $config Cacti global configuration array; used to resolve
  *                       the plugin directory.
  */
-function plugin_maint_prune_files(): void {
+function maint_prune_files(): void {
 	global $config;
 
 	$plugin_dir    = $config['base_path'] . '/plugins/maint';
@@ -671,7 +671,7 @@ function plugin_maint_prune_files(): void {
 		}
 
 		if (is_dir($path) && !is_link($path)) {
-			$removed = plugin_maint_rmtree($path);
+			$removed = maint_rmtree($path);
 		} else {
 			$removed = @unlink($path);
 		}
@@ -705,14 +705,14 @@ function plugin_maint_prune_files(): void {
 
 /**
  * Recursively deletes a directory and its contents. Symlinks are removed
- * without being followed. Helper for plugin_maint_prune_files().
+ * without being followed. Helper for maint_prune_files().
  *
  * @param string $dir Absolute path to the directory to remove.
  *
  * @return bool True if the directory and everything under it was removed;
  *              false if any entry could not be deleted.
  */
-function plugin_maint_rmtree(string $dir): bool {
+function maint_rmtree(string $dir): bool {
 	$entries = scandir($dir);
 	$ok      = true;
 
@@ -724,7 +724,7 @@ function plugin_maint_rmtree(string $dir): bool {
 		$path = $dir . '/' . $entry;
 
 		if (is_dir($path) && !is_link($path)) {
-			if (!plugin_maint_rmtree($path)) {
+			if (!maint_rmtree($path)) {
 				$ok = false;
 			}
 		} elseif (!@unlink($path)) {

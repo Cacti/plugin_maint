@@ -21,7 +21,7 @@ beforeAll(function () {
 
 beforeEach(function () {
 	// Sandbox base_path (complete temp INFO + empty includes/database.php stub)
-	// so every upgrade-path test runs plugin_maint_prune_files() against a
+	// so every upgrade-path test runs maint_prune_files() against a
 	// throwaway tree, never the real checkout. Tests needing a different INFO
 	// override base_path themselves.
 	$GLOBALS['__maint_base_restore'] = $GLOBALS['config']['base_path'];
