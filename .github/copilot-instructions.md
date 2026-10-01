@@ -25,14 +25,14 @@ When generating code for this repository:
 
 ```
 maint/                # Repository root (install to plugins/maint/ in Cacti)
-├── includes/            # Library/helper files, require_once'd from the entry points
-│   ├── database.php       # Schema management: table defs + create/upgrade helpers
-│   └── functions.php      # Runtime maintenance checks (plugin_maint_check_* -> plugin_maint_check_schedule)
-├── locales/                 # Internationalization files
-├── maint.php                  # Main UI/controller: CRUD schedules, tabbed views, host associations
-├── INFO                         # Plugin metadata (name, version, compat)
+├── includes/         # Library/helper files, require_once'd from the entry points
+│   ├── database.php  # Schema management: table defs + create/upgrade helpers
+│   └── functions.php # Runtime maintenance checks (plugin_maint_check_* -> plugin_maint_check_schedule)
+├── locales/          # Internationalization files
+├── maint.php         # Main UI/controller: CRUD schedules, tabbed views, host associations
+├── INFO              # Plugin metadata (name, version, compat)
 ├── README.md
-└── setup.php                      # Plugin entry points and hooks (menu, realms, device actions, maintenance hook)
+└── setup.php         # Plugin entry points and hooks (menu, realms, device actions, maintenance hook)
 ```
 
 ## Naming Conventions
