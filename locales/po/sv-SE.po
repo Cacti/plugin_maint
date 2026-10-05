@@ -4,19 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-29 00:45-0400\n"
-"PO-Revision-Date: 2026-09-12 08:18+0000\n"
-"Last-Translator: Daniel Nylander <daniel@danielnylander.se>\n"
-"Language-Team: Swedish <https://translate.cacti.net/projects/cacti/maint/sv/>\n"
-"Language: sv-SE\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11.4\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-29 00:45-0400\nPO-Revision-Date: 2026-10-05 09:15+0000\nLast-Translator: Daniel Nylander <daniel@danielnylander.se>\nLanguage-Team: Swedish <https://translate.cacti.net/projects/cacti/maint/sv/>\nLanguage: sv-SE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
 
 #: maint.php
 msgid "Update Time (Now + 1 Hour)"
@@ -24,7 +12,7 @@ msgstr "Uppdateringstid (Nu + 1 timme)"
 
 #: maint.php
 msgid "Delete"
-msgstr "Ta bort"
+msgstr "Radera"
 
 #: maint.php
 msgid "Associate"
@@ -77,7 +65,7 @@ msgstr "WebSeer"
 
 #: maint.php
 msgid "Servcheck"
-msgstr ""
+msgstr "Servcheck"
 
 #: maint.php
 msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
@@ -272,11 +260,11 @@ msgstr "Standard"
 
 #: maint.php
 msgid "Go"
-msgstr "Utför"
+msgstr "Start"
 
 #: maint.php
 msgid "Set/Refresh Filters"
-msgstr "Ange / Uppdatera filter"
+msgstr "Ställ in/uppdatera filter"
 
 #: maint.php
 msgid "Clear"
@@ -331,7 +319,7 @@ msgstr "Vilken som helst"
 
 #: maint.php
 msgid "None"
-msgstr "inget"
+msgstr "Ingen"
 
 #: maint.php
 msgid "Data Collector"
@@ -458,7 +446,7 @@ msgstr "(redigera)"
 
 #: setup.php
 msgid "(actions)"
-msgstr "Åtgärder"
+msgstr "(åtgärder)"
 
 #: setup.php
 msgid "Enable maintenance for this device (now+1h)"
@@ -470,14 +458,12 @@ msgid "Add device(s) to existing maintenance schedule"
 msgstr "Underhållsschema(n) för associerade enheter"
 
 #: setup.php
-#, fuzzy
 msgid "Maintenance Window"
-msgstr "Underhållsscheman"
+msgstr "Underhållsfönster"
 
 #: setup.php
-#, fuzzy
 msgid "Duration"
-msgstr "Beskrivning"
+msgstr "Varaktighet"
 
 #: setup.php
 msgid "Timezone"
@@ -497,7 +483,6 @@ msgid "e.g. Emergency patching"
 msgstr ""
 
 #: setup.php
-#, fuzzy
 msgid "disabled"
 msgstr "Inaktiverad"
 
