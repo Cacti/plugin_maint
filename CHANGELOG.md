@@ -2,6 +2,7 @@
 
 --- develop ---
 
+* issue: Fix an uncaught `TypeError` from `html_nav_bar()` (the schedules, devices, webseer and servcheck lists passed the `page`/`rows`/`total_rows` request values as strings, which the typed core signature rejects under `declare(strict_types=1)`); the paging arguments are now cast to `int`
 * refactor: Move schema management into includes/database.php (the thold model) and relocate functions.php into includes/; setup.php delegates via require_once, and plugin_maint_check_upgrade() now refreshes the schema via db_update_table(), re-registers the is_device_in_maintenance hook against includes/functions.php, and updates the full plugin_config row on a version change. Switches every file inclusion from include/include_once to require/require_once
 * dev: Enforce patch coverage of changed lines in CI and remove the inert COMPOSER_ROOT_VERSION env from the Pest step
 * feature: Add a standard Cacti search filter to the Maintenance Schedules list that also matches the hostname/description/location/site name of associated Thold devices and the hostname/description of associated Servcheck tests
