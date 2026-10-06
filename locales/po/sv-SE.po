@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-29 00:45-0400\nPO-Revision-Date: 2026-10-05 09:15+0000\nLast-Translator: Daniel Nylander <daniel@danielnylander.se>\nLanguage-Team: Swedish <https://translate.cacti.net/projects/cacti/maint/sv/>\nLanguage: sv-SE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-29 00:45-0400\nPO-Revision-Date: 2026-10-06 09:18+0000\nLast-Translator: Daniel Nylander <daniel@danielnylander.se>\nLanguage-Team: Swedish <https://translate.cacti.net/projects/cacti/maint/sv/>\nLanguage: sv-SE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
 
 #: maint.php
 msgid "Update Time (Now + 1 Hour)"
@@ -55,9 +55,8 @@ msgid "General"
 msgstr "Allmän"
 
 #: maint.php
-#, fuzzy
 msgid "Thold Devices"
-msgstr "Enheter"
+msgstr "Tröskelenheter"
 
 #: maint.php
 msgid "WebSeer"
@@ -104,18 +103,18 @@ msgid "Device(s)"
 msgstr "Enhet(er)"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Klicka på 'Fortsätt' för att associera följande enhet(er) med underhållsschemat '<b>%s</b>'."
+msgstr "Klicka på ”Fortsätt” för att koppla följande enhet(er) till underhållsschemat ”<b>%s</b>”."
 
 #: maint.php
 msgid "Associate Maintenance Schedule(s)"
 msgstr "Underhållsschema(n) för associerade enheter"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Klicka på 'Fortsätt' för att koppla bort följande enhet(er) från underhållsschemat '<b>%s</b>'."
+msgstr "Klicka på ”Fortsätt” för att koppla bort följande enhet(er) från underhållsschemat ”<b>%s</b>”."
 
 #: maint.php
 msgid "Disassociate Maintenance Schedule(s)"
@@ -130,14 +129,14 @@ msgid "Webseer(s)"
 msgstr "Webseer(s)"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Klicka på 'Fortsätt' för att associera Webseer(s) nedan med underhållsschemat '<b>%s</b>'."
+msgstr "Klicka på ”Fortsätt” för att koppla Webseer nedan till underhållsschemat ”<b>%s</b>”."
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
-msgstr "Klicka på 'Fortsätt' för att koppla bort Webseer(s) nedan från underhållsschemat '<b>%s</b>'."
+msgstr "Klicka på ”Fortsätt” för att koppla bort Webseer nedan från underhållsschemat ”<b>%s</b>”."
 
 #: maint.php
 msgid "You must select at least one Webseer."
@@ -145,22 +144,21 @@ msgstr "Du måste välja minst en Webseer."
 
 #: maint.php
 msgid "Servcheck(s)"
-msgstr ""
+msgstr "Servcheck-test"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Associate the Servcheck(s) below with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Klicka på 'Fortsätt' för att associera Webseer(s) nedan med underhållsschemat '<b>%s</b>'."
+msgstr "Klicka på ”Fortsätt” för att koppla Servcheck-test nedan till underhållsschemat ”<b>%s</b>”."
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Disassociate the Servcheck(s) below from the Maintenance Schedule '<b>%s</b>'."
-msgstr "Klicka på 'Fortsätt' för att koppla bort Webseer(s) nedan från underhållsschemat '<b>%s</b>'."
+msgstr "Klicka på ”Fortsätt” för att koppla bort Servcheck-test nedan från underhållsschemat ”<b>%s</b>”."
 
 #: maint.php
-#, fuzzy
 msgid "You must select at least one Servcheck test."
-msgstr "Du måste välja minst en enhet."
+msgstr "Du måste välja minst ett Servcheck-test."
 
 #: maint.php
 #, php-format
@@ -249,10 +247,8 @@ msgid "Search"
 msgstr "Sök"
 
 #: maint.php
-#, fuzzy
-#| msgid "Schedule"
 msgid "Schedules"
-msgstr "Schema"
+msgstr "Scheman"
 
 #: maint.php
 msgid "Default"
@@ -279,10 +275,8 @@ msgid "Name"
 msgstr "Namn"
 
 #: maint.php
-#, fuzzy
-#| msgid "New Maintenance Schedule"
 msgid "The name of this Maintenance Schedule."
-msgstr "Nytt underhållsschema"
+msgstr "Namnet på det här underhållsschemat."
 
 #: maint.php
 msgid "Active"
@@ -396,7 +390,7 @@ msgstr "Rader"
 
 #: maint.php
 msgid "URLS"
-msgstr ""
+msgstr "Webbadresser"
 
 #: maint.php
 msgid "URL"
@@ -415,22 +409,21 @@ msgid "No Associated WebSeer URL's Found"
 msgstr "Inga associerade WebSeer-URL:er hittades"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Associated Servcheck test's %s"
-msgstr "Tillhörande enheter %s"
+msgstr "Tillhörande Servcheck-test %s"
 
 #: maint.php
 msgid "Tests"
-msgstr ""
+msgstr "Tester"
 
 #: maint.php
 msgid "Path"
-msgstr ""
+msgstr "Sökväg"
 
 #: maint.php
-#, fuzzy
 msgid "No Associated Servcheck Test's Found"
-msgstr "Inga associerade enheter hittades"
+msgstr "Inga tillhörande Servcheck-test hittades"
 
 #: setup.php
 msgid "Management"
@@ -450,12 +443,11 @@ msgstr "(åtgärder)"
 
 #: setup.php
 msgid "Enable maintenance for this device (now+1h)"
-msgstr ""
+msgstr "Aktivera underhåll för den här enheten (nu + 1 h)"
 
 #: setup.php
-#, fuzzy
 msgid "Add device(s) to existing maintenance schedule"
-msgstr "Underhållsschema(n) för associerade enheter"
+msgstr "Lägg till enhet(er) i befintligt underhållsschema"
 
 #: setup.php
 msgid "Maintenance Window"
@@ -467,48 +459,45 @@ msgstr "Varaktighet"
 
 #: setup.php
 msgid "Timezone"
-msgstr ""
+msgstr "Tidszon"
 
 #: setup.php
 msgid "min"
-msgstr ""
+msgstr "min"
 
 #: setup.php
-#, fuzzy
 msgid "Schedule name"
 msgstr "Schemanamn"
 
 #: setup.php
 msgid "e.g. Emergency patching"
-msgstr ""
+msgstr "t.ex. akut patchning"
 
 #: setup.php
 msgid "disabled"
 msgstr "Inaktiverad"
 
 #: setup.php
-#, fuzzy
 msgid "No schedules found"
-msgstr "Inga tidtabeller"
+msgstr "Inga scheman hittades"
 
 #: setup.php
-#, fuzzy
 msgid "Select schedule"
-msgstr "Schema"
+msgstr "Välj schema"
 
 #: setup.php
 msgid "Quick Maintenance"
-msgstr ""
+msgstr "Snabbunderhåll"
 
 #: setup.php
 #, php-format
 msgid "Maintenance schedule '%s' created and %d device(s) associated."
-msgstr ""
+msgstr "Underhållsschemat ”%s” skapades och %d enhet(er) kopplades."
 
 #: setup.php
 #, php-format
 msgid "%d device(s) added to maintenance schedule '%s'."
-msgstr ""
+msgstr "%d enhet(er) lades till i underhållsschemat ”%s”."
 
 #, fuzzy
 #~ msgid "General Settings [edit: %s]"
