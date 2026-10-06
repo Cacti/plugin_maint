@@ -1147,7 +1147,7 @@ function schedules(): void {
 
 	html_end_box();
 
-	$nav = html_nav_bar('maint.php', MAX_DISPLAY_PAGES, get_request_var('page'), $rows, $total_rows, 8, __('Schedules', 'maint'), 'page', 'main');
+	$nav = html_nav_bar('maint.php', MAX_DISPLAY_PAGES, (int) get_request_var('page'), (int) $rows, (int) $total_rows, 8, __('Schedules', 'maint'), 'page', 'main');
 
 	form_start('maint.php', 'chk');
 
@@ -1754,7 +1754,7 @@ function thold_hosts(string $header_label): void {
 	];
 
 	// generate page list
-	$nav = html_nav_bar('maint.php?action=edit&tab=hosts&id=' . get_request_var('id'), MAX_DISPLAY_PAGES, get_request_var('page'), $rows, $total_rows, 13, __('Devices', 'maint'), 'page', 'main');
+	$nav = html_nav_bar('maint.php?action=edit&tab=hosts&id=' . get_request_var('id'), MAX_DISPLAY_PAGES, (int) get_request_var('page'), (int) $rows, (int) $total_rows, 13, __('Devices', 'maint'), 'page', 'main');
 
 	form_start('maint.php', 'chk');
 
@@ -2022,7 +2022,7 @@ function webseer_urls(string $header_label): void {
 		$urls       = [];
 	}
 
-	$nav = html_nav_bar('maint.php?action=edit&tab=webseer&id=' . get_request_var('id'), MAX_DISPLAY_PAGES, get_request_var('page'), $rows, $total_rows, 13, __('URLS', 'maint'), 'page', 'main');
+	$nav = html_nav_bar('maint.php?action=edit&tab=webseer&id=' . get_request_var('id'), MAX_DISPLAY_PAGES, (int) get_request_var('page'), (int) $rows, (int) $total_rows, 13, __('URLS', 'maint'), 'page', 'main');
 
 	form_start('maint.php', 'chk');
 
@@ -2309,7 +2309,7 @@ function servcheck_test(string $header_label): void {
 		$tests      = [];
 	}
 
-	$nav = html_nav_bar('maint.php?action=edit&tab=servcheck&id=' . get_request_var('id'), MAX_DISPLAY_PAGES, get_request_var('page'), $rows, $total_rows, 13, __('Tests', 'maint'), 'page', 'main');
+	$nav = html_nav_bar('maint.php?action=edit&tab=servcheck&id=' . get_request_var('id'), MAX_DISPLAY_PAGES, (int) get_request_var('page'), (int) $rows, (int) $total_rows, 13, __('Tests', 'maint'), 'page', 'main');
 
 	form_start('maint.php', 'chk');
 
