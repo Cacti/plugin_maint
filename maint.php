@@ -1199,7 +1199,7 @@ function schedules(): void {
 
 			form_selectable_cell($maint_intervals[$schedule['minterval']], $schedule['id']);
 			form_selectable_cell($yesno[$schedule['enabled']], $schedule['id']);
-			form_checkbox_cell($schedule['name'], $schedule['id']);
+			form_checkbox_cell($schedule['name'], (string) $schedule['id']);
 			form_end_row();
 		}
 	} else {
@@ -1802,7 +1802,7 @@ function thold_hosts(string $header_label): void {
 			form_selectable_cell(number_format_i18n(is_null($host['tholds']) ? 0 : $host['tholds']), $host['id'], '', 'text-align:right');
 			form_selectable_cell(get_colored_device_status(($host['disabled'] == 'on' ? true : false), $host['status']), $host['id'], '', 'text-align:center');
 			form_selectable_cell(filter_value($host['hostname'], get_request_var('filter')), $host['id']);
-			form_checkbox_cell($host['description'], $host['id']);
+			form_checkbox_cell($host['description'], (string) $host['id']);
 			form_end_row();
 		}
 	} else {
@@ -2082,7 +2082,7 @@ function webseer_urls(string $header_label): void {
 			}
 			form_selectable_cell(filter_value($url['ip'], get_request_var('filter')), $url['id']);
 			form_selectable_cell(filter_value($url['url'], get_request_var('filter')), $url['id']);
-			form_checkbox_cell($url['display_name'], $url['id']);
+			form_checkbox_cell($url['display_name'], (string) $url['id']);
 			form_end_row();
 		}
 	} else {
@@ -2365,7 +2365,7 @@ function servcheck_test(string $header_label): void {
 			form_selectable_cell(($test['enabled'] == 'on' ? __('Enabled', 'maint') : __('Disabled', 'maint')), $test['id']);
 			form_selectable_cell(filter_value($test['hostname'], get_request_var('filter')), $test['id']);
 			form_selectable_cell(filter_value($test['hostname'], get_request_var('filter')), $test['id']);
-			form_checkbox_cell($test['name'], $test['id']);
+			form_checkbox_cell($test['name'], (string) $test['id']);
 			form_end_row();
 		}
 	} else {
