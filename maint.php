@@ -430,7 +430,7 @@ function form_actions(): void {
 					</td>
 				</tr>";
 
-				$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget' onClick='cactiReturnTo(\"maint.php\")'>" . __esc('Cancel', 'maint') . "</button>
+				$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget cactiReturnTo' data-url='maint.php'>" . __esc('Cancel', 'maint') . "</button>
 					<button type='submit' class='ui-button ui-corner-all ui-widget ui-state-active' title='" . __esc('Update Maintenance Schedule(s)', 'maint') . "'>" . __esc('Continue', 'maint') . '</button>';
 			} elseif (get_request_var('drp_action') == '2') { // delete
 				print "<tr>
@@ -440,11 +440,11 @@ function form_actions(): void {
 					</td>
 				</tr>";
 
-				$save_html = "<input type='button' value='" . __esc('Cancel', 'maint') . "' onClick='cactiReturnTo(\"maint.php\")'>&nbsp;<input type='submit' value='" . __esc('Continue', 'maint') . "' title='" . __esc('Delete Maintenance Schedule(s)', 'maint') . "'>";
+				$save_html = "<input class='cactiReturnTo' data-url='maint.php' type='button' value='" . __esc('Cancel', 'maint') . "'>&nbsp;<input type='submit' value='" . __esc('Continue', 'maint') . "' title='" . __esc('Delete Maintenance Schedule(s)', 'maint') . "'>";
 			}
 		} else {
 			print "<tr><td><span class='textError'>" . __('You must select at least one Maintenance Schedule.', 'maint') . '</span></td></tr>';
-			$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget' onClick='cactiReturnTo(\"maint.php\")'>" . __esc('Return', 'maint') . '</button';
+			$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget cactiReturnTo' data-url='maint.php'>" . __esc('Return', 'maint') . '</button';
 		}
 
 		print "<tr class='saveRow'>
@@ -499,7 +499,7 @@ function form_actions(): void {
 					</td>
 				</tr>";
 
-				$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget' onClick='cactiReturnTo(\"maint.php\")'>" . __esc('Cancel', 'maint') . "</button>
+				$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget cactiReturnTo' data-url='maint.php'>" . __esc('Cancel', 'maint') . "</button>
 					<button type='submit' class='ui-button ui-corner-all ui-widget ui-state-active' title='" . __esc('Associate Maintenance Schedule(s)', 'maint') . "'>" . __esc('Continue', 'maint') . '</button>';
 			} elseif (get_request_var('drp_action') == '2') { // disassociate
 				print "<tr>
@@ -509,12 +509,12 @@ function form_actions(): void {
 					</td>
 				</tr>";
 
-				$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget' onClick='cactiReturnTo(\"maint.php\")'>" . __esc('Cancel', 'maint') . "</button>
+				$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget cactiReturnTo' data-url='maint.php'>" . __esc('Cancel', 'maint') . "</button>
 					<button type='submit' class='ui-button ui-corner-all ui-widget ui-state-active' title='" . __esc('Disassociate Maintenance Schedule(s)', 'maint') . "'>" . __esc('Continue', 'maint') . '</button>';
 			}
 		} else {
 			print "<tr><td><span class='textError'>" . __('You must select at least one Device.', 'maint') . '</span></td></tr>';
-			$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget' onClick='cactiReturnTo(\"maint.php\")'>" . __esc('Return', 'maint') . '</button>';
+			$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget cactiReturnTo' data-url='maint.php'>" . __esc('Return', 'maint') . '</button>';
 		}
 
 		print "<tr class='saveRow'>
@@ -569,7 +569,7 @@ function form_actions(): void {
 					</td>
 				</tr>";
 
-				$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget' onClick='cactiReturnTo(\"maint.php\")'>" . __esc('Cancel', 'maint') . "</button>
+				$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget cactiReturnTo' data-url='maint.php'>" . __esc('Cancel', 'maint') . "</button>
 					<button type='submit' class='ui-button ui-corner-all ui-widget ui-state-active' title='" . __esc('Associate Maintenance Schedule(s)', 'maint') . "'>" . __esc('Continue', 'maint') . '</button>';
 			} elseif (get_request_var('drp_action') == '2') { // disassociate
 				print "<tr>
@@ -579,12 +579,12 @@ function form_actions(): void {
 					</td>
 				</tr>";
 
-				$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget' onClick='cactiReturnTo(\"maint.php\")'>" . __esc('Cancel', 'maint') . "</button>
+				$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget cactiReturnTo' data-url='maint.php'>" . __esc('Cancel', 'maint') . "</button>
 					<button type='submit' class='ui-button ui-corner-all ui-widget ui-state-active' title='" . __esc('Disassociate Maintenance Schedule(s)', 'maint') . "'>" . __esc('Continue', 'maint') . '</button>';
 			}
 		} else {
 			print "<tr><td><span class='textError'>" . __('You must select at least one Webseer.', 'maint') . '</span></td></tr>';
-			$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget'> onClick='cactiReturnTo(\"maint.php\")'>" . __esc('Return', 'maint') . '</button>';
+			$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget cactiReturnTo' data-url='maint.php'>>" . __esc('Return', 'maint') . '</button>';
 		}
 
 		print "<tr class='saveRow'>
@@ -639,7 +639,7 @@ function form_actions(): void {
 					</td>
 				</tr>";
 
-				$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget' onClick='cactiReturnTo(\"maint.php\")'>" . __esc('Cancel', 'maint') . "</button>
+				$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget cactiReturnTo' data-url='maint.php'>" . __esc('Cancel', 'maint') . "</button>
 					<button type='submit' class='ui-button ui-corner-all ui-widget ui-state-active' title='" . __esc('Associate Maintenance Schedule(s)', 'maint') . "'>" . __esc('Continue', 'maint') . '</button>';
 			} elseif (get_request_var('drp_action') == '2') { // disassociate
 				print "<tr>
@@ -649,12 +649,12 @@ function form_actions(): void {
 					</td>
 				</tr>";
 
-				$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget' onClick='cactiReturnTo(\"maint.php\")'>" . __esc('Cancel', 'maint') . "</button>
+				$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget cactiReturnTo' data-url='maint.php'>" . __esc('Cancel', 'maint') . "</button>
 					<input type='submit' class='ui-button ui-corner-all ui-widget ui-state-active' title='" . __esc('Disassociate Maintenance Schedule(s)', 'maint') . "'>" . __esc('Continue', 'maint') . '</button>';
 			}
 		} else {
 			print "<tr><td><span class='textError'>" . __('You must select at least one Servcheck test.', 'maint') . '</span></td></tr>';
-			$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget' onClick='cactiReturnTo(\"maint.php\")'>" . __esc('Return', 'maint') . '</button>';
+			$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget cactiReturnTo' data-url='maint.php'>" . __esc('Return', 'maint') . '</button>';
 		}
 
 		print "<tr class='saveRow'>
