@@ -444,7 +444,7 @@ function form_actions(): void {
 			}
 		} else {
 			print "<tr><td><span class='textError'>" . __('You must select at least one Maintenance Schedule.', 'maint') . '</span></td></tr>';
-			$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget cactiReturnTo' data-url='maint.php'>" . __esc('Return', 'maint') . '</button';
+			$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget cactiReturnTo' data-url='maint.php'>" . __esc('Return', 'maint') . '</button>';
 		}
 
 		print "<tr class='saveRow'>
@@ -584,7 +584,7 @@ function form_actions(): void {
 			}
 		} else {
 			print "<tr><td><span class='textError'>" . __('You must select at least one Webseer.', 'maint') . '</span></td></tr>';
-			$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget cactiReturnTo' data-url='maint.php'>>" . __esc('Return', 'maint') . '</button>';
+			$save_html = "<button type='button' class='ui-button ui-corner-all ui-widget cactiReturnTo' data-url='maint.php'>" . __esc('Return', 'maint') . '</button>';
 		}
 
 		print "<tr class='saveRow'>
