@@ -148,7 +148,7 @@ jobs:
       uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       with:
         repository: Cacti/cacti
-        ref: b1d8dd6a03a3c756a2b22dfe3a0c744b1f11116c
+        ref: f3ff777992875740e4665fedfe2eff8335f5b894
         persist-credentials: false
         path: ci-tools
         sparse-checkout: |
@@ -200,7 +200,8 @@ jobs:
     - name: Run Pest Unit Tests
       run: |
         cd ${{ github.workspace }}/cacti
-        export CACTI_TEST_AUTOLOAD="$(dirname "$CACTI_PEST_BIN")/../autoload.php"
+        CACTI_TEST_AUTOLOAD="$(dirname "$CACTI_PEST_BIN")/../autoload.php"
+        export CACTI_TEST_AUTOLOAD
         "$CACTI_PEST_BIN" --configuration=plugins/maint/phpunit.xml \
           --coverage-clover=plugins/maint/coverage/clover.xml
 
