@@ -200,6 +200,7 @@ jobs:
     - name: Run Pest Unit Tests
       run: |
         cd ${{ github.workspace }}/cacti
+        export CACTI_TEST_AUTOLOAD="$(dirname "$CACTI_PEST_BIN")/../autoload.php"
         "$CACTI_PEST_BIN" --configuration=plugins/maint/phpunit.xml \
           --coverage-clover=plugins/maint/coverage/clover.xml
 

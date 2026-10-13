@@ -68,6 +68,18 @@ if (!in_array($expected_version, array('1.2.x', 'develop'), true) && $cacti_vers
 }
 
 require_once $autoload;
+// Isolated child tests need PHPUnit from the separate locked CI harness too.
+// The ordinary core Composer toolchain already provides it through $autoload.
+$test_autoload = getenv('CACTI_TEST_AUTOLOAD');
+
+if ($test_autoload !== false && $test_autoload !== '') {
+	if (!is_readable($test_autoload)) {
+		throw new RuntimeException("Plugin test autoloader is not readable: $test_autoload");
+	}
+
+	require_once $test_autoload;
+}
+
 require_once __DIR__ . '/TestCase.php';
 
 /*
