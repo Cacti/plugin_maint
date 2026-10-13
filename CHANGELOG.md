@@ -1,6 +1,7 @@
 # ChangeLog
 
 --- develop ---
+* security: Pin CI fixtures and shared test dependencies, disable persisted checkout credentials, and limit workflow permissions and runtime
 
 * security: Replace the confirmation pages' inline `onClick='cactiReturnTo()'` Cancel buttons with the CSP-safe `cactiReturnTo` class so the pages no longer trip Cacti's Content-Security-Policy script-src-attr directive; see the README for the one-time `applySkin()` snippet needed when running Cacti below 1.2.31 (1.2.31+ binds the class automatically)
 * issue: Fix an uncaught `TypeError` from `html_nav_bar()` (the schedules, devices, webseer and servcheck lists passed the `page`/`rows`/`total_rows` request values as strings, which the typed core signature rejects under `declare(strict_types=1)`); the paging arguments are now cast to `int`
