@@ -1,12 +1,12 @@
 # ChangeLog
 
 --- develop ---
-* security: Pin CI fixtures and shared test dependencies, disable persisted checkout credentials, and limit workflow permissions and runtime
 
 * security: Replace the confirmation pages' inline `onClick='cactiReturnTo()'` Cancel buttons with the CSP-safe `cactiReturnTo` class so the pages no longer trip Cacti's Content-Security-Policy script-src-attr directive; see the README for the one-time `applySkin()` snippet needed when running Cacti below 1.2.31 (1.2.31+ binds the class automatically)
 * issue: Fix an uncaught `TypeError` from `html_nav_bar()` (the schedules, devices, webseer and servcheck lists passed the `page`/`rows`/`total_rows` request values as strings, which the typed core signature rejects under `declare(strict_types=1)`); the paging arguments are now cast to `int`
 * refactor: Move schema management into includes/database.php (the thold model) and relocate functions.php into includes/; setup.php delegates via require_once, and plugin_maint_check_upgrade() now refreshes the schema via db_update_table(), re-registers the is_device_in_maintenance hook against includes/functions.php, and updates the full plugin_config row on a version change. Switches every file inclusion from include/include_once to require/require_once
 * dev: Enforce patch coverage of changed lines in CI and remove the inert COMPOSER_ROOT_VERSION env from the Pest step
+* dev: Pin CI fixtures and shared test dependencies, disable persisted checkout credentials, and limit workflow permissions and runtime
 * feature: Add a standard Cacti search filter to the Maintenance Schedules list that also matches the hostname/description/location/site name of associated Thold devices and the hostname/description of associated Servcheck tests
 * security: Add a version-safe CSP nonce (`plugin_maint_csp_nonce()`) to every inline `<script>` tag so pages stay compatible with Cacti's Content-Security-Policy nonce enforcement, while falling back cleanly on older Cacti releases that lack the `CactiSecureHeaders` class
 * issue: PHPStan level 8 typing pass - hardened parse_ini_file()/db_fetch_row_prepared() result narrowing, widened 2 over-narrow scratch stub types, fixed several !empty()-vs-is_array() narrowing gaps
