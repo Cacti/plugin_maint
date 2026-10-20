@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-29 00:45-0400\nPO-Revision-Date: 2026-10-20 09:18+0000\nLast-Translator: Daniel Nylander <daniel@danielnylander.se>\nLanguage-Team: Swedish <https://translate.cacti.net/projects/cacti/maint/sv/>\nLanguage: sv-SE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-29 00:45-0400\nPO-Revision-Date: 2026-10-20 16:05+0000\nLast-Translator: Daniel Nylander <daniel@danielnylander.se>\nLanguage-Team: Swedish <https://translate.cacti.net/projects/cacti/maint/sv/>\nLanguage: sv-SE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
 
 #: maint.php
 msgid "Update Time (Now + 1 Hour)"
@@ -68,7 +68,7 @@ msgstr "Servcheck"
 
 #: maint.php
 msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
-msgstr "Klicka på \"Fortsätt\" för att uppdatera följande underhållsschema(n)."
+msgstr "Klicka på ”Fortsätt” för att uppdatera följande underhållsscheman."
 
 #: maint.php
 msgid "Cancel"
@@ -84,7 +84,7 @@ msgstr "Uppdatera underhållsschema(n)"
 
 #: maint.php
 msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
-msgstr "Klicka på \"Fortsätt\" för att ta bort följande underhållsschema(n).  Alla enheter som är kopplade till det här schemat kommer att kopplas bort."
+msgstr "Klicka på ”Fortsätt” för att ta bort följande underhållsscheman. Alla enheter som är kopplade till dessa scheman kopplas bort."
 
 #: maint.php
 msgid "Delete Maintenance Schedule(s)"
@@ -105,16 +105,16 @@ msgstr "Enhet(er)"
 #: maint.php
 #, php-format
 msgid "Click 'Continue' to Associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Klicka på ”Fortsätt” för att koppla följande enhet(er) till underhållsschemat ”<b>%s</b>”."
+msgstr "Klicka på ”Fortsätt” för att koppla följande enheter till underhållsschemat ”<b>%s</b>”."
 
 #: maint.php
 msgid "Associate Maintenance Schedule(s)"
-msgstr "Underhållsschema(n) för associerade enheter"
+msgstr "Koppla underhållsschema"
 
 #: maint.php
 #, php-format
 msgid "Click 'Continue' to Disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Klicka på ”Fortsätt” för att koppla bort följande enhet(er) från underhållsschemat ”<b>%s</b>”."
+msgstr "Klicka på ”Fortsätt” för att koppla bort följande enheter från underhållsschemat ”<b>%s</b>”."
 
 #: maint.php
 msgid "Disassociate Maintenance Schedule(s)"
@@ -131,12 +131,12 @@ msgstr "Webseer(s)"
 #: maint.php
 #, php-format
 msgid "Click 'Continue' to Associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Klicka på ”Fortsätt” för att koppla Webseer nedan till underhållsschemat ”<b>%s</b>”."
+msgstr "Klicka på ”Fortsätt” för att koppla följande Webseer-instanser till underhållsschemat ”<b>%s</b>”."
 
 #: maint.php
 #, php-format
 msgid "Click 'Continue' to Disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
-msgstr "Klicka på ”Fortsätt” för att koppla bort Webseer nedan från underhållsschemat ”<b>%s</b>”."
+msgstr "Klicka på ”Fortsätt” för att koppla bort följande Webseer-instanser från underhållsschemat ”<b>%s</b>”."
 
 #: maint.php
 msgid "You must select at least one Webseer."
@@ -149,12 +149,12 @@ msgstr "Servcheck-test"
 #: maint.php
 #, php-format
 msgid "Click 'Continue' to Associate the Servcheck(s) below with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Klicka på ”Fortsätt” för att koppla Servcheck-test nedan till underhållsschemat ”<b>%s</b>”."
+msgstr "Klicka på ”Fortsätt” för att koppla följande Servcheck-tester till underhållsschemat ”<b>%s</b>”."
 
 #: maint.php
 #, php-format
 msgid "Click 'Continue' to Disassociate the Servcheck(s) below from the Maintenance Schedule '<b>%s</b>'."
-msgstr "Klicka på ”Fortsätt” för att koppla bort Servcheck-test nedan från underhållsschemat ”<b>%s</b>”."
+msgstr "Klicka på ”Fortsätt” för att koppla bort följande Servcheck-tester från underhållsschemat ”<b>%s</b>”."
 
 #: maint.php
 msgid "You must select at least one Servcheck test."
@@ -196,7 +196,7 @@ msgstr "Aktiverad"
 
 #: maint.php
 msgid "Whether or not this schedule will be checked."
-msgstr "Om detta schema kommer att kontrolleras eller inte."
+msgstr "Anger om schemat ska kontrolleras."
 
 #: maint.php setup.php
 msgid "Schedule Type"
@@ -204,7 +204,7 @@ msgstr "Schematyp"
 
 #: maint.php
 msgid "The type of schedule, one time or recurring."
-msgstr "Typ av schema, en gång eller återkommande."
+msgstr "Typ av schema: engångs- eller återkommande."
 
 #: maint.php
 msgid "Interval"
