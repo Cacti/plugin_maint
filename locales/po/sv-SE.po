@@ -4,11 +4,11 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-29 00:45-0400\nPO-Revision-Date: 2026-10-26 12:25+0000\nLast-Translator: Daniel Nylander <daniel@danielnylander.se>\nLanguage-Team: Swedish <https://translate.cacti.net/projects/cacti/maint/sv/>\nLanguage: sv-SE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-29 00:45-0400\nPO-Revision-Date: 2026-10-27 13:18+0000\nLast-Translator: Daniel Nylander <daniel@danielnylander.se>\nLanguage-Team: Swedish <https://translate.cacti.net/projects/cacti/maint/sv/>\nLanguage: sv-SE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
 
 #: maint.php
 msgid "Update Time (Now + 1 Hour)"
-msgstr "Uppdateringstid (Nu + 1 timme)"
+msgstr "Uppdateringstid (nu + 1 timme)"
 
 #: maint.php
 msgid "Delete"
@@ -56,7 +56,7 @@ msgstr "Allmänt"
 
 #: maint.php
 msgid "Thold Devices"
-msgstr "Tröskelenheter"
+msgstr "Thold-enheter"
 
 #: maint.php
 msgid "WebSeer"
@@ -80,7 +80,7 @@ msgstr "Fortsätt"
 
 #: maint.php
 msgid "Update Maintenance Schedule(s)"
-msgstr "Uppdatera underhållsschema(n)"
+msgstr "Uppdatera underhållsscheman"
 
 #: maint.php
 msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
@@ -88,7 +88,7 @@ msgstr "Klicka på ”Fortsätt” för att ta bort följande underhållsscheman
 
 #: maint.php
 msgid "Delete Maintenance Schedule(s)"
-msgstr "Ta bort underhållsschema(n)"
+msgstr "Ta bort underhållsscheman"
 
 #: maint.php
 msgid "You must select at least one Maintenance Schedule."
@@ -100,7 +100,7 @@ msgstr "Tillbaka"
 
 #: maint.php
 msgid "Device(s)"
-msgstr "Enhet(er)"
+msgstr "Enheter"
 
 #: maint.php
 #, php-format
@@ -118,7 +118,7 @@ msgstr "Klicka på ”Fortsätt” för att koppla bort följande enheter från 
 
 #: maint.php
 msgid "Disassociate Maintenance Schedule(s)"
-msgstr "Koppla bort underhållsschema(n)"
+msgstr "Koppla bort underhållsscheman"
 
 #: maint.php
 msgid "You must select at least one Device."
@@ -126,7 +126,7 @@ msgstr "Du måste välja minst en enhet."
 
 #: maint.php
 msgid "Webseer(s)"
-msgstr "Webseer(s)"
+msgstr "WebSeer-instanser"
 
 #: maint.php
 #, php-format
@@ -140,7 +140,7 @@ msgstr "Klicka på ”Fortsätt” för att koppla bort följande Webseer-instan
 
 #: maint.php
 msgid "You must select at least one Webseer."
-msgstr "Du måste välja minst en Webseer."
+msgstr "Du måste välja minst en WebSeer-instans."
 
 #: maint.php
 msgid "Servcheck(s)"
@@ -204,7 +204,7 @@ msgstr "Schematyp"
 
 #: maint.php
 msgid "The type of schedule, one time or recurring."
-msgstr "Typ av schema: engångs- eller återkommande."
+msgstr "Typ av schema: engångs- eller återkommande schema."
 
 #: maint.php
 msgid "Interval"
@@ -212,7 +212,7 @@ msgstr "Intervall"
 
 #: maint.php
 msgid "This is the interval in which the start / end time will repeat."
-msgstr "Detta är det intervall inom vilket start- och sluttiden kommer att upprepas."
+msgstr "Intervallet med vilket start- och sluttiden upprepas."
 
 #: maint.php
 msgid "Start Time"
@@ -296,7 +296,7 @@ msgstr "Slut"
 
 #: maint.php
 msgid "No Schedules"
-msgstr "Inga tidtabeller"
+msgstr "Inga scheman"
 
 #: maint.php
 #, php-format
@@ -402,7 +402,7 @@ msgstr "Inaktiverad"
 
 #: maint.php
 msgid "USING DNS"
-msgstr "ANVÄNDNING AV DNS"
+msgstr "ANVÄNDER DNS"
 
 #: maint.php
 msgid "No Associated WebSeer URL's Found"
@@ -447,7 +447,7 @@ msgstr "Aktivera underhåll för den här enheten (nu + 1 h)"
 
 #: setup.php
 msgid "Add device(s) to existing maintenance schedule"
-msgstr "Lägg till enhet(er) i befintligt underhållsschema"
+msgstr "Lägg till enheter i befintligt underhållsschema"
 
 #: setup.php
 msgid "Maintenance Window"
@@ -492,12 +492,12 @@ msgstr "Snabbunderhåll"
 #: setup.php
 #, php-format
 msgid "Maintenance schedule '%s' created and %d device(s) associated."
-msgstr "Underhållsschemat ”%s” skapades och %d enhet(er) kopplades."
+msgstr "Underhållsschemat ”%s” skapades och %d enheter kopplades till det."
 
 #: setup.php
 #, php-format
 msgid "%d device(s) added to maintenance schedule '%s'."
-msgstr "%d enhet(er) lades till i underhållsschemat ”%s”."
+msgstr "%d enheter lades till i underhållsschemat ”%s”."
 
 #, fuzzy
 #~ msgid "General Settings [edit: %s]"
