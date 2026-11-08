@@ -114,11 +114,12 @@ function plugin_maint_check_host(int $type, int $host): bool {
  * For recurring schedules that have passed, automatically calculates
  * and updates the next occurrence.
  *
- * @param int $schedule Schedule ID to check
+ * @param int      $schedule Schedule ID to check
+ * @param int|null $now      Current Unix time; defaults to the system clock
  *
  * @return bool True if schedule is active now, false otherwise
  */
-function plugin_maint_check_schedule(int $schedule): bool {
+function plugin_maint_check_schedule(int $schedule, ?int $now = null): bool {
 	$sc = db_fetch_row_prepared('SELECT *
 		FROM plugin_maint_schedules
 		WHERE enabled = \'on\' AND id = ?',
@@ -126,11 +127,11 @@ function plugin_maint_check_schedule(int $schedule): bool {
 	);
 
 	if (is_array($sc) && !empty($sc)) {
-		$t = time();
+		$t = $now ?? time();
 
 		switch ($sc['mtype']) {
 			case 1:
-				if ($t > $sc['stime'] && $t < $sc['etime']) {
+				if ($t >= $sc['stime'] && $t < $sc['etime']) {
 					return true;
 				}
 
@@ -151,7 +152,7 @@ function plugin_maint_check_schedule(int $schedule): bool {
 					// convert start and end to local so that hour stays same for add days across daylight saving time change
 					$starttimelocal = (new DateTime('@' . strval($sc['stime'])))->setTimezone(new DateTimeZone(date_default_timezone_get()));
 					$endtimelocal   = (new DateTime('@' . strval($sc['etime'])))->setTimezone(new DateTimeZone(date_default_timezone_get()));
-					$nowtime        = new DateTime();
+					$nowtime        = new DateTime('@' . strval($t));
 					// add interval days
 					$addday = new DateInterval('P' . strval($sc['minterval'] / 86400) . 'D');
 
@@ -173,7 +174,7 @@ function plugin_maint_check_schedule(int $schedule): bool {
 							   . ' End ' . $endtimelocal->format('Y-m-d H:i'), false, 'MAINT');
 				}
 
-				if ($t > $sc['stime'] && $t < $sc['etime']) {
+				if ($t >= $sc['stime'] && $t < $sc['etime']) {
 					return true;
 				}
 
