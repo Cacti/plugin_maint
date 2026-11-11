@@ -58,6 +58,25 @@ describe('plugin_maint_check_schedule one-time schedules', function () {
 		$updates = array_filter($GLOBALS['__test_db_calls'], fn ($c) => $c['fn'] === 'db_execute_prepared');
 		expect($updates)->toBeEmpty();
 	});
+
+	it('includes the exact start and excludes the exact end of a one-time window', function () {
+		$now = time();
+		maint_test_queue('db_fetch_row_prepared', [
+			'mtype' => 1,
+			'stime' => $now,
+			'etime' => $now + 3600,
+		]);
+
+		expect(plugin_maint_check_schedule(1, $now))->toBeTrue();
+
+		maint_test_queue('db_fetch_row_prepared', [
+			'mtype' => 1,
+			'stime' => $now - 3600,
+			'etime' => $now,
+		]);
+
+		expect(plugin_maint_check_schedule(1, $now))->toBeFalse();
+	});
 });
 
 describe('plugin_maint_check_schedule recurring schedules', function () {
@@ -76,6 +95,19 @@ describe('plugin_maint_check_schedule recurring schedules', function () {
 
 		$updates = array_filter($GLOBALS['__test_db_calls'], fn ($c) => $c['fn'] === 'db_execute_prepared');
 		expect($updates)->toBeEmpty();
+	});
+
+	it('includes the exact start of a recurring window', function () {
+		$now = time();
+		maint_test_queue('db_fetch_row_prepared', [
+			'name'      => 'nightly',
+			'mtype'     => 2,
+			'stime'     => $now,
+			'etime'     => $now + 3600,
+			'minterval' => 86400,
+		]);
+
+		expect(plugin_maint_check_schedule(3, $now))->toBeTrue();
 	});
 
 	it('advances an elapsed recurring window by whole intervals and reports active if it now covers now', function () {
