@@ -1,7 +1,7 @@
 # maint
 
 The Cacti maint plugin is for the scheduling of maintenance so that Thold /
-Webseer / Other plugins will not alert during that time period.
+Webseer / Servcheck / Other plugins will not alert during that time period.
 
 ## Versions and compatibility
 
@@ -39,15 +39,27 @@ $(document).off('click.cactiReturnTo', '.cactiReturnTo')
 
 To install the plugin, please refer to the Plugin Installation Documentation
 
+## Usage
+
+Schedules are managed under **Management -> Maintenance Schedules**.  Access
+requires the **Maintenance Schedules** realm, which is part of the System
+Administration role.
+
+Each schedule is either **One Time** or **Recurring**.  A schedule applies to
+Devices, and to WebSeer and Servcheck entries when those plugins are enabled.
+
+From the Device list, use the actions **Enable maintenance for this device
+(now+1h)** and **Add device(s) to existing maintenance schedule** to place
+Devices in maintenance without editing a schedule.
+
+Other plugins can ask whether a Device is in maintenance through the
+`is_device_in_maintenance` hook, which this plugin implements.
+
 ## Possible Bugs
 
 If you find a problem, let us know! [Report a bug!](http://cacti.net/bugs.php)
 
 ## Future Changes
-
-Threshold Escalation
-
-Add feature to run scripts or do other things besides email
 
 Got any ideas or complaints, please see the forums.  If you find a bug, they can
 be logged on GitHub.
