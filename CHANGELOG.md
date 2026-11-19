@@ -1,5 +1,8 @@
 # ChangeLog
 
+Documentation update (unreleased): Refresh README release/source compatibility,
+installation guidance and source-checked behavior.
+
 --- develop ---
 
 * issue#84: Treat maintenance windows as start-inclusive and end-exclusive so a poller run at the exact scheduled start is covered
