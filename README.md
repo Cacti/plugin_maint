@@ -9,7 +9,7 @@ This README describes the `develop` source branch.
 
 | Code | Plugin version | Minimum Cacti declared in `INFO` |
 | --- | --- | --- |
-| [Source branch](INFO) | 1.3 | 1.2.29 |
+| [Source branch](https://github.com/Cacti/plugin_maint/blob/develop/INFO) | 1.3 | 1.2.29 |
 | [Published v1.3](https://github.com/Cacti/plugin_maint/releases/tag/v1.3) | 1.3 | 1.2.0 |
 
 Use the published release’s assets and tagged documentation when installing that
@@ -19,7 +19,7 @@ matches the release. Cacti’s own PHP and database requirements also apply.
 Install this plugin in **`<cacti-root>/plugins/maint`**, using the directory
 name `maint` rather than `plugin_maint`.
 
-See [CHANGELOG.md](CHANGELOG.md) for the version history.
+See [CHANGELOG.md](https://github.com/Cacti/plugin_maint/blob/develop/CHANGELOG.md) for the version history.
 
 ## Cacti compatibility
 
