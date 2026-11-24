@@ -1,0 +1,512 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR The Cacti Group
+# This file is distributed under the same license as the Cacti package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Cacti\n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2026-09-29 00:45-0400\n"
+"PO-Revision-Date: 2026-11-24 19:00+0000\n"
+"Last-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\n"
+"Language-Team: Malagasy\n"
+"Language: mg-MG\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: maint.php
+msgid "Update Time (Now + 1 Hour)"
+msgstr "Fotoana fanavaozana (Ankehitriny + 1 Ora)"
+
+#: maint.php
+msgid "Delete"
+msgstr "Fafao"
+
+#: maint.php
+msgid "Associate"
+msgstr "Ampifandraiso"
+
+#: maint.php
+msgid "Disassociate"
+msgstr "Esory ny fifandraisana"
+
+#: maint.php setup.php
+msgid "One Time"
+msgstr "Indray mandeha"
+
+#: maint.php setup.php
+msgid "Recurring"
+msgstr "Miverimberina"
+
+#: maint.php
+msgid "Not Defined"
+msgstr "Tsy voafaritra"
+
+#: maint.php setup.php
+msgid "Every Day"
+msgstr "Isan'andro"
+
+#: maint.php setup.php
+msgid "Every Week"
+msgstr "Isan-kerinandro"
+
+#: maint.php
+msgid "No"
+msgstr "Tsia"
+
+#: maint.php
+msgid "Yes"
+msgstr "Eny"
+
+#: maint.php
+msgid "General"
+msgstr "Ankapobeny"
+
+#: maint.php
+msgid "Thold Devices"
+msgstr "Fitaovana Thold"
+
+#: maint.php
+msgid "WebSeer"
+msgstr "WebSeer"
+
+#: maint.php
+msgid "Servcheck"
+msgstr "Servcheck"
+
+#: maint.php
+msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
+msgstr "Tsindrio ny 'Tohizo' mba hanavao ireto Fandaharam-potoana fikojakojana manaraka ireto."
+
+#: maint.php
+msgid "Cancel"
+msgstr "Foano"
+
+#: maint.php
+msgid "Continue"
+msgstr "Tohizo"
+
+#: maint.php
+msgid "Update Maintenance Schedule(s)"
+msgstr "Havaozy ny fandaharam-potoana fikojakojana"
+
+#: maint.php
+msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
+msgstr "Tsindrio ny 'Tohizo' mba hamafana ireto Fandaharam-potoam-pikojakojana manaraka ireto.  Hosarahina izay Fitaovana mifandray amin'ity Fandaharam-potoana ity."
+
+#: maint.php
+msgid "Delete Maintenance Schedule(s)"
+msgstr "Fafao ny/ireo Fandaharam-potoana fikojakojana"
+
+#: maint.php
+msgid "You must select at least one Maintenance Schedule."
+msgstr "Tsy maintsy misafidy Fandaharam-potoana Fikojakojana iray farafahakeliny ianao."
+
+#: maint.php
+msgid "Return"
+msgstr "Miverina"
+
+#: maint.php
+msgid "Device(s)"
+msgstr "Fitaovana"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Tsindrio ny 'Tohizo' mba hampifandraisana ireto Fitaovana manaraka ireto amin'ny Fandaharam-potoam-pikojakojana '<b>%s</b>'."
+
+#: maint.php
+msgid "Associate Maintenance Schedule(s)"
+msgstr "Ampifandraiso ny fandaharam-potoanan'ny fikojakojana"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Tsindrio ny 'Tohizo' mba hanasarahana ireto Fitaovana manaraka ireto amin'ny Fandaharam-potoam-pikojakojana '<b>%s</b>'."
+
+#: maint.php
+msgid "Disassociate Maintenance Schedule(s)"
+msgstr "Esory ny fifandraisan'ny fandaharam-potoana fikojakojana"
+
+#: maint.php
+msgid "You must select at least one Device."
+msgstr "Tsy maintsy misafidy Fitaovana iray farafahakeliny ianao."
+
+#: maint.php
+msgid "Webseer(s)"
+msgstr "Webseer"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Tsindrio ny 'Tohizo' mba hampifandraisana ireto Webseer eto ambany ireto amin'ny Fandaharam-potoam-pikojakojana '<b>%s</b>'."
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr "Tsindrio ny 'Tohizo' mba hanasarahana ireto Webseer eto ambany ireto amin'ny Fandaharam-potoam-pikojakojana '<b>%s</b>'."
+
+#: maint.php
+msgid "You must select at least one Webseer."
+msgstr "Tsy maintsy misafidy Webseer iray farafahakeliny ianao."
+
+#: maint.php
+msgid "Servcheck(s)"
+msgstr "Servcheck"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the Servcheck(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Tsindrio ny 'Tohizo' mba hampifandraisana ireto Servcheck eto ambany ireto amin'ny Fandaharam-potoam-pikojakojana '<b>%s</b>'."
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the Servcheck(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr "Tsindrio ny 'Tohizo' mba hanasarahana ireto Servcheck eto ambany ireto amin'ny Fandaharam-potoam-pikojakojana '<b>%s</b>'."
+
+#: maint.php
+msgid "You must select at least one Servcheck test."
+msgstr "Tsy maintsy misafidy fitsapana Servcheck iray farafahakeliny ianao."
+
+#: maint.php
+#, php-format
+msgid "[edit: %s]"
+msgstr "[fanovana: %s]"
+
+#: maint.php
+msgid "[new]"
+msgstr "[vaovao]"
+
+#: maint.php
+msgid "New Maintenance Schedule"
+msgstr "Fandaharam-potoana fikojakojana vaovao"
+
+#: maint.php
+#, php-format
+msgid "General Settings %s"
+msgstr "Fandrindrana ankapobeny %s"
+
+#: maint.php
+msgid "Schedule"
+msgstr "Fandaharam-potoana"
+
+#: maint.php
+msgid "Schedule Name"
+msgstr "Anaran'ny Fandaharam-potoana"
+
+#: maint.php
+msgid "Provide the Maintenance Schedule a meaningful name"
+msgstr "Omeo anarana mazava tsara ny Fandaharam-potoanan'ny fikojakojana"
+
+#: maint.php
+msgid "Enabled"
+msgstr "Mavitrika"
+
+#: maint.php
+msgid "Whether or not this schedule will be checked."
+msgstr "Na hamarinina ity fandaharam-potoana ity na tsia."
+
+#: maint.php setup.php
+msgid "Schedule Type"
+msgstr "Karazana fandaharam-potoana"
+
+#: maint.php
+msgid "The type of schedule, one time or recurring."
+msgstr "Ny karazana fandaharam-potoana, indray mandeha na miverimberina."
+
+#: maint.php
+msgid "Interval"
+msgstr "Elanelana"
+
+#: maint.php
+msgid "This is the interval in which the start / end time will repeat."
+msgstr "Ity ny elanelam-potoana hiverimberenan'ny ora fanombohana / fiafarana."
+
+#: maint.php
+msgid "Start Time"
+msgstr "Fotoana fanombohana"
+
+#: maint.php
+msgid "The start date / time for this schedule. Most date / time formats accepted."
+msgstr "Ny daty / ora fanombohana ho an'ity fandaharam-potoana ity. Ekena ny ankamaroan'ny endrika daty / ora."
+
+#: maint.php
+msgid "End Time"
+msgstr "Ora Fiafarana"
+
+#: maint.php
+msgid "The end date / time for this schedule. Most date / time formats accepted."
+msgstr "Ny daty / ora famaranana ho an'ity fandaharam-potoana ity. Ekena ny ankamaroan'ny endrika daty / ora."
+
+#: maint.php
+msgid "Start Date/Time Selector"
+msgstr "Mpifidy daty/ora fanombohana"
+
+#: maint.php
+msgid "End Date/Time Selector"
+msgstr "Mpisafidy ny Daty/Ora Fiafarana"
+
+#: maint.php setup.php
+msgid "Maintenance Schedules"
+msgstr "Fandaharam-potoana fikojakojana"
+
+#: maint.php
+msgid "Search"
+msgstr "Fikarohana"
+
+#: maint.php
+msgid "Schedules"
+msgstr "Fandaharam-potoana"
+
+#: maint.php
+msgid "Default"
+msgstr "Voafaritra mialoha"
+
+#: maint.php
+msgid "Go"
+msgstr "Alefa"
+
+#: maint.php
+msgid "Set/Refresh Filters"
+msgstr "Hametraka/Hanavao sivana"
+
+#: maint.php
+msgid "Clear"
+msgstr "Fafao"
+
+#: maint.php
+msgid "Clear Filters"
+msgstr "Esory ny sivana"
+
+#: maint.php
+msgid "Name"
+msgstr "Anarana"
+
+#: maint.php
+msgid "The name of this Maintenance Schedule."
+msgstr "Ny anaran'ity Fandaharam-potoana Fikojakojana ity."
+
+#: maint.php
+msgid "Active"
+msgstr "Mavitrika"
+
+#: maint.php
+msgid "Type"
+msgstr "Karazana"
+
+#: maint.php
+msgid "Start"
+msgstr "Atombohy"
+
+#: maint.php
+msgid "End"
+msgstr "Fiafarana"
+
+#: maint.php
+msgid "No Schedules"
+msgstr "Tsy misy fandaharam-potoana"
+
+#: maint.php
+#, php-format
+msgid "Associated Devices %s"
+msgstr "Fitaovana mifandray %s"
+
+#: maint.php
+msgid "Site"
+msgstr "Toerana"
+
+#: maint.php
+msgid "Any"
+msgstr "Na inona na inona"
+
+#: maint.php
+msgid "None"
+msgstr "Tsy misy"
+
+#: maint.php
+msgid "Data Collector"
+msgstr "Mpanangona angona"
+
+#: maint.php
+msgid "Location"
+msgstr "Toerana"
+
+#: maint.php
+msgid "Template"
+msgstr "Modely"
+
+#: maint.php setup.php
+msgid "Devices"
+msgstr "Fitaovana"
+
+#: maint.php
+msgid "Associated"
+msgstr "Mifandray"
+
+#: maint.php
+msgid "Description"
+msgstr "Famaritana"
+
+#: maint.php
+msgid "ID"
+msgstr "ID"
+
+#: maint.php
+msgid "Associated Schedules"
+msgstr "Fandaharam-potoana mifandray"
+
+#: maint.php
+msgid "Graphs"
+msgstr "Kisary"
+
+#: maint.php
+msgid "Data Sources"
+msgstr "Loharanon'angona"
+
+#: maint.php
+msgid "Thresholds"
+msgstr "Fetra"
+
+#: maint.php
+msgid "Status"
+msgstr "Sata"
+
+#: maint.php
+msgid "Hostname"
+msgstr "Anaran'ny mpampiantrano"
+
+#: maint.php
+msgid "Current Schedule"
+msgstr "Fandaharam-potoana ankehitriny"
+
+#: maint.php
+msgid "No Associated Devices Found"
+msgstr "Tsy nisy Fitaovana mifandray hita"
+
+#: maint.php
+msgid "Schedule must be created before associating"
+msgstr "Tsy maintsy mamorona fandaharam-potoana alohan'ny hampifandraisana"
+
+#: maint.php
+#, php-format
+msgid "Associated Web URL's %s"
+msgstr "URL tranonkala mifandray %s"
+
+#: maint.php
+msgid "Rows"
+msgstr "Andalana"
+
+#: maint.php
+msgid "URLS"
+msgstr "Ireo URL"
+
+#: maint.php
+msgid "URL"
+msgstr "URL"
+
+#: maint.php
+msgid "Disabled"
+msgstr "Tsy mavitrika"
+
+#: maint.php
+msgid "USING DNS"
+msgstr "MAMPIASA DNS"
+
+#: maint.php
+msgid "No Associated WebSeer URL's Found"
+msgstr "Tsy nisy URL WebSeer mifandray hita"
+
+#: maint.php
+#, php-format
+msgid "Associated Servcheck test's %s"
+msgstr "Fitsapana Servcheck mifandray %s"
+
+#: maint.php
+msgid "Tests"
+msgstr "Andrana"
+
+#: maint.php
+msgid "Path"
+msgstr "Lalana"
+
+#: maint.php
+msgid "No Associated Servcheck Test's Found"
+msgstr "Tsy nisy fitsapana Servcheck mifandray hita"
+
+#: setup.php
+msgid "Management"
+msgstr "Fitantanana"
+
+#: setup.php
+msgid "System Administration"
+msgstr "Fitantanana ny rafitra"
+
+#: setup.php
+msgid "(edit)"
+msgstr "(ovao)"
+
+#: setup.php
+msgid "(actions)"
+msgstr "(hetsika)"
+
+#: setup.php
+msgid "Enable maintenance for this device (now+1h)"
+msgstr "Ataovy mavitrika ny fikojakojana ho an'ity fitaovana ity (ankehitriny+1 ora)"
+
+#: setup.php
+msgid "Add device(s) to existing maintenance schedule"
+msgstr "Manampy fitaovana amin'ny fandaharam-potoana fikojakojana efa misy"
+
+#: setup.php
+msgid "Maintenance Window"
+msgstr "Fotoam-pikojakojana"
+
+#: setup.php
+msgid "Duration"
+msgstr "Faharetana"
+
+#: setup.php
+msgid "Timezone"
+msgstr "Faritra ora"
+
+#: setup.php
+msgid "min"
+msgstr "min"
+
+#: setup.php
+msgid "Schedule name"
+msgstr "Anaran'ny fandaharam-potoana"
+
+#: setup.php
+msgid "e.g. Emergency patching"
+msgstr "oh. Fanamboarana maika"
+
+#: setup.php
+msgid "disabled"
+msgstr "tsy mavitrika"
+
+#: setup.php
+msgid "No schedules found"
+msgstr "Tsy nisy fandaharam-potoana hita"
+
+#: setup.php
+msgid "Select schedule"
+msgstr "Misafidiana fandaharam-potoana"
+
+#: setup.php
+msgid "Quick Maintenance"
+msgstr "Fikojakojana haingana"
+
+#: setup.php
+#, php-format
+msgid "Maintenance schedule '%s' created and %d device(s) associated."
+msgstr "Voaforona ny fandaharam-potoana fikojakojana '%s' ary Fitaovana %d no nampifandraisina taminy."
+
+#: setup.php
+#, php-format
+msgid "%d device(s) added to maintenance schedule '%s'."
+msgstr "Fitaovana %d nampiana tamin'ny fandaharam-potoana fikojakojana '%s'."
+

@@ -1,0 +1,512 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR The Cacti Group
+# This file is distributed under the same license as the Cacti package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Cacti\n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2026-09-29 00:45-0400\n"
+"PO-Revision-Date: 2026-11-24 19:00+0000\n"
+"Last-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\n"
+"Language-Team: Kinyarwanda\n"
+"Language: rw-RW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: maint.php
+msgid "Update Time (Now + 1 Hour)"
+msgstr "Igihe cyo kuvugurura (Ubu + Isaha 1)"
+
+#: maint.php
+msgid "Delete"
+msgstr "Siba"
+
+#: maint.php
+msgid "Associate"
+msgstr "Huza"
+
+#: maint.php
+msgid "Disassociate"
+msgstr "Kuraho ihuzwa"
+
+#: maint.php setup.php
+msgid "One Time"
+msgstr "Inshuro imwe"
+
+#: maint.php setup.php
+msgid "Recurring"
+msgstr "Bigaruka buri gihe"
+
+#: maint.php
+msgid "Not Defined"
+msgstr "Ntibyasobanuwe"
+
+#: maint.php setup.php
+msgid "Every Day"
+msgstr "Buri munsi"
+
+#: maint.php setup.php
+msgid "Every Week"
+msgstr "Buri cyumweru"
+
+#: maint.php
+msgid "No"
+msgstr "Oya"
+
+#: maint.php
+msgid "Yes"
+msgstr "Yego"
+
+#: maint.php
+msgid "General"
+msgstr "Rusange"
+
+#: maint.php
+msgid "Thold Devices"
+msgstr "Ibikoresho bya Thold"
+
+#: maint.php
+msgid "WebSeer"
+msgstr "WebSeer"
+
+#: maint.php
+msgid "Servcheck"
+msgstr "Servcheck"
+
+#: maint.php
+msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
+msgstr "Kanda 'Komeza' kugira ngo uvugurure Gahunda y'/z'isanwa n'ubugenzuzi ikurikira/zikurikira."
+
+#: maint.php
+msgid "Cancel"
+msgstr "Hagarika"
+
+#: maint.php
+msgid "Continue"
+msgstr "Komeza"
+
+#: maint.php
+msgid "Update Maintenance Schedule(s)"
+msgstr "Vugurura ingengabihe y'(z')isanasana"
+
+#: maint.php
+msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
+msgstr "Kanda 'Komeza' kugira ngo usibe Gahunda zo Gusana zikurikira.  Ibikoresho byose byari bihujwe n'iyi Gahunda bizatandukanywa."
+
+#: maint.php
+msgid "Delete Maintenance Schedule(s)"
+msgstr "Siba Gahunda yo kubungabunga"
+
+#: maint.php
+msgid "You must select at least one Maintenance Schedule."
+msgstr "Ugomba guhitamo nibura Gahunda y'Ibungabunga imwe."
+
+#: maint.php
+msgid "Return"
+msgstr "Subira inyuma"
+
+#: maint.php
+msgid "Device(s)"
+msgstr "Igikoresho/Ibikoresho"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Kanda 'Komeza' kugira ngo uhuze Ibikoresho bikurikira na Gahunda yo Gusana '<b>%s</b>'."
+
+#: maint.php
+msgid "Associate Maintenance Schedule(s)"
+msgstr "Huza gahunda z'isana"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Kanda 'Komeza' kugira ngo utandukanye Ibikoresho bikurikira na Gahunda yo Gusana '<b>%s</b>'."
+
+#: maint.php
+msgid "Disassociate Maintenance Schedule(s)"
+msgstr "Kuraho ihuzwa na gahunda y'isana"
+
+#: maint.php
+msgid "You must select at least one Device."
+msgstr "Ugomba guhitamo nibura Igikoresho kimwe."
+
+#: maint.php
+msgid "Webseer(s)"
+msgstr "Webseer"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Kanda 'Komeza' kugira ngo uhuze Webseer ziri hasi na Gahunda yo Gusana '<b>%s</b>'."
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr "Kanda 'Komeza' kugira ngo utandukanye Webseer ziri hasi na Gahunda yo Gusana '<b>%s</b>'."
+
+#: maint.php
+msgid "You must select at least one Webseer."
+msgstr "Ugomba guhitamo nibura Webseer imwe."
+
+#: maint.php
+msgid "Servcheck(s)"
+msgstr "Servcheck"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the Servcheck(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Kanda 'Komeza' kugira ngo uhuze Servcheck ziri hasi na Gahunda yo Gusana '<b>%s</b>'."
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the Servcheck(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr "Kanda 'Komeza' kugira ngo utandukanye Servcheck ziri hasi na Gahunda yo Gusana '<b>%s</b>'."
+
+#: maint.php
+msgid "You must select at least one Servcheck test."
+msgstr "Ugomba guhitamo nibura isuzuma rya Servcheck rimwe."
+
+#: maint.php
+#, php-format
+msgid "[edit: %s]"
+msgstr "[hindura: %s]"
+
+#: maint.php
+msgid "[new]"
+msgstr "[bishya]"
+
+#: maint.php
+msgid "New Maintenance Schedule"
+msgstr "Gahunda Nshya yo Kubungabunga"
+
+#: maint.php
+#, php-format
+msgid "General Settings %s"
+msgstr "Amagenamiterere rusange %s"
+
+#: maint.php
+msgid "Schedule"
+msgstr "Gahunda"
+
+#: maint.php
+msgid "Schedule Name"
+msgstr "Izina rya Gahunda"
+
+#: maint.php
+msgid "Provide the Maintenance Schedule a meaningful name"
+msgstr "Ha Gahunda yo Kubungabunga izina rifite ireme"
+
+#: maint.php
+msgid "Enabled"
+msgstr "Byafunguwe"
+
+#: maint.php
+msgid "Whether or not this schedule will be checked."
+msgstr "Niba iyi gahunda izasuzumwa cyangwa itazasuzumwa."
+
+#: maint.php setup.php
+msgid "Schedule Type"
+msgstr "Ubwoko bw'ingengabihe"
+
+#: maint.php
+msgid "The type of schedule, one time or recurring."
+msgstr "Ubwoko bw'ingengabihe, inshuro imwe cyangwa igaruka."
+
+#: maint.php
+msgid "Interval"
+msgstr "Intera y'igihe"
+
+#: maint.php
+msgid "This is the interval in which the start / end time will repeat."
+msgstr "Iyi ni intera igihe cyo gutangira / kurangira kizajya cyisubiramo."
+
+#: maint.php
+msgid "Start Time"
+msgstr "Igihe cyo gutangira"
+
+#: maint.php
+msgid "The start date / time for this schedule. Most date / time formats accepted."
+msgstr "Itariki / igihe cyo gutangira kuri iyi ngengabihe. Uburyo bwinshi bw'amatariki / igihe buremewe."
+
+#: maint.php
+msgid "End Time"
+msgstr "Isaha yo kurangiriraho"
+
+#: maint.php
+msgid "The end date / time for this schedule. Most date / time formats accepted."
+msgstr "Itariki / igihe cyo kurangiriraho kw'iyi gahunda. Imiterere myinshi y'amatariki / igihe iremewe."
+
+#: maint.php
+msgid "Start Date/Time Selector"
+msgstr "Ihitamo ry'Itariki/Igihe cyo Gutangira"
+
+#: maint.php
+msgid "End Date/Time Selector"
+msgstr "Igikoresho cyo guhitamo itariki/isaha yo kurangiriraho"
+
+#: maint.php setup.php
+msgid "Maintenance Schedules"
+msgstr "Ingengabihe zo Kubungabunga"
+
+#: maint.php
+msgid "Search"
+msgstr "Shakisha"
+
+#: maint.php
+msgid "Schedules"
+msgstr "Gahunda"
+
+#: maint.php
+msgid "Default"
+msgstr "Mburabuzi"
+
+#: maint.php
+msgid "Go"
+msgstr "Komeza"
+
+#: maint.php
+msgid "Set/Refresh Filters"
+msgstr "Gushyiraho/Kuvugurura muyunguruzi"
+
+#: maint.php
+msgid "Clear"
+msgstr "Siba"
+
+#: maint.php
+msgid "Clear Filters"
+msgstr "Gusiba muyunguruzi"
+
+#: maint.php
+msgid "Name"
+msgstr "Izina"
+
+#: maint.php
+msgid "The name of this Maintenance Schedule."
+msgstr "Izina ry'iyi Gahunda y'Isana n'Ubugenzuzi."
+
+#: maint.php
+msgid "Active"
+msgstr "Irakora"
+
+#: maint.php
+msgid "Type"
+msgstr "Ubwoko"
+
+#: maint.php
+msgid "Start"
+msgstr "Tangira"
+
+#: maint.php
+msgid "End"
+msgstr "Iherezo"
+
+#: maint.php
+msgid "No Schedules"
+msgstr "Nta gahunda zashyizweho"
+
+#: maint.php
+#, php-format
+msgid "Associated Devices %s"
+msgstr "Ibikoresho bihujwe %s"
+
+#: maint.php
+msgid "Site"
+msgstr "Ahantu"
+
+#: maint.php
+msgid "Any"
+msgstr "Icyo ari cyo cyose"
+
+#: maint.php
+msgid "None"
+msgstr "Nta na kimwe"
+
+#: maint.php
+msgid "Data Collector"
+msgstr "Igikusanya amakuru"
+
+#: maint.php
+msgid "Location"
+msgstr "Ahantu"
+
+#: maint.php
+msgid "Template"
+msgstr "Inyandikorugero"
+
+#: maint.php setup.php
+msgid "Devices"
+msgstr "Ibikoresho"
+
+#: maint.php
+msgid "Associated"
+msgstr "Bihujwe"
+
+#: maint.php
+msgid "Description"
+msgstr "Ibisobanuro"
+
+#: maint.php
+msgid "ID"
+msgstr "ID"
+
+#: maint.php
+msgid "Associated Schedules"
+msgstr "Gahunda zihujwe"
+
+#: maint.php
+msgid "Graphs"
+msgstr "Ibishushanyo"
+
+#: maint.php
+msgid "Data Sources"
+msgstr "Inkomoko z'Amakuru"
+
+#: maint.php
+msgid "Thresholds"
+msgstr "Inzego ntarengwa"
+
+#: maint.php
+msgid "Status"
+msgstr "Imiterere"
+
+#: maint.php
+msgid "Hostname"
+msgstr "Izina ku muyoboro"
+
+#: maint.php
+msgid "Current Schedule"
+msgstr "Gahunda iriho ubu"
+
+#: maint.php
+msgid "No Associated Devices Found"
+msgstr "Nta Bikoresho Bifitanye Isano Byabonetse"
+
+#: maint.php
+msgid "Schedule must be created before associating"
+msgstr "Gahunda igomba kubanza gushyirwaho mbere yo guhuzwa"
+
+#: maint.php
+#, php-format
+msgid "Associated Web URL's %s"
+msgstr "URL z'urubuga zihujwe %s"
+
+#: maint.php
+msgid "Rows"
+msgstr "Imirongo"
+
+#: maint.php
+msgid "URLS"
+msgstr "Ama-URL"
+
+#: maint.php
+msgid "URL"
+msgstr "URL"
+
+#: maint.php
+msgid "Disabled"
+msgstr "Byahagaritswe"
+
+#: maint.php
+msgid "USING DNS"
+msgstr "HIFASHISHIJWE DNS"
+
+#: maint.php
+msgid "No Associated WebSeer URL's Found"
+msgstr "Nta URL za WebSeer Zifitanye Isano Zabonetse"
+
+#: maint.php
+#, php-format
+msgid "Associated Servcheck test's %s"
+msgstr "Isuzuma rya Servcheck rihujwe %s"
+
+#: maint.php
+msgid "Tests"
+msgstr "Amasuzuma"
+
+#: maint.php
+msgid "Path"
+msgstr "Inzira"
+
+#: maint.php
+msgid "No Associated Servcheck Test's Found"
+msgstr "Nta Bizamini bya Servcheck Bifitanye Isano Byabonetse"
+
+#: setup.php
+msgid "Management"
+msgstr "Imicungire"
+
+#: setup.php
+msgid "System Administration"
+msgstr "Ubuyobozi bwa Sisitemu"
+
+#: setup.php
+msgid "(edit)"
+msgstr "(hindura)"
+
+#: setup.php
+msgid "(actions)"
+msgstr "(ibikorwa)"
+
+#: setup.php
+msgid "Enable maintenance for this device (now+1h)"
+msgstr "Fungura uburyo bwo kubungabunga kuri iki gikoresho (ubu+1h)"
+
+#: setup.php
+msgid "Add device(s) to existing maintenance schedule"
+msgstr "Ongeraho igikoresho (ibikoresho) ku ngengabihe y'isana isanzweho"
+
+#: setup.php
+msgid "Maintenance Window"
+msgstr "Igihe cyo Kubungabunga"
+
+#: setup.php
+msgid "Duration"
+msgstr "Igihe byamaze"
+
+#: setup.php
+msgid "Timezone"
+msgstr "Isaha y'akarere"
+
+#: setup.php
+msgid "min"
+msgstr "umun."
+
+#: setup.php
+msgid "Schedule name"
+msgstr "Izina rya gahunda"
+
+#: setup.php
+msgid "e.g. Emergency patching"
+msgstr "urugero: Gusana kwihutirwa"
+
+#: setup.php
+msgid "disabled"
+msgstr "byahagaritswe"
+
+#: setup.php
+msgid "No schedules found"
+msgstr "Nta gahunda zabonetse"
+
+#: setup.php
+msgid "Select schedule"
+msgstr "Hitamo gahunda"
+
+#: setup.php
+msgid "Quick Maintenance"
+msgstr "Isana ryihuse"
+
+#: setup.php
+#, php-format
+msgid "Maintenance schedule '%s' created and %d device(s) associated."
+msgstr "Ingengabihe yo kubungabunga '%s' yaremwe kandi ibikoresho %d byahujwe na yo."
+
+#: setup.php
+#, php-format
+msgid "%d device(s) added to maintenance schedule '%s'."
+msgstr "Ibikoresho %d byongewe kuri gahunda y'isanwa '%s'."
+

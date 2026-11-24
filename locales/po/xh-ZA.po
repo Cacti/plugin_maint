@@ -1,0 +1,512 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR The Cacti Group
+# This file is distributed under the same license as the Cacti package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Cacti\n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2026-09-29 00:45-0400\n"
+"PO-Revision-Date: 2026-11-24 19:00+0000\n"
+"Last-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\n"
+"Language-Team: Xhosa\n"
+"Language: xh-ZA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: maint.php
+msgid "Update Time (Now + 1 Hour)"
+msgstr "Ixesha lokuHlaziya (Ngoku + iYure e-1)"
+
+#: maint.php
+msgid "Delete"
+msgstr "Cima"
+
+#: maint.php
+msgid "Associate"
+msgstr "Dibanisa"
+
+#: maint.php
+msgid "Disassociate"
+msgstr "Susa unxibelelwano"
+
+#: maint.php setup.php
+msgid "One Time"
+msgstr "Ixesha Elinye"
+
+#: maint.php setup.php
+msgid "Recurring"
+msgstr "Ephindaphindwayo"
+
+#: maint.php
+msgid "Not Defined"
+msgstr "Ayichazwanga"
+
+#: maint.php setup.php
+msgid "Every Day"
+msgstr "Yonke iMihla"
+
+#: maint.php setup.php
+msgid "Every Week"
+msgstr "Rhoqo ngeVeki"
+
+#: maint.php
+msgid "No"
+msgstr "Hayi"
+
+#: maint.php
+msgid "Yes"
+msgstr "Ewe"
+
+#: maint.php
+msgid "General"
+msgstr "Jikelele"
+
+#: maint.php
+msgid "Thold Devices"
+msgstr "Izixhobo ze-Thold"
+
+#: maint.php
+msgid "WebSeer"
+msgstr "WebSeer"
+
+#: maint.php
+msgid "Servcheck"
+msgstr "Servcheck"
+
+#: maint.php
+msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
+msgstr "Cofa u-'Qhubeka' ukuze uhlaziye ezi Shedyuli zoLondolozo zilandelayo."
+
+#: maint.php
+msgid "Cancel"
+msgstr "Rhoxisa"
+
+#: maint.php
+msgid "Continue"
+msgstr "Qhubeka"
+
+#: maint.php
+msgid "Update Maintenance Schedule(s)"
+msgstr "Hlaziya i(ii)Shedyuli zoLondolozo"
+
+#: maint.php
+msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
+msgstr "Cofa u-'Qhubeka' ukuze uCime le Shedyuli (ezi Shedyuli) zoLondolozo zilandelayo.  Naziphi na Izixhobo (Isixhobo) eziQhagamshelwe kule Shedyuli ziya kuQhawulwa."
+
+#: maint.php
+msgid "Delete Maintenance Schedule(s)"
+msgstr "Cima iiShedyuli zoLondolozo"
+
+#: maint.php
+msgid "You must select at least one Maintenance Schedule."
+msgstr "Kufuneka ukhethe ubuncinane iShedyuli yoLondolozo enye."
+
+#: maint.php
+msgid "Return"
+msgstr "Buyela"
+
+#: maint.php
+msgid "Device(s)"
+msgstr "Isixhobo(Izixhobo)"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Cofa u-'Qhubeka' ukuze uQhagamshele ezi Zixhobo (Isixhobo) zilandelayo neShedyuli yoLondolozo '<b>%s</b>'."
+
+#: maint.php
+msgid "Associate Maintenance Schedule(s)"
+msgstr "Dibanisa iShedyuli/iiShedyuli zoLondolozo"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Cofa u-'Qhubeka' ukuze uQhawule esi Sixhobo (ezi Zixhobo) zilandelayo kwiShedyuli yoLondolozo '<b>%s</b>'."
+
+#: maint.php
+msgid "Disassociate Maintenance Schedule(s)"
+msgstr "Susa unxibelelwano lweShedyuli/lweeShedyuli zoLondolozo"
+
+#: maint.php
+msgid "You must select at least one Device."
+msgstr "Kufuneka ukhethe ubuncinane iSixhobo esinye."
+
+#: maint.php
+msgid "Webseer(s)"
+msgstr "I(ii)-Webseer"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Cofa u-'Qhubeka' ukuze uQhagamshele i-Webseer(s) ezingezantsi neShedyuli yoLondolozo '<b>%s</b>'."
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr "Cofa u-'Qhubeka' ukuze uQhawule i-Webseer(s) ezingezantsi kwiShedyuli yoLondolozo '<b>%s</b>'."
+
+#: maint.php
+msgid "You must select at least one Webseer."
+msgstr "Kufuneka ukhethe ubuncinane i-Webseer enye."
+
+#: maint.php
+msgid "Servcheck(s)"
+msgstr "Ii-Servcheck"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the Servcheck(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Cofa u-'Qhubeka' ukuze uQhagamshele i-Servcheck(s) ezingezantsi neShedyuli yoLondolozo '<b>%s</b>'."
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the Servcheck(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr "Cofa u-'Qhubeka' ukuze uQhawule i-Servcheck(s) ezingezantsi kwiShedyuli yoLondolozo '<b>%s</b>'."
+
+#: maint.php
+msgid "You must select at least one Servcheck test."
+msgstr "Kufuneka ukhethe ubuncinane uvavanyo lwe-Servcheck olunye."
+
+#: maint.php
+#, php-format
+msgid "[edit: %s]"
+msgstr "[hlela: %s]"
+
+#: maint.php
+msgid "[new]"
+msgstr "[entsha]"
+
+#: maint.php
+msgid "New Maintenance Schedule"
+msgstr "IShedyuli eNtsha yoLondolozo"
+
+#: maint.php
+#, php-format
+msgid "General Settings %s"
+msgstr "Iisetingi Eziqhelekileyo %s"
+
+#: maint.php
+msgid "Schedule"
+msgstr "Ishedyuli"
+
+#: maint.php
+msgid "Schedule Name"
+msgstr "Igama leShedyuli"
+
+#: maint.php
+msgid "Provide the Maintenance Schedule a meaningful name"
+msgstr "Nika iShedyuli yoLondolozo igama elinentsingiselo"
+
+#: maint.php
+msgid "Enabled"
+msgstr "Ivuliwe"
+
+#: maint.php
+msgid "Whether or not this schedule will be checked."
+msgstr "Nokuba le shedyuli iya kuhlolwa okanye hayi."
+
+#: maint.php setup.php
+msgid "Schedule Type"
+msgstr "Uhlobo lweShedyuli"
+
+#: maint.php
+msgid "The type of schedule, one time or recurring."
+msgstr "Uhlobo lweshedyuli, eyexesha elinye okanye ephindaphindayo."
+
+#: maint.php
+msgid "Interval"
+msgstr "Isithuba"
+
+#: maint.php
+msgid "This is the interval in which the start / end time will repeat."
+msgstr "Eli lixesha apho ixesha lokuqala / lokuphela liza kuphinda-phindeka khona."
+
+#: maint.php
+msgid "Start Time"
+msgstr "Ixesha lokuQala"
+
+#: maint.php
+msgid "The start date / time for this schedule. Most date / time formats accepted."
+msgstr "Umhla / ixesha lokuqala lale shedyuli. Uninzi lweefomathi zomhla / zexesha ziyamkelwa."
+
+#: maint.php
+msgid "End Time"
+msgstr "Ixesha leSiphelo"
+
+#: maint.php
+msgid "The end date / time for this schedule. Most date / time formats accepted."
+msgstr "Umhla / ixesha lokuphela kwesi sicwangciso. Uninzi lweefomathi zomhla / zexesha ziyamkelwa."
+
+#: maint.php
+msgid "Start Date/Time Selector"
+msgstr "Isikhethi soMhla/Ixesha lokuQala"
+
+#: maint.php
+msgid "End Date/Time Selector"
+msgstr "Umkhethi woMhla/Ixesha leSiphelo"
+
+#: maint.php setup.php
+msgid "Maintenance Schedules"
+msgstr "Iishedyuli zoLondolozo"
+
+#: maint.php
+msgid "Search"
+msgstr "Khangela"
+
+#: maint.php
+msgid "Schedules"
+msgstr "Iishedyuli"
+
+#: maint.php
+msgid "Default"
+msgstr "Okungagqibekanga"
+
+#: maint.php
+msgid "Go"
+msgstr "Hamba"
+
+#: maint.php
+msgid "Set/Refresh Filters"
+msgstr "Seta/Hlaziya Izihluzo"
+
+#: maint.php
+msgid "Clear"
+msgstr "Sula"
+
+#: maint.php
+msgid "Clear Filters"
+msgstr "Sula Izihluzo"
+
+#: maint.php
+msgid "Name"
+msgstr "Igama"
+
+#: maint.php
+msgid "The name of this Maintenance Schedule."
+msgstr "Igama lesi Sicwangciso soLondolozo."
+
+#: maint.php
+msgid "Active"
+msgstr "Iyasebenza"
+
+#: maint.php
+msgid "Type"
+msgstr "Uhlobo"
+
+#: maint.php
+msgid "Start"
+msgstr "Qala"
+
+#: maint.php
+msgid "End"
+msgstr "Isiphelo"
+
+#: maint.php
+msgid "No Schedules"
+msgstr "Akukho Zishedyuli"
+
+#: maint.php
+#, php-format
+msgid "Associated Devices %s"
+msgstr "Izixhobo eziDityanisiweyo %s"
+
+#: maint.php
+msgid "Site"
+msgstr "Isiza"
+
+#: maint.php
+msgid "Any"
+msgstr "Nayiphi na"
+
+#: maint.php
+msgid "None"
+msgstr "Akukho"
+
+#: maint.php
+msgid "Data Collector"
+msgstr "Umqokeleli Wedatha"
+
+#: maint.php
+msgid "Location"
+msgstr "Indawo"
+
+#: maint.php
+msgid "Template"
+msgstr "Itempleyiti"
+
+#: maint.php setup.php
+msgid "Devices"
+msgstr "Izixhobo"
+
+#: maint.php
+msgid "Associated"
+msgstr "Enxulumeneyo"
+
+#: maint.php
+msgid "Description"
+msgstr "Inkcazo"
+
+#: maint.php
+msgid "ID"
+msgstr "ID"
+
+#: maint.php
+msgid "Associated Schedules"
+msgstr "IiShedyuli eziDityanisiweyo"
+
+#: maint.php
+msgid "Graphs"
+msgstr "Iigrafu"
+
+#: maint.php
+msgid "Data Sources"
+msgstr "Imithombo yeDatha"
+
+#: maint.php
+msgid "Thresholds"
+msgstr "Imida"
+
+#: maint.php
+msgid "Status"
+msgstr "Ubume"
+
+#: maint.php
+msgid "Hostname"
+msgstr "Igama Lomamkeli"
+
+#: maint.php
+msgid "Current Schedule"
+msgstr "Ishedyuli yaNgoku"
+
+#: maint.php
+msgid "No Associated Devices Found"
+msgstr "Akukho zixhobo ezinxulumeneyo zifunyenweyo"
+
+#: maint.php
+msgid "Schedule must be created before associating"
+msgstr "Ishedyuli kufuneka yenziwe phambi kokuyidibanisa"
+
+#: maint.php
+#, php-format
+msgid "Associated Web URL's %s"
+msgstr "Ii-URL zeWebhu eziDityanisiweyo %s"
+
+#: maint.php
+msgid "Rows"
+msgstr "Imiqolo"
+
+#: maint.php
+msgid "URLS"
+msgstr "Ii-URL"
+
+#: maint.php
+msgid "URL"
+msgstr "URL"
+
+#: maint.php
+msgid "Disabled"
+msgstr "Icinyiwe"
+
+#: maint.php
+msgid "USING DNS"
+msgstr "USEBENZISA I-DNS"
+
+#: maint.php
+msgid "No Associated WebSeer URL's Found"
+msgstr "Akukho ma-URL e-WebSeer anxulumeneyo afunyenweyo"
+
+#: maint.php
+#, php-format
+msgid "Associated Servcheck test's %s"
+msgstr "Iimvavanyo ze-Servcheck eziDityanisiweyo %s"
+
+#: maint.php
+msgid "Tests"
+msgstr "Iimvavanyo"
+
+#: maint.php
+msgid "Path"
+msgstr "Indlela"
+
+#: maint.php
+msgid "No Associated Servcheck Test's Found"
+msgstr "Akukho mvavanyo ze-Servcheck ezinxulumeneyo zifunyenweyo"
+
+#: setup.php
+msgid "Management"
+msgstr "Ulawulo"
+
+#: setup.php
+msgid "System Administration"
+msgstr "Ulawulo lweSixokelelwano"
+
+#: setup.php
+msgid "(edit)"
+msgstr "(hlela)"
+
+#: setup.php
+msgid "(actions)"
+msgstr "(izenzo)"
+
+#: setup.php
+msgid "Enable maintenance for this device (now+1h)"
+msgstr "Vula ulondolozo lwesi sixhobo (ngoku+1h)"
+
+#: setup.php
+msgid "Add device(s) to existing maintenance schedule"
+msgstr "Yongeza isixhobo/izixhobo kwishedyuli yolondolozo ekhoyo"
+
+#: setup.php
+msgid "Maintenance Window"
+msgstr "Ifestile yoLondolozo"
+
+#: setup.php
+msgid "Duration"
+msgstr "Ubude Bexesha"
+
+#: setup.php
+msgid "Timezone"
+msgstr "Ummandla wexesha"
+
+#: setup.php
+msgid "min"
+msgstr "umz."
+
+#: setup.php
+msgid "Schedule name"
+msgstr "Igama leshedyuli"
+
+#: setup.php
+msgid "e.g. Emergency patching"
+msgstr "umz. Ukulungiswa okungxamisekileyo"
+
+#: setup.php
+msgid "disabled"
+msgstr "icinyiwe"
+
+#: setup.php
+msgid "No schedules found"
+msgstr "Akukho zishedyuli zifunyenweyo"
+
+#: setup.php
+msgid "Select schedule"
+msgstr "Khetha ishedyuli"
+
+#: setup.php
+msgid "Quick Maintenance"
+msgstr "Ulondolozo oluKhawulezayo"
+
+#: setup.php
+#, php-format
+msgid "Maintenance schedule '%s' created and %d device(s) associated."
+msgstr "Ishedyuli yolondolozo ethi '%s' idaliwe kwaye izixhobo ezi-%d zinxulunyanisiwe."
+
+#: setup.php
+#, php-format
+msgid "%d device(s) added to maintenance schedule '%s'."
+msgstr "Izixhobo ezi-%d zongezwe kwishedyuli yolondolozo '%s'."
+

@@ -1,0 +1,512 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR The Cacti Group
+# This file is distributed under the same license as the Cacti package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Cacti\n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2026-09-29 00:45-0400\n"
+"PO-Revision-Date: 2026-11-24 19:00+0000\n"
+"Last-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\n"
+"Language-Team: Afrikaans\n"
+"Language: af-ZA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: maint.php
+msgid "Update Time (Now + 1 Hour)"
+msgstr "Werk tyd by (Nou + 1 uur)"
+
+#: maint.php
+msgid "Delete"
+msgstr "Skrap"
+
+#: maint.php
+msgid "Associate"
+msgstr "Assosieer"
+
+#: maint.php
+msgid "Disassociate"
+msgstr "Ontkoppel"
+
+#: maint.php setup.php
+msgid "One Time"
+msgstr "Eenmalig"
+
+#: maint.php setup.php
+msgid "Recurring"
+msgstr "Herhalend"
+
+#: maint.php
+msgid "Not Defined"
+msgstr "Nie gedefinieer nie"
+
+#: maint.php setup.php
+msgid "Every Day"
+msgstr "Elke dag"
+
+#: maint.php setup.php
+msgid "Every Week"
+msgstr "Elke week"
+
+#: maint.php
+msgid "No"
+msgstr "Nee"
+
+#: maint.php
+msgid "Yes"
+msgstr "Ja"
+
+#: maint.php
+msgid "General"
+msgstr "Algemeen"
+
+#: maint.php
+msgid "Thold Devices"
+msgstr "Thold-toestelle"
+
+#: maint.php
+msgid "WebSeer"
+msgstr "WebSeer"
+
+#: maint.php
+msgid "Servcheck"
+msgstr "Servcheck"
+
+#: maint.php
+msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
+msgstr "Klik 'Gaan voort' om die volgende Onderhoudskedule(s) by te werk."
+
+#: maint.php
+msgid "Cancel"
+msgstr "Kanselleer"
+
+#: maint.php
+msgid "Continue"
+msgstr "Gaan voort"
+
+#: maint.php
+msgid "Update Maintenance Schedule(s)"
+msgstr "Werk instandhoudingskedule(s) by"
+
+#: maint.php
+msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
+msgstr "Klik 'Gaan voort' om die volgende instandhoudingskedule(s) te skrap. Enige Toestel(le) wat met hierdie skedule geassosieer is, sal ontkoppel word."
+
+#: maint.php
+msgid "Delete Maintenance Schedule(s)"
+msgstr "Skrap Onderhoudskedule(s)"
+
+#: maint.php
+msgid "You must select at least one Maintenance Schedule."
+msgstr "Jy moet ten minste een Onderhoudskedule kies."
+
+#: maint.php
+msgid "Return"
+msgstr "Keer terug"
+
+#: maint.php
+msgid "Device(s)"
+msgstr "Toestel(le)"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Klik 'Gaan voort' om die volgende Toestel(le) met die instandhoudingskedule '<b>%s</b>' te assosieer."
+
+#: maint.php
+msgid "Associate Maintenance Schedule(s)"
+msgstr "Assosieer instandhoudingskedule(s)"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Klik 'Gaan voort' om die volgende Toestel(le) van die instandhoudingskedule '<b>%s</b>' te ontkoppel."
+
+#: maint.php
+msgid "Disassociate Maintenance Schedule(s)"
+msgstr "Ontkoppel instandhoudingskedule(s)"
+
+#: maint.php
+msgid "You must select at least one Device."
+msgstr "Jy moet ten minste een Toestel kies."
+
+#: maint.php
+msgid "Webseer(s)"
+msgstr "Webseer(s)"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Klik 'Gaan voort' om die Webseer(s) hieronder met die instandhoudingskedule '<b>%s</b>' te assosieer."
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr "Klik 'Gaan voort' om die Webseer(s) hieronder van die instandhoudingskedule '<b>%s</b>' te ontkoppel."
+
+#: maint.php
+msgid "You must select at least one Webseer."
+msgstr "Jy moet ten minste een Webseer kies."
+
+#: maint.php
+msgid "Servcheck(s)"
+msgstr "Servcheck(s)"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the Servcheck(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Klik 'Gaan voort' om die Servcheck(s) hieronder met die instandhoudingskedule '<b>%s</b>' te assosieer."
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the Servcheck(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr "Klik 'Gaan voort' om die Servcheck(s) hieronder van die instandhoudingskedule '<b>%s</b>' te ontkoppel."
+
+#: maint.php
+msgid "You must select at least one Servcheck test."
+msgstr "Jy moet ten minste een Servcheck-toets kies."
+
+#: maint.php
+#, php-format
+msgid "[edit: %s]"
+msgstr "[wysig: %s]"
+
+#: maint.php
+msgid "[new]"
+msgstr "[nuut]"
+
+#: maint.php
+msgid "New Maintenance Schedule"
+msgstr "Nuwe instandhoudingskedule"
+
+#: maint.php
+#, php-format
+msgid "General Settings %s"
+msgstr "Algemene instellings %s"
+
+#: maint.php
+msgid "Schedule"
+msgstr "Skedule"
+
+#: maint.php
+msgid "Schedule Name"
+msgstr "Skedulenaam"
+
+#: maint.php
+msgid "Provide the Maintenance Schedule a meaningful name"
+msgstr "Gee die onderhoudskedule 'n betekenisvolle naam"
+
+#: maint.php
+msgid "Enabled"
+msgstr "Geaktiveer"
+
+#: maint.php
+msgid "Whether or not this schedule will be checked."
+msgstr "Of hierdie skedule nagegaan sal word al dan nie."
+
+#: maint.php setup.php
+msgid "Schedule Type"
+msgstr "Skeduletipe"
+
+#: maint.php
+msgid "The type of schedule, one time or recurring."
+msgstr "Die tipe skedule, eenmalig of herhalend."
+
+#: maint.php
+msgid "Interval"
+msgstr "Interval"
+
+#: maint.php
+msgid "This is the interval in which the start / end time will repeat."
+msgstr "Dit is die interval waarin die begin- / eindtyd sal herhaal."
+
+#: maint.php
+msgid "Start Time"
+msgstr "Begintyd"
+
+#: maint.php
+msgid "The start date / time for this schedule. Most date / time formats accepted."
+msgstr "Die begindatum / -tyd vir hierdie skedule. Meeste datum- / tydformate word aanvaar."
+
+#: maint.php
+msgid "End Time"
+msgstr "Eindtyd"
+
+#: maint.php
+msgid "The end date / time for this schedule. Most date / time formats accepted."
+msgstr "Die einddatum / -tyd vir hierdie skedule. Die meeste datum- / tydformate word aanvaar."
+
+#: maint.php
+msgid "Start Date/Time Selector"
+msgstr "Begindatum-/-tydkieser"
+
+#: maint.php
+msgid "End Date/Time Selector"
+msgstr "Einddatum/-tyd-kieser"
+
+#: maint.php setup.php
+msgid "Maintenance Schedules"
+msgstr "Onderhoudskedules"
+
+#: maint.php
+msgid "Search"
+msgstr "Soek"
+
+#: maint.php
+msgid "Schedules"
+msgstr "Skedules"
+
+#: maint.php
+msgid "Default"
+msgstr "Verstek"
+
+#: maint.php
+msgid "Go"
+msgstr "Gaan"
+
+#: maint.php
+msgid "Set/Refresh Filters"
+msgstr "Stel/verfris filters"
+
+#: maint.php
+msgid "Clear"
+msgstr "Maak skoon"
+
+#: maint.php
+msgid "Clear Filters"
+msgstr "Maak filters skoon"
+
+#: maint.php
+msgid "Name"
+msgstr "Naam"
+
+#: maint.php
+msgid "The name of this Maintenance Schedule."
+msgstr "Die naam van hierdie Onderhoudskedule."
+
+#: maint.php
+msgid "Active"
+msgstr "Aktief"
+
+#: maint.php
+msgid "Type"
+msgstr "Tipe"
+
+#: maint.php
+msgid "Start"
+msgstr "Begin"
+
+#: maint.php
+msgid "End"
+msgstr "Einde"
+
+#: maint.php
+msgid "No Schedules"
+msgstr "Geen skedules nie"
+
+#: maint.php
+#, php-format
+msgid "Associated Devices %s"
+msgstr "Geassosieerde toestelle %s"
+
+#: maint.php
+msgid "Site"
+msgstr "Terrein"
+
+#: maint.php
+msgid "Any"
+msgstr "Enige"
+
+#: maint.php
+msgid "None"
+msgstr "Geen"
+
+#: maint.php
+msgid "Data Collector"
+msgstr "Data-insamelaar"
+
+#: maint.php
+msgid "Location"
+msgstr "Ligging"
+
+#: maint.php
+msgid "Template"
+msgstr "Sjabloon"
+
+#: maint.php setup.php
+msgid "Devices"
+msgstr "Toestelle"
+
+#: maint.php
+msgid "Associated"
+msgstr "Geassosieer"
+
+#: maint.php
+msgid "Description"
+msgstr "Beskrywing"
+
+#: maint.php
+msgid "ID"
+msgstr "ID"
+
+#: maint.php
+msgid "Associated Schedules"
+msgstr "Geassosieerde skedules"
+
+#: maint.php
+msgid "Graphs"
+msgstr "Grafieke"
+
+#: maint.php
+msgid "Data Sources"
+msgstr "Databronne"
+
+#: maint.php
+msgid "Thresholds"
+msgstr "Drempels"
+
+#: maint.php
+msgid "Status"
+msgstr "Status"
+
+#: maint.php
+msgid "Hostname"
+msgstr "Gasheernaam"
+
+#: maint.php
+msgid "Current Schedule"
+msgstr "Huidige Skedule"
+
+#: maint.php
+msgid "No Associated Devices Found"
+msgstr "Geen geassosieerde toestelle gevind nie"
+
+#: maint.php
+msgid "Schedule must be created before associating"
+msgstr "Skedule moet geskep word voordat dit geassosieer word"
+
+#: maint.php
+#, php-format
+msgid "Associated Web URL's %s"
+msgstr "Geassosieerde web-URL's %s"
+
+#: maint.php
+msgid "Rows"
+msgstr "Rye"
+
+#: maint.php
+msgid "URLS"
+msgstr "URL'e"
+
+#: maint.php
+msgid "URL"
+msgstr "URL"
+
+#: maint.php
+msgid "Disabled"
+msgstr "Gedeaktiveer"
+
+#: maint.php
+msgid "USING DNS"
+msgstr "GEBRUIK DNS"
+
+#: maint.php
+msgid "No Associated WebSeer URL's Found"
+msgstr "Geen geassosieerde WebSeer-URL'e gevind nie"
+
+#: maint.php
+#, php-format
+msgid "Associated Servcheck test's %s"
+msgstr "Geassosieerde Servcheck-toetse %s"
+
+#: maint.php
+msgid "Tests"
+msgstr "Toetse"
+
+#: maint.php
+msgid "Path"
+msgstr "Pad"
+
+#: maint.php
+msgid "No Associated Servcheck Test's Found"
+msgstr "Geen geassosieerde Servcheck-toetse gevind nie"
+
+#: setup.php
+msgid "Management"
+msgstr "Bestuur"
+
+#: setup.php
+msgid "System Administration"
+msgstr "Stelseladministrasie"
+
+#: setup.php
+msgid "(edit)"
+msgstr "(wysig)"
+
+#: setup.php
+msgid "(actions)"
+msgstr "(aksies)"
+
+#: setup.php
+msgid "Enable maintenance for this device (now+1h)"
+msgstr "Aktiveer instandhouding vir hierdie toestel (nou+1u)"
+
+#: setup.php
+msgid "Add device(s) to existing maintenance schedule"
+msgstr "Voeg toestel(le) by bestaande instandhoudingskedule"
+
+#: setup.php
+msgid "Maintenance Window"
+msgstr "Onderhoudvenster"
+
+#: setup.php
+msgid "Duration"
+msgstr "Duur"
+
+#: setup.php
+msgid "Timezone"
+msgstr "Tydsone"
+
+#: setup.php
+msgid "min"
+msgstr "min"
+
+#: setup.php
+msgid "Schedule name"
+msgstr "Skedulenaam"
+
+#: setup.php
+msgid "e.g. Emergency patching"
+msgstr "bv. Noodregstelling"
+
+#: setup.php
+msgid "disabled"
+msgstr "gedeaktiveer"
+
+#: setup.php
+msgid "No schedules found"
+msgstr "Geen skedules gevind nie"
+
+#: setup.php
+msgid "Select schedule"
+msgstr "Kies skedule"
+
+#: setup.php
+msgid "Quick Maintenance"
+msgstr "Vinnige instandhouding"
+
+#: setup.php
+#, php-format
+msgid "Maintenance schedule '%s' created and %d device(s) associated."
+msgstr "Onderhoudskedule '%s' geskep en %d toestel(le) gekoppel."
+
+#: setup.php
+#, php-format
+msgid "%d device(s) added to maintenance schedule '%s'."
+msgstr "%d toestel(le) by onderhoudskedule '%s' gevoeg."
+

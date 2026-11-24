@@ -1,0 +1,512 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR The Cacti Group
+# This file is distributed under the same license as the Cacti package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Cacti\n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2026-09-29 00:45-0400\n"
+"PO-Revision-Date: 2026-11-24 19:00+0000\n"
+"Last-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\n"
+"Language-Team: Amharic\n"
+"Language: am-ET\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: maint.php
+msgid "Update Time (Now + 1 Hour)"
+msgstr "የማዘመኛ ጊዜ (አሁን + 1 ሰዓት)"
+
+#: maint.php
+msgid "Delete"
+msgstr "ሰርዝ"
+
+#: maint.php
+msgid "Associate"
+msgstr "አዛምድ"
+
+#: maint.php
+msgid "Disassociate"
+msgstr "ግንኙነት አቋርጥ"
+
+#: maint.php setup.php
+msgid "One Time"
+msgstr "አንድ ጊዜ"
+
+#: maint.php setup.php
+msgid "Recurring"
+msgstr "ተደጋጋሚ"
+
+#: maint.php
+msgid "Not Defined"
+msgstr "አልተገለጸም"
+
+#: maint.php setup.php
+msgid "Every Day"
+msgstr "በየቀኑ"
+
+#: maint.php setup.php
+msgid "Every Week"
+msgstr "በየሳምንቱ"
+
+#: maint.php
+msgid "No"
+msgstr "አይ"
+
+#: maint.php
+msgid "Yes"
+msgstr "አዎ"
+
+#: maint.php
+msgid "General"
+msgstr "አጠቃላይ"
+
+#: maint.php
+msgid "Thold Devices"
+msgstr "የThold መሳሪያዎች"
+
+#: maint.php
+msgid "WebSeer"
+msgstr "WebSeer"
+
+#: maint.php
+msgid "Servcheck"
+msgstr "Servcheck"
+
+#: maint.php
+msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
+msgstr "የሚከተሉትን የጥገና መርሐግብር(ሮች) ለማዘመን 'ቀጥል' የሚለውን ጠቅ ያድርጉ።"
+
+#: maint.php
+msgid "Cancel"
+msgstr "ይቅር"
+
+#: maint.php
+msgid "Continue"
+msgstr "ቀጥል"
+
+#: maint.php
+msgid "Update Maintenance Schedule(s)"
+msgstr "የጥገና መርሐግብር(ሮች)ን አዘምን"
+
+#: maint.php
+msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
+msgstr "የሚከተሉትን የጥገና መርሐግብር(ሮች) ለመሰረዝ 'ቀጥል' የሚለውን ጠቅ ያድርጉ። ከዚህ መርሐግብር ጋር የተያያዙ ማንኛቸውም መሣሪያ(ዎች) ግንኙነታቸው ይቋረጣል።"
+
+#: maint.php
+msgid "Delete Maintenance Schedule(s)"
+msgstr "የጥገና መርሐግብር(ሮችን) ሰርዝ"
+
+#: maint.php
+msgid "You must select at least one Maintenance Schedule."
+msgstr "ቢያንስ አንድ የጥገና መርሐግብር መምረጥ አለብዎት።"
+
+#: maint.php
+msgid "Return"
+msgstr "ተመለስ"
+
+#: maint.php
+msgid "Device(s)"
+msgstr "መሣሪያ(ዎች)"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr "የሚከተሉትን መሣሪያ(ዎች) ከጥገና መርሐግብሩ '<b>%s</b>' ጋር ለማያያዝ 'ቀጥል' የሚለውን ጠቅ ያድርጉ።"
+
+#: maint.php
+msgid "Associate Maintenance Schedule(s)"
+msgstr "የጥገና መርሐግብር(ሮች)ን አዛምድ"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr "የሚከተሉትን መሣሪያ(ዎች) ከጥገና መርሐግብሩ '<b>%s</b>' ለመለየት 'ቀጥል' የሚለውን ጠቅ ያድርጉ።"
+
+#: maint.php
+msgid "Disassociate Maintenance Schedule(s)"
+msgstr "የጥገና መርሐግብር(ሮች) ግንኙነት አቋርጥ"
+
+#: maint.php
+msgid "You must select at least one Device."
+msgstr "ቢያንስ አንድ መሣሪያ መምረጥ አለብዎት።"
+
+#: maint.php
+msgid "Webseer(s)"
+msgstr "Webseer(ዎች)"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr "ከታች ያሉትን Webseer(ዎች) ከጥገና መርሐግብሩ '<b>%s</b>' ጋር ለማያያዝ 'ቀጥል' የሚለውን ጠቅ ያድርጉ።"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr "ከታች ያሉትን Webseer(ዎች) ከጥገና መርሐግብሩ '<b>%s</b>' ለመለየት 'ቀጥል' የሚለውን ጠቅ ያድርጉ።"
+
+#: maint.php
+msgid "You must select at least one Webseer."
+msgstr "ቢያንስ አንድ Webseer መምረጥ አለብዎት።"
+
+#: maint.php
+msgid "Servcheck(s)"
+msgstr "Servcheck(ዎች)"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the Servcheck(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr "ከታች ያሉትን Servcheck(ዎች) ከጥገና መርሐግብሩ '<b>%s</b>' ጋር ለማያያዝ 'ቀጥል' የሚለውን ጠቅ ያድርጉ።"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the Servcheck(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr "ከታች ያሉትን Servcheck(ዎች) ከጥገና መርሐግብሩ '<b>%s</b>' ለመለየት 'ቀጥል' የሚለውን ጠቅ ያድርጉ።"
+
+#: maint.php
+msgid "You must select at least one Servcheck test."
+msgstr "ቢያንስ አንድ የServcheck ሙከራ መምረጥ አለብዎት።"
+
+#: maint.php
+#, php-format
+msgid "[edit: %s]"
+msgstr "[አርትዕ: %s]"
+
+#: maint.php
+msgid "[new]"
+msgstr "[አዲስ]"
+
+#: maint.php
+msgid "New Maintenance Schedule"
+msgstr "አዲስ የጥገና መርሐግብር"
+
+#: maint.php
+#, php-format
+msgid "General Settings %s"
+msgstr "አጠቃላይ ቅንብሮች %s"
+
+#: maint.php
+msgid "Schedule"
+msgstr "መርሐ ግብር"
+
+#: maint.php
+msgid "Schedule Name"
+msgstr "የመርሐግብር ስም"
+
+#: maint.php
+msgid "Provide the Maintenance Schedule a meaningful name"
+msgstr "ለጥገና መርሐግብሩ ትርጉም ያለው ስም ያቅርቡ"
+
+#: maint.php
+msgid "Enabled"
+msgstr "ነቅቷል"
+
+#: maint.php
+msgid "Whether or not this schedule will be checked."
+msgstr "ይህ መርሐግብር ይፈተሽ እንደሆነ ወይም እንዳልሆነ።"
+
+#: maint.php setup.php
+msgid "Schedule Type"
+msgstr "የመርሃግብር ዓይነት"
+
+#: maint.php
+msgid "The type of schedule, one time or recurring."
+msgstr "የመርሐግብር አይነት፣ አንድ ጊዜ ወይም ተደጋጋሚ።"
+
+#: maint.php
+msgid "Interval"
+msgstr "የጊዜ ክፍተት"
+
+#: maint.php
+msgid "This is the interval in which the start / end time will repeat."
+msgstr "ይህ የመጀመሪያ / መጨረሻ ሰዓቱ የሚደጋገምበት ክፍተት ነው።"
+
+#: maint.php
+msgid "Start Time"
+msgstr "የመጀመሪያ ጊዜ"
+
+#: maint.php
+msgid "The start date / time for this schedule. Most date / time formats accepted."
+msgstr "ለዚህ መርሐግብር የመጀመሪያ ቀን / ሰዓት። አብዛኛዎቹ የቀን / ሰዓት ቅርጸቶች ተቀባይነት አላቸው።"
+
+#: maint.php
+msgid "End Time"
+msgstr "የመጨረሻ ሰዓት"
+
+#: maint.php
+msgid "The end date / time for this schedule. Most date / time formats accepted."
+msgstr "የዚህ መርሐግብር መጨረሻ ቀን / ሰዓት። አብዛኛዎቹ የቀን / የሰዓት ቅርጸቶች ተቀባይነት አላቸው።"
+
+#: maint.php
+msgid "Start Date/Time Selector"
+msgstr "የመጀመሪያ ቀን/ሰዓት መምረጫ"
+
+#: maint.php
+msgid "End Date/Time Selector"
+msgstr "የመጨረሻ ቀን/ሰዓት መምረጫ"
+
+#: maint.php setup.php
+msgid "Maintenance Schedules"
+msgstr "የጥገና መርሐግብሮች"
+
+#: maint.php
+msgid "Search"
+msgstr "ፈልግ"
+
+#: maint.php
+msgid "Schedules"
+msgstr "መርሐግብሮች"
+
+#: maint.php
+msgid "Default"
+msgstr "ነባሪ"
+
+#: maint.php
+msgid "Go"
+msgstr "ሂድ"
+
+#: maint.php
+msgid "Set/Refresh Filters"
+msgstr "ማጣሪያዎችን አዘጋጅ/አድስ"
+
+#: maint.php
+msgid "Clear"
+msgstr "አጽዳ"
+
+#: maint.php
+msgid "Clear Filters"
+msgstr "ማጣሪያዎችን አጽዳ"
+
+#: maint.php
+msgid "Name"
+msgstr "ስም"
+
+#: maint.php
+msgid "The name of this Maintenance Schedule."
+msgstr "የዚህ የጥገና መርሐግብር ስም።"
+
+#: maint.php
+msgid "Active"
+msgstr "ንቁ"
+
+#: maint.php
+msgid "Type"
+msgstr "ዓይነት"
+
+#: maint.php
+msgid "Start"
+msgstr "ጀምር"
+
+#: maint.php
+msgid "End"
+msgstr "መጨረሻ"
+
+#: maint.php
+msgid "No Schedules"
+msgstr "ምንም መርሃ ግብሮች የሉም"
+
+#: maint.php
+#, php-format
+msgid "Associated Devices %s"
+msgstr "ተዛማጅ መሳሪያዎች %s"
+
+#: maint.php
+msgid "Site"
+msgstr "ጣቢያ"
+
+#: maint.php
+msgid "Any"
+msgstr "ማንኛውም"
+
+#: maint.php
+msgid "None"
+msgstr "ምንም"
+
+#: maint.php
+msgid "Data Collector"
+msgstr "ውሂብ ሰብሳቢ"
+
+#: maint.php
+msgid "Location"
+msgstr "ቦታ"
+
+#: maint.php
+msgid "Template"
+msgstr "አብነት"
+
+#: maint.php setup.php
+msgid "Devices"
+msgstr "መሳሪያዎች"
+
+#: maint.php
+msgid "Associated"
+msgstr "የተዛመደ"
+
+#: maint.php
+msgid "Description"
+msgstr "መግለጫ"
+
+#: maint.php
+msgid "ID"
+msgstr "መለያ"
+
+#: maint.php
+msgid "Associated Schedules"
+msgstr "ተዛማጅ መርሐግብሮች"
+
+#: maint.php
+msgid "Graphs"
+msgstr "ግራፎች"
+
+#: maint.php
+msgid "Data Sources"
+msgstr "የውሂብ ምንጮች"
+
+#: maint.php
+msgid "Thresholds"
+msgstr "ገደቦች"
+
+#: maint.php
+msgid "Status"
+msgstr "ሁኔታ"
+
+#: maint.php
+msgid "Hostname"
+msgstr "የአስተናጋጅ ስም"
+
+#: maint.php
+msgid "Current Schedule"
+msgstr "የአሁን መርሃ ግብር"
+
+#: maint.php
+msgid "No Associated Devices Found"
+msgstr "ምንም የተያያዙ መሳሪያዎች አልተገኙም"
+
+#: maint.php
+msgid "Schedule must be created before associating"
+msgstr "ከማዛመድ በፊት መርሐግብር መፈጠር አለበት"
+
+#: maint.php
+#, php-format
+msgid "Associated Web URL's %s"
+msgstr "ተዛማጅ የWeb URL %s"
+
+#: maint.php
+msgid "Rows"
+msgstr "ረድፎች"
+
+#: maint.php
+msgid "URLS"
+msgstr "URLዎች"
+
+#: maint.php
+msgid "URL"
+msgstr "URL"
+
+#: maint.php
+msgid "Disabled"
+msgstr "ተሰናክሏል"
+
+#: maint.php
+msgid "USING DNS"
+msgstr "DNSን በመጠቀም"
+
+#: maint.php
+msgid "No Associated WebSeer URL's Found"
+msgstr "ምንም የተያያዙ የWebSeer URLዎች አልተገኙም"
+
+#: maint.php
+#, php-format
+msgid "Associated Servcheck test's %s"
+msgstr "ተዛማጅ የServcheck ሙከራ %s"
+
+#: maint.php
+msgid "Tests"
+msgstr "ሙከራዎች"
+
+#: maint.php
+msgid "Path"
+msgstr "መንገድ"
+
+#: maint.php
+msgid "No Associated Servcheck Test's Found"
+msgstr "ምንም የተያያዙ የServcheck ሙከራዎች አልተገኙም"
+
+#: setup.php
+msgid "Management"
+msgstr "አስተዳደር"
+
+#: setup.php
+msgid "System Administration"
+msgstr "የስርዓት አስተዳደር"
+
+#: setup.php
+msgid "(edit)"
+msgstr "(አርትዕ)"
+
+#: setup.php
+msgid "(actions)"
+msgstr "(ተግባራት)"
+
+#: setup.php
+msgid "Enable maintenance for this device (now+1h)"
+msgstr "ለዚህ መሣሪያ ጥገና አንቃ (now+1h)"
+
+#: setup.php
+msgid "Add device(s) to existing maintenance schedule"
+msgstr "መሣሪያ(ዎችን) ወደ ነባር የጥገና መርሃግብር አክል"
+
+#: setup.php
+msgid "Maintenance Window"
+msgstr "የጥገና መስኮት"
+
+#: setup.php
+msgid "Duration"
+msgstr "የቆይታ ጊዜ"
+
+#: setup.php
+msgid "Timezone"
+msgstr "የሰዓት ሰቅ"
+
+#: setup.php
+msgid "min"
+msgstr "ዝቅተኛ"
+
+#: setup.php
+msgid "Schedule name"
+msgstr "የመርሐግብር ስም"
+
+#: setup.php
+msgid "e.g. Emergency patching"
+msgstr "ለምሳሌ፥ የአስቸኳይ ጊዜ ማስተካከያ"
+
+#: setup.php
+msgid "disabled"
+msgstr "ተሰናክሏል"
+
+#: setup.php
+msgid "No schedules found"
+msgstr "ምንም መርሐግብሮች አልተገኙም"
+
+#: setup.php
+msgid "Select schedule"
+msgstr "መርሐግብር ይምረጡ"
+
+#: setup.php
+msgid "Quick Maintenance"
+msgstr "ፈጣን ጥገና"
+
+#: setup.php
+#, php-format
+msgid "Maintenance schedule '%s' created and %d device(s) associated."
+msgstr "የጥገና መርሐግብር '%s' ተፈጥሯል እና %d መሣሪያ(ዎች) ተዛምደዋል።"
+
+#: setup.php
+#, php-format
+msgid "%d device(s) added to maintenance schedule '%s'."
+msgstr "%d መሣሪያ(ዎች) ወደ የጥገና መርሐግብር '%s' ታክለዋል።"
+

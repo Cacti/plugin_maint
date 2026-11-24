@@ -1,0 +1,512 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR The Cacti Group
+# This file is distributed under the same license as the Cacti package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Cacti\n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2026-09-29 00:45-0400\n"
+"PO-Revision-Date: 2026-11-24 19:00+0000\n"
+"Last-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\n"
+"Language-Team: Arabic (Egypt)\n"
+"Language: ar-EG\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: maint.php
+msgid "Update Time (Now + 1 Hour)"
+msgstr "تحديث الوقت (الآن + ساعة واحدة)"
+
+#: maint.php
+msgid "Delete"
+msgstr "حذف"
+
+#: maint.php
+msgid "Associate"
+msgstr "شريك"
+
+#: maint.php
+msgid "Disassociate"
+msgstr "الناي"
+
+#: maint.php setup.php
+msgid "One Time"
+msgstr "مرة واحدة"
+
+#: maint.php setup.php
+msgid "Recurring"
+msgstr "تناوبي"
+
+#: maint.php
+msgid "Not Defined"
+msgstr "غير معرف"
+
+#: maint.php setup.php
+msgid "Every Day"
+msgstr "كل يوم"
+
+#: maint.php setup.php
+msgid "Every Week"
+msgstr "كل أسبوع"
+
+#: maint.php
+msgid "No"
+msgstr "لا"
+
+#: maint.php
+msgid "Yes"
+msgstr "نعم"
+
+#: maint.php
+msgid "General"
+msgstr "عام"
+
+#: maint.php
+msgid "Thold Devices"
+msgstr "أجهزة Thold"
+
+#: maint.php
+msgid "WebSeer"
+msgstr "WebSeer"
+
+#: maint.php
+msgid "Servcheck"
+msgstr "Servcheck"
+
+#: maint.php
+msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
+msgstr "انقر على 'إستمرار' لتحديث جدول (جداول) الصيانة التالية."
+
+#: maint.php
+msgid "Cancel"
+msgstr "إلغاء"
+
+#: maint.php
+msgid "Continue"
+msgstr "إستمرار"
+
+#: maint.php
+msgid "Update Maintenance Schedule(s)"
+msgstr "تحديث جدول (جداول) الصيانة"
+
+#: maint.php
+msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
+msgstr "انقر على 'إستمرار' لحذف جدول (جداول) الصيانة التالية. سيتم إلغاء ربط أي جهاز (أجهزة) مرتبطة بهذا الجدول."
+
+#: maint.php
+msgid "Delete Maintenance Schedule(s)"
+msgstr "حذف جدول (جداول) الصيانة"
+
+#: maint.php
+msgid "You must select at least one Maintenance Schedule."
+msgstr "يجب تحديد جدول صيانة واحد على الأقل."
+
+#: maint.php
+msgid "Return"
+msgstr "عودة"
+
+#: maint.php
+msgid "Device(s)"
+msgstr "جهاز (أجهزة)"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr "انقر على 'إستمرار' لربط الجهاز/الأجهزة التالية بجدول الصيانة '<b>%s</b>'."
+
+#: maint.php
+msgid "Associate Maintenance Schedule(s)"
+msgstr "ربط جدول (جداول) الصيانة"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr "انقر على 'إستمرار' لإلغاء ربط الجهاز (الأجهزة) التالية بجدول الصيانة '<b>%s</b>'."
+
+#: maint.php
+msgid "Disassociate Maintenance Schedule(s)"
+msgstr "فك ارتباط جدول (جداول) الصيانة"
+
+#: maint.php
+msgid "You must select at least one Device."
+msgstr "يجب تحديد جهاز واحد على الأقل."
+
+#: maint.php
+msgid "Webseer(s)"
+msgstr "خادم (خوادم) Webseer"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr "انقر على 'إستمرار' لربط فحص/فحوصات Webseer أدناه بجدول الصيانة '<b>%s</b>'."
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr "انقر على 'إستمرار' لإلغاء ربط عناصر Webseer أدناه من جدول الصيانة '<b>%s</b>'."
+
+#: maint.php
+msgid "You must select at least one Webseer."
+msgstr "يجب تحديد Webseer واحد على الأقل."
+
+#: maint.php
+msgid "Servcheck(s)"
+msgstr "فحص/فحوصات Servcheck"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the Servcheck(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr "انقر على 'إستمرار' لربط فحص/فحوصات Servcheck أدناه بجدول الصيانة '<b>%s</b>'."
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the Servcheck(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr "انقر على 'إستمرار' لإلغاء ربط عناصر Servcheck أدناه من جدول الصيانة '<b>%s</b>'."
+
+#: maint.php
+msgid "You must select at least one Servcheck test."
+msgstr "يجب تحديد اختبار Servcheck واحد على الأقل."
+
+#: maint.php
+#, php-format
+msgid "[edit: %s]"
+msgstr "[عدل: %s]"
+
+#: maint.php
+msgid "[new]"
+msgstr "[الجديد]"
+
+#: maint.php
+msgid "New Maintenance Schedule"
+msgstr "جدول صيانة جديد"
+
+#: maint.php
+#, php-format
+msgid "General Settings %s"
+msgstr "إعدادات عامة %s"
+
+#: maint.php
+msgid "Schedule"
+msgstr "الجدول"
+
+#: maint.php
+msgid "Schedule Name"
+msgstr "اسم الجدول"
+
+#: maint.php
+msgid "Provide the Maintenance Schedule a meaningful name"
+msgstr "امنح جدول الصيانة اسماً ذا دلالة"
+
+#: maint.php
+msgid "Enabled"
+msgstr "مفعل"
+
+#: maint.php
+msgid "Whether or not this schedule will be checked."
+msgstr "ما إذا كان سيتم التحقق من هذا الجدول الزمني أم لا."
+
+#: maint.php setup.php
+msgid "Schedule Type"
+msgstr "نوع الجدول"
+
+#: maint.php
+msgid "The type of schedule, one time or recurring."
+msgstr "نوع الجدول الزمني، لمرة واحدة أو متكرر."
+
+#: maint.php
+msgid "Interval"
+msgstr "الفترة"
+
+#: maint.php
+msgid "This is the interval in which the start / end time will repeat."
+msgstr "هذا هو الفاصل الزمني الذي سيتكرر فيه وقت البدء / الانتهاء."
+
+#: maint.php
+msgid "Start Time"
+msgstr "وقت البدء"
+
+#: maint.php
+msgid "The start date / time for this schedule. Most date / time formats accepted."
+msgstr "تاريخ / وقت البدء لهذا الجدول الزمني. معظم تنسيقات التاريخ / الوقت مقبولة."
+
+#: maint.php
+msgid "End Time"
+msgstr "وقت الإنتهاء"
+
+#: maint.php
+msgid "The end date / time for this schedule. Most date / time formats accepted."
+msgstr "تاريخ / وقت الانتهاء لهذا الجدول الزمني. معظم تنسيقات التاريخ / الوقت مقبولة."
+
+#: maint.php
+msgid "Start Date/Time Selector"
+msgstr "محدد تاريخ/وقت البدء"
+
+#: maint.php
+msgid "End Date/Time Selector"
+msgstr "محدد تاريخ/وقت الانتهاء"
+
+#: maint.php setup.php
+msgid "Maintenance Schedules"
+msgstr "جداول الصيانة"
+
+#: maint.php
+msgid "Search"
+msgstr "بحث"
+
+#: maint.php
+msgid "Schedules"
+msgstr "جداول"
+
+#: maint.php
+msgid "Default"
+msgstr "الافتراضي"
+
+#: maint.php
+msgid "Go"
+msgstr "انتقال"
+
+#: maint.php
+msgid "Set/Refresh Filters"
+msgstr "مجموعة / تحديث الفلاتر"
+
+#: maint.php
+msgid "Clear"
+msgstr "مسح"
+
+#: maint.php
+msgid "Clear Filters"
+msgstr "مسح الفلتر"
+
+#: maint.php
+msgid "Name"
+msgstr "الاسم"
+
+#: maint.php
+msgid "The name of this Maintenance Schedule."
+msgstr "اسم جدول الصيانة هذا."
+
+#: maint.php
+msgid "Active"
+msgstr "نشط"
+
+#: maint.php
+msgid "Type"
+msgstr "النوع"
+
+#: maint.php
+msgid "Start"
+msgstr "بدء"
+
+#: maint.php
+msgid "End"
+msgstr "النهاية"
+
+#: maint.php
+msgid "No Schedules"
+msgstr "لا توجد جداول"
+
+#: maint.php
+#, php-format
+msgid "Associated Devices %s"
+msgstr "الأجهزة المرتبطة %s"
+
+#: maint.php
+msgid "Site"
+msgstr "موضع، موقع، مقر"
+
+#: maint.php
+msgid "Any"
+msgstr "الجميع"
+
+#: maint.php
+msgid "None"
+msgstr "لا شيء"
+
+#: maint.php
+msgid "Data Collector"
+msgstr "جامع البيانات"
+
+#: maint.php
+msgid "Location"
+msgstr "الموقع"
+
+#: maint.php
+msgid "Template"
+msgstr "قالب"
+
+#: maint.php setup.php
+msgid "Devices"
+msgstr "الأجهزة"
+
+#: maint.php
+msgid "Associated"
+msgstr "مرتبط"
+
+#: maint.php
+msgid "Description"
+msgstr "الوصف"
+
+#: maint.php
+msgid "ID"
+msgstr "الهویة الشخصیة"
+
+#: maint.php
+msgid "Associated Schedules"
+msgstr "الجداول المرتبطة"
+
+#: maint.php
+msgid "Graphs"
+msgstr "الرسوم"
+
+#: maint.php
+msgid "Data Sources"
+msgstr "مصادر البيانات"
+
+#: maint.php
+msgid "Thresholds"
+msgstr "العتبات"
+
+#: maint.php
+msgid "Status"
+msgstr "الحالة"
+
+#: maint.php
+msgid "Hostname"
+msgstr "اسم الخادم"
+
+#: maint.php
+msgid "Current Schedule"
+msgstr "الجدول الزمني الحالي"
+
+#: maint.php
+msgid "No Associated Devices Found"
+msgstr "لم يتم العثور على أجهزة مرتبطة"
+
+#: maint.php
+msgid "Schedule must be created before associating"
+msgstr "يجب إنشاء الجدول قبل الربط"
+
+#: maint.php
+#, php-format
+msgid "Associated Web URL's %s"
+msgstr "%s الخاص بعنوان Web URL المرتبط"
+
+#: maint.php
+msgid "Rows"
+msgstr "الصفوف"
+
+#: maint.php
+msgid "URLS"
+msgstr "عناوين URL"
+
+#: maint.php
+msgid "URL"
+msgstr "الرابط"
+
+#: maint.php
+msgid "Disabled"
+msgstr "معطل"
+
+#: maint.php
+msgid "USING DNS"
+msgstr "باستخدام DNS"
+
+#: maint.php
+msgid "No Associated WebSeer URL's Found"
+msgstr "لم يتم العثور على عناوين URL مرتبطة لـ WebSeer"
+
+#: maint.php
+#, php-format
+msgid "Associated Servcheck test's %s"
+msgstr "%s الخاص باختبار Servcheck المرتبط"
+
+#: maint.php
+msgid "Tests"
+msgstr "الاختبارات"
+
+#: maint.php
+msgid "Path"
+msgstr "المسار"
+
+#: maint.php
+msgid "No Associated Servcheck Test's Found"
+msgstr "لم يتم العثور على اختبارات Servcheck مرتبطة"
+
+#: setup.php
+msgid "Management"
+msgstr "الإدارة"
+
+#: setup.php
+msgid "System Administration"
+msgstr "إدارة النظام"
+
+#: setup.php
+msgid "(edit)"
+msgstr "(تعديل)"
+
+#: setup.php
+msgid "(actions)"
+msgstr "أفعال"
+
+#: setup.php
+msgid "Enable maintenance for this device (now+1h)"
+msgstr "تفعيل الصيانة لهذا الجهاز (الآن+ساعة واحدة)"
+
+#: setup.php
+msgid "Add device(s) to existing maintenance schedule"
+msgstr "إضافة جهاز (أجهزة) إلى جدول صيانة حالي"
+
+#: setup.php
+msgid "Maintenance Window"
+msgstr "نافذة الصيانة"
+
+#: setup.php
+msgid "Duration"
+msgstr "المدة الزمنية"
+
+#: setup.php
+msgid "Timezone"
+msgstr "المنطقة الزمنية"
+
+#: setup.php
+msgid "min"
+msgstr "دقيقة"
+
+#: setup.php
+msgid "Schedule name"
+msgstr "اسم الجدول"
+
+#: setup.php
+msgid "e.g. Emergency patching"
+msgstr "مثال: تصحيح طارئ"
+
+#: setup.php
+msgid "disabled"
+msgstr "معطل"
+
+#: setup.php
+msgid "No schedules found"
+msgstr "لم يتم العثور على جداول زمنية"
+
+#: setup.php
+msgid "Select schedule"
+msgstr "اختر الجدول الزمني"
+
+#: setup.php
+msgid "Quick Maintenance"
+msgstr "صيانة سريعة"
+
+#: setup.php
+#, php-format
+msgid "Maintenance schedule '%s' created and %d device(s) associated."
+msgstr "تم إنشاء جدول الصيانة '%s' وربط %d جهاز (أجهزة) به."
+
+#: setup.php
+#, php-format
+msgid "%d device(s) added to maintenance schedule '%s'."
+msgstr "تمت إضافة %d جهاز (أجهزة) إلى جدول الصيانة '%s'."
+

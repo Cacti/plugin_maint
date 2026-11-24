@@ -1,0 +1,512 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR The Cacti Group
+# This file is distributed under the same license as the Cacti package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Cacti\n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2026-09-29 00:45-0400\n"
+"PO-Revision-Date: 2026-11-24 19:00+0000\n"
+"Last-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\n"
+"Language-Team: French (Morocco)\n"
+"Language: fr-MA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: maint.php
+msgid "Update Time (Now + 1 Hour)"
+msgstr "Mettre à jour l'heure (Maintenant + 1 heure)"
+
+#: maint.php
+msgid "Delete"
+msgstr "Supprimer"
+
+#: maint.php
+msgid "Associate"
+msgstr "Associé"
+
+#: maint.php
+msgid "Disassociate"
+msgstr "Désassocier"
+
+#: maint.php setup.php
+msgid "One Time"
+msgstr "Une fois"
+
+#: maint.php setup.php
+msgid "Recurring"
+msgstr "Récurrent"
+
+#: maint.php
+msgid "Not Defined"
+msgstr "Non défini"
+
+#: maint.php setup.php
+msgid "Every Day"
+msgstr "Tous les jours"
+
+#: maint.php setup.php
+msgid "Every Week"
+msgstr "Chaque semaine"
+
+#: maint.php
+msgid "No"
+msgstr "Non"
+
+#: maint.php
+msgid "Yes"
+msgstr "Oui"
+
+#: maint.php
+msgid "General"
+msgstr "Général"
+
+#: maint.php
+msgid "Thold Devices"
+msgstr "Équipements Thold"
+
+#: maint.php
+msgid "WebSeer"
+msgstr "WebSeer"
+
+#: maint.php
+msgid "Servcheck"
+msgstr "Servcheck"
+
+#: maint.php
+msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
+msgstr "Cliquez sur 'Continuer' pour mettre à jour le(s) calendrier(s) de maintenance suivant(s)."
+
+#: maint.php
+msgid "Cancel"
+msgstr "Annuler"
+
+#: maint.php
+msgid "Continue"
+msgstr "Continuer"
+
+#: maint.php
+msgid "Update Maintenance Schedule(s)"
+msgstr "Mettre à jour la ou les planifications de maintenance"
+
+#: maint.php
+msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
+msgstr "Cliquez sur 'Continuer' pour supprimer le(s) calendrier(s) de maintenance suivant(s). Tous les équipements associés à ce calendrier seront dissociés."
+
+#: maint.php
+msgid "Delete Maintenance Schedule(s)"
+msgstr "Supprimer le(s) calendrier(s) de maintenance"
+
+#: maint.php
+msgid "You must select at least one Maintenance Schedule."
+msgstr "Vous devez sélectionner au moins une planification de maintenance."
+
+#: maint.php
+msgid "Return"
+msgstr "Retour"
+
+#: maint.php
+msgid "Device(s)"
+msgstr "Dispositif(s)"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Cliquez sur 'Continuer' pour associer le(s) équipement(s) suivant(s) au calendrier de maintenance '<b>%s</b>'."
+
+#: maint.php
+msgid "Associate Maintenance Schedule(s)"
+msgstr "Associer une ou des planifications de maintenance"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Cliquez sur 'Continuer' pour dissocier le(s) équipement(s) suivant(s) du calendrier de maintenance '<b>%s</b>'."
+
+#: maint.php
+msgid "Disassociate Maintenance Schedule(s)"
+msgstr "Dissocier la/les planification(s) de maintenance"
+
+#: maint.php
+msgid "You must select at least one Device."
+msgstr "Vous devez sélectionner au moins un équipement."
+
+#: maint.php
+msgid "Webseer(s)"
+msgstr "Webseer(s)"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Cliquez sur 'Continuer' pour associer le(s) Webseer(s) ci-dessous au calendrier de maintenance '<b>%s</b>'."
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr "Cliquez sur 'Continuer' pour dissocier le(s) Webseer(s) ci-dessous du calendrier de maintenance '<b>%s</b>'."
+
+#: maint.php
+msgid "You must select at least one Webseer."
+msgstr "Vous devez sélectionner au moins un Webseer."
+
+#: maint.php
+msgid "Servcheck(s)"
+msgstr "Servcheck(s)"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the Servcheck(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Cliquez sur 'Continuer' pour associer le(s) Servcheck(s) ci-dessous au calendrier de maintenance '<b>%s</b>'."
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the Servcheck(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr "Cliquez sur 'Continuer' pour dissocier le(s) Servcheck(s) ci-dessous du calendrier de maintenance '<b>%s</b>'."
+
+#: maint.php
+msgid "You must select at least one Servcheck test."
+msgstr "Vous devez sélectionner au moins un test Servcheck."
+
+#: maint.php
+#, php-format
+msgid "[edit: %s]"
+msgstr "[éditer : %s]"
+
+#: maint.php
+msgid "[new]"
+msgstr "[nouveau]"
+
+#: maint.php
+msgid "New Maintenance Schedule"
+msgstr "Nouvelle planification de maintenance"
+
+#: maint.php
+#, php-format
+msgid "General Settings %s"
+msgstr "Paramètres généraux %s"
+
+#: maint.php
+msgid "Schedule"
+msgstr "Planifier"
+
+#: maint.php
+msgid "Schedule Name"
+msgstr "Annexe Noms"
+
+#: maint.php
+msgid "Provide the Maintenance Schedule a meaningful name"
+msgstr "Donnez un nom explicite à la planification de maintenance"
+
+#: maint.php
+msgid "Enabled"
+msgstr "Activé"
+
+#: maint.php
+msgid "Whether or not this schedule will be checked."
+msgstr "Indique si cette planification doit être vérifiée ou non."
+
+#: maint.php setup.php
+msgid "Schedule Type"
+msgstr "Type de planification"
+
+#: maint.php
+msgid "The type of schedule, one time or recurring."
+msgstr "Le type de planification, ponctuelle ou récurrente."
+
+#: maint.php
+msgid "Interval"
+msgstr "Intervalle"
+
+#: maint.php
+msgid "This is the interval in which the start / end time will repeat."
+msgstr "Ceci est l'intervalle auquel l'heure de début / de fin se répétera."
+
+#: maint.php
+msgid "Start Time"
+msgstr "Heure de début"
+
+#: maint.php
+msgid "The start date / time for this schedule. Most date / time formats accepted."
+msgstr "La date / heure de début pour cette planification. La plupart des formats de date / heure sont acceptés."
+
+#: maint.php
+msgid "End Time"
+msgstr "Heure de fin"
+
+#: maint.php
+msgid "The end date / time for this schedule. Most date / time formats accepted."
+msgstr "La date et l'heure de fin pour cette planification. La plupart des formats de date et d'heure sont acceptés."
+
+#: maint.php
+msgid "Start Date/Time Selector"
+msgstr "Sélecteur de date/heure de début"
+
+#: maint.php
+msgid "End Date/Time Selector"
+msgstr "Sélecteur de date/heure de fin"
+
+#: maint.php setup.php
+msgid "Maintenance Schedules"
+msgstr "Planifications de maintenance"
+
+#: maint.php
+msgid "Search"
+msgstr "Rechercher"
+
+#: maint.php
+msgid "Schedules"
+msgstr "Planifications"
+
+#: maint.php
+msgid "Default"
+msgstr "Défaut"
+
+#: maint.php
+msgid "Go"
+msgstr "Go"
+
+#: maint.php
+msgid "Set/Refresh Filters"
+msgstr "Définir/Rafraîchir les filtres"
+
+#: maint.php
+msgid "Clear"
+msgstr "Effacer"
+
+#: maint.php
+msgid "Clear Filters"
+msgstr "Supprimer les filtres"
+
+#: maint.php
+msgid "Name"
+msgstr "Nom"
+
+#: maint.php
+msgid "The name of this Maintenance Schedule."
+msgstr "Le nom de cette planification de maintenance."
+
+#: maint.php
+msgid "Active"
+msgstr "Actif"
+
+#: maint.php
+msgid "Type"
+msgstr "Type"
+
+#: maint.php
+msgid "Start"
+msgstr "Début"
+
+#: maint.php
+msgid "End"
+msgstr "Fin"
+
+#: maint.php
+msgid "No Schedules"
+msgstr "Aucune planification"
+
+#: maint.php
+#, php-format
+msgid "Associated Devices %s"
+msgstr "Équipements associés %s"
+
+#: maint.php
+msgid "Site"
+msgstr "Site"
+
+#: maint.php
+msgid "Any"
+msgstr "N'importe lequel"
+
+#: maint.php
+msgid "None"
+msgstr "Aucun"
+
+#: maint.php
+msgid "Data Collector"
+msgstr "Collecteur de données"
+
+#: maint.php
+msgid "Location"
+msgstr "Emplacement"
+
+#: maint.php
+msgid "Template"
+msgstr "Modèle"
+
+#: maint.php setup.php
+msgid "Devices"
+msgstr "Équipements"
+
+#: maint.php
+msgid "Associated"
+msgstr "Associé"
+
+#: maint.php
+msgid "Description"
+msgstr "Description"
+
+#: maint.php
+msgid "ID"
+msgstr "ID"
+
+#: maint.php
+msgid "Associated Schedules"
+msgstr "Planifications associées"
+
+#: maint.php
+msgid "Graphs"
+msgstr "Graphiques"
+
+#: maint.php
+msgid "Data Sources"
+msgstr "Sources de données"
+
+#: maint.php
+msgid "Thresholds"
+msgstr "Seuils"
+
+#: maint.php
+msgid "Status"
+msgstr "État"
+
+#: maint.php
+msgid "Hostname"
+msgstr "Nom d'hôte"
+
+#: maint.php
+msgid "Current Schedule"
+msgstr "Planification actuelle"
+
+#: maint.php
+msgid "No Associated Devices Found"
+msgstr "Aucun dispositif associé trouvé"
+
+#: maint.php
+msgid "Schedule must be created before associating"
+msgstr "La planification doit être créée avant l'association"
+
+#: maint.php
+#, php-format
+msgid "Associated Web URL's %s"
+msgstr "URL Web associées %s"
+
+#: maint.php
+msgid "Rows"
+msgstr "Lignes"
+
+#: maint.php
+msgid "URLS"
+msgstr "URL"
+
+#: maint.php
+msgid "URL"
+msgstr "URL"
+
+#: maint.php
+msgid "Disabled"
+msgstr "Désactivé"
+
+#: maint.php
+msgid "USING DNS"
+msgstr "UTILISATION DU DNS"
+
+#: maint.php
+msgid "No Associated WebSeer URL's Found"
+msgstr "Aucune URL WebSeer associée trouvée"
+
+#: maint.php
+#, php-format
+msgid "Associated Servcheck test's %s"
+msgstr "Tests Servcheck associés %s"
+
+#: maint.php
+msgid "Tests"
+msgstr "Tests"
+
+#: maint.php
+msgid "Path"
+msgstr "Chemin"
+
+#: maint.php
+msgid "No Associated Servcheck Test's Found"
+msgstr "Aucun test Servcheck associé trouvé"
+
+#: setup.php
+msgid "Management"
+msgstr "Gestion"
+
+#: setup.php
+msgid "System Administration"
+msgstr "Gestion du système"
+
+#: setup.php
+msgid "(edit)"
+msgstr "Éditer"
+
+#: setup.php
+msgid "(actions)"
+msgstr "Actions"
+
+#: setup.php
+msgid "Enable maintenance for this device (now+1h)"
+msgstr "Activer la maintenance pour cet équipement (maintenant+1h)"
+
+#: setup.php
+msgid "Add device(s) to existing maintenance schedule"
+msgstr "Ajouter un ou des équipements à une planification de maintenance existante"
+
+#: setup.php
+msgid "Maintenance Window"
+msgstr "Fenêtre de maintenance"
+
+#: setup.php
+msgid "Duration"
+msgstr "Durée"
+
+#: setup.php
+msgid "Timezone"
+msgstr "Fuseau horaire"
+
+#: setup.php
+msgid "min"
+msgstr "min"
+
+#: setup.php
+msgid "Schedule name"
+msgstr "Nom de la planification"
+
+#: setup.php
+msgid "e.g. Emergency patching"
+msgstr "par ex. Correctif d'urgence"
+
+#: setup.php
+msgid "disabled"
+msgstr "désactivé"
+
+#: setup.php
+msgid "No schedules found"
+msgstr "Aucune planification trouvée"
+
+#: setup.php
+msgid "Select schedule"
+msgstr "Sélectionner une planification"
+
+#: setup.php
+msgid "Quick Maintenance"
+msgstr "Maintenance rapide"
+
+#: setup.php
+#, php-format
+msgid "Maintenance schedule '%s' created and %d device(s) associated."
+msgstr "Planification de maintenance '%s' créée et %d équipement(s) associé(s)."
+
+#: setup.php
+#, php-format
+msgid "%d device(s) added to maintenance schedule '%s'."
+msgstr "%d équipement(s) ajouté(s) au calendrier de maintenance '%s'."
+

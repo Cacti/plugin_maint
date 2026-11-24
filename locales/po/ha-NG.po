@@ -1,0 +1,512 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR The Cacti Group
+# This file is distributed under the same license as the Cacti package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Cacti\n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2026-09-29 00:45-0400\n"
+"PO-Revision-Date: 2026-11-24 19:00+0000\n"
+"Last-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\n"
+"Language-Team: Hausa\n"
+"Language: ha-NG\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: maint.php
+msgid "Update Time (Now + 1 Hour)"
+msgstr "Lokacin Sabuntawa (Yanzu + Awa 1)"
+
+#: maint.php
+msgid "Delete"
+msgstr "Share"
+
+#: maint.php
+msgid "Associate"
+msgstr "Alaƙanta"
+
+#: maint.php
+msgid "Disassociate"
+msgstr "Cire alaƙa"
+
+#: maint.php setup.php
+msgid "One Time"
+msgstr "Sau Ɗaya"
+
+#: maint.php setup.php
+msgid "Recurring"
+msgstr "Mai maimaitawa"
+
+#: maint.php
+msgid "Not Defined"
+msgstr "Ba A Bayyana Ba"
+
+#: maint.php setup.php
+msgid "Every Day"
+msgstr "Kowace Rana"
+
+#: maint.php setup.php
+msgid "Every Week"
+msgstr "Kowane Mako"
+
+#: maint.php
+msgid "No"
+msgstr "A'a"
+
+#: maint.php
+msgid "Yes"
+msgstr "Eh"
+
+#: maint.php
+msgid "General"
+msgstr "Gabaɗaya"
+
+#: maint.php
+msgid "Thold Devices"
+msgstr "Na'urorin Thold"
+
+#: maint.php
+msgid "WebSeer"
+msgstr "WebSeer"
+
+#: maint.php
+msgid "Servcheck"
+msgstr "Servcheck"
+
+#: maint.php
+msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
+msgstr "Danna 'Ci gaba' don Sabunta Tsarin/Tsare-tsaren Lokacin Kulawa masu zuwa."
+
+#: maint.php
+msgid "Cancel"
+msgstr "Soke"
+
+#: maint.php
+msgid "Continue"
+msgstr "Ci gaba"
+
+#: maint.php
+msgid "Update Maintenance Schedule(s)"
+msgstr "Sabunta Tsari(Tsare-tsaren) Kulawa"
+
+#: maint.php
+msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
+msgstr "Danna 'Ci gaba' don Share waɗannan Jadawalin Kulawa na gaba.  Duk wata Na'ura(ori) da ke Haɗe da wannan Jadawali za a Cire haɗinta."
+
+#: maint.php
+msgid "Delete Maintenance Schedule(s)"
+msgstr "Share Tsarin Lokacin Kulawa"
+
+#: maint.php
+msgid "You must select at least one Maintenance Schedule."
+msgstr "Dole ne ka zaɓi aƙalla Tsarin Lokacin Kulawa guda ɗaya."
+
+#: maint.php
+msgid "Return"
+msgstr "Koma"
+
+#: maint.php
+msgid "Device(s)"
+msgstr "Na'ura/Na'urori"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Danna 'Ci gaba' don Haɗa Na'ura(ori) na gaba da Jadawalin Kulawa '<b>%s</b>'."
+
+#: maint.php
+msgid "Associate Maintenance Schedule(s)"
+msgstr "Alaƙanta Tsarin Lokacin Kulawa"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Danna 'Ci gaba' don Cire haɗin Na'ura(ori) na gaba daga Jadawalin Kulawa '<b>%s</b>'."
+
+#: maint.php
+msgid "Disassociate Maintenance Schedule(s)"
+msgstr "Cire Alaƙar Jadawalin Kulawa"
+
+#: maint.php
+msgid "You must select at least one Device."
+msgstr "Dole ne ka zaɓi aƙalla Na'ura guda ɗaya."
+
+#: maint.php
+msgid "Webseer(s)"
+msgstr "Webseer(s)"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Danna 'Ci gaba' don Haɗa Webseer(s) da ke ƙasa da Jadawalin Kulawa '<b>%s</b>'."
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr "Danna 'Ci gaba' don Cire haɗin Webseer(s) da ke ƙasa daga Jadawalin Kulawa '<b>%s</b>'."
+
+#: maint.php
+msgid "You must select at least one Webseer."
+msgstr "Dole ne ka zaɓi aƙalla Webseer guda ɗaya."
+
+#: maint.php
+msgid "Servcheck(s)"
+msgstr "Servcheck(s)"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the Servcheck(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Danna 'Ci gaba' don Haɗa Servcheck(s) da ke ƙasa da Jadawalin Kulawa '<b>%s</b>'."
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the Servcheck(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr "Danna 'Ci gaba' don Cire haɗin Servcheck(s) da ke ƙasa daga Jadawalin Kulawa '<b>%s</b>'."
+
+#: maint.php
+msgid "You must select at least one Servcheck test."
+msgstr "Dole ne ka zaɓi aƙalla gwajin Servcheck guda ɗaya."
+
+#: maint.php
+#, php-format
+msgid "[edit: %s]"
+msgstr "[gyara: %s]"
+
+#: maint.php
+msgid "[new]"
+msgstr "[sabo]"
+
+#: maint.php
+msgid "New Maintenance Schedule"
+msgstr "Sabon Tsarin Lokacin Kulawa"
+
+#: maint.php
+#, php-format
+msgid "General Settings %s"
+msgstr "Saitunan Gabaɗaya %s"
+
+#: maint.php
+msgid "Schedule"
+msgstr "Jadawali"
+
+#: maint.php
+msgid "Schedule Name"
+msgstr "Sunan Tsarin Lokaci"
+
+#: maint.php
+msgid "Provide the Maintenance Schedule a meaningful name"
+msgstr "Ba wa Jadawalin Kulawa suna mai ma'ana"
+
+#: maint.php
+msgid "Enabled"
+msgstr "An kunna"
+
+#: maint.php
+msgid "Whether or not this schedule will be checked."
+msgstr "Ko za a duba wannan jadawalin lokaci ko a'a."
+
+#: maint.php setup.php
+msgid "Schedule Type"
+msgstr "Nau'in Jadawali"
+
+#: maint.php
+msgid "The type of schedule, one time or recurring."
+msgstr "Nau'in jadawalin lokaci, sau ɗaya ko mai maimaituwa."
+
+#: maint.php
+msgid "Interval"
+msgstr "Tazara"
+
+#: maint.php
+msgid "This is the interval in which the start / end time will repeat."
+msgstr "Wannan shine tazarar da lokacin farawa / ƙarewa zai maimaita."
+
+#: maint.php
+msgid "Start Time"
+msgstr "Lokacin Farawa"
+
+#: maint.php
+msgid "The start date / time for this schedule. Most date / time formats accepted."
+msgstr "Ranar farawa / lokaci don wannan jadawalin lokaci. Ana karɓar mafi yawan tsarin kwanan wata / lokaci."
+
+#: maint.php
+msgid "End Time"
+msgstr "Lokacin Ƙarewa"
+
+#: maint.php
+msgid "The end date / time for this schedule. Most date / time formats accepted."
+msgstr "Ranar / lokacin ƙarshe na wannan tsarin lokaci. Ana karɓar mafi yawan tsare-tsaren kwanan wata / lokaci."
+
+#: maint.php
+msgid "Start Date/Time Selector"
+msgstr "Mai Zaɓin Ranar/Lokacin Farawa"
+
+#: maint.php
+msgid "End Date/Time Selector"
+msgstr "Mai Zaɓin Kwanan Wata/Lokaci na Ƙarewa"
+
+#: maint.php setup.php
+msgid "Maintenance Schedules"
+msgstr "Jadawalan Kulawa"
+
+#: maint.php
+msgid "Search"
+msgstr "Bincika"
+
+#: maint.php
+msgid "Schedules"
+msgstr "Tsare-tsaren Lokaci"
+
+#: maint.php
+msgid "Default"
+msgstr "Na Asali"
+
+#: maint.php
+msgid "Go"
+msgstr "Tafi"
+
+#: maint.php
+msgid "Set/Refresh Filters"
+msgstr "Saita/Sabunta Matatu"
+
+#: maint.php
+msgid "Clear"
+msgstr "Share"
+
+#: maint.php
+msgid "Clear Filters"
+msgstr "Share Matatu"
+
+#: maint.php
+msgid "Name"
+msgstr "Suna"
+
+#: maint.php
+msgid "The name of this Maintenance Schedule."
+msgstr "Sunan wannan Tsarin Lokacin Kulawa."
+
+#: maint.php
+msgid "Active"
+msgstr "Yana Aiki"
+
+#: maint.php
+msgid "Type"
+msgstr "Nau'i"
+
+#: maint.php
+msgid "Start"
+msgstr "Fara"
+
+#: maint.php
+msgid "End"
+msgstr "Ƙare"
+
+#: maint.php
+msgid "No Schedules"
+msgstr "Babu Tsare-tsaren Lokaci"
+
+#: maint.php
+#, php-format
+msgid "Associated Devices %s"
+msgstr "Na'urori Masu Alaƙa %s"
+
+#: maint.php
+msgid "Site"
+msgstr "Wuri"
+
+#: maint.php
+msgid "Any"
+msgstr "Kowane"
+
+#: maint.php
+msgid "None"
+msgstr "Babu"
+
+#: maint.php
+msgid "Data Collector"
+msgstr "Mai Tara Bayanai"
+
+#: maint.php
+msgid "Location"
+msgstr "Wuri"
+
+#: maint.php
+msgid "Template"
+msgstr "Samfuri"
+
+#: maint.php setup.php
+msgid "Devices"
+msgstr "Na'urori"
+
+#: maint.php
+msgid "Associated"
+msgstr "Mai Alaƙa"
+
+#: maint.php
+msgid "Description"
+msgstr "Bayani"
+
+#: maint.php
+msgid "ID"
+msgstr "Lambar ID"
+
+#: maint.php
+msgid "Associated Schedules"
+msgstr "Tsare-tsaren Lokaci Masu Alaƙa"
+
+#: maint.php
+msgid "Graphs"
+msgstr "Jadawalai"
+
+#: maint.php
+msgid "Data Sources"
+msgstr "Tusoshin Bayanai"
+
+#: maint.php
+msgid "Thresholds"
+msgstr "Iyakoki"
+
+#: maint.php
+msgid "Status"
+msgstr "Matsayi"
+
+#: maint.php
+msgid "Hostname"
+msgstr "Sunan Mai Masauki"
+
+#: maint.php
+msgid "Current Schedule"
+msgstr "Tsarin Lokaci na Yanzu"
+
+#: maint.php
+msgid "No Associated Devices Found"
+msgstr "Ba a Sami Na'urori Masu Alaƙa ba"
+
+#: maint.php
+msgid "Schedule must be created before associating"
+msgstr "Dole ne a ƙirƙiri tsarin lokaci kafin haɗawa"
+
+#: maint.php
+#, php-format
+msgid "Associated Web URL's %s"
+msgstr "Adiresoshin URL na Yanar Gizo Masu Alaƙa %s"
+
+#: maint.php
+msgid "Rows"
+msgstr "Layuka"
+
+#: maint.php
+msgid "URLS"
+msgstr "Adiresoshin URL"
+
+#: maint.php
+msgid "URL"
+msgstr "URL"
+
+#: maint.php
+msgid "Disabled"
+msgstr "An kashe"
+
+#: maint.php
+msgid "USING DNS"
+msgstr "ANA AMFANI DA DNS"
+
+#: maint.php
+msgid "No Associated WebSeer URL's Found"
+msgstr "Ba a Sami URLs na WebSeer Masu Alaƙa ba"
+
+#: maint.php
+#, php-format
+msgid "Associated Servcheck test's %s"
+msgstr "Gwaje-gwajen Servcheck Masu Alaƙa %s"
+
+#: maint.php
+msgid "Tests"
+msgstr "Gwaje-gwaje"
+
+#: maint.php
+msgid "Path"
+msgstr "Hanya"
+
+#: maint.php
+msgid "No Associated Servcheck Test's Found"
+msgstr "Ba a Sami Gwaje-gwajen Servcheck Masu Alaƙa ba"
+
+#: setup.php
+msgid "Management"
+msgstr "Gudanarwa"
+
+#: setup.php
+msgid "System Administration"
+msgstr "Gudanar da Tsari"
+
+#: setup.php
+msgid "(edit)"
+msgstr "(gyara)"
+
+#: setup.php
+msgid "(actions)"
+msgstr "(ayyuka)"
+
+#: setup.php
+msgid "Enable maintenance for this device (now+1h)"
+msgstr "Kunna gyaran kulawa don wannan na'ura (yanzu+1h)"
+
+#: setup.php
+msgid "Add device(s) to existing maintenance schedule"
+msgstr "Ƙara na'ura(ori) zuwa tsarin lokacin gyara da ke akwai"
+
+#: setup.php
+msgid "Maintenance Window"
+msgstr "Lokacin Kulawa"
+
+#: setup.php
+msgid "Duration"
+msgstr "Tsawon Lokaci"
+
+#: setup.php
+msgid "Timezone"
+msgstr "Yankin Lokaci"
+
+#: setup.php
+msgid "min"
+msgstr "minti"
+
+#: setup.php
+msgid "Schedule name"
+msgstr "Sunan tsarin lokaci"
+
+#: setup.php
+msgid "e.g. Emergency patching"
+msgstr "misali: Gyaran gaggawa"
+
+#: setup.php
+msgid "disabled"
+msgstr "an kashe"
+
+#: setup.php
+msgid "No schedules found"
+msgstr "Ba a sami jadawalan lokaci ba"
+
+#: setup.php
+msgid "Select schedule"
+msgstr "Zaɓi tsarin lokaci"
+
+#: setup.php
+msgid "Quick Maintenance"
+msgstr "Kulawa cikin gaggawa"
+
+#: setup.php
+#, php-format
+msgid "Maintenance schedule '%s' created and %d device(s) associated."
+msgstr "An ƙirƙiri jadawalin kulawa '%s' kuma an haɗa na'ura(ori) %d."
+
+#: setup.php
+#, php-format
+msgid "%d device(s) added to maintenance schedule '%s'."
+msgstr "An ƙara na'ura/na'urori %d zuwa tsarin kulawa '%s'."
+
