@@ -19,9 +19,8 @@ msgstr ""
 "X-Generator: Weblate 4.8.1\n"
 
 #: maint.php
-#, fuzzy
 msgid "Update Time (Now + 1 Hour)"
-msgstr "Güncelleme Saati (Şimdi + 1 Saat)"
+msgstr "Zamanı Güncelle (Şimdi + 1 Saat)"
 
 #: maint.php
 msgid "Delete"
@@ -32,9 +31,8 @@ msgid "Associate"
 msgstr "Ön Lisans"
 
 #: maint.php
-#, fuzzy
 msgid "Disassociate"
-msgstr "ilişkisini"
+msgstr "İlişkiyi Kaldır"
 
 #: maint.php setup.php
 msgid "One Time"
@@ -69,23 +67,20 @@ msgid "General"
 msgstr "Genel"
 
 #: maint.php
-#, fuzzy
 msgid "Thold Devices"
-msgstr "Cihazlar"
+msgstr "Thold Cihazları"
 
 #: maint.php
-#, fuzzy
 msgid "WebSeer"
 msgstr "WebSeer"
 
 #: maint.php
 msgid "Servcheck"
-msgstr ""
+msgstr "Servcheck"
 
 #: maint.php
-#, fuzzy
 msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
-msgstr "Aşağıdaki Bakım Programlarını Güncellemek için 'Devam Et'i tıklayın."
+msgstr "Aşağıdaki Bakım Programlarını güncellemek için 'Devam Et'e tıklayın."
 
 #: maint.php
 msgid "Cancel"
@@ -96,155 +91,138 @@ msgid "Continue"
 msgstr "Devam et"
 
 #: maint.php
-#, fuzzy
 msgid "Update Maintenance Schedule(s)"
-msgstr "Bakım Takvimi"
+msgstr "Bakım Zamanlamalarını Güncelle"
 
 #: maint.php
-#, fuzzy
 msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
-msgstr "Aşağıdaki Bakım Programlarını silmek için 'Devam Et'i tıklayın. Bu Programla İlişkili Tüm Cihazlar Ayrılmayacak."
+msgstr "Aşağıdaki Bakım Programlarını silmek için 'Devam Et'e tıklayın.  Bu Programla ilişkilendirilmiş tüm Cihazların ilişkisi kaldırılacaktır."
 
 #: maint.php
-#, fuzzy
 msgid "Delete Maintenance Schedule(s)"
-msgstr "Bakım Takvimi"
+msgstr "Bakım Takvimlerini Sil"
 
 #: maint.php
-#, fuzzy
 msgid "You must select at least one Maintenance Schedule."
-msgstr "En az bir Bakım Takvimi seçmelisiniz."
+msgstr "En az bir Bakım Zamanlaması seçmelisiniz."
 
 #: maint.php
 msgid "Return"
 msgstr "Dönüş"
 
 #: maint.php
-#, fuzzy
 msgid "Device(s)"
-msgstr "Cihaz (lar)"
+msgstr "Cihaz(lar)"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Aşağıdaki Cihazları ' <b> %s</b> ' Bakım Programıyla ilişkilendirmek için 'Devam Et'i tıklayın."
+msgstr "Aşağıdaki Cihaz(lar)ı '<b>%s</b>' Bakım Takvimi ile ilişkilendirmek için 'Devam'a tıklayın."
 
 #: maint.php
-#, fuzzy
 msgid "Associate Maintenance Schedule(s)"
-msgstr "Bakım Takvimi"
+msgstr "Bakım Takvim(ler)ini İlişkilendir"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Aşağıdaki Aygıtları ' <b> %s</b> ' Bakım Çizelgesi ile ayırmak için 'Devam Et'i tıklayın."
+msgstr "Aşağıdaki Cihazların '<b>%s</b>' Bakım Programı ile ilişkisini kaldırmak için 'Devam Et'e tıklayın."
 
 #: maint.php
-#, fuzzy
 msgid "Disassociate Maintenance Schedule(s)"
-msgstr "Bakım Takvimi"
+msgstr "Bakım Takvimi İlişkisini Kaldır"
 
 #: maint.php
-#, fuzzy
 msgid "You must select at least one Device."
-msgstr "En az bir cihaz seçmelisiniz."
+msgstr "En az bir Cihaz seçmelisiniz."
 
 #: maint.php
-#, fuzzy
 msgid "Webseer(s)"
-msgstr "Web Gezgini (ler)"
+msgstr "WebSeer(ler)"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Aşağıdaki Aygıtları ' <b> %s</b> ' Bakım Çizelgesi ile ilişkilendirmek için 'Devam Et'i tıklayın."
+msgstr "Aşağıdaki WebSeer öğelerini '<b>%s</b>' Bakım Takvimi ile ilişkilendirmek için 'Devam'a tıklayın."
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
-msgstr "Aşağıdaki Cihazları / Aygıtları ' <b> %s</b> ' Bakım Çizelgesi ile ayırmak için 'Devam Et'i tıklayın."
+msgstr "Aşağıdaki Webseer öğelerinin '<b>%s</b>' Bakım Programı ile ilişkisini kaldırmak için 'Devam Et'e tıklayın."
 
 #: maint.php
-#, fuzzy
 msgid "You must select at least one Webseer."
-msgstr "En az bir cihaz seçmelisiniz."
+msgstr "En az bir WebSeer seçmelisiniz."
 
 #: maint.php
 msgid "Servcheck(s)"
-msgstr ""
+msgstr "Servcheck(ler)"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Associate the Servcheck(s) below with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Aşağıdaki Aygıtları ' <b> %s</b> ' Bakım Çizelgesi ile ilişkilendirmek için 'Devam Et'i tıklayın."
+msgstr "Aşağıdaki ServCheck öğelerini '<b>%s</b>' Bakım Takvimi ile ilişkilendirmek için 'Devam'a tıklayın."
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Disassociate the Servcheck(s) below from the Maintenance Schedule '<b>%s</b>'."
-msgstr "Aşağıdaki Cihazları / Aygıtları ' <b> %s</b> ' Bakım Çizelgesi ile ayırmak için 'Devam Et'i tıklayın."
+msgstr "Aşağıdaki Servcheck öğelerinin '<b>%s</b>' Bakım Programı ile ilişkisini kaldırmak için 'Devam Et'e tıklayın."
 
 #: maint.php
-#, fuzzy
 msgid "You must select at least one Servcheck test."
-msgstr "En az bir cihaz seçmelisiniz."
+msgstr "En az bir ServCheck testi seçmelisiniz."
 
 #: maint.php
 #, php-format
 msgid "[edit: %s]"
-msgstr ""
+msgstr "[değiştir: %s]"
 
 #: maint.php
 msgid "[new]"
-msgstr ""
+msgstr "[yeni]"
 
 #: maint.php
-#, fuzzy
 msgid "New Maintenance Schedule"
-msgstr "Yeni Bakım Takvimi"
+msgstr "Yeni Bakım Zamanlaması"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "General Settings %s"
-msgstr "Genel Ayarlar [yeni]"
+msgstr "Genel Ayarlar %s"
 
 #: maint.php
 msgid "Schedule"
 msgstr "Program"
 
 #: maint.php
-#, fuzzy
 msgid "Schedule Name"
 msgstr "Zamanlama Adı"
 
 #: maint.php
-#, fuzzy
 msgid "Provide the Maintenance Schedule a meaningful name"
-msgstr "Bakım Programına anlamlı bir isim verin"
+msgstr "Bakım Zamanlamasına anlamlı bir ad verin"
 
 #: maint.php
 msgid "Enabled"
 msgstr "Etkin"
 
 #: maint.php
-#, fuzzy
 msgid "Whether or not this schedule will be checked."
-msgstr "Bu eşiğin kontrol edilip edilmeyeceği konusunda uyarılıp uyarılmadığı."
+msgstr "Bu zamanlamanın kontrol edilip edilmeyeceği."
 
 #: maint.php setup.php
 msgid "Schedule Type"
 msgstr "Program Türü"
 
 #: maint.php
-#, fuzzy
 msgid "The type of schedule, one time or recurring."
-msgstr "Tek seferlik veya yinelenen program türü."
+msgstr "Zamanlama türü; tek seferlik veya yinelenen."
 
 #: maint.php
 msgid "Interval"
 msgstr "Aralık"
 
 #: maint.php
-#, fuzzy
 msgid "This is the interval in which the start / end time will repeat."
 msgstr "Bu, başlangıç / bitiş zamanının tekrarlanacağı aralıktır."
 
@@ -253,43 +231,37 @@ msgid "Start Time"
 msgstr "Başlama Zamanı"
 
 #: maint.php
-#, fuzzy
 msgid "The start date / time for this schedule. Most date / time formats accepted."
-msgstr "Bu programın başlangıç tarihi / saati. Çoğu tarih / saat formatı kabul edildi."
+msgstr "Bu zamanlamanın başlangıç tarihi / saati. Çoğu tarih / saat biçimi kabul edilir."
 
 #: maint.php
 msgid "End Time"
 msgstr "Bitiş Zamanı"
 
 #: maint.php
-#, fuzzy
 msgid "The end date / time for this schedule. Most date / time formats accepted."
-msgstr "Bu programın bitiş tarihi / saati. Çoğu tarih / saat formatı kabul edildi."
+msgstr "Bu zamanlamanın bitiş tarihi / saati. Çoğu tarih / saat biçimi kabul edilir."
 
 #: maint.php
-#, fuzzy
 msgid "Start Date/Time Selector"
-msgstr "Başlangıç Tarihi / Saat Seçici"
+msgstr "Başlangıç Tarih/Saat Seçici"
 
 #: maint.php
-#, fuzzy
 msgid "End Date/Time Selector"
-msgstr "Bitiş Tarihi / Saat Seçici"
+msgstr "Bitiş Tarihi/Saati Seçici"
 
 #: maint.php setup.php
-#, fuzzy
 msgid "Maintenance Schedules"
-msgstr "Bakım Takvimi"
+msgstr "Bakım Zamanlamaları"
 
 #: maint.php
 msgid "Search"
 msgstr "Ara"
 
 #: maint.php
-#, fuzzy
 #| msgid "Schedule"
 msgid "Schedules"
-msgstr "Program"
+msgstr "Zamanlamalar"
 
 #: maint.php
 msgid "Default"
@@ -316,9 +288,8 @@ msgid "Name"
 msgstr "İsim"
 
 #: maint.php
-#, fuzzy
 msgid "The name of this Maintenance Schedule."
-msgstr "Yeni Bakım Takvimi"
+msgstr "Bu Bakım Zamanlamasının adı."
 
 #: maint.php
 msgid "Active"
@@ -337,18 +308,17 @@ msgid "End"
 msgstr "Son"
 
 #: maint.php
-#, fuzzy
 msgid "No Schedules"
-msgstr "Toplu Zamanlama"
+msgstr "Zamanlama Yok"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Associated Devices %s"
 msgstr "İlişkili Cihazlar %s"
 
 #: maint.php
 msgid "Site"
-msgstr ""
+msgstr "Site"
 
 #: maint.php
 msgid "Any"
@@ -360,15 +330,15 @@ msgstr "Yok"
 
 #: maint.php
 msgid "Data Collector"
-msgstr ""
+msgstr "Veri Toplayıcı"
 
 #: maint.php
 msgid "Location"
-msgstr ""
+msgstr "Konum"
 
 #: maint.php
 msgid "Template"
-msgstr ""
+msgstr "Şablon"
 
 #: maint.php setup.php
 msgid "Devices"
@@ -387,9 +357,8 @@ msgid "ID"
 msgstr "ID"
 
 #: maint.php
-#, fuzzy
 msgid "Associated Schedules"
-msgstr "İlgili Programlar"
+msgstr "İlişkili Takvimler"
 
 #: maint.php
 msgid "Graphs"
@@ -412,24 +381,21 @@ msgid "Hostname"
 msgstr "Sunucu Adı"
 
 #: maint.php
-#, fuzzy
 msgid "Current Schedule"
 msgstr "Mevcut Program"
 
 #: maint.php
-#, fuzzy
 msgid "No Associated Devices Found"
-msgstr "İlişkili Aygıt Bulunamadı"
+msgstr "İlişkili Cihaz Bulunamadı"
 
 #: maint.php
-#, fuzzy
 msgid "Schedule must be created before associating"
-msgstr "İlişkilendirmeden önce program oluşturulmalıdır"
+msgstr "İlişkilendirmeden önce zamanlama oluşturulmalıdır"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Associated Web URL's %s"
-msgstr "İlişkili Web URL'sinin %s"
+msgstr "İlişkili Web URL'leri %s"
 
 #: maint.php
 msgid "Rows"
@@ -437,7 +403,7 @@ msgstr "Satırlar"
 
 #: maint.php
 msgid "URLS"
-msgstr ""
+msgstr "URL'LER"
 
 #: maint.php
 msgid "URL"
@@ -448,32 +414,29 @@ msgid "Disabled"
 msgstr "Devre dışı"
 
 #: maint.php
-#, fuzzy
 msgid "USING DNS"
-msgstr "DNS’i KULLANMA"
+msgstr "DNS KULLANILIYOR"
 
 #: maint.php
-#, fuzzy
 msgid "No Associated WebSeer URL's Found"
-msgstr "İlişkili WebSeer URL’si Bulunamadı"
+msgstr "İlişkili WebSeer URL'si Bulunamadı"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Associated Servcheck test's %s"
-msgstr "İlişkili Cihazlar %s"
+msgstr "İlişkili ServCheck testleri %s"
 
 #: maint.php
 msgid "Tests"
-msgstr ""
+msgstr "Testler"
 
 #: maint.php
 msgid "Path"
-msgstr ""
+msgstr "Yol"
 
 #: maint.php
-#, fuzzy
 msgid "No Associated Servcheck Test's Found"
-msgstr "İlişkili Aygıt Bulunamadı"
+msgstr "İlişkili Servcheck Testi Bulunamadı"
 
 #: setup.php
 msgid "Management"
@@ -488,74 +451,66 @@ msgid "(edit)"
 msgstr "(Düzenle)"
 
 #: setup.php
-#, fuzzy
 msgid "(actions)"
-msgstr "Eylemler"
+msgstr "(eylemler)"
 
 #: setup.php
 msgid "Enable maintenance for this device (now+1h)"
-msgstr ""
+msgstr "Bu cihaz için bakımı etkinleştir (şimdi+1 saat)"
 
 #: setup.php
-#, fuzzy
 msgid "Add device(s) to existing maintenance schedule"
-msgstr "Bakım Takvimi"
+msgstr "Mevcut bakım zamanlamasına cihaz ekle"
 
 #: setup.php
-#, fuzzy
 msgid "Maintenance Window"
-msgstr "Bakım Takvimi"
+msgstr "Bakım Penceresi"
 
 #: setup.php
-#, fuzzy
 msgid "Duration"
-msgstr "Açıklama"
+msgstr "Süre"
 
 #: setup.php
 msgid "Timezone"
-msgstr ""
+msgstr "Saat Dilimi"
 
 #: setup.php
 msgid "min"
-msgstr ""
+msgstr "dk"
 
 #: setup.php
-#, fuzzy
 msgid "Schedule name"
-msgstr "Zamanlama Adı"
+msgstr "Zamanlama adı"
 
 #: setup.php
 msgid "e.g. Emergency patching"
-msgstr ""
+msgstr "ör. Acil yama uygulaması"
 
 #: setup.php
-#, fuzzy
 msgid "disabled"
-msgstr "Devre dışı"
+msgstr "devre dışı"
 
 #: setup.php
-#, fuzzy
 msgid "No schedules found"
-msgstr "Toplu Zamanlama"
+msgstr "Zamanlama bulunamadı"
 
 #: setup.php
-#, fuzzy
 msgid "Select schedule"
-msgstr "Program"
+msgstr "Zamanlama seç"
 
 #: setup.php
 msgid "Quick Maintenance"
-msgstr ""
+msgstr "Hızlı Bakım"
 
 #: setup.php
 #, php-format
 msgid "Maintenance schedule '%s' created and %d device(s) associated."
-msgstr ""
+msgstr "'%s' bakım zamanlaması oluşturuldu ve %d cihaz ilişkilendirildi."
 
 #: setup.php
 #, php-format
 msgid "%d device(s) added to maintenance schedule '%s'."
-msgstr ""
+msgstr "%d aygıt '%s' bakım zamanlamasına eklendi."
 
 #, fuzzy
 #~ msgid "General Settings [edit: %s]"

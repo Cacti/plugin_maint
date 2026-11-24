@@ -67,9 +67,8 @@ msgid "General"
 msgstr "常规"
 
 #: maint.php
-#, fuzzy
 msgid "Thold Devices"
-msgstr "设备"
+msgstr "Thold 设备"
 
 #: maint.php
 msgid "WebSeer"
@@ -77,7 +76,7 @@ msgstr "WebSeer"
 
 #: maint.php
 msgid "Servcheck"
-msgstr ""
+msgstr "ServCheck"
 
 #: maint.php
 msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
@@ -116,18 +115,18 @@ msgid "Device(s)"
 msgstr "设备"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
-msgstr "点击“继续”，将以下设备与维护计划 '<b>%s</b>'相关联。"
+msgstr "点击“继续”将以下设备与维护计划“<b>%s</b>”关联。"
 
 #: maint.php
 msgid "Associate Maintenance Schedule(s)"
 msgstr "关联维护计划"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
-msgstr "点击“继续”，将以下设备与维护计划 '<b>%s</b>'取消关联。"
+msgstr "点击“继续”将以下设备与维护计划“<b>%s</b>”取消关联。"
 
 #: maint.php
 msgid "Disassociate Maintenance Schedule(s)"
@@ -138,43 +137,40 @@ msgid "You must select at least one Device."
 msgstr "您必须至少选择一个设备。"
 
 #: maint.php
-#, fuzzy
 msgid "Webseer(s)"
 msgstr "Webseer"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
-msgstr "点击“继续”，将以下设备与维护计划 '<b>%s</b>'相关联。"
+msgstr "点击“继续”将以下 WebSeer 检查与维护计划“<b>%s</b>”关联。"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
-msgstr "点击“继续”，将以下设备与维护计划 '<b>%s</b>'取消关联。"
+msgstr "点击“继续”将以下 WebSeer 检查与维护计划“<b>%s</b>”取消关联。"
 
 #: maint.php
-#, fuzzy
 msgid "You must select at least one Webseer."
-msgstr "您必须至少选择一个设备。"
+msgstr "您必须至少选择一个 WebSeer。"
 
 #: maint.php
 msgid "Servcheck(s)"
-msgstr ""
+msgstr "ServCheck"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Associate the Servcheck(s) below with the Maintenance Schedule '<b>%s</b>'."
-msgstr "点击“继续”，将以下设备与维护计划 '<b>%s</b>'相关联。"
+msgstr "点击“继续”将以下 ServCheck 检查与维护计划“<b>%s</b>”关联。"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Disassociate the Servcheck(s) below from the Maintenance Schedule '<b>%s</b>'."
-msgstr "点击“继续”，将以下设备与维护计划 '<b>%s</b>'取消关联。"
+msgstr "点击“继续”将以下 ServCheck 检查与维护计划“<b>%s</b>”取消关联。"
 
 #: maint.php
-#, fuzzy
 msgid "You must select at least one Servcheck test."
-msgstr "您必须至少选择一个设备。"
+msgstr "您必须至少选择一个 ServCheck 测试。"
 
 #: maint.php
 #, php-format
@@ -190,9 +186,9 @@ msgid "New Maintenance Schedule"
 msgstr "新的维护计划"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "General Settings %s"
-msgstr "一般设置[新建]"
+msgstr "常规设置 %s"
 
 #: maint.php
 msgid "Schedule"
@@ -211,18 +207,16 @@ msgid "Enabled"
 msgstr "已启用"
 
 #: maint.php
-#, fuzzy
 msgid "Whether or not this schedule will be checked."
-msgstr "是否会检查并警告此阈值。"
+msgstr "是否检查此计划。"
 
 #: maint.php setup.php
 msgid "Schedule Type"
 msgstr "计划类型"
 
 #: maint.php
-#, fuzzy
 msgid "The type of schedule, one time or recurring."
-msgstr "时间表的类型，一次或重复。"
+msgstr "计划类型：一次性或定期。"
 
 #: maint.php
 msgid "Interval"
@@ -265,10 +259,9 @@ msgid "Search"
 msgstr "搜索"
 
 #: maint.php
-#, fuzzy
 #| msgid "Schedule"
 msgid "Schedules"
-msgstr "计划表"
+msgstr "计划"
 
 #: maint.php
 msgid "Default"
@@ -295,10 +288,9 @@ msgid "Name"
 msgstr "名称"
 
 #: maint.php
-#, fuzzy
 #| msgid "New Maintenance Schedule"
 msgid "The name of this Maintenance Schedule."
-msgstr "新的维护计划"
+msgstr "此维护计划的名称。"
 
 #: maint.php
 msgid "Active"
@@ -398,14 +390,13 @@ msgid "No Associated Devices Found"
 msgstr "找不到相关设备"
 
 #: maint.php
-#, fuzzy
 msgid "Schedule must be created before associating"
-msgstr "必须在关联之前创建时间表"
+msgstr "必须先创建计划，然后才能进行关联"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Associated Web URL's %s"
-msgstr "关联的网址"
+msgstr "关联的 Web URL %s"
 
 #: maint.php
 msgid "Rows"
@@ -413,7 +404,7 @@ msgstr "行数"
 
 #: maint.php
 msgid "URLS"
-msgstr ""
+msgstr "URL 列表"
 
 #: maint.php
 msgid "URL"
@@ -432,22 +423,21 @@ msgid "No Associated WebSeer URL's Found"
 msgstr "未找到关联的WebSeer URL"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Associated Servcheck test's %s"
-msgstr "相关设备 %s"
+msgstr "关联的 Servcheck 测试 %s"
 
 #: maint.php
 msgid "Tests"
-msgstr ""
+msgstr "测试"
 
 #: maint.php
 msgid "Path"
-msgstr ""
+msgstr "路径"
 
 #: maint.php
-#, fuzzy
 msgid "No Associated Servcheck Test's Found"
-msgstr "找不到相关设备"
+msgstr "未找到关联的 ServCheck 测试"
 
 #: setup.php
 msgid "Management"
@@ -467,68 +457,61 @@ msgstr "（动作）"
 
 #: setup.php
 msgid "Enable maintenance for this device (now+1h)"
-msgstr ""
+msgstr "为此设备启用维护模式（当前+1小时）"
 
 #: setup.php
-#, fuzzy
 msgid "Add device(s) to existing maintenance schedule"
-msgstr "关联维护计划"
+msgstr "将设备添加到现有维护计划"
 
 #: setup.php
-#, fuzzy
 msgid "Maintenance Window"
-msgstr "维护计划"
+msgstr "维护窗口"
 
 #: setup.php
-#, fuzzy
 msgid "Duration"
-msgstr "描述"
+msgstr "期间"
 
 #: setup.php
 msgid "Timezone"
-msgstr ""
+msgstr "时区"
 
 #: setup.php
 msgid "min"
-msgstr ""
+msgstr "分钟"
 
 #: setup.php
-#, fuzzy
 msgid "Schedule name"
-msgstr "时间表名称"
+msgstr "计划名称"
 
 #: setup.php
 msgid "e.g. Emergency patching"
-msgstr ""
+msgstr "例如：紧急打补丁"
 
 #: setup.php
-#, fuzzy
 msgid "disabled"
 msgstr "已禁用"
 
 #: setup.php
-#, fuzzy
 msgid "No schedules found"
-msgstr "没有时间表"
+msgstr "未找到计划"
 
 #: setup.php
-#, fuzzy
 msgid "Select schedule"
-msgstr "计划表"
+msgstr "选择计划"
 
 #: setup.php
 msgid "Quick Maintenance"
-msgstr ""
+msgstr "快速维护"
 
 #: setup.php
 #, php-format
 msgid "Maintenance schedule '%s' created and %d device(s) associated."
-msgstr ""
+msgstr "已创建维护计划 '%s'，并关联了 %d 台设备。"
 
 #: setup.php
 #, php-format
 msgid "%d device(s) added to maintenance schedule '%s'."
-msgstr ""
+msgstr "已将 %d 台设备添加到维护计划“%s”。"
 
 #~ msgid "General Settings [edit: %s]"
 #~ msgstr "一般设置[编辑：%s]"

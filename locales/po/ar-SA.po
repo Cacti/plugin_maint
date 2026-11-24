@@ -18,9 +18,8 @@ msgstr ""
 "X-Generator: Poedit 2.4.2\n"
 
 #: maint.php
-#, fuzzy
 msgid "Update Time (Now + 1 Hour)"
-msgstr "وقت التحديث (الآن + ساعة واحدة)"
+msgstr "تحديث الوقت (الآن + ساعة واحدة)"
 
 #: maint.php
 msgid "Delete"
@@ -31,23 +30,20 @@ msgid "Associate"
 msgstr "شريك"
 
 #: maint.php
-#, fuzzy
 msgid "Disassociate"
-msgstr "تنأى"
+msgstr "فك الارتباط"
 
 #: maint.php setup.php
-#, fuzzy
 msgid "One Time"
-msgstr "مره واحده"
+msgstr "مرة واحدة"
 
 #: maint.php setup.php
 msgid "Recurring"
 msgstr "تناوبي"
 
 #: maint.php
-#, fuzzy
 msgid "Not Defined"
-msgstr "غير معرف"
+msgstr "غير معرّف"
 
 #: maint.php setup.php
 msgid "Every Day"
@@ -70,23 +66,20 @@ msgid "General"
 msgstr "عام"
 
 #: maint.php
-#, fuzzy
 msgid "Thold Devices"
-msgstr "الأجهزة"
+msgstr "أجهزة Thold"
 
 #: maint.php
-#, fuzzy
 msgid "WebSeer"
 msgstr "WebSeer"
 
 #: maint.php
 msgid "Servcheck"
-msgstr ""
+msgstr "Servcheck"
 
 #: maint.php
-#, fuzzy
 msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
-msgstr "انقر فوق \"متابعة\" لتحديث جدول (جداول) الصيانة التالية."
+msgstr "انقر على 'متابعة' لتحديث جدول (جداول) الصيانة التالية."
 
 #: maint.php
 msgid "Cancel"
@@ -97,22 +90,18 @@ msgid "Continue"
 msgstr "إستمرار"
 
 #: maint.php
-#, fuzzy
 msgid "Update Maintenance Schedule(s)"
-msgstr "جداول الصيانة"
+msgstr "تحديث جدول (جداول) الصيانة"
 
 #: maint.php
-#, fuzzy
 msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
-msgstr "انقر فوق \"متابعة\" لحذف جدول (جداول) الصيانة التالية. سيتم فصل أي أجهزة (أجهزة) مرتبطة بهذا الجدول."
+msgstr "انقر على 'متابعة' لحذف جدول (جداول) الصيانة التالية. سيتم إلغاء ربط أي جهاز (أجهزة) مرتبطة بهذا الجدول."
 
 #: maint.php
-#, fuzzy
 msgid "Delete Maintenance Schedule(s)"
-msgstr "جداول الصيانة"
+msgstr "حذف جدول (جداول) الصيانة"
 
 #: maint.php
-#, fuzzy
 msgid "You must select at least one Maintenance Schedule."
 msgstr "يجب عليك تحديد جدول صيانة واحد على الأقل."
 
@@ -121,165 +110,146 @@ msgid "Return"
 msgstr "عودة"
 
 #: maint.php
-#, fuzzy
 msgid "Device(s)"
-msgstr "الأجهزة)"
+msgstr "الجهاز (الأجهزة)"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
-msgstr "انقر فوق \"متابعة\" لربط الجهاز (الأجهزة) التالية بجدول الصيانة ' <b>٪ s</b> '."
+msgstr "انقر فوق 'متابعة' لربط الجهاز (الأجهزة) التالية بجدول الصيانة '<b>%s</b>'."
 
 #: maint.php
-#, fuzzy
 msgid "Associate Maintenance Schedule(s)"
-msgstr "جداول الصيانة"
+msgstr "ربط جدول (جداول) الصيانة"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
-msgstr "انقر فوق \"متابعة\" لفصل الجهاز (الأجهزة) التالية بجدول الصيانة ' <b>٪ s</b> '."
+msgstr "انقر فوق 'متابعة' لفصل الجهاز (الأجهزة) التالية عن جدول الصيانة '<b>%s</b>'."
 
 #: maint.php
-#, fuzzy
 msgid "Disassociate Maintenance Schedule(s)"
-msgstr "جداول الصيانة"
+msgstr "فك ارتباط جدول (جداول) الصيانة"
 
 #: maint.php
-#, fuzzy
 msgid "You must select at least one Device."
-msgstr "يجب عليك اختيار جهاز واحد على الأقل."
+msgstr "يجب عليك تحديد جهاز واحد على الأقل."
 
 #: maint.php
-#, fuzzy
 msgid "Webseer(s)"
-msgstr "Webseer (s)"
+msgstr "WebSeer"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
-msgstr "انقر فوق \"متابعة\" لربط الجهاز (الأجهزة) أدناه بجدول الصيانة ' <b>٪ s</b> '."
+msgstr "انقر فوق 'متابعة' لربط فحص(فحوصات) WebSeer أدناه بجدول الصيانة '<b>%s</b>'."
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
-msgstr "انقر فوق \"متابعة\" لفصل الأجهزة (الأجهزة) أدناه مع جدول الصيانة ' <b>٪ s</b> '."
+msgstr "انقر فوق 'متابعة' لفصل فحص(فحوصات) WebSeer أدناه عن جدول الصيانة '<b>%s</b>'."
 
 #: maint.php
-#, fuzzy
 msgid "You must select at least one Webseer."
-msgstr "يجب عليك اختيار جهاز واحد على الأقل."
+msgstr "يجب عليك تحديد Webseer واحد على الأقل."
 
 #: maint.php
 msgid "Servcheck(s)"
-msgstr ""
+msgstr "فحوصات Servcheck"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Associate the Servcheck(s) below with the Maintenance Schedule '<b>%s</b>'."
-msgstr "انقر فوق \"متابعة\" لربط الجهاز (الأجهزة) أدناه بجدول الصيانة ' <b>٪ s</b> '."
+msgstr "انقر فوق 'متابعة' لربط اختبار(اختبارات) ServCheck أدناه بجدول الصيانة '<b>%s</b>'."
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Disassociate the Servcheck(s) below from the Maintenance Schedule '<b>%s</b>'."
-msgstr "انقر فوق \"متابعة\" لفصل الأجهزة (الأجهزة) أدناه مع جدول الصيانة ' <b>٪ s</b> '."
+msgstr "انقر فوق 'متابعة' لفصل اختبار(اختبارات) ServCheck أدناه عن جدول الصيانة '<b>%s</b>'."
 
 #: maint.php
-#, fuzzy
 msgid "You must select at least one Servcheck test."
-msgstr "يجب عليك اختيار جهاز واحد على الأقل."
+msgstr "يجب عليك تحديد اختبار Servcheck واحد على الأقل."
 
 #: maint.php
 #, php-format
 msgid "[edit: %s]"
-msgstr ""
+msgstr "[عدل: %s]"
 
 #: maint.php
 msgid "[new]"
-msgstr ""
+msgstr "[الجديد]"
 
 #: maint.php
-#, fuzzy
 msgid "New Maintenance Schedule"
-msgstr "جدول الصيانة الجديد"
+msgstr "جدول صيانة جديد"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "General Settings %s"
-msgstr "الإعدادات العامة [جديد]"
+msgstr "الإعدادات العامة %s"
 
 #: maint.php
 msgid "Schedule"
 msgstr "الجدول"
 
 #: maint.php
-#, fuzzy
 msgid "Schedule Name"
 msgstr "اسم الجدول"
 
 #: maint.php
-#, fuzzy
 msgid "Provide the Maintenance Schedule a meaningful name"
-msgstr "قدم جدول الصيانة اسمًا ذا معنى"
+msgstr "أعطِ جدول الصيانة اسمًا ذا معنى"
 
 #: maint.php
 msgid "Enabled"
 msgstr "مفعل"
 
 #: maint.php
-#, fuzzy
 msgid "Whether or not this schedule will be checked."
-msgstr "أم لا سيتم التحقق من هذه العتبة وتنبيهها."
+msgstr "ما إذا كان سيتم التحقق من هذا الجدول الزمني أم لا."
 
 #: maint.php setup.php
 msgid "Schedule Type"
 msgstr "نوع الجدول"
 
 #: maint.php
-#, fuzzy
 msgid "The type of schedule, one time or recurring."
-msgstr "نوع الجدول الزمني ، مرة واحدة أو متكرر."
+msgstr "نوع الجدول الزمني، لمرة واحدة أو متكرر."
 
 #: maint.php
 msgid "Interval"
 msgstr "الفترة"
 
 #: maint.php
-#, fuzzy
 msgid "This is the interval in which the start / end time will repeat."
-msgstr "هذا هو الفاصل الزمني الذي يتكرر فيه وقت البدء / النهاية."
+msgstr "هذا هو الفاصل الزمني الذي سيتكرر فيه وقت البدء / الانتهاء."
 
 #: maint.php
 msgid "Start Time"
 msgstr "وقت البدء"
 
 #: maint.php
-#, fuzzy
 msgid "The start date / time for this schedule. Most date / time formats accepted."
 msgstr "تاريخ / وقت البدء لهذا الجدول. معظم تنسيقات التاريخ / الوقت مقبولة."
 
 #: maint.php
-#, fuzzy
 msgid "End Time"
-msgstr "وقت النهاية"
+msgstr "وقت الانتهاء"
 
 #: maint.php
-#, fuzzy
 msgid "The end date / time for this schedule. Most date / time formats accepted."
 msgstr "تاريخ / وقت الانتهاء لهذا الجدول. معظم تنسيقات التاريخ / الوقت مقبولة."
 
 #: maint.php
-#, fuzzy
 msgid "Start Date/Time Selector"
-msgstr "تاريخ البدء / محدد الوقت"
+msgstr "محدد تاريخ/وقت البدء"
 
 #: maint.php
-#, fuzzy
 msgid "End Date/Time Selector"
-msgstr "تاريخ الانتهاء / محدد الوقت"
+msgstr "محدد تاريخ/وقت الانتهاء"
 
 #: maint.php setup.php
-#, fuzzy
 msgid "Maintenance Schedules"
 msgstr "جداول الصيانة"
 
@@ -288,10 +258,9 @@ msgid "Search"
 msgstr "بحث"
 
 #: maint.php
-#, fuzzy
 #| msgid "Schedule"
 msgid "Schedules"
-msgstr "الجدول"
+msgstr "الجداول"
 
 #: maint.php
 msgid "Default"
@@ -302,13 +271,12 @@ msgid "Go"
 msgstr "أذهب"
 
 #: maint.php
-#, fuzzy
 msgid "Set/Refresh Filters"
-msgstr "تعيين / تحديث عوامل التصفية"
+msgstr "مجموعة / تحديث الفلاتر"
 
 #: maint.php
 msgid "Clear"
-msgstr "واضح"
+msgstr "مسح"
 
 #: maint.php
 msgid "Clear Filters"
@@ -319,9 +287,8 @@ msgid "Name"
 msgstr "الاسم"
 
 #: maint.php
-#, fuzzy
 msgid "The name of this Maintenance Schedule."
-msgstr "جدول الصيانة الجديد"
+msgstr "اسم جدول الصيانة هذا."
 
 #: maint.php
 msgid "Active"
@@ -332,27 +299,25 @@ msgid "Type"
 msgstr "النوع"
 
 #: maint.php
-#, fuzzy
 msgid "Start"
-msgstr "بداية"
+msgstr "البداية"
 
 #: maint.php
 msgid "End"
 msgstr "النهاية"
 
 #: maint.php
-#, fuzzy
 msgid "No Schedules"
-msgstr "لا جداول"
+msgstr "لا توجد جداول"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Associated Devices %s"
-msgstr "الأجهزة المرتبطة٪ s"
+msgstr "الأجهزة المرتبطة %s"
 
 #: maint.php
 msgid "Site"
-msgstr ""
+msgstr "موضع، موقع، مقر"
 
 #: maint.php
 msgid "Any"
@@ -364,15 +329,15 @@ msgstr "لا شيء"
 
 #: maint.php
 msgid "Data Collector"
-msgstr ""
+msgstr "جامع البيانات"
 
 #: maint.php
 msgid "Location"
-msgstr ""
+msgstr "الموقع"
 
 #: maint.php
 msgid "Template"
-msgstr ""
+msgstr "قالب"
 
 #: maint.php setup.php
 msgid "Devices"
@@ -391,7 +356,6 @@ msgid "ID"
 msgstr "المعرف"
 
 #: maint.php
-#, fuzzy
 msgid "Associated Schedules"
 msgstr "الجداول المرتبطة"
 
@@ -404,9 +368,8 @@ msgid "Data Sources"
 msgstr "مصادر البيانات"
 
 #: maint.php
-#, fuzzy
 msgid "Thresholds"
-msgstr "الحدود القصوى"
+msgstr "العتبات"
 
 #: maint.php
 msgid "Status"
@@ -417,24 +380,21 @@ msgid "Hostname"
 msgstr "اسم الخادم"
 
 #: maint.php
-#, fuzzy
 msgid "Current Schedule"
-msgstr "الجدول الحالي"
+msgstr "الجدول الزمني الحالي"
 
 #: maint.php
-#, fuzzy
 msgid "No Associated Devices Found"
-msgstr "لم يتم العثور على الأجهزة المرتبطة"
+msgstr "لم يتم العثور على أجهزة مرتبطة"
 
 #: maint.php
-#, fuzzy
 msgid "Schedule must be created before associating"
-msgstr "يجب إنشاء الجدول الزمني قبل الربط"
+msgstr "يجب إنشاء الجدول قبل الربط"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Associated Web URL's %s"
-msgstr "رابط الويب المرتبط٪ s"
+msgstr "روابط الويب المرتبطة %s"
 
 #: maint.php
 msgid "Rows"
@@ -442,7 +402,7 @@ msgstr "الصفوف"
 
 #: maint.php
 msgid "URLS"
-msgstr ""
+msgstr "عناوين URL"
 
 #: maint.php
 msgid "URL"
@@ -453,39 +413,35 @@ msgid "Disabled"
 msgstr "معطل"
 
 #: maint.php
-#, fuzzy
 msgid "USING DNS"
 msgstr "استخدام DNS"
 
 #: maint.php
-#, fuzzy
 msgid "No Associated WebSeer URL's Found"
-msgstr "لم يتم العثور على رابط WebSeer مرتبط"
+msgstr "لم يتم العثور على عناوين URL مرتبطة لـ WebSeer"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Associated Servcheck test's %s"
-msgstr "الأجهزة المرتبطة٪ s"
+msgstr "اختبارات ServCheck المرتبطة %s"
 
 #: maint.php
 msgid "Tests"
-msgstr ""
+msgstr "الاختبارات"
 
 #: maint.php
 msgid "Path"
-msgstr ""
+msgstr "المسار"
 
 #: maint.php
-#, fuzzy
 msgid "No Associated Servcheck Test's Found"
-msgstr "لم يتم العثور على الأجهزة المرتبطة"
+msgstr "لم يتم العثور على اختبارات ServCheck مرتبطة"
 
 #: setup.php
 msgid "Management"
 msgstr "الإدارة"
 
 #: setup.php
-#, fuzzy
 msgid "System Administration"
 msgstr "إدارة النظام"
 
@@ -494,74 +450,66 @@ msgid "(edit)"
 msgstr "(تعديل)"
 
 #: setup.php
-#, fuzzy
 msgid "(actions)"
-msgstr "أفعال"
+msgstr "(إجراءات)"
 
 #: setup.php
 msgid "Enable maintenance for this device (now+1h)"
-msgstr ""
+msgstr "تمكين الصيانة لهذا الجهاز (الآن+1 ساعة)"
 
 #: setup.php
-#, fuzzy
 msgid "Add device(s) to existing maintenance schedule"
-msgstr "جداول الصيانة"
+msgstr "إضافة الجهاز (الأجهزة) إلى جدول صيانة حالي"
 
 #: setup.php
-#, fuzzy
 msgid "Maintenance Window"
-msgstr "جداول الصيانة"
+msgstr "نافذة الصيانة"
 
 #: setup.php
-#, fuzzy
 msgid "Duration"
-msgstr "الوصف"
+msgstr "المدة الزمنية"
 
 #: setup.php
 msgid "Timezone"
-msgstr ""
+msgstr "المنطقة الزمنية"
 
 #: setup.php
 msgid "min"
-msgstr ""
+msgstr "دقيقة"
 
 #: setup.php
-#, fuzzy
 msgid "Schedule name"
 msgstr "اسم الجدول"
 
 #: setup.php
 msgid "e.g. Emergency patching"
-msgstr ""
+msgstr "مثال: تصحيح طارئ"
 
 #: setup.php
-#, fuzzy
 msgid "disabled"
-msgstr "معطل"
+msgstr "معطّل"
 
 #: setup.php
-#, fuzzy
 msgid "No schedules found"
-msgstr "لا جداول"
+msgstr "لم يتم العثور على جداول"
 
 #: setup.php
-#, fuzzy
 msgid "Select schedule"
-msgstr "الجدول"
+msgstr "حدد الجدول"
 
 #: setup.php
 msgid "Quick Maintenance"
-msgstr ""
+msgstr "صيانة سريعة"
 
 #: setup.php
 #, php-format
 msgid "Maintenance schedule '%s' created and %d device(s) associated."
-msgstr ""
+msgstr "تم إنشاء جدول الصيانة '%s' وربط %d جهاز (أجهزة) به."
 
 #: setup.php
 #, php-format
 msgid "%d device(s) added to maintenance schedule '%s'."
-msgstr ""
+msgstr "تمت إضافة %d جهاز/أجهزة إلى جدول الصيانة '%s'."
 
 #, fuzzy
 #~ msgid "General Settings [edit: %s]"

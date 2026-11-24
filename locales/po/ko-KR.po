@@ -18,9 +18,8 @@ msgstr ""
 "X-Generator: Poedit 2.4.2\n"
 
 #: maint.php
-#, fuzzy
 msgid "Update Time (Now + 1 Hour)"
-msgstr "업데이트 시간 (지금 + 1 시간)"
+msgstr "시간 업데이트 (현재 + 1시간)"
 
 #: maint.php
 msgid "Delete"
@@ -67,21 +66,18 @@ msgid "General"
 msgstr "일반"
 
 #: maint.php
-#, fuzzy
 msgid "Thold Devices"
-msgstr "장치"
+msgstr "Thold 장치"
 
 #: maint.php
-#, fuzzy
 msgid "WebSeer"
 msgstr "WebSeer"
 
 #: maint.php
 msgid "Servcheck"
-msgstr ""
+msgstr "Servcheck"
 
 #: maint.php
-#, fuzzy
 msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
 msgstr "다음 유지 관리 일정을 업데이트하려면 '계속'을 클릭하십시오."
 
@@ -94,197 +90,174 @@ msgid "Continue"
 msgstr "계속"
 
 #: maint.php
-#, fuzzy
 msgid "Update Maintenance Schedule(s)"
-msgstr "유지 보수 일정"
+msgstr "유지보수 일정 업데이트"
 
 #: maint.php
-#, fuzzy
 msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
-msgstr "다음 유지 관리 일정을 삭제하려면 '계속'을 클릭하십시오. 이 스케줄과 연관된 모든 장치는 분리됩니다."
+msgstr "다음 유지 관리 일정을 삭제하려면 '계속'을 클릭하십시오. 이 일정과 연결된 모든 장치의 연결이 해제됩니다."
 
 #: maint.php
-#, fuzzy
 msgid "Delete Maintenance Schedule(s)"
-msgstr "유지 보수 일정"
+msgstr "유지 관리 일정 삭제"
 
 #: maint.php
-#, fuzzy
 msgid "You must select at least one Maintenance Schedule."
-msgstr "최소한 하나의 유지 보수 일정을 선택해야합니다."
+msgstr "하나 이상의 유지보수 일정을 선택해야 합니다."
 
 #: maint.php
 msgid "Return"
 msgstr "반환"
 
 #: maint.php
-#, fuzzy
 msgid "Device(s)"
 msgstr "장치"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
-msgstr "'계속'을 클릭하여 다음 장치를 유지 관리 일정 ' <b> %s</b> '에 연결하십시오."
+msgstr "다음 장치를 유지 관리 일정 '<b>%s</b>'에 연결하려면 '계속'을 클릭하십시오."
 
 #: maint.php
-#, fuzzy
 msgid "Associate Maintenance Schedule(s)"
-msgstr "유지 보수 일정"
+msgstr "유지보수 일정 연결"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
-msgstr "다음 장치를 유지 관리 일정 ' <b> %s</b> '과 (과) 분리하려면 '계속'을 클릭하십시오."
+msgstr "다음 장치를 유지 관리 일정 '<b>%s</b>'에서 연결 해제하려면 '계속'을 클릭하십시오."
 
 #: maint.php
-#, fuzzy
 msgid "Disassociate Maintenance Schedule(s)"
-msgstr "유지 보수 일정"
+msgstr "유지 보수 일정 연결 해제"
 
 #: maint.php
-#, fuzzy
 msgid "You must select at least one Device."
-msgstr "하나 이상의 장치를 선택해야합니다."
+msgstr "하나 이상의 장치를 선택해야 합니다."
 
 #: maint.php
-#, fuzzy
 msgid "Webseer(s)"
-msgstr "웹 시어 (들)"
+msgstr "Webseer"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
-msgstr "'계속'을 클릭하여 아래의 장치를 유지 관리 일정 ' <b> %s</b> '에 연결하십시오."
+msgstr "아래의 WebSeer 항목을 유지 관리 일정 '<b>%s</b>'에 연결하려면 '계속'을 클릭하십시오."
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
-msgstr "아래의 장치와 유지 보수 일정 ' <b> %s</b> '의 연결을 해제하려면 '계속'을 클릭하십시오."
+msgstr "아래의 WebSeer 항목을 유지 관리 일정 '<b>%s</b>'에서 연결 해제하려면 '계속'을 클릭하십시오."
 
 #: maint.php
-#, fuzzy
 msgid "You must select at least one Webseer."
-msgstr "하나 이상의 장치를 선택해야합니다."
+msgstr "하나 이상의 WebSeer를 선택해야 합니다."
 
 #: maint.php
 msgid "Servcheck(s)"
-msgstr ""
+msgstr "Servcheck(s)"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Associate the Servcheck(s) below with the Maintenance Schedule '<b>%s</b>'."
-msgstr "'계속'을 클릭하여 아래의 장치를 유지 관리 일정 ' <b> %s</b> '에 연결하십시오."
+msgstr "아래의 ServCheck 항목을 유지 관리 일정 '<b>%s</b>'에 연결하려면 '계속'을 클릭하십시오."
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Disassociate the Servcheck(s) below from the Maintenance Schedule '<b>%s</b>'."
-msgstr "아래의 장치와 유지 보수 일정 ' <b> %s</b> '의 연결을 해제하려면 '계속'을 클릭하십시오."
+msgstr "아래의 ServCheck 항목을 유지 관리 일정 '<b>%s</b>'에서 연결 해제하려면 '계속'을 클릭하십시오."
 
 #: maint.php
-#, fuzzy
 msgid "You must select at least one Servcheck test."
-msgstr "하나 이상의 장치를 선택해야합니다."
+msgstr "하나 이상의 ServCheck 테스트를 선택해야 합니다."
 
 #: maint.php
 #, php-format
 msgid "[edit: %s]"
-msgstr ""
+msgstr "[편집 :  %s]"
 
 #: maint.php
 msgid "[new]"
-msgstr ""
+msgstr "[새로운]"
 
 #: maint.php
-#, fuzzy
 msgid "New Maintenance Schedule"
-msgstr "새로운 유지 보수 일정"
+msgstr "새 유지 관리 일정"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "General Settings %s"
-msgstr "일반 설정 [신규]"
+msgstr "일반 설정 %s"
 
 #: maint.php
 msgid "Schedule"
 msgstr "일정"
 
 #: maint.php
-#, fuzzy
 msgid "Schedule Name"
 msgstr "일정 이름"
 
 #: maint.php
-#, fuzzy
 msgid "Provide the Maintenance Schedule a meaningful name"
-msgstr "유지 관리 일정에 의미있는 이름을 제공하십시오."
+msgstr "유지 관리 일정에 의미 있는 이름을 입력하십시오."
 
 #: maint.php
 msgid "Enabled"
 msgstr "활성화"
 
 #: maint.php
-#, fuzzy
 msgid "Whether or not this schedule will be checked."
-msgstr "이 임계 값을 확인하고 경고할지 여부."
+msgstr "이 일정을 확인할지 여부입니다."
 
 #: maint.php setup.php
 msgid "Schedule Type"
 msgstr "일정 유형"
 
 #: maint.php
-#, fuzzy
 msgid "The type of schedule, one time or recurring."
-msgstr "일정 유형 (일회성 또는 반복)."
+msgstr "일정 유형(일회성 또는 반복)입니다."
 
 #: maint.php
 msgid "Interval"
 msgstr "간격"
 
 #: maint.php
-#, fuzzy
 msgid "This is the interval in which the start / end time will repeat."
-msgstr "이것은 시작 / 종료 시간이 반복되는 간격입니다."
+msgstr "시작/종료 시간이 반복되는 간격입니다."
 
 #: maint.php
 msgid "Start Time"
 msgstr "시작 시간"
 
 #: maint.php
-#, fuzzy
 msgid "The start date / time for this schedule. Most date / time formats accepted."
-msgstr "이 일정의 시작 날짜 / 시간입니다. 대부분의 날짜 / 시간 형식이 허용됩니다."
+msgstr "이 일정의 시작 날짜/시간입니다. 대부분의 날짜/시간 형식이 허용됩니다."
 
 #: maint.php
 msgid "End Time"
 msgstr "종료시간"
 
 #: maint.php
-#, fuzzy
 msgid "The end date / time for this schedule. Most date / time formats accepted."
-msgstr "이 일정의 종료 날짜 / 시간입니다. 대부분의 날짜 / 시간 형식이 허용됩니다."
+msgstr "이 일정의 종료 날짜/시간입니다. 대부분의 날짜/시간 형식이 허용됩니다."
 
 #: maint.php
-#, fuzzy
 msgid "Start Date/Time Selector"
-msgstr "시작 날짜 / 시간 선택기"
+msgstr "시작 날짜/시간 선택기"
 
 #: maint.php
-#, fuzzy
 msgid "End Date/Time Selector"
-msgstr "종료 날짜 / 시간 선택기"
+msgstr "종료 날짜/시간 선택기"
 
 #: maint.php setup.php
-#, fuzzy
 msgid "Maintenance Schedules"
-msgstr "유지 보수 일정"
+msgstr "유지 관리 일정"
 
 #: maint.php
 msgid "Search"
 msgstr "검색"
 
 #: maint.php
-#, fuzzy
 #| msgid "Schedule"
 msgid "Schedules"
 msgstr "일정"
@@ -298,7 +271,6 @@ msgid "Go"
 msgstr "가기"
 
 #: maint.php
-#, fuzzy
 msgid "Set/Refresh Filters"
 msgstr "필터 설정 / 새로 고침"
 
@@ -315,9 +287,8 @@ msgid "Name"
 msgstr "이름"
 
 #: maint.php
-#, fuzzy
 msgid "The name of this Maintenance Schedule."
-msgstr "새로운 유지 보수 일정"
+msgstr "이 유지 관리 일정의 이름입니다."
 
 #: maint.php
 msgid "Active"
@@ -336,18 +307,17 @@ msgid "End"
 msgstr "끝"
 
 #: maint.php
-#, fuzzy
 msgid "No Schedules"
-msgstr "스케쥴"
+msgstr "일정 없음"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Associated Devices %s"
-msgstr "연결된 장치  %s"
+msgstr "연결된 장치 %s"
 
 #: maint.php
 msgid "Site"
-msgstr ""
+msgstr "사이트"
 
 #: maint.php
 msgid "Any"
@@ -359,15 +329,15 @@ msgstr "없음"
 
 #: maint.php
 msgid "Data Collector"
-msgstr ""
+msgstr "데이터 수집기"
 
 #: maint.php
 msgid "Location"
-msgstr ""
+msgstr "위치"
 
 #: maint.php
 msgid "Template"
-msgstr ""
+msgstr "템플릿"
 
 #: maint.php setup.php
 msgid "Devices"
@@ -386,9 +356,8 @@ msgid "ID"
 msgstr "ID"
 
 #: maint.php
-#, fuzzy
 msgid "Associated Schedules"
-msgstr "관련 일정"
+msgstr "연결된 일정"
 
 #: maint.php
 msgid "Graphs"
@@ -399,9 +368,8 @@ msgid "Data Sources"
 msgstr "데이터 원본"
 
 #: maint.php
-#, fuzzy
 msgid "Thresholds"
-msgstr "임계 값"
+msgstr "임계값"
 
 #: maint.php
 msgid "Status"
@@ -412,24 +380,21 @@ msgid "Hostname"
 msgstr "호스트명"
 
 #: maint.php
-#, fuzzy
 msgid "Current Schedule"
 msgstr "현재 일정"
 
 #: maint.php
-#, fuzzy
 msgid "No Associated Devices Found"
-msgstr "연결된 장치가 없습니다."
+msgstr "연결된 장치를 찾을 수 없음"
 
 #: maint.php
-#, fuzzy
 msgid "Schedule must be created before associating"
-msgstr "연결하기 전에 일정을 만들어야합니다."
+msgstr "연결하기 전에 일정을 만들어야 합니다"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Associated Web URL's %s"
-msgstr "연결된 웹 URL의  %s"
+msgstr "연결된 웹 URL %s"
 
 #: maint.php
 msgid "Rows"
@@ -437,7 +402,7 @@ msgstr "행"
 
 #: maint.php
 msgid "URLS"
-msgstr ""
+msgstr "URL"
 
 #: maint.php
 msgid "URL"
@@ -448,32 +413,29 @@ msgid "Disabled"
 msgstr "비활성화"
 
 #: maint.php
-#, fuzzy
 msgid "USING DNS"
 msgstr "DNS 사용"
 
 #: maint.php
-#, fuzzy
 msgid "No Associated WebSeer URL's Found"
-msgstr "연결된 WebSeer URL이 없습니다."
+msgstr "연결된 WebSeer URL을 찾을 수 없음"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Associated Servcheck test's %s"
-msgstr "연결된 장치  %s"
+msgstr "연결된 ServCheck 테스트 %s"
 
 #: maint.php
 msgid "Tests"
-msgstr ""
+msgstr "테스트"
 
 #: maint.php
 msgid "Path"
-msgstr ""
+msgstr "경로"
 
 #: maint.php
-#, fuzzy
 msgid "No Associated Servcheck Test's Found"
-msgstr "연결된 장치가 없습니다."
+msgstr "연결된 ServCheck 테스트를 찾을 수 없음"
 
 #: setup.php
 msgid "Management"
@@ -488,74 +450,66 @@ msgid "(edit)"
 msgstr "(편집)"
 
 #: setup.php
-#, fuzzy
 msgid "(actions)"
-msgstr "작업"
+msgstr "(작업)"
 
 #: setup.php
 msgid "Enable maintenance for this device (now+1h)"
-msgstr ""
+msgstr "이 장치의 유지 관리 활성화 (현재+1시간)"
 
 #: setup.php
-#, fuzzy
 msgid "Add device(s) to existing maintenance schedule"
-msgstr "유지 보수 일정"
+msgstr "기존 유지보수 일정에 장치 추가"
 
 #: setup.php
-#, fuzzy
 msgid "Maintenance Window"
-msgstr "유지 보수 일정"
+msgstr "유지 관리 기간"
 
 #: setup.php
-#, fuzzy
 msgid "Duration"
-msgstr "설명"
+msgstr "기간"
 
 #: setup.php
 msgid "Timezone"
-msgstr ""
+msgstr "시간대"
 
 #: setup.php
 msgid "min"
-msgstr ""
+msgstr "분"
 
 #: setup.php
-#, fuzzy
 msgid "Schedule name"
 msgstr "일정 이름"
 
 #: setup.php
 msgid "e.g. Emergency patching"
-msgstr ""
+msgstr "예: 긴급 패치"
 
 #: setup.php
-#, fuzzy
 msgid "disabled"
-msgstr "비활성화"
+msgstr "비활성화됨"
 
 #: setup.php
-#, fuzzy
 msgid "No schedules found"
-msgstr "스케쥴"
+msgstr "일정을 찾을 수 없음"
 
 #: setup.php
-#, fuzzy
 msgid "Select schedule"
-msgstr "일정"
+msgstr "일정 선택"
 
 #: setup.php
 msgid "Quick Maintenance"
-msgstr ""
+msgstr "빠른 유지보수"
 
 #: setup.php
 #, php-format
 msgid "Maintenance schedule '%s' created and %d device(s) associated."
-msgstr ""
+msgstr "유지 관리 일정 '%s'이(가) 생성되었고 %d개의 장치가 연결되었습니다."
 
 #: setup.php
 #, php-format
 msgid "%d device(s) added to maintenance schedule '%s'."
-msgstr ""
+msgstr "%d개의 장치가 유지 관리 일정 '%s'에 추가되었습니다."
 
 #, fuzzy
 #~ msgid "General Settings [edit: %s]"

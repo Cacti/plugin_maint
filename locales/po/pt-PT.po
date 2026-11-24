@@ -18,21 +18,18 @@ msgstr ""
 "X-Generator: Poedit 2.4.2\n"
 
 #: maint.php
-#, fuzzy
 msgid "Update Time (Now + 1 Hour)"
-msgstr "Tempo de actualização (Agora + 1 hora)"
+msgstr "Atualizar Hora (Agora + 1 Hora)"
 
 #: maint.php
 msgid "Delete"
 msgstr "Apagar"
 
 #: maint.php
-#, fuzzy
 msgid "Associate"
-msgstr "Associado"
+msgstr "Associar"
 
 #: maint.php
-#, fuzzy
 msgid "Disassociate"
 msgstr "Desassociar"
 
@@ -45,9 +42,8 @@ msgid "Recurring"
 msgstr "Recorrente"
 
 #: maint.php
-#, fuzzy
 msgid "Not Defined"
-msgstr "Não Definido"
+msgstr "Não definido"
 
 #: maint.php setup.php
 msgid "Every Day"
@@ -70,23 +66,20 @@ msgid "General"
 msgstr "Geral"
 
 #: maint.php
-#, fuzzy
 msgid "Thold Devices"
-msgstr "Dispositivos"
+msgstr "Dispositivos Thold"
 
 #: maint.php
-#, fuzzy
 msgid "WebSeer"
 msgstr "WebSeer"
 
 #: maint.php
 msgid "Servcheck"
-msgstr ""
+msgstr "Servcheck"
 
 #: maint.php
-#, fuzzy
 msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
-msgstr "Clique em 'Continuar' para atualizar a(s) seguinte(s) programação(ões) de manutenção."
+msgstr "Clique em 'Continuar' para atualizar o(s) seguinte(s) agendamento(s) de manutenção."
 
 #: maint.php
 msgid "Cancel"
@@ -97,155 +90,138 @@ msgid "Continue"
 msgstr "Continuar"
 
 #: maint.php
-#, fuzzy
 msgid "Update Maintenance Schedule(s)"
-msgstr "Programações de manutenção"
+msgstr "Atualizar Agendamento(s) de Manutenção"
 
 #: maint.php
-#, fuzzy
 msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
-msgstr "Clique em 'Continuar' para eliminar o(s) seguinte(s) programa(s) de manutenção.  Quaisquer Dispositivos(s) Associados a esta Tabela serão Desassociados."
+msgstr "Clique em 'Continuar' para eliminar o(s) seguinte(s) agendamento(s) de manutenção. Quaisquer dispositivos associados a este agendamento serão desassociados."
 
 #: maint.php
-#, fuzzy
 msgid "Delete Maintenance Schedule(s)"
-msgstr "Programações de manutenção"
+msgstr "Eliminar agendamento(s) de manutenção"
 
 #: maint.php
-#, fuzzy
 msgid "You must select at least one Maintenance Schedule."
-msgstr "É necessário selecionar pelo menos uma Programação de manutenção."
+msgstr "Tem de selecionar pelo menos um agendamento de manutenção."
 
 #: maint.php
 msgid "Return"
 msgstr "Devolução"
 
 #: maint.php
-#, fuzzy
 msgid "Device(s)"
 msgstr "Dispositivo(s)"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Clique em 'Continuar' para associar o(s) seguinte(s) dispositivo(s) com a programação de manutenção '<b>%s</b>'."
+msgstr "Clique em 'Continuar' para associar o(s) seguinte(s) dispositivo(s) ao agendamento de manutenção '<b>%s</b>'."
 
 #: maint.php
-#, fuzzy
 msgid "Associate Maintenance Schedule(s)"
-msgstr "Programações de manutenção"
+msgstr "Associar programação(ões) de manutenção"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Clique em 'Continuar' para desassociar o(s) seguinte(s) Dispositivo(s) com a Programação de Manutenção '<b>%s</b>'."
+msgstr "Clique em 'Continuar' para desassociar o(s) seguinte(s) dispositivo(s) do agendamento de manutenção '<b>%s</b>'."
 
 #: maint.php
-#, fuzzy
 msgid "Disassociate Maintenance Schedule(s)"
-msgstr "Programações de manutenção"
+msgstr "Desassociar agendamento(s) de manutenção"
 
 #: maint.php
-#, fuzzy
 msgid "You must select at least one Device."
-msgstr "Você deve selecionar pelo menos um Dispositivo."
+msgstr "Deve selecionar pelo menos um Dispositivo."
 
 #: maint.php
-#, fuzzy
 msgid "Webseer(s)"
-msgstr "Webseer (s)"
+msgstr "WebSeer(s)"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Clique em 'Continuar' para associar o(s) dispositivo(s) abaixo com a programação de manutenção '<b>%s</b>'."
+msgstr "Clique em 'Continuar' para associar o(s) Webseer(s) abaixo ao agendamento de manutenção '<b>%s</b>'."
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
-msgstr "Clique em 'Continuar' para desassociar os Dispositivos abaixo com a Programação de Manutenção '<b>%s</b>'."
+msgstr "Clique em 'Continuar' para desassociar o(s) Webseer(s) abaixo do agendamento de manutenção '<b>%s</b>'."
 
 #: maint.php
-#, fuzzy
 msgid "You must select at least one Webseer."
-msgstr "Você deve selecionar pelo menos um Dispositivo."
+msgstr "Deve selecionar pelo menos um WebSeer."
 
 #: maint.php
 msgid "Servcheck(s)"
-msgstr ""
+msgstr "Servcheck(s)"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Associate the Servcheck(s) below with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Clique em 'Continuar' para associar o(s) dispositivo(s) abaixo com a programação de manutenção '<b>%s</b>'."
+msgstr "Clique em 'Continuar' para associar o(s) Servcheck(s) abaixo ao agendamento de manutenção '<b>%s</b>'."
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Disassociate the Servcheck(s) below from the Maintenance Schedule '<b>%s</b>'."
-msgstr "Clique em 'Continuar' para desassociar os Dispositivos abaixo com a Programação de Manutenção '<b>%s</b>'."
+msgstr "Clique em 'Continuar' para desassociar o(s) Servcheck(s) abaixo do agendamento de manutenção '<b>%s</b>'."
 
 #: maint.php
-#, fuzzy
 msgid "You must select at least one Servcheck test."
-msgstr "Você deve selecionar pelo menos um Dispositivo."
+msgstr "Deve selecionar pelo menos um teste ServCheck."
 
 #: maint.php
 #, php-format
 msgid "[edit: %s]"
-msgstr ""
+msgstr "[editar: %s]"
 
 #: maint.php
 msgid "[new]"
-msgstr ""
+msgstr "[novo]"
 
 #: maint.php
-#, fuzzy
 msgid "New Maintenance Schedule"
-msgstr "Nova programação de manutenção"
+msgstr "Novo agendamento de manutenção"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "General Settings %s"
-msgstr "Configurações gerais [novo]"
+msgstr "Definições gerais %s"
 
 #: maint.php
 msgid "Schedule"
 msgstr "Agenda"
 
 #: maint.php
-#, fuzzy
 msgid "Schedule Name"
-msgstr "Nome do horário"
+msgstr "Nome do agendamento"
 
 #: maint.php
-#, fuzzy
 msgid "Provide the Maintenance Schedule a meaningful name"
-msgstr "Fornecer à Programação de Manutenção um nome significativo"
+msgstr "Atribua um nome significativo à calendarização de manutenção"
 
 #: maint.php
 msgid "Enabled"
 msgstr "Activado"
 
 #: maint.php
-#, fuzzy
 msgid "Whether or not this schedule will be checked."
-msgstr "Se este limiar será ou não verificado e alertado."
+msgstr "Se este agendamento será ou não verificado."
 
 #: maint.php setup.php
 msgid "Schedule Type"
 msgstr "Tipo de Programação"
 
 #: maint.php
-#, fuzzy
 msgid "The type of schedule, one time or recurring."
-msgstr "O tipo de programação, única ou recorrente."
+msgstr "O tipo de agendamento, único ou recorrente."
 
 #: maint.php
 msgid "Interval"
-msgstr "Por favor, selecione um intervalo de subscrição"
+msgstr "Intervalo"
 
 #: maint.php
-#, fuzzy
 msgid "This is the interval in which the start / end time will repeat."
 msgstr "Este é o intervalo em que a hora de início/fim se repetirá."
 
@@ -254,43 +230,37 @@ msgid "Start Time"
 msgstr "Hora de início"
 
 #: maint.php
-#, fuzzy
 msgid "The start date / time for this schedule. Most date / time formats accepted."
-msgstr "A data/hora de início para este horário. A maioria dos formatos de data/hora aceites."
+msgstr "A data/hora de início para este agendamento. A maioria dos formatos de data/hora é aceite."
 
 #: maint.php
 msgid "End Time"
 msgstr "Hora do Fim"
 
 #: maint.php
-#, fuzzy
 msgid "The end date / time for this schedule. Most date / time formats accepted."
-msgstr "A data/hora final para este horário. A maioria dos formatos de data/hora aceites."
+msgstr "A data/hora de fim para este agendamento. A maioria dos formatos de data/hora é aceite."
 
 #: maint.php
-#, fuzzy
 msgid "Start Date/Time Selector"
-msgstr "Seletor de data / hora de início"
+msgstr "Seletor de data/hora de início"
 
 #: maint.php
-#, fuzzy
 msgid "End Date/Time Selector"
-msgstr "Seletor de data / hora de término"
+msgstr "Seletor de data/hora de fim"
 
 #: maint.php setup.php
-#, fuzzy
 msgid "Maintenance Schedules"
-msgstr "Programações de manutenção"
+msgstr "Agendamentos de manutenção"
 
 #: maint.php
 msgid "Search"
 msgstr "Pesquisar"
 
 #: maint.php
-#, fuzzy
 #| msgid "Schedule"
 msgid "Schedules"
-msgstr "Agenda"
+msgstr "Agendamentos"
 
 #: maint.php
 msgid "Default"
@@ -301,9 +271,8 @@ msgid "Go"
 msgstr "Ir"
 
 #: maint.php
-#, fuzzy
 msgid "Set/Refresh Filters"
-msgstr "Definir / Atualizar Filtros"
+msgstr "Filtros Set/Refresh"
 
 #: maint.php
 msgid "Clear"
@@ -318,9 +287,8 @@ msgid "Name"
 msgstr "Nome"
 
 #: maint.php
-#, fuzzy
 msgid "The name of this Maintenance Schedule."
-msgstr "Nova programação de manutenção"
+msgstr "O nome deste agendamento de manutenção."
 
 #: maint.php
 msgid "Active"
@@ -339,18 +307,17 @@ msgid "End"
 msgstr "Fim"
 
 #: maint.php
-#, fuzzy
 msgid "No Schedules"
-msgstr "Horários"
+msgstr "Sem agendamentos"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Associated Devices %s"
-msgstr "Dispositivos Associados %s"
+msgstr "Dispositivos associados %s"
 
 #: maint.php
 msgid "Site"
-msgstr ""
+msgstr "Site"
 
 #: maint.php
 msgid "Any"
@@ -362,24 +329,23 @@ msgstr "Nenhum"
 
 #: maint.php
 msgid "Data Collector"
-msgstr ""
+msgstr "Coletor de dados"
 
 #: maint.php
 msgid "Location"
-msgstr ""
+msgstr "Localização"
 
 #: maint.php
 msgid "Template"
-msgstr ""
+msgstr "Modelo"
 
 #: maint.php setup.php
 msgid "Devices"
 msgstr "Dispositivos"
 
 #: maint.php
-#, fuzzy
 msgid "Associated"
-msgstr "Associados"
+msgstr "Associado"
 
 #: maint.php
 msgid "Description"
@@ -390,9 +356,8 @@ msgid "ID"
 msgstr "ID"
 
 #: maint.php
-#, fuzzy
 msgid "Associated Schedules"
-msgstr "Horários associados"
+msgstr "Programações associadas"
 
 #: maint.php
 msgid "Graphs"
@@ -415,24 +380,21 @@ msgid "Hostname"
 msgstr "Hostname"
 
 #: maint.php
-#, fuzzy
 msgid "Current Schedule"
-msgstr "Horário Atual"
+msgstr "Agendamento atual"
 
 #: maint.php
-#, fuzzy
 msgid "No Associated Devices Found"
 msgstr "Nenhum dispositivo associado encontrado"
 
 #: maint.php
-#, fuzzy
 msgid "Schedule must be created before associating"
-msgstr "A programação deve ser criada antes de associar"
+msgstr "O agendamento tem de ser criado antes de associar"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Associated Web URL's %s"
-msgstr "URLs da Web Associadas %s"
+msgstr "URLs Web associados %s"
 
 #: maint.php
 msgid "Rows"
@@ -440,7 +402,7 @@ msgstr "Linhas"
 
 #: maint.php
 msgid "URLS"
-msgstr ""
+msgstr "URLs"
 
 #: maint.php
 msgid "URL"
@@ -451,32 +413,29 @@ msgid "Disabled"
 msgstr "Desativado"
 
 #: maint.php
-#, fuzzy
 msgid "USING DNS"
-msgstr "UTILIZAR DNS"
+msgstr "A UTILIZAR DNS"
 
 #: maint.php
-#, fuzzy
 msgid "No Associated WebSeer URL's Found"
-msgstr "Nenhum URL associado do WebSeer encontrado"
+msgstr "Nenhum URL WebSeer associado encontrado"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Associated Servcheck test's %s"
-msgstr "Dispositivos Associados %s"
+msgstr "Testes ServCheck associados %s"
 
 #: maint.php
 msgid "Tests"
-msgstr ""
+msgstr "Testes"
 
 #: maint.php
 msgid "Path"
-msgstr ""
+msgstr "Caminho"
 
 #: maint.php
-#, fuzzy
 msgid "No Associated Servcheck Test's Found"
-msgstr "Nenhum dispositivo associado encontrado"
+msgstr "Nenhum teste ServCheck associado encontrado"
 
 #: setup.php
 msgid "Management"
@@ -487,79 +446,70 @@ msgid "System Administration"
 msgstr "Administrador de sistemas"
 
 #: setup.php
-#, fuzzy
 msgid "(edit)"
-msgstr "(Editar)"
+msgstr "(editar)"
 
 #: setup.php
-#, fuzzy
 msgid "(actions)"
-msgstr "Acções"
+msgstr "(ações)"
 
 #: setup.php
 msgid "Enable maintenance for this device (now+1h)"
-msgstr ""
+msgstr "Ativar manutenção para este dispositivo (agora+1h)"
 
 #: setup.php
-#, fuzzy
 msgid "Add device(s) to existing maintenance schedule"
-msgstr "Programações de manutenção"
+msgstr "Adicionar dispositivo(s) à programação de manutenção existente"
 
 #: setup.php
-#, fuzzy
 msgid "Maintenance Window"
-msgstr "Programações de manutenção"
+msgstr "Janela de manutenção"
 
 #: setup.php
-#, fuzzy
 msgid "Duration"
-msgstr "Descrição"
+msgstr "Duração"
 
 #: setup.php
 msgid "Timezone"
-msgstr ""
+msgstr "Fuso Horário"
 
 #: setup.php
 msgid "min"
-msgstr ""
+msgstr "min"
 
 #: setup.php
-#, fuzzy
 msgid "Schedule name"
-msgstr "Nome do horário"
+msgstr "Nome do agendamento"
 
 #: setup.php
 msgid "e.g. Emergency patching"
-msgstr ""
+msgstr "p. ex., Aplicação de correções de emergência"
 
 #: setup.php
-#, fuzzy
 msgid "disabled"
-msgstr "Desativado"
+msgstr "desativado"
 
 #: setup.php
-#, fuzzy
 msgid "No schedules found"
-msgstr "Horários"
+msgstr "Nenhum agendamento encontrado"
 
 #: setup.php
-#, fuzzy
 msgid "Select schedule"
-msgstr "Agenda"
+msgstr "Selecionar agendamento"
 
 #: setup.php
 msgid "Quick Maintenance"
-msgstr ""
+msgstr "Manutenção rápida"
 
 #: setup.php
 #, php-format
 msgid "Maintenance schedule '%s' created and %d device(s) associated."
-msgstr ""
+msgstr "Agendamento de manutenção '%s' criado e %d dispositivo(s) associado(s)."
 
 #: setup.php
 #, php-format
 msgid "%d device(s) added to maintenance schedule '%s'."
-msgstr ""
+msgstr "%d dispositivo(s) adicionado(s) ao agendamento de manutenção '%s'."
 
 #, fuzzy
 #~ msgid "General Settings [edit: %s]"
