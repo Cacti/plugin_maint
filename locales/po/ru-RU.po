@@ -4,19 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-29 00:45-0400\n"
-"PO-Revision-Date: 2024-11-04 17:07+0000\n"
-"Last-Translator: Anton Zhuravlev <baka109g@gmail.com>\n"
-"Language-Team: Russian <http://translate.cacti.net/projects/cacti/maint/ru/>\n"
-"Language: ru-RU\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.8.1\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-29 00:45-0400\nPO-Revision-Date: 2026-11-25 02:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Russian <https://translate.cacti.net/projects/cacti/maint/ru/>\nLanguage: ru-RU\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\nX-Generator: Weblate 5.11.4\n"
 
 #: maint.php
 msgid "Update Time (Now + 1 Hour)"
@@ -67,9 +55,8 @@ msgid "General"
 msgstr "Общие"
 
 #: maint.php
-#, fuzzy
 msgid "Thold Devices"
-msgstr "Устройства"
+msgstr "Устройства Thold"
 
 #: maint.php
 msgid "WebSeer"
@@ -77,7 +64,7 @@ msgstr "WebSeer"
 
 #: maint.php
 msgid "Servcheck"
-msgstr ""
+msgstr "Servcheck"
 
 #: maint.php
 msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
@@ -116,18 +103,18 @@ msgid "Device(s)"
 msgstr "Устройство(ва)"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Нажмите \"Продолжить\", чтобы связать следующее устройство(ва) с графиком обслуживания '<b>%s</b>'."
+msgstr "Нажмите «Продолжить», чтобы связать следующие устройства с расписанием обслуживания «<b>%s</b>»."
 
 #: maint.php
 msgid "Associate Maintenance Schedule(s)"
 msgstr "Ассоциировать графики обслуживания"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Нажмите \"Продолжить\", чтобы разделить следующие устройства с расписанием обслуживания '<b>%s</b>'."
+msgstr "Нажмите «Продолжить», чтобы отвязать следующие устройства от расписания обслуживания «<b>%s</b>»."
 
 #: maint.php
 msgid "Disassociate Maintenance Schedule(s)"
@@ -142,14 +129,14 @@ msgid "Webseer(s)"
 msgstr "Webseer(s)"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Нажмите \"Продолжить\", чтобы ассоциировать устройство (ва) ниже с графиком обслуживания \"<b>%s</b>\"."
+msgstr "Нажмите «Продолжить», чтобы связать следующие проверки WebSeer с расписанием обслуживания «<b>%s</b>»."
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
-msgstr "Нажмите \"Продолжить\", чтобы отменить связь между Webseer(s), указанными ниже и графиком обслуживания \"<b>%s</b>\"."
+msgstr "Нажмите «Продолжить», чтобы отвязать следующие проверки WebSeer от расписания обслуживания «<b>%s</b>»."
 
 #: maint.php
 msgid "You must select at least one Webseer."
@@ -157,22 +144,21 @@ msgstr "Вы должны выбрать хотя бы одно Webseer."
 
 #: maint.php
 msgid "Servcheck(s)"
-msgstr ""
+msgstr "Проверки Servcheck"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Associate the Servcheck(s) below with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Нажмите \"Продолжить\", чтобы ассоциировать устройство (ва) ниже с графиком обслуживания \"<b>%s</b>\"."
+msgstr "Нажмите «Продолжить», чтобы связать следующие проверки ServCheck с расписанием обслуживания «<b>%s</b>»."
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Disassociate the Servcheck(s) below from the Maintenance Schedule '<b>%s</b>'."
-msgstr "Нажмите \"Продолжить\", чтобы отменить связь между Webseer(s), указанными ниже и графиком обслуживания \"<b>%s</b>\"."
+msgstr "Нажмите «Продолжить», чтобы отвязать следующие проверки ServCheck от расписания обслуживания «<b>%s</b>»."
 
 #: maint.php
-#, fuzzy
 msgid "You must select at least one Servcheck test."
-msgstr "Вы должны выбрать хотя бы одно устройство."
+msgstr "Необходимо выбрать хотя бы один тест ServCheck."
 
 #: maint.php
 #, php-format
@@ -261,10 +247,8 @@ msgid "Search"
 msgstr "Поиск"
 
 #: maint.php
-#, fuzzy
-#| msgid "Schedule"
 msgid "Schedules"
-msgstr "Расписание"
+msgstr "Расписания"
 
 #: maint.php
 msgid "Default"
@@ -272,7 +256,7 @@ msgstr "Стандартно"
 
 #: maint.php
 msgid "Go"
-msgstr "Перейти"
+msgstr "Выполнить"
 
 #: maint.php
 msgid "Set/Refresh Filters"
@@ -291,14 +275,12 @@ msgid "Name"
 msgstr "Имя"
 
 #: maint.php
-#, fuzzy
-#| msgid "New Maintenance Schedule"
 msgid "The name of this Maintenance Schedule."
-msgstr "Новый график обслуживания"
+msgstr "Название этого расписания обслуживания."
 
 #: maint.php
 msgid "Active"
-msgstr "Активный"
+msgstr "Активно"
 
 #: maint.php
 msgid "Type"
@@ -375,7 +357,7 @@ msgstr "Источники Данных"
 
 #: maint.php
 msgid "Thresholds"
-msgstr "Пороговые значения"
+msgstr "Пороги"
 
 #: maint.php
 msgid "Status"
@@ -408,7 +390,7 @@ msgstr "Строк"
 
 #: maint.php
 msgid "URLS"
-msgstr ""
+msgstr "URL-адреса"
 
 #: maint.php
 msgid "URL"
@@ -427,22 +409,21 @@ msgid "No Associated WebSeer URL's Found"
 msgstr "URL-адреса ассоциированного WebSeer не найдены"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Associated Servcheck test's %s"
-msgstr "Связанные устройства %s"
+msgstr "Связанные проверки Servcheck: %s"
 
 #: maint.php
 msgid "Tests"
-msgstr ""
+msgstr "Тесты"
 
 #: maint.php
 msgid "Path"
-msgstr ""
+msgstr "Путь"
 
 #: maint.php
-#, fuzzy
 msgid "No Associated Servcheck Test's Found"
-msgstr "Связанные устройства не найдены"
+msgstr "Связанные проверки ServCheck не найдены"
 
 #: setup.php
 msgid "Management"
@@ -462,68 +443,61 @@ msgstr "(действия)"
 
 #: setup.php
 msgid "Enable maintenance for this device (now+1h)"
-msgstr ""
+msgstr "Включить обслуживание для этого устройства (сейчас + 1 ч)"
 
 #: setup.php
-#, fuzzy
 msgid "Add device(s) to existing maintenance schedule"
-msgstr "Ассоциировать графики обслуживания"
+msgstr "Добавить устройство(-а) в существующее расписание обслуживания"
 
 #: setup.php
-#, fuzzy
 msgid "Maintenance Window"
-msgstr "Графики технического обслуживания"
+msgstr "Окно обслуживания"
 
 #: setup.php
-#, fuzzy
 msgid "Duration"
-msgstr "Описание"
+msgstr "Длительность"
 
 #: setup.php
 msgid "Timezone"
-msgstr ""
+msgstr "Часовой пояс"
 
 #: setup.php
 msgid "min"
-msgstr ""
+msgstr "мин"
 
 #: setup.php
-#, fuzzy
 msgid "Schedule name"
 msgstr "Название расписания"
 
 #: setup.php
 msgid "e.g. Emergency patching"
-msgstr ""
+msgstr "например, экстренное обновление"
 
 #: setup.php
-#, fuzzy
 msgid "disabled"
 msgstr "Выключен"
 
 #: setup.php
-#, fuzzy
 msgid "No schedules found"
-msgstr "Нет расписаний"
+msgstr "Расписания не найдены"
 
 #: setup.php
-#, fuzzy
 msgid "Select schedule"
-msgstr "Расписание"
+msgstr "Выберите расписание"
 
 #: setup.php
 msgid "Quick Maintenance"
-msgstr ""
+msgstr "Быстрое обслуживание"
 
 #: setup.php
 #, php-format
 msgid "Maintenance schedule '%s' created and %d device(s) associated."
-msgstr ""
+msgstr "Расписание обслуживания '%s' создано, связано устройств: %d."
 
 #: setup.php
 #, php-format
 msgid "%d device(s) added to maintenance schedule '%s'."
-msgstr ""
+msgstr "%d устройств(а) добавлено в расписание обслуживания '%s'."
 
 #~ msgid "General Settings [edit: %s]"
 #~ msgstr "Основные настройки [Изменить: %s]"
