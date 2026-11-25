@@ -1,0 +1,512 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR The Cacti Group
+# This file is distributed under the same license as the Cacti package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Cacti\n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2026-09-29 00:45-0400\n"
+"PO-Revision-Date: 2026-11-25 06:55+0000\n"
+"Last-Translator: Thomas Vincent <thomasvincent@gmail.com>\n"
+"Language-Team: Ukrainian\n"
+"Language: uk-UA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: maint.php
+msgid "Update Time (Now + 1 Hour)"
+msgstr "Оновити час (Зараз + 1 година)"
+
+#: maint.php
+msgid "Delete"
+msgstr "Видалити"
+
+#: maint.php
+msgid "Associate"
+msgstr "Пов'язати"
+
+#: maint.php
+msgid "Disassociate"
+msgstr "Відв'язати"
+
+#: maint.php setup.php
+msgid "One Time"
+msgstr "Одноразово"
+
+#: maint.php setup.php
+msgid "Recurring"
+msgstr "Повторюваний"
+
+#: maint.php
+msgid "Not Defined"
+msgstr "Не визначено"
+
+#: maint.php setup.php
+msgid "Every Day"
+msgstr "Кожен день"
+
+#: maint.php setup.php
+msgid "Every Week"
+msgstr "Кожний тиждень"
+
+#: maint.php
+msgid "No"
+msgstr "Ні"
+
+#: maint.php
+msgid "Yes"
+msgstr "Так"
+
+#: maint.php
+msgid "General"
+msgstr "Загальні"
+
+#: maint.php
+msgid "Thold Devices"
+msgstr "Пристрої Thold"
+
+#: maint.php
+msgid "WebSeer"
+msgstr "WebSeer"
+
+#: maint.php
+msgid "Servcheck"
+msgstr "Servcheck"
+
+#: maint.php
+msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
+msgstr "Натисніть 'Продовжити', щоб оновити наведені нижче розклади обслуговування."
+
+#: maint.php
+msgid "Cancel"
+msgstr "Скасувати"
+
+#: maint.php
+msgid "Continue"
+msgstr "Продовжити"
+
+#: maint.php
+msgid "Update Maintenance Schedule(s)"
+msgstr "Оновити розклад(и) обслуговування"
+
+#: maint.php
+msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
+msgstr "Натисніть 'Продовжити', щоб видалити наведені нижче розклади обслуговування. Усі пристрої, пов'язані з цим розкладом, буде відв'язано."
+
+#: maint.php
+msgid "Delete Maintenance Schedule(s)"
+msgstr "Видалити розклад(и) обслуговування"
+
+#: maint.php
+msgid "You must select at least one Maintenance Schedule."
+msgstr "Необхідно вибрати принаймні один розклад обслуговування."
+
+#: maint.php
+msgid "Return"
+msgstr "Повернутися"
+
+#: maint.php
+msgid "Device(s)"
+msgstr "Пристрій(ї)"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Натисніть 'Продовжити', щоб пов'язати наведені нижче пристрої із розкладом обслуговування '<b>%s</b>'."
+
+#: maint.php
+msgid "Associate Maintenance Schedule(s)"
+msgstr "Пов'язати графік(и) обслуговування"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Натисніть 'Продовжити', щоб відв'язати наведені нижче пристрої від розкладу обслуговування '<b>%s</b>'."
+
+#: maint.php
+msgid "Disassociate Maintenance Schedule(s)"
+msgstr "Відв'язати розклад(и) обслуговування"
+
+#: maint.php
+msgid "You must select at least one Device."
+msgstr "Необхідно вибрати принаймні один пристрій."
+
+#: maint.php
+msgid "Webseer(s)"
+msgstr "Перевірка(и) WebSeer"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Натисніть 'Продовжити', щоб пов'язати наведені нижче перевірки WebSeer із розкладом обслуговування '<b>%s</b>'."
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr "Натисніть 'Продовжити', щоб відв'язати наведені нижче перевірки WebSeer від розкладу обслуговування '<b>%s</b>'."
+
+#: maint.php
+msgid "You must select at least one Webseer."
+msgstr "Необхідно вибрати принаймні один Webseer."
+
+#: maint.php
+msgid "Servcheck(s)"
+msgstr "Перевірка(и) Servcheck"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the Servcheck(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Натисніть 'Продовжити', щоб пов'язати наведені нижче перевірки ServCheck із розкладом обслуговування '<b>%s</b>'."
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the Servcheck(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr "Натисніть 'Продовжити', щоб відв'язати наведені нижче перевірки ServCheck від розкладу обслуговування '<b>%s</b>'."
+
+#: maint.php
+msgid "You must select at least one Servcheck test."
+msgstr "Необхідно вибрати принаймні одну перевірку Servcheck."
+
+#: maint.php
+#, php-format
+msgid "[edit: %s]"
+msgstr "[редагувати: %s]"
+
+#: maint.php
+msgid "[new]"
+msgstr "[новий]"
+
+#: maint.php
+msgid "New Maintenance Schedule"
+msgstr "Новий розклад обслуговування"
+
+#: maint.php
+#, php-format
+msgid "General Settings %s"
+msgstr "Загальні налаштування %s"
+
+#: maint.php
+msgid "Schedule"
+msgstr "Графік"
+
+#: maint.php
+msgid "Schedule Name"
+msgstr "Назва розкладу"
+
+#: maint.php
+msgid "Provide the Maintenance Schedule a meaningful name"
+msgstr "Укажіть змістовну назву для розкладу обслуговування"
+
+#: maint.php
+msgid "Enabled"
+msgstr "Увімкнено"
+
+#: maint.php
+msgid "Whether or not this schedule will be checked."
+msgstr "Чи буде перевірятися цей розклад."
+
+#: maint.php setup.php
+msgid "Schedule Type"
+msgstr "Тип розкладу"
+
+#: maint.php
+msgid "The type of schedule, one time or recurring."
+msgstr "Тип розкладу: одноразовий або повторюваний."
+
+#: maint.php
+msgid "Interval"
+msgstr "Інтервал"
+
+#: maint.php
+msgid "This is the interval in which the start / end time will repeat."
+msgstr "Це інтервал, з яким повторюватиметься час початку та завершення."
+
+#: maint.php
+msgid "Start Time"
+msgstr "Час початку"
+
+#: maint.php
+msgid "The start date / time for this schedule. Most date / time formats accepted."
+msgstr "Дата та час початку для цього розкладу. Підтримується більшість форматів дати й часу."
+
+#: maint.php
+msgid "End Time"
+msgstr "Час завершення"
+
+#: maint.php
+msgid "The end date / time for this schedule. Most date / time formats accepted."
+msgstr "Дата та час завершення для цього розкладу. Приймається більшість форматів дати й часу."
+
+#: maint.php
+msgid "Start Date/Time Selector"
+msgstr "Вибір дати й часу початку"
+
+#: maint.php
+msgid "End Date/Time Selector"
+msgstr "Вибір дати/часу завершення"
+
+#: maint.php setup.php
+msgid "Maintenance Schedules"
+msgstr "Розклади обслуговування"
+
+#: maint.php
+msgid "Search"
+msgstr "Пошук"
+
+#: maint.php
+msgid "Schedules"
+msgstr "Розклади"
+
+#: maint.php
+msgid "Default"
+msgstr "За замовчуванням"
+
+#: maint.php
+msgid "Go"
+msgstr "Перейти"
+
+#: maint.php
+msgid "Set/Refresh Filters"
+msgstr "Встановити/оновити фільтри"
+
+#: maint.php
+msgid "Clear"
+msgstr "Очистити"
+
+#: maint.php
+msgid "Clear Filters"
+msgstr "Очистити фільтри"
+
+#: maint.php
+msgid "Name"
+msgstr "Ім'я"
+
+#: maint.php
+msgid "The name of this Maintenance Schedule."
+msgstr "Назва цього розкладу обслуговування."
+
+#: maint.php
+msgid "Active"
+msgstr "Активний"
+
+#: maint.php
+msgid "Type"
+msgstr "Тип"
+
+#: maint.php
+msgid "Start"
+msgstr "Старт"
+
+#: maint.php
+msgid "End"
+msgstr "Кінець"
+
+#: maint.php
+msgid "No Schedules"
+msgstr "Немає розкладів"
+
+#: maint.php
+#, php-format
+msgid "Associated Devices %s"
+msgstr "Пов'язані пристрої %s"
+
+#: maint.php
+msgid "Site"
+msgstr "Вузол"
+
+#: maint.php
+msgid "Any"
+msgstr "Будь-який"
+
+#: maint.php
+msgid "None"
+msgstr "Немає"
+
+#: maint.php
+msgid "Data Collector"
+msgstr "Збирач даних"
+
+#: maint.php
+msgid "Location"
+msgstr "Місцезнаходження"
+
+#: maint.php
+msgid "Template"
+msgstr "Шаблон"
+
+#: maint.php setup.php
+msgid "Devices"
+msgstr "Пристрої"
+
+#: maint.php
+msgid "Associated"
+msgstr "Пов'язано"
+
+#: maint.php
+msgid "Description"
+msgstr "Опис"
+
+#: maint.php
+msgid "ID"
+msgstr "ID"
+
+#: maint.php
+msgid "Associated Schedules"
+msgstr "Пов'язані графіки"
+
+#: maint.php
+msgid "Graphs"
+msgstr "Графіки"
+
+#: maint.php
+msgid "Data Sources"
+msgstr "Джерела даних"
+
+#: maint.php
+msgid "Thresholds"
+msgstr "Пороги"
+
+#: maint.php
+msgid "Status"
+msgstr "Статус"
+
+#: maint.php
+msgid "Hostname"
+msgstr "Ім'я хоста"
+
+#: maint.php
+msgid "Current Schedule"
+msgstr "Поточний розклад"
+
+#: maint.php
+msgid "No Associated Devices Found"
+msgstr "Пов'язаних пристроїв не знайдено"
+
+#: maint.php
+msgid "Schedule must be created before associating"
+msgstr "Спочатку потрібно створити розклад перед прив'язкою"
+
+#: maint.php
+#, php-format
+msgid "Associated Web URL's %s"
+msgstr "Пов'язані веб-URL %s"
+
+#: maint.php
+msgid "Rows"
+msgstr "Рядки"
+
+#: maint.php
+msgid "URLS"
+msgstr "URL-адреси"
+
+#: maint.php
+msgid "URL"
+msgstr "URL"
+
+#: maint.php
+msgid "Disabled"
+msgstr "Вимкнен"
+
+#: maint.php
+msgid "USING DNS"
+msgstr "ВИКОРИСТОВУЮЧИ DNS"
+
+#: maint.php
+msgid "No Associated WebSeer URL's Found"
+msgstr "Пов'язаних URL-адрес WebSeer не знайдено"
+
+#: maint.php
+#, php-format
+msgid "Associated Servcheck test's %s"
+msgstr "Пов'язані тести Servcheck %s"
+
+#: maint.php
+msgid "Tests"
+msgstr "Тести"
+
+#: maint.php
+msgid "Path"
+msgstr "Шлях"
+
+#: maint.php
+msgid "No Associated Servcheck Test's Found"
+msgstr "Пов'язаних тестів ServCheck не знайдено"
+
+#: setup.php
+msgid "Management"
+msgstr "Управління"
+
+#: setup.php
+msgid "System Administration"
+msgstr "Системне адміністрування"
+
+#: setup.php
+msgid "(edit)"
+msgstr "(редагувати)"
+
+#: setup.php
+msgid "(actions)"
+msgstr "(дії)"
+
+#: setup.php
+msgid "Enable maintenance for this device (now+1h)"
+msgstr "Увімкнути обслуговування для цього пристрою (зараз+1 год)"
+
+#: setup.php
+msgid "Add device(s) to existing maintenance schedule"
+msgstr "Додати пристрої до наявного розкладу обслуговування"
+
+#: setup.php
+msgid "Maintenance Window"
+msgstr "Вікно обслуговування"
+
+#: setup.php
+msgid "Duration"
+msgstr "Тривалість"
+
+#: setup.php
+msgid "Timezone"
+msgstr "Часовий пояс"
+
+#: setup.php
+msgid "min"
+msgstr "хв"
+
+#: setup.php
+msgid "Schedule name"
+msgstr "Назва розкладу"
+
+#: setup.php
+msgid "e.g. Emergency patching"
+msgstr "напр., екстрене встановлення виправлень"
+
+#: setup.php
+msgid "disabled"
+msgstr "вимкнено"
+
+#: setup.php
+msgid "No schedules found"
+msgstr "Розкладів не знайдено"
+
+#: setup.php
+msgid "Select schedule"
+msgstr "Виберіть розклад"
+
+#: setup.php
+msgid "Quick Maintenance"
+msgstr "Швидке обслуговування"
+
+#: setup.php
+#, php-format
+msgid "Maintenance schedule '%s' created and %d device(s) associated."
+msgstr "Розклад обслуговування '%s' створено та пов'язано пристроїв: %d."
+
+#: setup.php
+#, php-format
+msgid "%d device(s) added to maintenance schedule '%s'."
+msgstr "%d пристрій(їв) додано до розкладу обслуговування «%s»."
+
