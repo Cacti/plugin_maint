@@ -4,24 +4,11 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-29 00:45-0400\n"
-"PO-Revision-Date: 2024-01-31 14:27+0000\n"
-"Last-Translator: Edwin Lankamp <edwin.lankamp@gmail.com>\n"
-"Language-Team: Dutch <http://translate.cacti.net/projects/cacti/maint/nl/>\n"
-"Language: nl-NL\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.8.1\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-29 00:45-0400\nPO-Revision-Date: 2026-11-25 02:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Dutch <https://translate.cacti.net/projects/cacti/maint/nl/>\nLanguage: nl-NL\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
 
 #: maint.php
-#, fuzzy
 msgid "Update Time (Now + 1 Hour)"
-msgstr "Update tijd (nu + 1 uur)"
+msgstr "Tijd bijwerken (nu + 1 uur)"
 
 #: maint.php
 msgid "Delete"
@@ -32,7 +19,6 @@ msgid "Associate"
 msgstr "Associëren"
 
 #: maint.php
-#, fuzzy
 msgid "Disassociate"
 msgstr "Loskoppelen"
 
@@ -50,11 +36,11 @@ msgstr "Geen grafiektsjabloon gedefinieerd"
 
 #: maint.php setup.php
 msgid "Every Day"
-msgstr "Iedere dag"
+msgstr "Elke dag"
 
 #: maint.php setup.php
 msgid "Every Week"
-msgstr "Iedere week"
+msgstr "Elke week"
 
 #: maint.php
 msgid "No"
@@ -69,9 +55,8 @@ msgid "General"
 msgstr "Generiek"
 
 #: maint.php
-#, fuzzy
 msgid "Thold Devices"
-msgstr "Apparaten"
+msgstr "Thold-apparaten"
 
 #: maint.php
 msgid "WebSeer"
@@ -79,10 +64,9 @@ msgstr "WebSeer"
 
 #: maint.php
 msgid "Servcheck"
-msgstr ""
+msgstr "Servcheck"
 
 #: maint.php
-#, fuzzy
 msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
 msgstr "Klik op 'Doorgaan' om de volgende onderhoudsschema('s) bij te werken."
 
@@ -95,22 +79,18 @@ msgid "Continue"
 msgstr "Volgende"
 
 #: maint.php
-#, fuzzy
 msgid "Update Maintenance Schedule(s)"
-msgstr "Onderhoudsschema's"
+msgstr "Onderhoudsschema('s) bijwerken"
 
 #: maint.php
-#, fuzzy
 msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
-msgstr "Klik op 'Doorgaan' om de volgende onderhoudsschema('s) te verwijderen.  Apparaten die aan dit schema zijn gekoppeld, worden losgekoppeld."
+msgstr "Klik op 'Doorgaan' om de volgende onderhoudsschema('s) te verwijderen. Alle apparaten die aan dit schema zijn gekoppeld, worden losgekoppeld."
 
 #: maint.php
-#, fuzzy
 msgid "Delete Maintenance Schedule(s)"
-msgstr "Onderhoudsschema's"
+msgstr "Onderhoudsschema('s) verwijderen"
 
 #: maint.php
-#, fuzzy
 msgid "You must select at least one Maintenance Schedule."
 msgstr "U moet ten minste één onderhoudsschema selecteren."
 
@@ -123,80 +103,73 @@ msgid "Device(s)"
 msgstr "Apparaat(en)"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
 msgstr "Klik op 'Doorgaan' om de volgende apparaten te koppelen aan het onderhoudsschema '<b>%s</b>'."
 
 #: maint.php
-#, fuzzy
 msgid "Associate Maintenance Schedule(s)"
-msgstr "Onderhoudsschema's"
+msgstr "Onderhoudsschema('s) koppelen"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Klik op 'Doorgaan' om de volgende apparaten los te koppelen van het onderhoudsschema '<b>%s</b>'."
+msgstr "Klik op 'Doorgaan' om de volgende appara(a)t(en) los te koppelen van het onderhoudsschema '<b>%s</b>'."
 
 #: maint.php
-#, fuzzy
 msgid "Disassociate Maintenance Schedule(s)"
-msgstr "Onderhoudsschema's"
+msgstr "Onderhoudsschema('s) loskoppelen"
 
 #: maint.php
-#, fuzzy
 msgid "You must select at least one Device."
 msgstr "U moet ten minste één apparaat selecteren."
 
 #: maint.php
-#, fuzzy
 msgid "Webseer(s)"
-msgstr "Webseer (s)"
+msgstr "WebSeer(s)"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Klik op 'Doorgaan' om de onderstaande apparaten te koppelen aan het onderhoudsschema '<b>%s</b>'."
+msgstr "Klik op 'Doorgaan' om de onderstaande Webseer(s) te koppelen aan het onderhoudsschema '<b>%s</b>'."
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
-msgstr "Klik op 'Doorgaan' om de onderstaande apparaten los te koppelen van het onderhoudsschema '<b>%s</b>'."
+msgstr "Klik op 'Doorgaan' om de onderstaande Webseer(s) los te koppelen van het onderhoudsschema '<b>%s</b>'."
 
 #: maint.php
-#, fuzzy
 msgid "You must select at least one Webseer."
-msgstr "U moet ten minste één apparaat selecteren."
+msgstr "U moet ten minste één Webseer selecteren."
 
 #: maint.php
 msgid "Servcheck(s)"
-msgstr ""
+msgstr "Servcheck(s)"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Associate the Servcheck(s) below with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Klik op 'Doorgaan' om de onderstaande apparaten te koppelen aan het onderhoudsschema '<b>%s</b>'."
+msgstr "Klik op 'Doorgaan' om de onderstaande Servcheck(s) te koppelen aan het onderhoudsschema '<b>%s</b>'."
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Disassociate the Servcheck(s) below from the Maintenance Schedule '<b>%s</b>'."
-msgstr "Klik op 'Doorgaan' om de onderstaande apparaten los te koppelen van het onderhoudsschema '<b>%s</b>'."
+msgstr "Klik op 'Doorgaan' om de onderstaande Servcheck(s) los te koppelen van het onderhoudsschema '<b>%s</b>'."
 
 #: maint.php
-#, fuzzy
 msgid "You must select at least one Servcheck test."
-msgstr "U moet ten minste één apparaat selecteren."
+msgstr "U moet ten minste één Servcheck-test selecteren."
 
 #: maint.php
 #, php-format
 msgid "[edit: %s]"
-msgstr ""
+msgstr "[wijzig %s]"
 
 #: maint.php
 msgid "[new]"
-msgstr ""
+msgstr "[nieuw]"
 
 #: maint.php
-#, fuzzy
 msgid "New Maintenance Schedule"
 msgstr "Nieuw onderhoudsschema"
 
@@ -210,72 +183,62 @@ msgid "Schedule"
 msgstr "Schema"
 
 #: maint.php
-#, fuzzy
 msgid "Schedule Name"
-msgstr "Schema Naam"
+msgstr "Schemanaam"
 
 #: maint.php
-#, fuzzy
 msgid "Provide the Maintenance Schedule a meaningful name"
-msgstr "Geef het onderhoudsschema een betekenisvolle naam"
+msgstr "Geef het onderhoudsschema een duidelijke naam"
 
 #: maint.php
 msgid "Enabled"
 msgstr "Ingeschakeld"
 
 #: maint.php
-#, fuzzy
 msgid "Whether or not this schedule will be checked."
-msgstr "Of deze drempel al dan niet wordt gecontroleerd en gealarmeerd."
+msgstr "Of dit schema al dan niet wordt gecontroleerd."
 
 #: maint.php setup.php
 msgid "Schedule Type"
 msgstr "Schematype"
 
 #: maint.php
-#, fuzzy
 msgid "The type of schedule, one time or recurring."
-msgstr "Het soort schema, eenmalig of terugkerend."
+msgstr "Het type schema: eenmalig of terugkerend."
 
 #: maint.php
 msgid "Interval"
 msgstr "Interval"
 
 #: maint.php
-#, fuzzy
 msgid "This is the interval in which the start / end time will repeat."
-msgstr "Dit is het interval waarin de begin/eindtijd zich herhaalt."
+msgstr "Dit is het interval waarmee de begin-/eindtijd wordt herhaald."
 
 #: maint.php
 msgid "Start Time"
 msgstr "Starttijd"
 
 #: maint.php
-#, fuzzy
 msgid "The start date / time for this schedule. Most date / time formats accepted."
-msgstr "De startdatum / tijd voor dit schema. De meeste datum- en tijdformaten worden geaccepteerd."
+msgstr "De startdatum/-tijd voor dit schema. De meeste datum- en tijdnotaties worden geaccepteerd."
 
 #: maint.php
 msgid "End Time"
 msgstr "Eindtijd"
 
 #: maint.php
-#, fuzzy
 msgid "The end date / time for this schedule. Most date / time formats accepted."
-msgstr "De einddatum / tijd voor dit schema. De meeste datum- en tijdformaten worden geaccepteerd."
+msgstr "De einddatum/-tijd voor dit schema. De meeste datum- en tijdnotaties worden geaccepteerd."
 
 #: maint.php
-#, fuzzy
 msgid "Start Date/Time Selector"
-msgstr "Start Datum / Tijd Selector"
+msgstr "Kiezer voor begindatum/-tijd"
 
 #: maint.php
-#, fuzzy
 msgid "End Date/Time Selector"
-msgstr "Einddatum / tijdselector"
+msgstr "Selectie voor einddatum/-tijd"
 
 #: maint.php setup.php
-#, fuzzy
 msgid "Maintenance Schedules"
 msgstr "Onderhoudsschema's"
 
@@ -284,10 +247,8 @@ msgid "Search"
 msgstr "Zoeken"
 
 #: maint.php
-#, fuzzy
-#| msgid "Schedule"
 msgid "Schedules"
-msgstr "Schema"
+msgstr "Schema's"
 
 #: maint.php
 msgid "Default"
@@ -303,7 +264,7 @@ msgstr "Stel in/vernieuw filters"
 
 #: maint.php
 msgid "Clear"
-msgstr "Herstel"
+msgstr "Wissen"
 
 #: maint.php
 msgid "Clear Filters"
@@ -314,9 +275,8 @@ msgid "Name"
 msgstr "Naam"
 
 #: maint.php
-#, fuzzy
 msgid "The name of this Maintenance Schedule."
-msgstr "Nieuw onderhoudsschema"
+msgstr "De naam van dit onderhoudsschema."
 
 #: maint.php
 msgid "Active"
@@ -335,14 +295,13 @@ msgid "End"
 msgstr "Tot"
 
 #: maint.php
-#, fuzzy
 msgid "No Schedules"
-msgstr "Agenda’s"
+msgstr "Geen schema's"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Associated Devices %s"
-msgstr "Bijbehorende apparaten %s"
+msgstr "Gekoppelde apparaten %s"
 
 #: maint.php
 msgid "Site"
@@ -358,24 +317,23 @@ msgstr "Geen"
 
 #: maint.php
 msgid "Data Collector"
-msgstr ""
+msgstr "Data Collector"
 
 #: maint.php
 msgid "Location"
-msgstr ""
+msgstr "Locatie"
 
 #: maint.php
 msgid "Template"
-msgstr ""
+msgstr "Template"
 
 #: maint.php setup.php
 msgid "Devices"
 msgstr "Apparaten"
 
 #: maint.php
-#, fuzzy
 msgid "Associated"
-msgstr "Gekoppelde data templates"
+msgstr "Gekoppeld"
 
 #: maint.php
 msgid "Description"
@@ -386,9 +344,8 @@ msgid "ID"
 msgstr "ID"
 
 #: maint.php
-#, fuzzy
 msgid "Associated Schedules"
-msgstr "Bijbehorende schema's"
+msgstr "Gekoppelde schema's"
 
 #: maint.php
 msgid "Graphs"
@@ -411,24 +368,21 @@ msgid "Hostname"
 msgstr "Hostname"
 
 #: maint.php
-#, fuzzy
 msgid "Current Schedule"
-msgstr "Huidige planning"
+msgstr "Huidig schema"
 
 #: maint.php
-#, fuzzy
 msgid "No Associated Devices Found"
 msgstr "Geen gekoppelde apparaten gevonden"
 
 #: maint.php
-#, fuzzy
 msgid "Schedule must be created before associating"
-msgstr "Het schema moet worden gemaakt voordat u kunt koppelen"
+msgstr "Het schema moet worden aangemaakt voordat u kunt koppelen"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Associated Web URL's %s"
-msgstr "Bijbehorende Web URL's %s"
+msgstr "Gekoppelde web-URL's %s"
 
 #: maint.php
 msgid "Rows"
@@ -436,7 +390,7 @@ msgstr "Rijen"
 
 #: maint.php
 msgid "URLS"
-msgstr ""
+msgstr "URL's"
 
 #: maint.php
 msgid "URL"
@@ -447,32 +401,29 @@ msgid "Disabled"
 msgstr "Uitgeschakeld"
 
 #: maint.php
-#, fuzzy
 msgid "USING DNS"
-msgstr "GEBRUIK DNS"
+msgstr "GEBRUIKT DNS"
 
 #: maint.php
-#, fuzzy
 msgid "No Associated WebSeer URL's Found"
-msgstr "Geen gekoppelde WebSeer URL's gevonden"
+msgstr "Geen gekoppelde WebSeer-URL's gevonden"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Associated Servcheck test's %s"
-msgstr "Bijbehorende apparaten %s"
+msgstr "Gekoppelde Servcheck-tests %s"
 
 #: maint.php
 msgid "Tests"
-msgstr ""
+msgstr "Tests"
 
 #: maint.php
 msgid "Path"
-msgstr ""
+msgstr "Pad"
 
 #: maint.php
-#, fuzzy
 msgid "No Associated Servcheck Test's Found"
-msgstr "Geen gekoppelde apparaten gevonden"
+msgstr "Geen gekoppelde ServCheck-tests gevonden"
 
 #: setup.php
 msgid "Management"
@@ -487,74 +438,66 @@ msgid "(edit)"
 msgstr "(bewerken)"
 
 #: setup.php
-#, fuzzy
 msgid "(actions)"
-msgstr "Acties"
+msgstr "(acties)"
 
 #: setup.php
 msgid "Enable maintenance for this device (now+1h)"
-msgstr ""
+msgstr "Onderhoud voor dit apparaat inschakelen (nu+1u)"
 
 #: setup.php
-#, fuzzy
 msgid "Add device(s) to existing maintenance schedule"
-msgstr "Onderhoudsschema's"
+msgstr "Apparaat/apparaten toevoegen aan bestaand onderhoudsschema"
 
 #: setup.php
-#, fuzzy
 msgid "Maintenance Window"
-msgstr "Onderhoudsschema's"
+msgstr "Onderhoudsvenster"
 
 #: setup.php
-#, fuzzy
 msgid "Duration"
-msgstr "Omschrijving"
+msgstr "Duur"
 
 #: setup.php
 msgid "Timezone"
-msgstr ""
+msgstr "Tijdzone"
 
 #: setup.php
 msgid "min"
-msgstr ""
+msgstr "min"
 
 #: setup.php
-#, fuzzy
 msgid "Schedule name"
-msgstr "Schema Naam"
+msgstr "Schemanaam"
 
 #: setup.php
 msgid "e.g. Emergency patching"
-msgstr ""
+msgstr "bijv. Noodpatching"
 
 #: setup.php
-#, fuzzy
 msgid "disabled"
-msgstr "Uitgeschakeld"
+msgstr "uitgeschakeld"
 
 #: setup.php
-#, fuzzy
 msgid "No schedules found"
-msgstr "Agenda’s"
+msgstr "Geen schema's gevonden"
 
 #: setup.php
-#, fuzzy
 msgid "Select schedule"
-msgstr "Schema"
+msgstr "Schema selecteren"
 
 #: setup.php
 msgid "Quick Maintenance"
-msgstr ""
+msgstr "Snel onderhoud"
 
 #: setup.php
 #, php-format
 msgid "Maintenance schedule '%s' created and %d device(s) associated."
-msgstr ""
+msgstr "Onderhoudsschema '%s' aangemaakt en %d apparaat/apparaten gekoppeld."
 
 #: setup.php
 #, php-format
 msgid "%d device(s) added to maintenance schedule '%s'."
-msgstr ""
+msgstr "%d apparaat/apparaten toegevoegd aan onderhoudsschema '%s'."
 
 #, fuzzy
 #~ msgid "General Settings [edit: %s]"
