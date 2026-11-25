@@ -4,23 +4,11 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: developers@cacti.net\n"
-"POT-Creation-Date: 2026-09-29 00:45-0400\n"
-"PO-Revision-Date: 2020-12-12 20:56-0500\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: vi_VN\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.2\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-29 00:45-0400\nPO-Revision-Date: 2026-11-25 02:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Vietnamese <https://translate.cacti.net/projects/cacti/maint/vi/>\nLanguage: vi-VN\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=1; plural=0;\nX-Generator: Weblate 5.11.4\n"
 
 #: maint.php
-#, fuzzy
 msgid "Update Time (Now + 1 Hour)"
-msgstr "Thời gian cập nhật (Bây giờ + 1 giờ)"
+msgstr "Cập nhật thời gian (Hiện tại + 1 giờ)"
 
 #: maint.php
 msgid "Delete"
@@ -31,9 +19,8 @@ msgid "Associate"
 msgstr "Liên kết"
 
 #: maint.php
-#, fuzzy
 msgid "Disassociate"
-msgstr "Không liên quan"
+msgstr "Hủy liên kết"
 
 #: maint.php setup.php
 msgid "One Time"
@@ -44,16 +31,14 @@ msgid "Recurring"
 msgstr "Định kỳ"
 
 #: maint.php
-#, fuzzy
 msgid "Not Defined"
-msgstr "Không xác định"
+msgstr "Chưa định nghĩa"
 
 #: maint.php setup.php
 msgid "Every Day"
 msgstr "Hàng Ngày"
 
 #: maint.php setup.php
-#, fuzzy
 msgid "Every Week"
 msgstr "Mỗi tuần"
 
@@ -70,21 +55,18 @@ msgid "General"
 msgstr "Chung"
 
 #: maint.php
-#, fuzzy
 msgid "Thold Devices"
-msgstr "Thiết bị"
+msgstr "Thiết bị Thold"
 
 #: maint.php
-#, fuzzy
 msgid "WebSeer"
 msgstr "WebSeer"
 
 #: maint.php
 msgid "Servcheck"
-msgstr ""
+msgstr "Servcheck"
 
 #: maint.php
-#, fuzzy
 msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
 msgstr "Nhấp vào 'Tiếp tục' để cập nhật (các) Lịch bảo trì sau."
 
@@ -97,116 +79,104 @@ msgid "Continue"
 msgstr "Tiếp tục"
 
 #: maint.php
-#, fuzzy
 msgid "Update Maintenance Schedule(s)"
-msgstr "Lịch bảo trì"
+msgstr "Cập nhật lịch bảo trì"
 
 #: maint.php
-#, fuzzy
 msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
-msgstr "Nhấp vào 'Tiếp tục' để xóa (các) Lịch bảo trì sau. Bất kỳ thiết bị nào được liên kết với Biểu này sẽ bị hủy liên kết."
+msgstr "Nhấp vào 'Tiếp tục' để xóa (các) Lịch bảo trì sau. Mọi Thiết bị được liên kết với Lịch này sẽ bị hủy liên kết."
 
 #: maint.php
-#, fuzzy
 msgid "Delete Maintenance Schedule(s)"
-msgstr "Lịch bảo trì"
+msgstr "Xóa (các) lịch bảo trì"
 
 #: maint.php
-#, fuzzy
 msgid "You must select at least one Maintenance Schedule."
-msgstr "Bạn phải chọn ít nhất một Lịch bảo trì."
+msgstr "Bạn phải chọn ít nhất một lịch bảo trì."
 
 #: maint.php
 msgid "Return"
-msgstr "Trở về trang cài đặt bắt buộc Plugins"
+msgstr "Quay lại"
 
 #: maint.php
-#, fuzzy
 msgid "Device(s)"
-msgstr "Thiết bị"
+msgstr "(Các) thiết bị"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Nhấp vào 'Tiếp tục' để liên kết (các) Thiết bị sau với Lịch bảo trì ' <b> %s</b> '."
+msgstr "Nhấp vào 'Tiếp tục' để liên kết (các) Thiết bị sau với Lịch bảo trì '<b>%s</b>'."
 
 #: maint.php
-#, fuzzy
 msgid "Associate Maintenance Schedule(s)"
-msgstr "Lịch bảo trì"
+msgstr "Liên kết (các) Lịch bảo trì"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Nhấp vào 'Tiếp tục' để phân tách (các) Thiết bị sau với Lịch bảo trì ' <b> %s</b> '."
+msgstr "Nhấp vào 'Tiếp tục' để hủy liên kết (các) Thiết bị sau khỏi Lịch bảo trì '<b>%s</b>'."
 
 #: maint.php
-#, fuzzy
 msgid "Disassociate Maintenance Schedule(s)"
-msgstr "Lịch bảo trì"
+msgstr "Hủy liên kết (các) lịch bảo trì"
 
 #: maint.php
-#, fuzzy
 msgid "You must select at least one Device."
-msgstr "Bạn phải chọn ít nhất một Thiết bị."
+msgstr "Bạn phải chọn ít nhất một thiết bị."
 
 #: maint.php
-#, fuzzy
 msgid "Webseer(s)"
-msgstr "(Các) trình duyệt web"
+msgstr "(Các) WebSeer"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Nhấp vào 'Tiếp tục' để liên kết (các) Thiết bị bên dưới với Lịch bảo trì ' <b> %s</b> '."
+msgstr "Nhấp vào 'Tiếp tục' để liên kết (các) WebSeer bên dưới với Lịch bảo trì '<b>%s</b>'."
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
-msgstr "Nhấp vào 'Tiếp tục' để phân tách (các) Thiết bị bên dưới với Lịch bảo trì ' <b> %s</b> '."
+msgstr "Nhấp vào 'Tiếp tục' để hủy liên kết (các) WebSeer bên dưới khỏi Lịch bảo trì '<b>%s</b>'."
 
 #: maint.php
-#, fuzzy
 msgid "You must select at least one Webseer."
-msgstr "Bạn phải chọn ít nhất một Thiết bị."
+msgstr "Bạn phải chọn ít nhất một mục WebSeer."
 
 #: maint.php
 msgid "Servcheck(s)"
-msgstr ""
+msgstr "Các Servcheck"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Associate the Servcheck(s) below with the Maintenance Schedule '<b>%s</b>'."
-msgstr "Nhấp vào 'Tiếp tục' để liên kết (các) Thiết bị bên dưới với Lịch bảo trì ' <b> %s</b> '."
+msgstr "Nhấp vào 'Tiếp tục' để liên kết (các) ServCheck bên dưới với Lịch bảo trì '<b>%s</b>'."
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Disassociate the Servcheck(s) below from the Maintenance Schedule '<b>%s</b>'."
-msgstr "Nhấp vào 'Tiếp tục' để phân tách (các) Thiết bị bên dưới với Lịch bảo trì ' <b> %s</b> '."
+msgstr "Nhấp vào 'Tiếp tục' để hủy liên kết (các) ServCheck bên dưới khỏi Lịch bảo trì '<b>%s</b>'."
 
 #: maint.php
-#, fuzzy
 msgid "You must select at least one Servcheck test."
-msgstr "Bạn phải chọn ít nhất một Thiết bị."
+msgstr "Bạn phải chọn ít nhất một bài kiểm tra ServCheck."
 
 #: maint.php
 #, php-format
 msgid "[edit: %s]"
-msgstr ""
+msgstr "[chỉnh sửa: %s]"
 
 #: maint.php
 msgid "[new]"
-msgstr ""
+msgstr "[Mới]"
 
 #: maint.php
-#, fuzzy
 msgid "New Maintenance Schedule"
 msgstr "Lịch bảo trì mới"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "General Settings %s"
-msgstr "Cài đặt chung [mới]"
+msgstr "Cài đặt chung %s"
 
 #: maint.php
 msgid "Schedule"
@@ -214,28 +184,25 @@ msgstr "Lịch trình"
 
 #: maint.php
 msgid "Schedule Name"
-msgstr "Tên kế hoạch"
+msgstr "Tên lịch trình"
 
 #: maint.php
-#, fuzzy
 msgid "Provide the Maintenance Schedule a meaningful name"
-msgstr "Cung cấp Lịch bảo trì một tên có ý nghĩa"
+msgstr "Đặt cho Lịch bảo trì một tên có ý nghĩa"
 
 #: maint.php
 msgid "Enabled"
 msgstr "Bật"
 
 #: maint.php
-#, fuzzy
 msgid "Whether or not this schedule will be checked."
-msgstr "Có hay không ngưỡng này sẽ được kiểm tra và cảnh báo."
+msgstr "Lịch trình này có được kiểm tra hay không."
 
 #: maint.php setup.php
 msgid "Schedule Type"
-msgstr "Lập lịch khởi hành"
+msgstr "Loại lịch trình"
 
 #: maint.php
-#, fuzzy
 msgid "The type of schedule, one time or recurring."
 msgstr "Loại lịch trình, một lần hoặc định kỳ."
 
@@ -244,40 +211,34 @@ msgid "Interval"
 msgstr "Interval"
 
 #: maint.php
-#, fuzzy
 msgid "This is the interval in which the start / end time will repeat."
-msgstr "Đây là khoảng thời gian trong đó thời gian bắt đầu / kết thúc sẽ lặp lại."
+msgstr "Đây là khoảng thời gian lặp lại của thời gian bắt đầu / kết thúc."
 
 #: maint.php
 msgid "Start Time"
 msgstr "Thời gian bắt đầu"
 
 #: maint.php
-#, fuzzy
 msgid "The start date / time for this schedule. Most date / time formats accepted."
-msgstr "Ngày / thời gian bắt đầu cho lịch trình này. Hầu hết các định dạng ngày / giờ được chấp nhận."
+msgstr "Ngày / giờ bắt đầu cho lịch trình này. Hầu hết các định dạng ngày / giờ đều được chấp nhận."
 
 #: maint.php
 msgid "End Time"
 msgstr "Thời gian kết thúc"
 
 #: maint.php
-#, fuzzy
 msgid "The end date / time for this schedule. Most date / time formats accepted."
-msgstr "Ngày / thời gian kết thúc cho lịch trình này. Hầu hết các định dạng ngày / giờ được chấp nhận."
+msgstr "Ngày / giờ kết thúc cho lịch trình này. Chấp nhận hầu hết các định dạng ngày / giờ."
 
 #: maint.php
-#, fuzzy
 msgid "Start Date/Time Selector"
-msgstr "Bộ chọn ngày / giờ bắt đầu"
+msgstr "Bộ chọn ngày/giờ bắt đầu"
 
 #: maint.php
-#, fuzzy
 msgid "End Date/Time Selector"
-msgstr "Bộ chọn ngày / giờ kết thúc"
+msgstr "Bộ chọn ngày/giờ kết thúc"
 
 #: maint.php setup.php
-#, fuzzy
 msgid "Maintenance Schedules"
 msgstr "Lịch bảo trì"
 
@@ -286,8 +247,6 @@ msgid "Search"
 msgstr "Tìm kiếm"
 
 #: maint.php
-#, fuzzy
-#| msgid "Schedule"
 msgid "Schedules"
 msgstr "Lịch trình"
 
@@ -300,16 +259,14 @@ msgid "Go"
 msgstr "Đi"
 
 #: maint.php
-#, fuzzy
 msgid "Set/Refresh Filters"
-msgstr "Đặt / làm mới bộ lọc"
+msgstr "Đặt / Làm mới Bộ lọc"
 
 #: maint.php
 msgid "Clear"
 msgstr "Xóa"
 
 #: maint.php
-#, fuzzy
 msgid "Clear Filters"
 msgstr "Xóa bộ lọc"
 
@@ -318,9 +275,8 @@ msgid "Name"
 msgstr "Tên"
 
 #: maint.php
-#, fuzzy
 msgid "The name of this Maintenance Schedule."
-msgstr "Lịch bảo trì mới"
+msgstr "Tên của lịch bảo trì này."
 
 #: maint.php
 msgid "Active"
@@ -339,18 +295,17 @@ msgid "End"
 msgstr "Kết thúc"
 
 #: maint.php
-#, fuzzy
 msgid "No Schedules"
-msgstr "Kế hoạch"
+msgstr "Không có lịch trình nào"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Associated Devices %s"
-msgstr "Thiết bị liên kết %s"
+msgstr "Thiết bị đã liên kết %s"
 
 #: maint.php
 msgid "Site"
-msgstr ""
+msgstr "Trang"
 
 #: maint.php
 msgid "Any"
@@ -362,24 +317,23 @@ msgstr "Không"
 
 #: maint.php
 msgid "Data Collector"
-msgstr ""
+msgstr "Thu thập dữ liệu"
 
 #: maint.php
 msgid "Location"
-msgstr ""
+msgstr "Vị trí"
 
 #: maint.php
 msgid "Template"
-msgstr ""
+msgstr "Mẫu"
 
 #: maint.php setup.php
 msgid "Devices"
 msgstr "Thiết bị"
 
 #: maint.php
-#, fuzzy
 msgid "Associated"
-msgstr "Liên kết"
+msgstr "Đã liên kết"
 
 #: maint.php
 msgid "Description"
@@ -390,9 +344,8 @@ msgid "ID"
 msgstr "ID"
 
 #: maint.php
-#, fuzzy
 msgid "Associated Schedules"
-msgstr "Lịch trình liên kết"
+msgstr "Lịch trình đã liên kết"
 
 #: maint.php
 msgid "Graphs"
@@ -403,7 +356,6 @@ msgid "Data Sources"
 msgstr "Nguồn dữ liệu"
 
 #: maint.php
-#, fuzzy
 msgid "Thresholds"
 msgstr "Ngưỡng"
 
@@ -416,24 +368,21 @@ msgid "Hostname"
 msgstr "Tên máy chủ"
 
 #: maint.php
-#, fuzzy
 msgid "Current Schedule"
 msgstr "Lịch trình hiện tại"
 
 #: maint.php
-#, fuzzy
 msgid "No Associated Devices Found"
-msgstr "Không tìm thấy thiết bị liên kết"
+msgstr "Không tìm thấy thiết bị liên kết nào"
 
 #: maint.php
-#, fuzzy
 msgid "Schedule must be created before associating"
-msgstr "Lịch biểu phải được tạo trước khi liên kết"
+msgstr "Phải tạo lịch trình trước khi liên kết"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Associated Web URL's %s"
-msgstr "URL liên kết của %s"
+msgstr "URL Web đã liên kết %s"
 
 #: maint.php
 msgid "Rows"
@@ -441,7 +390,7 @@ msgstr "Hàng"
 
 #: maint.php
 msgid "URLS"
-msgstr ""
+msgstr "Các URL"
 
 #: maint.php
 msgid "URL"
@@ -452,32 +401,29 @@ msgid "Disabled"
 msgstr "Vô hiệu hóa"
 
 #: maint.php
-#, fuzzy
 msgid "USING DNS"
 msgstr "SỬ DỤNG DNS"
 
 #: maint.php
-#, fuzzy
 msgid "No Associated WebSeer URL's Found"
-msgstr "Không tìm thấy URL WebSeer liên kết"
+msgstr "Không tìm thấy URL WebSeer liên kết nào"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Associated Servcheck test's %s"
-msgstr "Thiết bị liên kết %s"
+msgstr "Kiểm tra ServCheck đã liên kết %s"
 
 #: maint.php
 msgid "Tests"
-msgstr ""
+msgstr "Các bài kiểm tra"
 
 #: maint.php
 msgid "Path"
-msgstr ""
+msgstr "Đường dẫn"
 
 #: maint.php
-#, fuzzy
 msgid "No Associated Servcheck Test's Found"
-msgstr "Không tìm thấy thiết bị liên kết"
+msgstr "Không tìm thấy kiểm tra Servcheck liên kết nào"
 
 #: setup.php
 msgid "Management"
@@ -489,77 +435,69 @@ msgstr "Quản lí hệ thống"
 
 #: setup.php
 msgid "(edit)"
-msgstr "(chinnhr sửa)"
+msgstr "(Sửa)"
 
 #: setup.php
-#, fuzzy
 msgid "(actions)"
-msgstr "Hành động"
+msgstr "(thao tác)"
 
 #: setup.php
 msgid "Enable maintenance for this device (now+1h)"
-msgstr ""
+msgstr "Bật bảo trì cho thiết bị này (bây giờ+1h)"
 
 #: setup.php
-#, fuzzy
 msgid "Add device(s) to existing maintenance schedule"
-msgstr "Lịch bảo trì"
+msgstr "Thêm thiết bị vào lịch bảo trì hiện có"
 
 #: setup.php
-#, fuzzy
 msgid "Maintenance Window"
-msgstr "Lịch bảo trì"
+msgstr "Khung thời gian bảo trì"
 
 #: setup.php
-#, fuzzy
 msgid "Duration"
-msgstr "Mô tả"
+msgstr "Thời lượng"
 
 #: setup.php
 msgid "Timezone"
-msgstr ""
+msgstr "Múi giờ"
 
 #: setup.php
 msgid "min"
-msgstr ""
+msgstr "phút"
 
 #: setup.php
-#, fuzzy
 msgid "Schedule name"
-msgstr "Tên kế hoạch"
+msgstr "Tên lịch trình"
 
 #: setup.php
 msgid "e.g. Emergency patching"
-msgstr ""
+msgstr "ví dụ: Vá lỗi khẩn cấp"
 
 #: setup.php
-#, fuzzy
 msgid "disabled"
 msgstr "Vô hiệu hóa"
 
 #: setup.php
-#, fuzzy
 msgid "No schedules found"
-msgstr "Kế hoạch"
+msgstr "Không tìm thấy lịch trình nào"
 
 #: setup.php
-#, fuzzy
 msgid "Select schedule"
-msgstr "Lịch trình"
+msgstr "Chọn lịch trình"
 
 #: setup.php
 msgid "Quick Maintenance"
-msgstr ""
+msgstr "Bảo trì nhanh"
 
 #: setup.php
 #, php-format
 msgid "Maintenance schedule '%s' created and %d device(s) associated."
-msgstr ""
+msgstr "Đã tạo lịch bảo trì '%s' và liên kết %d thiết bị."
 
 #: setup.php
 #, php-format
 msgid "%d device(s) added to maintenance schedule '%s'."
-msgstr ""
+msgstr "Đã thêm %d thiết bị vào lịch bảo trì '%s'."
 
 #, fuzzy
 #~ msgid "General Settings [edit: %s]"
