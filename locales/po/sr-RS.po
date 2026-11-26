@@ -1,0 +1,510 @@
+# Serbian translation for Cacti.
+# Copyright (C) 2004-2026 The Cacti Group
+# This file is distributed under the same license as the Cacti package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Cacti\n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2026-09-29 00:45-0400\n"
+"PO-Revision-Date: 2026-11-26 18:57+0000\n"
+"Last-Translator: Thomas Vincent <thomasvincent@gmail.com>\n"
+"Language-Team: Serbian <developers@cacti.net>\n"
+"Language: sr-RS\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+
+#: maint.php
+msgid "Update Time (Now + 1 Hour)"
+msgstr "Време ажурирања (Сада + 1 сат)"
+
+#: maint.php
+msgid "Delete"
+msgstr "Обриши"
+
+#: maint.php
+msgid "Associate"
+msgstr "Повежи"
+
+#: maint.php
+msgid "Disassociate"
+msgstr "Одвоји"
+
+#: maint.php setup.php
+msgid "One Time"
+msgstr "Једнократно"
+
+#: maint.php setup.php
+msgid "Recurring"
+msgstr "Понављајуће"
+
+#: maint.php
+msgid "Not Defined"
+msgstr "Није дефинисано"
+
+#: maint.php setup.php
+msgid "Every Day"
+msgstr "Сваки дан"
+
+#: maint.php setup.php
+msgid "Every Week"
+msgstr "Сваке недеље"
+
+#: maint.php
+msgid "No"
+msgstr "Не"
+
+#: maint.php
+msgid "Yes"
+msgstr "Да"
+
+#: maint.php
+msgid "General"
+msgstr "Опште"
+
+#: maint.php
+msgid "Thold Devices"
+msgstr "Thold уређаји"
+
+#: maint.php
+msgid "WebSeer"
+msgstr "WebSeer"
+
+#: maint.php
+msgid "Servcheck"
+msgstr "Servcheck"
+
+#: maint.php
+msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
+msgstr "Кликните на 'Настави' да бисте ажурирали следећи(е) распоред(е) одржавања."
+
+#: maint.php
+msgid "Cancel"
+msgstr "Откажи"
+
+#: maint.php
+msgid "Continue"
+msgstr "Настави"
+
+#: maint.php
+msgid "Update Maintenance Schedule(s)"
+msgstr "Ажурирај распоред(е) одржавања"
+
+#: maint.php
+msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
+msgstr "Кликните на 'Настави' да бисте обрисали следећи(е) распоред(е) одржавања. Сви уређаји повезани са овим распоредом биће одвојени."
+
+#: maint.php
+msgid "Delete Maintenance Schedule(s)"
+msgstr "Обриши распоред(е) одржавања"
+
+#: maint.php
+msgid "You must select at least one Maintenance Schedule."
+msgstr "Морате изабрати бар један распоред одржавања."
+
+#: maint.php
+msgid "Return"
+msgstr "Повратак"
+
+#: maint.php
+msgid "Device(s)"
+msgstr "Уређај(и)"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Кликните на 'Настави' да бисте повезали следећи(е) уређај(е) са распоредом одржавања '<b>%s</b>'."
+
+#: maint.php
+msgid "Associate Maintenance Schedule(s)"
+msgstr "Повежи распоред(е) одржавања"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Кликните на 'Настави' да бисте одвојили следећи(е) уређај(е) од распореда одржавања '<b>%s</b>'."
+
+#: maint.php
+msgid "Disassociate Maintenance Schedule(s)"
+msgstr "Одвоји распоред(е) одржавања"
+
+#: maint.php
+msgid "You must select at least one Device."
+msgstr "Морате изабрати бар један уређај."
+
+#: maint.php
+msgid "Webseer(s)"
+msgstr "Webseer ставке"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Кликните на 'Настави' да бисте повезали доле наведене Webseer ставке са распоредом одржавања '<b>%s</b>'."
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr "Кликните на 'Настави' да бисте одвојили доле наведене Webseer ставке од распореда одржавања '<b>%s</b>'."
+
+#: maint.php
+msgid "You must select at least one Webseer."
+msgstr "Морате изабрати бар један Webseer."
+
+#: maint.php
+msgid "Servcheck(s)"
+msgstr "Servcheck ставке"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the Servcheck(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Кликните на 'Настави' да бисте повезали доле наведене Servcheck ставке са распоредом одржавања '<b>%s</b>'."
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the Servcheck(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr "Кликните на 'Настави' да бисте одвојили доле наведене Servcheck ставке од распореда одржавања '<b>%s</b>'."
+
+#: maint.php
+msgid "You must select at least one Servcheck test."
+msgstr "Морате изабрати бар један Servcheck тест."
+
+#: maint.php
+#, php-format
+msgid "[edit: %s]"
+msgstr "[измени: %s]"
+
+#: maint.php
+msgid "[new]"
+msgstr "[ново]"
+
+#: maint.php
+msgid "New Maintenance Schedule"
+msgstr "Нови распоред одржавања"
+
+#: maint.php
+#, php-format
+msgid "General Settings %s"
+msgstr "Општа подешавања %s"
+
+#: maint.php
+msgid "Schedule"
+msgstr "Распоред"
+
+#: maint.php
+msgid "Schedule Name"
+msgstr "Назив распореда"
+
+#: maint.php
+msgid "Provide the Maintenance Schedule a meaningful name"
+msgstr "Унесите смислен назив за распоред одржавања"
+
+#: maint.php
+msgid "Enabled"
+msgstr "Омогућено"
+
+#: maint.php
+msgid "Whether or not this schedule will be checked."
+msgstr "Да ли ће се овај распоред проверавати или не."
+
+#: maint.php setup.php
+msgid "Schedule Type"
+msgstr "Тип распореда"
+
+#: maint.php
+msgid "The type of schedule, one time or recurring."
+msgstr "Врста распореда, једнократни или понављајући."
+
+#: maint.php
+msgid "Interval"
+msgstr "Интервал"
+
+#: maint.php
+msgid "This is the interval in which the start / end time will repeat."
+msgstr "Ово је интервал у којем ће се време почетка / завршетка понављати."
+
+#: maint.php
+msgid "Start Time"
+msgstr "Време почетка"
+
+#: maint.php
+msgid "The start date / time for this schedule. Most date / time formats accepted."
+msgstr "Датум / време почетка за овај распоред. Већина формата датума / времена је прихваћена."
+
+#: maint.php
+msgid "End Time"
+msgstr "Време завршетка"
+
+#: maint.php
+msgid "The end date / time for this schedule. Most date / time formats accepted."
+msgstr "Датум / време завршетка за овај распоред. Већина формата датума / времена је прихваћена."
+
+#: maint.php
+msgid "Start Date/Time Selector"
+msgstr "Бирач датума/времена почетка"
+
+#: maint.php
+msgid "End Date/Time Selector"
+msgstr "Бирач датума/времена завршетка"
+
+#: maint.php setup.php
+msgid "Maintenance Schedules"
+msgstr "Распореди одржавања"
+
+#: maint.php
+msgid "Search"
+msgstr "Претражи"
+
+#: maint.php
+msgid "Schedules"
+msgstr "Распореди"
+
+#: maint.php
+msgid "Default"
+msgstr "Подразумевано"
+
+#: maint.php
+msgid "Go"
+msgstr "Иди"
+
+#: maint.php
+msgid "Set/Refresh Filters"
+msgstr "Постави/освежи филтере"
+
+#: maint.php
+msgid "Clear"
+msgstr "Очисти"
+
+#: maint.php
+msgid "Clear Filters"
+msgstr "Очисти филтере"
+
+#: maint.php
+msgid "Name"
+msgstr "Назив"
+
+#: maint.php
+msgid "The name of this Maintenance Schedule."
+msgstr "Назив овог распореда одржавања."
+
+#: maint.php
+msgid "Active"
+msgstr "Активан"
+
+#: maint.php
+msgid "Type"
+msgstr "Тип"
+
+#: maint.php
+msgid "Start"
+msgstr "Покрени"
+
+#: maint.php
+msgid "End"
+msgstr "Крај"
+
+#: maint.php
+msgid "No Schedules"
+msgstr "Нема распореда"
+
+#: maint.php
+#, php-format
+msgid "Associated Devices %s"
+msgstr "Повезани уређаји %s"
+
+#: maint.php
+msgid "Site"
+msgstr "Локација"
+
+#: maint.php
+msgid "Any"
+msgstr "Било који"
+
+#: maint.php
+msgid "None"
+msgstr "Ниједан"
+
+#: maint.php
+msgid "Data Collector"
+msgstr "Прикупљач података"
+
+#: maint.php
+msgid "Location"
+msgstr "Локација"
+
+#: maint.php
+msgid "Template"
+msgstr "Шаблон"
+
+#: maint.php setup.php
+msgid "Devices"
+msgstr "Уређаји"
+
+#: maint.php
+msgid "Associated"
+msgstr "Повезано"
+
+#: maint.php
+msgid "Description"
+msgstr "Опис"
+
+#: maint.php
+msgid "ID"
+msgstr "ID"
+
+#: maint.php
+msgid "Associated Schedules"
+msgstr "Повезани распореди"
+
+#: maint.php
+msgid "Graphs"
+msgstr "Графикони"
+
+#: maint.php
+msgid "Data Sources"
+msgstr "Извори података"
+
+#: maint.php
+msgid "Thresholds"
+msgstr "Прагови"
+
+#: maint.php
+msgid "Status"
+msgstr "Статус"
+
+#: maint.php
+msgid "Hostname"
+msgstr "Име домаћина"
+
+#: maint.php
+msgid "Current Schedule"
+msgstr "Тренутни распоред"
+
+#: maint.php
+msgid "No Associated Devices Found"
+msgstr "Нису пронађени повезани уређаји"
+
+#: maint.php
+msgid "Schedule must be created before associating"
+msgstr "Распоред мора бити креиран пре повезивања"
+
+#: maint.php
+#, php-format
+msgid "Associated Web URL's %s"
+msgstr "Повезане веб URL адресе %s"
+
+#: maint.php
+msgid "Rows"
+msgstr "Редови"
+
+#: maint.php
+msgid "URLS"
+msgstr "URL АДРЕСЕ"
+
+#: maint.php
+msgid "URL"
+msgstr "URL"
+
+#: maint.php
+msgid "Disabled"
+msgstr "Онемогућено"
+
+#: maint.php
+msgid "USING DNS"
+msgstr "КОРИСТИ DNS"
+
+#: maint.php
+msgid "No Associated WebSeer URL's Found"
+msgstr "Нису пронађене повезане WebSeer URL адресе"
+
+#: maint.php
+#, php-format
+msgid "Associated Servcheck test's %s"
+msgstr "Повезани Servcheck тестови %s"
+
+#: maint.php
+msgid "Tests"
+msgstr "Тестови"
+
+#: maint.php
+msgid "Path"
+msgstr "Путања"
+
+#: maint.php
+msgid "No Associated Servcheck Test's Found"
+msgstr "Нису пронађени повезани Servcheck тестови"
+
+#: setup.php
+msgid "Management"
+msgstr "Управљање"
+
+#: setup.php
+msgid "System Administration"
+msgstr "Системска администрација"
+
+#: setup.php
+msgid "(edit)"
+msgstr "(измени)"
+
+#: setup.php
+msgid "(actions)"
+msgstr "(радње)"
+
+#: setup.php
+msgid "Enable maintenance for this device (now+1h)"
+msgstr "Омогући одржавање за овај уређај (сада+1ч)"
+
+#: setup.php
+msgid "Add device(s) to existing maintenance schedule"
+msgstr "Додај уређај(е) у постојећи распоред одржавања"
+
+#: setup.php
+msgid "Maintenance Window"
+msgstr "Период одржавања"
+
+#: setup.php
+msgid "Duration"
+msgstr "Трајање"
+
+#: setup.php
+msgid "Timezone"
+msgstr "Временска зона"
+
+#: setup.php
+msgid "min"
+msgstr "мин"
+
+#: setup.php
+msgid "Schedule name"
+msgstr "Назив распореда"
+
+#: setup.php
+msgid "e.g. Emergency patching"
+msgstr "нпр. Хитно постављање закрпа"
+
+#: setup.php
+msgid "disabled"
+msgstr "онемогућено"
+
+#: setup.php
+msgid "No schedules found"
+msgstr "Нису пронађени распореди"
+
+#: setup.php
+msgid "Select schedule"
+msgstr "Изаберите распоред"
+
+#: setup.php
+msgid "Quick Maintenance"
+msgstr "Брзо одржавање"
+
+#: setup.php
+#, php-format
+msgid "Maintenance schedule '%s' created and %d device(s) associated."
+msgstr "Распоред одржавања '%s' је креиран и повезано је %d уређаја."
+
+#: setup.php
+#, php-format
+msgid "%d device(s) added to maintenance schedule '%s'."
+msgstr "%d уређај(а) додато у распоред одржавања '%s'."
