@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-29 00:45-0400\nPO-Revision-Date: 2026-11-25 02:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Dutch <https://translate.cacti.net/projects/cacti/maint/nl/>\nLanguage: nl-NL\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-29 00:45-0400\nPO-Revision-Date: 2026-11-26 03:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Dutch <https://translate.cacti.net/projects/cacti/maint/nl/>\nLanguage: nl-NL\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
 
 #: maint.php
 msgid "Update Time (Now + 1 Hour)"
@@ -76,7 +76,7 @@ msgstr "Annuleer"
 
 #: maint.php
 msgid "Continue"
-msgstr "Volgende"
+msgstr "Doorgaan"
 
 #: maint.php
 msgid "Update Maintenance Schedule(s)"
@@ -309,7 +309,7 @@ msgstr "Website"
 
 #: maint.php
 msgid "Any"
-msgstr "Alle"
+msgstr "Elke"
 
 #: maint.php
 msgid "None"
@@ -317,7 +317,7 @@ msgstr "Geen"
 
 #: maint.php
 msgid "Data Collector"
-msgstr "Data Collector"
+msgstr "Gegevensverzamelaar"
 
 #: maint.php
 msgid "Location"
