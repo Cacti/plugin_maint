@@ -1,0 +1,512 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR The Cacti Group
+# This file is distributed under the same license as the Cacti package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Cacti\n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2026-09-29 00:45-0400\n"
+"PO-Revision-Date: 2026-11-24 19:00+0000\n"
+"Last-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\n"
+"Language-Team: Yoruba\n"
+"Language: yo-NG\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: maint.php
+msgid "Update Time (Now + 1 Hour)"
+msgstr "Àkókò Ìmúdójúìwọ̀n (Ìsinsìnyí + Wákàtí 1)"
+
+#: maint.php
+msgid "Delete"
+msgstr "Pa rẹ́"
+
+#: maint.php
+msgid "Associate"
+msgstr "So pọ̀"
+
+#: maint.php
+msgid "Disassociate"
+msgstr "Yọ ìsopọ̀"
+
+#: maint.php setup.php
+msgid "One Time"
+msgstr "Lẹ́ẹ̀kan Péré"
+
+#: maint.php setup.php
+msgid "Recurring"
+msgstr "Lóòrèkóòrè"
+
+#: maint.php
+msgid "Not Defined"
+msgstr "A Kò Ṣàlàyé Rẹ̀"
+
+#: maint.php setup.php
+msgid "Every Day"
+msgstr "Lójoojúmọ́"
+
+#: maint.php setup.php
+msgid "Every Week"
+msgstr "Lọ́sọ̀ọ̀sẹ̀"
+
+#: maint.php
+msgid "No"
+msgstr "Rárá"
+
+#: maint.php
+msgid "Yes"
+msgstr "Bẹ́ẹ̀ Ni"
+
+#: maint.php
+msgid "General"
+msgstr "Gbogbogbò"
+
+#: maint.php
+msgid "Thold Devices"
+msgstr "Àwọn Ẹ̀rọ Thold"
+
+#: maint.php
+msgid "WebSeer"
+msgstr "WebSeer"
+
+#: maint.php
+msgid "Servcheck"
+msgstr "Servcheck"
+
+#: maint.php
+msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
+msgstr "Tẹ 'Tẹ̀síwájú' láti ṣe àtúnṣe Àtòjọ Ìtọ́jú wọ̀nyí."
+
+#: maint.php
+msgid "Cancel"
+msgstr "Fagilé"
+
+#: maint.php
+msgid "Continue"
+msgstr "Tẹ̀síwájú"
+
+#: maint.php
+msgid "Update Maintenance Schedule(s)"
+msgstr "Sọ Àwọn Ìṣètò Ìtọ́jú di tuntun"
+
+#: maint.php
+msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
+msgstr "Tẹ 'Tẹ̀síwájú' láti Pa Ìtòlẹ́sẹẹsẹ Ìtọ́jú wọ̀nyí rẹ́. Èyíkéyìí Ẹ̀rọ tí a so mọ́ Ìtòlẹ́sẹẹsẹ yìí ni a ó yà sọ́tọ̀."
+
+#: maint.php
+msgid "Delete Maintenance Schedule(s)"
+msgstr "Pa (Àwọn) Ìtòlẹ́sẹẹsẹ Ìtọ́jú Rẹ́"
+
+#: maint.php
+msgid "You must select at least one Maintenance Schedule."
+msgstr "O gbọ́dọ̀ yan ó kéré jù Ètò Àtúnṣe kan."
+
+#: maint.php
+msgid "Return"
+msgstr "Padà"
+
+#: maint.php
+msgid "Device(s)"
+msgstr "Ẹ̀rọ/Àwọn Ẹ̀rọ"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Tẹ 'Tẹ̀síwájú' láti So Ẹ̀rọ wọ̀nyí mọ́ Ìtòlẹ́sẹẹsẹ Ìtọ́jú '<b>%s</b>'."
+
+#: maint.php
+msgid "Associate Maintenance Schedule(s)"
+msgstr "So Àwọn Ìtòlẹ́sẹẹsẹ Ìtọ́jú Pọ̀"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Tẹ 'Tẹ̀síwájú' láti Ya Ẹ̀rọ wọ̀nyí sọ́tọ̀ kúrò lára Ìtòlẹ́sẹẹsẹ Ìtọ́jú '<b>%s</b>'."
+
+#: maint.php
+msgid "Disassociate Maintenance Schedule(s)"
+msgstr "Yọ Ìṣètò Ìtọ́jú kúrò"
+
+#: maint.php
+msgid "You must select at least one Device."
+msgstr "O gbọ́dọ̀ yan ó kéré jù Ẹ̀rọ kan."
+
+#: maint.php
+msgid "Webseer(s)"
+msgstr "Àwọn Webseer"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Tẹ 'Tẹ̀síwájú' láti So Webseer tó wà ní ìsàlẹ̀ mọ́ Ìtòlẹ́sẹẹsẹ Ìtọ́jú '<b>%s</b>'."
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr "Tẹ 'Tẹ̀síwájú' láti Ya Webseer tó wà ní ìsàlẹ̀ sọ́tọ̀ kúrò lára Ìtòlẹ́sẹẹsẹ Ìtọ́jú '<b>%s</b>'."
+
+#: maint.php
+msgid "You must select at least one Webseer."
+msgstr "O gbọ́dọ̀ yan ó kéré jù Webseer kan."
+
+#: maint.php
+msgid "Servcheck(s)"
+msgstr "Àwọn Servcheck"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the Servcheck(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Tẹ 'Tẹ̀síwájú' láti So Servcheck tó wà ní ìsàlẹ̀ mọ́ Ìtòlẹ́sẹẹsẹ Ìtọ́jú '<b>%s</b>'."
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the Servcheck(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr "Tẹ 'Tẹ̀síwájú' láti Ya Servcheck tó wà ní ìsàlẹ̀ sọ́tọ̀ kúrò lára Ìtòlẹ́sẹẹsẹ Ìtọ́jú '<b>%s</b>'."
+
+#: maint.php
+msgid "You must select at least one Servcheck test."
+msgstr "O gbọ́dọ̀ yan ó kéré jù àyẹ̀wò Servcheck kan."
+
+#: maint.php
+#, php-format
+msgid "[edit: %s]"
+msgstr "[àtúnṣe: %s]"
+
+#: maint.php
+msgid "[new]"
+msgstr "[tuntun]"
+
+#: maint.php
+msgid "New Maintenance Schedule"
+msgstr "Ètò Àtúnṣe Tuntun"
+
+#: maint.php
+#, php-format
+msgid "General Settings %s"
+msgstr "Àwọn Ètò Gbogbogbòò %s"
+
+#: maint.php
+msgid "Schedule"
+msgstr "Ìṣètò Àkókò"
+
+#: maint.php
+msgid "Schedule Name"
+msgstr "Orúkọ Ìtòlẹ́sẹẹsẹ"
+
+#: maint.php
+msgid "Provide the Maintenance Schedule a meaningful name"
+msgstr "Fún Ètò Àtúnṣe náà ní orúkọ tí ó ní ìtumọ̀"
+
+#: maint.php
+msgid "Enabled"
+msgstr "Ṣiṣẹ́"
+
+#: maint.php
+msgid "Whether or not this schedule will be checked."
+msgstr "Bóyá a óò ṣàyẹ̀wò ìṣètò àkókò yìí tàbí bẹ́ẹ̀ kọ́."
+
+#: maint.php setup.php
+msgid "Schedule Type"
+msgstr "Irú Ètò Àkókò"
+
+#: maint.php
+msgid "The type of schedule, one time or recurring."
+msgstr "Irú ìtòlẹ́sẹẹsẹ àkókò, ìgbà kan tàbí tí ó ń túnṣe."
+
+#: maint.php
+msgid "Interval"
+msgstr "Àlàfo-àkókò"
+
+#: maint.php
+msgid "This is the interval in which the start / end time will repeat."
+msgstr "Èyí ni àlàfo àkókò tí àkókò ìbẹ̀rẹ̀ / ìparí yóò máa tún ṣẹlẹ̀."
+
+#: maint.php
+msgid "Start Time"
+msgstr "Àkókò Ìbẹ̀rẹ̀"
+
+#: maint.php
+msgid "The start date / time for this schedule. Most date / time formats accepted."
+msgstr "Ọjọ́ / àkókò ìbẹ̀rẹ̀ fún ìtòlẹ́sẹẹsẹ àkókò yìí. Ọ̀pọ̀lọpọ̀ ọ̀nà ìṣètò ọjọ́ / àkókò ni a gbà."
+
+#: maint.php
+msgid "End Time"
+msgstr "Àkókò Òpin"
+
+#: maint.php
+msgid "The end date / time for this schedule. Most date / time formats accepted."
+msgstr "Ọjọ́ / àkókò ìparí fún ìṣètò yìí. A gba ọ̀pọ̀lọpọ̀ ọ̀nà kíkọ ọjọ́ / àkókò wọlé."
+
+#: maint.php
+msgid "Start Date/Time Selector"
+msgstr "Olùyàn Ọjọ́/Àkókò Ìbẹ̀rẹ̀"
+
+#: maint.php
+msgid "End Date/Time Selector"
+msgstr "Olùyàn Ọjọ́/Àkókò Òpin"
+
+#: maint.php setup.php
+msgid "Maintenance Schedules"
+msgstr "Àwọn Ìṣètò Ìtọ́jú"
+
+#: maint.php
+msgid "Search"
+msgstr "Ṣàwárí"
+
+#: maint.php
+msgid "Schedules"
+msgstr "Àwọn Ìtòlẹ́sẹẹsẹ"
+
+#: maint.php
+msgid "Default"
+msgstr "Àìyípadà"
+
+#: maint.php
+msgid "Go"
+msgstr "Lọ"
+
+#: maint.php
+msgid "Set/Refresh Filters"
+msgstr "Ṣètò/Sọ Àwọn Àlẹ̀mọ́ Dọ̀tun"
+
+#: maint.php
+msgid "Clear"
+msgstr "Nu Kúrò"
+
+#: maint.php
+msgid "Clear Filters"
+msgstr "Pa Àwọn Àlẹ̀mọ́ Rẹ́"
+
+#: maint.php
+msgid "Name"
+msgstr "Orúkọ"
+
+#: maint.php
+msgid "The name of this Maintenance Schedule."
+msgstr "Orúkọ Ìṣètò Ìtọ́jú yìí."
+
+#: maint.php
+msgid "Active"
+msgstr "Ń ṣiṣẹ́"
+
+#: maint.php
+msgid "Type"
+msgstr "Irú"
+
+#: maint.php
+msgid "Start"
+msgstr "Bẹ̀rẹ̀"
+
+#: maint.php
+msgid "End"
+msgstr "Òpin"
+
+#: maint.php
+msgid "No Schedules"
+msgstr "Kò sí Àwọn Ìṣètò Àkókò"
+
+#: maint.php
+#, php-format
+msgid "Associated Devices %s"
+msgstr "Àwọn Ẹ̀rọ Tí Ó Sopọ̀ %s"
+
+#: maint.php
+msgid "Site"
+msgstr "Ibùdó"
+
+#: maint.php
+msgid "Any"
+msgstr "Èyíkéyìí"
+
+#: maint.php
+msgid "None"
+msgstr "Kò Sí"
+
+#: maint.php
+msgid "Data Collector"
+msgstr "Olùkójọ Dátà"
+
+#: maint.php
+msgid "Location"
+msgstr "Ibùdó"
+
+#: maint.php
+msgid "Template"
+msgstr "Àdàkọ"
+
+#: maint.php setup.php
+msgid "Devices"
+msgstr "Àwọn Ẹ̀rọ"
+
+#: maint.php
+msgid "Associated"
+msgstr "Tí A So Pọ̀"
+
+#: maint.php
+msgid "Description"
+msgstr "Àpèjúwe"
+
+#: maint.php
+msgid "ID"
+msgstr "ID"
+
+#: maint.php
+msgid "Associated Schedules"
+msgstr "Àwọn Ìtòlẹ́sẹẹsẹ Tí Ó Sopọ̀"
+
+#: maint.php
+msgid "Graphs"
+msgstr "Àwọn Gíráàfù"
+
+#: maint.php
+msgid "Data Sources"
+msgstr "Àwọn Orísun Dátà"
+
+#: maint.php
+msgid "Thresholds"
+msgstr "Àwọn Àlà"
+
+#: maint.php
+msgid "Status"
+msgstr "Ipò"
+
+#: maint.php
+msgid "Hostname"
+msgstr "Orúkọ Olùgbàlejò"
+
+#: maint.php
+msgid "Current Schedule"
+msgstr "Ìṣètò Àkókò Lọ́wọ́lọ́wọ́"
+
+#: maint.php
+msgid "No Associated Devices Found"
+msgstr "Kò Sí Àwọn Ẹ̀rọ Tí Ó Jẹmọ́ Tí A Rí"
+
+#: maint.php
+msgid "Schedule must be created before associating"
+msgstr "A gbọ́dọ̀ ṣẹ̀dá ìtòlẹ́sẹẹsẹ kí a tó so pọ̀"
+
+#: maint.php
+#, php-format
+msgid "Associated Web URL's %s"
+msgstr "Àwọn URL Wẹ́ẹ̀bù Tí Ó Sopọ̀ %s"
+
+#: maint.php
+msgid "Rows"
+msgstr "Àwọn Ìlà"
+
+#: maint.php
+msgid "URLS"
+msgstr "Àwọn URL"
+
+#: maint.php
+msgid "URL"
+msgstr "URL"
+
+#: maint.php
+msgid "Disabled"
+msgstr "Àìṣiṣẹ́"
+
+#: maint.php
+msgid "USING DNS"
+msgstr "LÍLO DNS"
+
+#: maint.php
+msgid "No Associated WebSeer URL's Found"
+msgstr "Kò Sí Àwọn URL WebSeer Tí Ó Jẹmọ́ Tí A Rí"
+
+#: maint.php
+#, php-format
+msgid "Associated Servcheck test's %s"
+msgstr "Àwọn ìdánwò Servcheck tí ó sopọ̀ %s"
+
+#: maint.php
+msgid "Tests"
+msgstr "Àwọn Àyẹ̀wò"
+
+#: maint.php
+msgid "Path"
+msgstr "Ọ̀nà"
+
+#: maint.php
+msgid "No Associated Servcheck Test's Found"
+msgstr "Kò Sí Àwọn Ìdánwò Servcheck Tí Ó Jẹmọ́ Tí A Rí"
+
+#: setup.php
+msgid "Management"
+msgstr "Ìṣàkóso"
+
+#: setup.php
+msgid "System Administration"
+msgstr "Ìṣàkóso Ètò"
+
+#: setup.php
+msgid "(edit)"
+msgstr "(ṣàtúnṣe)"
+
+#: setup.php
+msgid "(actions)"
+msgstr "(àwọn ìgbésẹ̀)"
+
+#: setup.php
+msgid "Enable maintenance for this device (now+1h)"
+msgstr "Mú ìtọ́jú ṣiṣẹ́ fún ẹ̀rọ yìí (báyìí+wákàtí 1)"
+
+#: setup.php
+msgid "Add device(s) to existing maintenance schedule"
+msgstr "Fi ẹ̀rọ kún ètò àtúnṣe tó wà tẹ́lẹ̀"
+
+#: setup.php
+msgid "Maintenance Window"
+msgstr "Àkókò Ìtọ́jú"
+
+#: setup.php
+msgid "Duration"
+msgstr "Àkókò Tó Gbà"
+
+#: setup.php
+msgid "Timezone"
+msgstr "Agbègbè àkókò"
+
+#: setup.php
+msgid "min"
+msgstr "ìṣẹ́jú"
+
+#: setup.php
+msgid "Schedule name"
+msgstr "Orúkọ ìtòlẹ́sẹẹsẹ"
+
+#: setup.php
+msgid "e.g. Emergency patching"
+msgstr "fún àpẹẹrẹ, Àtúnṣe pàjáwìrì"
+
+#: setup.php
+msgid "disabled"
+msgstr "àìṣiṣẹ́"
+
+#: setup.php
+msgid "No schedules found"
+msgstr "Kò sí àwọn ètò àkókò kankan tí a rí"
+
+#: setup.php
+msgid "Select schedule"
+msgstr "Yan ètò àkókò"
+
+#: setup.php
+msgid "Quick Maintenance"
+msgstr "Ìtọ́jú Kíákíá"
+
+#: setup.php
+#, php-format
+msgid "Maintenance schedule '%s' created and %d device(s) associated."
+msgstr "Ìṣètò ìtọ́jú '%s' ti di ṣíṣẹ̀dá, a sì so ẹ̀rọ %d pọ̀ mọ́ ọn."
+
+#: setup.php
+#, php-format
+msgid "%d device(s) added to maintenance schedule '%s'."
+msgstr "Àwọn ẹ̀rọ %d ni a fi kún ètò ìtọ́jú '%s'."
+

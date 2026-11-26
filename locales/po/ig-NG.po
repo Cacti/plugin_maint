@@ -1,0 +1,512 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR The Cacti Group
+# This file is distributed under the same license as the Cacti package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Cacti\n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2026-09-29 00:45-0400\n"
+"PO-Revision-Date: 2026-11-24 19:00+0000\n"
+"Last-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\n"
+"Language-Team: Igbo\n"
+"Language: ig-NG\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: maint.php
+msgid "Update Time (Now + 1 Hour)"
+msgstr "Oge Mmelite (Ugbu a + Awa 1)"
+
+#: maint.php
+msgid "Delete"
+msgstr "Hichapụ"
+
+#: maint.php
+msgid "Associate"
+msgstr "Jikọọ"
+
+#: maint.php
+msgid "Disassociate"
+msgstr "Kwụpụ njikọ"
+
+#: maint.php setup.php
+msgid "One Time"
+msgstr "Otu Ugboro"
+
+#: maint.php setup.php
+msgid "Recurring"
+msgstr "Na-eme ugboro ugboro"
+
+#: maint.php
+msgid "Not Defined"
+msgstr "Akọwapụtaghị Ya"
+
+#: maint.php setup.php
+msgid "Every Day"
+msgstr "Kwa Ụbọchị"
+
+#: maint.php setup.php
+msgid "Every Week"
+msgstr "Kwa Izu"
+
+#: maint.php
+msgid "No"
+msgstr "Mba"
+
+#: maint.php
+msgid "Yes"
+msgstr "Ee"
+
+#: maint.php
+msgid "General"
+msgstr "Izugbe"
+
+#: maint.php
+msgid "Thold Devices"
+msgstr "Ngwaọrụ Thold"
+
+#: maint.php
+msgid "WebSeer"
+msgstr "WebSeer"
+
+#: maint.php
+msgid "Servcheck"
+msgstr "Servcheck"
+
+#: maint.php
+msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
+msgstr "Pịa 'Gaa n'ihu' iji melite Nhazi Oge Ndozi ndị na-esonụ."
+
+#: maint.php
+msgid "Cancel"
+msgstr "Kagbuo"
+
+#: maint.php
+msgid "Continue"
+msgstr "Gaa n'ihu"
+
+#: maint.php
+msgid "Update Maintenance Schedule(s)"
+msgstr "Melite Nhazi Ndozi"
+
+#: maint.php
+msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
+msgstr "Pịa 'Gaa n'ihu' iji Hichapụ Usoro Oge Mmezi ndị na-esonụ.  A ga-ewepụ njikọ Ngwaọrụ ọ bụla e jikọtara na Usoro Oge a."
+
+#: maint.php
+msgid "Delete Maintenance Schedule(s)"
+msgstr "Hichapụ Usoro Nlekọta (gasị)"
+
+#: maint.php
+msgid "You must select at least one Maintenance Schedule."
+msgstr "Ị ga-ahọrọ opekata mpe otu Usoro Nlekọta."
+
+#: maint.php
+msgid "Return"
+msgstr "Laghachi"
+
+#: maint.php
+msgid "Device(s)"
+msgstr "Ngwaọrụ(gasị)"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Pịa 'Gaa n'ihu' iji Jikọta Ngwaọrụ ndị na-esonụ na Usoro Oge Mmezi '<b>%s</b>'."
+
+#: maint.php
+msgid "Associate Maintenance Schedule(s)"
+msgstr "Jikọọ Oge Nlekọta"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Pịa 'Gaa n'ihu' iji Wepụ Njikọ Ngwaọrụ ndị na-esonụ na Usoro Oge Mmezi '<b>%s</b>'."
+
+#: maint.php
+msgid "Disassociate Maintenance Schedule(s)"
+msgstr "Kwụpụ njikọ Nhazi Oge Ndozi"
+
+#: maint.php
+msgid "You must select at least one Device."
+msgstr "Ị ga-ahọrọ opekata mpe otu Ngwaọrụ."
+
+#: maint.php
+msgid "Webseer(s)"
+msgstr "Webseer (gasị)"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Pịa 'Gaa n'ihu' iji Jikọta Webseer ndị dị n'okpuru na Usoro Oge Mmezi '<b>%s</b>'."
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr "Pịa 'Gaa n'ihu' iji Wepụ Njikọ Webseer ndị dị n'okpuru na Usoro Oge Mmezi '<b>%s</b>'."
+
+#: maint.php
+msgid "You must select at least one Webseer."
+msgstr "Ị ga-ahọrọ opekata mpe otu Webseer."
+
+#: maint.php
+msgid "Servcheck(s)"
+msgstr "Servcheck(s)"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the Servcheck(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Pịa 'Gaa n'ihu' iji Jikọta Servcheck ndị dị n'okpuru na Usoro Oge Mmezi '<b>%s</b>'."
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the Servcheck(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr "Pịa 'Gaa n'ihu' iji Wepụ Njikọ Servcheck ndị dị n'okpuru na Usoro Oge Mmezi '<b>%s</b>'."
+
+#: maint.php
+msgid "You must select at least one Servcheck test."
+msgstr "Ị ga-ahọrọ opekata mpe otu ule Servcheck."
+
+#: maint.php
+#, php-format
+msgid "[edit: %s]"
+msgstr "[dezie: %s]"
+
+#: maint.php
+msgid "[new]"
+msgstr "[ọhụrụ]"
+
+#: maint.php
+msgid "New Maintenance Schedule"
+msgstr "Nhazi Oge Ndozi Ọhụrụ"
+
+#: maint.php
+#, php-format
+msgid "General Settings %s"
+msgstr "Ntọala Izugbe %s"
+
+#: maint.php
+msgid "Schedule"
+msgstr "Nhazi Oge"
+
+#: maint.php
+msgid "Schedule Name"
+msgstr "Aha Nhazi Oge"
+
+#: maint.php
+msgid "Provide the Maintenance Schedule a meaningful name"
+msgstr "Nye Usoro Oge Nlekọta aha nwere isi"
+
+#: maint.php
+msgid "Enabled"
+msgstr "Gbanyere"
+
+#: maint.php
+msgid "Whether or not this schedule will be checked."
+msgstr "Ma a ga-enyocha nhazi oge a ma ọ bụ na agaghị."
+
+#: maint.php setup.php
+msgid "Schedule Type"
+msgstr "Ụdị Nhazi Oge"
+
+#: maint.php
+msgid "The type of schedule, one time or recurring."
+msgstr "Ụdị nhazi oge, otu oge maọbụ nke na-emegharị emegharị."
+
+#: maint.php
+msgid "Interval"
+msgstr "Oge etiti"
+
+#: maint.php
+msgid "This is the interval in which the start / end time will repeat."
+msgstr "Nke a bụ oge etiti nke oge mmalite / njedebe ga-emegharị."
+
+#: maint.php
+msgid "Start Time"
+msgstr "Oge Mmalite"
+
+#: maint.php
+msgid "The start date / time for this schedule. Most date / time formats accepted."
+msgstr "Ụbọchị / oge mmalite maka nhazi oge a. A na-anabata ọtụtụ usoro ụbọchị / oge."
+
+#: maint.php
+msgid "End Time"
+msgstr "Oge njedebe"
+
+#: maint.php
+msgid "The end date / time for this schedule. Most date / time formats accepted."
+msgstr "Ụbọchị / oge njedebe maka usoro oge a. A na-anabata ọtụtụ ụdị ụbọchị / oge."
+
+#: maint.php
+msgid "Start Date/Time Selector"
+msgstr "Nhọrọ Ụbọchị/Oge Mmalite"
+
+#: maint.php
+msgid "End Date/Time Selector"
+msgstr "Onye nhọrọ Ụbọchị/Oge njedebe"
+
+#: maint.php setup.php
+msgid "Maintenance Schedules"
+msgstr "Nhazi Oge Nlekọta"
+
+#: maint.php
+msgid "Search"
+msgstr "Chọọ"
+
+#: maint.php
+msgid "Schedules"
+msgstr "Nhazi Oge Gasị"
+
+#: maint.php
+msgid "Default"
+msgstr "Nke Ndabere"
+
+#: maint.php
+msgid "Go"
+msgstr "Gaa"
+
+#: maint.php
+msgid "Set/Refresh Filters"
+msgstr "Tọọ/Megharịa Ihe nzacha"
+
+#: maint.php
+msgid "Clear"
+msgstr "Kpochapụ"
+
+#: maint.php
+msgid "Clear Filters"
+msgstr "Kpochapụ Ihe nzacha"
+
+#: maint.php
+msgid "Name"
+msgstr "Aha"
+
+#: maint.php
+msgid "The name of this Maintenance Schedule."
+msgstr "Aha Usoro Ndozi a."
+
+#: maint.php
+msgid "Active"
+msgstr "Na-arụ Ọrụ"
+
+#: maint.php
+msgid "Type"
+msgstr "Ụdị"
+
+#: maint.php
+msgid "Start"
+msgstr "Malite"
+
+#: maint.php
+msgid "End"
+msgstr "Njedebe"
+
+#: maint.php
+msgid "No Schedules"
+msgstr "Enweghị Nhazi oge"
+
+#: maint.php
+#, php-format
+msgid "Associated Devices %s"
+msgstr "Ngwaọrụ Ejikọtara %s"
+
+#: maint.php
+msgid "Site"
+msgstr "Saịtị"
+
+#: maint.php
+msgid "Any"
+msgstr "Ọ Bụla"
+
+#: maint.php
+msgid "None"
+msgstr "Ọ Dịghị Nke Ọ Bụla"
+
+#: maint.php
+msgid "Data Collector"
+msgstr "Ngwa Nchịkọta Data"
+
+#: maint.php
+msgid "Location"
+msgstr "Ebe Ọ Nọ"
+
+#: maint.php
+msgid "Template"
+msgstr "Nlereanya"
+
+#: maint.php setup.php
+msgid "Devices"
+msgstr "Ngwaọrụ"
+
+#: maint.php
+msgid "Associated"
+msgstr "Ejikọtara"
+
+#: maint.php
+msgid "Description"
+msgstr "Nkọwa"
+
+#: maint.php
+msgid "ID"
+msgstr "Njirimara"
+
+#: maint.php
+msgid "Associated Schedules"
+msgstr "Oge Ejikọtara"
+
+#: maint.php
+msgid "Graphs"
+msgstr "Eserese Gasị"
+
+#: maint.php
+msgid "Data Sources"
+msgstr "Isi Iyi Data Gasị"
+
+#: maint.php
+msgid "Thresholds"
+msgstr "Ọnụ ụzọ Gasị"
+
+#: maint.php
+msgid "Status"
+msgstr "Ọnọdụ"
+
+#: maint.php
+msgid "Hostname"
+msgstr "Aha Host"
+
+#: maint.php
+msgid "Current Schedule"
+msgstr "Nhazi Oge Ugbu a"
+
+#: maint.php
+msgid "No Associated Devices Found"
+msgstr "Ahụghị Ngwaọrụ Njikọ Ọ Bụla"
+
+#: maint.php
+msgid "Schedule must be created before associating"
+msgstr "A ga-emepụta nhazi oge tupu ijikọ ya"
+
+#: maint.php
+#, php-format
+msgid "Associated Web URL's %s"
+msgstr "URL Weebụ Ejikọtara %s"
+
+#: maint.php
+msgid "Rows"
+msgstr "Ahịrị"
+
+#: maint.php
+msgid "URLS"
+msgstr "URL Gasị"
+
+#: maint.php
+msgid "URL"
+msgstr "URL"
+
+#: maint.php
+msgid "Disabled"
+msgstr "Gbanyụrụ"
+
+#: maint.php
+msgid "USING DNS"
+msgstr "NA-EJI DNS"
+
+#: maint.php
+msgid "No Associated WebSeer URL's Found"
+msgstr "Ahụghị URL WebSeer Njikọ Ọ Bụla"
+
+#: maint.php
+#, php-format
+msgid "Associated Servcheck test's %s"
+msgstr "Nnwale Servcheck Ejikọtara %s"
+
+#: maint.php
+msgid "Tests"
+msgstr "Nnwale"
+
+#: maint.php
+msgid "Path"
+msgstr "Ụzọ"
+
+#: maint.php
+msgid "No Associated Servcheck Test's Found"
+msgstr "Ahụghị Nnwale Servcheck Njikọ Ọ Bụla"
+
+#: setup.php
+msgid "Management"
+msgstr "Njikwa"
+
+#: setup.php
+msgid "System Administration"
+msgstr "Nchịkwa Sistemụ"
+
+#: setup.php
+msgid "(edit)"
+msgstr "(dezie)"
+
+#: setup.php
+msgid "(actions)"
+msgstr "(omume)"
+
+#: setup.php
+msgid "Enable maintenance for this device (now+1h)"
+msgstr "Gbanye mmezi maka ngwaọrụ a (ugbu a+1h)"
+
+#: setup.php
+msgid "Add device(s) to existing maintenance schedule"
+msgstr "Tinye ngwaọrụ na nhazi oge mmezi dị adị"
+
+#: setup.php
+msgid "Maintenance Window"
+msgstr "Oge Nlekọta"
+
+#: setup.php
+msgid "Duration"
+msgstr "Ogologo Oge"
+
+#: setup.php
+msgid "Timezone"
+msgstr "Mpaghara Oge"
+
+#: setup.php
+msgid "min"
+msgstr "nkeji"
+
+#: setup.php
+msgid "Schedule name"
+msgstr "Aha nhazi oge"
+
+#: setup.php
+msgid "e.g. Emergency patching"
+msgstr "d.g. Ndozi mberede"
+
+#: setup.php
+msgid "disabled"
+msgstr "gbanyụrụ"
+
+#: setup.php
+msgid "No schedules found"
+msgstr "Achọtaghị usoro oge ọ bụla"
+
+#: setup.php
+msgid "Select schedule"
+msgstr "Họrọ nhazi oge"
+
+#: setup.php
+msgid "Quick Maintenance"
+msgstr "Ndozi Ngwa Ngwa"
+
+#: setup.php
+#, php-format
+msgid "Maintenance schedule '%s' created and %d device(s) associated."
+msgstr "Emepụtara nhazi oge nlekọta '%s' ma jikọta ngwaọrụ %d."
+
+#: setup.php
+#, php-format
+msgid "%d device(s) added to maintenance schedule '%s'."
+msgstr "E tinyere ngwaọrụ %d na nhazi oge mmezi '%s'."
+

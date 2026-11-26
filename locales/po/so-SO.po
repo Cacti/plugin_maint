@@ -1,0 +1,512 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR The Cacti Group
+# This file is distributed under the same license as the Cacti package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Cacti\n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2026-09-29 00:45-0400\n"
+"PO-Revision-Date: 2026-11-24 19:00+0000\n"
+"Last-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\n"
+"Language-Team: Somali\n"
+"Language: so-SO\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: maint.php
+msgid "Update Time (Now + 1 Hour)"
+msgstr "Waqtiga Cusbooneysiinta (Hadda + 1 Saac)"
+
+#: maint.php
+msgid "Delete"
+msgstr "Tirtir"
+
+#: maint.php
+msgid "Associate"
+msgstr "Ku xir"
+
+#: maint.php
+msgid "Disassociate"
+msgstr "Ka saar xiriirka"
+
+#: maint.php setup.php
+msgid "One Time"
+msgstr "Hal Mar"
+
+#: maint.php setup.php
+msgid "Recurring"
+msgstr "Soo noqnoqda"
+
+#: maint.php
+msgid "Not Defined"
+msgstr "Lama Qeexin"
+
+#: maint.php setup.php
+msgid "Every Day"
+msgstr "Maalin Kasta"
+
+#: maint.php setup.php
+msgid "Every Week"
+msgstr "Toddobaad Kasta"
+
+#: maint.php
+msgid "No"
+msgstr "Maya"
+
+#: maint.php
+msgid "Yes"
+msgstr "Haa"
+
+#: maint.php
+msgid "General"
+msgstr "Guud"
+
+#: maint.php
+msgid "Thold Devices"
+msgstr "Aaladaha Thold"
+
+#: maint.php
+msgid "WebSeer"
+msgstr "WebSeer"
+
+#: maint.php
+msgid "Servcheck"
+msgstr "Servcheck"
+
+#: maint.php
+msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
+msgstr "Guji 'Sii wad' si aad u cusbooneysiiso Jadwal(lada) Dayactirka ee soo socda."
+
+#: maint.php
+msgid "Cancel"
+msgstr "Jooji"
+
+#: maint.php
+msgid "Continue"
+msgstr "Sii wad"
+
+#: maint.php
+msgid "Update Maintenance Schedule(s)"
+msgstr "Cusbooneysii Jadwal(ada) Dayactirka"
+
+#: maint.php
+msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
+msgstr "Guji 'Sii wad' si aad u Tirtirto Jadwalka/Jadwallada Dayactirka ee soo socda.  Qalab/Aalado kasta oo la Xiriira Jadwalkan waa laga furi doonaa."
+
+#: maint.php
+msgid "Delete Maintenance Schedule(s)"
+msgstr "Tirtir Jadwalka Dayactirka"
+
+#: maint.php
+msgid "You must select at least one Maintenance Schedule."
+msgstr "Waa inaad doorataa ugu yaraan hal Jadwal Dayactir."
+
+#: maint.php
+msgid "Return"
+msgstr "Ku noqo"
+
+#: maint.php
+msgid "Device(s)"
+msgstr "Qalab(yada)"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Guji 'Sii wad' si aad ula Xiriiriso Qalabka/Aaladaha soo socda Jadwalka Dayactirka '<b>%s</b>'."
+
+#: maint.php
+msgid "Associate Maintenance Schedule(s)"
+msgstr "Ku xir Jadwalka/Jadwallada Dayactirka"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Guji 'Sii wad' si aad uga Furto Qalabka/Aaladaha soo socda Jadwalka Dayactirka '<b>%s</b>'."
+
+#: maint.php
+msgid "Disassociate Maintenance Schedule(s)"
+msgstr "Ka saar xiriirka Jadwalka/Jadwallada Dayactirka"
+
+#: maint.php
+msgid "You must select at least one Device."
+msgstr "Waa inaad doorataa ugu yaraan hal Qalab."
+
+#: maint.php
+msgid "Webseer(s)"
+msgstr "Webseer(yo)"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Guji 'Sii wad' si aad ula Xiriiriso Webseer-rada hoose Jadwalka Dayactirka '<b>%s</b>'."
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr "Guji 'Sii wad' si aad uga Furto Webseer-rada hoose Jadwalka Dayactirka '<b>%s</b>'."
+
+#: maint.php
+msgid "You must select at least one Webseer."
+msgstr "Waa inaad doorataa ugu yaraan hal Webseer."
+
+#: maint.php
+msgid "Servcheck(s)"
+msgstr "Servcheck(yo)"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the Servcheck(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Guji 'Sii wad' si aad ula Xiriiriso Servcheck-yada hoose Jadwalka Dayactirka '<b>%s</b>'."
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the Servcheck(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr "Guji 'Sii wad' si aad uga Furto Servcheck-yada hoose Jadwalka Dayactirka '<b>%s</b>'."
+
+#: maint.php
+msgid "You must select at least one Servcheck test."
+msgstr "Waa inaad doorataa ugu yaraan hal tijaabo Servcheck."
+
+#: maint.php
+#, php-format
+msgid "[edit: %s]"
+msgstr "[wax ka beddel: %s]"
+
+#: maint.php
+msgid "[new]"
+msgstr "[cusub]"
+
+#: maint.php
+msgid "New Maintenance Schedule"
+msgstr "Jadwalka Dayactirka Cusub"
+
+#: maint.php
+#, php-format
+msgid "General Settings %s"
+msgstr "Dejinta Guud %s"
+
+#: maint.php
+msgid "Schedule"
+msgstr "Jadwalka"
+
+#: maint.php
+msgid "Schedule Name"
+msgstr "Magaca Jadwalka"
+
+#: maint.php
+msgid "Provide the Maintenance Schedule a meaningful name"
+msgstr "Sii Jadwalka Dayactirka magac macno leh"
+
+#: maint.php
+msgid "Enabled"
+msgstr "La hawlgeliyay"
+
+#: maint.php
+msgid "Whether or not this schedule will be checked."
+msgstr "Haddii jadwalkan la hubin doono iyo in kale."
+
+#: maint.php setup.php
+msgid "Schedule Type"
+msgstr "Nooca Jadwalka"
+
+#: maint.php
+msgid "The type of schedule, one time or recurring."
+msgstr "Nooca jadwalka, hal mar ama soo noqnoqda."
+
+#: maint.php
+msgid "Interval"
+msgstr "Muddo"
+
+#: maint.php
+msgid "This is the interval in which the start / end time will repeat."
+msgstr "Tani waa muddada u dhaxaysa ee waqtiga bilowga / dhammaadka uu ku soo noqnoqon doono."
+
+#: maint.php
+msgid "Start Time"
+msgstr "Waqtiga Bilowga"
+
+#: maint.php
+msgid "The start date / time for this schedule. Most date / time formats accepted."
+msgstr "Taariikhda / waqtiga bilowga jadwalkan. Inta badan qaababka taariikhda / waqtiga waa la aqbalaa."
+
+#: maint.php
+msgid "End Time"
+msgstr "Waqtiga Dhammaadka"
+
+#: maint.php
+msgid "The end date / time for this schedule. Most date / time formats accepted."
+msgstr "Taariikhda / wakhtiga dhammaadka ee jadwalkan. Inta badan qaababka taariikhda / wakhtiga waa la aqbalaa."
+
+#: maint.php
+msgid "Start Date/Time Selector"
+msgstr "Xulashada Taariikhda/Waqtiga Bilowga"
+
+#: maint.php
+msgid "End Date/Time Selector"
+msgstr "Xulashada Taariikhda/Waqtiga Dhammaadka"
+
+#: maint.php setup.php
+msgid "Maintenance Schedules"
+msgstr "Jadwallada Dayactirka"
+
+#: maint.php
+msgid "Search"
+msgstr "Raadi"
+
+#: maint.php
+msgid "Schedules"
+msgstr "Jadwallada"
+
+#: maint.php
+msgid "Default"
+msgstr "Asal ah"
+
+#: maint.php
+msgid "Go"
+msgstr "Soco"
+
+#: maint.php
+msgid "Set/Refresh Filters"
+msgstr "Deji/Cusboonaysii Shaandheeyayaasha"
+
+#: maint.php
+msgid "Clear"
+msgstr "Nadiifi"
+
+#: maint.php
+msgid "Clear Filters"
+msgstr "Nadiifi Shaandheeyayaasha"
+
+#: maint.php
+msgid "Name"
+msgstr "Magac"
+
+#: maint.php
+msgid "The name of this Maintenance Schedule."
+msgstr "Magaca Jadwalkan Dayactirka."
+
+#: maint.php
+msgid "Active"
+msgstr "Firfircoon"
+
+#: maint.php
+msgid "Type"
+msgstr "Nooca"
+
+#: maint.php
+msgid "Start"
+msgstr "Bilow"
+
+#: maint.php
+msgid "End"
+msgstr "Dhammaad"
+
+#: maint.php
+msgid "No Schedules"
+msgstr "Ma Jiraan Jadwalyo"
+
+#: maint.php
+#, php-format
+msgid "Associated Devices %s"
+msgstr "Aaladaha La Xiriira %s"
+
+#: maint.php
+msgid "Site"
+msgstr "Goob"
+
+#: maint.php
+msgid "Any"
+msgstr "Mid kasta"
+
+#: maint.php
+msgid "None"
+msgstr "Midna"
+
+#: maint.php
+msgid "Data Collector"
+msgstr "Ururiyaha Xogta"
+
+#: maint.php
+msgid "Location"
+msgstr "Goobta"
+
+#: maint.php
+msgid "Template"
+msgstr "Qaab-dhismeed"
+
+#: maint.php setup.php
+msgid "Devices"
+msgstr "Aaladaha"
+
+#: maint.php
+msgid "Associated"
+msgstr "La xiriira"
+
+#: maint.php
+msgid "Description"
+msgstr "Sharaxaadda"
+
+#: maint.php
+msgid "ID"
+msgstr "Aqoonsiga"
+
+#: maint.php
+msgid "Associated Schedules"
+msgstr "Jadwallada La Xiriira"
+
+#: maint.php
+msgid "Graphs"
+msgstr "Jaantusyada"
+
+#: maint.php
+msgid "Data Sources"
+msgstr "Ilaha Xogta"
+
+#: maint.php
+msgid "Thresholds"
+msgstr "Xadadka"
+
+#: maint.php
+msgid "Status"
+msgstr "Xaaladda"
+
+#: maint.php
+msgid "Hostname"
+msgstr "Magaca Martigeliyaha"
+
+#: maint.php
+msgid "Current Schedule"
+msgstr "Jadwalka Hadda"
+
+#: maint.php
+msgid "No Associated Devices Found"
+msgstr "Ma Jiraan Aaladaha La Xiriira ee La Helay"
+
+#: maint.php
+msgid "Schedule must be created before associating"
+msgstr "Jadwalka waa in la abuuraa ka hor inta aan la xiriirin"
+
+#: maint.php
+#, php-format
+msgid "Associated Web URL's %s"
+msgstr "URL-yada Webka ee la xiriira %s"
+
+#: maint.php
+msgid "Rows"
+msgstr "Safafka"
+
+#: maint.php
+msgid "URLS"
+msgstr "URL-yada"
+
+#: maint.php
+msgid "URL"
+msgstr "URL"
+
+#: maint.php
+msgid "Disabled"
+msgstr "La joojiyay"
+
+#: maint.php
+msgid "USING DNS"
+msgstr "ADEEGSIGA DNS"
+
+#: maint.php
+msgid "No Associated WebSeer URL's Found"
+msgstr "Wax URL-yada WebSeer ah oo La Xiriira Lama Helin"
+
+#: maint.php
+#, php-format
+msgid "Associated Servcheck test's %s"
+msgstr "Tijaabooyinka Servcheck ee la xiriira %s"
+
+#: maint.php
+msgid "Tests"
+msgstr "Tijaabooyin"
+
+#: maint.php
+msgid "Path"
+msgstr "Jidka"
+
+#: maint.php
+msgid "No Associated Servcheck Test's Found"
+msgstr "Wax Tijaabooyin Servcheck ah oo La Xiriira Lama Helin"
+
+#: setup.php
+msgid "Management"
+msgstr "Maamul"
+
+#: setup.php
+msgid "System Administration"
+msgstr "Maamulka Nidaamka"
+
+#: setup.php
+msgid "(edit)"
+msgstr "(wax ka beddel)"
+
+#: setup.php
+msgid "(actions)"
+msgstr "(hawlaha)"
+
+#: setup.php
+msgid "Enable maintenance for this device (now+1h)"
+msgstr "U hawlgeli dayactirka qalabkan (hadda+1s)"
+
+#: setup.php
+msgid "Add device(s) to existing maintenance schedule"
+msgstr "Ku dar qalab(yo) jadwalka dayactirka ee jira"
+
+#: setup.php
+msgid "Maintenance Window"
+msgstr "Daaqadda Dayactirka"
+
+#: setup.php
+msgid "Duration"
+msgstr "Muddada"
+
+#: setup.php
+msgid "Timezone"
+msgstr "Aagga Waqtiga"
+
+#: setup.php
+msgid "min"
+msgstr "ugu yar"
+
+#: setup.php
+msgid "Schedule name"
+msgstr "Magaca jadwalka"
+
+#: setup.php
+msgid "e.g. Emergency patching"
+msgstr "tusaale ahaan, Dayactir degdeg ah"
+
+#: setup.php
+msgid "disabled"
+msgstr "la joojiyay"
+
+#: setup.php
+msgid "No schedules found"
+msgstr "Wax jadwallo ah lama helin"
+
+#: setup.php
+msgid "Select schedule"
+msgstr "Dooro jadwal"
+
+#: setup.php
+msgid "Quick Maintenance"
+msgstr "Dayactir Degdeg ah"
+
+#: setup.php
+#, php-format
+msgid "Maintenance schedule '%s' created and %d device(s) associated."
+msgstr "Jadwalka dayactirka '%s' waa la abuuray waxaana lala xiriiriyay %d qalab."
+
+#: setup.php
+#, php-format
+msgid "%d device(s) added to maintenance schedule '%s'."
+msgstr "%d qalab ayaa lagu daray jadwalka dayactirka '%s'."
+

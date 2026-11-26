@@ -1,0 +1,512 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR The Cacti Group
+# This file is distributed under the same license as the Cacti package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Cacti\n"
+"Report-Msgid-Bugs-To: developers@cacti.net\n"
+"POT-Creation-Date: 2026-09-29 00:45-0400\n"
+"PO-Revision-Date: 2026-11-24 19:00+0000\n"
+"Last-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\n"
+"Language-Team: Swahili\n"
+"Language: sw-KE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: maint.php
+msgid "Update Time (Now + 1 Hour)"
+msgstr "Muda wa Kusasisha (Sasa + Saa 1)"
+
+#: maint.php
+msgid "Delete"
+msgstr "Futa"
+
+#: maint.php
+msgid "Associate"
+msgstr "Husisha"
+
+#: maint.php
+msgid "Disassociate"
+msgstr "Tenganisha"
+
+#: maint.php setup.php
+msgid "One Time"
+msgstr "Mara Moja"
+
+#: maint.php setup.php
+msgid "Recurring"
+msgstr "Inayojirudia"
+
+#: maint.php
+msgid "Not Defined"
+msgstr "Haijabainishwa"
+
+#: maint.php setup.php
+msgid "Every Day"
+msgstr "Kila Siku"
+
+#: maint.php setup.php
+msgid "Every Week"
+msgstr "Kila Wiki"
+
+#: maint.php
+msgid "No"
+msgstr "Hapana"
+
+#: maint.php
+msgid "Yes"
+msgstr "Ndiyo"
+
+#: maint.php
+msgid "General"
+msgstr "Jumla"
+
+#: maint.php
+msgid "Thold Devices"
+msgstr "Vifaa vya Thold"
+
+#: maint.php
+msgid "WebSeer"
+msgstr "WebSeer"
+
+#: maint.php
+msgid "Servcheck"
+msgstr "Servcheck"
+
+#: maint.php
+msgid "Click 'Continue' to Update the following Maintenance Schedule(s)."
+msgstr "Bofya 'Endelea' ili Kusasisha Ratiba ya/za Matengenezo zifuatazo."
+
+#: maint.php
+msgid "Cancel"
+msgstr "Ghairi"
+
+#: maint.php
+msgid "Continue"
+msgstr "Endelea"
+
+#: maint.php
+msgid "Update Maintenance Schedule(s)"
+msgstr "Sasisha Ratiba za Matengenezo"
+
+#: maint.php
+msgid "Click 'Continue' to Delete the following Maintenance Schedule(s).  Any Devices(s) Associated with this Schedule will be Disassociated."
+msgstr "Bofya 'Endelea' ili Kufuta Ratiba za Matengenezo zifuatazo.  Kifaa/Vifaa vyovyote Vinavyohusishwa na Ratiba hii Vitatenganishwa."
+
+#: maint.php
+msgid "Delete Maintenance Schedule(s)"
+msgstr "Futa Ratiba za Matengenezo"
+
+#: maint.php
+msgid "You must select at least one Maintenance Schedule."
+msgstr "Lazima uchague angalau Ratiba moja ya Matengenezo."
+
+#: maint.php
+msgid "Return"
+msgstr "Rudi"
+
+#: maint.php
+msgid "Device(s)"
+msgstr "Kifaa/Vifaa"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Bofya 'Endelea' ili Kuhusisha Kifaa/Vifaa vifuatavyo na Ratiba ya Matengenezo '<b>%s</b>'."
+
+#: maint.php
+msgid "Associate Maintenance Schedule(s)"
+msgstr "Husisha Ratiba ya/za Matengenezo"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Bofya 'Endelea' ili Kutenganisha Kifaa/Vifaa vifuatavyo na Ratiba ya Matengenezo '<b>%s</b>'."
+
+#: maint.php
+msgid "Disassociate Maintenance Schedule(s)"
+msgstr "Tenganisha Ratiba ya/za Matengenezo"
+
+#: maint.php
+msgid "You must select at least one Device."
+msgstr "Lazima uchague angalau Kifaa kimoja."
+
+#: maint.php
+msgid "Webseer(s)"
+msgstr "Webseer"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Bofya 'Endelea' ili Kuhusisha Webseer zilizo hapa chini na Ratiba ya Matengenezo '<b>%s</b>'."
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr "Bofya 'Endelea' ili Kutenganisha Webseer zilizo hapa chini kutoka kwa Ratiba ya Matengenezo '<b>%s</b>'."
+
+#: maint.php
+msgid "You must select at least one Webseer."
+msgstr "Lazima uchague angalau Webseer moja."
+
+#: maint.php
+msgid "Servcheck(s)"
+msgstr "Servcheck"
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Associate the Servcheck(s) below with the Maintenance Schedule '<b>%s</b>'."
+msgstr "Bofya 'Endelea' ili Kuhusisha Servcheck zilizo hapa chini na Ratiba ya Matengenezo '<b>%s</b>'."
+
+#: maint.php
+#, php-format
+msgid "Click 'Continue' to Disassociate the Servcheck(s) below from the Maintenance Schedule '<b>%s</b>'."
+msgstr "Bofya 'Endelea' ili Kutenganisha Servcheck zilizo hapa chini kutoka kwa Ratiba ya Matengenezo '<b>%s</b>'."
+
+#: maint.php
+msgid "You must select at least one Servcheck test."
+msgstr "Lazima uchague angalau jaribio moja la Servcheck."
+
+#: maint.php
+#, php-format
+msgid "[edit: %s]"
+msgstr "[hariri: %s]"
+
+#: maint.php
+msgid "[new]"
+msgstr "[mpya]"
+
+#: maint.php
+msgid "New Maintenance Schedule"
+msgstr "Ratiba Mpya ya Matengenezo"
+
+#: maint.php
+#, php-format
+msgid "General Settings %s"
+msgstr "Mipangilio ya Jumla %s"
+
+#: maint.php
+msgid "Schedule"
+msgstr "Ratiba"
+
+#: maint.php
+msgid "Schedule Name"
+msgstr "Jina la Ratiba"
+
+#: maint.php
+msgid "Provide the Maintenance Schedule a meaningful name"
+msgstr "Patia Ratiba ya Matengenezo jina lenye maana"
+
+#: maint.php
+msgid "Enabled"
+msgstr "Imewashwa"
+
+#: maint.php
+msgid "Whether or not this schedule will be checked."
+msgstr "Iwapo ratiba hii itakaguliwa au la."
+
+#: maint.php setup.php
+msgid "Schedule Type"
+msgstr "Aina ya Ratiba"
+
+#: maint.php
+msgid "The type of schedule, one time or recurring."
+msgstr "Aina ya ratiba, mara moja au inayojirudia."
+
+#: maint.php
+msgid "Interval"
+msgstr "Kipindi"
+
+#: maint.php
+msgid "This is the interval in which the start / end time will repeat."
+msgstr "Huu ni muda wa kurudia ambao saa ya kuanza / kuisha itajirudia."
+
+#: maint.php
+msgid "Start Time"
+msgstr "Muda wa Kuanza"
+
+#: maint.php
+msgid "The start date / time for this schedule. Most date / time formats accepted."
+msgstr "Tarehe / saa ya kuanza kwa ratiba hii. Miundo mingi ya tarehe / saa inakubaliwa."
+
+#: maint.php
+msgid "End Time"
+msgstr "Saa ya Mwisho"
+
+#: maint.php
+msgid "The end date / time for this schedule. Most date / time formats accepted."
+msgstr "Tarehe / saa ya mwisho ya ratiba hii. Miundo mingi ya tarehe / saa inakubaliwa."
+
+#: maint.php
+msgid "Start Date/Time Selector"
+msgstr "Kichaguzi cha Tarehe/Saa ya Kuanza"
+
+#: maint.php
+msgid "End Date/Time Selector"
+msgstr "Kiteuzi cha Tarehe/Saa ya Mwisho"
+
+#: maint.php setup.php
+msgid "Maintenance Schedules"
+msgstr "Ratiba za Matengenezo"
+
+#: maint.php
+msgid "Search"
+msgstr "Tafuta"
+
+#: maint.php
+msgid "Schedules"
+msgstr "Ratiba"
+
+#: maint.php
+msgid "Default"
+msgstr "Chaguo-msingi"
+
+#: maint.php
+msgid "Go"
+msgstr "Nenda"
+
+#: maint.php
+msgid "Set/Refresh Filters"
+msgstr "Weka/Onyesha Upya Vichujio"
+
+#: maint.php
+msgid "Clear"
+msgstr "Futa"
+
+#: maint.php
+msgid "Clear Filters"
+msgstr "Futa Vichujio"
+
+#: maint.php
+msgid "Name"
+msgstr "Jina"
+
+#: maint.php
+msgid "The name of this Maintenance Schedule."
+msgstr "Jina la Ratiba hii ya Matengenezo."
+
+#: maint.php
+msgid "Active"
+msgstr "Amilifu"
+
+#: maint.php
+msgid "Type"
+msgstr "Aina"
+
+#: maint.php
+msgid "Start"
+msgstr "Anza"
+
+#: maint.php
+msgid "End"
+msgstr "Mwisho"
+
+#: maint.php
+msgid "No Schedules"
+msgstr "Hakuna Ratiba"
+
+#: maint.php
+#, php-format
+msgid "Associated Devices %s"
+msgstr "Vifaa Vilivyohusishwa %s"
+
+#: maint.php
+msgid "Site"
+msgstr "Eneo"
+
+#: maint.php
+msgid "Any"
+msgstr "Yoyote"
+
+#: maint.php
+msgid "None"
+msgstr "Hakuna"
+
+#: maint.php
+msgid "Data Collector"
+msgstr "Kikusanya Data"
+
+#: maint.php
+msgid "Location"
+msgstr "Mahali"
+
+#: maint.php
+msgid "Template"
+msgstr "Kiolezo"
+
+#: maint.php setup.php
+msgid "Devices"
+msgstr "Vifaa"
+
+#: maint.php
+msgid "Associated"
+msgstr "Zilizohusishwa"
+
+#: maint.php
+msgid "Description"
+msgstr "Maelezo"
+
+#: maint.php
+msgid "ID"
+msgstr "Kitambulisho"
+
+#: maint.php
+msgid "Associated Schedules"
+msgstr "Ratiba Zilizohusishwa"
+
+#: maint.php
+msgid "Graphs"
+msgstr "Grafu"
+
+#: maint.php
+msgid "Data Sources"
+msgstr "Vyanzo vya Data"
+
+#: maint.php
+msgid "Thresholds"
+msgstr "Vizingiti"
+
+#: maint.php
+msgid "Status"
+msgstr "Hali"
+
+#: maint.php
+msgid "Hostname"
+msgstr "Jina la Mpangishi"
+
+#: maint.php
+msgid "Current Schedule"
+msgstr "Ratiba ya Sasa"
+
+#: maint.php
+msgid "No Associated Devices Found"
+msgstr "Hakuna Vifaa Vinavyohusiana Vilivyopatikana"
+
+#: maint.php
+msgid "Schedule must be created before associating"
+msgstr "Ratiba lazima iundwe kabla ya kuhusishwa"
+
+#: maint.php
+#, php-format
+msgid "Associated Web URL's %s"
+msgstr "URL za Wavuti Zilizohusishwa %s"
+
+#: maint.php
+msgid "Rows"
+msgstr "Safu Mlalo"
+
+#: maint.php
+msgid "URLS"
+msgstr "Anwani za URL"
+
+#: maint.php
+msgid "URL"
+msgstr "URL"
+
+#: maint.php
+msgid "Disabled"
+msgstr "Imezimwa"
+
+#: maint.php
+msgid "USING DNS"
+msgstr "INATUMIA DNS"
+
+#: maint.php
+msgid "No Associated WebSeer URL's Found"
+msgstr "Hakuna URL za WebSeer Zinazohusiana Zilizopatikana"
+
+#: maint.php
+#, php-format
+msgid "Associated Servcheck test's %s"
+msgstr "Majaribio ya Servcheck Yaliyohusishwa %s"
+
+#: maint.php
+msgid "Tests"
+msgstr "Majaribio"
+
+#: maint.php
+msgid "Path"
+msgstr "Njia"
+
+#: maint.php
+msgid "No Associated Servcheck Test's Found"
+msgstr "Hakuna Majaribio ya Servcheck Yanayohusiana Yaliyopatikana"
+
+#: setup.php
+msgid "Management"
+msgstr "Usimamizi"
+
+#: setup.php
+msgid "System Administration"
+msgstr "Usimamizi wa Mfumo"
+
+#: setup.php
+msgid "(edit)"
+msgstr "(hariri)"
+
+#: setup.php
+msgid "(actions)"
+msgstr "(vitendo)"
+
+#: setup.php
+msgid "Enable maintenance for this device (now+1h)"
+msgstr "Washa matengenezo kwa kifaa hiki (sasa+saa 1)"
+
+#: setup.php
+msgid "Add device(s) to existing maintenance schedule"
+msgstr "Ongeza kifaa/vifaa kwenye ratiba iliyopo ya matengenezo"
+
+#: setup.php
+msgid "Maintenance Window"
+msgstr "Dirisha la Matengenezo"
+
+#: setup.php
+msgid "Duration"
+msgstr "Muda"
+
+#: setup.php
+msgid "Timezone"
+msgstr "Eneo la Saa"
+
+#: setup.php
+msgid "min"
+msgstr "kiwango cha chini"
+
+#: setup.php
+msgid "Schedule name"
+msgstr "Jina la ratiba"
+
+#: setup.php
+msgid "e.g. Emergency patching"
+msgstr "k.m. Uwekaji viraka wa dharura"
+
+#: setup.php
+msgid "disabled"
+msgstr "imezimwa"
+
+#: setup.php
+msgid "No schedules found"
+msgstr "Hakuna ratiba zilizopatikana"
+
+#: setup.php
+msgid "Select schedule"
+msgstr "Chagua ratiba"
+
+#: setup.php
+msgid "Quick Maintenance"
+msgstr "Matengenezo ya Haraka"
+
+#: setup.php
+#, php-format
+msgid "Maintenance schedule '%s' created and %d device(s) associated."
+msgstr "Ratiba ya matengenezo '%s' imeundwa na kifaa/vifaa %d vimehusishwa."
+
+#: setup.php
+#, php-format
+msgid "%d device(s) added to maintenance schedule '%s'."
+msgstr "Kifaa/vifaa %d vimeongezwa kwenye ratiba ya matengenezo '%s'."
+
