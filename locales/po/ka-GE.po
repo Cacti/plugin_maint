@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: Cacti\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-29 00:45-0400\nPO-Revision-Date: 2026-10-24 02:18+0000\nLast-Translator: Ekaterine papava <papava.e@gtu.ge>\nLanguage-Team: Georgian <https://translate.cacti.net/projects/cacti/maint/ka/>\nLanguage: ka-GE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
+msgstr "Project-Id-Version: Cacti\nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-29 00:45-0400\nPO-Revision-Date: 2026-11-26 03:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Georgian <https://translate.cacti.net/projects/cacti/maint/ka/>\nLanguage: ka-GE\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
 
 #: maint.php
 msgid "Update Time (Now + 1 Hour)"
@@ -48,16 +48,15 @@ msgstr "არა"
 
 #: maint.php
 msgid "Yes"
-msgstr "კი"
+msgstr "დიახ"
 
 #: maint.php
 msgid "General"
 msgstr "ზოგადი"
 
 #: maint.php
-#, fuzzy
 msgid "Thold Devices"
-msgstr "მოწყობილობები"
+msgstr "Thold მოწყობილობები"
 
 #: maint.php
 msgid "WebSeer"
@@ -104,18 +103,18 @@ msgid "Device(s)"
 msgstr "მოწყობილობა"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Associate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
-msgstr "დააწკაპუნეთ ღილაკზე 'გაგრძელება', რომ მიანიჭოთ შემდეგი მოწყობილობები რემონტის გეგმას '<b>%s</b>'."
+msgstr "დააწკაპუნეთ ღილაკზე 'გაგრძელება', რათა მიანიჭოთ შემდეგი მოწყობილობები ტექნიკური მომსახურების განრიგს '<b>%s</b>'."
 
 #: maint.php
 msgid "Associate Maintenance Schedule(s)"
 msgstr "რემონტის გეგმების მინიჭება"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Disassociate the following Device(s) with the Maintenance Schedule '<b>%s</b>'."
-msgstr "დააწკაპუნეთ ღილაკზე 'გაგრძელება', რომ გააუქმოთ მინიჭება შემდეგი მოწყობილობებისთვის რემონტის გეგმიდან '<b>%s</b>'."
+msgstr "დააწკაპუნეთ ღილაკზე 'გაგრძელება', რათა გააუქმოთ შემდეგი მოწყობილობების მინიჭება ტექნიკური მომსახურების განრიგიდან '<b>%s</b>'."
 
 #: maint.php
 msgid "Disassociate Maintenance Schedule(s)"
@@ -130,14 +129,14 @@ msgid "Webseer(s)"
 msgstr "Webseer(s)"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Associate the Webseer(s) below with the Maintenance Schedule '<b>%s</b>'."
-msgstr "დააწკაპუნეთ ღილაკზე 'გაგრძელება', რომ მიანიჭოთ შემდეგი მოწყობილობები რემონტის გეგმას '<b>%s</b>'."
+msgstr "დააწკაპუნეთ ღილაკზე 'გაგრძელება', რათა მიანიჭოთ ქვემოთ მოცემული Webseer-ები ტექნიკური მომსახურების განრიგს '<b>%s</b>'."
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Disassociate the Webseer(s) below from the Maintenance Schedule '<b>%s</b>'."
-msgstr "დააწკაპუნეთ ღილაკზე 'გაგრძელება', რომ გააუქმოთ მინიჭება შემდეგი მოწყობილობებისთვის რემონტის გეგმიდან '<b>%s</b>'."
+msgstr "დააწკაპუნეთ ღილაკზე 'გაგრძელება', რათა გააუქმოთ ქვემოთ მოცემული Webseer-ების მინიჭება ტექნიკური მომსახურების განრიგიდან '<b>%s</b>'."
 
 #: maint.php
 msgid "You must select at least one Webseer."
@@ -145,22 +144,21 @@ msgstr "უნდა აირჩიოთ, სულ ცოტა, ერთი
 
 #: maint.php
 msgid "Servcheck(s)"
-msgstr ""
+msgstr "Servcheck(ები)"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Associate the Servcheck(s) below with the Maintenance Schedule '<b>%s</b>'."
-msgstr "დააწკაპუნეთ ღილაკზე 'გაგრძელება', რომ მიანიჭოთ შემდეგი მოწყობილობები რემონტის გეგმას '<b>%s</b>'."
+msgstr "დააწკაპუნეთ ღილაკზე 'გაგრძელება', რათა მიანიჭოთ ქვემოთ მოცემული Servcheck-ები ტექნიკური მომსახურების განრიგს '<b>%s</b>'."
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Click 'Continue' to Disassociate the Servcheck(s) below from the Maintenance Schedule '<b>%s</b>'."
-msgstr "დააწკაპუნეთ ღილაკზე 'გაგრძელება', რომ გააუქმოთ მინიჭება შემდეგი მოწყობილობებისთვის რემონტის გეგმიდან '<b>%s</b>'."
+msgstr "დააწკაპუნეთ ღილაკზე 'გაგრძელება', რათა გააუქმოთ ქვემოთ მოცემული Servcheck-ების მინიჭება ტექნიკური მომსახურების განრიგიდან '<b>%s</b>'."
 
 #: maint.php
-#, fuzzy
 msgid "You must select at least one Servcheck test."
-msgstr "უნდა მონიშნოთ, სულ ცოტა, ერთი მოწყობილობა."
+msgstr "უნდა მონიშნოთ სულ მცირე ერთი Servcheck ტესტი."
 
 #: maint.php
 #, php-format
@@ -186,7 +184,7 @@ msgstr "გეგმა"
 
 #: maint.php
 msgid "Schedule Name"
-msgstr "გეგმის სახელი"
+msgstr "განრიგის სახელი"
 
 #: maint.php
 msgid "Provide the Maintenance Schedule a meaningful name"
@@ -214,7 +212,7 @@ msgstr "ინტერვალი"
 
 #: maint.php
 msgid "This is the interval in which the start / end time will repeat."
-msgstr ""
+msgstr "ეს არის ინტერვალი, რომლითაც დაწყების / დასრულების დრო განმეორდება."
 
 #: maint.php
 msgid "Start Time"
@@ -222,7 +220,7 @@ msgstr "გაშვების დრო"
 
 #: maint.php
 msgid "The start date / time for this schedule. Most date / time formats accepted."
-msgstr ""
+msgstr "ამ განრიგის დაწყების თარიღი / დრო. მიიღება თარიღისა და დროის ფორმატების უმეტესობა."
 
 #: maint.php
 msgid "End Time"
@@ -230,7 +228,7 @@ msgstr "დასრულების დრო"
 
 #: maint.php
 msgid "The end date / time for this schedule. Most date / time formats accepted."
-msgstr ""
+msgstr "ამ განრიგის დასრულების თარიღი / დრო. მიიღება თარიღისა და დროის ფორმატების უმეტესობა."
 
 #: maint.php
 msgid "Start Date/Time Selector"
@@ -327,7 +325,7 @@ msgstr "მდებარეობა"
 
 #: maint.php
 msgid "Template"
-msgstr "ნიმუში"
+msgstr "შაბლონი"
 
 #: maint.php setup.php
 msgid "Devices"
@@ -392,7 +390,7 @@ msgstr "მწკრივები"
 
 #: maint.php
 msgid "URLS"
-msgstr ""
+msgstr "URL-ები"
 
 #: maint.php
 msgid "URL"
@@ -411,9 +409,9 @@ msgid "No Associated WebSeer URL's Found"
 msgstr "ასოცირებული WebSeer-ის URL-ები აღმოჩენილი არაა"
 
 #: maint.php
-#, fuzzy, php-format
+#, php-format
 msgid "Associated Servcheck test's %s"
-msgstr "მინიჭებული მოწყობილობები %s"
+msgstr "ასოცირებული Servcheck ტესტები %s"
 
 #: maint.php
 msgid "Tests"
@@ -424,9 +422,8 @@ msgid "Path"
 msgstr "ბილიკი"
 
 #: maint.php
-#, fuzzy
 msgid "No Associated Servcheck Test's Found"
-msgstr "ასოცირებული მოწყობილობები აღმოჩენილი არაა"
+msgstr "ასოცირებული Servcheck ტესტები ვერ მოიძებნა"
 
 #: setup.php
 msgid "Management"
@@ -446,17 +443,15 @@ msgstr "(ქმედებები)"
 
 #: setup.php
 msgid "Enable maintenance for this device (now+1h)"
-msgstr ""
+msgstr "ამ მოწყობილობისთვის ტექნიკური მომსახურების ჩართვა (ახლა+1სთ)"
 
 #: setup.php
-#, fuzzy
 msgid "Add device(s) to existing maintenance schedule"
-msgstr "რემონტის გეგმების მინიჭება"
+msgstr "მოწყობილობ(ებ)ის დამატება არსებულ ტექნიკური მომსახურების განრიგში"
 
 #: setup.php
-#, fuzzy
 msgid "Maintenance Window"
-msgstr "რემონტის გეგმები"
+msgstr "ტექნიკური მომსახურების ფანჯარა"
 
 #: setup.php
 msgid "Duration"
@@ -464,49 +459,45 @@ msgstr "ხანგრძლივობა"
 
 #: setup.php
 msgid "Timezone"
-msgstr ""
+msgstr "დროის სარტყელი"
 
 #: setup.php
 msgid "min"
-msgstr ""
+msgstr "წთ"
 
 #: setup.php
-#, fuzzy
 msgid "Schedule name"
-msgstr "გეგმის სახელი"
+msgstr "განრიგის სახელი"
 
 #: setup.php
 msgid "e.g. Emergency patching"
-msgstr ""
+msgstr "მაგ., გადაუდებელი განახლება"
 
 #: setup.php
-#, fuzzy
 msgid "disabled"
 msgstr "გათიშულია"
 
 #: setup.php
-#, fuzzy
 msgid "No schedules found"
-msgstr "გეგმების გარეშე"
+msgstr "განრიგები ვერ მოიძებნა"
 
 #: setup.php
-#, fuzzy
 msgid "Select schedule"
-msgstr "გეგმა"
+msgstr "აირჩიეთ განრიგი"
 
 #: setup.php
 msgid "Quick Maintenance"
-msgstr ""
+msgstr "სწრაფი ტექნიკური მომსახურება"
 
 #: setup.php
 #, php-format
 msgid "Maintenance schedule '%s' created and %d device(s) associated."
-msgstr ""
+msgstr "ტექნიკური მომსახურების განრიგი '%s' შეიქმნა და %d მოწყობილობა მიენიჭა."
 
 #: setup.php
 #, php-format
 msgid "%d device(s) added to maintenance schedule '%s'."
-msgstr ""
+msgstr "%d მოწყობილობა დაემატა ტექნიკური მომსახურების განრიგს '%s'."
 
 #~ msgid "Lists"
 #~ msgstr "სიები"
