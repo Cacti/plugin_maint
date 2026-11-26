@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-29 00:45-0400\nPO-Revision-Date: 2026-11-25 02:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Chinese (Traditional Han script) <https://translate.cacti.net/projects/cacti/maint/zh_Hant/>\nLanguage: zh-TW\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=1; plural=0;\nX-Generator: Weblate 5.11.4\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-29 00:45-0400\nPO-Revision-Date: 2026-11-26 03:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Chinese (Traditional Han script) <https://translate.cacti.net/projects/cacti/maint/zh_Hant/>\nLanguage: zh-TW\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=1; plural=0;\nX-Generator: Weblate 5.11.4\n"
 
 #: maint.php
 msgid "Update Time (Now + 1 Hour)"
@@ -167,7 +167,7 @@ msgstr "[編輯：%s]"
 
 #: maint.php
 msgid "[new]"
-msgstr "[新增]"
+msgstr "[新]"
 
 #: maint.php
 msgid "New Maintenance Schedule"
@@ -192,7 +192,7 @@ msgstr "為維護排程提供有意義的名稱"
 
 #: maint.php
 msgid "Enabled"
-msgstr "已啟用"
+msgstr "啟用"
 
 #: maint.php
 msgid "Whether or not this schedule will be checked."
@@ -200,7 +200,7 @@ msgstr "是否檢查此排程。"
 
 #: maint.php setup.php
 msgid "Schedule Type"
-msgstr "排程類型"
+msgstr "計劃類型"
 
 #: maint.php
 msgid "The type of schedule, one time or recurring."
@@ -280,7 +280,7 @@ msgstr "此維護排程的名稱。"
 
 #: maint.php
 msgid "Active"
-msgstr "作用中"
+msgstr "啟用"
 
 #: maint.php
 msgid "Type"
@@ -305,7 +305,7 @@ msgstr "關聯裝置 %s"
 
 #: maint.php
 msgid "Site"
-msgstr "站台"
+msgstr "網站"
 
 #: maint.php
 msgid "Any"
@@ -317,19 +317,19 @@ msgstr "無"
 
 #: maint.php
 msgid "Data Collector"
-msgstr "資料收集器"
+msgstr "數據收集器"
 
 #: maint.php
 msgid "Location"
-msgstr "位置"
+msgstr "地點"
 
 #: maint.php
 msgid "Template"
-msgstr "範本"
+msgstr "模板"
 
 #: maint.php setup.php
 msgid "Devices"
-msgstr "裝置"
+msgstr "設備"
 
 #: maint.php
 msgid "Associated"
@@ -353,7 +353,7 @@ msgstr "圖表"
 
 #: maint.php
 msgid "Data Sources"
-msgstr "資料來源"
+msgstr "數據源"
 
 #: maint.php
 msgid "Thresholds"
@@ -386,7 +386,7 @@ msgstr "關聯的網頁 URL %s"
 
 #: maint.php
 msgid "Rows"
-msgstr "列數"
+msgstr "行"
 
 #: maint.php
 msgid "URLS"
@@ -398,7 +398,7 @@ msgstr "網址"
 
 #: maint.php
 msgid "Disabled"
-msgstr "已停用"
+msgstr "停用"
 
 #: maint.php
 msgid "USING DNS"
@@ -463,7 +463,7 @@ msgstr "時區"
 
 #: setup.php
 msgid "min"
-msgstr "分鐘"
+msgstr "最小"
 
 #: setup.php
 msgid "Schedule name"
@@ -475,7 +475,7 @@ msgstr "例如：緊急修補"
 
 #: setup.php
 msgid "disabled"
-msgstr "已停用"
+msgstr "停用"
 
 #: setup.php
 msgid "No schedules found"
