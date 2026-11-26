@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-29 00:45-0400\nPO-Revision-Date: 2026-11-25 02:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Korean <https://translate.cacti.net/projects/cacti/maint/ko/>\nLanguage: ko-KR\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=1; plural=0;\nX-Generator: Weblate 5.11.4\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-29 00:45-0400\nPO-Revision-Date: 2026-11-26 03:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Korean <https://translate.cacti.net/projects/cacti/maint/ko/>\nLanguage: ko-KR\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=1; plural=0;\nX-Generator: Weblate 5.11.4\n"
 
 #: maint.php
 msgid "Update Time (Now + 1 Hour)"
@@ -163,7 +163,7 @@ msgstr "하나 이상의 ServCheck 테스트를 선택해야 합니다."
 #: maint.php
 #, php-format
 msgid "[edit: %s]"
-msgstr "[편집 :  %s]"
+msgstr "[편집: %s]"
 
 #: maint.php
 msgid "[new]"
@@ -188,7 +188,7 @@ msgstr "일정 이름"
 
 #: maint.php
 msgid "Provide the Maintenance Schedule a meaningful name"
-msgstr "유지 관리 일정에 의미 있는 이름을 입력하십시오."
+msgstr "유지 관리 일정에 의미 있는 이름을 입력하십시오"
 
 #: maint.php
 msgid "Enabled"
