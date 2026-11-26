@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-29 00:45-0400\nPO-Revision-Date: 2026-11-25 02:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Turkish <https://translate.cacti.net/projects/cacti/maint/tr/>\nLanguage: tr-TR\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
+msgstr "Project-Id-Version: \nReport-Msgid-Bugs-To: developers@cacti.net\nPOT-Creation-Date: 2026-09-29 00:45-0400\nPO-Revision-Date: 2026-11-26 03:18+0000\nLast-Translator: Thomas Vincent <balder.infuser.6n@icloud.com>\nLanguage-Team: Turkish <https://translate.cacti.net/projects/cacti/maint/tr/>\nLanguage: tr-TR\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 5.11.4\n"
 
 #: maint.php
 msgid "Update Time (Now + 1 Hour)"
@@ -216,7 +216,7 @@ msgstr "Bu, başlangıç / bitiş zamanının tekrarlanacağı aralıktır."
 
 #: maint.php
 msgid "Start Time"
-msgstr "Başlama Zamanı"
+msgstr "Başlangıç Zamanı"
 
 #: maint.php
 msgid "The start date / time for this schedule. Most date / time formats accepted."
@@ -333,7 +333,7 @@ msgstr "Cihazlar"
 
 #: maint.php
 msgid "Associated"
-msgstr "Associated"
+msgstr "İlişkili"
 
 #: maint.php
 msgid "Description"
@@ -427,7 +427,7 @@ msgstr "İlişkili Servcheck Testi Bulunamadı"
 
 #: setup.php
 msgid "Management"
-msgstr "Kullanıcı Yonetimi"
+msgstr "Yönetim"
 
 #: setup.php
 msgid "System Administration"
